@@ -1,5 +1,5 @@
-# FILL IN INFO ABOUT YOUR GAME HERE. 
+# MetaSoma Unity SideScrolling Prototype
 
-DO NOT LEAVE IT LIKE THIS!!!
+Trying the sidescrolling mechanics
 
-Please? Please, give me content. I'm begging you. It's not that hard. Thanks.
+hopfully we get approved lol
