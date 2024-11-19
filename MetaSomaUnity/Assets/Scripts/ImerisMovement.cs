@@ -55,9 +55,9 @@ public class ImerisMovement : MonoBehaviour
 
         // Flip the sprite based on movement direction
         if (rb.velocity.x > 0)
-            playerSpriteRender.flipX = false;  // Facing right
+            playerSpriteRender.flipX = true;  // Facing right
         else if (rb.velocity.x < 0)
-            playerSpriteRender.flipX = true;   // Facing left
+            playerSpriteRender.flipX = false;   // Facing left
     }
 
     private void Move()
