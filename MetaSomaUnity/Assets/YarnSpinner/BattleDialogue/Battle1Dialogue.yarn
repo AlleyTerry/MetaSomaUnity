@@ -1,6 +1,47 @@
 ﻿title: Battle1Dialogue
 tags:
+position: -237,-228
 ---
 Linneaus: I cannot believe you child
 Imeris: Shut up old man
+-> I'll kill you
+    <<jump Kill>>
+-> You are lucky I like you
+    <<jump Lucky>>
+-> idk this is just an option
+    <<jump Option1>>
+-> another option to kill probably
+    <<jump Option2>>
+
+===
+title: Kill
+position: -217,26
+---
+Imeris: You studpid old man.
+Imeris: I am going to fucking kill you.
+Linneaus: You kiss your mother with that mouth?
+Imeris: Jokes on you I don't have a mom.
+Linneaus: Oh....
+===
+title: Lucky
+position: 128,-253
+---
+Imeris: You're lucky I like you.
+Imeris: Maybe I won't eat you.
+Linneaus: What?
+Imeris: What.
+===
+title: Option1
+position: 31,7
+---
+Imeris: Option to kill
+Imeris: or maybe
+Linneaus: Kiss?
+===
+title: Option2
+position: 251,-76
+---
+Imeris: Another Option to kill.
+Imeris: God I hate u.
+Linneaus: wow, rude.
 ===
