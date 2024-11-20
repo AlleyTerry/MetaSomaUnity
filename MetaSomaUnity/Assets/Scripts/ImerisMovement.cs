@@ -1,35 +1,81 @@
 using System;
 using UnityEngine;
 
+public enum Evolution
+{
+    None,
+    First,
+    Fully
+}
+
 public class ImerisMovement : MonoBehaviour
 {
-    // Variables for movement and jumping
+    // SINGLETON
+    public static ImerisMovement instance;
+    
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    
+    // EVOLUTION STATE
+    [SerializeField] private Evolution evolutionState = Evolution.None;
+    
+    public Evolution EvolutionState
+    {
+        get
+        {
+            return evolutionState;
+        }
+        set
+        {
+            evolutionState = value;
+        }
+    }
+    
+    // RIGIDBODY COMPONENT
+    private Rigidbody rb;
+    
+    // MOVEMENT VARIABLES
     public float moveSpeed = 5f;
-    public float jumpForce = 5f;
+    private Vector3 moveDirection;
+    
+    // JUMP VARIABLES
     public Transform groundCheck;
     public LayerMask groundLayer;
     
-    private Rigidbody rb;
     [SerializeField] private bool isGrounded;
     private float groundCheckRadius = 0.3f;
-    private Vector3 moveDirection;
+    
+    public float jumpForce = 5f;
+    
+    // ... slowing down the falling speed
+    private bool isJumping = false;
+    public float jumpSlowdownFalling = 0.5f;
 
+    // ANIMATOR AND SPRITE RENDERER
     [SerializeField] private Animator playerAnimator = null;
     [SerializeField] private SpriteRenderer playerSpriteRender = null;
-
-    [SerializeField] private bool jumpRequested;
-
-    private void Awake()
-    {
-        playerAnimator = GetComponent<Animator>();
-        playerSpriteRender = GetComponent<SpriteRenderer>();
-    }
-
+    
     // Start is called before the first frame update
     void Start()
     {
+        // Wiring up components
+        playerAnimator = GetComponent<Animator>();
+        playerSpriteRender = GetComponent<SpriteRenderer>();
+        
         // Get the rigidbody component for physics handling
         rb = GetComponent<Rigidbody>();
+        
+        // Initialize the evolution state
+        EvolutionState = Evolution.None;
     }
 
     // Update is called once per frame
@@ -40,7 +86,7 @@ public class ImerisMovement : MonoBehaviour
 
         // Handle movement and jumping
         Move();
-        Jump();
+        JumpHandler();
     }
 
     private void LateUpdate()
@@ -66,29 +112,71 @@ public class ImerisMovement : MonoBehaviour
 
         moveDirection = new Vector3(moveX, 0f, 0f);  // Set movement direction on the X-axis
 
-        // Apply movement to the Rigidbody, maintaining Y velocity (gravity effects)
+        // Apply movement to the RigidBody, maintaining Y velocity (gravity effects)
         Vector3 velocity = moveDirection * moveSpeed;
         velocity.y = rb.velocity.y;
         rb.velocity = velocity;
     }
 
-    private void Jump()
+    private void JumpHandler()
     {
         // Handle jumping only if the player is grounded and the jump button is pressed
-        if (isGrounded)
+        if (evolutionState == Evolution.None)
         {
-            if (Input.GetButtonDown("Jump") && !jumpRequested)
-            {
-                rb.velocity = new Vector3(rb.velocity.x, jumpForce, 0f);  // Apply jump force on Y axis
-                jumpRequested = true;  // Prevent multiple jumps while airborne
-            }
+            // Default jump
+            Evolution0Jump();
         }
-        else
+        else if (evolutionState == Evolution.First)
         {
-            jumpRequested = false;  // Reset jump request when airborne
+            // Evolution 1 jump, jump higher and land slower
+            Evolution1Jump();
+        }
+        else if (evolutionState == Evolution.Fully)
+        {
+            
         }
     }
 
+    // Evolution 0 Jump
+    private void Evolution0Jump()
+    {
+        if (isGrounded &&
+            Input.GetButtonDown("Jump"))
+        {
+            rb.velocity = new Vector3(rb.velocity.x, jumpForce, 0f);  // Apply jump force on Y axis
+        }
+    }
+    
+    // Evolution 1 Jump
+    private void Evolution1Jump()
+    {
+        if (isGrounded &&
+            Input.GetButtonDown("Jump"))
+        {
+            rb.velocity = new Vector3(rb.velocity.x, jumpForce * 1.15f, 0f);  // Apply jump force on Y axis
+            isJumping = true;
+        }
+        else if (!isGrounded &&
+                 Input.GetButton("Jump") &&
+                 isJumping &&
+                 rb.velocity.y < 0)
+        {
+            // Apply slow fall effect when falling and holding jump
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y * jumpSlowdownFalling, 0f);  // Slow down the falling speed
+        }
+
+        if (Input.GetButtonUp("Jump"))
+        {
+            isJumping = false;
+        }
+    }
+    
+    // Fully evolved jump
+    private void Evolution2Jump()
+    {
+        
+    }
+    
     // Draw the gizmo for ground detection in the scene view
     private void OnDrawGizmos()
     {
