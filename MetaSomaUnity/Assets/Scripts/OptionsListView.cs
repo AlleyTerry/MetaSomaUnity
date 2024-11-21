@@ -239,7 +239,7 @@ namespace Yarn.Unity
                 optionTransform.anchoredPosition = new Vector2(x, y);
 
                 // Customize the appearance of each option
-                CustomizeOptionAppearance(optionViews[i], i);
+                //CustomizeOptionAppearance(optionViews[i], i);
             }
             
         }
