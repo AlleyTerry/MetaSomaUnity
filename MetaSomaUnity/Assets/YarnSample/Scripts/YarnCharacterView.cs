@@ -25,8 +25,9 @@ namespace Yarn.Unity.Example
         public Canvas canvas;
         public CanvasScaler canvasScaler;
 
-        [Tooltip("for best results, set the rectTransform anchors to middle-center, and make sure the rectTransform's pivot Y is set to 0")]
-        public RectTransform dialogueBubbleRect, optionsBubbleRect;
+        [Tooltip(
+            "for best results, set the rectTransform anchors to middle-center, and make sure the rectTransform's pivot Y is set to 0")]
+        public RectTransform dialogueBubbleRect;//, optionsBubbleRect;
 
         [Tooltip("margin is 0-1.0 (0.1 means 10% of screen space)... -1 lets dialogue bubbles appear offscreen or get cutoff")]
         public float bubbleMargin = 0.1f;
@@ -155,10 +156,10 @@ namespace Yarn.Unity.Example
             }
 
             // put choice option UI above playerCharacter
-            if (optionsBubbleRect.gameObject.activeInHierarchy)
+           /* if (optionsBubbleRect.gameObject.activeInHierarchy)
             {
                 optionsBubbleRect.anchoredPosition = WorldToAnchoredPosition(optionsBubbleRect, playerCharacter.positionWithOffset, bubbleMargin);
-            }
+            } */
         }
     }
 }
