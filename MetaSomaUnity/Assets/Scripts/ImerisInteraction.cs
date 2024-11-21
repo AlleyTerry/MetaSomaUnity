@@ -8,6 +8,9 @@ public class ImerisInteraction : MonoBehaviour
     [SerializeField] private bool isOverlapping = false;
     public GameObject overlappedItem;
     
+    // ITEM BASE
+    private InteractableItemBase interactableItemBase;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +35,8 @@ public class ImerisInteraction : MonoBehaviour
         {
             isOverlapping = true;
             overlappedItem = other.gameObject;
+            interactableItemBase = overlappedItem.GetComponentInChildren<InteractableItemBase>();
+            interactableItemBase.visualCue.SetActive(true);
         }
     }
     
@@ -41,6 +46,7 @@ public class ImerisInteraction : MonoBehaviour
         {
             isOverlapping = true;
             overlappedItem = other.gameObject;
+            interactableItemBase = overlappedItem.GetComponentInChildren<InteractableItemBase>();
         }
     }
     
@@ -50,6 +56,10 @@ public class ImerisInteraction : MonoBehaviour
         {
             isOverlapping = false;
             overlappedItem = null;
+            
+            // Set visual cue to false
+            interactableItemBase.visualCue.SetActive(false);
+            interactableItemBase = null;
         }
     }
 }
