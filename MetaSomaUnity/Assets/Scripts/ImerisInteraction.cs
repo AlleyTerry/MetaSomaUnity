@@ -1,12 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
+using Yarn;
+
 
 public class ImerisInteraction : MonoBehaviour
 {
     // VARIABLES
     [SerializeField] private bool isOverlapping = false;
     public GameObject overlappedItem;
+    public DialogueRunner dialogueRunner;
+    [SerializeField]enum InteractionType
+    {
+        Dialogue,
+        Consume
+    }
     
     // ITEM BASE
     private InteractableItemBase interactableItemBase;
@@ -24,10 +33,31 @@ public class ImerisInteraction : MonoBehaviour
             (Input.GetButtonDown("Interact") || Input.GetKeyDown(KeyCode.E)))
         {
             Debug.Log("Interacting with " + overlappedItem.name);
-            Destroy(overlappedItem);
+            interactWithItem();
         }
     }
+private void interactWithItem(InteractionType interaction)
+    {
+        if (interaction == InteractionType.Consume)
+        {
+            consumeItem();
+        }
+        else if (interaction == InteractionType.Dialogue)
+        {
+            interactWithItem();
+        }
+    }
+
+    private void consumeItem()
+    {
+        Destroy(overlappedItem);
+    }
     
+    private void interactWithItem()
+    {
+        dialogueRunner.StartDialogue(overlappedItem.name);
+    }
+
     // OVERLAPPING WITH INTERACTABLE ITEM
     private void OnTriggerEnter(Collider other)
     {
