@@ -5,29 +5,36 @@ using UnityEngine;
 using Yarn.Unity;
 using Yarn;
 
-[SerializeField]public enum InteractionType
+public enum InteractionType
 {
     Dialogue,
     Consume
 }
+
 public class InteractableItemBase : MonoBehaviour
 {
     // VISUAL CUE
     public GameObject visualCue;
+    
+    // PLAYER OVERLAPPING
     [SerializeField] private bool isOverlapping = false;
     public GameObject Imeris;
-    public DialogueRunner dialogueRunner;
+    
+    // ITEM VARIABLES
+    private GameObject interactableItem;
     public string objName;
-    public GameObject Item;
-    public InteractionType interaction;
+    public InteractionType interactionType;
+    
+    public DialogueRunner dialogueRunner;
  
     // Start is called before the first frame update
     void Start()
     {
         visualCue = transform.GetChild(0).gameObject;
         visualCue.SetActive(false);
+        
         objName = this.gameObject.name;
-        Item = this.GameObject();
+        interactableItem = this.GameObject();
     }
 
     // Update is called once per frame
@@ -42,32 +49,32 @@ public class InteractableItemBase : MonoBehaviour
     }
     
     
-    private void interactWithItem()
+    protected virtual void interactWithItem()
     {
-        if (interaction == InteractionType.Consume)
+        if (interactionType == InteractionType.Consume)
         {
             ConsumeItem();
         }
-        else if (interaction == InteractionType.Dialogue)
+        else if (interactionType == InteractionType.Dialogue)
         {
             DialogueItem();
         }
     }
 
-    private void ConsumeItem()
+    protected virtual void ConsumeItem()
     {
         Debug.Log("you consumed " + this.GameObject().name);
-        Destroy(Item);
+        Destroy(interactableItem);
     }
     
-    private void DialogueItem()
+    protected virtual void DialogueItem()
     {
         Debug.Log("you are talking to " + this.GameObject().name);
+        
         if (!dialogueRunner.IsDialogueRunning)
         {
             dialogueRunner.StartDialogue(objName);
         }
-        
     }
     
     // OVERLAPPING WITH INTERACTABLE ITEM
@@ -78,12 +85,11 @@ public class InteractableItemBase : MonoBehaviour
             isOverlapping = true;
             visualCue.SetActive(true);
         }
- 
     }
     
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("InteractableItem"))
+        if (other.CompareTag("Player"))
         {
             isOverlapping = true;
         }

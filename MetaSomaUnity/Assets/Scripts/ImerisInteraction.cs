@@ -7,11 +7,15 @@ using Yarn;
 
 public class ImerisInteraction : MonoBehaviour
 {
+    // NOTE: THIS IS OLD VERSION OF INTERACTION SCRIPT,
+    //       NEW VERSION SEE -- InteractableItemBase.cs
+    
     // VARIABLES
     [SerializeField] private bool isOverlapping = false;
     public GameObject overlappedItem;
     public DialogueRunner dialogueRunner;
-    [SerializeField]enum InteractionType
+    
+    enum InteractionType
     {
         Dialogue,
         Consume
