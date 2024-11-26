@@ -20,6 +20,9 @@ public class ImerisHunger : MonoBehaviour
         }
     }
     
+    // STATES
+    public bool isHungerMeterTriggered = false;
+    
     // HUNGER METER
     private int hungerMeter = 100;
     private int previousHungerMeter = 100; // For telling if hunger meter is increasing or decreasing
@@ -72,6 +75,8 @@ public class ImerisHunger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("StartHungerMeter"))
         {
+            isHungerMeterTriggered = true;
+            
             InvokeRepeating(nameof(ReduceHunger), 0.5f, 10f);
             Destroy(other.gameObject); // Destroy the object, preventing from re-triggering
         }
@@ -84,10 +89,10 @@ public class ImerisHunger : MonoBehaviour
         Debug.Log("Current hunger: " + hungerMeter);
     }
     
-    public void IncreaseHunger()
+    public void IncreaseHunger(int amount)
     {
         previousHungerMeter = hungerMeter;
-        HungerMeter += 10;
+        HungerMeter += amount;
         Debug.Log("Current hunger: " + hungerMeter);
     }
 }

@@ -18,6 +18,7 @@ public enum SubState
 
 public abstract class CharacterState 
 {
+    public abstract float GetWalkSpeed();
     public abstract float GetJumpHeight();
     public abstract bool CanDoubleJump();
     public abstract bool CanFloat();
@@ -35,6 +36,21 @@ public class BeforeAnyEvolutionState : CharacterState
     public void SetSubState(SubState newSubState)
     {
         currentSubState = newSubState;
+    }
+    
+    public override float GetWalkSpeed()
+    {
+        switch (currentSubState)
+        {
+            case SubState.WetWings:
+                return 0.55f;
+            case SubState.Hungry:
+                return 0.4f;
+            case SubState.Healthy:
+                return 1.0f;
+            default:
+                return 1.0f;
+        }
     }
     
     public override float GetJumpHeight()
@@ -77,6 +93,21 @@ public class EatenLAndEvolvedState : CharacterState
         currentSubState = newSubState;
     }
     
+    public override float GetWalkSpeed()
+    {
+        switch (currentSubState)
+        {
+            case SubState.WetWings:
+                return 1.0f;
+            case SubState.Hungry:
+                return 0.85f;
+            case SubState.Healthy:
+                return 1.2f;
+            default:
+                return 1.2f;
+        }
+    }
+    
     public override float GetJumpHeight()
     {
         switch (currentSubState)
@@ -115,6 +146,21 @@ public class NoLEvolvedFinalState : CharacterState
     public void SetSubState(SubState newSubState)
     {
         currentSubState = newSubState;
+    }
+    
+    public override float GetWalkSpeed()
+    {
+        switch (currentSubState)
+        {
+            case SubState.WetWings:
+                return 1.0f;
+            case SubState.Hungry:
+                return 0.85f;
+            case SubState.Healthy:
+                return 1.2f;
+            default:
+                return 1.2f;
+        }
     }
     
     public override float GetJumpHeight()

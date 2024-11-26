@@ -154,7 +154,7 @@ public class ImerisMovement : MonoBehaviour
         moveDirection = new Vector3(moveX, 0f, 0f);  // Set movement direction on the X-axis
 
         // Apply movement to the RigidBody, maintaining Y velocity (gravity effects)
-        Vector3 velocity = moveDirection * moveSpeed;
+        Vector3 velocity = moveDirection * (moveSpeed * currentState.GetWalkSpeed());
         velocity.y = rb.velocity.y;
         rb.velocity = velocity;
     }
