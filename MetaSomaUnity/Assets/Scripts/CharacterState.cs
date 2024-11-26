@@ -33,6 +33,11 @@ public class BeforeAnyEvolutionState : CharacterState
         currentSubState = initialSubState;
     }
     
+    public SubState GetSubState()
+    {
+        return currentSubState;
+    }
+    
     public void SetSubState(SubState newSubState)
     {
         currentSubState = newSubState;
@@ -88,6 +93,11 @@ public class EatenLAndEvolvedState : CharacterState
         currentSubState = initialSubState;
     }
     
+    public SubState GetSubState()
+    {
+        return currentSubState;
+    }
+    
     public void SetSubState(SubState newSubState)
     {
         currentSubState = newSubState;
@@ -141,6 +151,11 @@ public class NoLEvolvedFinalState : CharacterState
     public NoLEvolvedFinalState(SubState initialSubState)
     {
         currentSubState = initialSubState;
+    }
+    
+    public SubState GetSubState()
+    {
+        return currentSubState;
     }
     
     public void SetSubState(SubState newSubState)

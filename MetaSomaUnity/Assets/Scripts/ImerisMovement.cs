@@ -252,4 +252,23 @@ public class ImerisMovement : MonoBehaviour
     {
         currentState = newState;
     }
+    
+    public void SetSubState(SubState newSubState)
+    {
+        if (currentState is BeforeAnyEvolutionState beforeAnyEvolutionState)
+        {
+            beforeAnyEvolutionState.SetSubState(newSubState);
+            Debug.Log("SubState changed to: " + newSubState);
+        }
+        else if (currentState is EatenLAndEvolvedState eatenLAndEvolvedState)
+        {
+            eatenLAndEvolvedState.SetSubState(newSubState);
+            Debug.Log("SubState changed to: " + newSubState);
+        }
+        else if (currentState is NoLEvolvedFinalState noLEvolvedFinalState)
+        {
+            noLEvolvedFinalState.SetSubState(newSubState);
+            Debug.Log("SubState changed to: " + newSubState);
+        }
+    }
 }

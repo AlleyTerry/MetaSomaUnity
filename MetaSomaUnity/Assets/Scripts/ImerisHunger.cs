@@ -20,7 +20,10 @@ public class ImerisHunger : MonoBehaviour
         }
     }
     
-    // STATES
+    // CHARACTER STATE
+    //private CharacterState currentState;
+    
+    // STATES, IS HUNGER METER RUNNING/NOT
     public bool isHungerMeterTriggered = false;
     
     // HUNGER METER
@@ -49,10 +52,12 @@ public class ImerisHunger : MonoBehaviour
                     break;
                 case <= 10 when previousHungerMeter >= 10:
                     Debug.Log("Imeris is starving...");
+                    ImerisMovement.instance.SetSubState(SubState.Hungry);
                     // todo: change animation and post-process
                     break;
                 case > 10 when previousHungerMeter <= 10:
                     Debug.Log("Imeris is recovering from starvation...");
+                    ImerisMovement.instance.SetSubState(SubState.Healthy);
                     // todo: change animation and post-process
                 break;
             }
