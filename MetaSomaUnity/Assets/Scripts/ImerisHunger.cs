@@ -31,7 +31,28 @@ public class ImerisHunger : MonoBehaviour
         { 
             hungerMeter = value;
             
-            
+            // Clamp
+            hungerMeter = Mathf.Clamp(hungerMeter, 0, 100);
+
+            switch (hungerMeter)
+            {
+                case <= 50 when previousHungerMeter >= 50:
+                    Debug.Log("Imeris is getting hungry...");
+                    // todo: change animation
+                    break;
+                case > 50 when previousHungerMeter <= 50:
+                    Debug.Log("Imeris is getting recovered from hunger...");
+                    // todo: change animation
+                    break;
+                case <= 10 when previousHungerMeter >= 10:
+                    Debug.Log("Imeris is starving...");
+                    // todo: change animation and post-process
+                    break;
+                case > 10 when previousHungerMeter <= 10:
+                    Debug.Log("Imeris is recovering from starvation...");
+                    // todo: change animation and post-process
+                break;
+            }
         }
     }
     
@@ -52,6 +73,7 @@ public class ImerisHunger : MonoBehaviour
         if (other.gameObject.CompareTag("StartHungerMeter"))
         {
             InvokeRepeating(nameof(ReduceHunger), 0.5f, 10f);
+            Destroy(other.gameObject); // Destroy the object, preventing from re-triggering
         }
     }
     
@@ -64,6 +86,7 @@ public class ImerisHunger : MonoBehaviour
     
     public void IncreaseHunger()
     {
+        previousHungerMeter = hungerMeter;
         HungerMeter += 10;
         Debug.Log("Current hunger: " + hungerMeter);
     }
