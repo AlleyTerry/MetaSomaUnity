@@ -328,17 +328,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727152697ddda3841bfc1b6b7723e60b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evolutionState: 0
   moveSpeed: 5
   groundCheck: {fileID: 1449346820}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
   isGrounded: 1
-  jumpForce: 5
+  jumpForce: 3
+  isJumping: 0
   jumpSlowdownFalling: 0.9
   playerAnimator: {fileID: 0}
   playerSpriteRender: {fileID: 0}
+  setStateButton: 0
 --- !u!1 &544239705
 GameObject:
   m_ObjectHideFlags: 0

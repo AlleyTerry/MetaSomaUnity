@@ -20,19 +20,7 @@ public class ImerisMovement : MonoBehaviour
     }
     
     // EVOLUTION STATE
-    [FormerlySerializedAs("evolutionState")] [SerializeField] private EvolutionState evolutionStateState = global::EvolutionState.BeforeAnyEvolution;
-    
-    public EvolutionState EvolutionStateState
-    {
-        get
-        {
-            return evolutionStateState;
-        }
-        set
-        {
-            evolutionStateState = value;
-        }
-    }
+    public CharacterState currentState;
     
     // RIGIDBODY COMPONENT
     private Rigidbody rb;
@@ -42,34 +30,93 @@ public class ImerisMovement : MonoBehaviour
     private Vector3 moveDirection;
     
     // JUMP VARIABLES
-    public Transform groundCheck;
-    public LayerMask groundLayer;
+    [SerializeField] private Transform groundCheck;
+    private LayerMask groundLayer;
     
     [SerializeField] private bool isGrounded;
     private float groundCheckRadius = 0.3f;
     
     public float jumpForce = 5f;
+    private bool hasDoubleJumped = false;
     
     // ... slowing down the falling speed
-    private bool isJumping = false;
+    [SerializeField]private bool isJumping = false;
     public float jumpSlowdownFalling = 0.5f;
 
     // ANIMATOR AND SPRITE RENDERER
     [SerializeField] private Animator playerAnimator = null;
     [SerializeField] private SpriteRenderer playerSpriteRender = null;
     
+    // NOTE: THIS IS FOR TESTING AND DEBUGGING PURPOSES ONLY, COMMENT OUT IN FINAL BUILD
+    public enum SetStateButton
+    {
+        Evo0WetWings,
+        Evo0Hungry,
+        Evo0Healthy,
+        Evo1WetWings,
+        Evo1Hungry,
+        Evo1Healthy,
+        Evo2WetWings,
+        Evo2Hungry,
+        Evo2Healthy
+    }
+    [SerializeReference] private SetStateButton setStateButton;
+
+    private void OnValidate()
+    {
+        UpdateStateFromButton();
+    }
+
+    private void UpdateStateFromButton()
+    {
+        switch (setStateButton)
+        {
+            case SetStateButton.Evo0WetWings:
+                SetState(new BeforeAnyEvolutionState(SubState.WetWings));
+                break;
+            case SetStateButton.Evo0Hungry:
+                SetState(new BeforeAnyEvolutionState(SubState.Hungry));
+                break;
+            case SetStateButton.Evo0Healthy:
+                SetState(new BeforeAnyEvolutionState(SubState.Healthy));
+                break;
+            case SetStateButton.Evo1WetWings:
+                SetState(new EatenLAndEvolvedState(SubState.WetWings));
+                break;
+            case SetStateButton.Evo1Hungry:
+                SetState(new EatenLAndEvolvedState(SubState.Hungry));
+                break;
+            case SetStateButton.Evo1Healthy:
+                SetState(new EatenLAndEvolvedState(SubState.Healthy));
+                break;
+            case SetStateButton.Evo2WetWings:
+                SetState(new NoLEvolvedFinalState(SubState.WetWings));
+                break;
+            case SetStateButton.Evo2Hungry:
+                SetState(new NoLEvolvedFinalState(SubState.Hungry));
+                break;
+            case SetStateButton.Evo2Healthy:
+                SetState(new NoLEvolvedFinalState(SubState.Healthy));
+                break;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         // Wiring up components
         playerAnimator = GetComponent<Animator>();
         playerSpriteRender = GetComponent<SpriteRenderer>();
+
+        // Setting up the ground check
+        groundCheck = transform.GetChild(0);  // Get the ground check object
+        groundLayer = LayerMask.GetMask("GroundLayer");  // Get the ground layer
         
         // Get the rigidbody component for physics handling
         rb = GetComponent<Rigidbody>();
         
         // Initialize the evolution state
-        EvolutionStateState = EvolutionState.BeforeAnyEvolution;
+        currentState = new BeforeAnyEvolutionState(SubState.WetWings);
     }
 
     // Update is called once per frame
@@ -114,20 +161,43 @@ public class ImerisMovement : MonoBehaviour
 
     private void JumpHandler()
     {
-        // Handle jumping only if the player is grounded and the jump button is pressed
-        if (evolutionStateState == EvolutionState.BeforeAnyEvolution)
+        // Handle jumping 
+        if (isGrounded && 
+            Input.GetButtonDown("Jump"))
         {
-            // Default jump
-            Evolution0Jump();
+            // Apply jump force on Y axis
+            rb.velocity = new Vector3(rb.velocity.x, jumpForce * currentState.GetJumpHeight(), 0f);  
+            isJumping = true;
+            Debug.Log("IsJumping");
         }
-        else if (evolutionStateState == EvolutionState.EatenLAndEvolved)
+        // Double jump
+        else if (!isGrounded && 
+                 currentState.CanDoubleJump() &&
+                 Input.GetButtonDown("Jump") &&
+                 !hasDoubleJumped)
         {
-            // Evolution 1 jump, jump higher and land slower
-            Evolution1Jump();
+            rb.velocity = new Vector3(rb.velocity.x, jumpForce * currentState.GetJumpHeight() * 0.9f, 0f);  // Apply jump force on Y axis
+            hasDoubleJumped = true;
+            isJumping = true;
+            Debug.Log("Double Jump");
         }
-        else if (evolutionStateState == EvolutionState.NoLEvolvedFinal)
+        
+        // Floating
+        if (!isGrounded && 
+            isJumping &&
+            hasDoubleJumped &&
+            currentState.CanFloat() &&
+            Input.GetButton("Jump") &&
+            rb.velocity.y < 0)
         {
-            
+            // Apply slow fall effect when falling and holding jump
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y * jumpSlowdownFalling, 0f);  // Slow down the falling speed
+        }
+        
+        if (Input.GetButtonUp("Jump"))
+        {
+            isJumping = false;
+            hasDoubleJumped = false;
         }
     }
 
@@ -176,5 +246,10 @@ public class ImerisMovement : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+    }
+    
+    private void SetState(CharacterState newState)
+    {
+        currentState = newState;
     }
 }
