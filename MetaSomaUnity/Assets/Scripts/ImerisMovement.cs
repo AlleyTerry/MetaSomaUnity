@@ -1,12 +1,6 @@
 using System;
 using UnityEngine;
-
-public enum Evolution
-{
-    None,
-    First,
-    Fully
-}
+using UnityEngine.Serialization;
 
 public class ImerisMovement : MonoBehaviour
 {
@@ -26,17 +20,17 @@ public class ImerisMovement : MonoBehaviour
     }
     
     // EVOLUTION STATE
-    [SerializeField] private Evolution evolutionState = Evolution.None;
+    [FormerlySerializedAs("evolutionState")] [SerializeField] private EvolutionState evolutionStateState = global::EvolutionState.BeforeAnyEvolution;
     
-    public Evolution EvolutionState
+    public EvolutionState EvolutionStateState
     {
         get
         {
-            return evolutionState;
+            return evolutionStateState;
         }
         set
         {
-            evolutionState = value;
+            evolutionStateState = value;
         }
     }
     
@@ -75,7 +69,7 @@ public class ImerisMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         
         // Initialize the evolution state
-        EvolutionState = Evolution.None;
+        EvolutionStateState = EvolutionState.BeforeAnyEvolution;
     }
 
     // Update is called once per frame
@@ -121,17 +115,17 @@ public class ImerisMovement : MonoBehaviour
     private void JumpHandler()
     {
         // Handle jumping only if the player is grounded and the jump button is pressed
-        if (evolutionState == Evolution.None)
+        if (evolutionStateState == EvolutionState.BeforeAnyEvolution)
         {
             // Default jump
             Evolution0Jump();
         }
-        else if (evolutionState == Evolution.First)
+        else if (evolutionStateState == EvolutionState.EatenLAndEvolved)
         {
             // Evolution 1 jump, jump higher and land slower
             Evolution1Jump();
         }
-        else if (evolutionState == Evolution.Fully)
+        else if (evolutionStateState == EvolutionState.NoLEvolvedFinal)
         {
             
         }
