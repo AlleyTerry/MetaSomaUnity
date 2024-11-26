@@ -2,34 +2,43 @@
 tags:
 position: -237,-228
 ---
+<<declare $getHurt = false>>
 Linneaus: I cannot believe you child
 Imeris: Shut up old man
 -> I'll kill you
     <<jump Kill>>
+    ///negative
 -> You are lucky I like you
     <<jump Lucky>>
+    ///positive
 -> idk this is just an option
     <<jump Option1>>
+    ///neutral
 -> another option to kill probably
     <<jump Option2>>
+    ///negative
 
 ===
 title: Kill
 position: -217,26
 ---
+<<takeDamage Heart>>
 Imeris: You studpid old man.
 Imeris: I am going to fucking kill you.
 Linneaus: You kiss your mother with that mouth?
 Imeris: Jokes on you I don't have a mom.
 Linneaus: Oh....
+<<jump Battle1Dialogue>>
 ===
 title: Lucky
 position: 128,-253
 ---
+<<Heal Heart>>
 Imeris: You're lucky I like you.
 Imeris: Maybe I won't eat you.
 Linneaus: What?
 Imeris: What.
+<<jump Battle1Dialogue>>
 ===
 title: Option1
 position: 31,7
