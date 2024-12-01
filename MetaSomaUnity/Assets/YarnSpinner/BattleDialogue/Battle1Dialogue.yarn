@@ -1,56 +1,396 @@
-﻿title: Battle1Dialogue
+title: Battle1Dialogue
 tags:
-position: -237,-228
+position: -462,-1568
 ---
-<<declare $getHurt = false>>
-Linneaus: I cannot believe you child
-Imeris: Shut up old man
--> I'll kill you
-    <<jump Kill>>
-    ///negative
--> You are lucky I like you
-    <<jump Lucky>>
-    ///positive
--> idk this is just an option
-    <<jump Option1>>
-    ///neutral
--> another option to kill probably
-    <<jump Option2>>
-    ///negative
+///has the player attacked lin?
+<<declare $AttackLin = false>>
+Linnaeus: Do you have anything to say for yourself?
+Imeris: ...
+-> Reason
+    <<jump Reason>>
+-> Apologize
+    <<jump Apologize>>
+-> Reject
+    <<jump Reject>>
+-> Pacify
+    <<jump Pacify>>
 
 ===
-title: Kill
-position: -217,26
+
+title: Reason
+position: -1428,-1437
 ---
-<<takeDamage Heart>>
-Imeris: You studpid old man.
-Imeris: I am going to fucking kill you.
-Linneaus: You kiss your mother with that mouth?
-Imeris: Jokes on you I don't have a mom.
-Linneaus: Oh....
-<<jump Battle1Dialogue>>
+///neutral
+Imeris: We were all damned long before I chose this path, Father. 
+Imeris: Born into servitude, made into toys. Living just to suffer.
+Imeris: Blaming me will not save you. You merely continue to toil in the name of our cagers, long after they have left us.
+Linnaeus: I never suffered! I never toiled! I was a leader, an elite, appointed by Queen Andromeda herself!
+Linnaeus: And you took that from me!
+Linnaeus is enraged.
+ -> Stand
+    <<jump Stand>>
+-> Retreat
+    <<jump Retreat>>
 ===
-title: Lucky
-position: 128,-253
+title: Stand
+position: -1380,-1211
 ---
+///+1 heart
 <<Heal Heart>>
-Imeris: You're lucky I like you.
-Imeris: Maybe I won't eat you.
-Linneaus: What?
-Imeris: What.
-<<jump Battle1Dialogue>>
+Imeris: Yes. And now, whatever power you had over me is gone.
+Imeris: I am not afraid of you anymore.
+Linnaeus’s anger simmers down into a cold fury.
+Linnaeus: You were always so obedient… so weak.
+Linnaeus: What devilry has inspired such impudence in you, child? 
+-> Knowledge
+    <<jump Knowledge>>
+-> Hunger
+ <<jump Hunger>>
+
 ===
-title: Option1
-position: 31,7
+
+title: Retreat
+position: -1736,-1195
 ---
-Imeris: Option to kill
-Imeris: or maybe
-Linneaus: Kiss?
+///-1 heart
+<<takeDamage Heart>>
+: Linnaeus sees your hesitation. He smiles cruelly.
+Linnaeus: Are you frightened? Are you doubting yourself?
+Linnaeus: Good. You should be. 
+Linnaeus: Impudence doesn’t suit you, child. You’ve always been meek.
+Linnaeus: I can’t even imagine what could possibly have inspired such disobedience in you. 
+-> Knowledge
+    <<jump Knowledge>>
+-> Hunger
+ <<jump Hunger>>
+
 ===
-title: Option2
-position: 251,-76
+title: Knowledge
+position: -1712,-954
 ---
-Imeris: Another Option to kill.
-Imeris: God I hate u.
-Linneaus: wow, rude.
+///neutral
+Imeris: I know better now.
+Imeris: Lies about how our “inferiority” has destined us for subservience… how there is nothing for us in this world beyond that…
+Imeris: Lies you yourself helped the court feed us, by warping our Goddess’s words.
+Imeris: I’ve seen past them. I know what you are, false prophet.
+Imeris: And I know I am meant for more. We all are, if we choose to see it. 
+<<jump ROUND1END>>
+
+===
+title: Hunger
+position: -1369,-921
+---
+///neutral
+Imeris: I could not ignore the hunger that stirs within me. 
+Imeris: It’s as simple as that.
+<<jump ROUND1END>>
+
+
+===
+title: Apologize
+position: 672,-1503
+---
+///-1 heart
+<<takeDamage Heart>>
+Imeris: I'm sorry. I had to do this. I could not live any other way.
+Linnaeus: What good does that pathetic apology do? 
+Linnaeus: Do you not see the devastation you've wrought?
+Linnaeus: Chaos, destruction, fear… innocent lives lost… The final days of your brothers and sisters spent tormented and starved.
+Linnaeus: You say you struggle with your hunger now, but imagine them. Think. Look at what you’ve done.
+Linnaeus: Villain, beast, monster… Your sinfulness cannot be washed away with mere words!
+-> Refute
+    <<jump Refute>>
+-> Apologize
+ <<jump Apologize2>>
+
+
+===
+title: Refute
+position: 886,-1297
+---
+///neutral
+Imeris: No- No! 
+Imeris: I am not to blame for the neglect of the Court. If they have abandoned us here to die, it is THEY who carry the weight of innocence lost.
+Imeris: I am not a villain. I am not a monster. I am NOT sinful. 
+Imeris: You, of all people, do not get to say that to me. You are no better than they are.
+Imeris: I am only becoming who the Goddess made me to be, and I will not allow you to deceive me again.
+Linnaeus is enraged.
+Linnaeus: You could never begin to know Her will, wretch. 
+Linnaeus: Cease your heresy. Come quietly. Let your final act be obedient and good.
+
+-> Surrender
+    <<jump Surrender>>
+-> Resist
+ <<jump Resist>>
+
+===
+title: Apologize2
+position: 560,-1251
+---
+///-1 heart
+<<takeDamage Heart>>
+You imagine your few friends, your one comfort in the world, stomachs empty and eyes glazed over with the sheen of death. You remember the bodies in the kitchen. The bitten, molded-over bread clutched weakly in a thin hand. Unbidden, a sob escapes your throat. You feel yourself fall to your knees as tears run down your face.
+Imeris: ...I'm sorry.
+You cannot find any other words. Linnaeus looks at you with contempt, but also pity. He sighs deeply.
+Linnaeus: Poor misguided wretch. So deluded that you’ve fallen from grace and taken us all down with you.
+Linnaeus: I wish I could undo what you did… but even the Goddess would struggle with such a feat.
+Linnaeus: And as it stands, I cannot allow your sin to go unpunished.
+Linnaeus: Come quietly. Let your final act be obedient and good.
+-> Surrender
+    <<jump Surrender>>
+-> Resist
+ <<jump Resist>>
+===
+title: Surrender
+position: 602,-981
+---
+///-1 heart
+<<takeDamage Heart>>
+Imeris: ...
+: GAME OVER
+    <<jump GAMEOVER>>
+
+ ===
+title: Resist
+position: 895,-913
+---
+///Neutral
+Imeris: …No. 
+Imeris: I still have faith. 
+Imeris: Nothing will change if I let myself die here. It would all have been for nothing.
+Imeris: I have to live on. And I will. 
+<<jump ROUND1END>>
+===
+
+
+
+
+title: Reject
+position: -848,-1352
+---
+///+1 heart
+<<Heal Heart>>
+Imeris: I don’t have to explain myself to you. I owe you nothing.
+Linnaeus: Have you no shame? Have you no gratitude?
+Linnaeus: I have cared for you, guided you all your life, and now you condescend to me?
+Linnaeus: Your selfishness has led this kingdom to ruin, and brought death and destruction to our door.
+Linnaeus: You should be begging me for mercy, wretch!
+-> Defend yourself
+    <<jump DefendSelf>>
+-> Ignore
+ <<jump Ignore>>
+===
+
+title: DefendSelf
+position: -625,-1147
+---
+///Neutral
+Imeris: Any suffering we endure has been at the hands of the Court. All I have done is try to escape their grasp.
+Imeris: Would you rather we all live subjugated for eternity? Do you think that endless torment is better than freedom, however fleeting?
+Imeris: Is that what you have been “guiding” me to believe?
+Linnaeus: What freedom do you speak of? We are not free. I have lost everything.
+Linnaeus: All I see before me is a lost, deluded fool who thinks they are above consequence. I shall correct that myself.
+
+-> Flinch
+    <<jump Flinch>>
+-> Taunt
+ <<jump Taunt>>
+===
+
+title: Ignore
+position: -1031,-1129
+---
+///-1 heart
+<<takeDamage Heart>>
+You feel a trickle of cold guilt settle in your stomach and look away, saying nothing. Linnaeus laughs cruelly.
+Linnaeus: Oh, nothing to say now? Have you realized your mistake at last? 
+Linnaeus: Poor, deluded fool. Thinking you are beyond consequence. 
+Linnaeus: I shall correct you myself.
+
+-> Flinch
+    <<jump Flinch>>
+-> Taunt
+ <<jump Taunt>>
+===
+
+title: Flinch
+position: -637,-909
+---
+///-1 heart
+<<takeDamage Heart>>
+: Linnaeus sees your stricken face. He smiles cruelly.
+Linnaeus: Are you frightened? You should be. 
+Linnaeus: Even if you make it out of this room, you'll never outrun your sin.
+Linnaeus: It will follow you forever, like the very wings upon your back. 
+
+
+<<jump ROUND1END>>
+===
+
+title: Taunt
+position: -1026,-919
+---
+///Neutral
+: You laugh derisively.
+Imeris: Your role has softened you, Father.
+Imeris: You are frail and weak with the comforts of your life.
+Imeris: You will not be able to hold me back. Stand aside.
+Linnaeus snarls.
+Linnaeus: Curb your tongue, child.
+Linnaeus: Or I shall cut it out.
+
+
+<<jump ROUND1END>>
+===
+
+
+title: Pacify
+position: -39,-1351
+---
+///Neutral
+Imeris: Why do you despair, Father? 
+Imeris: I have done naught but follow Our Lady's word. Surely there is peace for us all at the end of Her path.
+Linnaeus laughs bitterly.
+Linnaeus: There is no way out of this, you fool. For any of us. 
+Linnaeus: But at least you have maintained some scrap of piety. I mustn't have failed so utterly, then.
+-> Insist
+    <<jump Insist>>
+-> Acquiesce
+ <<jump Acquiesce>>
+===
+
+title: Insist
+position: 98,-1178
+---
+///Neutral
+Imeris: Why do you not listen? Our Lady guides me; I mold myself in Her image!
+Imeris: My body is all the more holy for what I have done.
+Linnaeus is enraged.
+Linnaeus: Who are you to tell me what Our Lady wishes for us?
+Linnaeus: You do nothing but harm! Open your eyes to the truth! 
+
+-> Plead
+    <<jump Plead>>
+-> Renounce
+ <<jump Renounce>>
+===
+
+
+title: Acquiesce
+position: -234,-1160
+---
+///-1 heart
+<<takeDamage Heart>>
+Imeris: You may be right. Perhaps I only seek to pervert myself, at the expense of others. I never wished for any of this to happen.
+Imeris: But now that I have started, I cannot stop. I must let myself out of the shell of this body.
+Linnaeus: You admit your wrongdoing, and yet you persist? 
+Linnaeus: You are beyond help. The sickness of your mind cannot be cured.
+
+-> Plead
+    <<jump Plead>>
+-> Renounce
+ <<jump Renounce>>
+===
+
+title: Plead
+position: -260,-897
+---
+///-1 heart
+<<takeDamage Heart>>
+You cry out in frustration.
+Imeris: If I am so ill, if I have been so blind, then tell me, how was I supposed to live?
+Imeris: What did you want me to do?!
+Linnaeus levels you with a heavy gaze, eyes dark with contempt.
+Linnaeus: Bear it.
+
+ <<jump ROUND1END>>
+===
+
+title: Renounce
+position: 113,-912
+---
+///Neutral
+You let out a frustrated growl, and Linnaeus flinches.
+Imeris: Fine! Don’t listen!
+Imeris: If you wish to remain here, unchanged, and perish, then so be it. But I will not die with you.
+Linnaeus gathers himself quickly.
+Linnaeus: Yes, you won’t. You’ll die long before me, by my hand.
+
+ <<jump ROUND1END>>
+===
+
+
+title: ROUND1END
+position: -485,-341
+---
+<<declare $CurrentHealth = 0>>
+
+<<set $CurrentHealth = GetHealth()>>
+Imeris: ...
+
+<<if $CurrentHealth == 3.0>>
+    Your heart remains strong. Stay true.
+    <<jump ROUND2START>>
+
+<<endif>>
+
+<<if $CurrentHealth  == 2.0>>
+    Your heart is hurt. Stay strong.
+    <<jump ROUND2START>>
+<<endif>>
+<<if $CurrentHealth == 1.0>>
+    Your heart is near breaking. Take care.
+
+    <<jump ROUND2START>>
+
+<<endif>>
+===
+
+
+
+
+title: Heart3
+position: 91,-325
+---
+Your heart remains strong. Stay true.
+
+<<jump ROUND2START>>
+
+
+===
+
+title: Heart2
+position: 355,-320
+---
+Your heart is hurt. Stay strong.
+
+<<jump ROUND2START>>
+
+
+===
+title: Heart1
+position: -182,-323
+---
+Your heart is near breaking. Take care.
+
+<<jump ROUND2START>>
+
+
+===
+
+title: ROUND2START
+position: -498,59
+---
+Linnaeus: I will be kind to you one last time, child.
+Linnaeus: This is your final chance to leave with your life.
+
+-> Threaten
+    <<jump Threaten>>
+-> Plead
+    <<jump Plead2>>
+-> Tempt
+    <<jump Tempt>>
+-> Dagger
+    <<jump Dagger>>
+
 ===
