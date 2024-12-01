@@ -4,6 +4,7 @@ position: -462,-1568
 ---
 ///has the player attacked lin?
 <<declare $AttackLin = false>>
+<<declare $CurrentHealth = 3>>
 Linnaeus: Do you have anything to say for yourself?
 Imeris: ...
 -> Reason
@@ -323,10 +324,6 @@ Linnaeus: Yes, you won’t. You’ll die long before me, by my hand.
 title: ROUND1END
 position: -485,-341
 ---
-<<declare $CurrentHealth = 0>>
-
-<<set $CurrentHealth = GetHealth()>>
-Imeris: ...
 
 <<if $CurrentHealth == 3.0>>
     Your heart remains strong. Stay true.
@@ -349,34 +346,6 @@ Imeris: ...
 
 
 
-title: Heart3
-position: 91,-325
----
-Your heart remains strong. Stay true.
-
-<<jump ROUND2START>>
-
-
-===
-
-title: Heart2
-position: 355,-320
----
-Your heart is hurt. Stay strong.
-
-<<jump ROUND2START>>
-
-
-===
-title: Heart1
-position: -182,-323
----
-Your heart is near breaking. Take care.
-
-<<jump ROUND2START>>
-
-
-===
 
 title: ROUND2START
 position: -498,59

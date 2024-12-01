@@ -7,7 +7,7 @@ using Yarn;
 public class Heart : MonoBehaviour
 {
     public float health = 3;
-    
+    public InMemoryVariableStorage variableStorage;
     public Color color1 = new Color(1, 0, 0);
     public Color color2 = new Color(1, 0.5f, 0);
     public Color color3 = new Color(1, 1, 0);
@@ -64,7 +64,7 @@ public class Heart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        variableStorage.SetValue("$currentHealth", health);
         Renderer rend = GetComponent<Renderer>();
         if (rend != null)
         {
@@ -75,7 +75,7 @@ public class Heart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        variableStorage.SetValue("$currentHealth", health);
         if (Input.GetKeyDown(KeyCode.Space))
         {
             takeDamage();
