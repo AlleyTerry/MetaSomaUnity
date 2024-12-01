@@ -8,9 +8,20 @@ using Yarn;
 public class VariableHolder : MonoBehaviour
 {
     public static VariableHolder instance;
-    public float health = 3;
-    
 
+    private GameObject heart;
+    public static float health = 3;
+
+    public float Health
+    {
+        get => health;
+        set
+        {
+            Health = value;
+            heart.GetComponent<Heart>().health = value;
+        }
+    }
+    
     private void Awake()
     {
         if (instance == null)
@@ -29,10 +40,11 @@ public class VariableHolder : MonoBehaviour
     {
         return health;
     }
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        heart = GameObject.Find("Heart");
     }
 
     // Update is called once per frame

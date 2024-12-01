@@ -6,6 +6,7 @@ using Yarn;
 
 public class Heart : MonoBehaviour
 {
+    public float health = 3;
     
     public Color color1 = new Color(1, 0, 0);
     public Color color2 = new Color(1, 0.5f, 0);
@@ -18,16 +19,16 @@ public class Heart : MonoBehaviour
         Renderer rend = GetComponent<Renderer>();
         if (rend != null)
         {
-            VariableHolder.instance.health--;
-            if (VariableHolder.instance.health == 2)
+            health--;
+            if (health == 2)
             {
                 rend.material.color = color2;
             }
-            else if (VariableHolder.instance.health == 1)
+            else if (health == 1)
             {
                 rend.material.color = color3;
             }
-            else if (VariableHolder.instance.health == 0)
+            else if (health == 0)
             {
                 rend.material.color = Color.black;
                 Debug.Log("u ded");
@@ -41,16 +42,16 @@ public class Heart : MonoBehaviour
         Renderer rend = GetComponent<Renderer>();
         if (rend != null)
         {
-            VariableHolder.instance.health++;
-            if (VariableHolder.instance.health == 2)
+            health++;
+            if (health == 2)
             {
                 rend.material.color = color2;
             }
-            else if (VariableHolder.instance.health == 1)
+            else if (health == 1)
             {
                 rend.material.color = color3;
             }
-            else if (VariableHolder.instance.health == 3)
+            else if (health == 3)
             {
                 rend.material.color = color1;
                 Debug.Log("u fully healed");
@@ -80,14 +81,6 @@ public class Heart : MonoBehaviour
             takeDamage();
         }
 
-        if (VariableHolder.instance.health <= 0)
-        {
-            VariableHolder.instance.health = 0;
-        }
-
-        if (VariableHolder.instance.health >= 3)
-        {
-            VariableHolder.instance.health = 3;
-        }
+        health = Mathf.Clamp(health, 0, 3);
     }
 }
