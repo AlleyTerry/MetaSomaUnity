@@ -38,6 +38,9 @@ namespace Yarn.Unity
 
         // The line we saw most recently.
         LocalizedLine lastSeenLine;
+        
+        // Current selected option index
+        private int currentSelectedIndex = 0;
 
         public void Start()
         {
@@ -50,6 +53,65 @@ namespace Yarn.Unity
         {
             canvasGroup = GetComponentInParent<CanvasGroup>();
         }
+        
+        private void Update()
+        {
+            // Check for arrow keys to navigate between options
+            if (canvasGroup.interactable)
+            {
+                if (Input.GetKeyDown(KeyCode.UpArrow) && optionViews.Count > 1 && optionViews[1].gameObject.activeSelf && currentSelectedIndex != 1)
+                {
+                    ChangeSelection(1); // Index 1 is mapped to 'up' option
+                }
+                else if (Input.GetKeyDown(KeyCode.DownArrow) && optionViews.Count > 3 && optionViews[3].gameObject.activeSelf && currentSelectedIndex != 3)
+                {
+                    ChangeSelection(3); // Index 3 is mapped to 'down' option
+                }
+                else if (Input.GetKeyDown(KeyCode.LeftArrow) && optionViews.Count > 2 && optionViews[2].gameObject.activeSelf && currentSelectedIndex != 2)
+                {
+                    ChangeSelection(2); // Index 2 is mapped to 'left' option
+                }
+                else if (Input.GetKeyDown(KeyCode.RightArrow) && optionViews.Count > 0 && optionViews[0].gameObject.activeSelf && currentSelectedIndex != 0)
+                {
+                    ChangeSelection(0); // Index 0 is mapped to 'right' option
+                }
+                else if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    ConfirmSelection();
+                }
+            }
+        }
+        
+        private void ChangeSelection(int newIndex)
+        {
+            if (newIndex < 0 || 
+                newIndex >= optionViews.Count || 
+                !optionViews[newIndex].gameObject.activeSelf)
+            {
+                Debug.Log("Invalid selection index or inactive option, skipping selection change.");
+                return;
+            }
+            
+            if (newIndex >= 0 && newIndex < optionViews.Count)
+            {
+                // Deactivate the current option
+                //DeselectOption(currentSelectedIndex);
+
+                // Update the selected index
+                currentSelectedIndex = newIndex;
+
+                // Activate the new option
+                optionViews[currentSelectedIndex].Select();
+                // Update Unity EventSystem's current selection to avoid conflict
+                UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(optionViews[currentSelectedIndex].gameObject, null);
+            }
+        }
+
+        private void ConfirmSelection()
+        {
+            var selectedOption = optionViews[currentSelectedIndex].Option;
+            OptionViewWasSelected(selectedOption);
+        }
 
         public override void RunLine(LocalizedLine dialogueLine, Action onDialogueLineFinished)
         {
@@ -61,6 +123,8 @@ namespace Yarn.Unity
         }
         public override void RunOptions(DialogueOption[] dialogueOptions, Action<int> onOptionSelected)
         {
+            canvasGroup.blocksRaycasts = true;
+            
             // If we don't already have enough option views, create more
             while (dialogueOptions.Length > optionViews.Count)
             {
@@ -147,6 +211,9 @@ namespace Yarn.Unity
 
             // Fade it all in
             StartCoroutine(Effects.FadeAlpha(canvasGroup, 0, 1, fadeTime));
+            
+            // Prevent mouse clicks from changing selection
+            UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(optionViews[currentSelectedIndex].gameObject);
 
             /// <summary>
             /// Creates and configures a new <see cref="OptionView"/>, and adds
@@ -163,19 +230,19 @@ namespace Yarn.Unity
 
                 return optionView;
             }
+        }
+        
+        /// <summary>
+        /// Called by <see cref="OptionView"/> objects.
+        /// </summary>
+        void OptionViewWasSelected(DialogueOption option)
+        {
+            StartCoroutine(OptionViewWasSelectedInternal(option));
 
-            /// <summary>
-            /// Called by <see cref="OptionView"/> objects.
-            /// </summary>
-            void OptionViewWasSelected(DialogueOption option)
+            IEnumerator OptionViewWasSelectedInternal(DialogueOption selectedOption)
             {
-                StartCoroutine(OptionViewWasSelectedInternal(option));
-
-                IEnumerator OptionViewWasSelectedInternal(DialogueOption selectedOption)
-                {
-                    yield return StartCoroutine(FadeAndDisableOptionViews(canvasGroup, 1, 0, fadeTime));
-                    OnOptionSelected(selectedOption.DialogueOptionID);
-                }
+                yield return StartCoroutine(FadeAndDisableOptionViews(canvasGroup, 1, 0, fadeTime));
+                OnOptionSelected(selectedOption.DialogueOptionID);
             }
         }
 
