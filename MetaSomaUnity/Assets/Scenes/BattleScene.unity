@@ -557,6 +557,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d5c380a41566a4cb067d35402d4e97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &185905003 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3831113771892455813, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
+    type: 3}
+  m_PrefabInstance: {fileID: 185904992}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185904993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610c541718d694070a21327d1ae62e75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &310259347
 GameObject:
   m_ObjectHideFlags: 0
@@ -1089,6 +1101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+  variableStorage: {fileID: 185905003}
   color1: {r: 1, g: 0, b: 0, a: 1}
   color2: {r: 1, g: 0.5, b: 0, a: 1}
   color3: {r: 1, g: 1, b: 0, a: 1}
@@ -1191,7 +1204,7 @@ GameObject:
   - component: {fileID: 863266272}
   - component: {fileID: 863266271}
   m_Layer: 0
-  m_Name: Imeris
+  m_Name: Linnaeus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1280,7 +1293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e94f9d9f6e80f984f94976b04551b1f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Imeris
+  characterName: Linnaeus
   messageBubbleOffset: {x: 0, y: 3, z: 0}
   offsetUsesRotation: 0
 --- !u!4 &863266275
@@ -2461,7 +2474,7 @@ GameObject:
   - component: {fileID: 1854505619}
   - component: {fileID: 1854505618}
   m_Layer: 0
-  m_Name: Linneaus
+  m_Name: Imeris
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2550,7 +2563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e94f9d9f6e80f984f94976b04551b1f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Linnaeus
+  characterName: Imeris
   messageBubbleOffset: {x: 0, y: 3, z: 0}
   offsetUsesRotation: 0
 --- !u!4 &1854505622
