@@ -6,6 +6,7 @@ TagManager:
   tags:
   - InteractableItem
   - StartHungerMeter
+  - SpeakerNameGetter
   layers:
   - Default
   - TransparentFX

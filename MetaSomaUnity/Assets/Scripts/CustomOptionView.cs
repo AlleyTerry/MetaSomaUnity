@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 
-public class CustomizedOptionView : OptionView
+public class CustomOptionView : OptionView
 {
     public void Deselect()
     {

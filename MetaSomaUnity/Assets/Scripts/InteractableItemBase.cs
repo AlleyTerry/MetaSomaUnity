@@ -25,11 +25,13 @@ public class InteractableItemBase : MonoBehaviour
     public string objName;
     public InteractionType interactionType;
     
-    public DialogueRunner dialogueRunner;
+    private DialogueRunner dialogueRunner;
  
     // Start is called before the first frame update
     void Start()
     {
+        dialogueRunner = GameManager.instance.dialogueRunner;
+        
         visualCue = transform.GetChild(0).gameObject;
         visualCue.SetActive(false);
         
