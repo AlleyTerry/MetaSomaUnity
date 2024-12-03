@@ -34,7 +34,7 @@ public class ImerisMovement : MonoBehaviour
     private LayerMask groundLayer;
     
     [SerializeField] private bool isGrounded;
-    private float groundCheckRadius = 0.3f;
+    [SerializeField] private float groundCheckRadius = 0.05f;
     
     public float jumpForce = 5f;
     private bool hasDoubleJumped = false;
@@ -168,6 +168,7 @@ public class ImerisMovement : MonoBehaviour
             // Apply jump force on Y axis
             rb.velocity = new Vector3(rb.velocity.x, jumpForce * currentState.GetJumpHeight(), 0f);  
             isJumping = true;
+            hasDoubleJumped = false;
             Debug.Log("IsJumping");
         }
         // Double jump
@@ -197,7 +198,7 @@ public class ImerisMovement : MonoBehaviour
         if (Input.GetButtonUp("Jump"))
         {
             isJumping = false;
-            hasDoubleJumped = false;
+            /*hasDoubleJumped = false;*/
         }
     }
 
@@ -219,6 +220,7 @@ public class ImerisMovement : MonoBehaviour
         {
             rb.velocity = new Vector3(rb.velocity.x, jumpForce * 1.15f, 0f);  // Apply jump force on Y axis
             isJumping = true;
+            hasDoubleJumped = false; // Reset double jump when grounded
         }
         else if (!isGrounded &&
                  Input.GetButton("Jump") &&
