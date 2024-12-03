@@ -116,7 +116,7 @@ public class ImerisMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         
         // Initialize the evolution state
-        currentState = new BeforeAnyEvolutionState(SubState.WetWings);
+        /*currentState = new BeforeAnyEvolutionState(SubState.WetWings);*/ // Commented out for testing purposes
     }
 
     // Update is called once per frame
