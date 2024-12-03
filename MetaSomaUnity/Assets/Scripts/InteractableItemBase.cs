@@ -41,7 +41,7 @@ public class InteractableItemBase : MonoBehaviour
     void Update()
     {
         if (isOverlapping &&
-            (Input.GetButtonDown("Interact") || Input.GetKeyDown(KeyCode.Return)))
+            Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Return))
         {
             Debug.Log("Interacting with " + this.GameObject().name);
             interactWithItem();

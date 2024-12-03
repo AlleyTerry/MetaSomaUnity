@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
     // HUNGER METER
     public int hungerMeter = 100;
     
+    // GAME STATE
+    public bool isInBattle = false;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -32,5 +35,17 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void FreezeControls()
+    {
+        isInBattle = true;
+        Time.timeScale = 0;
+    }
+    
+    public void ResumeControls()
+    {
+        isInBattle = false;
+        Time.timeScale = 1;
     }
 }
