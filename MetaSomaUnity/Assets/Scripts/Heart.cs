@@ -8,6 +8,10 @@ public class Heart : MonoBehaviour
 {
     public float health = 3;
     public InMemoryVariableStorage variableStorage;
+    public Sprite sprite1;
+    public Sprite sprite2;
+    public Sprite sprite3;
+    public Sprite sprite4;
     public Color color1 = new Color(1, 0, 0);
     public Color color2 = new Color(1, 0.5f, 0);
     public Color color3 = new Color(1, 1, 0);
@@ -16,21 +20,26 @@ public class Heart : MonoBehaviour
     [YarnCommand("takeDamage")]
     public void takeDamage()
     {
-        Renderer rend = GetComponent<Renderer>();
+        SpriteRenderer rend = GetComponent<SpriteRenderer>();
+        //Renderer rend = GetComponent<Renderer>();
         if (rend != null)
         {
             health--;
+            Debug.Log(health);
             if (health == 2)
             {
-                rend.material.color = color2;
+                rend.sprite = sprite2;
+                
             }
             else if (health == 1)
             {
-                rend.material.color = color3;
+                rend.sprite = sprite3;
+               
             }
             else if (health == 0)
             {
-                rend.material.color = Color.black;
+                rend.sprite = sprite4;
+              
                 Debug.Log("u ded");
             }
            
@@ -39,21 +48,24 @@ public class Heart : MonoBehaviour
     [YarnCommand("Heal")]
     public void Heal()
     {
-        Renderer rend = GetComponent<Renderer>();
+        SpriteRenderer rend = GetComponent<SpriteRenderer>();
+        //Renderer rend = GetComponent<Renderer>();
         if (rend != null)
         {
             health++;
             if (health == 2)
             {
-                rend.material.color = color2;
+                rend.sprite = sprite2;
+               
             }
             else if (health == 1)
             {
-                rend.material.color = color3;
+                rend.sprite = sprite3;
+               
             }
             else if (health == 3)
             {
-                rend.material.color = color1;
+                rend.sprite = sprite1;
                 Debug.Log("u fully healed");
             }
            
@@ -65,10 +77,10 @@ public class Heart : MonoBehaviour
     void Start()
     {
         variableStorage.SetValue("$currentHealth", health);
-        Renderer rend = GetComponent<Renderer>();
+        SpriteRenderer rend = GetComponent<SpriteRenderer>();
         if (rend != null)
         {
-            rend.material.color = color1;
+            rend.sprite = sprite1;
         }
     }
 
