@@ -462,6 +462,7 @@ MonoBehaviour:
   moveSpeed: 5
   groundCheck: {fileID: 1449346820}
   isGrounded: 1
+  groundCheckRadius: 0.05
   jumpForce: 5
   isJumping: 0
   jumpSlowdownFalling: 0.5
@@ -2096,7 +2097,7 @@ PrefabInstance:
     - target: {fileID: 2302286716038912046, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 650
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 2302286716038912046, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}

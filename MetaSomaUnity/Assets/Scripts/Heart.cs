@@ -12,9 +12,7 @@ public class Heart : MonoBehaviour
     public Sprite sprite2;
     public Sprite sprite3;
     public Sprite sprite4;
-    public Color color1 = new Color(1, 0, 0);
-    public Color color2 = new Color(1, 0.5f, 0);
-    public Color color3 = new Color(1, 1, 0);
+
     public DialogueRunner dialogueRunner;
 
     [YarnCommand("takeDamage")]
@@ -26,6 +24,7 @@ public class Heart : MonoBehaviour
         {
             health--;
             Debug.Log(health);
+            variableStorage.SetValue("$CurrentHealth", health);
             if (health == 2)
             {
                 rend.sprite = sprite2;
@@ -53,9 +52,11 @@ public class Heart : MonoBehaviour
         if (rend != null)
         {
             health++;
+            variableStorage.SetValue("$CurrentHealth", health);
             if (health == 2)
             {
                 rend.sprite = sprite2;
+                
                
             }
             else if (health == 1)
@@ -76,7 +77,7 @@ public class Heart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        variableStorage.SetValue("$currentHealth", health);
+        variableStorage.SetValue("$CurrentHealth", health);
         SpriteRenderer rend = GetComponent<SpriteRenderer>();
         if (rend != null)
         {
@@ -87,7 +88,7 @@ public class Heart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        variableStorage.SetValue("$currentHealth", health);
+        variableStorage.SetValue("$CurrentHealth", health);
         if (Input.GetKeyDown(KeyCode.Space))
         {
             takeDamage();

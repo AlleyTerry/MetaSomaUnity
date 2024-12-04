@@ -27,7 +27,7 @@ Imeris: Born into servitude, made into toys. Living just to suffer.
 Imeris: Blaming me will not save you. You merely continue to toil in the name of our cagers, long after they have left us.
 Linnaeus: I never suffered! I never toiled! I was a leader, an elite, appointed by Queen Andromeda herself!
 Linnaeus: And you took that from me!
-Linnaeus is enraged.
+Narrator: Linnaeus is enraged.
  -> Stand
     <<jump Stand>>
 -> Retreat
@@ -40,7 +40,7 @@ position: -1380,-1211
 <<Heal Heart>>
 Imeris: Yes. And now, whatever power you had over me is gone.
 Imeris: I am not afraid of you anymore.
-Linnaeus’s anger simmers down into a cold fury.
+Narrator: Linnaeus’s anger simmers down into a cold fury.
 Linnaeus: You were always so obedient… so weak.
 Linnaeus: What devilry has inspired such impudence in you, child? 
 -> Knowledge
@@ -55,7 +55,7 @@ position: -1736,-1195
 ---
 ///-1 heart
 <<takeDamage Heart>>
-: Linnaeus sees your hesitation. He smiles cruelly.
+Narrator: Linnaeus sees your hesitation. He smiles cruelly.
 Linnaeus: Are you frightened? Are you doubting yourself?
 Linnaeus: Good. You should be. 
 Linnaeus: Impudence doesn’t suit you, child. You’ve always been meek.
@@ -115,7 +115,7 @@ Imeris: I am not to blame for the neglect of the Court. If they have abandoned u
 Imeris: I am not a villain. I am not a monster. I am NOT sinful. 
 Imeris: You, of all people, do not get to say that to me. You are no better than they are.
 Imeris: I am only becoming who the Goddess made me to be, and I will not allow you to deceive me again.
-Linnaeus is enraged.
+Narrator: Linnaeus is enraged.
 Linnaeus: You could never begin to know Her will, wretch. 
 Linnaeus: Cease your heresy. Come quietly. Let your final act be obedient and good.
 
@@ -132,7 +132,7 @@ position: 560,-1251
 <<takeDamage Heart>>
 You imagine your few friends, your one comfort in the world, stomachs empty and eyes glazed over with the sheen of death. You remember the bodies in the kitchen. The bitten, molded-over bread clutched weakly in a thin hand. Unbidden, a sob escapes your throat. You feel yourself fall to your knees as tears run down your face.
 Imeris: ...I'm sorry.
-You cannot find any other words. Linnaeus looks at you with contempt, but also pity. He sighs deeply.
+Narrator: You cannot find any other words. Linnaeus looks at you with contempt, but also pity. He sighs deeply.
 Linnaeus: Poor misguided wretch. So deluded that you’ve fallen from grace and taken us all down with you.
 Linnaeus: I wish I could undo what you did… but even the Goddess would struggle with such a feat.
 Linnaeus: And as it stands, I cannot allow your sin to go unpunished.
@@ -203,7 +203,7 @@ position: -1031,-1129
 ---
 ///-1 heart
 <<takeDamage Heart>>
-You feel a trickle of cold guilt settle in your stomach and look away, saying nothing. Linnaeus laughs cruelly.
+Narrator: You feel a trickle of cold guilt settle in your stomach and look away, saying nothing. Linnaeus laughs cruelly.
 Linnaeus: Oh, nothing to say now? Have you realized your mistake at last? 
 Linnaeus: Poor, deluded fool. Thinking you are beyond consequence. 
 Linnaeus: I shall correct you myself.
@@ -219,7 +219,7 @@ position: -637,-909
 ---
 ///-1 heart
 <<takeDamage Heart>>
-: Linnaeus sees your stricken face. He smiles cruelly.
+Narrator: Linnaeus sees your stricken face. He smiles cruelly.
 Linnaeus: Are you frightened? You should be. 
 Linnaeus: Even if you make it out of this room, you'll never outrun your sin.
 Linnaeus: It will follow you forever, like the very wings upon your back. 
@@ -232,11 +232,11 @@ title: Taunt
 position: -1026,-919
 ---
 ///Neutral
-: You laugh derisively.
+Narrator: You laugh derisively.
 Imeris: Your role has softened you, Father.
 Imeris: You are frail and weak with the comforts of your life.
 Imeris: You will not be able to hold me back. Stand aside.
-Linnaeus snarls.
+Narrator: Linnaeus snarls.
 Linnaeus: Curb your tongue, child.
 Linnaeus: Or I shall cut it out.
 
@@ -251,7 +251,7 @@ position: -39,-1351
 ///Neutral
 Imeris: Why do you despair, Father? 
 Imeris: I have done naught but follow Our Lady's word. Surely there is peace for us all at the end of Her path.
-Linnaeus laughs bitterly.
+Narrator: Linnaeus laughs bitterly.
 Linnaeus: There is no way out of this, you fool. For any of us. 
 Linnaeus: But at least you have maintained some scrap of piety. I mustn't have failed so utterly, then.
 -> Insist
@@ -266,7 +266,7 @@ position: 98,-1178
 ///Neutral
 Imeris: Why do you not listen? Our Lady guides me; I mold myself in Her image!
 Imeris: My body is all the more holy for what I have done.
-Linnaeus is enraged.
+Narrator: Linnaeus is enraged.
 Linnaeus: Who are you to tell me what Our Lady wishes for us?
 Linnaeus: You do nothing but harm! Open your eyes to the truth! 
 
@@ -301,7 +301,7 @@ position: -260,-897
 You cry out in frustration.
 Imeris: If I am so ill, if I have been so blind, then tell me, how was I supposed to live?
 Imeris: What did you want me to do?!
-Linnaeus levels you with a heavy gaze, eyes dark with contempt.
+Narrator: Linnaeus levels you with a heavy gaze, eyes dark with contempt.
 Linnaeus: Bear it.
 
  <<jump ROUND1END>>
@@ -311,10 +311,10 @@ title: Renounce
 position: 113,-912
 ---
 ///Neutral
-You let out a frustrated growl, and Linnaeus flinches.
+Narrator: You let out a frustrated growl, and Linnaeus flinches.
 Imeris: Fine! Don’t listen!
 Imeris: If you wish to remain here, unchanged, and perish, then so be it. But I will not die with you.
-Linnaeus gathers himself quickly.
+Narrator: Linnaeus gathers himself quickly.
 Linnaeus: Yes, you won’t. You’ll die long before me, by my hand.
 
  <<jump ROUND1END>>
@@ -326,17 +326,17 @@ position: -485,-341
 ---
 
 <<if $CurrentHealth == 3.0>>
-    Your heart remains strong. Stay true.
+    Narrator: Your heart remains strong. Stay true.
     <<jump ROUND2START>>
 
 <<endif>>
 
 <<if $CurrentHealth  == 2.0>>
-    Your heart is hurt. Stay strong.
+    Narrator: Your heart is hurt. Stay strong.
     <<jump ROUND2START>>
 <<endif>>
 <<if $CurrentHealth == 1.0>>
-    Your heart is near breaking. Take care.
+    Narrator: Your heart is near breaking. Take care.
 
     <<jump ROUND2START>>
 
@@ -373,7 +373,7 @@ position: -1343,93
 Imeris: Are you sure you wish to provoke me this way, Father?
 Imeris: You say I killed the queen, and her power greatly surpassed yours, did it not?
 Imeris: I don’t think you know what you’re starting.
-Linnaeus is taken aback. He scowls darkly.
+Narrator: Linnaeus is taken aback. He scowls darkly.
 Linnaeus: Do not condescend to me. Your arrogance will undo you.
 
 
@@ -414,10 +414,10 @@ title: Beg
 position: -773,70
 ---
 //-1 heart
-Your stomach growls loudly, and your resolve breaks.
+Narrator: Your stomach growls loudly, and your resolve breaks.
 Imeris: Please. Please, I am starving.
 Imeris: Allow me to pass. I beg you, Father.
-Linnaeus looks down on you.
+Narrator: Linnaeus looks down on you.
 Linnaeus: I pray Our Lady of Gold have mercy on you, child… But unfortunately, I shall not.
 
 
@@ -432,7 +432,7 @@ title: BreatheIn
 position: -918,286
 ---
 //Neutral
-You try to take a deep, steadying breath to gather yourself. It stutters on the way in and your heart is still pounding with desperation, but it is slower than before.
+Narrator: You try to take a deep, steadying breath to gather yourself. It stutters on the way in and your heart is still pounding with desperation, but it is slower than before.
 Imeris: Fine.
 Imeris: If I have to make my own way once more… If I have to go through you to do it, then so be it. 
 Linnaeus: I won’t let you take even one more step forward, beast!
@@ -444,9 +444,9 @@ title: HaveFaith
 position: -653,298
 ---
 //+1 heart
-You look to the mural of Mellonella, and the sight of it helps you take a steadying breath. Your heart calms and you are able to stand tall again.
+Narrator: You look to the mural of Mellonella, and the sight of it helps you take a steadying breath. Your heart calms and you are able to stand tall again.
 Imeris: That’s fine. I only ever needed her.
-Linnaeus grinds his teeth.
+Narrator: Linnaeus grinds his teeth.
 Linnaeus: Look upon her while you can, demon. Once I’m done with you, you’ll never feel her light again.
 
 
@@ -459,7 +459,7 @@ position: -130,71
 //Neutral
 Imeris: You rally so strongly against me, and yet you are hungry too, Father. Why do you resist your urges?
 Imeris: Would Our Lady not wish for you to live to worship Her, rather than join Her early?
-Linnaeus scoffs.
+Narrator: Linnaeus scoffs.
 Linnaeus: Our Lady is merciful, but she is also unforgiving.
 Linnaeus: You may have given in, but I shall not fail Her, no matter how you ply me. 
 
@@ -475,10 +475,10 @@ position: -259,262
 ---
 //neutral
 Imeris: I don’t think you’re that hard to convince.
-You take a step closer to Linnaeus, and he takes a step back, alarmed.
+Narrator: You take a step closer to Linnaeus, and he takes a step back, alarmed.
 Imeris: You put up a bold front, but deep down, you’re weaker than the rest of us, aren’t you? Used to better. 
 Imeris: I don’t think it’d take much “plying” at all. I think you may have already indulged.
-Linnaeus looks stricken. He stammers, and then grits his teeth.
+Narrator: Linnaeus looks stricken. He stammers, and then grits his teeth.
 Linnaeus: Silence, insolent child! 
 
 
@@ -490,11 +490,11 @@ title: Guilt
 position: 2,243
 ---
 //neutral
-You look closely at the bowls of food set out for the Goddess.
+Narrator: You look closely at the bowls of food set out for the Goddess.
 Imeris: There don’t seem to be many offerings left.
 Imeris: It seems you may have already indulged, Father.
 Imeris: How hypocritical of you.
-Linnaeus looks stricken. His expression morphs quickly between shame and denial.
+Narrator: Linnaeus looks stricken. His expression morphs quickly between shame and denial.
 Linnaeus: No, I- No! You know nothing!
 Linnaeus: I don’t want to hear another lie out of you!
 
@@ -510,8 +510,8 @@ position: 491,137
 ---
 //Neutral
 <<declare $hasDagger = true>>
-Words will do no good here. 
-You reach behind you and grip the dagger strapped to your back, holding it at the ready, though you cannot bring yourself to draw it yet.
+Narrator: Words will do no good here. 
+Narrator: You reach behind you and grip the dagger strapped to your back, holding it at the ready, though you cannot bring yourself to draw it yet.
 Linnaeus: Why do you stare at me in silence, child? 
 Linnaeus: Have all your clever words left you?
 Imeris: …
@@ -528,9 +528,9 @@ title: Goad
 position: 373,343
 ---
 //neutral
-Keeping your hand on the dagger, you speak. 
+Narrator: Keeping your hand on the dagger, you speak. 
 Imeris: Do you need me to fill your silences now too? Are you capable of doing nothing on your own?
-Linnaeus’s unease fades into anger once more.
+Narrator: Linnaeus’s unease fades into anger once more.
 Linnaeus: I don’t know why I expected anything different from you.
 Linnaeus: Since all that finds its way out of your mouth is insolence, I’ll simply shut it for you once and for all.
 
@@ -541,10 +541,10 @@ title: Bide
 position: 654,328
 ---
 //neutral
-You look closely at Linnaeus, trying to decide when to strike- if you should at all. The hand on the dagger trembles faintly.
-Your continued silence unnerves Linnaeus. 
+Narrator: You look closely at Linnaeus, trying to decide when to strike- if you should at all. The hand on the dagger trembles faintly.
+Narrator: Your continued silence unnerves Linnaeus. 
 Linnaeus: Well? Say something! Cease your leering! 
-You continue to stare, indecisive.
+Narrator: You continue to stare, indecisive.
 
 <<jump ROUND2END>>
 
@@ -556,17 +556,17 @@ position: -416,699
 ---
 
 <<if $CurrentHealth == 3.0>>
-    Your heart remains strong. Stay true.
+    Narrator: Your heart remains strong. Stay true.
     <<jump ROUND3START>>
 
 <<endif>>
 
 <<if $CurrentHealth  == 2.0>>
-    Your heart is hurt. Stay strong.
+    Narrator: Your heart is hurt. Stay strong.
     <<jump ROUND3START>>
 <<endif>>
 <<if $CurrentHealth == 1.0>>
-    Your heart is near breaking. Take care.
+    Narrator: Your heart is near breaking. Take care.
 
     <<jump ROUND3START>>
 
@@ -578,9 +578,9 @@ position: -416,699
 
 
 title: ROUND3START
-position: -383,1110
+position: -421,899
 ---
-Linnaeus bangs his fist into the wall beside him.
+Narrator: Linnaeus bangs his fist into the wall beside him.
 Linnaeus: My patience has run out!
 Linnaeus: Do you have any final words before I send you to meet our maker?! 
 
@@ -597,17 +597,17 @@ Linnaeus: Do you have any final words before I send you to meet our maker?!
 ===
 
 title: Scorn
-position: -383,1110
+position: -603,1220
 ---
 Imeris: Just these. 
 Imeris: You disgust me.
 Imeris: You sat fat and fed at the center of a web of lies, surrounded by those you led astray, and let us all suffer.
 Imeris: You deserve what has come to you.
 Imeris: Your damnation is your fault alone, Linnaeus.
-Linnaeus is mute with rage.
-He bares his teeth, eyes crazed, unable to draw out a single clever word in response.
-You fall into silence, satisfied.
-There is nothing more to say.
+Narrator: Linnaeus is mute with rage.
+Narrator: He bares his teeth, eyes crazed, unable to draw out a single clever word in response.
+Narrator: You fall into silence, satisfied.
+Narrator: There is nothing more to say.
 
 
 <<jump BATTLEEND>>
@@ -615,16 +615,16 @@ There is nothing more to say.
 ===
 
 title: Preach
-position: -383,1110
+position: -298,1166
 ---
 Imeris: Open your ears and listen to me, prideful man!
 Imeris: I found a way to make this body mine, and Our Lady herself showed me the way. I am not wrong for that.
 Imeris: If you do not want this as I wanted it, then so be it.
 Imeris: But please, understand. 
-Linnaeus stares at you in silence for a moment. He looks right through you, unseeing.
+Narrator: Linnaeus stares at you in silence for a moment. He looks right through you, unseeing.
 Linnaeus: I can't.
-Your final appeal falls on deaf ears.
-There is nothing more to say.
+Narrator: Your final appeal falls on deaf ears.
+Narrator: There is nothing more to say.
 
 
 <<jump BATTLEEND>>
@@ -632,12 +632,12 @@ There is nothing more to say.
 ===
 
 title: Pray
-position: -383,1110
+position: 34,1075
 ---
-You clasp your hands and look up at the mural of the Goddess beside you. When you lower your gaze, Linnaeus's furious eyes look back.
+Narrator: You clasp your hands and look up at the mural of the Goddess beside you. When you lower your gaze, Linnaeus's furious eyes look back.
 Linnaeus: Now you pray? Do you think it will save you?
-You close your eyes, lower your head, and begin to mumble your prayer. 
-Linnaeus snarls. 
+Narrator: You close your eyes, lower your head, and begin to mumble your prayer. 
+Narrator: Linnaeus snarls. 
 Imeris: O' Goddess…
 Imeris: Save my soul.
 
@@ -648,21 +648,21 @@ Imeris: Save my soul.
 ===
 
 title: Attack
-position: -383,1110
+position: -911,1109
 ---
 <<if $hasDagger ==true>>
-You clasp your hands and look up at the mural of the Goddess beside you. When you lower your gaze, Linnaeus's furious eyes look back.
+Narrator: You clasp your hands and look up at the mural of the Goddess beside you. When you lower your gaze, Linnaeus's furious eyes look back.
 Linnaeus: Now you pray? Do you think it will save you?
-You close your eyes, lower your head, and begin to mumble your prayer. 
-Linnaeus snarls. 
+Narrator: You close your eyes, lower your head, and begin to mumble your prayer. 
+Narrator: Linnaeus snarls. 
 Imeris: O' Goddess…
 Imeris: Save my soul.
 
-You tighten your hold on the dagger and look at Linnaeus in silence, readying your attack. 
+Narrator: You tighten your hold on the dagger and look at Linnaeus in silence, readying your attack. 
 Linnaeus: What are you doing, child?
-Before he realizes, you rush forward and slash at him desperately . 
-You catch his arm as he moves to block his face, leaving a single cut before you retreat.
-Linnaeus looks down at his dripping blood and shakes with fury.
+Narrator: Before he realizes, you rush forward and slash at him desperately . 
+Narrator: You catch his arm as he moves to block his face, leaving a single cut before you retreat.
+Narrator: Linnaeus looks down at his dripping blood and shakes with fury.
 Linnaeus: You… You DARE to raise a hand against your Father?!
 
 
@@ -671,7 +671,105 @@ Linnaeus: You… You DARE to raise a hand against your Father?!
 <<endif>>
 
 <<if $hasDagger ==true>>
-with what?
+Narrator: with what?
 <<jump ROUND3START>>
 <<endif>>
+
+
+===
+
+title: BATTLEEND
+position: -418,1669
+---
+
+Linnaeus: Beast… fiend… monster… I have had ENOUGH!
+Linnaeus: Your wretched, unholy existence ends here.
+Narrator: (Imeris and Linnaeus disappear from the UI)
+Narrator: Linnaeus wrenches an incense holder off the wall and grips the heavy metal fixture with both hands. He turns his gaze upon you and rushes forward, arms raised to strike you.
+
+-> Defend yourself. 
+    <<jump YouFeel>>
+-> There is
+    <<jump YouFeel>>
+-> no other
+    <<jump YouFeel>>
+-> option.
+    <<jump YouFeel>>
+
+===
+
+title: YouFeel
+position: -418,1669
+---
+
+Narrator: (Short animation of Imeris striking Linnaeus with the dagger, and then the screen fades to black)
+Narrator: When you look up, your hands are wet with red, and Linnaeus's lifeless body lies before you. 
+Narrator: This tool of the Court, wielding words like a cudgel to keep you all in check. Preaching false truths to distract from the wondrous reality you've managed to grasp.
+Narrator: You look upon him, the holder of the first key to your cage, and feel... 
+
+
+
+-> Sadness
+    <<jump FeelHunger>>
+-> Contempt
+    <<jump FeelHunger>>
+-> Pity
+    <<jump FeelHunger>>
+-> Disgust
+    <<jump FeelHunger>>
+
+
+===
+
+title: FeelHunger
+position: -418,1669
+---
+
+Narrator: And Hunger.
+
+
+Narrator: His crimson blood flows like spilled wine and soaks into the scarlet carpet, and your tongue sits heavy in your dry mouth. 
+Narrator: Your throat burns. Your teeth ache. Your hands curl into your stomach.
+Narrator: You look upon the offerings he defended with his life: they are paltry. He threw himself away for mere scraps of bread, dry save for crusted spots of honey.
+Narrator: You look back at him. 
+Narrator: You realize what you’ve just imagined, and it makes your blood run cold with shame and horror. But it does not dull your hunger. 
+
+-> Eat the bread.
+    <<jump EatBread>>
+-> Sate your hunger.
+    <<jump SateHunger>>
+
+
+===
+
+
+title: EatBread
+position: -418,1669
+---
+
+Narrator: (Short series of images showing Imeris at the offering bowls, and then walking down the carpet towards the exit of the church.)
+Narrator: You gather all the offerings and eat them, one by one. 
+
+Narrator: Your mouth is no less dry, and your hunger is no less sharp, but for now, you are done. 
+
+Narrator: There is nothing more for you here.
+
+
+
+===
+title: SateHunger
+position: -418,1669
+---
+
+Narrator: You cannot bare it any longer.
+Narrator: (A short series of images showing Imeris cupping their hands and filling them with blood before bringing them to their mouth, then a shot of their face, red smeared on their mouth and chin, and single visible pupil blown wide.)
+Narrator: At the very first bite of still-warm flesh, you lose yourself.
+Narrator: Consumed whole by your own appetite, you feast. As your stomach fills, your heart empties. 
+Narrator: When you can control yourself once more, you look down at what you’ve left behind and gag. What you’ve already taken threatens to climb back up your throat and out onto the carpet. 
+Narrator: You cover your mouth and run. 
+Narrator: You leave what remains of Linnaeus, and a part of you is left behind with him.
+
+
+
+
 ===
