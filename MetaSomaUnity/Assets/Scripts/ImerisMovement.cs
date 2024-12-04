@@ -243,6 +243,8 @@ public class ImerisMovement : MonoBehaviour
         {
             GameManager.instance.isInBattle = true;
             GameManager.instance.currentLevelManager.BattleScene();
+            
+            other.gameObject.SetActive(false); // Disable the trigger
         }
     }
 }
