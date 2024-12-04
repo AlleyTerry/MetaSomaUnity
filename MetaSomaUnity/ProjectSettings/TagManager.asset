@@ -7,6 +7,8 @@ TagManager:
   - InteractableItem
   - StartHungerMeter
   - SpeakerNameGetter
+  - HUD
+  - BattleTrigger
   layers:
   - Default
   - TransparentFX

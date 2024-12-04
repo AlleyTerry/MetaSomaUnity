@@ -1,5 +1,99 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &874404209555109048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2410234974133910571}
+  - component: {fileID: 8848496755927253438}
+  m_Layer: 0
+  m_Name: LinneausWorldspacePlaceholder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2410234974133910571
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874404209555109048}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6353625056946509436}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8848496755927253438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874404209555109048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e94f9d9f6e80f984f94976b04551b1f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Linnaeus
+  messageBubbleOffset: {x: 3, y: 0, z: 0}
+  offsetUsesRotation: 0
+--- !u!1 &4217430520171522537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 614217985516070111}
+  - component: {fileID: 7585620475407551681}
+  m_Layer: 0
+  m_Name: NarratorWorldspacePlaceholder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &614217985516070111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4217430520171522537}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6353625056946509436}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7585620475407551681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4217430520171522537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e94f9d9f6e80f984f94976b04551b1f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Narrator
+  messageBubbleOffset: {x: 0, y: 0, z: 0}
+  offsetUsesRotation: 0
 --- !u!1 &5077686104644914960
 GameObject:
   m_ObjectHideFlags: 0
@@ -14,7 +108,7 @@ GameObject:
   - component: {fileID: 3477675203182481865}
   - component: {fileID: 2942047305390524912}
   m_Layer: 5
-  m_Name: Imeris
+  m_Name: ImerisAnimation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,7 +199,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5077686104644914960}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e94f9d9f6e80f984f94976b04551b1f6, type: 3}
   m_Name: 
@@ -255,6 +349,53 @@ MonoBehaviour:
   text: {fileID: 293094145652961848}
   showCharacterName: 0
   palette: {fileID: 0}
+--- !u!1 &5839806390819310446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1634554842633420231}
+  - component: {fileID: 1246260104906682250}
+  m_Layer: 0
+  m_Name: ImerisWorldspacePlaceholder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1634554842633420231
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5839806390819310446}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6353625056946509436}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1246260104906682250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5839806390819310446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e94f9d9f6e80f984f94976b04551b1f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Imeris
+  messageBubbleOffset: {x: -3, y: 0, z: 0}
+  offsetUsesRotation: 0
 --- !u!1 &5886405413557187014
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,7 +658,7 @@ GameObject:
   - component: {fileID: 4022853171427446424}
   - component: {fileID: 8052562591296994928}
   m_Layer: 5
-  m_Name: Linneaus
+  m_Name: LinneausAnimation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -608,7 +749,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8043952759771539022}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e94f9d9f6e80f984f94976b04551b1f6, type: 3}
   m_Name: 
@@ -727,6 +868,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 3579681405068720530, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
         type: 3}
+      propertyPath: startAutomatically
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579681405068720530, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
+        type: 3}
       propertyPath: dialogueViews.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -754,6 +900,11 @@ PrefabInstance:
         type: 3}
       propertyPath: onCommand.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739197626111815070, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7778558434935992802, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
         type: 3}
@@ -990,6 +1141,18 @@ PrefabInstance:
     - {fileID: 3292657645895612461, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
     - {fileID: 7778558434935992802, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3183266951831634833, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
+        type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 1634554842633420231}
+    - targetCorrespondingSourceObject: {fileID: 3183266951831634833, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
+        type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 2410234974133910571}
+    - targetCorrespondingSourceObject: {fileID: 3183266951831634833, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
+        type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 614217985516070111}
     - targetCorrespondingSourceObject: {fileID: 7084386685998634907, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
         type: 3}
       insertIndex: -1
@@ -1100,10 +1263,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allCharacters:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  playerCharacter: {fileID: 0}
+  - {fileID: 1246260104906682250}
+  - {fileID: 8848496755927253438}
+  - {fileID: 7585620475407551681}
+  playerCharacter: {fileID: 7585620475407551681}
   canvas: {fileID: 5180806778242988147}
   canvasScaler: {fileID: 1816227594842715902}
   dialogueBubbleRect: {fileID: 2302286716038912046}
@@ -1120,3 +1283,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d5c380a41566a4cb067d35402d4e97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &6353625056946509436 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3183266951831634833, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8359138575190267373}
+  m_PrefabAsset: {fileID: 0}

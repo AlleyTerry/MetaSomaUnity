@@ -1,27 +1,38 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using Yarn;
-using Yarn.Unity;
 
-public class LevelManager_0 : MonoBehaviour
+public class LevelManager_0 : LevelManagerBase
 {
-    private DialogueRunner dialogueRunner;
+    // LINNEAUS
+    public GameObject linneausAnimation;
     
-    // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        dialogueRunner = GameManager.instance.dialogueRunner;
+        base.Start();
         
+        // LINNEAUS
+        linneausAnimation = dialogueRunner.gameObject.transform.GetChild(0).GetChild(3).gameObject;
+        linneausAnimation.SetActive(false);
         
+        // TRANSITION ANIMATION
+        viewportAnimator.Play("SmallViewport");
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void CutsScene()
     {
+        base.CutsScene();
+        linneausAnimation.SetActive(true); 
+    }
+    
+    public override void BattleScene()
+    {
+        base.BattleScene();
         
+        // ANIMATION
+        viewportAnimator.Play("SmallViewportTransition");
+        
+        // LINNEAUS
+        linneausAnimation.SetActive(true); // For now we don't really have the cutscene, will be commented out later
     }
 }

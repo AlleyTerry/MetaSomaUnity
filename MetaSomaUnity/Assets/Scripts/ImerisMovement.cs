@@ -126,8 +126,11 @@ public class ImerisMovement : MonoBehaviour
         isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayer);
 
         // Handle movement and jumping
-        Move();
-        JumpHandler();
+        if (!GameManager.instance.isInBattle)
+        {
+            Move();
+            JumpHandler();
+        }
     }
 
     private void LateUpdate()
@@ -201,47 +204,6 @@ public class ImerisMovement : MonoBehaviour
             /*hasDoubleJumped = false;*/
         }
     }
-
-    // Evolution 0 Jump
-    private void Evolution0Jump()
-    {
-        if (isGrounded &&
-            Input.GetButtonDown("Jump"))
-        {
-            rb.velocity = new Vector3(rb.velocity.x, jumpForce, 0f);  // Apply jump force on Y axis
-        }
-    }
-    
-    // Evolution 1 Jump
-    private void Evolution1Jump()
-    {
-        if (isGrounded &&
-            Input.GetButtonDown("Jump"))
-        {
-            rb.velocity = new Vector3(rb.velocity.x, jumpForce * 1.15f, 0f);  // Apply jump force on Y axis
-            isJumping = true;
-            hasDoubleJumped = false; // Reset double jump when grounded
-        }
-        else if (!isGrounded &&
-                 Input.GetButton("Jump") &&
-                 isJumping &&
-                 rb.velocity.y < 0)
-        {
-            // Apply slow fall effect when falling and holding jump
-            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y * jumpSlowdownFalling, 0f);  // Slow down the falling speed
-        }
-
-        if (Input.GetButtonUp("Jump"))
-        {
-            isJumping = false;
-        }
-    }
-    
-    // Fully evolved jump
-    private void Evolution2Jump()
-    {
-        
-    }
     
     // Draw the gizmo for ground detection in the scene view
     private void OnDrawGizmos()
@@ -271,6 +233,16 @@ public class ImerisMovement : MonoBehaviour
         {
             noLEvolvedFinalState.SetSubState(newSubState);
             Debug.Log("SubState changed to: " + newSubState);
+        }
+    }
+    
+    // GET INTO BATTLE
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("BattleTrigger"))
+        {
+            GameManager.instance.isInBattle = true;
+            GameManager.instance.currentLevelManager.BattleScene();
         }
     }
 }

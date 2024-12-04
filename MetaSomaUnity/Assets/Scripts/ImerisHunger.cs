@@ -82,9 +82,22 @@ public class ImerisHunger : MonoBehaviour
         {
             isHungerMeterTriggered = true;
             
-            InvokeRepeating(nameof(ReduceHunger), 0.5f, 10f);
+            // Start reducing hunger
+            ResumeHungerMeter();
             Destroy(other.gameObject); // Destroy the object, preventing from re-triggering
         }
+    }
+    
+    public void PauseHungerMeter()
+    {
+        isHungerMeterTriggered = false;
+        CancelInvoke(nameof(ReduceHunger));
+    }
+    
+    public void ResumeHungerMeter()
+    {
+        isHungerMeterTriggered = true;
+        InvokeRepeating(nameof(ReduceHunger), 0.5f, 10f);
     }
     
     public void ReduceHunger()

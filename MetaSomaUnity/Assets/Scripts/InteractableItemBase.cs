@@ -25,7 +25,7 @@ public class InteractableItemBase : MonoBehaviour
     public string objName;
     public InteractionType interactionType;
     
-    private DialogueRunner dialogueRunner;
+    [SerializeField] private DialogueRunner dialogueRunner;
  
     // Start is called before the first frame update
     void Start()

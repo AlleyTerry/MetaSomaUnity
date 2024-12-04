@@ -23,6 +23,12 @@ public class GameManager : MonoBehaviour
         }
     }
     
+    // HUD
+    public GameObject HUD;
+    
+    // LEVEL MANAGER
+    public LevelManagerBase currentLevelManager;
+    
     // HUNGER METER
     public int hungerMeter = 100;
     
@@ -43,6 +49,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // HUD
+        HUD = GameObject.FindWithTag("HUD");
+        
         // SETUP DIALOGUE RUNNER
         dialogueRunner = FindObjectOfType<DialogueRunner>();
         
@@ -51,6 +60,13 @@ public class GameManager : MonoBehaviour
         
         // SETUP DIALOGUE TEXT
         dialogueTextBox = dialogueRunner.dialogueViews[0].gameObject.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
+        
+        // SETUP LEVEL MANAGERS
+        if (currentLevelManager == null)
+        {
+            currentLevelManager = GetComponent<LevelManager_0>();
+            currentLevelManager.cutSceneDialogueNode = "Battle1Dialogue";
+        }
     }
 
     // Update is called once per frame
