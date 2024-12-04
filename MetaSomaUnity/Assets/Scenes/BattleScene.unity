@@ -2685,7 +2685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Narrator
-  messageBubbleOffset: {x: 0, y: 3, z: 0}
+  messageBubbleOffset: {x: 0, y: 0, z: 0}
   offsetUsesRotation: 0
 --- !u!4 &1875817530
 Transform:
