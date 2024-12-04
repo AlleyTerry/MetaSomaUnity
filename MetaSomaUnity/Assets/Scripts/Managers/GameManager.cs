@@ -100,9 +100,10 @@ public class GameManager : MonoBehaviour
                     characterName.GetComponent<TextMeshProUGUI>().alignment = TextAlignmentOptions.Right;
                     dialogueTextBox.alignment = TextAlignmentOptions.Right;
                     break;
-                default:
+                case "Narrator":
                     Debug.Log("Narrator is speaking");
                     characterName.GetComponent<TextMeshProUGUI>().alignment = TextAlignmentOptions.Center;
+                    characterName.GetComponent<TextMeshProUGUI>().color = new Color(255, 255, 255, 0);
                     dialogueTextBox.alignment = TextAlignmentOptions.Center;
                     break;
             }
