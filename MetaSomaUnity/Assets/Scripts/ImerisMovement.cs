@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Yarn.Unity;
 
 public class ImerisMovement : MonoBehaviour
 {
@@ -246,5 +247,13 @@ public class ImerisMovement : MonoBehaviour
             
             other.gameObject.SetActive(false); // Disable the trigger
         }
+    }
+    
+    // EXIT BATTLE
+    [YarnCommand("ExitBattle")]
+    public void ExitBattle()
+    {
+        Debug.Log("Exiting battle...");
+        GameManager.instance.isInBattle = false;
     }
 }
