@@ -754,9 +754,10 @@ Narrator: Your mouth is no less dry, and your hunger is no less sharp, but for n
 
 Narrator: There is nothing more for you here.
 
-
-
+<<ExitBattle imerisagain>>
 ===
+
+
 title: SateHunger
 position: -418,1669
 ---
@@ -769,7 +770,5 @@ Narrator: When you can control yourself once more, you look down at what you’v
 Narrator: You cover your mouth and run. 
 Narrator: You leave what remains of Linnaeus, and a part of you is left behind with him.
 
-
-
-
+<<ExitBattle imerisagain>>
 ===

@@ -109,11 +109,13 @@ public class GameManager : MonoBehaviour
                 case "Imeris":
                     Debug.Log("Imeris is speaking");
                     characterName.GetComponent<TextMeshProUGUI>().alignment = TextAlignmentOptions.Left;
+                    characterName.GetComponent<TextMeshProUGUI>().color = new Color(255, 255, 255, 255);
                     dialogueTextBox.alignment = TextAlignmentOptions.Left;
                     break;
                 case "Linnaeus":
                     Debug.Log("Linnaeus is speaking");
                     characterName.GetComponent<TextMeshProUGUI>().alignment = TextAlignmentOptions.Right;
+                    characterName.GetComponent<TextMeshProUGUI>().color = new Color(255, 255, 255, 255);
                     dialogueTextBox.alignment = TextAlignmentOptions.Right;
                     break;
                 case "Narrator":
