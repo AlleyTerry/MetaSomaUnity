@@ -243,7 +243,8 @@ public class ImerisMovement : MonoBehaviour
         if (other.CompareTag("BattleTrigger"))
         {
             GameManager.instance.isInBattle = true;
-            GameManager.instance.currentLevelManager.BattleScene();
+            /*GameManager.instance.currentLevelManager.BattleScene();*/
+            GameManager.instance.currentLevelManager.CutsScene();
             
             other.gameObject.SetActive(false); // Disable the trigger
         }

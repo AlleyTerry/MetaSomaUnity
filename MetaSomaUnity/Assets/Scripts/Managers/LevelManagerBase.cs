@@ -48,6 +48,12 @@ public class LevelManagerBase : MonoBehaviour
     public virtual void CutsScene()
     {
         dialogueRunner.StartDialogue(cutSceneDialogueNode);
+        
+        // PAUSE HUNGER
+        GameObject.FindObjectOfType<ImerisHunger>().PauseHungerMeter();
+        
+        // FREEZE CONTROLS
+        Invoke(nameof(GameManager.instance.FreezeControls), 0.5f);
     }
     
     public virtual void BattleScene()

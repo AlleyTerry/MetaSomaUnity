@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Linnaeus
-  messageBubbleOffset: {x: 3, y: 0, z: 0}
+  messageBubbleOffset: {x: 8, y: 0, z: 0}
   offsetUsesRotation: 0
 --- !u!1 &4217430520171522537
 GameObject:
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Narrator
-  messageBubbleOffset: {x: 0, y: 0, z: 0}
+  messageBubbleOffset: {x: 6, y: -3.5, z: 0}
   offsetUsesRotation: 0
 --- !u!1 &5077686104644914960
 GameObject:
@@ -106,7 +106,6 @@ GameObject:
   - component: {fileID: 7181382692120412776}
   - component: {fileID: 466936136022809809}
   - component: {fileID: 3477675203182481865}
-  - component: {fileID: 2942047305390524912}
   m_Layer: 5
   m_Name: ImerisAnimation
   m_TagString: Untagged
@@ -192,21 +191,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2942047305390524912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5077686104644914960}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e94f9d9f6e80f984f94976b04551b1f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterName: Imeris
-  messageBubbleOffset: {x: 9.73, y: 0, z: 0}
-  offsetUsesRotation: 0
 --- !u!1 &5497459751031623787
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,7 +378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Imeris
-  messageBubbleOffset: {x: -3, y: 0, z: 0}
+  messageBubbleOffset: {x: 3.25, y: 0, z: 0}
   offsetUsesRotation: 0
 --- !u!1 &5886405413557187014
 GameObject:
@@ -656,7 +640,6 @@ GameObject:
   - component: {fileID: 3307308735345602273}
   - component: {fileID: 5202690319026316574}
   - component: {fileID: 4022853171427446424}
-  - component: {fileID: 8052562591296994928}
   m_Layer: 5
   m_Name: LinneausAnimation
   m_TagString: Untagged
@@ -742,21 +725,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8052562591296994928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8043952759771539022}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e94f9d9f6e80f984f94976b04551b1f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterName: Linnaeus
-  messageBubbleOffset: {x: 0, y: 0, z: 0}
-  offsetUsesRotation: 0
 --- !u!1001 &8359138575190267373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -858,7 +826,7 @@ PrefabInstance:
     - target: {fileID: 3579681405068720530, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
         type: 3}
       propertyPath: startNode
-      value: Battle1Dialogue
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3579681405068720530, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
         type: 3}
@@ -905,6 +873,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778558434911714087, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.8745098
       objectReference: {fileID: 0}
     - target: {fileID: 7778558434935992802, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
         type: 3}
@@ -1009,7 +982,7 @@ PrefabInstance:
     - target: {fileID: 7778558435068644803, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 350
+      value: 450
       objectReference: {fileID: 0}
     - target: {fileID: 7778558435068644803, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
         type: 3}
@@ -1029,6 +1002,16 @@ PrefabInstance:
     - target: {fileID: 7778558435068644804, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
         type: 3}
       propertyPath: m_ChildAlignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778558435068644804, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
+        type: 3}
+      propertyPath: m_ChildScaleWidth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778558435068644804, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
+        type: 3}
+      propertyPath: m_ChildScaleHeight
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7778558435068644805, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,

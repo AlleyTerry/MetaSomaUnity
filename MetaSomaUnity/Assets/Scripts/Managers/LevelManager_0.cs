@@ -17,12 +17,17 @@ public class LevelManager_0 : LevelManagerBase
         
         // TRANSITION ANIMATION
         viewportAnimator.Play("SmallViewport");
+        
+        // DEBUG
+        Debug.Log("LevelManager_0 Running");
     }
 
     public override void CutsScene()
     {
         base.CutsScene();
         linneausAnimation.SetActive(true); 
+        
+        Debug.Log("Cut Scene Started");
     }
     
     public override void BattleScene()
@@ -33,9 +38,11 @@ public class LevelManager_0 : LevelManagerBase
         viewportAnimator.Play("SmallViewportTransition");
         
         // LINNEAUS
-        linneausAnimation.SetActive(true); // For now we don't really have the cutscene, will be commented out later
+        //linneausAnimation.SetActive(true); // For now we don't really have the cutscene, will be commented out later
         
         Invoke(nameof(DisableAnimator), 0.65f);
+        
+        Debug.Log("Battle Scene Started");
     }
 
     public override void ExitBattleDialogue()
@@ -46,5 +53,8 @@ public class LevelManager_0 : LevelManagerBase
         viewportAnimator.Play("SmallViewportTransition_Reversed");
         
         linneausAnimation.SetActive(false);
+        
+        // TEMPPPPP
+        Destroy(GameObject.Find("OverworldLinnaeusDraft"));
     }
 }

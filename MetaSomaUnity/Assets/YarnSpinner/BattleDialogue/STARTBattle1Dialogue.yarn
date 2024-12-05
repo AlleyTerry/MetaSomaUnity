@@ -49,6 +49,6 @@ Linnaeus: And now you stand before me with that disgusting form and ask for my h
 Linnaeus: You repulsive creature. I’ll make you regret ever setting foot in this chapel.
 
 ///BATTLE BEGINS
-
+<<IntoBattleScene ManagerHolder>>
 ===
 

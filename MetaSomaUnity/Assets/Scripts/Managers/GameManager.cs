@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
         if (currentLevelManager == null)
         {
             currentLevelManager = GetComponent<LevelManager_0>();
-            currentLevelManager.cutSceneDialogueNode = "Battle1Dialogue";
+            /*currentLevelManager.cutSceneDialogueNode = "Battle1Dialogue";*/
         }
     }
 
@@ -77,6 +77,12 @@ public class GameManager : MonoBehaviour
         /*isDialogueRunning = dialogueRunner.IsDialogueRunning;*/
         
         
+    }
+    
+    [YarnCommand("IntoBattleScene")]
+    public void IntoBattleScene()
+    {
+        currentLevelManager.BattleScene();
     }
 
     private void LateUpdate()
@@ -112,19 +118,19 @@ public class GameManager : MonoBehaviour
                     Debug.Log("Imeris is speaking");
                     characterName.GetComponent<TextMeshProUGUI>().alignment = TextAlignmentOptions.Left;
                     characterName.GetComponent<TextMeshProUGUI>().color = new Color(255, 255, 255, 255);
-                    dialogueTextBox.alignment = TextAlignmentOptions.Left;
+                    dialogueTextBox.alignment = TextAlignmentOptions.TopLeft;
                     break;
                 case "Linnaeus":
                     Debug.Log("Linnaeus is speaking");
                     characterName.GetComponent<TextMeshProUGUI>().alignment = TextAlignmentOptions.Right;
                     characterName.GetComponent<TextMeshProUGUI>().color = new Color(255, 255, 255, 255);
-                    dialogueTextBox.alignment = TextAlignmentOptions.Right;
+                    dialogueTextBox.alignment = TextAlignmentOptions.TopRight;
                     break;
                 case "Narrator":
                     Debug.Log("Narrator is speaking");
                     characterName.GetComponent<TextMeshProUGUI>().alignment = TextAlignmentOptions.Center;
                     characterName.GetComponent<TextMeshProUGUI>().color = new Color(255, 255, 255, 0);
-                    dialogueTextBox.alignment = TextAlignmentOptions.Center;
+                    dialogueTextBox.alignment = TextAlignmentOptions.Top;
                     break;
             }
             
