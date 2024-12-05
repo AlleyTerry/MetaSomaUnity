@@ -685,7 +685,8 @@ position: -418,1669
 Linnaeus: Beast… fiend… monster… I have had ENOUGH!
 Linnaeus: Your wretched, unholy existence ends here.
 Narrator: (Imeris and Linnaeus disappear from the UI)
-Narrator: Linnaeus wrenches an incense holder off the wall and grips the heavy metal fixture with both hands. He turns his gaze upon you and rushes forward, arms raised to strike you.
+Narrator: Linnaeus wrenches an incense holder off the wall and grips the heavy metal fixture with both hands. 
+Narrator: He turns his gaze upon you and rushes forward, arms raised to strike you.
 
 -> Defend yourself. 
     <<jump YouFeel>>
@@ -704,7 +705,8 @@ position: -418,1669
 
 Narrator: (Short animation of Imeris striking Linnaeus with the dagger, and then the screen fades to black)
 Narrator: When you look up, your hands are wet with red, and Linnaeus's lifeless body lies before you. 
-Narrator: This tool of the Court, wielding words like a cudgel to keep you all in check. Preaching false truths to distract from the wondrous reality you've managed to grasp.
+Narrator: This tool of the Court, wielding words like a cudgel to keep you all in check. 
+Narrator: Preaching false truths to distract from the wondrous reality you've managed to grasp.
 Narrator: You look upon him, the holder of the first key to your cage, and feel... 
 
 
@@ -730,7 +732,8 @@ Narrator: And Hunger.
 
 Narrator: His crimson blood flows like spilled wine and soaks into the scarlet carpet, and your tongue sits heavy in your dry mouth. 
 Narrator: Your throat burns. Your teeth ache. Your hands curl into your stomach.
-Narrator: You look upon the offerings he defended with his life: they are paltry. He threw himself away for mere scraps of bread, dry save for crusted spots of honey.
+Narrator: You look upon the offerings he defended with his life: they are paltry. 
+Narrator: He threw himself away for mere scraps of bread, dry save for crusted spots of honey.
 Narrator: You look back at him. 
 Narrator: You realize what you’ve just imagined, and it makes your blood run cold with shame and horror. But it does not dull your hunger. 
 
@@ -754,7 +757,7 @@ Narrator: Your mouth is no less dry, and your hunger is no less sharp, but for n
 
 Narrator: There is nothing more for you here.
 
-<<ExitBattle imerisagain>>
+<<ExitBattle Imeris>>
 ===
 
 
@@ -763,12 +766,14 @@ position: -418,1669
 ---
 
 Narrator: You cannot bare it any longer.
-Narrator: (A short series of images showing Imeris cupping their hands and filling them with blood before bringing them to their mouth, then a shot of their face, red smeared on their mouth and chin, and single visible pupil blown wide.)
+Narrator: (A short series of images showing Imeris cupping their hands and filling them with blood before bringing them to their mouth,)
+Narrator: (then a shot of their face, red smeared on their mouth and chin, and single visible pupil blown wide.)
 Narrator: At the very first bite of still-warm flesh, you lose yourself.
 Narrator: Consumed whole by your own appetite, you feast. As your stomach fills, your heart empties. 
-Narrator: When you can control yourself once more, you look down at what you’ve left behind and gag. What you’ve already taken threatens to climb back up your throat and out onto the carpet. 
+Narrator: When you can control yourself once more, you look down at what you’ve left behind and gag. 
+Narrator: What you’ve already taken threatens to climb back up your throat and out onto the carpet. 
 Narrator: You cover your mouth and run. 
 Narrator: You leave what remains of Linnaeus, and a part of you is left behind with him.
 
-<<ExitBattle imerisagain>>
+<<ExitBattle Imeris>>
 ===
