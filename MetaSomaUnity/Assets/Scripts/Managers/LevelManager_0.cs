@@ -38,8 +38,13 @@ public class LevelManager_0 : LevelManagerBase
         Invoke(nameof(DisableAnimator), 0.65f);
     }
 
-    public void DisableAnimator()
+    public override void ExitBattleDialogue()
     {
-        viewportAnimator.enabled = false;
+        base.ExitBattleDialogue();
+        
+        // ANIMATION
+        viewportAnimator.Play("SmallViewportTransition_Reversed");
+        
+        linneausAnimation.SetActive(false);
     }
 }

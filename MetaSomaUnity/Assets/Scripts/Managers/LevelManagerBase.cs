@@ -66,8 +66,13 @@ public class LevelManagerBase : MonoBehaviour
         Invoke(nameof(GameManager.instance.FreezeControls), 0.5f);
     }
     
-    public void StopAnimationPlaying()
+    public void DisableAnimator()
     {
-        
+        viewportAnimator.enabled = false;
+    }
+
+    public virtual void ExitBattleDialogue()
+    {
+        viewportAnimator.enabled = true;
     }
 }

@@ -23,7 +23,7 @@ public class ImerisInteraction : ImerisMovement
     }
     
     // EXIT BATTLE
-    [YarnCommand("ExitBattle")]
+    //[YarnCommand("ExitBattle")]
     public void ExitBattle()
     {
         Debug.Log("Exiting battle...");

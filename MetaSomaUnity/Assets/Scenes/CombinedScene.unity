@@ -639,7 +639,7 @@ MonoBehaviour:
   jumpSlowdownFalling: 0.9
   playerAnimator: {fileID: 0}
   playerSpriteRender: {fileID: 0}
-  setStateButton: 0
+  setStateButton: 2
 --- !u!114 &313443247
 MonoBehaviour:
   m_ObjectHideFlags: 0

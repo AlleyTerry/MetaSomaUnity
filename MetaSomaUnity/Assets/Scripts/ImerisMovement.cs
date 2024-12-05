@@ -255,5 +255,7 @@ public class ImerisMovement : MonoBehaviour
     {
         Debug.Log("Exiting battle...");
         GameManager.instance.isInBattle = false;
+        
+        GameManager.instance.currentLevelManager.ExitBattleDialogue();
     }
 }

@@ -100,12 +100,12 @@ public class Heart : MonoBehaviour
 
         health = Mathf.Clamp(health, 0, 3);
         
-        // For testing
+        /*// For testing
         if (Input.GetKeyDown(KeyCode.P))
         {
             Debug.Log("P pressed");
             Image renderer = GetComponent<Image>();
             renderer.sprite = sprite3;
-        }
+        }*/
     }
 }
