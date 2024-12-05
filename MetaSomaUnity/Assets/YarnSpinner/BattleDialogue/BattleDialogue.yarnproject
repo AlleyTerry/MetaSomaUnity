@@ -1,7 +1,8 @@
 {
   "projectFileVersion": 2,
   "sourceFiles": [
-    "Battle1Dialogue.yarn"
+    "Battle1Dialogue.yarn",
+    "STARTBattle1Dialogue.yarn"
   ],
   "excludeFiles": [
     "**/*~/*"

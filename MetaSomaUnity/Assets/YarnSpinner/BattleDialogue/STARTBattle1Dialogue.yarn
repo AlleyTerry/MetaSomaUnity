@@ -1,0 +1,54 @@
+﻿title: STARTBattle1Dialogue
+tags:
+---
+Linnaeus: That door was barricaded for a reason, my child. 
+Linnaeus: I know what you are here for.
+Linnaeus:  But I shall not relinquish these offerings to Our Lady Mellonella even at the cost of my life.
+-> I hunger.
+    <<jump IHunger>>
+-> Please.
+    <<jump Please>>
+
+===
+title: IHunger
+tags:
+---
+Linnaeus: As do I, dear child. But this food does not belong to you.
+<<jump ListenFather>>
+===
+
+title: Please
+tags:
+---
+Linnaeus: ...I am sorry. But this food is not for you. 
+<<jump ListenFather>>
+===
+
+title: ListenFather
+tags:
+---
+
+Linnaeus: Our Golden Goddess demands your devotion, even in such hopeless circumstances.
+Linnaeus: Listen to your Father, child. I know what is best.
+Imeris: ...
+Linnaeus: You refuse?
+Linnaeus: Who is it that dares to be so disobedient?
+Linnaeus: ...!
+Linnaeus: Imeris… my most faithful disciple…
+Linnaeus: You, who kneeled before our altar longer than all others, have risen and walked out of the grace of Our Lady's light…
+Linnaeus: Is your hunger so great you have swallowed even your common sense in an effort to fill your empty belly?
+Linnaeus: Answer me! 
+Imeris: ...
+Linnaeus: !
+Linnaeus: Those wings... But where did you…?
+Linnaeus: Oh Goddess. The Queen.
+Linnaeus: It was you. You killed her, didn’t you?!
+Linnaeus: For this… to pervert the body bestowed upon you by our Goddess...
+Linnaeus: I’ve been left to die in a crumbling kingdom, because of your selfishness.
+Linnaeus: And now you stand before me with that disgusting form and ask for my help? 
+Linnaeus: You repulsive creature. I’ll make you regret ever setting foot in this chapel.
+
+///BATTLE BEGINS
+
+===
+
