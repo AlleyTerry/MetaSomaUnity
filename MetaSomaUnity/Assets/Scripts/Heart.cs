@@ -1,43 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Yarn.Unity;
 using Yarn;
 
 public class Heart : MonoBehaviour
 {
     public float health = 3;
-    public InMemoryVariableStorage variableStorage;
+    [SerializeField] private InMemoryVariableStorage variableStorage;
     public Sprite sprite1;
     public Sprite sprite2;
     public Sprite sprite3;
     public Sprite sprite4;
 
-    public DialogueRunner dialogueRunner;
+    private DialogueRunner dialogueRunner;
 
     [YarnCommand("takeDamage")]
     public void takeDamage()
     {
-        SpriteRenderer rend = GetComponent<SpriteRenderer>();
+        Image renderer = GetComponent<Image>();
         //Renderer rend = GetComponent<Renderer>();
-        if (rend != null)
+        if (renderer != null)
         {
             health--;
             Debug.Log(health);
             variableStorage.SetValue("$CurrentHealth", health);
             if (health == 2)
             {
-                rend.sprite = sprite2;
+                renderer.sprite = sprite2;
                 
             }
             else if (health == 1)
             {
-                rend.sprite = sprite3;
+                renderer.sprite = sprite3;
                
             }
             else if (health == 0)
             {
-                rend.sprite = sprite4;
+                renderer.sprite = sprite4;
               
                 Debug.Log("u ded");
             }
@@ -47,26 +48,26 @@ public class Heart : MonoBehaviour
     [YarnCommand("Heal")]
     public void Heal()
     {
-        SpriteRenderer rend = GetComponent<SpriteRenderer>();
+        Image renderer = GetComponent<Image>();
         //Renderer rend = GetComponent<Renderer>();
-        if (rend != null)
+        if (renderer != null)
         {
             health++;
             variableStorage.SetValue("$CurrentHealth", health);
             if (health == 2)
             {
-                rend.sprite = sprite2;
+                renderer.sprite = sprite2;
                 
                
             }
             else if (health == 1)
             {
-                rend.sprite = sprite3;
+                renderer.sprite = sprite3;
                
             }
             else if (health == 3)
             {
-                rend.sprite = sprite1;
+                renderer.sprite = sprite1;
                 Debug.Log("u fully healed");
             }
            
@@ -83,6 +84,9 @@ public class Heart : MonoBehaviour
         {
             rend.sprite = sprite1;
         }
+
+        dialogueRunner = GameManager.instance.dialogueRunner;
+        variableStorage = GameManager.instance.inMemoryVariableStorage;
     }
 
     // Update is called once per frame
@@ -95,5 +99,13 @@ public class Heart : MonoBehaviour
         }
 
         health = Mathf.Clamp(health, 0, 3);
+        
+        // For testing
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Debug.Log("P pressed");
+            Image renderer = GetComponent<Image>();
+            renderer.sprite = sprite3;
+        }
     }
 }

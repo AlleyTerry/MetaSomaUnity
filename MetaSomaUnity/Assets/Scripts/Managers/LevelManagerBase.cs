@@ -55,11 +55,6 @@ public class LevelManagerBase : MonoBehaviour
         Invoke(nameof(StartBattleDialogue), 0.5f);
     }
     
-    public void HeartView()
-    {
-        viewportAnimator.Play("HeartView");
-    }
-    
     private void StartBattleDialogue()
     {
         dialogueRunner.StartDialogue(battleDialogueNode);
@@ -69,5 +64,10 @@ public class LevelManagerBase : MonoBehaviour
         
         // FREEZE CONTROLS
         Invoke(nameof(GameManager.instance.FreezeControls), 0.5f);
+    }
+    
+    public void StopAnimationPlaying()
+    {
+        
     }
 }

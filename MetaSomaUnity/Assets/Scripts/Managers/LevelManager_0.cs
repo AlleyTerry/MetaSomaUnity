@@ -34,5 +34,12 @@ public class LevelManager_0 : LevelManagerBase
         
         // LINNEAUS
         linneausAnimation.SetActive(true); // For now we don't really have the cutscene, will be commented out later
+        
+        Invoke(nameof(DisableAnimator), 0.65f);
+    }
+
+    public void DisableAnimator()
+    {
+        viewportAnimator.enabled = false;
     }
 }

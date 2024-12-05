@@ -5,95 +5,30 @@ using Yarn.Unity;
 using Yarn;
 
 
-public class ImerisInteraction : MonoBehaviour
+public class ImerisInteraction : ImerisMovement
 {
-    // NOTE: THIS IS OLD VERSION OF INTERACTION SCRIPT,
-    //       NEW VERSION SEE -- InteractableItemBase.cs
+    // NOTE: THIS IS A SUBCLASS OF IMERIS MOVEMENT SCRIPT,
+    //       MOSTLY FOR IMERIS INTERACTION, INCLUDING GETTING IN/OUT OF THE BATTLE
     
-    // VARIABLES
-    [SerializeField] private bool isOverlapping = false;
-    public GameObject overlappedItem;
-    public DialogueRunner dialogueRunner;
-    
-    enum InteractionType
-    {
-        Dialogue,
-        Consume
-    }
-    
-    // ITEM BASE
-    private InteractableItemBase interactableItemBase;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (isOverlapping &&
-            (Input.GetButtonDown("Interact") || Input.GetKeyDown(KeyCode.E)))
-        {
-            Debug.Log("Interacting with " + overlappedItem.name);
-            interactWithItem();
-        }
-    }
-private void interactWithItem(InteractionType interaction)
-    {
-        if (interaction == InteractionType.Consume)
-        {
-            consumeItem();
-        }
-        else if (interaction == InteractionType.Dialogue)
-        {
-            interactWithItem();
-        }
-    }
-
-    private void consumeItem()
-    {
-        Destroy(overlappedItem);
-    }
-    
-    private void interactWithItem()
-    {
-        dialogueRunner.StartDialogue(overlappedItem.name);
-    }
-
-    // OVERLAPPING WITH INTERACTABLE ITEM
+    // GET INTO BATTLE
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("InteractableItem"))
+        if (other.CompareTag("BattleTrigger"))
         {
-            isOverlapping = true;
-            overlappedItem = other.gameObject;
-            interactableItemBase = overlappedItem.GetComponentInChildren<InteractableItemBase>();
-            interactableItemBase.visualCue.SetActive(true);
-        }
-    }
-    
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("InteractableItem"))
-        {
-            isOverlapping = true;
-            overlappedItem = other.gameObject;
-            interactableItemBase = overlappedItem.GetComponentInChildren<InteractableItemBase>();
-        }
-    }
-    
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("InteractableItem"))
-        {
-            isOverlapping = false;
-            overlappedItem = null;
+            GameManager.instance.isInBattle = true;
+            GameManager.instance.currentLevelManager.BattleScene();
             
-            // Set visual cue to false
-            interactableItemBase.visualCue.SetActive(false);
-            interactableItemBase = null;
+            other.gameObject.SetActive(false); // Disable the trigger
         }
+    }
+    
+    // EXIT BATTLE
+    [YarnCommand("ExitBattle")]
+    public void ExitBattle()
+    {
+        Debug.Log("Exiting battle...");
+        GameManager.instance.isInBattle = false;
+        
+        
     }
 }

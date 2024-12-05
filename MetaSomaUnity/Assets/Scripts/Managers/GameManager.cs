@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     // DIALOGUE RUNNER
     public DialogueRunner dialogueRunner;
     /*public bool isDialogueRunning = false;*/
+    public InMemoryVariableStorage inMemoryVariableStorage;
     
     // CURRENT CHARACTER NAME
     private GameObject characterName;
@@ -54,6 +55,7 @@ public class GameManager : MonoBehaviour
         
         // SETUP DIALOGUE RUNNER
         dialogueRunner = FindObjectOfType<DialogueRunner>();
+        inMemoryVariableStorage = FindObjectOfType<InMemoryVariableStorage>();
         
         // SETUP CHARACTER NAME
         characterName = GameObject.FindWithTag("SpeakerNameGetter");
