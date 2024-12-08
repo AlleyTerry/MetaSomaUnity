@@ -8,12 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/walkingScene.unity
     guid: 10432de3c3576d641a5500d38979c68a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/BattleScene.unity
     guid: 884d95e55fb1ef045bef03dd325ee31c
+  - enabled: 1
+    path: Assets/Scenes/Graybox.unity
+    guid: d8d0237d18316bd4396d0926d4408dbf
   - enabled: 1
     path: Assets/Scenes/CombinedScene.unity
     guid: 0616c802da19cda4792ff3dfad917f06
