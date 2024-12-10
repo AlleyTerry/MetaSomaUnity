@@ -23,8 +23,8 @@ public class LevelManager_0 : LevelManagerBase
         
         // INTRO DIALOGUE -- this is temp, will be removed later
         dialogueRunner.StartDialogue(introDialogueNode);
-        
-        GameManager.instance.FreezeControls();
+
+        GameManager.instance.isInBattle = true;
         
         // DEBUG
         Debug.Log("LevelManager_0 Running");

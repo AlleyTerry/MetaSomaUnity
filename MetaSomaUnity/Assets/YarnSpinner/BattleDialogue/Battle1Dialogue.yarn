@@ -7,6 +7,7 @@ position: -462,-1568
 <<declare $CurrentHealth = 3>>
 Linnaeus: Do you have anything to say for yourself?
 Imeris: ...
+Narrator: Tread carefully; your choices may hurt you. Protect your heart, and stay true to yourself.
 -> Reason
     <<jump Reason>>
 -> Apologize
