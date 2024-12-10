@@ -7,6 +7,9 @@ public class LevelManager_0 : LevelManagerBase
     // LINNEAUS
     public GameObject linneausAnimation;
     
+    // INTRO DIALOGUE NODE
+    public string introDialogueNode = "";
+    
     protected override void Start()
     {
         base.Start();
@@ -17,6 +20,11 @@ public class LevelManager_0 : LevelManagerBase
         
         // TRANSITION ANIMATION
         viewportAnimator.Play("SmallViewport");
+        
+        // INTRO DIALOGUE -- this is temp, will be removed later
+        dialogueRunner.StartDialogue(introDialogueNode);
+        
+        GameManager.instance.FreezeControls();
         
         // DEBUG
         Debug.Log("LevelManager_0 Running");

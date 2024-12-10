@@ -99,6 +99,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
     }
     
+    [YarnCommand("ResumeControls")]
     public void ResumeControls()
     {
         isInBattle = false;
