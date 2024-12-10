@@ -651,12 +651,6 @@ title: Attack
 position: -911,1109
 ---
 <<if $hasDagger ==true>>
-Narrator: You clasp your hands and look up at the mural of the Goddess beside you. When you lower your gaze, Linnaeus's furious eyes look back.
-Linnaeus: Now you pray? Do you think it will save you?
-Narrator: You close your eyes, lower your head, and begin to mumble your prayer. 
-Narrator: Linnaeus snarls. 
-Imeris: O' Goddess…
-Imeris: Save my soul.
 
 Narrator: You tighten your hold on the dagger and look at Linnaeus in silence, readying your attack. 
 Linnaeus: What are you doing, child?
