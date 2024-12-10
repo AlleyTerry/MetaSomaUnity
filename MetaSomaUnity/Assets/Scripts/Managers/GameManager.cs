@@ -54,8 +54,7 @@ public class GameManager : MonoBehaviour
         HUD = GameObject.FindWithTag("HUD");
         
         // SETUP DIALOGUE RUNNER
-        dialogueRunner = FindObjectOfType<DialogueRunner>();
-        inMemoryVariableStorage = FindObjectOfType<InMemoryVariableStorage>();
+        GetDialogueRunner();
         
         // SETUP CHARACTER NAME
         characterName = GameObject.FindWithTag("SpeakerNameGetter");
@@ -77,6 +76,13 @@ public class GameManager : MonoBehaviour
         /*isDialogueRunning = dialogueRunner.IsDialogueRunning;*/
         
         
+    }
+    
+    public void GetDialogueRunner()
+    {
+        // SETUP DIALOGUE RUNNER
+        dialogueRunner = FindObjectOfType<DialogueRunner>();
+        inMemoryVariableStorage = FindObjectOfType<InMemoryVariableStorage>();
     }
     
     [YarnCommand("IntoBattleScene")]

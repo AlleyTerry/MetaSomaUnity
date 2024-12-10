@@ -30,6 +30,7 @@ public class LevelManagerBase : MonoBehaviour
     protected virtual void Start()
     {
         // SETUP DIALOGUE RUNNER
+        GameManager.instance.GetDialogueRunner();
         dialogueRunner = GameManager.instance.dialogueRunner;
         
         // SETUP IMERIS

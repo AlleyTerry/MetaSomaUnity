@@ -2381,6 +2381,7 @@ MonoBehaviour:
   isBattleTriggered: 0
   viewportAnimator: {fileID: 0}
   linneausAnimation: {fileID: 0}
+  introDialogueNode: ChapelStart
 --- !u!1 &2006538012
 GameObject:
   m_ObjectHideFlags: 0
