@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using Yarn.Unity;
 
 public class GameManager : MonoBehaviour
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -27,6 +29,16 @@ public class GameManager : MonoBehaviour
     public GameObject HUD;
     
     // LEVEL MANAGER
+    private int currentLevelIndex = 0;
+    public int CurrentLevelIndex
+    {
+        get => currentLevelIndex;
+        set
+        {
+            currentLevelIndex = value;
+            HandleLevelChange();
+        }
+    }
     public LevelManagerBase currentLevelManager;
     
     // HUNGER METER
@@ -62,11 +74,18 @@ public class GameManager : MonoBehaviour
         // SETUP DIALOGUE TEXT
         dialogueTextBox = dialogueRunner.dialogueViews[0].gameObject.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
         
-        // SETUP LEVEL MANAGERS
-        if (currentLevelManager == null)
+        // SET UP LEVEL INDEX AND SET UP THE LEVEL MANAGER
+        CurrentLevelIndex = 0;
+        
+        // NOTE: THIS IS FOR PURE DEBUGGING PURPOSES, COMMENT OUT IN FINAL BUILD
+        switch (SceneManager.GetActiveScene().name)
         {
-            currentLevelManager = GetComponent<LevelManager_0>();
-            /*currentLevelManager.cutSceneDialogueNode = "Battle1Dialogue";*/
+            case "Graybox":
+                CurrentLevelIndex = 1;
+                break;
+            case "CombinedScene":
+                CurrentLevelIndex = 2;
+                break;
         }
     }
 
@@ -78,12 +97,39 @@ public class GameManager : MonoBehaviour
         
     }
     
+    private void HandleLevelChange()
+    {
+        GetDialogueRunner();
+        
+        // NOTE: TODO: THIS IS TEMP, NEED TO BE ITERATED THROUGH
+        switch (currentLevelIndex)
+        {
+            case 0:
+                break;
+            case 1:
+                gameObject.AddComponent<LevelManager_Graybox>();
+                GetLevelManager();
+                break;
+            case 2:
+                gameObject.AddComponent<LevelManager_0>();
+                GetLevelManager();
+                break;
+        }
+    }
+    
     public void GetDialogueRunner()
     {
         // SETUP DIALOGUE RUNNER
         dialogueRunner = FindObjectOfType<DialogueRunner>();
         inMemoryVariableStorage = FindObjectOfType<InMemoryVariableStorage>();
     }
+    
+    public void GetLevelManager()
+    {
+        // SETUP LEVEL MANAGER
+        currentLevelManager = FindObjectOfType<LevelManagerBase>();
+    }
+    
     
     [YarnCommand("IntoBattleScene")]
     public void IntoBattleScene()

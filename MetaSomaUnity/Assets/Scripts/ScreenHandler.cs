@@ -15,6 +15,7 @@ public class ScreenHandler : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             LoadScene();
+            GameManager.instance.GetLevelManager();
         }
     }
     

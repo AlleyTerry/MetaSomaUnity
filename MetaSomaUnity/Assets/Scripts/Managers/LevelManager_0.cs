@@ -8,11 +8,15 @@ public class LevelManager_0 : LevelManagerBase
     public GameObject linneausAnimation;
     
     // INTRO DIALOGUE NODE
-    public string introDialogueNode = "";
+    public string introDialogueNode = "ChapelStart";
     
     protected override void Start()
     {
         base.Start();
+        
+        // INIT
+        cutSceneDialogueNode = "STARTBattle1Dialogue";
+        battleDialogueNode = "Battle1Dialogue";
         
         // LINNEAUS
         linneausAnimation = dialogueRunner.gameObject.transform.GetChild(0).GetChild(3).gameObject;
@@ -23,7 +27,6 @@ public class LevelManager_0 : LevelManagerBase
         
         // INTRO DIALOGUE -- this is temp, will be removed later
         dialogueRunner.StartDialogue(introDialogueNode);
-
         GameManager.instance.isInBattle = true;
         
         // DEBUG
