@@ -93,6 +93,15 @@ public class Heart : MonoBehaviour
     {
         dialogueRunner = GameManager.instance.dialogueRunner;
         variableStorage = GameManager.instance.inMemoryVariableStorage;
+        
+        if (variableStorage == null)
+        {
+            Debug.LogError("variableStorage is null in SetupYarnVariables!");
+        }
+        else
+        {
+            Debug.Log("variableStorage successfully assigned in SetupYarnVariables.");
+        }
     }
     
     // Update is called once per frame

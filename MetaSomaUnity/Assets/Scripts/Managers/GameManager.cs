@@ -30,17 +30,13 @@ public class GameManager : MonoBehaviour
     public GameObject HUD;
     
     // LEVEL MANAGER
-    private int currentLevelIndex = 0;
+    private int currentLevelIndex;
     public int CurrentLevelIndex
     {
         get => currentLevelIndex;
         set
         {
             currentLevelIndex = value;
-            /*if (FindObjectOfType<YarnCharacterView>() != null)
-            {
-                Destroy(FindObjectOfType<YarnCharacterView>().gameObject);
-            }*/
             HandleLevelChange();
         }
     }
@@ -58,7 +54,7 @@ public class GameManager : MonoBehaviour
     public InMemoryVariableStorage inMemoryVariableStorage;
     
     // CURRENT CHARACTER NAME
-    private GameObject characterName;
+    [SerializeField] private GameObject characterName;
     private string lastSpeakerName = null;
     
     // DIALOGUE TEXT
@@ -70,11 +66,10 @@ public class GameManager : MonoBehaviour
         // HUD
         HUD = GameObject.FindWithTag("HUD");
         
-        // SETUP DIALOGUE RUNNER
+        // SETUP YARN SYSTEM
         GetDialogueRunner();
-        
-        // SETUP CHARACTER NAME
-        characterName = GameObject.FindWithTag("SpeakerNameGetter");
+        GetInMemoryVariableStorage();
+        GetCharacterName();
         
         // SETUP DIALOGUE TEXT
         dialogueTextBox = dialogueRunner.dialogueViews[0].gameObject.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
@@ -97,50 +92,148 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dialogueRunner == null || inMemoryVariableStorage == null)
+        if (dialogueRunner == null)
         {
             GetDialogueRunner();
+        }
+        
+        if (inMemoryVariableStorage == null)
+        {
+            GetInMemoryVariableStorage();
+        }
+        
+        if (characterName == null)
+        {
+            GetCharacterName();
         }
     }
     
     private void HandleLevelChange()
     {
-        /*GetDialogueRunner();*/
+        Debug.Log($"Switching to level index: {currentLevelIndex}");
         
-        /*GameObject.FindObjectOfType<YarnCharacterView>().GetCamera();*/
-           
-        // NOTE: TODO: THIS IS TEMP, NEED TO BE ITERATED THROUGH
-        switch (currentLevelIndex)
+        if (currentLevelManager != null)
         {
-            case 0:
-                break;
-            case 1:
-                gameObject.AddComponent<LevelManager_Graybox>();
-                GetLevelManager();
-                break;
-            case 2:
-                Destroy(currentLevelManager);
-                gameObject.AddComponent<LevelManager_0>();
-                GetLevelManager();
-                break;
+            Destroy(currentLevelManager);
+            currentLevelManager = null;
+        }
+        
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.LoadSceneAsync(currentLevelIndex);
+    }
+    
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // TODO FOR DEBUGGING PURPOSES, WILL BE REMOVED IN FINAL BUILD
+        Debug.Log($"Scene loaded: {scene.name}, Index: {scene.buildIndex}");
+        
+        /*if (GameManager.instance != null)
+        {
+            Debug.Log("GameManager instance exists.");
+            if (GameManager.instance.HUD != null)
+            {
+                Debug.Log("HUD still exists in GameManager after scene load.");
+                var animatorCheck = GameManager.instance.HUD.transform.GetChild(0).gameObject.GetComponent<Animator>();
+                if (animatorCheck != null)
+                {
+                    Debug.Log("viewportAnimator still exists after scene load.");
+                }
+                else
+                {
+                    Debug.LogError("viewportAnimator is missing after scene load!");
+                }
+            }
+            else
+            {
+                Debug.LogError("HUD is missing in GameManager after scene load!");
+            }
+        }
+        else
+        {
+            Debug.LogError("GameManager instance is missing after scene load!");
+        }*/
+        
+        if (scene.buildIndex == currentLevelIndex)
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+
+            if (currentLevelManager == null)
+            {
+                Debug.Log($"Initializing LevelManager for level index: {currentLevelIndex}");
+                
+                // NOTE: TODO: THIS IS TEMP, NEED TO BE ITERATED THROUGH
+                switch (currentLevelIndex)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        currentLevelManager = gameObject.AddComponent<LevelManager_Graybox>();
+                        break;
+                    case 2:
+                        currentLevelManager = gameObject.AddComponent<LevelManager_0>();
+                        break;
+                }
+                
+                /*if (currentLevelManager != null)
+                {
+                    Debug.Log($"{currentLevelManager.GetType().Name} successfully added!!!!!!!!!");
+                }
+                else
+                {
+                    Debug.LogError("Failed to add LevelManager. AddComponent returned null!!!!!!");
+                }*/
+                
+                if (currentLevelManager != null)
+                {
+                    StartCoroutine(DelayedInitialize());
+                }
+            }
+        }
+    }
+
+    private IEnumerator DelayedInitialize()
+    {
+        yield return new WaitForEndOfFrame(); 
+        
+        if (currentLevelManager != null)
+        {
+            currentLevelManager.Initialize();
+            Debug.Log($"{currentLevelManager.GetType().Name} initialized successfully after delay.");
         }
     }
     
     public void GetDialogueRunner()
     {
-        Debug.Log("Getting DialogueRunner and InMemoryVariableStorage");
+        //Debug.Log("Getting DialogueRunner and InMemoryVariableStorage");
         
         // SETUP DIALOGUE RUNNER
         dialogueRunner = FindObjectOfType<DialogueRunner>();
+    }
+    
+    public void GetInMemoryVariableStorage()
+    {
+        // SETUP IN MEMORY VARIABLE STORAGE
         inMemoryVariableStorage = FindObjectOfType<InMemoryVariableStorage>();
+    }
+    
+    public void GetCharacterName()
+    {
+        // SETUP CHARACTER NAME
+        characterName = GameObject.FindWithTag("SpeakerNameGetter");
     }
     
     public void GetLevelManager()
     {
         // SETUP LEVEL MANAGER
-        currentLevelManager = FindObjectOfType<LevelManagerBase>();
+        if (currentLevelManager == null)
+        {
+            currentLevelManager = GetComponent<LevelManagerBase>();
+            if (currentLevelManager == null)
+            {
+                Debug.LogError("Failed to find LevelManagerBase!");
+            }
+        }
     }
-    
     
     [YarnCommand("IntoBattleScene")]
     public void IntoBattleScene()
@@ -204,10 +297,12 @@ public class GameManager : MonoBehaviour
     
     private string GetCurrentSpeakerName()
     {
-        string speakerName = null;
-        
-        speakerName = characterName.GetComponent<TextMeshProUGUI>().text;
-        
-        return speakerName;
+        if (characterName == null)
+        {
+            Debug.LogWarning("CharacterName GameObject is null!");
+            return null;
+        }
+
+        return characterName.GetComponent<TextMeshProUGUI>()?.text;
     }
 }

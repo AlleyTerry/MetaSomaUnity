@@ -40,7 +40,27 @@ public class LevelManagerBase : MonoBehaviour
         ImerisAnimation = GameObject.Find("ImerisAnimation");
         
         // ANIMATION
-        viewportAnimator = GameManager.instance.HUD.transform.GetChild(0).gameObject.GetComponent<Animator>();
+        /*viewportAnimator = GameManager.instance.HUD.transform.GetChild(0).gameObject.GetComponent<Animator>();*/
+        
+        if (GameManager.instance.HUD != null)
+        {
+            Debug.Log("HUD found in GameManager.");
+            viewportAnimator = GameManager.instance.HUD.transform.GetChild(0).gameObject.GetComponent<Animator>();
+            if (viewportAnimator != null)
+            {
+                Debug.Log("viewportAnimator successfully assigned in Start.");
+            }
+            else
+            {
+                Debug.LogError("viewportAnimator is null in Start! Check if HUD's first child has an Animator component.");
+            }
+        }
+        else
+        {
+            Debug.LogError("HUD is null in GameManager! viewportAnimator cannot be assigned.");
+        }
+        
+        Debug.Log("LevelManagerBase.Start finished.");
     }
 
     // Update is called once per frame
@@ -49,9 +69,9 @@ public class LevelManagerBase : MonoBehaviour
         
     }
 
-    public virtual void Setup()
+    public virtual void Initialize()
     {
-        // NOT IN USE RIGHT NOW
+        Debug.Log($"{GetType().Name} initialized.");
     }
     
     public virtual void CutsScene()
