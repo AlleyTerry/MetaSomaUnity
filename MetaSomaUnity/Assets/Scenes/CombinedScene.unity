@@ -643,6 +643,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 724675889223594122, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 874404209555109048, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: m_Name
+      value: LinnaeusWorldspacePlaceholder
+      objectReference: {fileID: 0}
     - target: {fileID: 1246260104906682250, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}
       propertyPath: messageBubbleOffset.y
@@ -832,6 +842,11 @@ PrefabInstance:
         type: 3}
       propertyPath: messageBubbleOffset.y
       value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043952759771539022, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: m_Name
+      value: LinnaeusAnimation
       objectReference: {fileID: 0}
     - target: {fileID: 8848496755927253438, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}

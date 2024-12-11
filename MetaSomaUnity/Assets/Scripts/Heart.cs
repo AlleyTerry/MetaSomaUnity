@@ -78,20 +78,31 @@ public class Heart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SetupYarnVariables();
+        
         variableStorage.SetValue("$CurrentHealth", health);
+        
         SpriteRenderer rend = GetComponent<SpriteRenderer>();
         if (rend != null)
         {
             rend.sprite = sprite1;
         }
+    }
 
+    public void SetupYarnVariables()
+    {
         dialogueRunner = GameManager.instance.dialogueRunner;
         variableStorage = GameManager.instance.inMemoryVariableStorage;
     }
-
+    
     // Update is called once per frame
     void Update()
     {
+        if (dialogueRunner == null || variableStorage == null)
+        {
+            SetupYarnVariables();
+        }
+        
         variableStorage.SetValue("$CurrentHealth", health);
         if (Input.GetKeyDown(KeyCode.Space))
         {

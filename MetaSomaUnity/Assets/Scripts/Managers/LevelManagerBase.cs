@@ -25,25 +25,33 @@ public class LevelManagerBase : MonoBehaviour
     
     // ANIMATION
     public Animator viewportAnimator;
-    
-    // Start is called before the first frame update
-    protected virtual void Start()
+
+    private void Awake()
     {
         // SETUP DIALOGUE RUNNER
         GameManager.instance.GetDialogueRunner();
         dialogueRunner = GameManager.instance.dialogueRunner;
-        
+    }
+
+    // Start is called before the first frame update
+    protected virtual void Start()
+    {
         // SETUP IMERIS
-        ImerisAnimation = dialogueRunner.gameObject.transform.GetChild(0).GetChild(2).gameObject;
+        ImerisAnimation = GameObject.Find("ImerisAnimation");
         
         // ANIMATION
-        viewportAnimator = GameManager.instance.HUD.transform.GetChild(0).GetComponent<Animator>();
+        viewportAnimator = GameManager.instance.HUD.transform.GetChild(0).gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     protected virtual void Update()
     {
         
+    }
+
+    public virtual void Setup()
+    {
+        // NOT IN USE RIGHT NOW
     }
     
     public virtual void CutsScene()

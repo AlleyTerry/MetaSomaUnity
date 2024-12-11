@@ -16,7 +16,7 @@ namespace Yarn.Unity.Example
     {
         public static YarnCharacterView instance; // very minimal implementation of singleton manager (initialized lazily in Awake)
         public List<YarnCharacter> allCharacters = new List<YarnCharacter>(); // list of all YarnCharacters in the scene, who register themselves in YarnCharacter.Start()
-        Camera worldCamera; // this script assumes you are using a full-screen Unity UI canvas along with a full-screen game camera
+        [SerializeField] Camera worldCamera; // this script assumes you are using a full-screen Unity UI canvas along with a full-screen game camera
 
         [Tooltip("display dialogue choices for this character, and display any no-name dialogue here too")]
         public YarnCharacter playerCharacter;
@@ -36,7 +36,7 @@ namespace Yarn.Unity.Example
         {
             // ... this is important because we must set the static "instance" here, before any YarnCharacter.Start() can use it
             instance = this; 
-            worldCamera = Camera.main;
+            GetCamera();
         }
 
         /// <summary>automatically called by YarnCharacter.Start() so that YarnCharacterView knows they exist</summary>
@@ -142,6 +142,11 @@ namespace Yarn.Unity.Example
 
         void Update()
         {
+            if (worldCamera == null)
+            {
+                worldCamera = FindObjectOfType<Camera>();
+            }
+            
             // this all in Update instead of RunLine because characters might walk around or move during the dialogue
             if (dialogueBubbleRect.gameObject.activeInHierarchy)
             {
@@ -160,6 +165,18 @@ namespace Yarn.Unity.Example
             {
                 optionsBubbleRect.anchoredPosition = WorldToAnchoredPosition(optionsBubbleRect, playerCharacter.positionWithOffset, bubbleMargin);
             } */
+        }
+        
+        public void GetCamera()
+        {
+            Debug.Log("Getting camera");
+            
+            worldCamera = Camera.main;
+
+            if (worldCamera == null)
+            {
+                worldCamera = FindObjectOfType<Camera>();
+            }
         }
     }
 }

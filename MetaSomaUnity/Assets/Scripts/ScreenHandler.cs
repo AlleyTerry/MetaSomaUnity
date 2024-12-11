@@ -9,6 +9,7 @@ public class ScreenHandler : MonoBehaviour
     public void LoadScene()
     {
         SceneManager.LoadScene(sceneName);
+        GameManager.instance.CurrentLevelIndex++;
     }
     private void OnTriggerEnter(Collider other)
     {

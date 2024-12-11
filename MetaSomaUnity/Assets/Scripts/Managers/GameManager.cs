@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using Yarn.Unity;
+using Yarn.Unity.Example;
 
 public class GameManager : MonoBehaviour
 {
@@ -36,6 +37,10 @@ public class GameManager : MonoBehaviour
         set
         {
             currentLevelIndex = value;
+            /*if (FindObjectOfType<YarnCharacterView>() != null)
+            {
+                Destroy(FindObjectOfType<YarnCharacterView>().gameObject);
+            }*/
             HandleLevelChange();
         }
     }
@@ -92,15 +97,18 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*isDialogueRunning = dialogueRunner.IsDialogueRunning;*/
-        
-        
+        if (dialogueRunner == null || inMemoryVariableStorage == null)
+        {
+            GetDialogueRunner();
+        }
     }
     
     private void HandleLevelChange()
     {
-        GetDialogueRunner();
+        /*GetDialogueRunner();*/
         
+        /*GameObject.FindObjectOfType<YarnCharacterView>().GetCamera();*/
+           
         // NOTE: TODO: THIS IS TEMP, NEED TO BE ITERATED THROUGH
         switch (currentLevelIndex)
         {
@@ -111,6 +119,7 @@ public class GameManager : MonoBehaviour
                 GetLevelManager();
                 break;
             case 2:
+                Destroy(currentLevelManager);
                 gameObject.AddComponent<LevelManager_0>();
                 GetLevelManager();
                 break;
@@ -119,6 +128,8 @@ public class GameManager : MonoBehaviour
     
     public void GetDialogueRunner()
     {
+        Debug.Log("Getting DialogueRunner and InMemoryVariableStorage");
+        
         // SETUP DIALOGUE RUNNER
         dialogueRunner = FindObjectOfType<DialogueRunner>();
         inMemoryVariableStorage = FindObjectOfType<InMemoryVariableStorage>();

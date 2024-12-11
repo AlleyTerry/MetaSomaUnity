@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+using Yarn.Unity.Example;
 
 public class LevelManager_0 : LevelManagerBase
 {
     // LINNEAUS
-    public GameObject linneausAnimation;
+    [FormerlySerializedAs("linneausAnimation")] 
+    public GameObject linnaeusAnimation;
     
     // INTRO DIALOGUE NODE
     public string introDialogueNode = "ChapelStart";
@@ -13,17 +16,18 @@ public class LevelManager_0 : LevelManagerBase
     protected override void Start()
     {
         base.Start();
+        Debug.LogWarning("LevelManager_0 Start");
         
         // INIT
         cutSceneDialogueNode = "STARTBattle1Dialogue";
         battleDialogueNode = "Battle1Dialogue";
         
-        // LINNEAUS
-        linneausAnimation = dialogueRunner.gameObject.transform.GetChild(0).GetChild(3).gameObject;
-        linneausAnimation.SetActive(false);
-        
         // TRANSITION ANIMATION
         viewportAnimator.Play("SmallViewport");
+        
+        // LINNEAUS
+        linnaeusAnimation = GameObject.Find("LinnaeusAnimation");
+        linnaeusAnimation.SetActive(false);
         
         // INTRO DIALOGUE -- this is temp, will be removed later
         dialogueRunner.StartDialogue(introDialogueNode);
@@ -36,7 +40,7 @@ public class LevelManager_0 : LevelManagerBase
     public override void CutsScene()
     {
         base.CutsScene();
-        linneausAnimation.SetActive(true); 
+        linnaeusAnimation.SetActive(true); 
         
         Debug.Log("Cut Scene Started");
     }
@@ -63,7 +67,7 @@ public class LevelManager_0 : LevelManagerBase
         // ANIMATION
         viewportAnimator.Play("SmallViewportTransition_Reversed");
         
-        linneausAnimation.SetActive(false);
+        linnaeusAnimation.SetActive(false);
         
         // TEMPPPPP
         Destroy(GameObject.Find("OverworldLinnaeusDraft"));
