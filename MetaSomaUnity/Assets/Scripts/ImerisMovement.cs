@@ -167,7 +167,7 @@ public class ImerisMovement : MonoBehaviour
     {
         // Handle jumping 
         if (isGrounded && 
-            Input.GetButtonDown("Jump"))
+            (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Space)))
         {
             // Apply jump force on Y axis
             rb.velocity = new Vector3(rb.velocity.x, jumpForce * currentState.GetJumpHeight(), 0f);  
@@ -178,7 +178,7 @@ public class ImerisMovement : MonoBehaviour
         // Double jump
         else if (!isGrounded && 
                  currentState.CanDoubleJump() &&
-                 Input.GetButtonDown("Jump") &&
+                 (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Space)) &&
                  !hasDoubleJumped)
         {
             rb.velocity = new Vector3(rb.velocity.x, jumpForce * currentState.GetJumpHeight() * 0.9f, 0f);  // Apply jump force on Y axis
@@ -192,14 +192,14 @@ public class ImerisMovement : MonoBehaviour
             isJumping &&
             hasDoubleJumped &&
             currentState.CanFloat() &&
-            Input.GetButton("Jump") &&
+            (Input.GetButton("Jump") || Input.GetKeyDown(KeyCode.Space)) &&
             rb.velocity.y < 0)
         {
             // Apply slow fall effect when falling and holding jump
             rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y * jumpSlowdownFalling, 0f);  // Slow down the falling speed
         }
         
-        if (Input.GetButtonUp("Jump"))
+        if (Input.GetButtonUp("Jump") || Input.GetKeyDown(KeyCode.Space))
         {
             isJumping = false;
             /*hasDoubleJumped = false;*/
