@@ -131,7 +131,9 @@ position: 560,-1251
 ---
 ///-1 heart
 <<takeDamage Heart>>
-You imagine your few friends, your one comfort in the world, stomachs empty and eyes glazed over with the sheen of death. You remember the bodies in the kitchen. The bitten, molded-over bread clutched weakly in a thin hand. Unbidden, a sob escapes your throat. You feel yourself fall to your knees as tears run down your face.
+Narrator: You imagine your few friends, your one comfort in the world, stomachs empty and eyes glazed over with the sheen of death. 
+Narrator: You remember the bodies in the kitchen. The bitten, molded-over bread clutched weakly in a thin hand. Unbidden, a sob escapes your throat. 
+Narrator: You feel yourself fall to your knees as tears run down your face.
 Imeris: ...I'm sorry.
 Narrator: You cannot find any other words. Linnaeus looks at you with contempt, but also pity. He sighs deeply.
 Linnaeus: Poor misguided wretch. So deluded that you’ve fallen from grace and taken us all down with you.
@@ -146,12 +148,10 @@ Linnaeus: Come quietly. Let your final act be obedient and good.
 title: Surrender
 position: 602,-981
 ---
+Imeris: ...
 ///-1 heart
 <<takeDamage Heart>>
-Imeris: ...
-: GAME OVER
-    <<jump GAMEOVER>>
-
+    //<<jump DeadDialogue>>
  ===
 title: Resist
 position: 895,-913
@@ -341,6 +341,9 @@ position: -485,-341
 
     <<jump ROUND2START>>
 
+<<endif>>
+<<if $CurrentHealth == 0.0>>
+    <<jump DeadDialogue>>
 <<endif>>
 ===
 
@@ -771,4 +774,21 @@ Narrator: You cover your mouth and run.
 Narrator: You leave what remains of Linnaeus, and a part of you is left behind with him.
 
 <<ExitBattle Imeris>>
+===
+
+title: DeadDialogue
+---
+Narrator: You have lost yourself. Your heart is broken.
+Narrator: But you still have the ability to Change.
+Narrator: Rebirth yourself and try again.
+-> Metamorphose
+<<RestartGameFromOpening ManagerHolder>>
+===
+
+title: Ending
+---
+Narrator: Thank you for playing our prototype!
+Narrator: Please look forward to future developments!
+-> Metamorphose
+<<RestartGameFromOpening ManagerHolder>>
 ===

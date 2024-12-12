@@ -108,6 +108,19 @@ public class LevelManagerBase : MonoBehaviour
 
     public virtual void ExitBattleDialogue()
     {
+        dialogueRunner.Stop();
         viewportAnimator.enabled = true;
+    }
+
+    public virtual void DeadScene()
+    {
+        if (GameManager.instance.CurrentGameState == GameState.IsDead)
+        {
+            ImerisAnimation.SetActive(false);
+        }
+        else
+        {
+            Debug.LogWarning("DeadScene called but CurrentGameState is not IsDead.");
+        }
     }
 }

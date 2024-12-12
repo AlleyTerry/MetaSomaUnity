@@ -8,6 +8,15 @@ using UnityEngine.SceneManagement;
 using Yarn.Unity;
 using Yarn.Unity.Example;
 
+public enum GameState
+{
+    Opening,
+    InGame,
+    MainMenu,
+    IsDead,
+    Ending
+}
+
 public class GameManager : MonoBehaviour
 {
     // SINGLETON
@@ -46,7 +55,20 @@ public class GameManager : MonoBehaviour
     public int hungerMeter = 100;
     
     // GAME STATE
+    [SerializeField] private GameState currentGameState;
+    public GameState CurrentGameState
+    {
+        get => currentGameState;
+        set
+        {
+            currentGameState = value;
+            HandleGameStateSwitch();
+        }
+    }
+    
+    // TODO: MERGE THIS TO GAME STATE
     public bool isInBattle = false;
+    //public bool isDead = false;
     
     // DIALOGUE RUNNER
     public DialogueRunner dialogueRunner;
@@ -65,6 +87,7 @@ public class GameManager : MonoBehaviour
     {
         // HUD
         HUD = GameObject.FindWithTag("HUD");
+        HUD.SetActive(false);
         
         // SETUP YARN SYSTEM
         GetDialogueRunner();
@@ -106,6 +129,36 @@ public class GameManager : MonoBehaviour
         {
             GetCharacterName();
         }
+    }
+    
+    private void HandleGameStateSwitch()
+    {
+        switch (currentGameState)
+        {
+            case GameState.Opening:
+                break;
+            case GameState.InGame:
+                break;
+            case GameState.MainMenu:
+                break;
+            case GameState.IsDead:
+                currentLevelManager.DeadScene();
+                break;
+            case GameState.Ending:
+                break;
+        }
+    }
+    
+    public void SetGameState(GameState newState)
+    {
+        CurrentGameState = newState;
+    }
+    
+    [YarnCommand("RestartGameFromOpening")]
+    public void RestartGameFromOpening()
+    {
+        HUD.SetActive(false);
+        SceneManager.LoadScene(0);
     }
     
     private void HandleLevelChange()

@@ -7,5 +7,7 @@ public class LevelManager_Graybox : LevelManagerBase
    protected override void Start()
    {
       base.Start();
+      
+      GameManager.instance.HUD.SetActive(true);
    }
 }

@@ -25,6 +25,8 @@ public class LevelManager_0 : LevelManagerBase
         
         Debug.Log("LevelManager_0.Initialize started.");
         
+        GameManager.instance.HUD.SetActive(true);
+        
         // INIT
         cutSceneDialogueNode = "STARTBattle1Dialogue";
         battleDialogueNode = "Battle1Dialogue";
@@ -109,12 +111,42 @@ public class LevelManager_0 : LevelManagerBase
     {
         base.ExitBattleDialogue();
         
+        dialogueRunner.Stop();
+        
         // ANIMATION
         viewportAnimator.Play("SmallViewportTransition_Reversed");
         
         linnaeusAnimation.SetActive(false);
         
         // TEMPPPPP
+        Invoke(nameof(AfterExitBattleDialogue), 0.5f);
+    }
+
+    private void AfterExitBattleDialogue()
+    {
         Destroy(GameObject.Find("OverworldLinnaeusDraft"));
+        dialogueRunner.StartDialogue("Ending");
+        GameManager.instance.isInBattle = true;
+    }
+
+    [YarnCommand("Level0DeadScene")]
+    public override void DeadScene()
+    {
+        base.DeadScene();
+
+        if (dialogueRunner.IsDialogueRunning)
+        {
+            dialogueRunner.Stop();
+        }
+        
+        Debug.Log("Level 0 Dead Scene started.");
+        linnaeusAnimation.SetActive(false);
+        dialogueRunner.StartDialogue("DeadDialogue");
+    }
+    
+    [YarnCommand("DisableLinnaeusAnimation")]
+    private void DisableLinnaeusAnimation()
+    {
+        linnaeusAnimation.SetActive(false);
     }
 }

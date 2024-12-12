@@ -41,6 +41,8 @@ public class Heart : MonoBehaviour
             else if (health == 0)
             {
                 renderer.sprite = sprite4;
+                
+                GameManager.instance.SetGameState(GameState.IsDead);
               
                 Debug.Log("u ded");
             }
@@ -109,6 +111,7 @@ public class Heart : MonoBehaviour
     public void SetupYarnVariables()
     {
         dialogueRunner = GameManager.instance.dialogueRunner;
+        GameManager.instance.GetInMemoryVariableStorage();
         variableStorage = GameManager.instance.inMemoryVariableStorage;
         
         if (variableStorage == null)
@@ -124,8 +127,8 @@ public class Heart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((dialogueRunner == null || variableStorage == null) && 
-            !triedReinitializing)
+        if ((dialogueRunner == null || variableStorage == null)/* && 
+            !triedReinitializing*/)
         {
             Debug.LogWarning("dialogueRunner or variableStorage is null in Update. Reinitializing...");
             SetupYarnVariables();
