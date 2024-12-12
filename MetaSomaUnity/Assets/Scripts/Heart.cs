@@ -140,10 +140,10 @@ public class Heart : MonoBehaviour
             variableStorage.SetValue("$CurrentHealth", health);
         }
         
-        if (Input.GetKeyDown(KeyCode.Space))
+        /*if (Input.GetKeyDown(KeyCode.Space))
         {
             takeDamage();
-        }
+        }*/
 
         health = Mathf.Clamp(health, 0, 3);
         

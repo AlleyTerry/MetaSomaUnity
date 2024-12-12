@@ -118,6 +118,9 @@ public class ImerisMovement : MonoBehaviour
         
         // Initialize the evolution state
         currentState = new BeforeAnyEvolutionState(SubState.Healthy); // Commented out for testing purposes
+        
+        // INITIALIZE THE PLAYER ANIMATOR
+        playerAnimator.Play("Player_Idle");
     }
 
     // Update is called once per frame
@@ -136,14 +139,28 @@ public class ImerisMovement : MonoBehaviour
 
     private void LateUpdate()
     {
-        // Update the animator parameters
+        /*// Update the animator parameters
         if (playerAnimator != null)
         {
             playerAnimator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
             playerAnimator.SetFloat("yVelocity", rb.velocity.y);
             playerAnimator.SetBool("isGround", isGrounded);
-        }
+        }*/
 
+        // Walk Animation
+        if (rb.velocity.x != 0 && 
+            isGrounded)
+        {
+            playerAnimator.Play("Player_Run");
+        }
+        else if (rb.velocity.x == 0 && 
+                 isGrounded)
+        {
+            playerAnimator.Play("Player_Idle");
+        }
+        
+        // Jump Animation
+        
         // Flip the sprite based on movement direction
         if (rb.velocity.x > 0)
             playerSpriteRender.flipX = true;  // Facing right
@@ -173,6 +190,8 @@ public class ImerisMovement : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, jumpForce * currentState.GetJumpHeight(), 0f);  
             isJumping = true;
             hasDoubleJumped = false;
+            
+            playerAnimator.Play("Player_Jump");
             Debug.Log("IsJumping");
         }
         // Double jump
@@ -184,6 +203,8 @@ public class ImerisMovement : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, jumpForce * currentState.GetJumpHeight() * 0.9f, 0f);  // Apply jump force on Y axis
             hasDoubleJumped = true;
             isJumping = true;
+            
+            playerAnimator.Play("Player_Jump");
             Debug.Log("Double Jump");
         }
         
