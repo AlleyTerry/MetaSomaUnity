@@ -151,7 +151,7 @@ public class ImerisMovement : MonoBehaviour
         if (rb.velocity.x != 0 && 
             isGrounded)
         {
-            playerAnimator.Play("Player_Run");
+            playerAnimator.Play("Imeris_Walk");
         }
         else if (rb.velocity.x == 0 && 
                  isGrounded)
