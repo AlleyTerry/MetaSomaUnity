@@ -157,8 +157,15 @@ public class GameManager : MonoBehaviour
     [YarnCommand("RestartGameFromOpening")]
     public void RestartGameFromOpening()
     {
+        // Quit the game
+        Invoke(nameof(QuitGame), 0.75f);
+        ImerisMovement.instance.currentState = new BeforeAnyEvolutionState(SubState.Healthy);
         HUD.SetActive(false);
-        SceneManager.LoadScene(0);
+    }
+    
+    public void QuitGame()
+    {
+        Application.Quit();
     }
     
     private void HandleLevelChange()

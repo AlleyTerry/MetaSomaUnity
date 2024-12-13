@@ -27,6 +27,8 @@ public class LevelManager_0 : LevelManagerBase
         
         GameManager.instance.HUD.SetActive(true);
         
+        ImerisMovement.instance.currentState = new BeforeAnyEvolutionState(SubState.Healthy);
+        
         // INIT
         cutSceneDialogueNode = "STARTBattle1Dialogue";
         battleDialogueNode = "Battle1Dialogue";
