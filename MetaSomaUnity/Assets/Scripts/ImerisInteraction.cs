@@ -16,7 +16,7 @@ public class ImerisInteraction : ImerisMovement
         if (other.CompareTag("BattleTrigger"))
         {
             GameManager.instance.isInBattle = true;
-            GameManager.instance.currentLevelManager.BattleScene();
+            GameManager.instance.currentLevelManager.StartBattleScene();
             
             other.gameObject.SetActive(false); // Disable the trigger
         }

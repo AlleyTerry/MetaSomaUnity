@@ -10,27 +10,28 @@ using Yarn.Unity;
 public class LevelManagerBase : MonoBehaviour
 {
     // DIALOGUE RUNNER
-    protected DialogueRunner dialogueRunner;
+    /*protected DialogueRunner dialogueRunner;*/
     
     // IMERIS
     public GameObject ImerisAnimation;
     
     // DIALOGUE NODES
-    public string cutSceneDialogueNode = "";
-    public string battleDialogueNode = "";
+    /*public string cutSceneDialogueNode = "";
+    public string battleDialogueNode = "";*/
     
     // BATTLE TRIGGER
-    public GameObject battleTrigger;
-    public bool isBattleTriggered = false;
+    protected string currentCutSceneDialogueNode;
+    protected string currentBattleDialogueNode;
+    public float currentBattleDialogueDelay = 0.5f;
     
     // ANIMATION
-    public Animator viewportAnimator;
+    /*public Animator viewportAnimator;*/
 
     private void Awake()
     {
         // SETUP DIALOGUE RUNNER
-        GameManager.instance.GetDialogueRunner();
-        dialogueRunner = GameManager.instance.dialogueRunner;
+        
+        /*dialogueRunner = GameManager.instance.dialogueRunner;*/
     }
 
     // Start is called before the first frame update
@@ -42,7 +43,7 @@ public class LevelManagerBase : MonoBehaviour
         // ANIMATION
         /*viewportAnimator = GameManager.instance.HUD.transform.GetChild(0).gameObject.GetComponent<Animator>();*/
         
-        if (GameManager.instance.HUD != null)
+        /*if (GameManager.instance.HUD != null)
         {
             Debug.Log("HUD found in GameManager.");
             viewportAnimator = GameManager.instance.HUD.transform.GetChild(0).gameObject.GetComponent<Animator>();
@@ -58,7 +59,7 @@ public class LevelManagerBase : MonoBehaviour
         else
         {
             Debug.LogError("HUD is null in GameManager! viewportAnimator cannot be assigned.");
-        }
+        }*/
         
         Debug.Log("LevelManagerBase.Start finished.");
     }
@@ -74,9 +75,25 @@ public class LevelManagerBase : MonoBehaviour
         Debug.Log($"{GetType().Name} initialized.");
     }
     
-    public virtual void CutsScene()
+    public virtual void RegisterCutSceneAndBattle(string cutSceneDialogueNode, string battleDialogueNode, float delayTime)
     {
-        dialogueRunner.StartDialogue(cutSceneDialogueNode);
+        currentCutSceneDialogueNode = cutSceneDialogueNode;
+        currentBattleDialogueNode = battleDialogueNode;
+        currentBattleDialogueDelay = delayTime;
+        
+        Debug.Log($"Cut Scene and Battle registered: {cutSceneDialogueNode}, {battleDialogueNode}");
+        
+        // START CUT SCENE
+        StartCutsScene(currentCutSceneDialogueNode);
+    }
+    
+    // CUT SCENE
+    public virtual void StartCutsScene(string cutSceneDialogueNode)
+    {
+        Debug.Log($"Cut Scene Started with node: {cutSceneDialogueNode}");
+        
+        // START DIALOGUE
+        DialogueManager.instance.StartDialogue(cutSceneDialogueNode);
         
         // PAUSE HUNGER
         GameObject.FindObjectOfType<ImerisHunger>().PauseHungerMeter();
@@ -85,31 +102,37 @@ public class LevelManagerBase : MonoBehaviour
         Invoke(nameof(GameManager.instance.FreezeControls), 0.5f);
     }
     
-    public virtual void BattleScene()
+    // BATTLE SCENE
+    public virtual void StartBattleScene()
     {
-        Invoke(nameof(StartBattleDialogue), 0.5f);
+        StartCoroutine(DelayedStartBattleDialogue(currentBattleDialogueNode, currentBattleDialogueDelay));
     }
     
-    private void StartBattleDialogue()
+    private IEnumerator DelayedStartBattleDialogue(string battleDialogueNode, float delayTime)
     {
-        dialogueRunner.StartDialogue(battleDialogueNode);
+        yield return new WaitForSeconds(delayTime);
+        
+        StartBattleDialogue(battleDialogueNode); // Start the actual battle dialogue
+    }
+    
+    private void StartBattleDialogue(string battleDialogueNode)
+    {
+        Debug.Log($"Battle Scene Started with node: {battleDialogueNode}");
+        
+        // START DIALOGUE
+        DialogueManager.instance.StartDialogue(battleDialogueNode);
         
         // PAUSE HUNGER
         GameObject.FindObjectOfType<ImerisHunger>().PauseHungerMeter();
         
         // FREEZE CONTROLS
         Invoke(nameof(GameManager.instance.FreezeControls), 0.5f);
-    }
-    
-    public void DisableAnimator()
-    {
-        viewportAnimator.enabled = false;
     }
 
     public virtual void ExitBattleDialogue()
     {
-        dialogueRunner.Stop();
-        viewportAnimator.enabled = true;
+        DialogueManager.instance.StopDialogue();
+        UIManager.instance.EnableAnimator();
     }
 
     public virtual void DeadScene()

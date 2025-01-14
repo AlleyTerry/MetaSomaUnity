@@ -258,16 +258,29 @@ public class ImerisMovement : MonoBehaviour
         }
     }
     
-    // GET INTO BATTLE
+    // GET INTO CUTSCENE (BATTLE)
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("BattleTrigger"))
         {
-            GameManager.instance.isInBattle = true;
-            /*GameManager.instance.currentLevelManager.BattleScene();*/
-            GameManager.instance.currentLevelManager.CutsScene();
+            BattleTrigger battleTrigger = other.gameObject.GetComponent<BattleTrigger>();
+
+            if (battleTrigger != null && 
+                !battleTrigger.IsTriggered)
+            {
+                battleTrigger.FlagTriggerUsed();
+                GameManager.instance.isInBattle = true;
+                
+                // TODO: NOTE -- if the current level manager is not set, try other way, or check the GM
+                GameManager.instance.currentLevelManager.RegisterCutSceneAndBattle
+                    (battleTrigger.cutSceneDialogueNode, battleTrigger.battleDialogueNode, battleTrigger.battleDialogueDelay);
+            }
             
-            other.gameObject.SetActive(false); // Disable the trigger
+            /*GameManager.instance.currentLevelManager.BattleScene();*/
+            /*GameManager.instance.currentLevelManager.StartCutsScene
+                (other.gameObject.GetComponent<BattleTrigger>().cutSceneDialogueNode);
+            
+            other.gameObject.SetActive(false); // Disable the trigger*/
         }
     }
     

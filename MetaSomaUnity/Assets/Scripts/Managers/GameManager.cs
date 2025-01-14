@@ -32,7 +32,10 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(this.gameObject);
+            Debug.LogWarning("Duplicate GameManager found and destroyed.");
         }
+        
+        Debug.Log("GameManager Awake completed.");
     }
     
     // HUD
@@ -40,6 +43,7 @@ public class GameManager : MonoBehaviour
     
     // LEVEL MANAGER
     private int currentLevelIndex;
+    
     public int CurrentLevelIndex
     {
         get => currentLevelIndex;
@@ -49,6 +53,7 @@ public class GameManager : MonoBehaviour
             HandleLevelChange();
         }
     }
+    
     public LevelManagerBase currentLevelManager;
     
     // HUNGER METER
@@ -71,8 +76,8 @@ public class GameManager : MonoBehaviour
     //public bool isDead = false;
     
     // DIALOGUE RUNNER
-    public DialogueRunner dialogueRunner;
-    /*public bool isDialogueRunning = false;*/
+    /*public DialogueRunner dialogueRunner;*/
+    
     public InMemoryVariableStorage inMemoryVariableStorage;
     
     // CURRENT CHARACTER NAME
@@ -89,18 +94,7 @@ public class GameManager : MonoBehaviour
         HUD = GameObject.FindWithTag("HUD");
         HUD.SetActive(false);
         
-        // SETUP YARN SYSTEM
-        GetDialogueRunner();
-        GetInMemoryVariableStorage();
-        GetCharacterName();
-        
-        // SETUP DIALOGUE TEXT
-        dialogueTextBox = dialogueRunner.dialogueViews[0].gameObject.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
-        
-        // SET UP LEVEL INDEX AND SET UP THE LEVEL MANAGER
-        CurrentLevelIndex = 0;
-        
-        // NOTE: THIS IS FOR PURE DEBUGGING PURPOSES, COMMENT OUT IN FINAL BUILD
+        // TODO: NOTE -- THIS IS FOR DEBUGGING PURPOSES, MAY BE COMMENT OUT IN FINAL BUILD
         switch (SceneManager.GetActiveScene().name)
         {
             case "Graybox":
@@ -109,26 +103,44 @@ public class GameManager : MonoBehaviour
             case "CombinedScene":
                 CurrentLevelIndex = 2;
                 break;
+            default:
+                CurrentLevelIndex = 0;
+                break;
         }
+        
+        // SET UP LEVEL INDEX AND SET UP THE LEVEL MANAGER
+        /*CurrentLevelIndex = 0;*/
+        isInBattle = false;
+        
+        // SETUP YARN SYSTEM
+        /*GetDialogueRunner();*/
+        GetInMemoryVariableStorage();
+        /*GetCharacterName();*/
+        
+        /*// SETUP DIALOGUE TEXT
+        dialogueTextBox = DialogueManager.instance.dialogueRunner.dialogueViews[0].gameObject.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
+        */
+        
+        Debug.Log($"GameManager initialized. CurrentLevelIndex: {CurrentLevelIndex}, isInBattle: {isInBattle}");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (dialogueRunner == null)
+        /*if (DialogueManager.instance.dialogueRunner == null)
         {
             GetDialogueRunner();
-        }
+        }*/
         
         if (inMemoryVariableStorage == null)
         {
             GetInMemoryVariableStorage();
         }
         
-        if (characterName == null)
+        /*if (characterName == null)
         {
             GetCharacterName();
-        }
+        }*/
     }
     
     private void HandleGameStateSwitch()
@@ -170,22 +182,27 @@ public class GameManager : MonoBehaviour
     
     private void HandleLevelChange()
     {
-        Debug.Log($"Switching to level index: {currentLevelIndex}");
-        
         if (currentLevelManager != null)
         {
             Destroy(currentLevelManager);
             currentLevelManager = null;
         }
-        
-        SceneManager.sceneLoaded += OnSceneLoaded;
-        SceneManager.LoadSceneAsync(currentLevelIndex);
+
+        if (SceneManager.GetActiveScene().buildIndex != currentLevelIndex)
+        {
+            Debug.Log($"Switching to level index: {currentLevelIndex}");
+            
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            SceneManager.LoadSceneAsync(currentLevelIndex);
+        }
     }
     
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // TODO FOR DEBUGGING PURPOSES, WILL BE REMOVED IN FINAL BUILD
-        Debug.Log($"Scene loaded: {scene.name}, Index: {scene.buildIndex}");
+        Debug.Log($"Scene {scene.name} loaded.");
+        
+        // Reset the battle state
+        isInBattle = false;
         
         /*if (GameManager.instance != null)
         {
@@ -225,6 +242,7 @@ public class GameManager : MonoBehaviour
                 switch (currentLevelIndex)
                 {
                     case 0:
+                        Debug.Log("No LevelManager assigned.");
                         break;
                     case 1:
                         currentLevelManager = gameObject.AddComponent<LevelManager_Graybox>();
@@ -232,6 +250,9 @@ public class GameManager : MonoBehaviour
                     case 2:
                         currentLevelManager = gameObject.AddComponent<LevelManager_0>();
                         break;
+                    default:
+                        Debug.Log("Unknown Scene. No LevelManager assigned.");
+                        return;
                 }
                 
                 /*if (currentLevelManager != null)
@@ -243,15 +264,17 @@ public class GameManager : MonoBehaviour
                     Debug.LogError("Failed to add LevelManager. AddComponent returned null!!!!!!");
                 }*/
                 
-                if (currentLevelManager != null)
+                /*if (currentLevelManager != null)
                 {
                     StartCoroutine(DelayedInitialize());
-                }
+                }*/
+                
+                currentLevelManager.Initialize();
             }
         }
     }
 
-    private IEnumerator DelayedInitialize()
+    /*private IEnumerator DelayedInitialize()
     {
         yield return new WaitForEndOfFrame(); 
         
@@ -260,15 +283,15 @@ public class GameManager : MonoBehaviour
             currentLevelManager.Initialize();
             Debug.Log($"{currentLevelManager.GetType().Name} initialized successfully after delay.");
         }
-    }
+    }*/
     
-    public void GetDialogueRunner()
+    /*public void GetDialogueRunner()
     {
         //Debug.Log("Getting DialogueRunner and InMemoryVariableStorage");
         
         // SETUP DIALOGUE RUNNER
-        dialogueRunner = FindObjectOfType<DialogueRunner>();
-    }
+        DialogueManager.instance.dialogueRunner = FindObjectOfType<DialogueRunner>();
+    }*/
     
     public void GetInMemoryVariableStorage()
     {
@@ -276,11 +299,11 @@ public class GameManager : MonoBehaviour
         inMemoryVariableStorage = FindObjectOfType<InMemoryVariableStorage>();
     }
     
-    public void GetCharacterName()
+    /*public void GetCharacterName()
     {
         // SETUP CHARACTER NAME
         characterName = GameObject.FindWithTag("SpeakerNameGetter");
-    }
+    }*/
     
     public void GetLevelManager()
     {
@@ -295,19 +318,19 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    [YarnCommand("IntoBattleScene")]
+    /*[YarnCommand("IntoBattleScene")]
     public void IntoBattleScene()
     {
-        currentLevelManager.BattleScene();
-    }
+        currentLevelManager.StartBattleScene();
+    }*/
 
-    private void LateUpdate()
+    /*private void LateUpdate()
     {
         if (dialogueRunner.IsDialogueRunning)
         {
             SetDialogueText();
         }
-    }
+    }*/
 
     public void FreezeControls()
     {
@@ -322,7 +345,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
     
-    private void SetDialogueText()
+    /*private void SetDialogueText()
     {
         string speakerName = GetCurrentSpeakerName();
         
@@ -364,5 +387,5 @@ public class GameManager : MonoBehaviour
         }
 
         return characterName.GetComponent<TextMeshProUGUI>()?.text;
-    }
+    }*/
 }

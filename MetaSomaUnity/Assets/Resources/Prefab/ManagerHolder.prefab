@@ -99,7 +99,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4155168650225817235}
+  - component: {fileID: 5868935180029090835}
   - component: {fileID: 74539599337885660}
+  - component: {fileID: 4676880667594926389}
   - component: {fileID: 937206547670337374}
   m_Layer: 0
   m_Name: ManagerHolder
@@ -124,6 +126,19 @@ Transform:
   - {fileID: 8650891657303845128}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -6.15, y: 0, z: 0}
+--- !u!114 &5868935180029090835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7964521411033984940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab0380d98178a44595e2010914e37c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueRunner: {fileID: 0}
 --- !u!114 &74539599337885660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,9 +154,22 @@ MonoBehaviour:
   HUD: {fileID: 0}
   currentLevelManager: {fileID: 0}
   hungerMeter: 100
+  currentGameState: 0
   isInBattle: 0
-  dialogueRunner: {fileID: 0}
   inMemoryVariableStorage: {fileID: 0}
+  characterName: {fileID: 0}
+--- !u!114 &4676880667594926389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7964521411033984940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b35f908a39f15342bf3248db9cfccc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &937206547670337374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,12 +183,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ImerisAnimation: {fileID: 0}
-  cutSceneDialogueNode: STARTBattle1Dialogue
-  battleDialogueNode: Battle1Dialogue
-  battleTrigger: {fileID: 0}
-  isBattleTriggered: 0
-  viewportAnimator: {fileID: 0}
-  linneausAnimation: {fileID: 0}
+  currentBattleDialogueDelay: 0.5
+  linnaeusAnimation: {fileID: 0}
   introDialogueNode: ChapelStart
 --- !u!1 &8714127014412746384
 GameObject:

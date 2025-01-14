@@ -543,6 +543,7 @@ GameObject:
   - component: {fileID: 470771589}
   - component: {fileID: 470771588}
   - component: {fileID: 470771587}
+  - component: {fileID: 470771591}
   m_Layer: 0
   m_Name: BattleTrigger
   m_TagString: BattleTrigger
@@ -636,6 +637,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 635778922}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &470771591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470771586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a4f4f3128ce7e41b293166857d1882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutSceneDialogueNode: STARTBattle1Dialogue
+  battleDialogueNode: Battle1Dialogue
+  battleDialogueDelay: 0.5
 --- !u!1 &544239705
 GameObject:
   m_ObjectHideFlags: 0

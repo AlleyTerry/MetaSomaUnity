@@ -25,12 +25,12 @@ public class InteractableItemBase : MonoBehaviour
     public string objName;
     public InteractionType interactionType;
     
-    [SerializeField] private DialogueRunner dialogueRunner;
+    /*[SerializeField] private DialogueRunner dialogueRunner;*/
  
     // Start is called before the first frame update
     void Start()
     {
-        dialogueRunner = GameManager.instance.dialogueRunner;
+        /*dialogueRunner = GameManager.instance.dialogueRunner;*/
         
         visualCue = transform.GetChild(0).gameObject;
         visualCue.SetActive(false);
@@ -73,9 +73,9 @@ public class InteractableItemBase : MonoBehaviour
     {
         Debug.Log("you are talking to " + this.GameObject().name);
         
-        if (!dialogueRunner.IsDialogueRunning)
+        if (!DialogueManager.instance.dialogueRunner.IsDialogueRunning)
         {
-            dialogueRunner.StartDialogue(objName);
+            DialogueManager.instance.StartDialogue(objName);
         }
     }
     

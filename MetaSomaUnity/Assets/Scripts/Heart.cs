@@ -110,7 +110,7 @@ public class Heart : MonoBehaviour
 
     public void SetupYarnVariables()
     {
-        dialogueRunner = GameManager.instance.dialogueRunner;
+        dialogueRunner = DialogueManager.instance.dialogueRunner;
         GameManager.instance.GetInMemoryVariableStorage();
         variableStorage = GameManager.instance.inMemoryVariableStorage;
         
