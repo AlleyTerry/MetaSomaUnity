@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using Yarn.Unity;
 using Yarn.Unity.Example;
 
@@ -20,10 +21,14 @@ public enum GameState
 public class GameManager : MonoBehaviour
 {
     // SINGLETON
+    public bool isTestMode = true; // TODO: REMOVE THIS IN FINAL BUILD
+    
     public static GameManager instance;
     
     private void Awake()
     {
+        Debug.Log("GameManager initialized. Test mode: " + isTestMode);
+        
         if (instance == null)
         {
             instance = this;
@@ -73,27 +78,12 @@ public class GameManager : MonoBehaviour
     
     // TODO: MERGE THIS TO GAME STATE
     public bool isInBattle = false;
-    //public bool isDead = false;
-    
-    // DIALOGUE RUNNER
-    /*public DialogueRunner dialogueRunner;*/
     
     public InMemoryVariableStorage inMemoryVariableStorage;
-    
-    // CURRENT CHARACTER NAME
-    [SerializeField] private GameObject characterName;
-    private string lastSpeakerName = null;
-    
-    // DIALOGUE TEXT
-    private TextMeshProUGUI dialogueTextBox;
     
     // Start is called before the first frame update
     void Start()
     {
-        // HUD
-        HUD = GameObject.FindWithTag("HUD");
-        HUD.SetActive(false);
-        
         // TODO: NOTE -- THIS IS FOR DEBUGGING PURPOSES, MAY BE COMMENT OUT IN FINAL BUILD
         switch (SceneManager.GetActiveScene().name)
         {
@@ -113,13 +103,7 @@ public class GameManager : MonoBehaviour
         isInBattle = false;
         
         // SETUP YARN SYSTEM
-        /*GetDialogueRunner();*/
         GetInMemoryVariableStorage();
-        /*GetCharacterName();*/
-        
-        /*// SETUP DIALOGUE TEXT
-        dialogueTextBox = DialogueManager.instance.dialogueRunner.dialogueViews[0].gameObject.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
-        */
         
         Debug.Log($"GameManager initialized. CurrentLevelIndex: {CurrentLevelIndex}, isInBattle: {isInBattle}");
     }
@@ -127,20 +111,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (DialogueManager.instance.dialogueRunner == null)
-        {
-            GetDialogueRunner();
-        }*/
-        
         if (inMemoryVariableStorage == null)
         {
             GetInMemoryVariableStorage();
         }
-        
-        /*if (characterName == null)
-        {
-            GetCharacterName();
-        }*/
     }
     
     private void HandleGameStateSwitch()
@@ -180,6 +154,11 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
     
+    public void LoadNextLevel()
+    {
+        CurrentLevelIndex++;
+    }
+    
     private void HandleLevelChange()
     {
         if (currentLevelManager != null)
@@ -204,31 +183,17 @@ public class GameManager : MonoBehaviour
         // Reset the battle state
         isInBattle = false;
         
-        /*if (GameManager.instance != null)
+        // HUD
+        HUD = GameObject.FindWithTag("HUD");
+        
+        if (HUD == null)
         {
-            Debug.Log("GameManager instance exists.");
-            if (GameManager.instance.HUD != null)
-            {
-                Debug.Log("HUD still exists in GameManager after scene load.");
-                var animatorCheck = GameManager.instance.HUD.transform.GetChild(0).gameObject.GetComponent<Animator>();
-                if (animatorCheck != null)
-                {
-                    Debug.Log("viewportAnimator still exists after scene load.");
-                }
-                else
-                {
-                    Debug.LogError("viewportAnimator is missing after scene load!");
-                }
-            }
-            else
-            {
-                Debug.LogError("HUD is missing in GameManager after scene load!");
-            }
+            Debug.LogError("HUD not found in scene!");
         }
         else
         {
-            Debug.LogError("GameManager instance is missing after scene load!");
-        }*/
+            HUD.SetActive(false);
+        }
         
         if (scene.buildIndex == currentLevelIndex)
         {
@@ -255,55 +220,24 @@ public class GameManager : MonoBehaviour
                         return;
                 }
                 
-                /*if (currentLevelManager != null)
-                {
-                    Debug.Log($"{currentLevelManager.GetType().Name} successfully added!!!!!!!!!");
-                }
-                else
-                {
-                    Debug.LogError("Failed to add LevelManager. AddComponent returned null!!!!!!");
-                }*/
-                
-                /*if (currentLevelManager != null)
-                {
-                    StartCoroutine(DelayedInitialize());
-                }*/
-                
+                // Call Initialize for the current LevelManager
+                GetLevelManager();
                 currentLevelManager.Initialize();
+                
+                // UI Manager
+                UIManager.instance.Initialize();
+                
+                // Dialogue Manager
+                DialogueManager.instance.Initialize();
             }
         }
     }
-
-    /*private IEnumerator DelayedInitialize()
-    {
-        yield return new WaitForEndOfFrame(); 
-        
-        if (currentLevelManager != null)
-        {
-            currentLevelManager.Initialize();
-            Debug.Log($"{currentLevelManager.GetType().Name} initialized successfully after delay.");
-        }
-    }*/
-    
-    /*public void GetDialogueRunner()
-    {
-        //Debug.Log("Getting DialogueRunner and InMemoryVariableStorage");
-        
-        // SETUP DIALOGUE RUNNER
-        DialogueManager.instance.dialogueRunner = FindObjectOfType<DialogueRunner>();
-    }*/
     
     public void GetInMemoryVariableStorage()
     {
         // SETUP IN MEMORY VARIABLE STORAGE
         inMemoryVariableStorage = FindObjectOfType<InMemoryVariableStorage>();
     }
-    
-    /*public void GetCharacterName()
-    {
-        // SETUP CHARACTER NAME
-        characterName = GameObject.FindWithTag("SpeakerNameGetter");
-    }*/
     
     public void GetLevelManager()
     {
@@ -313,24 +247,14 @@ public class GameManager : MonoBehaviour
             currentLevelManager = GetComponent<LevelManagerBase>();
             if (currentLevelManager == null)
             {
-                Debug.LogError("Failed to find LevelManagerBase!");
+                Debug.LogError("Failed to find LevelManagerBase! Ensure a LevelManager is properly set up in the scene.");
+            }
+            else
+            {
+                Debug.Log($"LevelManager {currentLevelManager.GetType().Name} found successfully.");
             }
         }
     }
-    
-    /*[YarnCommand("IntoBattleScene")]
-    public void IntoBattleScene()
-    {
-        currentLevelManager.StartBattleScene();
-    }*/
-
-    /*private void LateUpdate()
-    {
-        if (dialogueRunner.IsDialogueRunning)
-        {
-            SetDialogueText();
-        }
-    }*/
 
     public void FreezeControls()
     {
@@ -345,47 +269,4 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
     
-    /*private void SetDialogueText()
-    {
-        string speakerName = GetCurrentSpeakerName();
-        
-        if (speakerName != null && 
-            speakerName != lastSpeakerName)
-        {
-            switch (speakerName)
-            {
-                case "Imeris":
-                    Debug.Log("Imeris is speaking");
-                    characterName.GetComponent<TextMeshProUGUI>().alignment = TextAlignmentOptions.Left;
-                    characterName.GetComponent<TextMeshProUGUI>().color = new Color(255, 255, 255, 255);
-                    dialogueTextBox.alignment = TextAlignmentOptions.TopLeft;
-                    break;
-                case "Linnaeus":
-                    Debug.Log("Linnaeus is speaking");
-                    characterName.GetComponent<TextMeshProUGUI>().alignment = TextAlignmentOptions.Right;
-                    characterName.GetComponent<TextMeshProUGUI>().color = new Color(255, 255, 255, 255);
-                    dialogueTextBox.alignment = TextAlignmentOptions.TopRight;
-                    break;
-                case "Narrator":
-                    Debug.Log("Narrator is speaking");
-                    characterName.GetComponent<TextMeshProUGUI>().alignment = TextAlignmentOptions.Center;
-                    characterName.GetComponent<TextMeshProUGUI>().color = new Color(255, 255, 255, 0);
-                    dialogueTextBox.alignment = TextAlignmentOptions.Top;
-                    break;
-            }
-            
-            lastSpeakerName = speakerName;
-        }
-    }
-    
-    private string GetCurrentSpeakerName()
-    {
-        if (characterName == null)
-        {
-            Debug.LogWarning("CharacterName GameObject is null!");
-            return null;
-        }
-
-        return characterName.GetComponent<TextMeshProUGUI>()?.text;
-    }*/
 }

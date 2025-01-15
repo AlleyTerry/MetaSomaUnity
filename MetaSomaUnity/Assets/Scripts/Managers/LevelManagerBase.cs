@@ -29,9 +29,7 @@ public class LevelManagerBase : MonoBehaviour
 
     private void Awake()
     {
-        // SETUP DIALOGUE RUNNER
         
-        /*dialogueRunner = GameManager.instance.dialogueRunner;*/
     }
 
     // Start is called before the first frame update
@@ -39,27 +37,6 @@ public class LevelManagerBase : MonoBehaviour
     {
         // SETUP IMERIS
         ImerisAnimation = GameObject.Find("ImerisAnimation");
-        
-        // ANIMATION
-        /*viewportAnimator = GameManager.instance.HUD.transform.GetChild(0).gameObject.GetComponent<Animator>();*/
-        
-        /*if (GameManager.instance.HUD != null)
-        {
-            Debug.Log("HUD found in GameManager.");
-            viewportAnimator = GameManager.instance.HUD.transform.GetChild(0).gameObject.GetComponent<Animator>();
-            if (viewportAnimator != null)
-            {
-                Debug.Log("viewportAnimator successfully assigned in Start.");
-            }
-            else
-            {
-                Debug.LogError("viewportAnimator is null in Start! Check if HUD's first child has an Animator component.");
-            }
-        }
-        else
-        {
-            Debug.LogError("HUD is null in GameManager! viewportAnimator cannot be assigned.");
-        }*/
         
         Debug.Log("LevelManagerBase.Start finished.");
     }

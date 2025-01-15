@@ -5,18 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class ScreenHandler : MonoBehaviour
 {
-    public string sceneName;
+    /*public string sceneName;
     public void LoadScene()
     {
         SceneManager.LoadScene(sceneName);
         GameManager.instance.CurrentLevelIndex++;
-    }
+    }*/
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            LoadScene();
-            GameManager.instance.GetLevelManager();
+            Debug.Log("Player triggered scene transition.");
+            
+            GameManager.instance.LoadNextLevel();
         }
     }
     

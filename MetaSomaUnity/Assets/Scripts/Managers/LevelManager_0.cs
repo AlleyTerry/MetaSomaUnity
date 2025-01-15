@@ -19,35 +19,16 @@ public class LevelManager_0 : LevelManagerBase
     {
         base.Start();
     }
-    
+
     public override void Initialize()
     {
         base.Initialize();
-        
-        Debug.Log("LevelManager_0.Initialize started.");
         
         GameManager.instance.HUD.SetActive(true);
         
         ImerisMovement.instance.currentState = new BeforeAnyEvolutionState(SubState.Healthy);
         
-        // INIT
-        /*cutSceneDialogueNode = "STARTBattle1Dialogue";
-        battleDialogueNode = "Battle1Dialogue";*/
-        
-        /*// TRANSITION ANIMATION
-        if (viewportAnimator == null && GameManager.instance.HUD != null)
-        {
-            viewportAnimator = GameManager.instance.HUD.transform.GetChild(0).gameObject.GetComponent<Animator>();
-        }
-
-        if (viewportAnimator != null)
-        {
-            viewportAnimator.Play("SmallViewport");
-        }
-        else
-        {
-            Debug.LogError("viewportAnimator is null in Initialize. Check HUD structure.");
-        }*/
+        GameManager.instance.isInBattle = false;
         
         // LINNEAUS
         linnaeusAnimation = GameObject.Find("LinnaeusAnimation");
@@ -60,31 +41,6 @@ public class LevelManager_0 : LevelManagerBase
         {
             Debug.LogWarning("LinnaeusAnimation not found in scene.");
         }
-        
-        /*// INTRO DIALOGUE -- this is temp, will be removed later
-        // RE-ASSIGN DIALOGUE RUNNER IF NECESSARY
-        if (dialogueRunner == null)
-        {
-            dialogueRunner = FindObjectOfType<DialogueRunner>();
-        }
-
-        if (dialogueRunner == null)
-        {
-            Debug.LogError("dialogueRunner is null. Dialogue cannot start.");
-        }
-        else if (!string.IsNullOrEmpty(introDialogueNode) && !dialogueRunner.IsDialogueRunning)
-        {
-            dialogueRunner.StartDialogue(introDialogueNode);
-            Debug.Log($"Dialogue started with node: {introDialogueNode}");
-        }
-        else
-        {
-            Debug.LogError("introDialogueNode is null or empty. Dialogue cannot start.");
-        }*/
-
-        GameManager.instance.isInBattle = true;
-
-        Debug.Log("LevelManager_0.Initialize finished.");
     }
 
     public override void StartCutsScene(string cutSceneDialogueNode)

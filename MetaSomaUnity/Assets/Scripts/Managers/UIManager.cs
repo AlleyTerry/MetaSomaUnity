@@ -11,12 +11,12 @@ public class UIManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            /*DontDestroyOnLoad(gameObject);*/
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(this.gameObject);
-            Debug.LogWarning("Duplicate GameManager found and destroyed.");
+            Debug.LogWarning("Duplicate UI Manager found and destroyed.");
         }
     }
     
@@ -25,18 +25,23 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        viewportAnimator = GameManager.instance.HUD?.transform.GetChild(0).GetComponent<Animator>();
         
-        if (viewportAnimator == null)
-        {
-            Debug.LogError("ViewportAnimator not found! Check HUD structure.");
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void Initialize()
+    {
+        viewportAnimator = GameManager.instance.HUD?.transform.GetChild(0).GetComponent<Animator>();
+        
+        if (viewportAnimator == null)
+        {
+            Debug.LogError("ViewportAnimator not found! Check HUD structure.");
+        }
     }
     
     public void PlayAnimation(string animationName)

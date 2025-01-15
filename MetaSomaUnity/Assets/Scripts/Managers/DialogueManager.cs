@@ -14,12 +14,12 @@ public class DialogueManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            /*DontDestroyOnLoad(gameObject);*/
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(this.gameObject);
-            Debug.LogWarning("Duplicate GameManager found and destroyed.");
+            Debug.LogWarning("Duplicate DialogueManager found and destroyed.");
         }
     }
     
@@ -35,8 +35,20 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void Initialize()
+    {
         // SETUP DIALOGUE RUNNER
         dialogueRunner = FindObjectOfType<DialogueRunner>();
+        
         if (dialogueRunner == null)
         {
             Debug.LogError("DialogueRunner not found in the scene!");
@@ -49,12 +61,6 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.LogError("DialogueManager setup incomplete: Missing DialogueRunner or UI references.");
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void LateUpdate()
@@ -107,7 +113,7 @@ public class DialogueManager : MonoBehaviour
     public void UpdateDialogueText()
     {
         // TODO: VERY IMPORTANT!! CANNOT FIND CHARACTER NAME!!
-        if (CheckDialogueRunner() || 
+        if (!CheckDialogueRunner() || 
             characterNameText == null || 
             dialogueTextBox == null)
         {
