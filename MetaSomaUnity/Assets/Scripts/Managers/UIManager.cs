@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -25,7 +26,12 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            Debug.Log($"{GetType().Name} disabled in Menu scene.");
+            enabled = false; // disable the script
+            return;
+        }
     }
 
     // Update is called once per frame
@@ -36,6 +42,12 @@ public class UIManager : MonoBehaviour
 
     public void Initialize()
     {
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            Debug.Log("DialogueManager skipped initialization in Menu scene.");
+            return;
+        }
+        
         viewportAnimator = GameManager.instance.HUD?.transform.GetChild(0).GetComponent<Animator>();
         
         if (viewportAnimator == null)

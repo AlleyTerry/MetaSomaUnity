@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 5868935180029090835}
   - component: {fileID: 74539599337885660}
   - component: {fileID: 4676880667594926389}
-  - component: {fileID: 937206547670337374}
+  - component: {fileID: 958325307842805374}
   m_Layer: 0
   m_Name: ManagerHolder
   m_TagString: Untagged
@@ -151,13 +151,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd90305c11ab0748b18d498242dd2b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTestMode: 1
   HUD: {fileID: 0}
   currentLevelManager: {fileID: 0}
   hungerMeter: 100
   currentGameState: 0
   isInBattle: 0
   inMemoryVariableStorage: {fileID: 0}
-  characterName: {fileID: 0}
 --- !u!114 &4676880667594926389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,22 +170,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b35f908a39f15342bf3248db9cfccc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &937206547670337374
+--- !u!114 &958325307842805374
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7964521411033984940}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05dab7d01e029a748b6a3df69087a7d6, type: 3}
+  m_Script: {fileID: 11500000, guid: 125ae70d793f47e43ae5966b70c18529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ImerisAnimation: {fileID: 0}
-  currentBattleDialogueDelay: 0.5
-  linnaeusAnimation: {fileID: 0}
-  introDialogueNode: ChapelStart
+  health: 3
+  variableStorage: {fileID: 0}
+  sprite1: {fileID: 21300000, guid: 953e0dcf246962946be7838b4f8706a2, type: 3}
+  sprite2: {fileID: 21300000, guid: f2240545eba1af54fbfedb2d52cab1f1, type: 3}
+  sprite3: {fileID: 21300000, guid: 07e75bb6e2dd9904e89bd2a0aed1a620, type: 3}
+  sprite4: {fileID: 21300000, guid: 6b39576902be4b24d8ad5bd0fdb511cb, type: 3}
 --- !u!1 &8714127014412746384
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +293,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8714127014412746384}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 125ae70d793f47e43ae5966b70c18529, type: 3}
   m_Name: 

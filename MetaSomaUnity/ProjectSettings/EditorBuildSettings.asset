@@ -15,6 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/BattleScene.unity
     guid: 884d95e55fb1ef045bef03dd325ee31c
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 22185ef6f6defb24daf025aad27c0a07
+  - enabled: 1
+    path: Assets/Scenes/Level_Intro.unity
+    guid: 156b8f74a0a17b14f95e4e154c0bea4e
+  - enabled: 0
     path: Assets/Scenes/Opening.unity
     guid: 3385d664f6796420ca6ffa0627f6cc4f
   - enabled: 1

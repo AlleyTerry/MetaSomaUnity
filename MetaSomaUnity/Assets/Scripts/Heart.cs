@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Yarn.Unity;
 using Yarn;
@@ -82,6 +83,13 @@ public class Heart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            Debug.Log($"{GetType().Name} disabled in Menu scene.");
+            enabled = false; // disable the script
+            return;
+        }
+        
         StartCoroutine(DelayedSetup());
         
         SpriteRenderer rend = GetComponent<SpriteRenderer>();

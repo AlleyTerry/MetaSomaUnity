@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Yarn.Unity;
 
 public class DialogueManager : MonoBehaviour
@@ -35,7 +36,12 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            Debug.Log($"{GetType().Name} disabled in Menu scene.");
+            enabled = false; // disable the script
+            return;
+        }
     }
 
     // Update is called once per frame
@@ -46,6 +52,13 @@ public class DialogueManager : MonoBehaviour
 
     public void Initialize()
     {
+        // Check if it's the Menu scene
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            Debug.Log("DialogueManager skipped initialization in Menu scene.");
+            return;
+        }
+        
         // SETUP DIALOGUE RUNNER
         dialogueRunner = FindObjectOfType<DialogueRunner>();
         

@@ -88,10 +88,10 @@ public class GameManager : MonoBehaviour
         switch (SceneManager.GetActiveScene().name)
         {
             case "Graybox":
-                CurrentLevelIndex = 1;
+                CurrentLevelIndex = 2;
                 break;
             case "CombinedScene":
-                CurrentLevelIndex = 2;
+                CurrentLevelIndex = 3;
                 break;
             default:
                 CurrentLevelIndex = 0;
@@ -104,6 +104,9 @@ public class GameManager : MonoBehaviour
         
         // SETUP YARN SYSTEM
         GetInMemoryVariableStorage();
+        
+        // SETUP LEVEL MANAGER FOR MAIN MENU
+        gameObject.AddComponent<LevelManager_MainMenu>();
         
         Debug.Log($"GameManager initialized. CurrentLevelIndex: {CurrentLevelIndex}, isInBattle: {isInBattle}");
     }
@@ -206,13 +209,17 @@ public class GameManager : MonoBehaviour
                 // NOTE: TODO: THIS IS TEMP, NEED TO BE ITERATED THROUGH
                 switch (currentLevelIndex)
                 {
-                    case 0:
-                        Debug.Log("No LevelManager assigned.");
+                    case 0: // Main menu
+                        currentLevelManager = gameObject.AddComponent<LevelManager_MainMenu>();
                         break;
                     case 1:
-                        currentLevelManager = gameObject.AddComponent<LevelManager_Graybox>();
+                        /*Debug.Log("No LevelManager assigned.");*/
+                        currentLevelManager = gameObject.AddComponent<LevelManager_Intro>();
                         break;
                     case 2:
+                        currentLevelManager = gameObject.AddComponent<LevelManager_Graybox>();
+                        break;
+                    case 3:
                         currentLevelManager = gameObject.AddComponent<LevelManager_0>();
                         break;
                     default:
@@ -268,5 +275,4 @@ public class GameManager : MonoBehaviour
         isInBattle = false;
         Time.timeScale = 1;
     }
-    
 }
