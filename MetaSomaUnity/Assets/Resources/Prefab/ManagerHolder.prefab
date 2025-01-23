@@ -152,7 +152,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTestMode: 1
-  HUD: {fileID: 0}
+  HUD: {fileID: 8992055960139497962}
+  currentLevelIndex: 0
   currentLevelManager: {fileID: 0}
   hungerMeter: 100
   currentGameState: 0

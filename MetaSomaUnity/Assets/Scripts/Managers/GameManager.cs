@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     public GameObject HUD;
     
     // LEVEL MANAGER
-    private int currentLevelIndex;
+    [SerializeField] private int currentLevelIndex;
     
     public int CurrentLevelIndex
     {
@@ -87,6 +87,9 @@ public class GameManager : MonoBehaviour
         // TODO: NOTE -- THIS IS FOR DEBUGGING PURPOSES, MAY BE COMMENT OUT IN FINAL BUILD
         switch (SceneManager.GetActiveScene().name)
         {
+            case "Level_Intro":
+                CurrentLevelIndex = 1;
+                break;
             case "Graybox":
                 CurrentLevelIndex = 2;
                 break;
@@ -97,6 +100,7 @@ public class GameManager : MonoBehaviour
                 CurrentLevelIndex = 0;
                 break;
         }
+        InstantiateLevelManager();
         
         // SET UP LEVEL INDEX AND SET UP THE LEVEL MANAGER
         /*CurrentLevelIndex = 0;*/
@@ -104,9 +108,6 @@ public class GameManager : MonoBehaviour
         
         // SETUP YARN SYSTEM
         GetInMemoryVariableStorage();
-        
-        // SETUP LEVEL MANAGER FOR MAIN MENU
-        gameObject.AddComponent<LevelManager_MainMenu>();
         
         Debug.Log($"GameManager initialized. CurrentLevelIndex: {CurrentLevelIndex}, isInBattle: {isInBattle}");
     }
@@ -206,30 +207,11 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log($"Initializing LevelManager for level index: {currentLevelIndex}");
                 
-                // NOTE: TODO: THIS IS TEMP, NEED TO BE ITERATED THROUGH
-                switch (currentLevelIndex)
-                {
-                    case 0: // Main menu
-                        currentLevelManager = gameObject.AddComponent<LevelManager_MainMenu>();
-                        break;
-                    case 1:
-                        /*Debug.Log("No LevelManager assigned.");*/
-                        currentLevelManager = gameObject.AddComponent<LevelManager_Intro>();
-                        break;
-                    case 2:
-                        currentLevelManager = gameObject.AddComponent<LevelManager_Graybox>();
-                        break;
-                    case 3:
-                        currentLevelManager = gameObject.AddComponent<LevelManager_0>();
-                        break;
-                    default:
-                        Debug.Log("Unknown Scene. No LevelManager assigned.");
-                        return;
-                }
+                // ADD LEVEL MANAGER TO THE SCENE
+                InstantiateLevelManager();
                 
                 // Call Initialize for the current LevelManager
                 GetLevelManager();
-                currentLevelManager.Initialize();
                 
                 // UI Manager
                 UIManager.instance.Initialize();
@@ -238,6 +220,31 @@ public class GameManager : MonoBehaviour
                 DialogueManager.instance.Initialize();
             }
         }
+    }
+
+    public void InstantiateLevelManager()
+    {
+        switch (currentLevelIndex)
+        {
+            case 0: // Main menu
+                currentLevelManager = gameObject.AddComponent<LevelManager_MainMenu>();
+                break;
+            case 1:
+                /*Debug.Log("No LevelManager assigned.");*/
+                currentLevelManager = gameObject.AddComponent<LevelManager_Intro>();
+                break;
+            case 2:
+                currentLevelManager = gameObject.AddComponent<LevelManager_Graybox>();
+                break;
+            case 3:
+                currentLevelManager = gameObject.AddComponent<LevelManager_0>();
+                break;
+            default:
+                Debug.Log("Unknown Scene. No LevelManager assigned.");
+                return;
+        }
+        
+        currentLevelManager.Initialize();
     }
     
     public void GetInMemoryVariableStorage()

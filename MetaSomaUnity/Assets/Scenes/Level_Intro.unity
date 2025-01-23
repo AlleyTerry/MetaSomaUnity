@@ -400,7 +400,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1391546745
+--- !u!1001 &2096238149
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -408,6 +408,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 724675889223594122, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 874404209555109048, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: m_Name
+      value: LinnaeusWorldspacePlaceholder
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246260104906682250, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: messageBubbleOffset.y
+      value: 1.75
+      objectReference: {fileID: 0}
     - target: {fileID: 2302286714284682232, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -468,6 +483,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2302286715208037269, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302286715208037269, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302286715208037269, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 2302286715208037274, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -497,6 +527,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302286716038912040, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: m_VerticalFit
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302286716038912041, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: m_ChildScaleWidth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302286716038912041, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: m_ChildScaleHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302286716038912046, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302286716038912046, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302286716038912046, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 263.24
       objectReference: {fileID: 0}
     - target: {fileID: 5924076068585890818, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}
@@ -553,6 +613,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7585620475407551681, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: messageBubbleOffset.y
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043952759771539022, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: m_Name
+      value: LinnaeusAnimation
+      objectReference: {fileID: 0}
+    - target: {fileID: 8848496755927253438, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: messageBubbleOffset.y
+      value: 2.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -565,4 +640,4 @@ SceneRoots:
   - {fileID: 424270226}
   - {fileID: 100610042}
   - {fileID: 399708413}
-  - {fileID: 1391546745}
+  - {fileID: 2096238149}

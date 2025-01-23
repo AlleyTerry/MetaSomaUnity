@@ -23,7 +23,7 @@ public class LevelManager_MainMenu : LevelManagerBase
         buttonQuit.onClick.AddListener(QuitGame);
     }
     
-    public void QuitGame()
+    private void QuitGame()
     {
         Application.Quit();
     }

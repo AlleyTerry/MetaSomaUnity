@@ -42,7 +42,7 @@ public class UIManager : MonoBehaviour
 
     public void Initialize()
     {
-        if (SceneManager.GetActiveScene().name == "MainMenu")
+        if (SceneManager.GetActiveScene().name == "MainMenu" || !enabled)
         {
             Debug.Log("DialogueManager skipped initialization in Menu scene.");
             return;

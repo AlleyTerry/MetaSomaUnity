@@ -6,7 +6,7 @@ using Yarn.Unity;
 
 public class OpeningCrawlTransition : MonoBehaviour
 {
-   [YarnCommand("LeaveOpeningCrawl")]  
+   /*[YarnCommand("LeaveOpeningCrawl")]  */
    public void LeaveOpeningCrawl()
    {
       SceneManager.LoadScene("Graybox");

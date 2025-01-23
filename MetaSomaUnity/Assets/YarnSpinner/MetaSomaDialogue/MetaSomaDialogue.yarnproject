@@ -3,7 +3,8 @@
   "sourceFiles": [
     "Battle1Dialogue.yarn",
     "STARTBattle1Dialogue.yarn",
-    "ChapelStart.yarn"
+    "ChapelStart.yarn",
+    "*.yarn"
   ],
   "excludeFiles": [
     "**/*~/*"

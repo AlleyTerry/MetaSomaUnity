@@ -36,7 +36,7 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "MainMenu")
+        if (SceneManager.GetActiveScene().name == "MainMenu" || !enabled)
         {
             Debug.Log($"{GetType().Name} disabled in Menu scene.");
             enabled = false; // disable the script
@@ -93,6 +93,7 @@ public class DialogueManager : MonoBehaviour
             !dialogueRunner.IsDialogueRunning)
         {
             dialogueRunner.StartDialogue(nodeName);
+            Debug.Log($"Dialogue started: {nodeName}");
         }
         else
         {

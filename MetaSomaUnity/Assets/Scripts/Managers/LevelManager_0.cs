@@ -46,6 +46,8 @@ public class LevelManager_0 : LevelManagerBase
     public override void StartCutsScene(string cutSceneDialogueNode)
     {
         base.StartCutsScene(cutSceneDialogueNode);
+
+        if (linnaeusAnimation == null) linnaeusAnimation = GameObject.Find("LinnaeusAnimation");
         
         linnaeusAnimation.SetActive(true); 
     }
@@ -105,7 +107,7 @@ public class LevelManager_0 : LevelManagerBase
     }
     
     [YarnCommand("DisableLinnaeusAnimation")]
-    private void DisableLinnaeusAnimation()
+    public void DisableLinnaeusAnimation()
     {
         linnaeusAnimation.SetActive(false);
     }
