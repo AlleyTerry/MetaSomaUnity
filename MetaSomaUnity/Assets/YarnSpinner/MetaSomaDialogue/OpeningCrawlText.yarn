@@ -10,7 +10,7 @@ Narrator: Within, a Queen and her Court rule over a captured people, whose only 
 
 Narrator: But even they have been warped, whittled down until the people they were meant for could no longer remember the meaning.
 
-"Mellonella": “Achieve prosperity, drink of the noble red, and you shall ascend.”
+MeLloNellA: “Achieve prosperity, drink of the noble red, and you shall ascend.”
 
 Narrator: And so they were forced to dance endlessly for their captors, hands over eyes, trapped and oblivious. 
 
@@ -26,5 +26,5 @@ Narrator:  One who was unable to bear this life anymore discovered the truth, an
 
 Narrator: Now all that remains is to break free.
 
-<<LeaveOpeningCrawl OpeningManager>>
+<<LeaveOpeningCrawl ManagerHolder>>
 ===

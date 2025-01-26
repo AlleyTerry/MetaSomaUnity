@@ -16,5 +16,9 @@ public class LevelManager_Graybox : LevelManagerBase
       base.Initialize();
       
       GameManager.instance.HUD.SetActive(true);
+      GameManager.instance.CGDisplay.SetActive(false);
+      
+      EnableImerisAnimation();
+      DisableNPCAnimation();
    }
 }

@@ -15,8 +15,13 @@ public class LevelManager_Intro : LevelManagerBase
     {
         base.Initialize();
         
-        GameManager.instance.HUD.SetActive(true);
-        dialogueManager = DialogueManager.instance;
+        GameManager.instance.CGDisplay.SetActive(true);
+        
+        DisableImerisAnimation();
+        DisableNPCAnimation();
+        
+        // Start intro dialogue
+        DialogueManager.instance.StartDialogue(openingCrawlDialogueNode);
     }
     
     [YarnCommand("LeaveOpeningCrawl")]  
@@ -28,11 +33,6 @@ public class LevelManager_Intro : LevelManagerBase
     protected override void Update()
     {
         base.Update();
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            DialogueManager.instance.StartDialogue(openingCrawlDialogueNode);
-        }
         
     }
 }

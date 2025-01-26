@@ -15,17 +15,13 @@ public class LevelManagerBase : MonoBehaviour
     // IMERIS
     public GameObject ImerisAnimation;
     
-    // DIALOGUE NODES
-    /*public string cutSceneDialogueNode = "";
-    public string battleDialogueNode = "";*/
+    // NPC
+    public GameObject NPCAnimation;
     
     // BATTLE TRIGGER
     protected string currentCutSceneDialogueNode;
     protected string currentBattleDialogueNode;
     public float currentBattleDialogueDelay = 0.5f;
-    
-    // ANIMATION
-    /*public Animator viewportAnimator;*/
 
     private void Awake()
     {
@@ -35,9 +31,6 @@ public class LevelManagerBase : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        // SETUP IMERIS
-        ImerisAnimation = GameObject.Find("ImerisAnimation");
-        
         Debug.Log("LevelManagerBase.Start finished.");
     }
 
@@ -49,6 +42,12 @@ public class LevelManagerBase : MonoBehaviour
 
     public virtual void Initialize()
     {
+        // SETUP IMERIS
+        ImerisAnimation = GameObject.Find("ImerisAnimation");
+        
+        // SETUP NPC
+        NPCAnimation = GameObject.Find("NPCAnimation");
+        
         Debug.Log($"{GetType().Name} initialized.");
     }
     
@@ -116,11 +115,31 @@ public class LevelManagerBase : MonoBehaviour
     {
         if (GameManager.instance.CurrentGameState == GameState.IsDead)
         {
-            ImerisAnimation.SetActive(false);
+            DisableImerisAnimation();
         }
         else
         {
             Debug.LogWarning("DeadScene called but CurrentGameState is not IsDead.");
         }
+    }
+    
+    public void EnableImerisAnimation()
+    {
+        ImerisAnimation.SetActive(true);
+    }
+    
+    public void DisableImerisAnimation()
+    {
+        ImerisAnimation.SetActive(false);
+    }
+    
+    public void EnableNPCAnimation()
+    {
+        NPCAnimation.SetActive(true);
+    }
+    
+    public void DisableNPCAnimation()
+    {
+        NPCAnimation.SetActive(false);
     }
 }

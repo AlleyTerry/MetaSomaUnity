@@ -25,17 +25,18 @@ public class LevelManager_0 : LevelManagerBase
         base.Initialize();
         
         GameManager.instance.HUD.SetActive(true);
+        GameManager.instance.CGDisplay.SetActive(false);
         
         ImerisMovement.instance.currentState = new BeforeAnyEvolutionState(SubState.Healthy);
         
         GameManager.instance.isInBattle = false;
         
         // LINNEAUS
-        linnaeusAnimation = GameObject.Find("LinnaeusAnimation");
+        linnaeusAnimation = base.NPCAnimation;
         
         if (linnaeusAnimation != null)
         {
-            linnaeusAnimation.SetActive(false);
+            DisableLinnaeusAnimation();
         }
         else
         {
@@ -47,7 +48,7 @@ public class LevelManager_0 : LevelManagerBase
     {
         base.StartCutsScene(cutSceneDialogueNode);
 
-        if (linnaeusAnimation == null) linnaeusAnimation = GameObject.Find("LinnaeusAnimation");
+        if (linnaeusAnimation == null) linnaeusAnimation = GameObject.Find("NPCAnimation");
         
         linnaeusAnimation.SetActive(true); 
     }
@@ -76,7 +77,7 @@ public class LevelManager_0 : LevelManagerBase
         // ANIMATION
         UIManager.instance.PlayAnimation("SmallViewportTransition_Reversed");
         
-        linnaeusAnimation.SetActive(false);
+        DisableNPCAnimation();
         
         Debug.Log("Level 0 battle ended.");
         
@@ -102,13 +103,14 @@ public class LevelManager_0 : LevelManagerBase
         }
         
         Debug.Log("Level 0 Dead Scene started.");
-        linnaeusAnimation.SetActive(false);
+        
+        DisableLinnaeusAnimation();
         DialogueManager.instance.StartDialogue("DeadDialogue");
     }
     
     [YarnCommand("DisableLinnaeusAnimation")]
     public void DisableLinnaeusAnimation()
     {
-        linnaeusAnimation.SetActive(false);
+        DisableNPCAnimation();
     }
 }

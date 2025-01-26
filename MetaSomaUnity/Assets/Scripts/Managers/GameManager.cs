@@ -43,8 +43,9 @@ public class GameManager : MonoBehaviour
         Debug.Log("GameManager Awake completed.");
     }
     
-    // HUD
+    // HUD && CG PLAYER
     public GameObject HUD;
+    public GameObject CGDisplay;
     
     // LEVEL MANAGER
     [SerializeField] private int currentLevelIndex;
@@ -187,7 +188,7 @@ public class GameManager : MonoBehaviour
         // Reset the battle state
         isInBattle = false;
         
-        // HUD
+        // HUD && CGD
         HUD = GameObject.FindWithTag("HUD");
         
         if (HUD == null)
@@ -197,6 +198,17 @@ public class GameManager : MonoBehaviour
         else
         {
             HUD.SetActive(false);
+        }
+        
+        CGDisplay = GameObject.FindWithTag("CGD");
+        
+        if (CGDisplay == null)
+        {
+            Debug.LogError("CGDisplay not found in scene!");
+        }
+        else
+        {
+            CGDisplay.SetActive(false);
         }
         
         if (scene.buildIndex == currentLevelIndex)
