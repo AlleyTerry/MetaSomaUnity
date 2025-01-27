@@ -30,6 +30,10 @@ public class LevelManager_Intro : LevelManagerBase
         
         // Start intro dialogue
         DialogueManager.instance.StartDialogue(openingCrawlDialogueNode);
+        
+        // Play BGM
+        gameObject.GetComponent<AudioManager>().PlayMusic("openingCrawl");
+        Debug.Log("Opening Crawl music playing.");
     }
     
     [YarnCommand("LeaveOpeningCrawl")]  

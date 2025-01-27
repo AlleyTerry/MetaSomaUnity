@@ -1,6 +1,8 @@
 ﻿title: STARTBattle1Dialogue
 tags:
 ---
+<<StopMusic ManagerHolder>>
+
 Linnaeus: That door was barricaded for a reason, my child. 
 Linnaeus: I know what you are here for.
 Linnaeus:  But I shall not relinquish these offerings to Our Lady Mellonella even at the cost of my life.

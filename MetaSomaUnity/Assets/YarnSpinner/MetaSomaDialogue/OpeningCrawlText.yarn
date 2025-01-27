@@ -38,5 +38,6 @@ Narrator:  One who was unable to bear this life anymore discovered the truth, an
 <<PlayAnimation ManagerHolder "Illustrations_9">>
 Narrator: Now all that remains is to break free.
 
+<<StopMusic ManagerHolder>>
 <<LeaveOpeningCrawl ManagerHolder>>
 ===

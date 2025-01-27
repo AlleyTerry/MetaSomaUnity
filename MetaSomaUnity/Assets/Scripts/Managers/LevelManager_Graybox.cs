@@ -20,5 +20,8 @@ public class LevelManager_Graybox : LevelManagerBase
       
       EnableImerisAnimation();
       DisableNPCAnimation();
+      
+      // Play BGM
+      gameObject.GetComponent<AudioManager>().PlayMusic("level1");
    }
 }

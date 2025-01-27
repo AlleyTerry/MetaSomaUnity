@@ -8,17 +8,25 @@ using Yarn.Unity;
 public class AudioManager : MonoBehaviour
 {
     // AUDIO SOURCE COMPONENT
-    private AudioSource audioSource;
+    [SerializeField] private AudioSource audioSource;
     
     // AUDIO CLIPS
+    public AudioClip openingCrawl;
+
+    public AudioClip level1;
+    
     public AudioClip linnaeusBattleStart;
     public AudioClip linnaeusBattleEnd;
+    
     
     // Start is called before the first frame update
     void Start()
     {
         // GET AUDIO SOURCE COMPONENT
-        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
     }
 
     [YarnCommand ("PlayMusic")]
@@ -27,6 +35,12 @@ public class AudioManager : MonoBehaviour
     {
         switch (clipName)
         {
+            case "openingCrawl":
+                audioSource.clip = openingCrawl;
+                break;
+            case "level1":
+                audioSource.clip = level1;
+                break;
             case "linnaeusBattleStart":
                 audioSource.clip = linnaeusBattleStart;
                 break;

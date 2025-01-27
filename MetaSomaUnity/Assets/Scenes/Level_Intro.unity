@@ -527,6 +527,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb409d3c71fc454abd9340d0670a4b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 436161626}
+  openingCrawl: {fileID: 8300000, guid: 552620e2ae1655a43b1bb072abc0b2fa, type: 3}
+  level1: {fileID: 8300000, guid: 2a49d20c91dc4fc4a8dc1bf1336c3055, type: 3}
   linnaeusBattleStart: {fileID: 8300000, guid: be8c17af26f4aa145a09e84e7adab4f9, type: 3}
   linnaeusBattleEnd: {fileID: 8300000, guid: 61979667d6f5ef143b7af20ec5743503, type: 3}
 --- !u!1001 &2096238149
