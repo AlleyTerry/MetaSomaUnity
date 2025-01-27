@@ -45,7 +45,7 @@ public class InteractableItemBase : MonoBehaviour
         if (isOverlapping &&
             Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Return))
         {
-            Debug.Log("Interacting with " + this.GameObject().name);
+            //Debug.Log("Interacting with " + this.GameObject().name);
             interactWithItem();
         }
     }
@@ -71,7 +71,7 @@ public class InteractableItemBase : MonoBehaviour
     
     protected virtual void DialogueItem()
     {
-        Debug.Log("you are talking to " + this.GameObject().name);
+        //Debug.Log("you are talking to " + this.GameObject().name);
         
         if (!DialogueManager.instance.dialogueRunner.IsDialogueRunning)
         {

@@ -75,7 +75,14 @@ public class LevelManagerBase : MonoBehaviour
         GameObject.FindObjectOfType<ImerisHunger>().PauseHungerMeter();
         
         // FREEZE CONTROLS
-        Invoke(nameof(GameManager.instance.FreezeControls), 0.5f);
+        //StartCoroutine(DelayedFreezeControls());
+    }
+    
+    private IEnumerator DelayedFreezeControls()
+    {
+        yield return new WaitForSeconds(0.5f);
+        
+        GameManager.instance.FreezeControls();
     }
     
     // BATTLE SCENE
@@ -102,7 +109,7 @@ public class LevelManagerBase : MonoBehaviour
         GameObject.FindObjectOfType<ImerisHunger>().PauseHungerMeter();
         
         // FREEZE CONTROLS
-        Invoke(nameof(GameManager.instance.FreezeControls), 0.5f);
+        //StartCoroutine(DelayedFreezeControls());
     }
 
     public virtual void ExitBattleDialogue()

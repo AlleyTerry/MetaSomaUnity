@@ -64,8 +64,23 @@ public class LevelManager_0 : LevelManagerBase
         
         // LINNEAUS
         //linneausAnimation.SetActive(true); // For now we don't really have the cutscene, will be commented out later
+
+        StartCoroutine(DelayedDisableAnimator());
+        StartCoroutine(DelayedInitializeHeart());
+    }
+    
+    private IEnumerator DelayedDisableAnimator()
+    {
+        yield return new WaitForSeconds(0.65f);
         
-        Invoke(nameof(UIManager.instance.DisableAnimator), 0.65f);
+        UIManager.instance.DisableAnimator();
+    }
+    
+    private IEnumerator DelayedInitializeHeart()
+    {
+        yield return new WaitForSeconds(0.65f);
+        
+        GameManager.instance.InitializeHeart();
     }
 
     public override void ExitBattleDialogue()

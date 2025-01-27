@@ -1207,10 +1207,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4676880667594926389, guid: 9376fc3a1927eb14192c38774a829615,
+        type: 3}
+      propertyPath: viewportAnimator
+      value: 
+      objectReference: {fileID: 1991819880}
     - target: {fileID: 7964521411033984940, guid: 9376fc3a1927eb14192c38774a829615,
         type: 3}
       propertyPath: m_Name
       value: ManagerHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714127014412746384, guid: 9376fc3a1927eb14192c38774a829615,
+        type: 3}
+      propertyPath: m_Name
+      value: Viewport_Heart
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1235,7 +1245,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &544239706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3304,6 +3314,12 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &1991819880 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6928917750215286185, guid: 9376fc3a1927eb14192c38774a829615,
+    type: 3}
+  m_PrefabInstance: {fileID: 492963172}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2006538012
 GameObject:
   m_ObjectHideFlags: 0

@@ -189,6 +189,9 @@ public class GameManager : MonoBehaviour
         // Reset the battle state
         isInBattle = false;
         
+        // Heart
+        /*InitializeHeart();*/
+        
         // HUD && CGD
         HUD = GameObject.FindWithTag("HUD");
         
@@ -280,6 +283,22 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log($"LevelManager {currentLevelManager.GetType().Name} found successfully.");
             }
+        }
+    }
+    
+    public void InitializeHeart()
+    {
+        Debug.Log("Initializing Heart...!!!!!!!!!!");
+        Heart heart = transform.GetChild(0).Find("Viewport_Heart")?.GetComponent<Heart>();
+        
+        if (heart != null)
+        {
+            heart.enabled = true;
+            heart.Initialize();
+        }
+        else
+        {
+            Debug.LogError("Heart not found in scene!");
         }
     }
 

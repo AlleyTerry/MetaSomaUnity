@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour
         }
     }
     
-    private Animator viewportAnimator;
+    [SerializeField] private Animator viewportAnimator;
     
     // Start is called before the first frame update
     void Start()
@@ -74,6 +74,7 @@ public class UIManager : MonoBehaviour
     
     public void DisableAnimator()
     {
+        Debug.Log("Disabling viewport animator!!!!!!!!!!");
         if (CheckViewportAnimator())
         {
             viewportAnimator.enabled = false;

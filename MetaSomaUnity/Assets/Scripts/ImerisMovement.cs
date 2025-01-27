@@ -274,6 +274,8 @@ public class ImerisMovement : MonoBehaviour
                 // TODO: NOTE -- if the current level manager is not set, try other way, or check the GM
                 GameManager.instance.currentLevelManager.RegisterCutSceneAndBattle
                     (battleTrigger.cutSceneDialogueNode, battleTrigger.battleDialogueNode, battleTrigger.battleDialogueDelay);
+                
+                other.gameObject.SetActive(false); // Disable the trigger
             }
             
             /*GameManager.instance.currentLevelManager.BattleScene();*/

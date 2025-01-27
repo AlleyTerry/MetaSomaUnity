@@ -58,7 +58,7 @@ title: Retreat
 position: -1736,-1195
 ---
 ///-1 heart
-<<takeDamage Heart>>
+<<TakeDamage Viewport_Heart>>
 Narrator: Linnaeus sees your hesitation. He smiles cruelly.
 Linnaeus: Are you frightened? Are you doubting yourself?
 Linnaeus: Good. You should be. 
@@ -96,7 +96,7 @@ title: Apologize
 position: 672,-1503
 ---
 ///-1 heart
-<<takeDamage Heart>>
+<<TakeDamage Viewport_Heart>>
 Imeris: I'm sorry. I had to do this. I could not live any other way.
 Linnaeus: What good does that pathetic apology do? 
 Linnaeus: Do you not see the devastation you've wrought?
@@ -133,7 +133,7 @@ title: Apologize2
 position: 560,-1251
 ---
 ///-1 heart
-<<takeDamage Heart>>
+<<TakeDamage Viewport_Heart>>
 Narrator: You imagine your few friends, your one comfort in the world, stomachs empty and eyes glazed over with the sheen of death. 
 Narrator: You remember the bodies in the kitchen. The bitten, molded-over bread clutched weakly in a thin hand. Unbidden, a sob escapes your throat. 
 Narrator: You feel yourself fall to your knees as tears run down your face.
@@ -153,7 +153,7 @@ position: 602,-981
 ---
 Imeris: ...
 ///-1 heart
-<<takeDamage Heart>>
+<<TakeDamage Viewport_Heart>>
     //<<jump DeadDialogue>>
  ===
 title: Resist
@@ -206,7 +206,7 @@ title: Ignore
 position: -1031,-1129
 ---
 ///-1 heart
-<<takeDamage Heart>>
+<<TakeDamage Viewport_Heart>>
 Narrator: You feel a trickle of cold guilt settle in your stomach and look away, saying nothing. Linnaeus laughs cruelly.
 Linnaeus: Oh, nothing to say now? Have you realized your mistake at last? 
 Linnaeus: Poor, deluded fool. Thinking you are beyond consequence. 
@@ -222,7 +222,7 @@ title: Flinch
 position: -637,-909
 ---
 ///-1 heart
-<<takeDamage Heart>>
+<<TakeDamage Viewport_Heart>>
 Narrator: Linnaeus sees your stricken face. He smiles cruelly.
 Linnaeus: Are you frightened? You should be. 
 Linnaeus: Even if you make it out of this room, you'll never outrun your sin.
@@ -285,7 +285,7 @@ title: Acquiesce
 position: -234,-1160
 ---
 ///-1 heart
-<<takeDamage Heart>>
+<<TakeDamage Viewport_Heart>>
 Imeris: You may be right. Perhaps I only seek to pervert myself, at the expense of others. I never wished for any of this to happen.
 Imeris: But now that I have started, I cannot stop. I must let myself out of the shell of this body.
 Linnaeus: You admit your wrongdoing, and yet you persist? 
@@ -301,7 +301,7 @@ title: Plead
 position: -260,-897
 ---
 ///-1 heart
-<<takeDamage Heart>>
+<<TakeDamage Viewport_Heart>>
 You cry out in frustration.
 Imeris: If I am so ill, if I have been so blind, then tell me, how was I supposed to live?
 Imeris: What did you want me to do?!

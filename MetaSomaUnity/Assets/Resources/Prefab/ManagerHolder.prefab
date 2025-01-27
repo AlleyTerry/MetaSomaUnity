@@ -372,6 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b35f908a39f15342bf3248db9cfccc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  viewportAnimator: {fileID: 6928917750215286185}
 --- !u!114 &958325307842805374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,8 +385,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 125ae70d793f47e43ae5966b70c18529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
   variableStorage: {fileID: 0}
+  health: 3
   sprite1: {fileID: 21300000, guid: 953e0dcf246962946be7838b4f8706a2, type: 3}
   sprite2: {fileID: 21300000, guid: f2240545eba1af54fbfedb2d52cab1f1, type: 3}
   sprite3: {fileID: 21300000, guid: 07e75bb6e2dd9904e89bd2a0aed1a620, type: 3}
@@ -404,7 +405,7 @@ GameObject:
   - component: {fileID: 6928917750215286185}
   - component: {fileID: 5510383295102970813}
   m_Layer: 5
-  m_Name: Heart
+  m_Name: Viewport_Heart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -500,8 +501,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 125ae70d793f47e43ae5966b70c18529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
   variableStorage: {fileID: 0}
+  health: 3
   sprite1: {fileID: 21300000, guid: 953e0dcf246962946be7838b4f8706a2, type: 3}
   sprite2: {fileID: 21300000, guid: f2240545eba1af54fbfedb2d52cab1f1, type: 3}
   sprite3: {fileID: 21300000, guid: 07e75bb6e2dd9904e89bd2a0aed1a620, type: 3}
