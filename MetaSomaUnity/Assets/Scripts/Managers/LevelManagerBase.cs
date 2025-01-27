@@ -123,21 +123,25 @@ public class LevelManagerBase : MonoBehaviour
         }
     }
     
+    [YarnCommand("EnableImerisAnimation")]
     public void EnableImerisAnimation()
     {
         ImerisAnimation.SetActive(true);
     }
     
+    [YarnCommand("DisableImerisAnimation")]
     public void DisableImerisAnimation()
     {
         ImerisAnimation.SetActive(false);
     }
     
+    [YarnCommand("EnableNPCAnimation")]
     public void EnableNPCAnimation()
     {
         NPCAnimation.SetActive(true);
     }
     
+    [YarnCommand("DisableNPCAnimation")]
     public void DisableNPCAnimation()
     {
         NPCAnimation.SetActive(false);

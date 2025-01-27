@@ -5,6 +5,9 @@ position: -462,-1568
 ///has the player attacked lin?
 <<declare $AttackLin = false>>
 <<declare $CurrentHealth = 3>>
+
+<<PlayMusic ManagerHolder "linnaeusBattleStart">>
+
 Linnaeus: Do you have anything to say for yourself?
 Imeris: ...
 Narrator: Tread carefully; your choices may hurt you. Protect your heart, and stay true to yourself.
@@ -682,19 +685,21 @@ position: -418,1669
 
 Linnaeus: Beast… fiend… monster… I have had ENOUGH!
 Linnaeus: Your wretched, unholy existence ends here.
-Narrator: (Imeris and Linnaeus disappear from the UI)
+// Narrator: (Imeris and Linnaeus disappear from the UI) // TODO: MUSIC FADE OUT, FADE IN NEXT SONG
+<<DisableImerisAnimation ManagerHolder>>
+<<DisableNPCAnimation ManagerHolder>>
+<<PlayMusic ManagerHolder "linnaeusBattleEnd">>
 Narrator: Linnaeus wrenches an incense holder off the wall and grips the heavy metal fixture with both hands. 
 Narrator: He turns his gaze upon you and rushes forward, arms raised to strike you.
 
+-> option.
+    <<jump YouFeel>>
 -> Defend yourself. 
     <<jump YouFeel>>
 -> There is
     <<jump YouFeel>>
 -> no other
     <<jump YouFeel>>
--> option.
-    <<jump YouFeel>>
-
 ===
 
 title: YouFeel
@@ -773,7 +778,8 @@ Narrator: What you’ve already taken threatens to climb back up your throat and
 Narrator: You cover your mouth and run. 
 Narrator: You leave what remains of Linnaeus, and a part of you is left behind with him.
 
-<<ExitBattle Imeris>>
+<<StopMusic ManagerHolder>>
+<<ExitBattle Imeris>> // TODO: FADE OUT MUSIC
 ===
 
 title: DeadDialogue

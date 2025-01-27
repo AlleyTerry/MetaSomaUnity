@@ -10,9 +10,10 @@ Narrator: A floating jewel: a gilded prison. A fortress inescapable for all but 
 <<PlayAnimation ManagerHolder "Illustrations_3">>
 Narrator: Within, a Queen and her Court rule over a captured people, whose only remaining light is a Goddess of Gold and her guiding words.
 
+<<PlayAnimation ManagerHolder "Illustrations_4">>
 Narrator: But even they have been warped, whittled down until the people they were meant for could no longer remember the meaning.
 
-<<PlayAnimation ManagerHolder "Illustrations_4">>
+<<PlayAnimation ManagerHolder "Illustrations_BLANK">>
 MeLloNellA: “Achieve prosperity, drink of the noble red, and you shall ascend.”
 
 <<PlayAnimation ManagerHolder "Illustrations_5">>
@@ -22,10 +23,13 @@ Narrator: And so they were forced to dance endlessly for their captors, hands ov
 Narrator: Until…
 
 <<PlayAnimation ManagerHolder "Illustrations_7">>
+Narrator: …
+
+<<PlayAnimation ManagerHolder "Illustrations_BLANK">>
 Mellonella: “Achieve prosperity / (so that you may sate your hunger)”
-
+<<PlayAnimation ManagerHolder "Illustrations_BLANK">>
 Mellonella: “Drink of the noble red / (which flows in the veins of royalty)”
-
+<<PlayAnimation ManagerHolder "Illustrations_BLANK">>
 Mellonella: “And you shall ascend / (on wings of gold)”
 
 <<PlayAnimation ManagerHolder "Illustrations_8">>
