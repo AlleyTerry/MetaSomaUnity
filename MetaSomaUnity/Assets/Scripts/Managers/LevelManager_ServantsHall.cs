@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelManager_Graybox : LevelManagerBase
+public class LevelManager_ServantsHall : LevelManagerBase
 {
    protected override void Start()
    {

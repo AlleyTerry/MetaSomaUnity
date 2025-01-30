@@ -24,9 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Archive/Opening.unity
     guid: 3385d664f6796420ca6ffa0627f6cc4f
   - enabled: 1
-    path: Assets/Scenes/Graybox.unity
+    path: Assets/Scenes/Level_ServantsHall.unity
     guid: d8d0237d18316bd4396d0926d4408dbf
   - enabled: 1
-    path: Assets/Scenes/CombinedScene.unity
+    path: Assets/Scenes/Level_Chapel.unity
     guid: 0616c802da19cda4792ff3dfad917f06
   m_configObjects: {}

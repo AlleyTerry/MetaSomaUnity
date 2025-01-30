@@ -91,10 +91,10 @@ public class GameManager : MonoBehaviour
             case "Level_Intro":
                 CurrentLevelIndex = 1;
                 break;
-            case "Graybox":
+            case "Level_ServantsHall":
                 CurrentLevelIndex = 2;
                 break;
-            case "CombinedScene":
+            case "Level_Chapel":
                 CurrentLevelIndex = 3;
                 break;
             default:
@@ -250,7 +250,7 @@ public class GameManager : MonoBehaviour
                 currentLevelManager = gameObject.AddComponent<LevelManager_Intro>();
                 break;
             case 2:
-                currentLevelManager = gameObject.AddComponent<LevelManager_Graybox>();
+                currentLevelManager = gameObject.AddComponent<LevelManager_ServantsHall>();
                 break;
             case 3:
                 currentLevelManager = gameObject.AddComponent<LevelManager_0>();

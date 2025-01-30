@@ -9,7 +9,7 @@ public class OpeningCrawlTransition : MonoBehaviour
    /*[YarnCommand("LeaveOpeningCrawl")]  */
    public void LeaveOpeningCrawl()
    {
-      SceneManager.LoadScene("Graybox");
+      SceneManager.LoadScene("Level_ServantsHall");
    }
    
 }
