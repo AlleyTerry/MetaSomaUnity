@@ -27,7 +27,7 @@ public class Heart : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "MainMenu")
         {
             Debug.Log($"{GetType().Name} disabled in Menu scene.");
-            enabled = false; // disable the script
+            //enabled = false; // disable the script
             return;
         }
         
