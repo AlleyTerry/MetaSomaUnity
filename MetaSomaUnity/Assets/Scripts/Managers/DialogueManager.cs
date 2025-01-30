@@ -36,10 +36,10 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "MainMenu" || !enabled)
+        if (SceneManager.GetActiveScene().name == "MainMenu")
         {
             Debug.Log($"{GetType().Name} disabled in Menu scene.");
-            enabled = false; // disable the script
+            //enabled = false; // disable the script
             return;
         }
     }
@@ -78,6 +78,11 @@ public class DialogueManager : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            return;
+        }
+        
         if (CheckDialogueRunner() && 
             dialogueRunner.IsDialogueRunning)
         {

@@ -8,8 +8,7 @@ using Yarn;
 
 public class Heart : MonoBehaviour
 {
-    private DialogueRunner dialogueRunner;
-    [SerializeField] private InMemoryVariableStorage variableStorage;
+    public InMemoryVariableStorage variableStorage;
     
     public float health = 3;
     public Sprite sprite1, sprite2, sprite3, sprite4;
@@ -73,8 +72,6 @@ public class Heart : MonoBehaviour
 
     public void SetupYarnVariables()
     {
-        dialogueRunner = DialogueManager.instance.dialogueRunner;
-        
         GameManager.instance.GetInMemoryVariableStorage();
         variableStorage = GameManager.instance.inMemoryVariableStorage;
         

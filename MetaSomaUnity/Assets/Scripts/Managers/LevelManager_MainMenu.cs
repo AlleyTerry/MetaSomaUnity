@@ -14,6 +14,9 @@ public class LevelManager_MainMenu : LevelManagerBase
     {
         base.Start();
         
+        GameManager.instance.HUD.SetActive(true);
+        GameManager.instance.CGDisplay.SetActive(false);
+        
         // SETUP BUTTONS
         buttonStart = GameObject.Find("ButtonStart").GetComponent<Button>();
         buttonQuit = GameObject.Find("ButtonQuit").GetComponent<Button>();

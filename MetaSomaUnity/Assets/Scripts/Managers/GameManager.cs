@@ -116,10 +116,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inMemoryVariableStorage == null)
+        /*if (inMemoryVariableStorage == null)
         {
             GetInMemoryVariableStorage();
-        }
+        }*/
     }
     
     private void HandleGameStateSwitch()
@@ -190,10 +190,10 @@ public class GameManager : MonoBehaviour
         isInBattle = false;
         
         // Heart
-        /*InitializeHeart();*/
+        GetInMemoryVariableStorage();
         
         // HUD && CGD
-        HUD = GameObject.FindWithTag("HUD");
+        HUD = transform.Find("HUD")?.gameObject;
         
         if (HUD == null)
         {
@@ -204,7 +204,7 @@ public class GameManager : MonoBehaviour
             HUD.SetActive(false);
         }
         
-        CGDisplay = GameObject.FindWithTag("CGD");
+        CGDisplay = transform.Find("CGDisplay")?.gameObject;
         
         if (CGDisplay == null)
         {
