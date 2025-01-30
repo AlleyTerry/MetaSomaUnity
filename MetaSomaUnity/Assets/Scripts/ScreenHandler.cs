@@ -13,7 +13,8 @@ public class ScreenHandler : MonoBehaviour
     }*/
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && 
+            Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             Debug.Log("Player triggered scene transition.");
             
