@@ -91,11 +91,17 @@ public class GameManager : MonoBehaviour
             case "Level_Intro":
                 CurrentLevelIndex = 1;
                 break;
-            case "Level_ServantsHall":
+            case "Level_ImerisBedroom":
                 CurrentLevelIndex = 2;
                 break;
-            case "Level_Chapel":
+            case "Level_ServantsHall":
                 CurrentLevelIndex = 3;
+                break;
+            case "Level_CommonArea":
+                CurrentLevelIndex = 4;
+                break;
+            case "Level_Chapel":
+                CurrentLevelIndex = 5;
                 break;
             default:
                 CurrentLevelIndex = 0;
@@ -250,9 +256,15 @@ public class GameManager : MonoBehaviour
                 currentLevelManager = gameObject.AddComponent<LevelManager_Intro>();
                 break;
             case 2:
-                currentLevelManager = gameObject.AddComponent<LevelManager_ServantsHall>();
+                currentLevelManager = gameObject.AddComponent<LevelManager_ImerisBedroom>();
                 break;
             case 3:
+                currentLevelManager = gameObject.AddComponent<LevelManager_ServantsHall>();
+                break;
+            case 4:
+                currentLevelManager = gameObject.AddComponent<LevelManager_CommonArea>();
+                break;
+            case 5:
                 currentLevelManager = gameObject.AddComponent<LevelManager_0>();
                 break;
             default:

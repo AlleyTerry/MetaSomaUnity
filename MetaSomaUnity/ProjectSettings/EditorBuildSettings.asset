@@ -20,12 +20,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_Intro.unity
     guid: 156b8f74a0a17b14f95e4e154c0bea4e
+  - enabled: 1
+    path: Assets/Scenes/Level_ImerisBedroom.unity
+    guid: 28b31dd92a36aa84989564a3cf23840d
   - enabled: 0
     path: Assets/Scenes/Archive/Opening.unity
     guid: 3385d664f6796420ca6ffa0627f6cc4f
   - enabled: 1
     path: Assets/Scenes/Level_ServantsHall.unity
     guid: d8d0237d18316bd4396d0926d4408dbf
+  - enabled: 1
+    path: Assets/Scenes/Level_CommonArea.unity
+    guid: 8febbc7f4ab77cf45a5929545d144ae7
   - enabled: 1
     path: Assets/Scenes/Level_Chapel.unity
     guid: 0616c802da19cda4792ff3dfad917f06
