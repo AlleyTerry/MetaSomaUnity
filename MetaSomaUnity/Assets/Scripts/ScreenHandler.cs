@@ -44,7 +44,7 @@ public class ScreenHandler : MonoBehaviour
     void Update()
     {
         if (isTriggered && 
-            Input.GetKeyDown(KeyCode.KeypadEnter))
+            Input.GetKeyDown(KeyCode.Return))
         {
             GameManager.instance.LoadNextLevel();
         }
