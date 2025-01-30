@@ -11,14 +11,26 @@ public class ScreenHandler : MonoBehaviour
         SceneManager.LoadScene(sceneName);
         GameManager.instance.CurrentLevelIndex++;
     }*/
+    
+    private bool isTriggered = false;
+    
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && 
-            Input.GetKeyDown(KeyCode.KeypadEnter))
+        if (other.CompareTag("Player"))
         {
             Debug.Log("Player triggered scene transition.");
             
-            GameManager.instance.LoadNextLevel();
+            isTriggered = true;
+        }
+    }
+    
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Player exited scene transition.");
+            
+            isTriggered = false;
         }
     }
     
@@ -31,6 +43,10 @@ public class ScreenHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (isTriggered && 
+            Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            GameManager.instance.LoadNextLevel();
+        }
     }
 }
