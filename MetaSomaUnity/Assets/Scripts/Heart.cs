@@ -82,6 +82,7 @@ public class Heart : MonoBehaviour
         else
         {
             Debug.Log($"variableStorage successfully assigned in SetupYarnVariables. Called from: {new System.Diagnostics.StackTrace().GetFrame(1).GetMethod().Name}");
+            Debug.LogWarning(variableStorage.gameObject.name);
         }
     }
     
