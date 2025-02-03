@@ -50,6 +50,10 @@ public class InteractableItemBase : MonoBehaviour
         }
     }
     
+    public void HideIndicator()
+    {
+        visualCue.SetActive(false);
+    }
     
     protected virtual void interactWithItem()
     {
@@ -103,7 +107,9 @@ public class InteractableItemBase : MonoBehaviour
         {
             isOverlapping = false;
             // Set visual cue to false
-            visualCue.SetActive(false);
+            /*visualCue.SetActive(false);*/
+            
+            GetComponentInChildren<Animator>().Play("EyeIndicator_BNW_backward");
         }
     }
 }
