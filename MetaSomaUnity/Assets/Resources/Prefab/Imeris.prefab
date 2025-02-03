@@ -106,7 +106,7 @@ MonoBehaviour:
   groundCheck: {fileID: 6805930196506196456}
   isGrounded: 1
   groundCheckRadius: 0.05
-  jumpForce: 3
+  jumpForce: 5
   isJumping: 0
   jumpSlowdownFalling: 0.9
   playerAnimator: {fileID: 0}
