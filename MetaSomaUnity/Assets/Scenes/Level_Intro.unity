@@ -303,6 +303,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ManagerHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 8415967924428648814, guid: 9376fc3a1927eb14192c38774a829615,
+        type: 3}
+      propertyPath: fadeDuration
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
