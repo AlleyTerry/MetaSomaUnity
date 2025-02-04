@@ -10,5 +10,8 @@ public class LevelManager_ImerisBedroom : LevelManagerBase
         
         GameManager.instance.HUD.SetActive(true);
         GameManager.instance.CGDisplay.SetActive(false);
+        
+        // Play BGM
+        gameObject.GetComponent<AudioManager>().PlayMusic("level1");
     }
 }

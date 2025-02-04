@@ -42,6 +42,11 @@ public class LevelManager_Intro : LevelManagerBase
     [YarnCommand("LeaveOpeningCrawl")]  
     public void LeaveOpeningScene()
     {
+        Invoke(nameof(NextScene), 1f);
+    }
+
+    private void NextScene()
+    {
         GameManager.instance.LoadNextLevel();
     }
 

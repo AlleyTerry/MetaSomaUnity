@@ -1,7 +1,7 @@
 ﻿title: STARTBattle1Dialogue
 tags:
 ---
-<<StopMusic ManagerHolder>>
+<<StopMusic ManagerHolder 0.05>>
 
 Linnaeus: That door was barricaded for a reason, my child. 
 Linnaeus: I know what you are here for.

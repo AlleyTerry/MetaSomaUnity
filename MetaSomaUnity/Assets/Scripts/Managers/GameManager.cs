@@ -43,9 +43,10 @@ public class GameManager : MonoBehaviour
         Debug.Log("GameManager Awake completed.");
     }
     
-    // HUD && CG PLAYER
+    // HUD && CG PLAYER && FADE EFFECT
     public GameObject HUD;
     public GameObject CGDisplay;
+    public SceneFade sceneFade;
     
     // LEVEL MANAGER
     [SerializeField] private int currentLevelIndex;
@@ -184,7 +185,17 @@ public class GameManager : MonoBehaviour
             Debug.Log($"Switching to level index: {currentLevelIndex}");
             
             SceneManager.sceneLoaded += OnSceneLoaded;
-            SceneManager.LoadSceneAsync(currentLevelIndex);
+            
+            if (sceneFade == null)
+            {
+                Debug.LogWarning("SceneFade not found. Loading scene without fade effect.");
+                SceneManager.LoadSceneAsync(currentLevelIndex);
+            }
+            else
+            {
+                Debug.Log("Loading scene with fade effect.");
+                sceneFade.LoadScene(currentLevelIndex);
+            }
         }
     }
     
@@ -219,6 +230,11 @@ public class GameManager : MonoBehaviour
         else
         {
             CGDisplay.SetActive(false);
+        }
+
+        if (sceneFade == null)
+        {
+            sceneFade = transform.Find("ScreenFade")?.GetComponent<SceneFade>();
         }
         
         if (scene.buildIndex == currentLevelIndex)
@@ -265,7 +281,7 @@ public class GameManager : MonoBehaviour
                 currentLevelManager = gameObject.AddComponent<LevelManager_CommonArea>();
                 break;
             case 5:
-                currentLevelManager = gameObject.AddComponent<LevelManager_0>();
+                currentLevelManager = gameObject.AddComponent<LevelManager_Chapel>();
                 break;
             default:
                 Debug.Log("Unknown Scene. No LevelManager assigned.");

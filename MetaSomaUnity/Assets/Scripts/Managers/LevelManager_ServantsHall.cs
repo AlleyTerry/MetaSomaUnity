@@ -22,6 +22,6 @@ public class LevelManager_ServantsHall : LevelManagerBase
       DisableNPCAnimation();
       
       // Play BGM
-      gameObject.GetComponent<AudioManager>().PlayMusic("level1");
+      /*gameObject.GetComponent<AudioManager>().PlayMusic("level1");*/
    }
 }

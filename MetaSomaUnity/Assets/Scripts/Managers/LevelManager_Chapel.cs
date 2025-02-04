@@ -6,7 +6,7 @@ using Yarn.Unity;
 using Yarn.Unity.Example;
 
 // TODO: MAKE HUD.ACTIVE TRUE IN THIS LEVEL !!!!!!!!!
-public class LevelManager_0 : LevelManagerBase
+public class LevelManager_Chapel : LevelManagerBase
 {
     // LINNEAUS
     [FormerlySerializedAs("linneausAnimation")] 

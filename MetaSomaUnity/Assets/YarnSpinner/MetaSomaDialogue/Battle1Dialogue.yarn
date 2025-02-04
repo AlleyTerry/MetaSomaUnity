@@ -682,7 +682,7 @@ Narrator: with what?
 title: BATTLEEND
 position: -418,1669
 ---
-<<StopMusic ManagerHolder>>
+<<StopMusic ManagerHolder 0.05>>
 Linnaeus: Beast… fiend… monster… I have had ENOUGH!
 Linnaeus: Your wretched, unholy existence ends here.
 // Narrator: (Imeris and Linnaeus disappear from the UI) // TODO: MUSIC FADE OUT, FADE IN NEXT SONG
@@ -779,7 +779,7 @@ Narrator: What you’ve already taken threatens to climb back up your throat and
 Narrator: You cover your mouth and run. 
 Narrator: You leave what remains of Linnaeus, and a part of you is left behind with him.
 
-<<StopMusic ManagerHolder>>
+<<StopMusic ManagerHolder 0.25>>
 <<ExitBattle Imeris>> // TODO: FADE OUT MUSIC
 ===
 

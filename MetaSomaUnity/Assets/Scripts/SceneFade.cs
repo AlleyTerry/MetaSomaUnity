@@ -13,19 +13,20 @@ public class SceneFade : MonoBehaviour
     // Flags to indicate if fading in or out
     private bool isFadingIn = true;
     private bool isFadingOut = false;
-    // Name of the scene to load
-    private string sceneToLoad;
+    // Index of the scene to load
+    private int sceneToLoad;
 
     private void Start()
     {
         // Initialize with a fully opaque image for fade-in effect
-        fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 1f);
-        isFadingIn = true;
-        fadeTimer = 0f;
+        StartFadeIn();
     }
 
     private void Update()
     {
+        // If not fading in or out, do nothing, saving performance
+        if (!isFadingIn && !isFadingOut) return;
+        
         // Handle fade-in effect
         if (isFadingIn)
         {
@@ -50,16 +51,40 @@ public class SceneFade : MonoBehaviour
             if (fadeTimer >= fadeDuration)
             {
                 isFadingOut = false;
-                SceneManager.LoadScene(sceneToLoad);
+                SceneManager.LoadSceneAsync(sceneToLoad);
             }
         }
     }
+    
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log($"Scene {scene.name} Loaded! Fading In...");
+        StartFadeIn();
+    }
+
 
     // Method to initiate the fade-out effect and load a new scene
-    public void LoadScene(string sceneName)
+    public void LoadScene(int sceneIndex)
     {
-        sceneToLoad = sceneName;
+        sceneToLoad = sceneIndex;
         isFadingOut = true;
+        fadeTimer = 0f;
+    }
+
+    public void StartFadeIn()
+    {
+        fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 1f);
+        isFadingIn = true;
         fadeTimer = 0f;
     }
 }
