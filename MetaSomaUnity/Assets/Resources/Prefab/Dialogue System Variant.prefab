@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Linnaeus
-  messageBubbleOffset: {x: 8, y: 2.5, z: 0}
+  messageBubbleOffset: {x: 0, y: 0, z: 0}
   offsetUsesRotation: 0
 --- !u!1 &4217430520171522537
 GameObject:
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Narrator
-  messageBubbleOffset: {x: 6, y: -1.5, z: 0}
+  messageBubbleOffset: {x: 0, y: 0, z: 0}
   offsetUsesRotation: 0
 --- !u!114 &6547265705781140210
 MonoBehaviour:
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Mellonella
-  messageBubbleOffset: {x: 0, y: -1.5, z: 0}
+  messageBubbleOffset: {x: 0, y: 0, z: 0}
   offsetUsesRotation: 0
 --- !u!114 &3161267640038491616
 MonoBehaviour:
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: MeLloNellA
-  messageBubbleOffset: {x: 0, y: -1.5, z: 0}
+  messageBubbleOffset: {x: 0, y: 0, z: 0}
   offsetUsesRotation: 0
 --- !u!1 &5077686104644914960
 GameObject:
@@ -410,7 +410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Imeris
-  messageBubbleOffset: {x: 3.25, y: 1.75, z: 0}
+  messageBubbleOffset: {x: 0, y: 0, z: 0}
   offsetUsesRotation: 0
 --- !u!1 &5886405413557187014
 GameObject:
@@ -705,7 +705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: InnerImeris
-  messageBubbleOffset: {x: -2.35, y: 2.75, z: 0}
+  messageBubbleOffset: {x: 0, y: 0, z: 0}
   offsetUsesRotation: 0
 --- !u!1 &8043952759771539022
 GameObject:
