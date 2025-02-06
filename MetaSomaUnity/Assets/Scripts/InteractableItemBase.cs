@@ -42,11 +42,13 @@ public class InteractableItemBase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isOverlapping &&
-            Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Return))
+        if (isOverlapping)
         {
-            //Debug.Log("Interacting with " + this.GameObject().name);
-            interactWithItem();
+            if (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Return))
+            {
+                //Debug.Log("Interacting with " + this.GameObject().name);
+                interactWithItem();
+            }
         }
     }
     
