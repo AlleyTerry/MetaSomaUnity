@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ScreenHandler : MonoBehaviour
+public class SceneHandler : MonoBehaviour
 {
     /*public string sceneName;
     public void LoadScene()
@@ -13,6 +13,9 @@ public class ScreenHandler : MonoBehaviour
     }*/
     
     private bool isTriggered = false;
+
+    [SerializeField] private bool isStraightToNextLevel = true;
+    [SerializeField] private string nextLevelName = "";
     
     private void OnTriggerEnter(Collider other)
     {
@@ -46,7 +49,15 @@ public class ScreenHandler : MonoBehaviour
         if (isTriggered && 
             Input.GetKeyDown(KeyCode.Return))
         {
-            GameManager.instance.LoadNextLevel();
+            if (isStraightToNextLevel)
+            {
+                GameManager.instance.LoadNextLevel();
+            }
+            else
+            {
+                if (nextLevelName == null) return;
+                SceneManager.LoadScene(nextLevelName);
+            }
         }
     }
 }
