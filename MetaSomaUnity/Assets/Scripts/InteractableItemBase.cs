@@ -79,6 +79,7 @@ public class InteractableItemBase : MonoBehaviour
         
         if (!DialogueManager.instance.dialogueRunner.IsDialogueRunning)
         {
+            GameManager.instance.FreezeControls();
             DialogueManager.instance.StartDialogue(objName);
         }
     }

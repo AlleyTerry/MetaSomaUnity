@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Narrator
-  messageBubbleOffset: {x: 0, y: -1.5, z: 0}
+  messageBubbleOffset: {x: 6, y: -1.5, z: 0}
   offsetUsesRotation: 0
 --- !u!114 &6547265705781140210
 MonoBehaviour:
@@ -660,6 +660,53 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &7937639300644037301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2981472352412948677}
+  - component: {fileID: 8536744828141128833}
+  m_Layer: 0
+  m_Name: InnerImerisWorldspacePlaceholder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2981472352412948677
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7937639300644037301}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6353625056946509436}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8536744828141128833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7937639300644037301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e94f9d9f6e80f984f94976b04551b1f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: InnerImeris
+  messageBubbleOffset: {x: -2.35, y: 2.75, z: 0}
+  offsetUsesRotation: 0
 --- !u!1 &8043952759771539022
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,10 +1225,14 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3183266951831634833, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
         type: 3}
       insertIndex: 2
-      addedObject: {fileID: 2410234974133910571}
+      addedObject: {fileID: 2981472352412948677}
     - targetCorrespondingSourceObject: {fileID: 3183266951831634833, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
         type: 3}
       insertIndex: 3
+      addedObject: {fileID: 2410234974133910571}
+    - targetCorrespondingSourceObject: {fileID: 3183266951831634833, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
+        type: 3}
+      insertIndex: 4
       addedObject: {fileID: 614217985516070111}
     - targetCorrespondingSourceObject: {fileID: 7084386685998634907, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
         type: 3}
@@ -1200,10 +1251,6 @@ PrefabInstance:
         type: 3}
       insertIndex: 1
       addedObject: {fileID: 6428948965629011909}
-    - targetCorrespondingSourceObject: {fileID: 2753718018764665327, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 724675889223594122}
     - targetCorrespondingSourceObject: {fileID: 7778558435068644802, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
         type: 3}
       insertIndex: -1
@@ -1296,24 +1343,13 @@ MonoBehaviour:
   - {fileID: 1246260104906682250}
   - {fileID: 8848496755927253438}
   - {fileID: 7585620475407551681}
+  - {fileID: 8536744828141128833}
   worldCamera: {fileID: 0}
   playerCharacter: {fileID: 7585620475407551681}
   canvas: {fileID: 5180806778242988147}
   canvasScaler: {fileID: 1816227594842715902}
   dialogueBubbleRect: {fileID: 2302286716038912046}
   bubbleMargin: -1
---- !u!114 &724675889223594122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5924076068585890818}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9d5c380a41566a4cb067d35402d4e97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &6353625056946509436 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3183266951831634833, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,

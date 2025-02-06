@@ -4,7 +4,8 @@
     "Battle1Dialogue.yarn",
     "STARTBattle1Dialogue.yarn",
     "ChapelStart.yarn",
-    "*.yarn"
+    "*.yarn",
+    "Interactables.yarn"
   ],
   "excludeFiles": [
     "**/*~/*"
