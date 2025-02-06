@@ -44,11 +44,15 @@ public class InteractableItemBase : MonoBehaviour
     {
         if (isOverlapping)
         {
-            if (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Return))
+            // Older version, need player to press F or Enter
+            /*if (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Return))
             {
                 //Debug.Log("Interacting with " + this.GameObject().name);
                 interactWithItem();
-            }
+            }*/
+            
+            // Newer version, triggering automatically
+            interactWithItem();
         }
     }
     
@@ -81,7 +85,7 @@ public class InteractableItemBase : MonoBehaviour
         
         if (!DialogueManager.instance.dialogueRunner.IsDialogueRunning)
         {
-            GameManager.instance.FreezeControls();
+            /*GameManager.instance.FreezeControls();*/
             DialogueManager.instance.StartDialogue(objName);
         }
     }
@@ -113,6 +117,11 @@ public class InteractableItemBase : MonoBehaviour
             /*visualCue.SetActive(false);*/
             
             GetComponentInChildren<Animator>().Play("EyeIndicator_BNW_backward");
+            
+            if (DialogueManager.instance.dialogueRunner.IsDialogueRunning)
+            {
+                DialogueManager.instance.StopDialogue();
+            }
         }
     }
 }

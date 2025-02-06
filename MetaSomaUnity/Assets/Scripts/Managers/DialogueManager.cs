@@ -164,6 +164,13 @@ public class DialogueManager : MonoBehaviour
                     characterNameText.color = new Color(255, 255, 255, 0);
                     dialogueTextBox.alignment = TextAlignmentOptions.Top;
                     break;
+                
+                case "imeris":
+                    characterNameText.alignment = TextAlignmentOptions.Center;
+                    characterNameText.color = new Color(255, 255, 255, 0);
+                    dialogueTextBox.alignment = TextAlignmentOptions.Top;
+                    break;
+                
                 default:
                     characterNameText.alignment = TextAlignmentOptions.Center;
                     characterNameText.color = new Color(255, 255, 255, 255);
