@@ -37,6 +37,9 @@ public class InteractableItemBase : MonoBehaviour
         
         objName = this.gameObject.name;
         interactableItem = this.GameObject();
+
+        // Keeping the visual cue behind everything for debugging purposes
+        gameObject.GetComponent<SpriteRenderer>().sortingOrder = -10;
     }
 
     // Update is called once per frame
