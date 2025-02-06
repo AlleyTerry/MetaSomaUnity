@@ -505,6 +505,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2302286716038912046, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302286716038912046, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
@@ -567,6 +572,11 @@ PrefabInstance:
         type: 3}
       propertyPath: messageBubbleOffset.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7585620475407551681, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: messageBubbleOffset.y
+      value: -2.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
