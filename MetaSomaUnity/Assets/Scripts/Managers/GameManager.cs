@@ -283,6 +283,9 @@ public class GameManager : MonoBehaviour
             case 5:
                 currentLevelManager = gameObject.AddComponent<LevelManager_Chapel>();
                 break;
+            case 6:
+                currentLevelManager = gameObject.AddComponent<LevelManager_Cafeteria>();
+                break;
             default:
                 Debug.Log("Unknown Scene. No LevelManager assigned.");
                 return;

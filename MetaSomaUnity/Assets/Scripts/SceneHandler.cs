@@ -56,8 +56,29 @@ public class SceneHandler : MonoBehaviour
             else
             {
                 if (nextLevelName == null) return;
-                SceneManager.LoadScene(nextLevelName);
+                SetSceneIndex(nextLevelName);
+                //SceneManager.LoadScene(nextLevelName);
             }
         }
+    }
+
+    private void SetSceneIndex(string sceneName)
+    {
+        int targetIndex = 0;
+        
+        switch (nextLevelName)
+        {
+            case "Level_CommonArea":
+                targetIndex = 4;
+                break;
+            case "Level_Chapel":
+                targetIndex = 5;
+                break;
+            case "Level_Cafeteria":
+                targetIndex = 6;
+                break;
+        }
+        
+        GameManager.instance.CurrentLevelIndex = targetIndex;
     }
 }
