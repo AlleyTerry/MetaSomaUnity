@@ -121,6 +121,13 @@ public class ImerisMovement : MonoBehaviour
         
         // INITIALIZE THE PLAYER ANIMATOR
         playerAnimator.Play("Player_Idle");
+        
+        // Constraint the Y position of the player, and all rotations
+        rb.constraints = RigidbodyConstraints.FreezePositionY | 
+                         RigidbodyConstraints.FreezePositionZ | 
+                         RigidbodyConstraints.FreezeRotationX | 
+                         RigidbodyConstraints.FreezeRotationY |
+                         RigidbodyConstraints.FreezeRotationZ;
     }
 
     // Update is called once per frame
