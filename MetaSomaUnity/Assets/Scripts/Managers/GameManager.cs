@@ -333,7 +333,7 @@ public class GameManager : MonoBehaviour
     public void FreezeControls()
     {
         isInBattle = true;
-        Time.timeScale = 0;
+        /*Time.timeScale = 0;*/
     }
     
     [YarnCommand("ResumeControls")]

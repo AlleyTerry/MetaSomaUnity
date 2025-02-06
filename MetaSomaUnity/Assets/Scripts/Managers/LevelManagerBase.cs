@@ -75,7 +75,7 @@ public class LevelManagerBase : MonoBehaviour
         GameObject.FindObjectOfType<ImerisHunger>().PauseHungerMeter();
         
         // FREEZE CONTROLS
-        //StartCoroutine(DelayedFreezeControls());
+        StartCoroutine(DelayedFreezeControls());
     }
     
     private IEnumerator DelayedFreezeControls()
