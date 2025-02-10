@@ -31,6 +31,7 @@ public class ImerisMovement : MonoBehaviour
     private Vector3 moveDirection;
     
     // JUMP VARIABLES
+    public bool jumpEnabled = true;
     [SerializeField] private Transform groundCheck;
     private LayerMask groundLayer;
     
@@ -122,12 +123,16 @@ public class ImerisMovement : MonoBehaviour
         // INITIALIZE THE PLAYER ANIMATOR
         playerAnimator.Play("Player_Idle");
         
+        // TODO: THIS IS THE JUMPING PART
         // Constraint the Y position of the player, and all rotations
-        rb.constraints = RigidbodyConstraints.FreezePositionY | 
-                         RigidbodyConstraints.FreezePositionZ | 
-                         RigidbodyConstraints.FreezeRotationX | 
-                         RigidbodyConstraints.FreezeRotationY |
-                         RigidbodyConstraints.FreezeRotationZ;
+        if (!jumpEnabled)
+        {
+            rb.constraints = RigidbodyConstraints.FreezePositionY | 
+                             RigidbodyConstraints.FreezePositionZ | 
+                             RigidbodyConstraints.FreezeRotationX | 
+                             RigidbodyConstraints.FreezeRotationY |
+                             RigidbodyConstraints.FreezeRotationZ;
+        }
     }
 
     // Update is called once per frame
