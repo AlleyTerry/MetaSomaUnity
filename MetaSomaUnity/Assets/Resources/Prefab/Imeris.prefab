@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1.375
-  jumpEnabled: 1
+  jumpEnabled: 0
   groundCheck: {fileID: 6805930196506196456}
   isGrounded: 1
   groundCheckRadius: 0.05
