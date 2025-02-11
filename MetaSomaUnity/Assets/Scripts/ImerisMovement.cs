@@ -283,6 +283,8 @@ public class ImerisMovement : MonoBehaviour
                 battleTrigger.FlagTriggerUsed();
                 GameManager.instance.isInBattle = true;
                 
+                rb.velocity = Vector3.zero;
+                
                 // TODO: NOTE -- if the current level manager is not set, try other way, or check the GM
                 GameManager.instance.currentLevelManager.RegisterCutSceneAndBattle
                     (battleTrigger.cutSceneDialogueNode, battleTrigger.battleDialogueNode, battleTrigger.battleDialogueDelay);

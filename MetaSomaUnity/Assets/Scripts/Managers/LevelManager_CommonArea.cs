@@ -10,5 +10,8 @@ public class LevelManager_CommonArea : LevelManagerBase
         
         GameManager.instance.HUD.SetActive(true);
         GameManager.instance.CGDisplay.SetActive(false);
+        
+        // Disable NPC animation display
+        NPCAnimation.SetActive(false);
     }
 }

@@ -153,7 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layers:
   - parallaxLayer: {fileID: 1246980956}
-    parallaxScale: 0.9
+    parallaxScale: 0.3
     layerWidth: 0
     isLooping: 0
   - parallaxLayer: {fileID: 2043507376}
@@ -987,7 +987,7 @@ PrefabInstance:
     - target: {fileID: 3711543788339375056, guid: 9bcbf667072d3444cae0a7e1295462a4,
         type: 3}
       propertyPath: m_Size.x
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3754007724711090094, guid: 9bcbf667072d3444cae0a7e1295462a4,
         type: 3}
@@ -1149,7 +1149,7 @@ PrefabInstance:
     - target: {fileID: 3711543788339375056, guid: 9bcbf667072d3444cae0a7e1295462a4,
         type: 3}
       propertyPath: m_Size.x
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3754007724711090094, guid: 9bcbf667072d3444cae0a7e1295462a4,
         type: 3}

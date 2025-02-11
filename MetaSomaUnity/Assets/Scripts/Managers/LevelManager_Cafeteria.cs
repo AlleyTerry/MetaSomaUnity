@@ -10,5 +10,8 @@ public class LevelManager_Cafeteria : LevelManagerBase
         
         GameManager.instance.HUD.SetActive(true);
         GameManager.instance.CGDisplay.SetActive(false);
+        
+        // Disable NPC animation display
+        NPCAnimation.SetActive(false);
     }
 }
