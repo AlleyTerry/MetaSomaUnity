@@ -190,6 +190,9 @@ public class ImerisMovement : MonoBehaviour
         Vector3 velocity = moveDirection * (moveSpeed * currentState.GetWalkSpeed());
         velocity.y = rb.velocity.y;
         rb.velocity = velocity;
+        
+        float actualSpeed = moveSpeed * currentState.GetWalkSpeed();
+        Debug.Log($"Current Walk Speed: {actualSpeed}");
     }
 
     private void JumpHandler()

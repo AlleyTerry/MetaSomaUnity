@@ -104,6 +104,9 @@ public class GameManager : MonoBehaviour
             case "Level_Chapel":
                 CurrentLevelIndex = 5;
                 break;
+            case "Level_Cafeteria":
+                currentLevelIndex = 6;
+                break;
             default:
                 CurrentLevelIndex = 0;
                 break;
