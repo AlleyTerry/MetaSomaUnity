@@ -127,7 +127,7 @@ public class ImerisMovement : MonoBehaviour
         // Constraint the Y position of the player, and all rotations
         if (!jumpEnabled)
         {
-            rb.constraints = /*RigidbodyConstraints.FreezePositionY | */
+            rb.constraints = RigidbodyConstraints.FreezePositionY | 
                              RigidbodyConstraints.FreezePositionZ | 
                              RigidbodyConstraints.FreezeRotationX | 
                              RigidbodyConstraints.FreezeRotationY |
@@ -306,5 +306,29 @@ public class ImerisMovement : MonoBehaviour
         GameManager.instance.isInBattle = false;
         
         GameManager.instance.currentLevelManager.ExitBattleDialogue();
+    }
+    
+    // Stair fixing
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Stairs"))
+        {
+            rb.constraints = RigidbodyConstraints.FreezePositionZ | 
+                             RigidbodyConstraints.FreezeRotationX | 
+                             RigidbodyConstraints.FreezeRotationY |
+                             RigidbodyConstraints.FreezeRotationZ;
+        }
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.CompareTag("Stairs"))
+        {
+            rb.constraints = RigidbodyConstraints.FreezePositionY | 
+                             RigidbodyConstraints.FreezePositionZ | 
+                             RigidbodyConstraints.FreezeRotationX | 
+                             RigidbodyConstraints.FreezeRotationY |
+                             RigidbodyConstraints.FreezeRotationZ;
+        }
     }
 }
