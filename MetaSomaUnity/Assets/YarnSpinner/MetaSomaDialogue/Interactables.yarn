@@ -1,4 +1,6 @@
-﻿title: ItemPlaceholder
+﻿
+//Bedroom
+title: ItemPlaceholder
 ---
 imeris: ERROR!! IF YOU'RE READING THIS, YOU SET THE ITEM NAME WRONG !!
 ===
@@ -13,3 +15,91 @@ title: GalleriaBed
 ---
 imeris: Not my bed. But the pattern on the sheets is familiar.
 ===
+
+title: MellonellaShrine
+---
+imeris: I’ve prayed here countless times, I know. Under Her Majesty’s… watchful gaze.
+===
+
+//Servants Hall
+title: FirstDoor
+---
+imeris: I have no need to enter another’s bedroom.
+
+===
+
+title: MostMessedUpDoor
+---
+imeris: Why was someone so desperate to enter that room…?
+===
+title: BloodiedBody1
+---
+imeris: Who would have...
+===
+
+//Servants Common Area
+
+title: MessHallDoor
+---
+imeris: Mess Hall
+===
+title: ChapelDoor
+---
+imeris: Chapel of Mellonella
+===
+title: Bust
+---
+imeris: I wish I could pluck out her eyes. She’s too high up though.
+===
+title: KingdomTapestry1
+---
+imeris: Woven with the symbol that represents us servants.
+===
+title: KingdomTapestry2
+---
+imeris: These tapestries are made of a material finer than anything else in this hall.
+===
+
+title: BoardedChapel
+---
+imeris: The door is locked, and the Father isn’t answering my knocks… I’ll have to find another way in.
+===
+title: DeadBody1
+---
+imeris: ... I can't remember who this is.
+===
+
+
+
+//Post Cafeteria
+
+title: Table
+---
+imeris: I can climb this to reach the bust.
+===
+
+// Post Cafeteria Grub
+title: Bust2
+---
+imeris: There's the key.
+imeris: ...
+imeris: (the bust falls to the floor)
+===
+
+//Cafeteria
+title: RottenFood
+---
+imeris: No matter how hungry I am, I can’t eat this. It’s rotten.
+===
+
+title: DeadBody2
+---
+imeris: There’s vomit around her mouth. It seems she ate something that spoiled.
+===
+
+title: HalfAliveGrub
+---
+imeris: His cheeks are horrifically gaunt. The plate in front of him is licked completely clean.
+
+===
+
