@@ -127,7 +127,7 @@ public class ImerisMovement : MonoBehaviour
         // Constraint the Y position of the player, and all rotations
         if (!jumpEnabled)
         {
-            rb.constraints = RigidbodyConstraints.FreezePositionY | 
+            rb.constraints = /*RigidbodyConstraints.FreezePositionY | */
                              RigidbodyConstraints.FreezePositionZ | 
                              RigidbodyConstraints.FreezeRotationX | 
                              RigidbodyConstraints.FreezeRotationY |
@@ -145,7 +145,7 @@ public class ImerisMovement : MonoBehaviour
         if (!GameManager.instance.isInBattle)
         {
             Move();
-            JumpHandler();
+            if (jumpEnabled) JumpHandler();
         }
     }
 
