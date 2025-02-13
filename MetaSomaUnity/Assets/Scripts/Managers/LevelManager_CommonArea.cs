@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LevelManager_CommonArea : LevelManagerBase
 {
+    
     public override void Initialize()
     {
         base.Initialize();
@@ -13,5 +14,13 @@ public class LevelManager_CommonArea : LevelManagerBase
         
         // Disable NPC animation display
         NPCAnimation.SetActive(false);
+        
+        //look for key bool
+        if (GameManager.instance.talkToGrub)
+        {
+            //if key is found, set table to active
+            GameObject table = GameObject.FindGameObjectWithTag("table");
+            table.GetComponent<BoxCollider>().isTrigger = false;
+        }
     }
 }

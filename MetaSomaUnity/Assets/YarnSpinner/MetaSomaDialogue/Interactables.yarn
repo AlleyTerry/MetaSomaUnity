@@ -1,4 +1,10 @@
-﻿
+﻿title: Setup_Interactables
+---
+<<declare $tableReady to false>>
+<<set $tableReady to false>>
+===
+
+
 //Bedroom
 title: ItemPlaceholder
 ---
@@ -49,7 +55,12 @@ imeris: Chapel of Mellonella
 ===
 title: Bust
 ---
-imeris: I wish I could pluck out her eyes. She’s too high up though.
+<<if $tableReady is true>>
+    imeris: I can climb this to reach the bust.
+    <<TablePush ManagerHolder>>
+<<else>>
+    imeris: I wish I could pluck out her eyes. She’s too high up though.
+<<endif>>
 ===
 title: KingdomTapestry1
 ---
@@ -75,7 +86,9 @@ imeris: ... I can't remember who this is.
 
 title: Table
 ---
-imeris: I can climb this to reach the bust.
+<<if $tableReady is true>>
+    imeris: I can climb this to reach the bust.
+<<endif>>
 ===
 
 // Post Cafeteria Grub
@@ -100,6 +113,7 @@ imeris: There’s vomit around her mouth. It seems she ate something that spoile
 
 title: HalfAliveGrub
 ---
+<<set $tableReady to true>>
 Grub: …leave… leave me be…
 Imeris: !
 Imeris: You’re still alive? Oh Goddess…

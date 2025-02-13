@@ -361,4 +361,11 @@ public class GameManager : MonoBehaviour
     {
         talkToGrub = true;
     }
+
+    [YarnCommand("TablePush")]
+    public void TablePush()
+    {
+        GameObject table = GameObject.FindGameObjectWithTag("table");
+        table.GetComponent<Rigidbody>().isKinematic = true;
+    }
 }
