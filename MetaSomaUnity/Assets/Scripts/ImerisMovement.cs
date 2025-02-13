@@ -24,7 +24,7 @@ public class ImerisMovement : MonoBehaviour
     public CharacterState currentState;
     
     // RIGIDBODY COMPONENT
-    private Rigidbody rb;
+    public Rigidbody rb;
     
     // MOVEMENT VARIABLES
     public float moveSpeed = 5f;

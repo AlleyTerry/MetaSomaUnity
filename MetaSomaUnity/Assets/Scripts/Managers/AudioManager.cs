@@ -18,6 +18,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip linnaeusBattleStart;
     public AudioClip linnaeusBattleEnd;
     
+    // AUDIO CLIPS
+    public List<AudioClip> sfxClips = new List<AudioClip>();
+    private Dictionary<string, AudioClip> sfxDict;
+    
     // MAS MANAGER
     public MAS_Manager masManager;
     [SerializeField] bool isMusicPlaying = false;
@@ -35,6 +39,14 @@ public class AudioManager : MonoBehaviour
         if (masManager == null)
         {
             masManager = GetComponent<MAS_Manager>();
+        }
+        
+        // POPULATE SFX DICT
+        sfxDict = new Dictionary<string, AudioClip>();
+        
+        foreach (var clip in sfxClips)
+        {
+            sfxDict.Add(clip.name, clip);
         }
     }
 
@@ -69,6 +81,12 @@ public class AudioManager : MonoBehaviour
         }
         
         //audioSource.Play();
+    }
+
+    [YarnCommand("PlaySFX")]
+    public void PlaySFX(string clipName)
+    {
+        
     }
     
     [YarnCommand ("StopMusic")]

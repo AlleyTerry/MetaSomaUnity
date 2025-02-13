@@ -17,7 +17,7 @@ public class InteractableItemBase : MonoBehaviour
     public GameObject visualCue;
     
     // PLAYER OVERLAPPING
-    [SerializeField] private bool isOverlapping = false;
+    [SerializeField] protected bool isOverlapping = false;
     public GameObject Imeris;
     
     // ITEM VARIABLES
@@ -43,7 +43,7 @@ public class InteractableItemBase : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if (isOverlapping)
         {
@@ -94,7 +94,7 @@ public class InteractableItemBase : MonoBehaviour
     }
     
     // OVERLAPPING WITH INTERACTABLE ITEM
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -103,7 +103,7 @@ public class InteractableItemBase : MonoBehaviour
         }
     }
     
-    private void OnTriggerStay(Collider other)
+    protected virtual void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -111,7 +111,7 @@ public class InteractableItemBase : MonoBehaviour
         }
     }
     
-    private void OnTriggerExit(Collider other)
+    protected virtual void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {

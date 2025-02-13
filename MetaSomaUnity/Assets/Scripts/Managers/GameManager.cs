@@ -344,6 +344,7 @@ public class GameManager : MonoBehaviour
 
     public void FreezeControls()
     {
+        GameObject.FindObjectOfType<ImerisMovement>().rb.velocity = Vector3.zero;
         isInBattle = true;
         /*Time.timeScale = 0;*/
     }
