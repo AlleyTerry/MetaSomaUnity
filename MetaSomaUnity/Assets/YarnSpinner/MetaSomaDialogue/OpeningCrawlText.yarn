@@ -26,11 +26,11 @@ Narrator: Until…
 Narrator: …
 
 <<PlayAnimation ManagerHolder "Illustrations_BLANK">>
-Mellonella: “Achieve prosperity / (so that you may sate your hunger)”
+Mellonella: “Achieve prosperity <i>so that you may sate your hunger</i>”
 <<PlayAnimation ManagerHolder "Illustrations_BLANK">>
-Mellonella: “Drink of the noble red / (which flows in the veins of royalty)”
+Mellonella: “Drink of the noble red <i>which flows in the veins of royalty</i>”
 <<PlayAnimation ManagerHolder "Illustrations_BLANK">>
-Mellonella: “And you shall ascend / (on wings of gold)”
+Mellonella: “And you shall ascend <i>on wings of gold</i>.”
 
 <<PlayAnimation ManagerHolder "Illustrations_8">>
 Narrator:  One who was unable to bear this life anymore discovered the truth, and set into motion a glorious evolution.
