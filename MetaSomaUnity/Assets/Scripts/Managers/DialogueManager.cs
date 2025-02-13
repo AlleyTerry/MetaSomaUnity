@@ -151,29 +151,34 @@ public class DialogueManager : MonoBehaviour
                     characterNameText.alignment = TextAlignmentOptions.Left;
                     characterNameText.color = new Color(255, 255, 255, 255);
                     dialogueTextBox.alignment = TextAlignmentOptions.TopLeft;
+                    dialogueTextBox.fontStyle = FontStyles.Normal; // Reset the text style
                     break;
 
                 case "Linnaeus":
                     characterNameText.alignment = TextAlignmentOptions.Right;
                     characterNameText.color = new Color(255, 255, 255, 255);
                     dialogueTextBox.alignment = TextAlignmentOptions.TopRight;
+                    dialogueTextBox.fontStyle = FontStyles.Normal; // Reset the text style
                     break;
 
                 case "Narrator":
                     characterNameText.alignment = TextAlignmentOptions.Center;
                     characterNameText.color = new Color(255, 255, 255, 0);
                     dialogueTextBox.alignment = TextAlignmentOptions.Top;
+                    dialogueTextBox.fontStyle = FontStyles.Normal; // Reset the text style
                     break;
                 
                 case "imeris":
                     characterNameText.alignment = TextAlignmentOptions.Center;
                     characterNameText.color = new Color(255, 255, 255, 0);
                     dialogueTextBox.alignment = TextAlignmentOptions.Top;
+                    dialogueTextBox.fontStyle = FontStyles.Italic; // Italicize the text
                     break;
                 
                 default:
                     characterNameText.alignment = TextAlignmentOptions.Center;
                     characterNameText.color = new Color(255, 255, 255, 255);
+                    dialogueTextBox.fontStyle = FontStyles.Normal; // Reset the text style
                     break;
             }
 
