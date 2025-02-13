@@ -10,8 +10,6 @@ public class SceneHandlerWithKeyCheck : SceneHandler
 
     protected override void Update()
     {
-        base.Update();
-
         if (base.isTriggered && 
             Input.GetKeyDown(KeyCode.Return) &&
             !DialogueManager.instance.dialogueRunner.IsDialogueRunning)
@@ -29,9 +27,24 @@ public class SceneHandlerWithKeyCheck : SceneHandler
                     //SceneManager.LoadScene(nextLevelName);
                 }
             }
-            else if (!GameManager.instance.isHoldingChapelKey)
+            else
             {
                 DialogueManager.instance.dialogueRunner.StartDialogue(reminderDialogueNode);
+            }
+        }
+    }
+
+    protected override void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Player exited scene transition.");
+            
+            isTriggered = false;
+
+            if (DialogueManager.instance.dialogueRunner.IsDialogueRunning)
+            {
+                DialogueManager.instance.dialogueRunner.Stop();
             }
         }
     }

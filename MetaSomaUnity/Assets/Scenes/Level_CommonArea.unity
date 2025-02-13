@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 207953391}
   - component: {fileID: 207953390}
   - component: {fileID: 207953389}
-  - component: {fileID: 207953388}
+  - component: {fileID: 207953392}
   m_Layer: 0
   m_Name: DoorToChapel
   m_TagString: Untagged
@@ -163,20 +163,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1246980956}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &207953388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 207953386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 739203b732595414eb5a2467ab31d8b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isStraightToNextLevel: 0
-  nextLevelName: Level_Chapel
 --- !u!65 &207953389
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -248,6 +234,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 207953386}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &207953392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207953386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c1b67765fcf3c844a01606872d2a90d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStraightToNextLevel: 0
+  nextLevelName: Level_Chapel
+  reminderDialogueNode: BoardedChapel
 --- !u!4 &351715605 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3754007724711090094, guid: 9bcbf667072d3444cae0a7e1295462a4,
@@ -1609,6 +1610,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ChapelDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8482982094259539089, guid: 9bcbf667072d3444cae0a7e1295462a4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
