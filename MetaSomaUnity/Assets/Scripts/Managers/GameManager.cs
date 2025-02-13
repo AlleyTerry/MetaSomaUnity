@@ -9,6 +9,7 @@ using UnityEngine.Serialization;
 using Yarn.Unity;
 using Yarn.Unity.Example;
 
+
 public enum GameState
 {
     Opening,
@@ -20,6 +21,7 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
+    public bool talkToGrub = false; // talk to half-dead grub
     // SINGLETON
     public bool isTestMode = true; // TODO: REMOVE THIS IN FINAL BUILD
     
@@ -351,5 +353,11 @@ public class GameManager : MonoBehaviour
     {
         isInBattle = false;
         Time.timeScale = 1;
+    }
+    
+    [YarnCommand("TalkedToHalfDeadGrub")]
+    public void TalkedToHalfDeadGrub()
+    {
+        talkToGrub = true;
     }
 }

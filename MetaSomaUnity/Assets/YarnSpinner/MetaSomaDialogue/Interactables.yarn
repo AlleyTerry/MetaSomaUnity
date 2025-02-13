@@ -100,7 +100,27 @@ imeris: There’s vomit around her mouth. It seems she ate something that spoile
 
 title: HalfAliveGrub
 ---
-imeris: His cheeks are horrifically gaunt. The plate in front of him is licked completely clean.
+Grub: …leave… leave me be…
+Imeris: !
+Imeris: You’re still alive? Oh Goddess…
+Imeris: What happened here?
+Grub: Why are you asking that…? You should know… We’ve been abandoned.
+Imeris: Abandoned?
+Grub: Her Majesty vanished, and there was no one to take her place. They all left… 
+Imeris: They…? The bees? They left us all here?!
+Grub: Perhaps not all. A select few seem to have vanished alongside them… but we’re all disappearing now. 
+Grub: I myself will vanish too, soon.
+Grub: I’m just so hungry… but there’s nothing I can do now.
+Grub: He’s taken it all… every last scrap… there’s nothing left for me. I don’t have the energy to try and take anything back.
+Imeris: He… Father Linnaeus?
+Grub: He’s locked his door again, hasn’t he? You may yet have the will to go on…
+Grub: The key to the chapel… I’ve hidden it underneath the bust of Her Majesty. Linnaeus would never dream of moving her from her spot, the sycophantic fool…
+Grub: Go. Take it. Sneak in and steal back the food he has stolen, so you may live just a bit longer.
+Grub: Though there is little left to live for anymore…
+Imeris: …Thank you.
+Grub: Yes, yes. Now please… just leave me be. I’d like to rest.
+Imeris: …
 
+<<TalkedToHalfDeadGrub ManagerHolder>>
 ===
 
