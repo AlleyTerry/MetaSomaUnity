@@ -21,6 +21,8 @@ public class LevelManager_CommonArea : LevelManagerBase
             //if key is found, set table to active
             GameObject table = GameObject.FindGameObjectWithTag("table");
             table.GetComponent<BoxCollider>().isTrigger = false;
+            GameObject tableDialogue = GameObject.Find("/Parallax/Midground/Interactables/Table");
+            tableDialogue.SetActive(true);
         }
     }
 }

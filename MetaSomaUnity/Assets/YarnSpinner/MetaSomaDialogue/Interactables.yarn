@@ -55,8 +55,9 @@ imeris: Chapel of Mellonella
 ===
 title: Bust
 ---
+
 <<if $tableReady is true>>
-    imeris: I can climb this to reach the bust.
+    
     <<TablePush ManagerHolder>>
 <<else>>
     imeris: I wish I could pluck out her eyes. She’s too high up though.
@@ -86,9 +87,9 @@ imeris: ... I can't remember who this is.
 
 title: Table
 ---
-<<if $tableReady is true>>
-    imeris: I can climb this to reach the bust.
-<<endif>>
+<<set $tableReady to true>>
+imeris: I can climb this to reach the bust.
+
 ===
 
 // Post Cafeteria Grub

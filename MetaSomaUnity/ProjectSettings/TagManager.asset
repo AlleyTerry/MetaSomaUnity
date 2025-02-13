@@ -12,6 +12,7 @@ TagManager:
   - CGD
   - Stairs
   - table
+  - TableDialogue
   layers:
   - Default
   - TransparentFX
