@@ -12,12 +12,12 @@ public class SceneHandler : MonoBehaviour
         GameManager.instance.CurrentLevelIndex++;
     }*/
     
-    private bool isTriggered = false;
+    protected bool isTriggered = false;
 
-    [SerializeField] private bool isStraightToNextLevel = true;
-    [SerializeField] private string nextLevelName = "";
+    [SerializeField] protected bool isStraightToNextLevel = true;
+    [SerializeField] protected string nextLevelName = "";
     
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -27,7 +27,7 @@ public class SceneHandler : MonoBehaviour
         }
     }
     
-    private void OnTriggerExit(Collider other)
+    protected virtual void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -44,7 +44,7 @@ public class SceneHandler : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if (isTriggered && 
             Input.GetKeyDown(KeyCode.Return))
@@ -62,7 +62,7 @@ public class SceneHandler : MonoBehaviour
         }
     }
 
-    private void SetSceneIndex(string sceneName)
+    protected void SetSceneIndex(string sceneName)
     {
         int targetIndex = 0;
         

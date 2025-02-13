@@ -63,6 +63,10 @@ public class GameManager : MonoBehaviour
     
     public LevelManagerBase currentLevelManager;
     
+    // KEY FOR ENTERING THE CHAPEL,
+    // WITHOUT THIS KEY, PLAYER CANNOT ENTER CHAPEL
+    public bool isHoldingChapelKey = false;
+    
     // HUNGER METER
     public int hungerMeter = 100;
     

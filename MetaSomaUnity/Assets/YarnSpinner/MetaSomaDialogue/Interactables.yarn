@@ -84,6 +84,7 @@ title: Bust2
 imeris: There's the key.
 imeris: ...
 imeris: (the bust falls to the floor)
+<<PickUpKey DoorToChapel>>
 ===
 
 //Cafeteria
