@@ -322,7 +322,7 @@ public class GameManager : MonoBehaviour
     
     public void InitializeHeart()
     {
-        Debug.Log("Initializing Heart...!!!!!!!!!!");
+        //Debug.Log("Initializing Heart...!!!!!!!!!!");
         Heart heart = transform.GetChild(0).Find("Viewport_Heart")?.GetComponent<Heart>();
         
         if (heart != null)

@@ -74,7 +74,7 @@ public class UIManager : MonoBehaviour
     
     public void DisableAnimator()
     {
-        Debug.Log("Disabling viewport animator!!!!!!!!!!");
+        //Debug.Log("Disabling viewport animator!!!!!!!!!!");
         if (CheckViewportAnimator())
         {
             viewportAnimator.enabled = false;

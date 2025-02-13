@@ -109,8 +109,9 @@ namespace Yarn.Unity
 
         private void ConfirmSelection()
         {
-            var selectedOption = optionViews[currentSelectedIndex].Option;
-            OptionViewWasSelected(selectedOption);
+            Debug.Log("Confirming selection.");
+            //var selectedOption = optionViews[currentSelectedIndex].Option;
+            //OptionViewWasSelected(selectedOption);
         }
 
         public override void RunLine(LocalizedLine dialogueLine, Action onDialogueLineFinished)
@@ -123,6 +124,8 @@ namespace Yarn.Unity
         }
         public override void RunOptions(DialogueOption[] dialogueOptions, Action<int> onOptionSelected)
         {
+            Debug.Log($"RunOptions called, {dialogueOptions.Length} options available.");
+            
             canvasGroup.blocksRaycasts = true;
             
             // If we don't already have enough option views, create more
@@ -242,6 +245,7 @@ namespace Yarn.Unity
             IEnumerator OptionViewWasSelectedInternal(DialogueOption selectedOption)
             {
                 yield return StartCoroutine(FadeAndDisableOptionViews(canvasGroup, 1, 0, fadeTime));
+                Debug.Log("On Option Selected: " + selectedOption.DialogueOptionID);
                 OnOptionSelected(selectedOption.DialogueOptionID);
             }
         }
