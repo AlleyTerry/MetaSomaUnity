@@ -107,6 +107,11 @@ namespace Yarn.Unity
             }
         }
 
+        private void HoverDialogue(int optionIndex)
+        {
+            
+        }
+
         private void ConfirmSelection()
         {
             Debug.Log("Confirming selection.");
@@ -125,6 +130,8 @@ namespace Yarn.Unity
         public override void RunOptions(DialogueOption[] dialogueOptions, Action<int> onOptionSelected)
         {
             Debug.Log($"RunOptions called, {dialogueOptions.Length} options available.");
+            
+            canvasGroup.alpha = 1;
             
             canvasGroup.blocksRaycasts = true;
             
