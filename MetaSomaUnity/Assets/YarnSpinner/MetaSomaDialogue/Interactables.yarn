@@ -88,7 +88,9 @@ imeris: ... I can't remember who this is.
 title: Table
 ---
 <<set $tableReady to true>>
+<<EnableJump Imeris>>
 imeris: I can climb this to reach the bust.
+
 
 ===
 

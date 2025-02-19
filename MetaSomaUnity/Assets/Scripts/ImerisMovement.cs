@@ -125,19 +125,17 @@ public class ImerisMovement : MonoBehaviour
         
         // TODO: THIS IS THE JUMPING PART
         // Constraint the Y position of the player, and all rotations
-        if (!jumpEnabled)
-        {
-            rb.constraints = RigidbodyConstraints.FreezePositionY | 
-                             RigidbodyConstraints.FreezePositionZ | 
-                             RigidbodyConstraints.FreezeRotationX | 
-                             RigidbodyConstraints.FreezeRotationY |
-                             RigidbodyConstraints.FreezeRotationZ;
-        }
+        DisableJump();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //test for jump functions
+        /*if (Input.GetKeyDown(KeyCode.Q))
+        {
+            EnableJump();
+        }*/
         // Check if the player is grounded
         isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayer);
 
@@ -336,6 +334,30 @@ public class ImerisMovement : MonoBehaviour
                              RigidbodyConstraints.FreezeRotationZ;
         }
     }
-    
+
+    [YarnCommand("DisableJump")]
+    public void DisableJump()
+    {
+        jumpEnabled = false;
+        if (!jumpEnabled)
+        {
+            rb.constraints = RigidbodyConstraints.FreezePositionY | 
+                             RigidbodyConstraints.FreezePositionZ | 
+                             RigidbodyConstraints.FreezeRotationX | 
+                             RigidbodyConstraints.FreezeRotationY |
+                             RigidbodyConstraints.FreezeRotationZ;
+        }
+    }
+
+    [YarnCommand("EnableJump")]
+    public void EnableJump()
+    {
+        jumpEnabled = true;
+        rb.constraints = 
+                         RigidbodyConstraints.FreezePositionZ | 
+                         RigidbodyConstraints.FreezeRotationX | 
+                         RigidbodyConstraints.FreezeRotationY |
+                         RigidbodyConstraints.FreezeRotationZ;
+    }
   
 }
