@@ -97,10 +97,13 @@ imeris: I can climb this to reach the bust.
 // Post Cafeteria Grub
 title: Bust2
 ---
+<<PickUpKey DoorToChapel>>
 imeris: There's the key.
 imeris: ...
 imeris: (the bust falls to the floor)
-<<PickUpKey DoorToChapel>>
+<<ResumeControls ManagerHolder>>
+
+
 ===
 
 //Cafeteria
