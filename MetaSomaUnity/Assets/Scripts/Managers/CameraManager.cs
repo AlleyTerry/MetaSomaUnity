@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using Yarn.Unity;
 
 public class CameraManager : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class CameraManager : MonoBehaviour
     }
     
     // some premade shake functions
+    /*[YarnCommand("ShakeLow")]*/
     public void ShakeLow() => Shake(2f, 0.2f);
     public void ShakeStrong() => Shake(5f, 0.5f);
 

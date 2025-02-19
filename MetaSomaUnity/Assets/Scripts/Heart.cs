@@ -29,32 +29,7 @@ public class Heart : MonoBehaviour
             //enabled = false; // disable the script
             return;
         }
-        
-        /*StartCoroutine(DelayedSetup());
-        
-        SpriteRenderer rend = GetComponent<SpriteRenderer>();
-        if (rend != null)
-        {
-            rend.sprite = sprite1;
-        }*/
     }
-
-    /*private IEnumerator DelayedSetup()
-    {
-        yield return new WaitForEndOfFrame();
-        
-        SetupYarnVariables();
-        
-        if (variableStorage != null)
-        {
-            variableStorage.SetValue("$CurrentHealth", health);
-            Debug.Log("Initial health set in variableStorage after delay.");
-        }
-        else
-        {
-            Debug.LogError("variableStorage is still null after delayed setup!");
-        }
-    }*/
 
     public void Initialize()
     {
@@ -82,7 +57,7 @@ public class Heart : MonoBehaviour
         else
         {
             Debug.Log($"variableStorage successfully assigned in SetupYarnVariables. Called from: {new System.Diagnostics.StackTrace().GetFrame(1).GetMethod().Name}");
-            Debug.LogWarning(variableStorage.gameObject.name);
+            //Debug.LogWarning(variableStorage.gameObject.name);
         }
     }
     
@@ -132,6 +107,16 @@ public class Heart : MonoBehaviour
     {
         if (health > 0)
         {
+            // screenshake
+            if (UIShakeHandler.instance != null)
+            {
+                UIShakeHandler.instance.ShakeStrong();
+            }
+            else
+            {
+                Debug.LogWarning("Heart: UIShakeHandler is null. Cannot shake camera.");
+            }
+            
             health--;
             Debug.Log($"Heart: Took damage. Current health: {health}");
             GameManager.instance.inMemoryVariableStorage.SetValue("$CurrentHealth", health);
