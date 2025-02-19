@@ -127,6 +127,10 @@ public class GameManager : MonoBehaviour
         GetInMemoryVariableStorage();
         
         Debug.Log($"GameManager initialized. CurrentLevelIndex: {CurrentLevelIndex}, isInBattle: {isInBattle}");
+        
+        // DISABLE MOUSE INPUT
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
