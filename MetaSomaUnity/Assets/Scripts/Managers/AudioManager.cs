@@ -35,12 +35,6 @@ public class AudioManager : MonoBehaviour
             audioSource = GetComponent<AudioSource>();
         }
         
-        // GET MAS MANAGER
-        if (masManager == null)
-        {
-            masManager = GetComponent<MAS_Manager>();
-        }
-        
         // POPULATE SFX DICT
         sfxDict = new Dictionary<string, AudioClip>();
         
@@ -86,7 +80,10 @@ public class AudioManager : MonoBehaviour
     [YarnCommand("PlaySFX")]
     public void PlaySFX(string clipName)
     {
-        
+        if (sfxDict.ContainsKey(clipName))
+        {
+            MAS_Manager.PlaySoundEffect(sfxDict[clipName], transform.position, 1);
+        }
     }
     
     [YarnCommand ("StopMusic")]

@@ -110,12 +110,14 @@ public class Heart : MonoBehaviour
             // screenshake
             if (UIShakeHandler.instance != null)
             {
-                UIShakeHandler.instance.ShakeStrong();
+                UIShakeHandler.instance.ShakeLow();
             }
             else
             {
                 Debug.LogWarning("Heart: UIShakeHandler is null. Cannot shake camera.");
             }
+            
+            // audio feedback
             
             health--;
             Debug.Log($"Heart: Took damage. Current health: {health}");
