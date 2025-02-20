@@ -1079,6 +1079,11 @@ PrefabInstance:
       propertyPath: jumpEnabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8876560202727164227, guid: 67b683a3d2236fa44b70f4ac0a150e45,
+        type: 3}
+      propertyPath: m_Mass
+      value: 2200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3097,7 +3102,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.9028912, y: 1.5601721, z: 0.2}
+  m_Size: {x: 3.9028912, y: 1.5601721, z: 2}
   m_Center: {x: 2.4640932, y: -3.0449138, z: 0}
 --- !u!212 &1986968142
 SpriteRenderer:

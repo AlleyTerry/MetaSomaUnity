@@ -28,14 +28,11 @@ public class TableStopper : MonoBehaviour
         {
             table.GetComponent<Rigidbody>().isKinematic = true;
         }
+        
         //ignore player collider
         if (other.gameObject.tag == "Player")
         {
             Physics.IgnoreCollision(table.GetComponent<Collider>(), player.GetComponent<Collider>());
         }
-        {
-            
-        }
-        
     }
 }
