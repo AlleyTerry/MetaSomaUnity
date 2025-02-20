@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class LinnaeusMovement : MonoBehaviour
 {
@@ -24,25 +25,12 @@ public class LinnaeusMovement : MonoBehaviour
         linSpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
+    //turns on linnaeus's animator and starts his blink animation after .6 seconds, repeating every 4 seconds
+    [YarnCommand("LinnaeusAnimationActivate")]
+    public void LinnaeusAnimationActivate()
     {
-        //if the player hits A, linnaeus will turn.
-        //TO DO: make this happen not when the player hits A, but when they get to the right point in the dialogue 
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            timeToTurn = true;
-        }
-        
-        //if linnaeus is facing backwards and it is time for him to turn around, 
-        //will enable the animator (automatically playing the turn animation)
-        //and then invoke the repeated blinking function after half a second
-        if (timeToTurn && linSpriteRenderer.sprite == backSprite)
-        {
-            linAnimator.enabled = true;
-            Invoke("StartBlinking", .5f);
-        }
-        
+        linAnimator.enabled = true;
+        InvokeRepeating("LinnaeusBlink", 0.6f,4f);
     }
 
     //plays the blink animation
@@ -50,15 +38,5 @@ public class LinnaeusMovement : MonoBehaviour
     {
         linAnimator.Play("Lin_Blink");
     }
-    
-    //the if prevents this from being called over and over
-    //the invoke repeating function will make linnaeus blink every 4 seconds after .1 seconds from when it's called
-    void StartBlinking()
-    {
-        if (blinkNotStarted)
-        {
-            InvokeRepeating("LinnaeusBlink", .1f,4f);
-            blinkNotStarted = false;
-        }
-    }
+   
 }
