@@ -5,13 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
 {
-    /*public string sceneName;
-    public void LoadScene()
-    {
-        SceneManager.LoadScene(sceneName);
-        GameManager.instance.CurrentLevelIndex++;
-    }*/
-    
     protected bool isTriggering = false;
 
     [SerializeField] protected bool isStraightToNextLevel = true;
@@ -47,9 +40,11 @@ public class SceneHandler : MonoBehaviour
     protected virtual void Update()
     {
         if (isTriggering && 
-            Input.GetKeyDown(KeyCode.Return))
+            Input.GetKeyDown(KeyCode.Return) &&
+            !GameManager.instance.IsBuffering)
         {
             GameManager.instance.FreezeControls();
+            GameManager.instance.IsBuffering = true;
             
             Invoke(nameof(DestroyThis), 0.15f);
             

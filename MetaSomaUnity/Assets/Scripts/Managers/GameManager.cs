@@ -69,6 +69,25 @@ public class GameManager : MonoBehaviour
     // WITHOUT THIS KEY, PLAYER CANNOT ENTER CHAPEL
     public bool isHoldingChapelKey = false;
     
+    // SCENE CHANGE BUFFER
+    private bool isBuffering = false;
+
+    public bool IsBuffering
+    {
+        get => isBuffering;
+        set
+        {
+            isBuffering = value;
+
+            if (isBuffering)
+            {
+                Invoke(nameof(ResetBuffer), 2.0f);
+            }
+        }
+    }
+    
+    private void ResetBuffer () => isBuffering = false;
+
     // HUNGER METER
     public int hungerMeter = 100;
     
@@ -131,6 +150,9 @@ public class GameManager : MonoBehaviour
         // DISABLE MOUSE INPUT
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        
+        // SCENE BUFFER
+        isBuffering = false;
     }
 
     // Update is called once per frame
