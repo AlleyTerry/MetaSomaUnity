@@ -137,7 +137,7 @@ public class Heart : MonoBehaviour
     [YarnCommand("Heal")]
     public void Heal()
     {
-        if (health > 3)
+        if (health < 3)
         {
             health++;
             Debug.Log($"Heart: Healed. Current health: {health}");
