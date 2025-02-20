@@ -12,7 +12,7 @@ public class SceneHandler : MonoBehaviour
         GameManager.instance.CurrentLevelIndex++;
     }*/
     
-    protected bool isTriggered = false;
+    protected bool isTriggering = false;
 
     [SerializeField] protected bool isStraightToNextLevel = true;
     [SerializeField] protected string nextLevelName = "";
@@ -23,7 +23,7 @@ public class SceneHandler : MonoBehaviour
         {
             Debug.Log("Player triggered scene transition.");
             
-            isTriggered = true;
+            isTriggering = true;
         }
     }
     
@@ -33,7 +33,7 @@ public class SceneHandler : MonoBehaviour
         {
             Debug.Log("Player exited scene transition.");
             
-            isTriggered = false;
+            isTriggering = false;
         }
     }
     
@@ -46,9 +46,13 @@ public class SceneHandler : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        if (isTriggered && 
+        if (isTriggering && 
             Input.GetKeyDown(KeyCode.Return))
         {
+            GameManager.instance.FreezeControls();
+            
+            Invoke(nameof(DestroyThis), 0.15f);
+            
             if (isStraightToNextLevel)
             {
                 GameManager.instance.LoadNextLevel();
@@ -80,5 +84,10 @@ public class SceneHandler : MonoBehaviour
         }
         
         GameManager.instance.CurrentLevelIndex = targetIndex;
+    }
+    
+    protected void DestroyThis()
+    {
+        Destroy(this.gameObject);
     }
 }

@@ -121,7 +121,7 @@ public class GameManager : MonoBehaviour
         
         // SET UP LEVEL INDEX AND SET UP THE LEVEL MANAGER
         /*CurrentLevelIndex = 0;*/
-        isInBattle = false;
+        ResumeControls();
         
         // SETUP YARN SYSTEM
         GetInMemoryVariableStorage();
@@ -217,7 +217,7 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Scene {scene.name} loaded.");
         
         // Reset the battle state
-        isInBattle = false;
+        ResumeControls();
         
         // Heart
         GetInMemoryVariableStorage();

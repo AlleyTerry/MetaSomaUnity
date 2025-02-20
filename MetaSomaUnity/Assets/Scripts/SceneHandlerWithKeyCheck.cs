@@ -10,7 +10,7 @@ public class SceneHandlerWithKeyCheck : SceneHandler
 
     protected override void Update()
     {
-        if (base.isTriggered && 
+        if (base.isTriggering && 
             Input.GetKeyDown(KeyCode.Return) &&
             !DialogueManager.instance.dialogueRunner.IsDialogueRunning)
         {
@@ -40,7 +40,7 @@ public class SceneHandlerWithKeyCheck : SceneHandler
         {
             Debug.Log("Player exited scene transition.");
             
-            isTriggered = false;
+            isTriggering = false;
 
             if (DialogueManager.instance.dialogueRunner.IsDialogueRunning)
             {
