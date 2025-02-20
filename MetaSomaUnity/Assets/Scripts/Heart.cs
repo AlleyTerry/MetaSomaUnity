@@ -118,6 +118,14 @@ public class Heart : MonoBehaviour
             }
             
             // audio feedback
+            if (GetComponentInParent<AudioManager>() != null)
+            {
+                GetComponentInParent<AudioManager>().PlaySFX("heartBreaking");
+            }
+            else
+            {
+                Debug.LogWarning("Heart: AudioManager is null. Cannot play audio.");
+            }
             
             health--;
             Debug.Log($"Heart: Took damage. Current health: {health}");

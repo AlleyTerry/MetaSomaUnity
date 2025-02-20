@@ -457,12 +457,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd90305c11ab0748b18d498242dd2b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  talkToGrub: 0
   isTestMode: 1
   HUD: {fileID: 8992055960139497962}
   CGDisplay: {fileID: 4413838746433709634}
   sceneFade: {fileID: 8415967924428648814}
   currentLevelIndex: 0
   currentLevelManager: {fileID: 0}
+  isHoldingChapelKey: 0
   hungerMeter: 100
   currentGameState: 0
   isInBattle: 0
@@ -515,6 +517,8 @@ MonoBehaviour:
   level1: {fileID: 8300000, guid: 2a49d20c91dc4fc4a8dc1bf1336c3055, type: 3}
   linnaeusBattleStart: {fileID: 8300000, guid: be8c17af26f4aa145a09e84e7adab4f9, type: 3}
   linnaeusBattleEnd: {fileID: 8300000, guid: 61979667d6f5ef143b7af20ec5743503, type: 3}
+  sfxClips:
+  - {fileID: 8300000, guid: 5f38f826869a64f09bb2fa6246939694, type: 3}
   masManager: {fileID: 0}
   isMusicPlaying: 0
 --- !u!82 &5249238084494064836

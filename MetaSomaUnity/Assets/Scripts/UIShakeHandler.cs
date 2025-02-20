@@ -40,8 +40,8 @@ public class UIShakeHandler : MonoBehaviour
     }
     
     // pre-made shake functions
-    public void ShakeLow() => Shake(2f, 0.2f);
-    public void ShakeStrong() => Shake(5f, 0.5f);
+    public void ShakeLow() => Shake(5f, 0.2f);
+    public void ShakeStrong() => Shake(10f, 0.5f);
     
     // Update is called once per frame
     void Update()
