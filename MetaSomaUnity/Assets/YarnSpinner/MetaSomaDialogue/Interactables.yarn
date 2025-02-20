@@ -90,6 +90,8 @@ title: Table
 <<set $tableReady to true>>
 <<EnableJump Imeris>>
 imeris: I can climb this to reach the bust.
+imeris: (press space to jump on the table)
+<<ResumeControls ManagerHolder>>
 
 
 ===
@@ -101,6 +103,7 @@ title: Bust2
 imeris: There's the key.
 imeris: ...
 imeris: (the bust falls to the floor)
+imeris: I can get into the Chapel now.
 <<ResumeControls ManagerHolder>>
 <<DisableJump Imeris>>
 

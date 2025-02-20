@@ -42,7 +42,7 @@ title: Stand
 position: -1380,-1211
 ---
 ///+1 heart
-<<Heal Heart>>
+<<Heal Viewport_Heart>>
 Imeris: Yes. And now, whatever power you had over me is gone.
 Imeris: I am not afraid of you anymore.
 Narrator: Linnaeus’s anger simmers down into a cold fury.
@@ -89,7 +89,7 @@ title: Hunger
 position: -1369,-921
 ---
 ///+1 heart
-<<Heal Heart>>
+<<Heal Viewport_Heart>>
 Imeris: I could not ignore the hunger that stirs within me. 
 Imeris: It’s as simple as that.
 <<jump ROUND1END>>
@@ -182,7 +182,7 @@ title: Reject
 position: -848,-1352
 ---
 ///+1 heart
-<<Heal Heart>>
+<<Heal Viewport_Heart>>
 Imeris: I don’t have to explain myself to you. I owe you nothing.
 Linnaeus: Have you no shame? Have you no gratitude?
 Linnaeus: I have cared for you, guided you all your life, and now you condescend to me?
@@ -248,7 +248,7 @@ title: Taunt
 position: -1026,-919
 ---
 ///+1 heart
-<<Heal Heart>>
+<<Heal Viewport_Heart>>
 Narrator: You laugh derisively.
 Imeris: Your role has softened you, Father.
 Imeris: You are frail and weak with the comforts of your life.
@@ -414,7 +414,7 @@ title: Disregard
 position: -1582,292
 ---
 //+1 Heart
-<<Heal Heart>>
+<<Heal Viewport_Heart>>
 Imeris: This is not arrogance. This is hard-won pride.
 Imeris: I have fought to stand here as I am today, and I won’t let your petty insults drag me back down. 
 Imeris: Nor will I let you take from me the life I’ve always wanted, which I’ve finally made mine.
@@ -474,7 +474,7 @@ title: HaveFaith
 position: -653,298
 ---
 //+1 heart
-<<Heal Heart>>
+<<Heal Viewport_Heart>>
 Narrator: You look to the mural of Mellonella, and the sight of it helps you take a steadying breath. Your heart calms and you are able to stand tall again.
 Imeris: That’s fine. I only ever needed her.
 Narrator: Linnaeus grinds his teeth.
@@ -506,7 +506,7 @@ title: Approach
 position: -259,262
 ---
 //+1 heart
-<<Heal Heart>>
+<<Heal Viewport_Heart>>
 Imeris: I don’t think you’re that hard to convince.
 Narrator: You take a step closer to Linnaeus, and he takes a step back, alarmed.
 Imeris: You put up a bold front, but deep down, you’re weaker than the rest of us, aren’t you? Used to better. 
@@ -573,7 +573,7 @@ title: Bide
 position: 654,328
 ---
 //+1 heart
-<<Heal Heart>>
+<<Heal Viewport_Heart>>
 Narrator: You look closely at Linnaeus, trying to decide when to strike- if you should at all. The hand on the dagger trembles faintly.
 Narrator: Your continued silence unnerves Linnaeus. 
 Linnaeus: Well? Say something! Cease your leering! 
