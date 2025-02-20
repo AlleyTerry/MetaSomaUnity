@@ -23,7 +23,7 @@ public class LevelManager_Intro : LevelManagerBase
         
         // Intro cut scene
         CGDisplayAnimator = transform.GetChild(1).GetComponentInChildren<Animator>();
-        CGDisplayAnimatorController = Resources.Load<RuntimeAnimatorController>("Sprites/IntroScene/Open_Crawl");
+        CGDisplayAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/OpenCrawl/Open_Crawl");
         CGDisplayAnimator.runtimeAnimatorController = CGDisplayAnimatorController;
         
         GameManager.instance.CGDisplay.SetActive(true);

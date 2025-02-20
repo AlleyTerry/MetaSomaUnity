@@ -102,7 +102,7 @@ imeris: There's the key.
 imeris: ...
 imeris: (the bust falls to the floor)
 <<ResumeControls ManagerHolder>>
-
+<<DisableJump Imeris>>
 
 ===
 
