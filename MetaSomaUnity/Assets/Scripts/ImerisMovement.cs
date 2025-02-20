@@ -316,10 +316,7 @@ public class ImerisMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Stairs"))
         {
-            rb.constraints = RigidbodyConstraints.FreezePositionZ | 
-                             RigidbodyConstraints.FreezeRotationX | 
-                             RigidbodyConstraints.FreezeRotationY |
-                             RigidbodyConstraints.FreezeRotationZ;
+            UnconstraintYPosition();
         }
     }
 
@@ -327,11 +324,7 @@ public class ImerisMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Stairs"))
         {
-            rb.constraints = RigidbodyConstraints.FreezePositionY | 
-                             RigidbodyConstraints.FreezePositionZ | 
-                             RigidbodyConstraints.FreezeRotationX | 
-                             RigidbodyConstraints.FreezeRotationY |
-                             RigidbodyConstraints.FreezeRotationZ;
+            ConstraintYPosition();
         }
     }
 
@@ -341,11 +334,7 @@ public class ImerisMovement : MonoBehaviour
         jumpEnabled = false;
         if (!jumpEnabled)
         {
-            rb.constraints = RigidbodyConstraints.FreezePositionY | 
-                             RigidbodyConstraints.FreezePositionZ | 
-                             RigidbodyConstraints.FreezeRotationX | 
-                             RigidbodyConstraints.FreezeRotationY |
-                             RigidbodyConstraints.FreezeRotationZ;
+            ConstraintYPosition();
         }
     }
 
@@ -353,11 +342,23 @@ public class ImerisMovement : MonoBehaviour
     public void EnableJump()
     {
         jumpEnabled = true;
-        rb.constraints = 
+        UnconstraintYPosition();
+    }
+  
+    private void ConstraintYPosition()
+    {
+        rb.constraints = RigidbodyConstraints.FreezePositionY | 
                          RigidbodyConstraints.FreezePositionZ | 
                          RigidbodyConstraints.FreezeRotationX | 
                          RigidbodyConstraints.FreezeRotationY |
                          RigidbodyConstraints.FreezeRotationZ;
     }
-  
+    
+    private void UnconstraintYPosition()
+    {
+        rb.constraints = RigidbodyConstraints.FreezePositionZ | 
+                         RigidbodyConstraints.FreezeRotationX | 
+                         RigidbodyConstraints.FreezeRotationY |
+                         RigidbodyConstraints.FreezeRotationZ;
+    }
 }
