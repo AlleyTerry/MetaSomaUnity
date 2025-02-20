@@ -121,7 +121,7 @@ public class ImerisMovement : MonoBehaviour
         currentState = new BeforeAnyEvolutionState(SubState.Healthy); // Commented out for testing purposes
         
         // INITIALIZE THE PLAYER ANIMATOR
-        playerAnimator.Play("Player_Idle");
+        playerAnimator.Play("Imeris_Cloak_Idle");
         
         // TODO: THIS IS THE JUMPING PART
         // Constraint the Y position of the player, and all rotations
@@ -161,12 +161,12 @@ public class ImerisMovement : MonoBehaviour
         if (rb.velocity.x != 0 && 
             isGrounded)
         {
-            playerAnimator.Play("Imeris_Walk");
+            playerAnimator.Play("Imeris_Cloak_Walk");
         }
         else if (rb.velocity.x == 0 && 
                  isGrounded)
         {
-            playerAnimator.Play("Player_Idle");
+            playerAnimator.Play("Imeris_Cloak_Idle");
         }
         
         // Jump Animation
