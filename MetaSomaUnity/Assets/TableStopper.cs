@@ -24,15 +24,16 @@ public class TableStopper : MonoBehaviour
 
     public void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.name == "TableForCommonRoom")
+        if (other.gameObject == table)
         {
-            table.GetComponent<Rigidbody>().isKinematic = true;
+            Debug.LogWarning("Table collided with something.");
+            other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
         }
         
         //ignore player collider
         if (other.gameObject.tag == "Player")
         {
-            Physics.IgnoreCollision(table.GetComponent<Collider>(), player.GetComponent<Collider>());
+            Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), player.GetComponent<Collider>());
         }
     }
 }

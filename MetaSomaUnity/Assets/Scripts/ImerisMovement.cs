@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Yarn.Unity;
@@ -37,6 +38,10 @@ public class ImerisMovement : MonoBehaviour
     
     [SerializeField] private bool isGrounded;
     [SerializeField] private float groundCheckRadius = 0.05f;
+    
+    // STEPPABLE OBJECTS CHECK
+    [SerializeField] private bool isOnSteppable = false;
+    [SerializeField] private LayerMask steppableLayer;
     
     public float jumpForce = 5f;
     private bool hasDoubleJumped = false;
@@ -145,6 +150,12 @@ public class ImerisMovement : MonoBehaviour
             Move();
             if (jumpEnabled) JumpHandler();
         }
+        
+        // todo: need to be optimized
+        if (!jumpEnabled && isGrounded && GameManager.instance.isHoldingChapelKey)
+        {
+            ConstraintYPosition();
+        }
     }
 
     private void LateUpdate()
@@ -159,12 +170,12 @@ public class ImerisMovement : MonoBehaviour
 
         // Walk Animation
         if (rb.velocity.x != 0 && 
-            isGrounded)
+            (isGrounded || isOnSteppable))
         {
             playerAnimator.Play("Imeris_Cloak_Walk");
         }
         else if (rb.velocity.x == 0 && 
-                 isGrounded)
+                 (isGrounded || isOnSteppable))
         {
             playerAnimator.Play("Imeris_Cloak_Idle");
         }
@@ -196,7 +207,7 @@ public class ImerisMovement : MonoBehaviour
     private void JumpHandler()
     {
         // Handle jumping 
-        if (isGrounded && 
+        if ((isGrounded || isOnSteppable) && 
             (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Space)))
         {
             // Apply jump force on Y axis
@@ -208,7 +219,7 @@ public class ImerisMovement : MonoBehaviour
             Debug.Log("IsJumping");
         }
         // Double jump
-        else if (!isGrounded && 
+        else if ((!isGrounded || !isOnSteppable) && 
                  currentState.CanDoubleJump() &&
                  (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Space)) &&
                  !hasDoubleJumped)
@@ -222,7 +233,7 @@ public class ImerisMovement : MonoBehaviour
         }
         
         // Floating
-        if (!isGrounded && 
+        if ((!isGrounded || !isOnSteppable) && 
             isJumping &&
             hasDoubleJumped &&
             currentState.CanFloat() &&
@@ -318,6 +329,11 @@ public class ImerisMovement : MonoBehaviour
         {
             UnconstraintYPosition();
         }
+
+        if (IsInLayerMask(other.gameObject, steppableLayer))
+        {
+            isOnSteppable = true;
+        }
     }
 
     private void OnCollisionExit(Collision other)
@@ -326,13 +342,24 @@ public class ImerisMovement : MonoBehaviour
         {
             ConstraintYPosition();
         }
+        
+        if (IsInLayerMask(other.gameObject, steppableLayer))
+        {
+            isOnSteppable = false;
+        }
+    }
+
+    // CHECK IF THE COLLISION IS IN THE LAYER MASK
+    private bool IsInLayerMask(GameObject gameObject, LayerMask layerMask)
+    {
+        return ((layerMask.value & (1 << gameObject.layer)) > 0);
     }
 
     [YarnCommand("DisableJump")]
     public void DisableJump()
     {
         jumpEnabled = false;
-        if (!jumpEnabled)
+        if (!jumpEnabled && isGrounded)
         {
             ConstraintYPosition();
         }
