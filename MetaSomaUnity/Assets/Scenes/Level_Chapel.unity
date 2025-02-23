@@ -1097,6 +1097,21 @@ PrefabInstance:
       propertyPath: messageBubbleOffset.y
       value: -2.05
       objectReference: {fileID: 0}
+    - target: {fileID: 3543777558411261583, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3543777558411261583, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3543777558411261583, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5924076068585890818, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}
       propertyPath: m_Name
@@ -1171,6 +1186,21 @@ PrefabInstance:
         type: 3}
       propertyPath: messageBubbleOffset.y
       value: -2.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8723865651477617397, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8723865651477617397, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8723865651477617397, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8848496755927253438, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}

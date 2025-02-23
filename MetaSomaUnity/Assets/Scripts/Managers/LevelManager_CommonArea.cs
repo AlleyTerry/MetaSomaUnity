@@ -19,15 +19,12 @@ public class LevelManager_CommonArea : LevelManagerBase
         if (GameManager.instance.talkToGrub)
         {
             
-            //if key is found, set table to active
-            GameObject table = GameObject.FindGameObjectWithTag("table");
-            table.GetComponent<BoxCollider>().isTrigger = false;
-            GameObject tableDialogue = GameObject.Find("/Parallax/Midground/Interactables/Table");
-            tableDialogue.SetActive(true);
-            GameObject tableStopper = GameObject.Find("/Parallax/Midground/TableStopper");
-            tableStopper.GetComponent<BoxCollider>().isTrigger = false;
+            //if key is found, set bust2 to active
+  
             GameObject bust1 = GameObject.Find("/Parallax/Midground/Interactables/Bust");
             bust1.SetActive(false);
+            GameObject bust2 = GameObject.Find("/Parallax/Midground/Interactables/Bust2");
+            bust2.SetActive(true);
         }
     }
 }

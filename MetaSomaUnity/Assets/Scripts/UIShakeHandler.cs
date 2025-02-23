@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIShakeHandler : MonoBehaviour
 {
-    private Vector3 orginalPosition;
+    private Vector3 originalPosition;
     public static UIShakeHandler instance;
 
     private void Awake()
@@ -16,7 +16,7 @@ public class UIShakeHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        orginalPosition = transform.position;
+        originalPosition = transform.position;
     }
 
     public void Shake(float intensity, float duration)
@@ -29,14 +29,14 @@ public class UIShakeHandler : MonoBehaviour
         float elapsedTime = 0f;
         while (elapsedTime < duration)
         {
-            transform.position = orginalPosition + 
+            transform.position = originalPosition + 
                                  new Vector3(Random.insideUnitCircle.x, Random.insideUnitCircle.y, 0f) * 
                                  intensity;
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        transform.position = orginalPosition;
+        transform.position = originalPosition;
     }
     
     // pre-made shake functions
