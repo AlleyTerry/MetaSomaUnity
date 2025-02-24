@@ -7,6 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using TextMeshProUGUI = TMPro.TextMeshProUGUI;
 
 namespace Yarn.Unity
@@ -59,23 +60,29 @@ namespace Yarn.Unity
             // Check for arrow keys to navigate between options
             if (canvasGroup.interactable)
             {
-                if (Input.GetKeyDown(KeyCode.UpArrow) && optionViews.Count > 1 && optionViews[1].gameObject.activeSelf && currentSelectedIndex != 1)
+                if (Input.GetKeyDown(KeyCode.DownArrow)) //  Block down arrow
                 {
-                    ChangeSelection(1); // Index 1 is mapped to 'up' option
+                    Debug.Log("DownArrow is disabled, maintaining current selection.");
+                    if (currentSelectedIndex >= 0)
+                    {
+                        EventSystem.current.SetSelectedGameObject(optionViews[currentSelectedIndex].gameObject, null);
+                    }
+                    return;
                 }
-                else if (Input.GetKeyDown(KeyCode.DownArrow) && optionViews.Count > 3 && optionViews[3].gameObject.activeSelf && currentSelectedIndex != 3)
+                
+                if (Input.GetKeyDown(KeyCode.UpArrow) && optionViews[0].gameObject.activeSelf)
                 {
-                    ChangeSelection(3); // Index 3 is mapped to 'down' option
+                    ChangeSelection(0); // Index 1 is mapped to 'up' option
                 }
-                else if (Input.GetKeyDown(KeyCode.LeftArrow) && optionViews.Count > 2 && optionViews[2].gameObject.activeSelf && currentSelectedIndex != 2)
+                else if (Input.GetKeyDown(KeyCode.LeftArrow) && optionViews[1].gameObject.activeSelf)
                 {
-                    ChangeSelection(2); // Index 2 is mapped to 'left' option
+                    ChangeSelection(1); // Index 2 is mapped to 'left' option
                 }
-                else if (Input.GetKeyDown(KeyCode.RightArrow) && optionViews.Count > 0 && optionViews[0].gameObject.activeSelf && currentSelectedIndex != 0)
+                else if (Input.GetKeyDown(KeyCode.RightArrow) && optionViews[2].gameObject.activeSelf)
                 {
-                    ChangeSelection(0); // Index 0 is mapped to 'right' option
+                    ChangeSelection(2); // Index 0 is mapped to 'right' option
                 }
-                else if (Input.GetKeyDown(KeyCode.Return))
+                else if (Input.GetKeyDown(KeyCode.Return) && currentSelectedIndex >= 0)
                 {
                     ConfirmSelection();
                 }
@@ -91,19 +98,22 @@ namespace Yarn.Unity
                 Debug.Log("Invalid selection index or inactive option, skipping selection change.");
                 return;
             }
+
+            if (Input.GetKeyDown(KeyCode.DownArrow)) return;
             
-            if (newIndex >= 0 && newIndex < optionViews.Count)
+            // Deactivate the current option
+            //DeselectOption(currentSelectedIndex);
+
+            // Update the selected index
+            currentSelectedIndex = newIndex;
+
+            // Activate the new option
+            optionViews[currentSelectedIndex].Select();
+            
+            // Update Unity EventSystem's current selection to avoid conflict
+            if (currentSelectedIndex >= 0)
             {
-                // Deactivate the current option
-                //DeselectOption(currentSelectedIndex);
-
-                // Update the selected index
-                currentSelectedIndex = newIndex;
-
-                // Activate the new option
-                optionViews[currentSelectedIndex].Select();
-                // Update Unity EventSystem's current selection to avoid conflict
-                UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(optionViews[currentSelectedIndex].gameObject, null);
+                EventSystem.current.SetSelectedGameObject(optionViews[currentSelectedIndex].gameObject, null);
             }
         }
 
@@ -134,23 +144,32 @@ namespace Yarn.Unity
             canvasGroup.alpha = 1;
             
             canvasGroup.blocksRaycasts = true;
+
+            int maxOptions = 3; // Limit to 3 options
             
             // If we don't already have enough option views, create more
-            while (dialogueOptions.Length > optionViews.Count)
+            while (optionViews.Count < maxOptions)
             {
                 var optionView = CreateNewOptionView();
                 optionView.gameObject.SetActive(false);
             }
 
+            int[] optionOrder = new[] { 0, 1, 2 }; // Order of options
+            
             // Set up all of the option views
             int optionViewsCreated = 0;
 
-            for (int i = 0; i < dialogueOptions.Length; i++)
+            /*for (int i = 0; i < dialogueOptions.Length; i++)*/ // original
+            for (int i = 0; i < maxOptions; i++)
             {
+                int optionIndex = optionOrder[i];
+                
+                if (optionIndex >= dialogueOptions.Length) break;
+                
                 var optionView = optionViews[i];
-                var option = dialogueOptions[i];
+                var option = dialogueOptions[optionIndex];
 
-                if (option.IsAvailable == false && showUnavailableOptions == false)
+                if (!option.IsAvailable && !showUnavailableOptions)
                 {
                     // Don't show this option.
                     continue;
@@ -161,11 +180,11 @@ namespace Yarn.Unity
                 optionView.palette = this.palette;
                 optionView.Option = option;
 
-                // The first available option is selected by default
+                /*// The first available option is selected by default
                 if (optionViewsCreated == 0)
                 {
                     optionView.Select();
-                }
+                }*/
 
                 optionViewsCreated += 1;
             }
@@ -210,6 +229,13 @@ namespace Yarn.Unity
                 }
             }
 
+            for (int i = maxOptions; i < optionViews.Count; i++)
+            {
+                optionViews[i].gameObject.SetActive(false);
+            }
+            
+            currentSelectedIndex = -1; // No option selected by default
+
             // Note the delegate to call when an option is selected
             OnOptionSelected = onOptionSelected;
 
@@ -217,13 +243,12 @@ namespace Yarn.Unity
             // content size fitters doesn't update the rect transform
             // until the next frame, and you get a weird pop as it resizes
             // just forcing this to happen now instead of then
-            Relayout();
+            ReLayout();
 
             // Fade it all in
             StartCoroutine(Effects.FadeAlpha(canvasGroup, 0, 1, fadeTime));
             
-            // Prevent mouse clicks from changing selection
-            UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(optionViews[currentSelectedIndex].gameObject);
+            EventSystem.current.SetSelectedGameObject(null);
 
             /// <summary>
             /// Creates and configures a new <see cref="OptionView"/>, and adds
@@ -290,36 +315,24 @@ namespace Yarn.Unity
             }
         }
 
-        public void OnEnable()
+        private void ReLayout()
         {
-            Relayout();
-        }
-
-        private void Relayout()
-        {
-            // Get the number of options
-            int optionCount = optionViews.Count;
-            if (optionCount == 0) return;
-
-            // Calculate the angle between each option
-            float angleStep = 360f / optionCount;
-            float radius = 300f; // Adjust the radius as needed
-
-            for (int i = 0; i < optionCount; i++)
-            {
-                // Calculate the position of each option
-                float angle = i * angleStep * Mathf.Deg2Rad;
-                float x = Mathf.Cos(angle) * radius;
-                float y = Mathf.Sin(angle) * radius;
-
-                // Set the position of the option
-                RectTransform optionTransform = optionViews[i].GetComponent<RectTransform>();
-                optionTransform.anchoredPosition = new Vector2(x, y);
-
-                // Customize the appearance of each option
-                //CustomizeOptionAppearance(optionViews[i], i);
-            }
+            if (optionViews.Count !=3) Debug.LogWarning("OptionViews count is not 3");
             
+            float radius = 300f;
+            
+            Vector2[] positions = new Vector2[]
+            {
+                new Vector2(0, radius),  //up
+                new Vector2(-radius, 0), //left
+                new Vector2(radius, 0),  //right
+            };
+
+            for (int i = 0; i < 3; i++)
+            {
+                RectTransform optionTransform = optionViews[i].GetComponent<RectTransform>();
+                optionTransform.anchoredPosition = positions[i];
+            }
         }
         private void CustomizeOptionAppearance(OptionView optionView, int index)
         {

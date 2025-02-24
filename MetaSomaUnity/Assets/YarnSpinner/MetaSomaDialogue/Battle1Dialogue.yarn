@@ -33,10 +33,12 @@ Imeris: Blaming me will not save you. You merely continue to toil in the name of
 Linnaeus: I never suffered! I never toiled! I was a leader, an elite, appointed by Queen Andromeda herself!
 Linnaeus: And you took that from me!
 Narrator: Linnaeus is accusing you.
- -> Stand (Reason)
+-> Stand (Reason)
     <<jump Stand>>
 -> Agree (Appeal)
     <<jump Agree>>
+-> TEST
+    Imeris: TEST TEST TEST TEST.
 ===
 title: Stand
 position: -1380,-1211
@@ -52,8 +54,9 @@ Narrator: Linnaeus is treating you coldly.
 -> Knowledge (Challenge)
     <<jump Knowledge>>
 -> Hunger (Appeal)
- <<jump Hunger>>
-
+    <<jump Hunger>>
+-> TEST
+    Imeris: TEST TEST TEST TEST.
 ===
 
 title: Agree
@@ -69,8 +72,9 @@ Linnaeus: I can’t even imagine what could possibly have inspired such disobedi
 -> Knowledge
     <<jump Knowledge>>
 -> Hunger
- <<jump Hunger>>
-
+    <<jump Hunger>>
+-> TEST
+    Imeris: TEST TEST TEST TEST.
 ===
 title: Knowledge
 position: -1712,-954
@@ -111,9 +115,9 @@ Narrator: Linnaeus is accusing you.
 -> Refute (Challenge)
     <<jump Refute>>
 -> Apologize (Appeal)
- <<jump Apologize2>>
-
-
+    <<jump Apologize2>>
+-> TEST
+    Imeris: TEST TEST TEST TEST.
 ===
 title: Refute
 position: 886,-1297
@@ -132,8 +136,9 @@ Narrator: Linnaeus is acting calm.
 -> Surrender (Defensive)
     <<jump Surrender>>
 -> Resist (Challenge)
- <<jump Resist>>
-
+    <<jump Resist>>
+-> TEST
+    Imeris: TEST TEST TEST TEST.
 ===
 title: Apologize2
 position: 560,-1251
@@ -154,7 +159,9 @@ Narrator: Linnaeus is acting calm.
 -> Surrender (Defensive)
     <<jump Surrender>>
 -> Resist (Challenge)
- <<jump Resist>>
+    <<jump Resist>>
+-> TEST
+    Imeris: TEST TEST TEST TEST.
 ===
 title: Surrender
 position: 602,-981
@@ -193,7 +200,9 @@ Narrator: Linnaeus is accusing you.
 -> Defend yourself (Defensive)
     <<jump DefendSelf>>
 -> Ignore (Appeal)
- <<jump Ignore>>
+    <<jump Ignore>>
+-> TEST
+    Imeris: TEST TEST TEST TEST.
 ===
 
 title: DefendSelf
@@ -210,7 +219,9 @@ Narrator: Linnaeus is acting calm.
 -> Flinch (Defensive)
     <<jump Flinch>>
 -> Taunt (Challenge)
- <<jump Taunt>>
+    <<jump Taunt>>
+-> TEST
+    Imeris: TEST TEST TEST TEST.
 ===
 
 title: Ignore
@@ -227,7 +238,9 @@ Narrator: Linnaeus is acting calm.
 -> Flinch (Defensive)
     <<jump Flinch>>
 -> Taunt (Challenge)
- <<jump Taunt>>
+    <<jump Taunt>>
+-> TEST
+    Imeris: TEST TEST TEST TEST.
 ===
 
 title: Flinch
@@ -275,7 +288,9 @@ Narrator: Linnaeus is accusing you.
 -> Insist (Challenge)
     <<jump Insist>>
 -> Acquiesce (Appeal)
- <<jump Acquiesce>>
+    <<jump Acquiesce>>
+-> TEST
+    Imeris: TEST TEST TEST TEST.
 ===
 
 title: Insist
@@ -292,7 +307,9 @@ Narrator: Linnaeus is accusing you.
 -> Plead (Appeal)
     <<jump Plead>>
 -> Renounce (Challenge)
- <<jump Renounce>>
+    <<jump Renounce>>
+-> TEST
+    Imeris: TEST TEST TEST TEST.
 ===
 
 
@@ -310,7 +327,9 @@ Narrator: Linnaeus is accusing you.
 -> Plead (Appeal)
     <<jump Plead>>
 -> Renounce (Challenge)
- <<jump Renounce>>
+    <<jump Renounce>>
+-> TEST
+    Imeris: TEST TEST TEST TEST.
 ===
 
 title: Plead
@@ -407,7 +426,8 @@ Narrator: Linnaeus is acting calm.
     <<jump Disregard>>
 -> Reverse (Reason)
     <<jump Reverse>>
-
+-> TEST
+    Imeris: TEST TEST TEST TEST.
 ===
 
 title: Disregard
@@ -455,7 +475,8 @@ Narrator: Linnaeus is getting aggressive.
     <<jump BreatheIn>>
 -> Have Faith (Appeal)
     <<jump HaveFaith>>
-
+-> TEST
+    Imeris: TEST TEST TEST TEST.
 ===
 
 title: BreatheIn
@@ -499,7 +520,8 @@ Narrator: Linnaeus is acting calm.
     <<jump Approach>>
 -> Have Guilt (Reason)
     <<jump Guilt>>
-
+-> TEST
+    Imeris: TEST TEST TEST TEST.
 ===
 
 title: Approach
@@ -552,7 +574,8 @@ Narrator: Linnaeus is getting aggressive.
     <<jump Goad>>
 -> Bide (Defensive)
     <<jump Bide >>
-
+-> TEST
+    Imeris: TEST TEST TEST TEST.
 ===
 
 title: Goad
@@ -772,8 +795,8 @@ Narrator: You realize what you’ve just imagined, and it makes your blood run c
     <<jump EatBread>>
 -> Sate your hunger.
     <<jump SateHunger>>
-
-
+-> TEST
+    Imeris: TEST TEST TEST TEST.
 ===
 
 
