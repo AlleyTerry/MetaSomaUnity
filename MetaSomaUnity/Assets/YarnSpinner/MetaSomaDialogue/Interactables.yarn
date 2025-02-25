@@ -105,11 +105,22 @@ title: Bust2
 ---
 <<PickUpKey DoorToChapel>>
 imeris: There's the key.
-imeris: ...
-imeris: (the bust falls to the floor)
-imeris: I can get into the Chapel now.
+imeris: I need to move the bust.
+<<startMiniGame ManagerHolder>>
+
+===
+title: minigameSuccess
+---
+imeris: I got the key...
+imeris: (bust gets thrown)
 <<ResumeControls ManagerHolder>>
-<<DisableJump Imeris>>
+
+===
+title: minigameFail
+---
+imeris: huff huff
+imeris: I can do this.
+<<StartMiniGame ManagerHolder>>
 
 ===
 

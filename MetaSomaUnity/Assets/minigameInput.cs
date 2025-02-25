@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Yarn.Unity;
 
 public class minigameInput : MonoBehaviour
 {
@@ -13,10 +14,15 @@ public class minigameInput : MonoBehaviour
     public float timeLeft = 3f;
     public int pressedNumber;
     public TextMeshProUGUI timerText;
+    public GameObject bust;
+    public DialogueRunner dialogueRunner;
+    
+    public static minigameInput instance;
     // Start is called before the first frame update
     void Start()
     {
-        
+        dialogueRunner = FindObjectOfType<DialogueRunner>();
+        GameObject bust = GameObject.Find("/Parallax/Midground/item");
     }
 
     // Update is called once per frame
@@ -24,18 +30,10 @@ public class minigameInput : MonoBehaviour
     {
         //input makes the item go up
         // rapid input makes the item go up faster
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            text.text = "rappidly press up arrow to make the item go up";
-            isPressed = true;
-            //start the timer countdown to 0 from timeLeft
-            
-            
-        }
         if (timeLeft <= 0)
         {
             isPressed = false;
-            timerText.text = "0";
+            //timerText.text = "0";
             EndGame();
         }
         
@@ -49,7 +47,7 @@ public class minigameInput : MonoBehaviour
         if (isPressed)
         {
             timeLeft -= Time.deltaTime;
-            timerText.text = Mathf.Round(timeLeft).ToString();
+            //timerText.text = Mathf.Round(timeLeft).ToString();
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 //add force
@@ -58,9 +56,18 @@ public class minigameInput : MonoBehaviour
             
             }
         }
-
         
-        
+    }
+    
+    
+    [YarnCommand("startMiniGame")]
+    public void StartMiniGame()
+    {
+        //start the timer countdown to 0 from timeLeft
+        //start the timer countdown to 0 from timeLeft
+        timeLeft = 3f;
+        isPressed = true;
+        bust.SetActive(true);
     }
 
     public void EndGame()
@@ -68,11 +75,15 @@ public class minigameInput : MonoBehaviour
         //text shows whether or not they got the right number of inputs
         if (timesPressed >= pressedNumber)
         {
-            text.text = "You did it!";
+            //play yarnspinner dialogue
+            bust.SetActive(false);
+            dialogueRunner.StartDialogue("minigameSuccess");
         }
         else
         {
-            text.text = "You failed!";
+            //play yarnspinner dialogue
+            dialogueRunner.StartDialogue("minigameFail");
+            
         }
         
     }
