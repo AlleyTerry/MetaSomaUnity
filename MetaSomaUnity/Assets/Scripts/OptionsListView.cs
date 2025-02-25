@@ -48,6 +48,9 @@ namespace Yarn.Unity
             canvasGroup.alpha = 0;
             canvasGroup.interactable = false;
             canvasGroup.blocksRaycasts = false;
+            
+            // Set hover text canvas invisible
+            hoverText.gameObject.transform.parent.gameObject.SetActive(false);
         }
 
         public void Reset()
@@ -115,27 +118,69 @@ namespace Yarn.Unity
             {
                 EventSystem.current.SetSelectedGameObject(optionViews[currentSelectedIndex].gameObject, null);
             }
+            
+            // Update hover text
+            UpdateHoverText(currentSelectedIndex);
         }
+        
+        // HOVER TEXT
+        Dictionary<string, string> hoverTexts = new Dictionary<string, string>();
 
         [YarnCommand ("SetHoverText")]
         public void SetHoverText ()
         {
-            Dictionary<string, string> hoverTexts = new Dictionary<string, string>();
+            hoverTexts.Clear(); // Reset the dictionary
 
             InMemoryVariableStorage variableStorage = GameObject.FindObjectOfType<InMemoryVariableStorage>();
+            if (variableStorage == null)
+            {
+                Debug.LogError("InMemoryVariableStorage not found!");
+                return;
+            }
+            
             variableStorage.TryGetValue("$hover_text_up", out string text_up);
             variableStorage.TryGetValue("$hover_text_left", out string text_left);
             variableStorage.TryGetValue("$hover_text_right", out string text_right);
-            Debug.LogWarning(text_up + "\n" + text_left + "\n" + text_right);
+            //Debug.LogWarning(text_up + "\n" + text_left + "\n" + text_right);
             
-            if (text_up != null) hoverTexts.Add("up", text_up);
-            if (text_left != null) hoverTexts.Add("left", text_left);
-            if (text_right != null) hoverTexts.Add("right", text_right); 
+            if (!string.IsNullOrEmpty(text_up)) hoverTexts["up"] = text_up;
+            if (!string.IsNullOrEmpty(text_left)) hoverTexts["left"] = text_left;
+            if (!string.IsNullOrEmpty(text_right)) hoverTexts["right"] = text_right;
+
+            Debug.Log("Hover texts set: " + string.Join(", ", hoverTexts));
+        }
+        
+        // Actual deal with hover text
+        public TextMeshProUGUI hoverText;
+
+        private void UpdateHoverText(int optionIndex)
+        {
+            string key = ""; // this is the key to the hover text dictionary
+            
+            switch (optionIndex)
+            {
+                case 0: key = "up"; break;
+                case 1: key = "left"; break;
+                case 2: key = "right"; break;
+                default: key = ""; break;
+            }
+            
+            if (hoverTexts.ContainsKey(key))
+            {
+                hoverText.gameObject.transform.parent.gameObject.SetActive(true); // Show the hover text canvas
+                hoverText.text = hoverTexts[key];
+            }
+            else
+            {
+                hoverText.text = "";
+                hoverText.gameObject.transform.parent.gameObject.SetActive(false); // Hide the hover text canvas
+            }
         }
 
         private void ConfirmSelection()
         {
             Debug.Log("Confirming selection.");
+            hoverText.gameObject.transform.parent.gameObject.SetActive(false); // Hide the hover text canvas
             //var selectedOption = optionViews[currentSelectedIndex].Option;
             //OptionViewWasSelected(selectedOption);
         }
