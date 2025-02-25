@@ -11,8 +11,6 @@ public class LevelManager_Intro : LevelManagerBase
     // DEBUG
     public bool isDialogueRunning = false;
     
-    [SerializeField] Animator CGDisplayAnimator;
-    [SerializeField] RuntimeAnimatorController CGDisplayAnimatorController;
     
     public override void Initialize()
     {
@@ -20,11 +18,6 @@ public class LevelManager_Intro : LevelManagerBase
         
         GameManager.instance.HUD.SetActive(true);
         GameManager.instance.CGDisplay.SetActive(true);
-        
-        // Intro cut scene
-        CGDisplayAnimator = transform.GetChild(1).GetComponentInChildren<Animator>();
-        CGDisplayAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/OpenCrawl/Open_Crawl");
-        CGDisplayAnimator.runtimeAnimatorController = CGDisplayAnimatorController;
         
         GameManager.instance.CGDisplay.SetActive(true);
         
@@ -53,11 +46,5 @@ public class LevelManager_Intro : LevelManagerBase
     protected override void Update()
     {
         base.Update();
-    }
-    
-    [YarnCommand("PlayAnimation")]
-    public void AnimationState(string state)
-    {
-        CGDisplayAnimator.Play(state);
     }
 }

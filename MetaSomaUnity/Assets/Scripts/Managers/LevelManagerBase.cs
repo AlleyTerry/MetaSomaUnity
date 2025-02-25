@@ -22,6 +22,10 @@ public class LevelManagerBase : MonoBehaviour
     protected string currentCutSceneDialogueNode;
     protected string currentBattleDialogueNode;
     public float currentBattleDialogueDelay = 0.5f;
+    
+    // PLAYING CG
+    [SerializeField] Animator CGDisplayAnimator;
+    [SerializeField] RuntimeAnimatorController CGDisplayAnimatorController;
 
     private void Awake()
     {
@@ -47,6 +51,11 @@ public class LevelManagerBase : MonoBehaviour
         
         // SETUP NPC
         NPCAnimation = GameObject.Find("NPCAnimation");
+        
+        // CG PLAYER SETUP
+        CGDisplayAnimator = transform.GetChild(1).GetComponentInChildren<Animator>();
+        CGDisplayAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/OpenCrawl/Open_Crawl");
+        CGDisplayAnimator.runtimeAnimatorController = CGDisplayAnimatorController;
         
         Debug.Log($"{GetType().Name} initialized.");
     }
@@ -152,5 +161,12 @@ public class LevelManagerBase : MonoBehaviour
     public void DisableNPCAnimation()
     {
         NPCAnimation.SetActive(false);
+    }
+    
+    
+    [YarnCommand("PlayAnimation")]
+    public void AnimationState(string state)
+    {
+        CGDisplayAnimator.Play(state);
     }
 }
