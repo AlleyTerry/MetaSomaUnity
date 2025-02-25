@@ -201,7 +201,7 @@ public class ImerisMovement : MonoBehaviour
         rb.velocity = velocity;
         
         float actualSpeed = moveSpeed * currentState.GetWalkSpeed();
-        Debug.Log($"Current Walk Speed: {actualSpeed}");
+        //Debug.Log($"Current Walk Speed: {actualSpeed}");
     }
 
     private void JumpHandler()

@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 6687939476294964651}
   - component: {fileID: 7798287736433601848}
   m_Layer: 5
-  m_Name: Options Bubble
+  m_Name: OptionsBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

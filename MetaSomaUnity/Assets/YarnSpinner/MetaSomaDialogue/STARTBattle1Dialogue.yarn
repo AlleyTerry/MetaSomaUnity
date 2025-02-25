@@ -1,4 +1,11 @@
-﻿title: STARTBattle1Dialogue
+﻿title: InitiateSTARTBattle1Dialogue
+---
+<<declare $hover_text_up = "">>
+<<declare $hover_text_left = "">>
+<<declare $hover_text_right = "">>
+===
+
+title: STARTBattle1Dialogue
 tags:
 ---
 <<StopMusic ManagerHolder 0.05>>
@@ -6,6 +13,10 @@ tags:
 Linnaeus: That door was barricaded for a reason, my child. 
 Linnaeus: I know what you are here for.
 Linnaeus:  But I shall not relinquish these offerings to Our Lady Mellonella even at the cost of my life.
+<<set $hover_text_up = "this is up">>
+<<set $hover_text_left = "this is left">>
+<<set $hover_text_right = "this is right">>
+<<SetHoverText OptionsBubble>>
 -> I hunger.
     <<jump IHunger>>
 -> Please.

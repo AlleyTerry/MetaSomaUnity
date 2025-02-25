@@ -117,9 +117,20 @@ namespace Yarn.Unity
             }
         }
 
-        private void HoverDialogue(int optionIndex)
+        [YarnCommand ("SetHoverText")]
+        public void SetHoverText ()
         {
+            Dictionary<string, string> hoverTexts = new Dictionary<string, string>();
+
+            InMemoryVariableStorage variableStorage = GameObject.FindObjectOfType<InMemoryVariableStorage>();
+            variableStorage.TryGetValue("$hover_text_up", out string text_up);
+            variableStorage.TryGetValue("$hover_text_left", out string text_left);
+            variableStorage.TryGetValue("$hover_text_right", out string text_right);
+            Debug.LogWarning(text_up + "\n" + text_left + "\n" + text_right);
             
+            if (text_up != null) hoverTexts.Add("up", text_up);
+            if (text_left != null) hoverTexts.Add("left", text_left);
+            if (text_right != null) hoverTexts.Add("right", text_right); 
         }
 
         private void ConfirmSelection()
