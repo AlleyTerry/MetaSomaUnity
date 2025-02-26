@@ -24,8 +24,8 @@ public class LevelManagerBase : MonoBehaviour
     public float currentBattleDialogueDelay = 0.5f;
     
     // PLAYING CG
-    [SerializeField] Animator CGDisplayAnimator;
-    [SerializeField] RuntimeAnimatorController CGDisplayAnimatorController;
+    [SerializeField] protected Animator CGDisplayAnimator;
+    [SerializeField] protected RuntimeAnimatorController CGDisplayAnimatorController;
 
     private void Awake()
     {

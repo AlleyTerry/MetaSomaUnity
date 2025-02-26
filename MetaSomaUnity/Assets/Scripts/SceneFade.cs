@@ -71,8 +71,7 @@ public class SceneFade : MonoBehaviour
         Debug.Log($"Scene {scene.name} Loaded! Fading In...");
         StartFadeIn();
     }
-
-
+    
     // Method to initiate the fade-out effect and load a new scene
     public void LoadScene(int sceneIndex)
     {

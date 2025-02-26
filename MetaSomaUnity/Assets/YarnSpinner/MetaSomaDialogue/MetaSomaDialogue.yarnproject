@@ -5,7 +5,8 @@
     "STARTBattle1Dialogue.yarn",
     "ChapelStart.yarn",
     "*.yarn",
-    "Interactables.yarn"
+    "Interactables.yarn",
+    "OpeningCutSceneText.yarn"
   ],
   "excludeFiles": [
     "**/*~/*"

@@ -122,6 +122,27 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &192932847 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4217430520171522537, guid: 31c98296315ab384aad35532a9b2249a,
+    type: 3}
+  m_PrefabInstance: {fileID: 445664297}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &192932852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192932847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e94f9d9f6e80f984f94976b04551b1f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: IMERIS
+  messageBubbleOffset: {x: 4, y: -2.5, z: 0}
+  offsetUsesRotation: 0
 --- !u!1 &360175744
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,7 +377,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4217430520171522537, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 192932852}
   m_SourcePrefab: {fileID: 100100000, guid: 31c98296315ab384aad35532a9b2249a, type: 3}
 --- !u!114 &445664298 stripped
 MonoBehaviour:
@@ -442,6 +467,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442632065264197602, guid: 9376fc3a1927eb14192c38774a829615,
+        type: 3}
+      propertyPath: dialogueNodeName
+      value: OpeningCutSceneText
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442632065264197602, guid: 9376fc3a1927eb14192c38774a829615,
+        type: 3}
+      propertyPath: animationStateName
+      value: BedroomIntro_10
       objectReference: {fileID: 0}
     - target: {fileID: 8959185295706953830, guid: 9376fc3a1927eb14192c38774a829615,
         type: 3}
