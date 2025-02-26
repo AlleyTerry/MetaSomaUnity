@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class LevelManager_CommonArea : LevelManagerBase
@@ -11,6 +12,13 @@ public class LevelManager_CommonArea : LevelManagerBase
         
         GameManager.instance.HUD.SetActive(true);
         GameManager.instance.CGDisplay.SetActive(false);
+        
+        //give the minigameInput instance a reference to the item
+       GameObject item = GameObject.Find("/Parallax/Midground/item");
+       item.SetActive(false);
+       minigameInput.instance.bust = item;
+       item.SetActive(false);
+        
         
         // Disable NPC animation display
         NPCAnimation.SetActive(false);
@@ -26,5 +34,7 @@ public class LevelManager_CommonArea : LevelManagerBase
             GameObject bust2 = GameObject.Find("/Parallax/Midground/Interactables/Bust2");
             bust2.SetActive(true);
         }
+        
+        
     }
 }
