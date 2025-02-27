@@ -8,6 +8,7 @@ public class LevelManager_CommonArea : LevelManagerBase
 {
     [FormerlySerializedAs("item")] 
     [SerializeField] private GameObject bustMiniGameHolder;
+    [SerializeField] private GameObject bustBackGroundHolder;
     
     public override void Initialize()
     {
@@ -26,12 +27,16 @@ public class LevelManager_CommonArea : LevelManagerBase
         //look for key bool
         GameObject bust1 = GameObject.Find("Bust");
         GameObject bust2 = GameObject.Find("Bust2");
+        bustBackGroundHolder = GameObject.Find("BustBackground");
+        
         
         if (GameManager.instance.talkToGrub)
         {
             // if key is found, set bust2 to active
             bust1.SetActive(false);
             bust2.SetActive(true);
+            bustBackGroundHolder.SetActive(true);
+            
             
             bustMiniGameHolder.SetActive(true);
         }
@@ -40,6 +45,7 @@ public class LevelManager_CommonArea : LevelManagerBase
             // by default, set bust1 to active
             bust1.SetActive(true);
             bust2.SetActive(false);
+            bustBackGroundHolder.SetActive(false);
             
             // minigame is not active
             bustMiniGameHolder.SetActive(false);

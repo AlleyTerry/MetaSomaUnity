@@ -22,9 +22,36 @@ title: GalleriaBed
 imeris: Not my bed. But the pattern on the sheets is familiar.
 ===
 
+title: WallStop
+---
+imeris: I need to leave...
+===
+
 title: MellonellaShrine
 ---
 imeris: I’ve prayed here countless times, I know. Under Her Majesty’s… watchful gaze.
+===
+
+title: Wardrobe
+---
+imeris: Why is this blocking the door?
+imeris: I need to move it...
+imeris: (rappidly press the up arrow when you see the indicator)
+<<StartWardrobeMiniGame WardrobeMiniGame>>
+===
+
+title: WardrobeWin
+---
+imeris: I can leave now...
+<<ResumeControls ManagerHolder>>
+===
+
+title: WardrobeLose
+---
+imeris: Huff huff
+imeris: I can do this
+imeris: (rappidly press the left arrow when you see the indicator)
+<<StartWardrobeMiniGame WardrobeMiniGame>>
 ===
 
 //Servants Hall
