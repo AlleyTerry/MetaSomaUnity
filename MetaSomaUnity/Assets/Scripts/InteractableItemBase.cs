@@ -11,7 +11,7 @@ public enum InteractionType
     Consume
 }
 
-public class InteractableItemBase : MonoBehaviour
+public class InteractableItemBase : MonoBehaviour, ITriggerable
 {
     // VISUAL CUE
     public GameObject visualCue;
@@ -127,4 +127,14 @@ public class InteractableItemBase : MonoBehaviour
             }
         }
     }
+
+    public void OnTriggerAction()
+    {
+        HideIndicator();
+    }
+}
+
+public interface ITriggerable
+{
+    void OnTriggerAction();
 }

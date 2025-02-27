@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneHandler : MonoBehaviour
+public class SceneHandler : MonoBehaviour, ITriggerable
 {
     protected bool isTriggering = false;
 
     [SerializeField] protected bool isStraightToNextLevel = true;
     [SerializeField] protected string nextLevelName = "";
+    
+    // INDICATOR
+    public Animator indicatorAnimator;
     
     protected virtual void OnTriggerEnter(Collider other)
     {
@@ -16,7 +19,15 @@ public class SceneHandler : MonoBehaviour
         {
             Debug.Log("Player triggered scene transition.");
             
+            if (indicatorAnimator == null)
+            {
+                indicatorAnimator = transform.GetComponentInChildren<Animator>();
+            }
+            
             isTriggering = true;
+            
+            indicatorAnimator.gameObject.SetActive(true);
+            indicatorAnimator.Play("HandIndicator");
         }
     }
     
@@ -27,13 +38,19 @@ public class SceneHandler : MonoBehaviour
             Debug.Log("Player exited scene transition.");
             
             isTriggering = false;
+            indicatorAnimator.Play("HandIndicator_Backward");
         }
     }
     
     // Start is called before the first frame update
     void Start()
     {
+        if (indicatorAnimator == null)
+        {
+            indicatorAnimator = transform.GetComponentInChildren<Animator>();
+        }
         
+        indicatorAnimator.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -84,5 +101,15 @@ public class SceneHandler : MonoBehaviour
     protected void DestroyThis()
     {
         Destroy(this.gameObject);
+    }
+
+    public void HideIndicator()
+    {
+        indicatorAnimator.gameObject.SetActive(false);
+    }
+    
+    public void OnTriggerAction()
+    {
+        HideIndicator();
     }
 }

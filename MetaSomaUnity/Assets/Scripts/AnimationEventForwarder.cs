@@ -6,11 +6,11 @@ public class AnimationEventForwarder : MonoBehaviour
 {
     public void TriggerParentFunction()
     {
-        InteractableItemBase parent = GetComponentInParent<InteractableItemBase>();
+        ITriggerable parent = GetComponentInParent<ITriggerable>();
         
         if (parent != null)
         {
-            parent.HideIndicator();
+            parent.OnTriggerAction();
         }
     }
 }
