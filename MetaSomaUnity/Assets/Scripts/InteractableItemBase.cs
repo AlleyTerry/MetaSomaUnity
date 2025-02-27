@@ -18,7 +18,6 @@ public class InteractableItemBase : MonoBehaviour, ITriggerable
     
     // PLAYER OVERLAPPING
     [SerializeField] protected bool isOverlapping = false;
-    public GameObject Imeris;
     
     // ITEM VARIABLES
     private GameObject interactableItem;
