@@ -17,13 +17,17 @@ public class minigameInput : MonoBehaviour
     public GameObject bust;
     public DialogueRunner dialogueRunner;
     
-    //public static minigameInput instance;
+    // this is for indicator
+    public Animator indicatorAnimator;
     
     // Start is called before the first frame update
     void Start()
     {
-        dialogueRunner = FindObjectOfType<DialogueRunner>();
+        dialogueRunner = DialogueManager.instance.dialogueRunner;
         GameObject bust;
+
+        indicatorAnimator = GetComponentInChildren<Animator>();
+        indicatorAnimator.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -43,8 +47,6 @@ public class minigameInput : MonoBehaviour
 
     public void GoUp()
     {
-        
-
         if (isPressed)
         {
             timeLeft -= Time.deltaTime;
@@ -57,12 +59,15 @@ public class minigameInput : MonoBehaviour
             
             }
         }
-        
     }
     
     [YarnCommand("StartMiniGame")]
     public void StartMiniGame()
     {
+        // show indicator
+        indicatorAnimator.gameObject.SetActive(true);
+        indicatorAnimator.Play("HandIndicator");
+        
         //start the timer countdown to 0 from timeLeft
         //start the timer countdown to 0 from timeLeft
         timeLeft = 3f;
@@ -77,14 +82,15 @@ public class minigameInput : MonoBehaviour
         {
             //play yarnspinner dialogue
             bust.SetActive(false);
-            dialogueRunner.StartDialogue("minigameSuccess");
+            if (!dialogueRunner.IsDialogueRunning) dialogueRunner.StartDialogue("minigameSuccess");
         }
         else
         {
-            //play yarnspinner dialogue
-            dialogueRunner.StartDialogue("minigameFail");
+            // hide indicator
+            indicatorAnimator.gameObject.SetActive(false);
             
+            //play yarnspinner dialogue
+            if (!dialogueRunner.IsDialogueRunning) dialogueRunner.StartDialogue("minigameFail");
         }
-        
     }
 }
