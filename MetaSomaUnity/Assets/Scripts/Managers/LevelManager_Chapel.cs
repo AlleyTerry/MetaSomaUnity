@@ -60,7 +60,7 @@ public class LevelManager_Chapel : LevelManagerBase
         base.StartBattleScene();
         
         // ANIMATION
-        UIManager.instance.PlayAnimation("SmallViewportTransition");
+        UIManager.instance.PlayAnimation("MediumViewportTransition");
         
         // LINNEAUS
         //linneausAnimation.SetActive(true); // For now we don't really have the cutscene, will be commented out later
@@ -90,7 +90,7 @@ public class LevelManager_Chapel : LevelManagerBase
         DialogueManager.instance.StopDialogue();
         
         // ANIMATION
-        UIManager.instance.PlayAnimation("SmallViewportTransition_Reversed");
+        UIManager.instance.PlayAnimation("MediumViewportTransition_Reversed");
         
         DisableNPCAnimation();
         

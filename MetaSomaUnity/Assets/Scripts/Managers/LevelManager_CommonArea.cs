@@ -41,7 +41,6 @@ public class LevelManager_CommonArea : LevelManagerBase
             bust2.SetActive(true);
             bustBackGroundHolder.SetActive(true);
             
-            
             bustMiniGameHolder.SetActive(true);
         }
         else

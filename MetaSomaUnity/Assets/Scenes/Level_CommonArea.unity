@@ -227,7 +227,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 36, y: 50, z: 1}
+  m_Size: {x: 37.2, y: 50, z: 1}
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &89111040
 GameObject:
@@ -1121,7 +1121,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visualCue: {fileID: 0}
   isOverlapping: 0
-  Imeris: {fileID: 0}
   objName: Bust2
   interactionType: 0
 --- !u!1 &638251728
@@ -3146,7 +3145,7 @@ Transform:
   m_GameObject: {fileID: 1833367907}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.835555, y: -0.3169999, z: -10}
+  m_LocalPosition: {x: -11.435555, y: -0.3169999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3520,7 +3519,7 @@ Transform:
   m_GameObject: {fileID: 1861970828}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.700261, y: -8.839095, z: -0.008136969}
+  m_LocalPosition: {x: 9.700261, y: -8.7, z: -0.008136969}
   m_LocalScale: {x: 34.9, y: 12, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3543,7 +3542,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -3567,7 +3566,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4713e49bdee6f8c4aadca0c83940c1b7, type: 2}
+  - {fileID: 2100000, guid: 66a55430b9557a14b97d000067d351a3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

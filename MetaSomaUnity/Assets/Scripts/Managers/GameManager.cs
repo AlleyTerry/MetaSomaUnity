@@ -241,13 +241,6 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log($"Scene {scene.name} loaded.");
         
-        // Record scene history
-        if (sceneHistory.Count == 0 || 
-            sceneHistory[sceneHistory.Count - 1] != scene.name)
-        {
-            sceneHistory.Add(scene.name);
-        }
-        
         // Reset the battle state
         ResumeControls();
         
@@ -341,11 +334,11 @@ public class GameManager : MonoBehaviour
 
     public string GetPreviousScene()
     {
-        if (sceneHistory.Count > 1)
+        if (sceneHistory.Count > 0)
         {
-            return sceneHistory[sceneHistory.Count - 2];  // 倒数第二个是上一个 Scene
+            return sceneHistory[sceneHistory.Count - 1];  // last scene
         }
-        return "None";
+        return "";
     }
     
     public void GetInMemoryVariableStorage()

@@ -67,14 +67,27 @@ public class SceneHandler : MonoBehaviour, ITriggerable
             
             if (isStraightToNextLevel)
             {
+                RecordSceneHistory();
                 GameManager.instance.LoadNextLevel();
             }
             else
             {
                 if (nextLevelName == null) return;
+                RecordSceneHistory();
                 SetSceneIndex(nextLevelName);
                 //SceneManager.LoadScene(nextLevelName);
             }
+        }
+    }
+
+    protected void RecordSceneHistory()
+    {
+        // Record scene history
+        string currentScene = SceneManager.GetActiveScene().name;
+        if (GameManager.instance.sceneHistory.Count == 0 || 
+            GameManager.instance.sceneHistory[GameManager.instance.sceneHistory.Count - 1] != currentScene)
+        {
+            GameManager.instance.sceneHistory.Add(currentScene);
         }
     }
 
