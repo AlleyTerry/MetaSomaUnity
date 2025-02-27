@@ -17,12 +17,13 @@ public class minigameInput : MonoBehaviour
     public GameObject bust;
     public DialogueRunner dialogueRunner;
     
-    public static minigameInput instance;
+    //public static minigameInput instance;
+    
     // Start is called before the first frame update
     void Start()
     {
         dialogueRunner = FindObjectOfType<DialogueRunner>();
-        GameObject bust = GameObject.Find("/Parallax/Midground/item");
+        GameObject bust;
     }
 
     // Update is called once per frame
@@ -59,8 +60,7 @@ public class minigameInput : MonoBehaviour
         
     }
     
-    
-    [YarnCommand("startMiniGame")]
+    [YarnCommand("StartMiniGame")]
     public void StartMiniGame()
     {
         //start the timer countdown to 0 from timeLeft

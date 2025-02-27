@@ -310,6 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isStraightToNextLevel: 0
   nextLevelName: Level_Chapel
+  indicatorAnimator: {fileID: 0}
   reminderDialogueNode: BoardedChapel
 --- !u!4 &351715605 stripped
 Transform:
@@ -658,39 +659,8 @@ PrefabInstance:
     - {fileID: 937206547670337374, guid: 9376fc3a1927eb14192c38774a829615, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7964521411033984940, guid: 9376fc3a1927eb14192c38774a829615,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 552374206}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9376fc3a1927eb14192c38774a829615, type: 3}
---- !u!1 &552374205 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7964521411033984940, guid: 9376fc3a1927eb14192c38774a829615,
-    type: 3}
-  m_PrefabInstance: {fileID: 552374204}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &552374206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 552374205}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6aa22984615e6a44819a57e42d0dc60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  upForce: 1.5
-  text: {fileID: 0}
-  isPressed: 0
-  timesPressed: 0
-  timeLeft: 3
-  pressedNumber: 0
-  timerText: {fileID: 0}
-  bust: {fileID: 0}
-  dialogueRunner: {fileID: 0}
 --- !u!1 &576096642
 GameObject:
   m_ObjectHideFlags: 0
@@ -1515,6 +1485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isStraightToNextLevel: 0
   nextLevelName: Level_Cafeteria
+  indicatorAnimator: {fileID: 0}
 --- !u!65 &962572837
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1599,8 +1570,9 @@ GameObject:
   - component: {fileID: 1051647539}
   - component: {fileID: 1051647538}
   - component: {fileID: 1051647537}
+  - component: {fileID: 1051647541}
   m_Layer: 0
-  m_Name: item
+  m_Name: BustMiniGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1719,6 +1691,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051647535}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1051647541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051647535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6aa22984615e6a44819a57e42d0dc60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upForce: 1.5
+  text: {fileID: 0}
+  isPressed: 0
+  timesPressed: 0
+  timeLeft: 3
+  pressedNumber: 0
+  timerText: {fileID: 0}
+  bust: {fileID: 0}
+  dialogueRunner: {fileID: 0}
 --- !u!1 &1074335894
 GameObject:
   m_ObjectHideFlags: 0

@@ -106,7 +106,7 @@ title: Bust2
 <<PickUpKey DoorToChapel>>
 imeris: There's the key.
 imeris: I need to move the bust.
-<<startMiniGame ManagerHolder>>
+<<StartMiniGame BustMiniGame>>
 
 ===
 title: minigameSuccess
@@ -120,7 +120,7 @@ title: minigameFail
 ---
 imeris: huff huff
 imeris: I can do this.
-<<StartMiniGame ManagerHolder>>
+<<StartMiniGame BustMiniGame>>
 
 ===
 
