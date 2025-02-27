@@ -10,6 +10,10 @@ public class LevelManager_CommonArea : LevelManagerBase
     [SerializeField] private GameObject bustMiniGameHolder;
     [SerializeField] private GameObject bustBackGroundHolder;
     
+    [SerializeField] private Vector3 imerisPositionOrigin = new Vector3(-14.44f, -2.317f, 0);
+    [SerializeField] private Vector3 imerisPositionFromCafe = new Vector3(-7.69f, -2.317f, 0);
+    [SerializeField] private Vector3 imerisPositionFromChapel;
+    
     public override void Initialize()
     {
         base.Initialize();
@@ -49,6 +53,26 @@ public class LevelManager_CommonArea : LevelManagerBase
             
             // minigame is not active
             bustMiniGameHolder.SetActive(false);
+        }
+        
+        // Set up Imeris
+        Debug.Log("Previous Scene: " + GameManager.instance.GetPreviousScene());
+        
+        ImerisMovement imerisMovement = Imeris.GetComponent<ImerisMovement>();
+        
+        if (GameManager.instance.GetPreviousScene() == "Level_ServantsHall")
+        {
+            Debug.Log("Imeris coming from Servants Hall.");
+            
+            imerisMovement.SetSpawnPosition(imerisPositionOrigin, true);
+        }
+        else if (GameManager.instance.GetPreviousScene() == "Level_Cafeteria")
+        {
+            imerisMovement.SetSpawnPosition(imerisPositionFromCafe,false);
+        }
+        else if (GameManager.instance.GetPreviousScene() == "Level_Chapel")
+        {
+            // todo: nothing now??
         }
     }
 }

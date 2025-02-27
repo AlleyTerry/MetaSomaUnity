@@ -13,6 +13,7 @@ public class LevelManagerBase : MonoBehaviour
     /*protected DialogueRunner dialogueRunner;*/
     
     // IMERIS
+    public GameObject Imeris;
     public GameObject ImerisAnimation;
     
     // NPC
@@ -47,6 +48,7 @@ public class LevelManagerBase : MonoBehaviour
     public virtual void Initialize()
     {
         // SETUP IMERIS
+        Imeris = GameObject.FindObjectOfType<ImerisMovement>().gameObject;
         ImerisAnimation = GameObject.Find("ImerisAnimation");
         
         // SETUP NPC

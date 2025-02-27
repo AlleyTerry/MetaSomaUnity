@@ -27,6 +27,9 @@ public class ImerisMovement : MonoBehaviour
     // RIGIDBODY COMPONENT
     public Rigidbody rb;
     
+    // SPAWN POINT
+    public Vector3 spawnPosition;
+    
     // MOVEMENT VARIABLES
     public float moveSpeed = 5f;
     private Vector3 moveDirection;
@@ -106,6 +109,12 @@ public class ImerisMovement : MonoBehaviour
                 SetState(new NoLEvolvedFinalState(SubState.Healthy));
                 break;
         }
+    }
+    
+    public void SetSpawnPosition(Vector3 newSpawnPosition, bool isFacingRight)
+    {
+        transform.position = newSpawnPosition;
+        GetComponent<SpriteRenderer>().flipX = isFacingRight;
     }
 
     // Start is called before the first frame update
