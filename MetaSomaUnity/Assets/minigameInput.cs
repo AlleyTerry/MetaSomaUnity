@@ -67,7 +67,7 @@ public class minigameInput : MonoBehaviour
         //start the timer countdown to 0 from timeLeft
         timeLeft = 3f;
         isPressed = true;
-        bust.SetActive(true);
+        //bust.SetActive(true);
     }
 
     public void EndGame()

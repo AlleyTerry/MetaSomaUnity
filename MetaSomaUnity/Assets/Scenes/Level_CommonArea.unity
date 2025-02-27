@@ -1824,7 +1824,7 @@ MonoBehaviour:
   isPressed: 0
   timesPressed: 0
   timeLeft: 3
-  pressedNumber: 0
+  pressedNumber: 15
   timerText: {fileID: 0}
   bust: {fileID: 0}
   dialogueRunner: {fileID: 0}

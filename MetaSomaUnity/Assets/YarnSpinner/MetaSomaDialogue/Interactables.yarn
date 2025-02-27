@@ -106,6 +106,7 @@ title: Bust2
 <<PickUpKey DoorToChapel>>
 imeris: There's the key.
 imeris: I need to move the bust.
+imeris: (rappidly press the up arrow when you see the indicator)
 <<StartMiniGame BustMiniGame>>
 
 ===
