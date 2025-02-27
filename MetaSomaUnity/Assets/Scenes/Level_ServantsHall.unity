@@ -3386,6 +3386,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Imeris
       objectReference: {fileID: 0}
+    - target: {fileID: 4655624596425160128, guid: 67b683a3d2236fa44b70f4ac0a150e45,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5910737808706525008, guid: 67b683a3d2236fa44b70f4ac0a150e45,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3441,7 +3446,8 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4655624596425160128, guid: 67b683a3d2236fa44b70f4ac0a150e45, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
