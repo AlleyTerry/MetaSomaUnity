@@ -121,6 +121,7 @@ title: minigameFail
 ---
 imeris: huff huff
 imeris: I can do this.
+imeris: (rappidly press the up arrow when you see the indicator)
 <<StartMiniGame BustMiniGame>>
 
 ===
