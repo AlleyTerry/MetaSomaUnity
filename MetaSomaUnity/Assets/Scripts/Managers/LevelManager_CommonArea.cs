@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -10,10 +11,41 @@ public class LevelManager_CommonArea : LevelManagerBase
     [SerializeField] private GameObject bustMiniGameHolder;
     [SerializeField] private GameObject bustBackGroundHolder;
     
-    [SerializeField] private Vector3 imerisPositionOrigin = new Vector3(-14.44f, -2.317f, 0);
-    [SerializeField] private Vector3 imerisPositionFromCafe = new Vector3(-7.69f, -2.317f, 0);
-    [SerializeField] private Vector3 imerisPositionFromChapel;
-    
+    [SerializeField] private Transform defaultSpawnPoint;
+    [SerializeField] private Transform spawnPointFromCafe;
+    [SerializeField] private Transform spawnPointFromChapel;
+
+    protected override void Start()
+    {
+        base.Start();
+        
+        defaultSpawnPoint = GameObject.Find("SpawnPoint").transform;
+        spawnPointFromCafe = GameObject.Find("SpawnPointFromCafe").transform;
+        spawnPointFromChapel = GameObject.Find("SpawnPointFromChapel").transform;
+        
+        Transform spawnPoint = GetSpawnPoint(GameManager.instance.GetPreviousScene());
+        Debug.Log("Spawn Point: " + spawnPoint.position);
+        
+        // Set up Imeris respawn position
+        GameObject.FindObjectOfType<ImerisMovement>().gameObject.transform.position = spawnPoint.position;
+        
+    }
+
+    private Transform GetSpawnPoint(string lastScene)
+    {
+        switch (lastScene)
+        {
+            case "Level_ServantsHall":
+                return defaultSpawnPoint;
+            case "Level_Cafeteria":
+                return spawnPointFromCafe;
+            case "Level_Chapel":
+                return spawnPointFromChapel;
+            default:
+                return defaultSpawnPoint;
+        }
+    }
+
     public override void Initialize()
     {
         base.Initialize();
@@ -53,25 +85,32 @@ public class LevelManager_CommonArea : LevelManagerBase
             // minigame is not active
             bustMiniGameHolder.SetActive(false);
         }
+
+        //StartCoroutine(DelayedSetSpawn(GameManager.instance.GetPreviousScene()));
+    }
+
+    private void DelayedSetSpawn(string previousScene)
+    {
+        //yield return new WaitForEndOfFrame();
         
-        // Set up Imeris
+        // Set up Imeris respawn position
         Debug.Log("Previous Scene: " + GameManager.instance.GetPreviousScene());
         
         ImerisMovement imerisMovement = Imeris.GetComponent<ImerisMovement>();
         
-        if (GameManager.instance.GetPreviousScene() == "Level_ServantsHall")
+        /*if (previousScene == "Level_ServantsHall")
         {
             Debug.Log("Imeris coming from Servants Hall.");
             
-            imerisMovement.SetSpawnPosition(imerisPositionOrigin, true);
+            imerisMovement.SetSpawnPosition(imerisPositionOrigin, imerisMovement.isFacingRight);
         }
-        else if (GameManager.instance.GetPreviousScene() == "Level_Cafeteria")
+        else if (previousScene == "Level_Cafeteria")
         {
-            imerisMovement.SetSpawnPosition(imerisPositionFromCafe,false);
+            imerisMovement.SetSpawnPosition(imerisPositionFromCafe,imerisMovement.isFacingRight);
         }
-        else if (GameManager.instance.GetPreviousScene() == "Level_Chapel")
+        else if (previousScene == "Level_Chapel")
         {
             // todo: nothing now??
-        }
+        }*/
     }
 }

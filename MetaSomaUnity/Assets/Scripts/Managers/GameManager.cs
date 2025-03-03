@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
     }
     
     // SCENE HISTORY
-    public List<string> sceneHistory = new List<string>();
+    public string previousScene;
     
     // HUD && CG PLAYER && FADE EFFECT
     public GameObject HUD;
@@ -332,13 +332,14 @@ public class GameManager : MonoBehaviour
         currentLevelManager.Initialize();
     }
 
+    public void SetPreviousScene(string sceneName)
+    {
+        previousScene = sceneName;
+    }
+    
     public string GetPreviousScene()
     {
-        if (sceneHistory.Count > 0)
-        {
-            return sceneHistory[sceneHistory.Count - 1];  // last scene
-        }
-        return "";
+        return previousScene;
     }
     
     public void GetInMemoryVariableStorage()

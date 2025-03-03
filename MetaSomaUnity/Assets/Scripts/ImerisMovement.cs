@@ -29,6 +29,7 @@ public class ImerisMovement : MonoBehaviour
     
     // SPAWN POINT
     public Vector3 spawnPosition;
+    public bool isFacingRight = false;
     
     // MOVEMENT VARIABLES
     public float moveSpeed = 5f;
@@ -111,11 +112,23 @@ public class ImerisMovement : MonoBehaviour
         }
     }
     
-    public void SetSpawnPosition(Vector3 newSpawnPosition, bool isFacingRight)
+    /*public void SetSpawnPosition(Vector3 newSpawnPosition, bool isFacingRight)
     {
+        rb.isKinematic = true;
+        
         transform.position = newSpawnPosition;
         GetComponent<SpriteRenderer>().flipX = isFacingRight;
+        
+        rb.velocity = Vector3.zero;
+        
+        StartCoroutine(EnablePhysics());
     }
+
+    private IEnumerator EnablePhysics()
+    {
+        yield return new WaitForSeconds(0.1f);
+        rb.isKinematic = false;
+    }*/
 
     // Start is called before the first frame update
     void Start()
@@ -140,6 +153,9 @@ public class ImerisMovement : MonoBehaviour
         // TODO: THIS IS THE JUMPING PART
         // Constraint the Y position of the player, and all rotations
         DisableJump();
+        
+        // Set isFacingRight
+        isFacingRight = !playerSpriteRender.flipX;
     }
 
     // Update is called once per frame
@@ -178,24 +194,30 @@ public class ImerisMovement : MonoBehaviour
         }*/
 
         // Walk Animation
-        if (rb.velocity.x != 0 && 
+        if (rb.velocity.x != 0 &&
             (isGrounded || isOnSteppable))
         {
             playerAnimator.Play("Imeris_Cloak_Walk");
         }
-        else if (rb.velocity.x == 0 && 
+        else if (rb.velocity.x == 0 &&
                  (isGrounded || isOnSteppable))
         {
             playerAnimator.Play("Imeris_Cloak_Idle");
         }
-        
+
         // Jump Animation
-        
+
         // Flip the sprite based on movement direction
         if (rb.velocity.x > 0)
-            playerSpriteRender.flipX = true;  // Facing right
+        {
+            isFacingRight = true;
+            playerSpriteRender.flipX = true; // Facing right
+        }
         else if (rb.velocity.x < 0)
-            playerSpriteRender.flipX = false;   // Facing left
+        {
+            isFacingRight = false;
+            playerSpriteRender.flipX = false; // Facing left
+        }
     }
 
     private void Move()

@@ -63,8 +63,6 @@ public class SceneHandler : MonoBehaviour, ITriggerable
             GameManager.instance.FreezeControls();
             GameManager.instance.IsBuffering = true;
             
-            Invoke(nameof(DestroyThis), 0.15f);
-            
             if (isStraightToNextLevel)
             {
                 RecordSceneHistory();
@@ -77,6 +75,8 @@ public class SceneHandler : MonoBehaviour, ITriggerable
                 SetSceneIndex(nextLevelName);
                 //SceneManager.LoadScene(nextLevelName);
             }
+            
+            Invoke(nameof(DestroyThis), 0.15f);
         }
     }
 
@@ -84,11 +84,7 @@ public class SceneHandler : MonoBehaviour, ITriggerable
     {
         // Record scene history
         string currentScene = SceneManager.GetActiveScene().name;
-        if (GameManager.instance.sceneHistory.Count == 0 || 
-            GameManager.instance.sceneHistory[GameManager.instance.sceneHistory.Count - 1] != currentScene)
-        {
-            GameManager.instance.sceneHistory.Add(currentScene);
-        }
+        GameManager.instance.SetPreviousScene(currentScene);
     }
 
     protected void SetSceneIndex(string sceneName)
