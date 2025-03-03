@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,6 +28,10 @@ public class LevelManagerBase : MonoBehaviour
     // PLAYING CG
     [SerializeField] protected Animator CGDisplayAnimator;
     [SerializeField] protected RuntimeAnimatorController CGDisplayAnimatorController;
+    
+    // CAMERA
+    public CinemachineVirtualCamera virtualCamera;
+    [SerializeField] protected float damping = 1.0f;
 
     private void Awake()
     {
@@ -37,8 +42,28 @@ public class LevelManagerBase : MonoBehaviour
     protected virtual void Start()
     {
         Debug.Log("LevelManagerBase.Start finished.");
+        
+        if (virtualCamera == null) virtualCamera = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
+
+        if (virtualCamera != null)
+        {
+            virtualCamera.OnTargetObjectWarped(Imeris.transform, new Vector3(0, 2, 0));
+            
+            virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = 0.0f;
+            virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_YDamping = 0.0f;
+
+            StartCoroutine(RestoreDamping());
+        }
     }
 
+    private IEnumerator RestoreDamping()
+    {
+        yield return new WaitForSeconds(0.1f);
+        
+        virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = damping;
+        virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_YDamping = damping;
+    }
+    
     // Update is called once per frame
     protected virtual void Update()
     {
