@@ -163,7 +163,13 @@ title: DeadBody2
 ---
 imeris: There’s vomit around her mouth. It seems she ate something that spoiled.
 ===
-
+title: EyeStartCafeteria
+---
+imeris: There is someone there,
+imeris: They can see me.
+<<StartCower ManagerHolder>>
+<<ResumeControls ManagerHolder>>
+===
 title: HalfAliveGrub
 ---
 <<set $tableReady to true>>
@@ -187,7 +193,7 @@ Grub: Though there is little left to live for anymore…
 Imeris: …Thank you.
 Grub: Yes, yes. Now please… just leave me be. I’d like to rest.
 Imeris: …
-
+<<EndCower ManagerHolder>>
 <<TalkedToHalfDeadGrub ManagerHolder>>
 <<ResumeControls ManagerHolder>>
 ===

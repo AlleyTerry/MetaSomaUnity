@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Yarn.Unity;
 
 public class UIManager : MonoBehaviour
 {
@@ -22,7 +23,8 @@ public class UIManager : MonoBehaviour
     }
     
     [SerializeField] private Animator viewportAnimator;
-    
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -95,4 +97,7 @@ public class UIManager : MonoBehaviour
         }
         return true;
     }
+    
+    
+    
 }
