@@ -111,24 +111,6 @@ public class ImerisMovement : MonoBehaviour
                 break;
         }
     }
-    
-    /*public void SetSpawnPosition(Vector3 newSpawnPosition, bool isFacingRight)
-    {
-        rb.isKinematic = true;
-        
-        transform.position = newSpawnPosition;
-        GetComponent<SpriteRenderer>().flipX = isFacingRight;
-        
-        rb.velocity = Vector3.zero;
-        
-        StartCoroutine(EnablePhysics());
-    }
-
-    private IEnumerator EnablePhysics()
-    {
-        yield return new WaitForSeconds(0.1f);
-        rb.isKinematic = false;
-    }*/
 
     // Start is called before the first frame update
     void Start()
