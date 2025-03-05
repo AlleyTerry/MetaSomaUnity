@@ -6,6 +6,9 @@ position: -462,-1568
 <<declare $AttackLin = false>>
 <<declare $CurrentHealth = 3>>
 
+<<declare $goaded = false>>
+<<declare $hasDagger = false>>
+
 <<PlayMusic ManagerHolder "linnaeusBattleStart">>
 
 Linnaeus: Do you have anything to say for yourself?
@@ -687,7 +690,7 @@ position: 491,137
 //+1 Heart
 <<Heal Viewport_Heart>>
 
-<<declare $hasDagger = true>>
+<<set $hasDagger = true>>
 Narrator: You reach behind you and grip the dagger strapped to your back.
 Narrator: You hold it at the ready, though you cannot bring yourself to draw it yet.
 Narrator: Linnaeus becomes unsettled. 
@@ -703,7 +706,7 @@ Linnaeus: Answer me!
 -> Patronize (Reason)
     <<jump Patronize>>
 -> Bide (Submission)
-    <<jump Bide >>
+    <<jump Bide>>
 -> Goad (Challenge)
     <<jump Goad>>
 ===
@@ -740,7 +743,7 @@ Narrator: You continue to wait and stare, but your grip becomes more sure.
 title: Goad
 position: 373,343
 ---
-<<declare $goaded = true>>
+<<set $goaded = true>>
 
 Imeris: Do you need me to fill your silences now too? Are you capable of doing nothing on your own?
 Narrator: You pull the dagger out from behind your back and point it at Linnaeus.
@@ -788,6 +791,12 @@ position: -421,899
 Narrator: Linnaeus bangs his fist into the wall beside him.
 Linnaeus: My patience has run out!
 Linnaeus: Do you have any final words before I send you to meet our maker?! 
+<<jump ROUND3START2>>
+===
+
+title: ROUND3START2
+position: -911,1109
+---
 Narrator: Linnaeus is frenzied. Nothing you do will calm him now.
 
 <<set $hover_text_up = "Yes, but you won’t like them, Father.">>
@@ -824,7 +833,8 @@ Narrator: There is nothing more to say.
 title: Pray
 position: 34,1075
 ---
-Narrator: You clasp your hands and look up at the mural of the Goddess beside you. When you lower your gaze, Linnaeus's furious eyes look back.
+Narrator: You clasp your hands and look up at the mural of the Goddess beside you. 
+Narrator: When you lower your gaze, Linnaeus's furious eyes look back.
 Linnaeus: Now you pray? Do you think it will save you?
 Narrator: You close your eyes, lower your head, and begin to mumble your prayer. 
 Narrator: Linnaeus snarls. 
@@ -838,11 +848,11 @@ Imeris: Save my soul.
 title: Attack
 position: -911,1109
 ---
-<<if $hasDagger ==true>>
+<<if $hasDagger ==true && $goaded ==false>>
 
 Narrator: You tighten your hold on the dagger and look at Linnaeus in silence, readying your attack. 
 Linnaeus: What are you doing, child?
-Narrator: Before he realizes, you rush forward and slash at him desperately . 
+Narrator: Before he realizes, you rush forward and slash at him desperately. 
 Narrator: You catch his arm as he moves to block his face, leaving a single cut before you retreat.
 Narrator: Linnaeus looks down at his dripping blood and shakes with fury.
 Linnaeus: You… You DARE to raise a hand against your Father?!
@@ -851,16 +861,16 @@ Linnaeus: You… You DARE to raise a hand against your Father?!
 
 <<endif>>
 
-<<if $hasDagger == false>>
+<<if $hasDagger == false && $goaded == false>>
 
 Narrator: With what?
-<<jump ROUND3START>>
+<<jump ROUND3START2>>
 
 <<endif>>
 
 <<if $goaded == true>>
 Narrator: You can't muster the courage.
-<<jump ROUND3START>>
+<<jump ROUND3START2>>
 <<endif>>
 
 ===
@@ -878,6 +888,11 @@ Linnaeus: Your wretched, unholy existence ends <i>here</i>.
 <<PlayMusic ManagerHolder "linnaeusBattleEnd">>
 Narrator: Linnaeus wrenches an incense holder off the wall and grips the heavy metal fixture with both hands. 
 Narrator: He turns his gaze upon you and rushes forward, arms raised to strike you.
+
+<<set $hover_text_up = "There is no other option.">>
+<<set $hover_text_left = "There is no other option.">>
+<<set $hover_text_right = "There is no other option.">>
+<<SetHoverText OptionsBubble>>
 
 -> Defend yourself. 
     <<jump YouFeel>>
@@ -897,6 +912,11 @@ Narrator: You are frozen with horror, unable to do anything but stare.
 Narrator: This tool of the Court, wielding words like a cudgel to keep you all in check. 
 Narrator: Preaching false truths to distract from the wondrous reality you've managed to grasp.
 Narrator: You look upon him, the holder of the first key to your cage, and feel... 
+
+<<set $hover_text_up = "">>
+<<set $hover_text_left = "">>
+<<set $hover_text_right = "">>
+<<SetHoverText OptionsBubble>>
 
 -> Sadness
     <<jump FeelHunger>>
@@ -924,6 +944,12 @@ Narrator: You look back at Linnaeus.
 Narrator: Your stomach growls.
 Narrator: You realize what you’ve just imagined, and it makes your blood run cold with shame and horror. 
 Narrator: But it does not dull your hunger. 
+<<jump FeelHunger2>>
+===
+
+title: FeelHunger2
+position: -418,1669
+---
 Narrator: Something must be done.
 
 <<set $hover_text_up = "...">>
@@ -932,7 +958,8 @@ Narrator: Something must be done.
 <<SetHoverText OptionsBubble>>
 
 -> ...
-    Narrator: There is nothing else you can do.
+    Narrator: You must make a choice.
+    <<jump FeelHunger2>>
 -> Eat the bread.
     <<jump EatBread>>
 -> Sate your hunger.
