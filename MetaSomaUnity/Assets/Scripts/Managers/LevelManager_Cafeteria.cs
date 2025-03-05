@@ -41,12 +41,10 @@ public class LevelManager_Cafeteria : LevelManagerBase
     public void EndImerisAnimation()
     {
         //set the animation to play in reverse
-        imerisAnimator.Play("CoweringTransition", -1, 1f);
-        //imerisAnimator.Play("CoweringTransition");
-        imerisAnimator.Play("ImerisBattleIdle");
+        imerisAnimator.Play("CoweringTransitionReverse");       
         //set the NPC animation to play in reverse
-        npcAnimator.Play("NPCEyesTransition", -1, 1f);
+        npcAnimator.Play("NPCEyesTransitionReverse");
         //set npc animation to false after playing
-        NPCAnimation.SetActive(false);
+        //NPCAnimation.SetActive(false);
     }
 }
