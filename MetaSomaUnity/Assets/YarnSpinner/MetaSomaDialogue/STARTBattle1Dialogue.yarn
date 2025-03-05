@@ -10,23 +10,24 @@ tags:
 ---
 <<StopMusic ManagerHolder 0.05>>
 
-Linnaeus: That door was barricaded for a reason, my child. 
+Linnaeus: That door was locked for a reason, my child. 
 Linnaeus: I know what you are here for.
 Linnaeus:  But I shall not relinquish these offerings to Our Lady Mellonella even at the cost of my life.
-<<set $hover_text_up = "this is up">>
-<<set $hover_text_left = "this is left">>
-<<set $hover_text_right = "this is right">>
+<<set $hover_text_up = "I'll use reason.">>
+<<set $hover_text_left = "I'll act submissively.">>
+<<set $hover_text_right = "I'll challenge him.">>
 <<SetHoverText OptionsBubble>>
--> I hunger.
+-> Reason
     <<jump IHunger>>
--> Please.
+-> Submission
     <<jump Please>>
--> TEST
-    Imeris: TEST TEST TEST TEST.
+-> Challenge
+    <<jump NotAsking>>
 ===
 title: IHunger
 tags:
 ---
+Imeris: I hunger.
 Linnaeus: As do I, dear child. But this food does not belong to you.
 <<jump ListenFather>>
 ===
@@ -34,7 +35,16 @@ Linnaeus: As do I, dear child. But this food does not belong to you.
 title: Please
 tags:
 ---
+Imeris: Please.
 Linnaeus: ...I am sorry. But this food is not for you. 
+<<jump ListenFather>>
+===
+
+title: NotAsking
+tags:
+---
+Imeris: I'm not asking.
+Linnaeus: Do not take that tone with me child.
 <<jump ListenFather>>
 ===
 
@@ -43,26 +53,30 @@ tags:
 ---
 
 Linnaeus: Our Golden Goddess demands your devotion, even in such hopeless circumstances.
-Linnaeus: Listen to your Father, child. I know what is best.
-Imeris: ...
+Linnaeus: Listen to your Father. I know what is best.
+Imeris: ...No. 
+Imeris: I can't do that.
 Linnaeus: You refuse?
 Linnaeus: Who is it that dares to be so disobedient?
 <<LinnaeusAnimationActivate Linnaeus>>
 
-Linnaeus: ...!
-Linnaeus: Imeris… my most faithful disciple…
-Linnaeus: You, who kneeled before our altar longer than all others, have risen and walked out of the grace of Our Lady's light…
-Linnaeus: Is your hunger so great you have swallowed even your common sense in an effort to fill your empty belly?
+Linnaeus: ...Imeris?
+Linnaeus: My most faithful disciple...
+Linnaeus: You, who kneeled before the altar longer than all others, have risen and walked out of the grace of Our Lady's light…
+Linnaeus: Is your hunger so great you have swallowed even your common sense in an effort to sate it?
 Linnaeus: Answer me! 
-Imeris: ...
-Linnaeus: !
-Linnaeus: Those wings... But where did you…?
+imeris: What answer could he possibly want to hear? I have none.
+imeris: Except for...
+Imeris: It is. My wings... they're not ready. I must eat.
+Linnaeus: ...Wings? But... how?
 Linnaeus: Oh Goddess. The Queen.
-Linnaeus: It was you. You killed her, didn’t you?!
-Linnaeus: For this… to pervert the body bestowed upon you by our Goddess...
-Linnaeus: I’ve been left to die in a crumbling kingdom, because of your selfishness.
-Linnaeus: And now you stand before me with that disgusting form and ask for my help? 
-Linnaeus: You repulsive creature. I’ll make you regret ever setting foot in this chapel.
+Linnaeus: It was <i>you</i>. You <i>killed</i> her, didn’t you?!
+Imeris: Wh- what?
+Linnaeus: You must have, to have grown those... those abominations!
+Linnaeus: You doomed us all- and for <i>this</i>? To pervert your body this way?!
+Imeris: Stop it! Stop saying those things!
+Linnaeus: Oh, you repulsive creature... 
+Linnaeus: I’ll make you regret ever setting foot in this chapel.
 
 ///BATTLE BEGINS
 <<IntoBattleScene ManagerHolder>>

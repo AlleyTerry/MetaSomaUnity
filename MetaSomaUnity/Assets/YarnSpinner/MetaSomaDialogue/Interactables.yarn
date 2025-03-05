@@ -24,7 +24,7 @@ imeris: Not my bed. But the pattern on the sheets is familiar.
 
 title: WallStop
 ---
-imeris: I need to leave...
+imeris: I need to leave.
 ===
 
 title: MellonellaShrine
@@ -35,22 +35,23 @@ imeris: I’ve prayed here countless times, I know. Under Her Majesty’s… wat
 title: Wardrobe
 ---
 imeris: Why is this blocking the door?
-imeris: I need to move it...
-imeris: (rappidly press the up arrow when you see the indicator)
+imeris: I'll need to move it to leave.
+imeris: (Rapidly press the up arrow when you see the indicator)
 <<StartWardrobeMiniGame WardrobeMiniGame>>
 ===
 
 title: WardrobeWin
 ---
-imeris: I can leave now...
+imeris: Huff... Huff...
+imeris: Alright. That's done with.
 <<ResumeControls ManagerHolder>>
 ===
 
 title: WardrobeLose
 ---
-imeris: Huff huff
-imeris: I can do this
-imeris: (rappidly press the left arrow when you see the indicator)
+imeris: Huff... huff...
+imeris: I'll try again...
+imeris: (Rapidly press the left arrow when you see the indicator)
 <<StartWardrobeMiniGame WardrobeMiniGame>>
 ===
 
@@ -87,7 +88,7 @@ title: Bust
     
     <<TablePush ManagerHolder>>
 <<else>>
-    imeris: I wish I could pluck out her eyes. She’s too high up though.
+    imeris: I wish I could pluck out her eyes.
 <<endif>>
 ===
 title: KingdomTapestry1
@@ -109,7 +110,7 @@ imeris: I'm so hungry... I need to find food...
 ===
 title: DeadBody1
 ---
-imeris: ... I can't remember who this is.
+imeris: ...I can't remember who this is.
 ===
 
 
@@ -131,24 +132,24 @@ imeris: (press space to jump on the table)
 title: Bust2
 ---
 <<PickUpKey DoorToChapel>>
-imeris: There's the key.
+imeris: The key should be under here.
 imeris: I need to move the bust.
-imeris: (rappidly press the up arrow when you see the indicator)
+imeris: (Rapidly press the up arrow when you see the indicator)
 <<StartMiniGame BustMiniGame>>
 
 ===
 title: minigameSuccess
 ---
-imeris: I got the key...
-imeris: (bust gets thrown)
+imeris: I got the key.
+Narrator: (Bust gets thrown to the ground)
 <<ResumeControls ManagerHolder>>
 
 ===
 title: minigameFail
 ---
-imeris: huff huff
-imeris: I can do this.
-imeris: (rappidly press the up arrow when you see the indicator)
+imeris: Huff... Huff...
+imeris: Let me try again...
+imeris: (Rapidly press the up arrow when you see the indicator)
 <<StartMiniGame BustMiniGame>>
 
 ===
@@ -165,29 +166,32 @@ imeris: There’s vomit around her mouth. It seems she ate something that spoile
 ===
 title: EyeStartCafeteria
 ---
-imeris: There is someone there,
-imeris: They can see me.
+imeris: There's someone there...!
+imeris: Can he see me...?
 <<StartCower ManagerHolder>>
 <<ResumeControls ManagerHolder>>
 ===
 title: HalfAliveGrub
 ---
 <<set $tableReady to true>>
-Grub: …leave… leave me be…
+imeris: Is he...
+Grub: Leave... leave me be…
 Imeris: !
-Imeris: You’re still alive? Oh Goddess…
+Imeris: You’re still alive?! Oh Goddess…
 Imeris: What happened here?
 Grub: Why are you asking that…? You should know… We’ve been abandoned.
 Imeris: Abandoned?
 Grub: Her Majesty vanished, and there was no one to take her place. They all left… 
-Imeris: They…? The bees? They left us all here?!
-Grub: Perhaps not all. A select few seem to have vanished alongside them… but we’re all disappearing now. 
+Imeris: They…? The bees? They left us all behind!
+Grub: Perhaps not all. A select few of us seem to have vanished alongside them… but we’re all disappearing now. 
 Grub: I myself will vanish too, soon.
 Grub: I’m just so hungry… but there’s nothing I can do now.
 Grub: He’s taken it all… every last scrap… there’s nothing left for me. I don’t have the energy to try and take anything back.
-Imeris: He… Father Linnaeus?
-Grub: He’s locked his door again, hasn’t he? You may yet have the will to go on…
-Grub: The key to the chapel… I’ve hidden it underneath the bust of Her Majesty. Linnaeus would never dream of moving her from her spot, the sycophantic fool…
+Imeris: Who is "he"? Father Linnaeus?
+Grub: Yes. He’s locked his door again, hasn’t he? Locked you out?
+Grub: You seem to have the will to go on… so I'll help you.
+Grub: The key to the chapel… I’ve hidden it underneath the bust of Her Majesty. 
+Grub: Linnaeus would never dream of moving her from her spot, the sycophantic fool.
 Grub: Go. Take it. Sneak in and steal back the food he has stolen, so you may live just a bit longer.
 Grub: Though there is little left to live for anymore…
 Imeris: …Thank you.
