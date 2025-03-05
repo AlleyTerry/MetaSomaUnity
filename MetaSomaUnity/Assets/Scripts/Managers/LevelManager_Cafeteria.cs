@@ -7,13 +7,15 @@ public class LevelManager_Cafeteria : LevelManagerBase
 {
     [SerializeField]Animator imerisAnimator; 
     [SerializeField]Animator npcAnimator;
+    
+    [SerializeField] private Transform defaultSpawnPoint;
+
     public override void Initialize()
     {
         base.Initialize();
         
         GameManager.instance.HUD.SetActive(true);
         GameManager.instance.CGDisplay.SetActive(false);
-        
         
         //set the npc animation controller on the NPCAnimation object
         npcAnimator = NPCAnimation.GetComponent<Animator>();
@@ -26,6 +28,12 @@ public class LevelManager_Cafeteria : LevelManagerBase
         
         //set the imeris animation controller on the ImerisAnimation object
         imerisAnimator = ImerisAnimation.GetComponent<Animator>();
+        
+        // Set up spawn points
+        defaultSpawnPoint = GameObject.Find("SpawnPoint").transform;
+        
+        // Set up Imeris respawn position
+        GameObject.FindObjectOfType<ImerisMovement>().gameObject.transform.position = defaultSpawnPoint.position;
     }
     
     

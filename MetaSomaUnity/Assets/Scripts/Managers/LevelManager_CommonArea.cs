@@ -15,22 +15,6 @@ public class LevelManager_CommonArea : LevelManagerBase
     [SerializeField] private Transform spawnPointFromCafe;
     [SerializeField] private Transform spawnPointFromChapel;
 
-    protected override void Start()
-    {
-        base.Start();
-        
-        defaultSpawnPoint = GameObject.Find("SpawnPoint").transform;
-        spawnPointFromCafe = GameObject.Find("SpawnPointFromCafe").transform;
-        spawnPointFromChapel = GameObject.Find("SpawnPointFromChapel").transform;
-        
-        Transform spawnPoint = GetSpawnPoint(GameManager.instance.GetPreviousScene());
-        Debug.Log("Spawn Point: " + spawnPoint.position);
-        
-        // Set up Imeris respawn position
-        GameObject.FindObjectOfType<ImerisMovement>().gameObject.transform.position = spawnPoint.position;
-        
-    }
-
     private Transform GetSpawnPoint(string lastScene)
     {
         switch (lastScene)
@@ -65,6 +49,16 @@ public class LevelManager_CommonArea : LevelManagerBase
         GameObject bust2 = GameObject.Find("Bust2");
         bustBackGroundHolder = GameObject.Find("BustBackground");
         
+        // Set up spawn points
+        defaultSpawnPoint = GameObject.Find("SpawnPoint").transform;
+        spawnPointFromCafe = GameObject.Find("SpawnPointFromCafe").transform;
+        spawnPointFromChapel = GameObject.Find("SpawnPointFromChapel").transform;
+        
+        Transform spawnPoint = GetSpawnPoint(GameManager.instance.GetPreviousScene());
+        Debug.Log("Spawn Point: " + spawnPoint.position);
+        
+        // Set up Imeris respawn position
+        GameObject.FindObjectOfType<ImerisMovement>().gameObject.transform.position = spawnPoint.position;
         
         if (GameManager.instance.talkToGrub)
         {
