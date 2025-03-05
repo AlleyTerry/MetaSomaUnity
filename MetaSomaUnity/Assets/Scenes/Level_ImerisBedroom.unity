@@ -1256,7 +1256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4ac67b876fe1184dad09ecea726a181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upForce: 1.5
+  upForce: 2
   text: {fileID: 0}
   isPressed: 0
   timesPressed: 0
