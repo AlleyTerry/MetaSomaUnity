@@ -405,7 +405,7 @@ public class ImerisMovement : MonoBehaviour
   
     private void ConstraintYPosition()
     {
-        rb.constraints = RigidbodyConstraints.FreezePositionY | 
+        rb.constraints = /*RigidbodyConstraints.FreezePositionY |*/ 
                          RigidbodyConstraints.FreezePositionZ | 
                          RigidbodyConstraints.FreezeRotationX | 
                          RigidbodyConstraints.FreezeRotationY |

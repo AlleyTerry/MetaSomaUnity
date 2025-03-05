@@ -1,27 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class StairTrigger : MonoBehaviour
 {
-    [SerializeField] private Collider stairColliderUp;
-    [SerializeField] private Collider stairColliderDown;
+    [SerializeField] private List<Collider> stairColliderUp;  // Ceilings
+    [SerializeField] private List<Collider> stairColliderDown; // Stairs
     
-    [SerializeField] private bool isStairUp;
+    [FormerlySerializedAs("isStairUp")] [SerializeField] private bool isGoingUp;
     
     // Start is called before the first frame update
     void Start()
     {
-        isStairUp = true;
-        
-        if (stairColliderUp != null)
-        {
-            stairColliderUp.enabled = false; // DISABLE COLLIDER BY DEFAULT
-        }
-        else
-        {
-            Debug.LogWarning("StairColliderUp is not set.");
-        }
+        isGoingUp = true;
+
+        SetColliders(stairColliderUp, false);
+        SetColliders(stairColliderDown,true);
     }
 
     // Update is called once per frame
@@ -36,14 +31,15 @@ public class StairTrigger : MonoBehaviour
         {
             Debug.Log("Player triggered stair transition.");
             
-            if (stairColliderUp != null && isStairUp)
+            if (isGoingUp)
             {
-                stairColliderUp.enabled = true;
+                SetColliders(stairColliderUp,false);
             }
-            else if (stairColliderDown != null && !isStairUp)
+            else
             {
-                stairColliderDown.enabled = true;
+                SetColliders(stairColliderDown,true);
             }
+            
         }
     }
     
@@ -52,16 +48,29 @@ public class StairTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player exited stair transition.");
-            
-            if (stairColliderDown != null && isStairUp)
+
+            if (isGoingUp)
             {
-                stairColliderDown.enabled = false;
-                isStairUp = false;
+                SetColliders(stairColliderUp,true);
+                SetColliders(stairColliderDown,false);
             }
-            else if (stairColliderUp != null && !isStairUp)
+            else
             {
-                stairColliderUp.enabled = false;
-                isStairUp = true;
+                SetColliders(stairColliderUp,false);
+                SetColliders(stairColliderDown,true);
+            }
+            
+            isGoingUp = !isGoingUp;
+        }
+    }
+    
+    private void SetColliders(List<Collider> colliders, bool state)
+    {
+        foreach (var col in colliders)
+        {
+            if (col != null)
+            {
+                col.enabled = state;
             }
         }
     }
