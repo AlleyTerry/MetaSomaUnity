@@ -11,6 +11,9 @@ public class LevelManager_Chapel : LevelManagerBase
     // LINNEAUS
     [FormerlySerializedAs("linneausAnimation")] 
     public GameObject linnaeusAnimation;
+    //IMERIS
+    [SerializeField] private Animator imerisAnimator;
+    
     
     // INTRO DIALOGUE NODE
     public string introDialogueNode = "ChapelStart";
@@ -33,6 +36,10 @@ public class LevelManager_Chapel : LevelManagerBase
         
         // LINNEAUS
         linnaeusAnimation = base.NPCAnimation;
+        //NPCAnimation = base.NPCAnimation;
+        
+        //NPC EYES
+        
         
         if (linnaeusAnimation != null)
         {
@@ -42,6 +49,8 @@ public class LevelManager_Chapel : LevelManagerBase
         {
             Debug.LogWarning("LinnaeusAnimation not found in scene.");
         }
+        
+        imerisAnimator = ImerisAnimation.GetComponent<Animator>();
     }
 
     public override void StartCutsScene(string cutSceneDialogueNode)
@@ -51,6 +60,8 @@ public class LevelManager_Chapel : LevelManagerBase
         if (linnaeusAnimation == null) linnaeusAnimation = GameObject.Find("NPCAnimation");
         
         linnaeusAnimation.SetActive(true); 
+        imerisAnimator.Play("CoweringTransition");
+        linnaeusAnimation.GetComponent<Animator>().Play("NPCEyesTransition");
     }
 
     
@@ -61,6 +72,13 @@ public class LevelManager_Chapel : LevelManagerBase
         
         // ANIMATION
         UIManager.instance.PlayAnimation("MediumViewportTransition");
+        imerisAnimator.Play("CoweringTransitionReverse");
+        linnaeusAnimation.GetComponent<Animator>().Play("NPCEyesTransitionReverse");
+        //switch the npc animator to linnaeus
+        RuntimeAnimatorController linnaeusAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/BattleUI/LinneausAnimation");
+        linnaeusAnimation.GetComponent<Animator>().runtimeAnimatorController = linnaeusAnimatorController;
+        //play the linneaus idle
+        linnaeusAnimation.GetComponent<Animator>().Play("LinBattleIdle");
         
         // LINNEAUS
         //linneausAnimation.SetActive(true); // For now we don't really have the cutscene, will be commented out later

@@ -36,7 +36,7 @@ title: Wardrobe
 ---
 imeris: Why is this blocking the door?
 imeris: I'll need to move it to leave.
-imeris: (Rapidly press the up arrow when you see the indicator)
+imeris: (Rapidly press the LEFT arrow key when you see the indicator)
 <<StartWardrobeMiniGame WardrobeMiniGame>>
 ===
 
@@ -44,6 +44,7 @@ title: WardrobeWin
 ---
 imeris: Huff... Huff...
 imeris: Alright. That's done with.
+imeris: I can leave now.
 <<ResumeControls ManagerHolder>>
 ===
 
@@ -134,7 +135,7 @@ title: Bust2
 <<PickUpKey DoorToChapel>>
 imeris: The key should be under here.
 imeris: I need to move the bust.
-imeris: (Rapidly press the up arrow when you see the indicator)
+imeris: (Rapidly press the UP arrow key when you see the indicator)
 <<StartMiniGame BustMiniGame>>
 
 ===
