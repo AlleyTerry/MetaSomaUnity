@@ -13,9 +13,9 @@ tags:
 Linnaeus: That door was locked for a reason, my child. 
 Linnaeus: I know what you are here for.
 Linnaeus:  But I shall not relinquish these offerings to Our Lady Mellonella even at the cost of my life.
-<<set $hover_text_up = "I'll use reason.">>
-<<set $hover_text_left = "I'll act submissively.">>
-<<set $hover_text_right = "I'll challenge him.">>
+<<set $hover_text_up = "">>
+<<set $hover_text_left = "">>
+<<set $hover_text_right = "">>
 <<SetHoverText OptionsBubble>>
 -> Reason
     <<jump IHunger>>
@@ -71,10 +71,9 @@ Imeris: It is. My wings... they're not ready. I must eat.
 Linnaeus: ...Wings? But... how?
 Linnaeus: Oh Goddess. The Queen.
 Linnaeus: It was <i>you</i>. You <i>killed</i> her, didn’t you?!
-Imeris: Wh- what?
+Imeris: Wh- what? How could you say that?
 Linnaeus: You must have, to have grown those... those abominations!
 Linnaeus: You doomed us all- and for <i>this</i>? To pervert your body this way?!
-Imeris: Stop it! Stop saying those things!
 Linnaeus: Oh, you repulsive creature... 
 Linnaeus: I’ll make you regret ever setting foot in this chapel.
 

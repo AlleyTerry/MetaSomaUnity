@@ -108,14 +108,15 @@ title: Argue
 position: -1750,-1200
 ---
 Narrator: Your anger rises to match Linnaeus's.
+Narrator: It overwhelms you, and your words get lost.
 ///-1 heart
 <<TakeDamage Viewport_Heart>>
-Narrator: It overwhelms you, and your words get lost.
 Imeris: I did no such thing! You have no proof, you- you-
 Narrator: Linnaeus scoffs derisively as you struggle to speak through your frustration.
 Linnaeus: You can't even get a sentence out in your own defense!
 Linnaeus: Oh Goddess, what could have possibly inspired such impudence in someone like <i>you</i>?
 Narrator: Linnaeus is condescending to you.
+<<CheckHealth Viewport_Heart>>
 
 <<set $hover_text_up = "I learned better.">>
 <<set $hover_text_left = "I needed more.">>
@@ -144,6 +145,7 @@ Narrator: He is unaffected by your argument.
 ///-1 heart
 <<TakeDamage Viewport_Heart>>
 Narrator: You feel your conviction falter for a moment- long enough for it to frighten you.
+<<CheckHealth Viewport_Heart>>
 <<jump ROUND1END>>
 
 ===
@@ -177,9 +179,9 @@ Narrator: The thought that he missed something like this unsettles him.
 title: Apologize
 position: 672,-1503
 ---
+Imeris: I'm sorry. I had to do this. I could not live any other way.
 ///-1 heart
 <<TakeDamage Viewport_Heart>>
-Imeris: I'm sorry. I had to do this. I could not live any other way.
 Linnaeus: What good does that pathetic apology do? 
 Linnaeus: Do you not see the devastation you've wrought?
 Linnaeus: Chaos, destruction, fear… innocent lives lost… 
@@ -189,6 +191,7 @@ Linnaeus: Villain, beast, monster… Your sinfulness cannot be washed away with 
 Narrator: Linnaeus takes a deep breath after his outburst. He resumes talking with an evener tone.
 Linnaeus: Take responsibility, wretch.
 Narrator: He has gathered himself, and is acting calm.
+<<CheckHealth Viewport_Heart>>
 
 <<set $hover_text_up = "He's wrong. I'll disprove his poisonous lies.">>
 <<set $hover_text_left = "He... might be right... I have to take responsibility.">>
@@ -247,6 +250,7 @@ Linnaeus: I wish I could undo what you did, but even the Goddess would struggle 
 Linnaeus: And as it stands, I cannot allow your sin to go unpunished.
 Linnaeus: Come quietly. Let your final act be obedient and good.
 Narrator: Linnaeus is acting calm.
+<<CheckHealth Viewport_Heart>>
 
 <<set $hover_text_up = "Obedience to evil is evil itself. I know it is wrong.">>
 <<set $hover_text_left = "...My lingering doubts weigh heavy on my mind.">>
@@ -311,7 +315,7 @@ Linnaeus: Good. You’ve come to your senses.
 Linnaeus: It will all be over soon.
 ///-1 heart
 <<TakeDamage Viewport_Heart>>
-    //<<jump DeadDialogue>>
+<<jump DeadDialogue>>
  ===
 title: Resist
 position: 895,-913
@@ -393,6 +397,7 @@ Linnaeus: Oh, nothing to say now? Have you realized your mistake at last?
 Linnaeus: Poor, deluded fool. Thinking you are beyond consequence. 
 Linnaeus: I shall correct you myself.
 Narrator: Linnaeus is acting calm.
+<<CheckHealth Viewport_Heart>>
 
 <<set $hover_text_up = "The error is his. Perhaps convincing him of it will calm him down.">>
 <<set $hover_text_left = "I should step back, in case he tries to make good on that threat.">>
@@ -463,6 +468,7 @@ Narrator: His eyes are hauntingly cold.
 ///-1 heart
 <<TakeDamage Viewport_Heart>>
 Linnaeus: It will follow you forever, like the very wings upon your back. 
+<<CheckHealth Viewport_Heart>>
 
 <<jump ROUND1END>>
 ===
@@ -476,7 +482,7 @@ Narrator: You laugh derisively.
 Imeris: What do you think you’re going to do, exactly? 
 Imeris: Your role has softened you, Father. You are frail and weak with the comforts of your life.
 Imeris: Stand aside, and leave me be.
-Narrator: Linnaeus snarls.
+Narrator: Linnaeus sneers.
 Linnaeus: Curb your tongue, child.
 Linnaeus: Or I shall cut it out.
 
@@ -522,13 +528,13 @@ Linnaeus: Though you do not deserve it, given what you’ve done.
 Narrator: Linnaeus is condescending to you.
 
 <<set $hover_text_up = "I grow weary of fighting. Can’t I convince him?">>
-<<set $hover_text_left = "This pretense is coming to an end. I must prepare myself.">>
+<<set $hover_text_left = "This pretense is coming to an end. I'll ready my dagger.">>
 <<set $hover_text_right = "Does he think he can intimidate me?">>
 <<SetHoverText OptionsBubble>>
 
 -> Beg (Reason) 
     <<jump Beg>>
--> Dagger (Defensive)
+-> Equip Dagger (Submission)
     <<jump Dagger>>
 -> Threaten (Challenge)
     <<jump Threaten>>
@@ -569,7 +575,7 @@ Imeris: Your arrogance has already undone you, Father.
 Imeris: Look around you. You have no one left to preach to.
 Imeris: You’ve let them all die.
 Imeris: Now, you are just a man, no better than I.
-Narrator: Linnaeus snarls.
+Narrator: Linnaeus sneers.
 Linnaeus: I will always be better than you. 
 Linnaeus: And I’ll show you why, insolent child!
 
@@ -593,6 +599,7 @@ Imeris:I must let myself out of the shell of this body.
 Linnaeus: You admit your wrongdoing, and yet you persist?!
 Narrator: You flinch. Linnaeus continues, without even noticing.
 Linnaeus: You… You are beyond help! The sickness of your mind cannot be cured! 
+<<CheckHealth Viewport_Heart>>
 
 <<jump ROUND2END>>
 ===
@@ -624,6 +631,7 @@ Narrator: Linnaeus looks down on you.
 Linnaeus: I pray Our Lady of Gold have mercy on you, child.
 Linnaeus: But I, unfortunately, shall not!
 Narrator: Linnaeus is getting aggressive.
+<<CheckHealth Viewport_Heart>>
 
 <<set $hover_text_up = "I must calm myself… I won’t let him rattle me.">>
 <<set $hover_text_left = "He cannot frighten me. The Goddess is by my side.">>
@@ -682,11 +690,12 @@ Linnaeus: Bear it.
 <<TakeDamage Viewport_Heart>>
 Narrator: His words settle over you like a shroud, and your eyes grow wet with tears. 
 Narrator: You look away and up, so they won’t fall.
+<<CheckHealth Viewport_Heart>>
 
 <<jump ROUND2END>>
 ===
 
-title: Dagger
+title: EquipDagger
 position: 491,137
 ---
 //+1 Heart
@@ -756,6 +765,7 @@ Linnaeus: You wouldn’t <i>DARE</i>, you disgusting animal!
 <<TakeDamage Viewport_Heart>>
 Narrator: Fear grips you, and you almost drop the dagger. 
 Narrator: You tighten your hold again, keeping its tip aloft, but your resolve to use it is all but gone.
+<<CheckHealth Viewport_Heart>>
 
 <<jump ROUND2END>>
 ===
@@ -965,7 +975,7 @@ Narrator: Something must be done.
 -> Eat the bread.
     <<jump EatBread>>
 -> Sate your hunger.
-    <<jump SateHunger>>
+    <<jump YouSure>>
 ===
 
 
@@ -992,10 +1002,27 @@ Narrator: You take the key and make your way to the altar.
 
 Narrator: You offer a prayer of thanks to Mellonella before leaving the chapel. 
 
-
 <<ExitBattle Imeris>>
 ===
 
+title: YouSure
+position: -418,1669
+---
+Narrator: Are you sure?
+
+<<set $hover_text_up = "">>
+<<set $hover_text_left = "">>
+<<set $hover_text_right = "">>
+<<SetHoverText OptionsBubble>>
+
+-> ...
+    Narrator: You must make a choice.
+    <<jump YouSure>>
+-> No.
+    <<jump FeelHunger2>>
+-> Yes.
+    <<jump SateHunger>>
+===
 
 title: SateHunger
 position: -418,1669
@@ -1027,10 +1054,23 @@ Narrator: (They’re walking slower. Then chrysalis sequence, then return to pla
 title: DeadDialogue
 ---
 Narrator: You have lost yourself. Your heart is broken.
+Narrator: You have lost yourself. Your heart is broken.
+Narrator: But you still have the ability to Change.
 Narrator: But you still have the ability to Change.
 Narrator: Rebirth yourself and try again.
+
+<<set $hover_text_up = "">>
+<<set $hover_text_left = "">>
+<<set $hover_text_right = "">>
+<<SetHoverText OptionsBubble>>
+
 -> Metamorphose
-<<RestartGameFromOpening ManagerHolder>>
+    <<RestartGameFromOpening ManagerHolder>>
+-> Quit
+    <<RestartGameFromOpening ManagerHolder>>
+-> Quit
+    <<RestartGameFromOpening ManagerHolder>>
+    
 ===
 
 title: Ending
