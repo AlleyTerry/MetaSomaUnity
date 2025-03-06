@@ -106,49 +106,45 @@ public class Heart : MonoBehaviour
     public void TakeDamage()
     {
         if (health > 0)
-        {
-            // already moved screenshake and audio to the DamageVisualEffect
+        { 
+            // screenshake
+            if (UIShakeHandler.instance != null)
+            {
+                UIShakeHandler.instance.ShakeLow();
+            }
+            else
+            {
+                Debug.LogWarning("Heart: UIShakeHandler is null. Cannot shake camera.");
+            }
+            
+            // audio feedback
+            if (GetComponentInParent<AudioManager>() != null)
+            {
+                GetComponentInParent<AudioManager>().PlaySFX("heartBreaking");
+            }
+            else
+            {
+                Debug.LogWarning("Heart: AudioManager is null. Cannot play audio.");
+            }
             
             health--;
             Debug.Log($"Heart: Took damage. Current health: {health}");
             GameManager.instance.inMemoryVariableStorage.SetValue("$CurrentHealth", health);
-        }
-        else
-        {
-            DialogueManager.instance.dialogueRunner.Stop();
-            Debug.Log("Heart: Player is already dead.");
-            
-            if (!DialogueManager.instance.dialogueRunner.IsDialogueRunning)
-            {
-                DialogueManager.instance.dialogueRunner.StartDialogue("DeadDialogue");
-            }
+            UpdateHealthUI();
         }
     }
 
-    [YarnCommand("DamageVisualEffect")]
-    public void ScreenShakeUnderDamage()
+    [YarnCommand("CheckHealth")]
+    public void CheckHealth()
     {
-        // screenshake
-        if (UIShakeHandler.instance != null)
-        {
-            UIShakeHandler.instance.ShakeLow();
-        }
-        else
-        {
-            Debug.LogWarning("Heart: UIShakeHandler is null. Cannot shake camera.");
-        }
+        DialogueManager.instance.dialogueRunner.Stop();
+        Debug.Log("Heart: Player is already dead.");
         
-        // audio feedback
-        if (GetComponentInParent<AudioManager>() != null)
-        {
-            GetComponentInParent<AudioManager>().PlaySFX("heartBreaking");
-        }
-        else
-        {
-            Debug.LogWarning("Heart: AudioManager is null. Cannot play audio.");
-        }
         
-        UpdateHealthUI();
+        if (!DialogueManager.instance.dialogueRunner.IsDialogueRunning)
+        {
+            DialogueManager.instance.dialogueRunner.StartDialogue("DeadDialogue");
+        }
     }
     
     [YarnCommand("Heal")]
