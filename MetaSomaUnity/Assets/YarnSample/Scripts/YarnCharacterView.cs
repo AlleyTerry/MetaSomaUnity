@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Yarn.Unity;
+using Cinemachine;
 
 namespace Yarn.Unity.Example
 {
@@ -32,11 +33,18 @@ namespace Yarn.Unity.Example
         [Tooltip("margin is 0-1.0 (0.1 means 10% of screen space)... -1 lets dialogue bubbles appear offscreen or get cutoff")]
         public float bubbleMargin = 0.1f;
 
+        private CinemachineBrain cinemachineBrain;
+        private Vector3 lastCameraPos;
+        private Vector3 cameraDelta;
+        
         void Awake()
         {
             // ... this is important because we must set the static "instance" here, before any YarnCharacter.Start() can use it
             instance = this; 
             GetCamera();
+            
+            cinemachineBrain = Camera.main.GetComponent<CinemachineBrain>();
+            lastCameraPos = Camera.main.transform.position;
         }
 
         /// <summary>automatically called by YarnCharacter.Start() so that YarnCharacterView knows they exist</summary>
@@ -166,7 +174,39 @@ namespace Yarn.Unity.Example
                 optionsBubbleRect.anchoredPosition = WorldToAnchoredPosition(optionsBubbleRect, playerCharacter.positionWithOffset, bubbleMargin);
             } */
         }
+
+        private void LateUpdate()
+        {
+            if (cinemachineBrain != null)
+            {
+                cameraDelta = Camera.main.transform.position - lastCameraPos;
+                lastCameraPos = Camera.main.transform.position; // 更新相机位置
+            }
+
+            if (dialogueBubbleRect.gameObject.activeInHierarchy)
+            {
+                Vector2 screenPos;
+
+                if (speakerCharacter != null)
+                {
+                    screenPos = WorldToScreenPosition(speakerCharacter.positionWithOffset);
+                }
+                else
+                {
+                    screenPos = WorldToScreenPosition(playerCharacter.positionWithOffset);
+                }
+
+                // **关键补偿步骤**：减去相机移动误差，稳定 UI
+                dialogueBubbleRect.position = screenPos - new Vector2(cameraDelta.x, cameraDelta.y);
+            }
+        }
         
+        Vector2 WorldToScreenPosition(Vector3 worldPos)
+        {
+            return worldCamera.WorldToScreenPoint(worldPos);
+        }
+
+
         public void GetCamera()
         {
             Debug.Log("Getting camera");
