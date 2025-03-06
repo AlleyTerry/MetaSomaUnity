@@ -63,7 +63,7 @@ namespace Yarn.Unity
             // Check for arrow keys to navigate between options
             if (canvasGroup.interactable)
             {
-                if (Input.GetKeyDown(KeyCode.DownArrow)) //  Block down arrow
+                if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) //  Block down arrow
                 {
                     Debug.Log("DownArrow is disabled, maintaining current selection.");
                     if (currentSelectedIndex >= 0)
@@ -73,15 +73,18 @@ namespace Yarn.Unity
                     return;
                 }
                 
-                if (Input.GetKeyDown(KeyCode.UpArrow) && optionViews[0].gameObject.activeSelf)
+                if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) 
+                    && optionViews[0].gameObject.activeSelf)
                 {
                     ChangeSelection(0); // Index 1 is mapped to 'up' option
                 }
-                else if (Input.GetKeyDown(KeyCode.LeftArrow) && optionViews[1].gameObject.activeSelf)
+                else if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) 
+                         && optionViews[1].gameObject.activeSelf)
                 {
                     ChangeSelection(1); // Index 2 is mapped to 'left' option
                 }
-                else if (Input.GetKeyDown(KeyCode.RightArrow) && optionViews[2].gameObject.activeSelf)
+                else if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) 
+                         && optionViews[2].gameObject.activeSelf)
                 {
                     ChangeSelection(2); // Index 0 is mapped to 'right' option
                 }
@@ -102,7 +105,7 @@ namespace Yarn.Unity
                 return;
             }
 
-            if (Input.GetKeyDown(KeyCode.DownArrow)) return;
+            if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))) return;
             
             // Deactivate the current option
             //DeselectOption(currentSelectedIndex);
