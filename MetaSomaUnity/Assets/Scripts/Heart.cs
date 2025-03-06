@@ -107,16 +107,6 @@ public class Heart : MonoBehaviour
     {
         if (health > 0)
         {
-            // screenshake
-            if (UIShakeHandler.instance != null)
-            {
-                UIShakeHandler.instance.ShakeLow();
-            }
-            else
-            {
-                Debug.LogWarning("Heart: UIShakeHandler is null. Cannot shake camera.");
-            }
-            
             // audio feedback
             if (GetComponentInParent<AudioManager>() != null)
             {
@@ -131,6 +121,30 @@ public class Heart : MonoBehaviour
             Debug.Log($"Heart: Took damage. Current health: {health}");
             GameManager.instance.inMemoryVariableStorage.SetValue("$CurrentHealth", health);
             UpdateHealthUI();
+        }
+        else
+        {
+            DialogueManager.instance.dialogueRunner.Stop();
+            Debug.Log("Heart: Player is already dead.");
+            
+            if (!DialogueManager.instance.dialogueRunner.IsDialogueRunning)
+            {
+                DialogueManager.instance.dialogueRunner.StartDialogue("DeadDialogue");
+            }
+        }
+    }
+
+    [YarnCommand("DamageVisualEffects")]
+    public void ScreenShakeUnderDamage()
+    {
+        // screenshake
+        if (UIShakeHandler.instance != null)
+        {
+            UIShakeHandler.instance.ShakeLow();
+        }
+        else
+        {
+            Debug.LogWarning("Heart: UIShakeHandler is null. Cannot shake camera.");
         }
     }
     
