@@ -47,6 +47,8 @@ public class GameManager : MonoBehaviour
     
     // SCENE HISTORY
     public string previousScene;
+    // IMERIS FACING
+    public bool isFacingRight = false;
     
     // HUD && CG PLAYER && FADE EFFECT
     public GameObject HUD;

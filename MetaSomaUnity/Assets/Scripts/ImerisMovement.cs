@@ -29,7 +29,8 @@ public class ImerisMovement : MonoBehaviour
     
     // SPAWN POINT
     public Vector3 spawnPosition;
-    public bool isFacingRight = false;
+    public float flipThreshold = 0.05f;
+    [SerializeField] private bool isFacingRight = false;
     
     // MOVEMENT VARIABLES
     public float moveSpeed = 5f;
@@ -137,7 +138,8 @@ public class ImerisMovement : MonoBehaviour
         DisableJump();
         
         // Set isFacingRight
-        isFacingRight = !playerSpriteRender.flipX;
+        isFacingRight = GameManager.instance.isFacingRight;
+        GetComponent<SpriteRenderer>().flipX = isFacingRight;
     }
 
     // Update is called once per frame
@@ -190,12 +192,12 @@ public class ImerisMovement : MonoBehaviour
         // Jump Animation
 
         // Flip the sprite based on movement direction
-        if (rb.velocity.x > 0)
+        if (rb.velocity.x > flipThreshold && !isFacingRight) 
         {
             isFacingRight = true;
             playerSpriteRender.flipX = true; // Facing right
         }
-        else if (rb.velocity.x < 0)
+        else if (rb.velocity.x < -flipThreshold && isFacingRight)
         {
             isFacingRight = false;
             playerSpriteRender.flipX = false; // Facing left
@@ -400,5 +402,13 @@ public class ImerisMovement : MonoBehaviour
                          RigidbodyConstraints.FreezeRotationX | 
                          RigidbodyConstraints.FreezeRotationY |
                          RigidbodyConstraints.FreezeRotationZ;
+    }
+
+    private void OnDestroy()
+    {
+        if (GameManager.instance != null)
+        {
+            GameManager.instance.isFacingRight = isFacingRight;
+        }
     }
 }

@@ -33,7 +33,8 @@ public class LevelManager_Cafeteria : LevelManagerBase
         defaultSpawnPoint = GameObject.Find("SpawnPoint").transform;
         
         // Set up Imeris respawn position
-        GameObject.FindObjectOfType<ImerisMovement>().gameObject.transform.position = defaultSpawnPoint.position;
+        ImerisMovement imerisMovement = GameObject.FindObjectOfType<ImerisMovement>();
+        imerisMovement.gameObject.transform.position = defaultSpawnPoint.position;
     }
     
     
