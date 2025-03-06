@@ -186,7 +186,9 @@ Linnaeus: Chaos, destruction, fear… innocent lives lost…
 Linnaeus: The final days of your brothers and sisters spent tormented and starved.
 Linnaeus: You say you struggle with your hunger now, but imagine them. Think. Look at what you’ve done.
 Linnaeus: Villain, beast, monster… Your sinfulness cannot be washed away with mere words!
-Narrator: Linnaeus is condescending to you.
+Narrator: Linnaeus takes a deep breath after his outburst. He resumes talking with an evener tone.
+Linnaeus: Take responsibility, wretch.
+Narrator: He has gathered himself, and is acting calm.
 
 <<set $hover_text_up = "He's wrong. I'll disprove his poisonous lies.">>
 <<set $hover_text_left = "He... might be right... I have to take responsibility.">>
