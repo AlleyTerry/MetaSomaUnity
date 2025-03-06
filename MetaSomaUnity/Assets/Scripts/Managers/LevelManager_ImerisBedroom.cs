@@ -25,6 +25,16 @@ public class LevelManager_ImerisBedroom : LevelManagerBase
         
         Invoke(nameof(DelayedFreezeControls), 0.1f);
         AnimationState("BedroomIntro_01_09");
+        
+        // Set Animation Trigger Vars
+        CGDisplayAnimator.GetComponentInChildren<AnimationEventTrigger>().animationStateName = "BedroomIntro_10";
+        CGDisplayAnimator.GetComponentInChildren<AnimationEventTrigger>().dialogueNodeName = "OpeningCutSceneText";
+        
+        if (CGDisplayAnimator.GetComponentInChildren<AnimationEventTrigger>().animationStateName == "" || 
+            CGDisplayAnimator.GetComponentInChildren<AnimationEventTrigger>().dialogueNodeName == "")
+        {
+            Debug.LogWarning("Animation State Name or Dialogue Node Name not set in AnimationEventTrigger.");
+        }
     }
     
     private void DelayedFreezeControls()

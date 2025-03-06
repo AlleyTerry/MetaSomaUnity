@@ -5,8 +5,8 @@ using UnityEngine;
 public class AnimationEventTrigger : MonoBehaviour
 {
     // THIS IS USED FOR CUTSCENE ANIMATION EVENTS
-    [SerializeField] private string animationStateName = "";
-    [SerializeField] private string dialogueNodeName = "";
+    [SerializeField] public string animationStateName = "";
+    [SerializeField] public string dialogueNodeName = "";
     
     public void ChangeAnimationState()
     {
