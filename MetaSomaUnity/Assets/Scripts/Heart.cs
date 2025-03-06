@@ -107,15 +107,7 @@ public class Heart : MonoBehaviour
     {
         if (health > 0)
         {
-            // audio feedback
-            if (GetComponentInParent<AudioManager>() != null)
-            {
-                GetComponentInParent<AudioManager>().PlaySFX("heartBreaking");
-            }
-            else
-            {
-                Debug.LogWarning("Heart: AudioManager is null. Cannot play audio.");
-            }
+            // already moved screenshake and audio to the DamageVisualEffect
             
             health--;
             Debug.Log($"Heart: Took damage. Current health: {health}");
@@ -145,6 +137,16 @@ public class Heart : MonoBehaviour
         else
         {
             Debug.LogWarning("Heart: UIShakeHandler is null. Cannot shake camera.");
+        }
+        
+        // audio feedback
+        if (GetComponentInParent<AudioManager>() != null)
+        {
+            GetComponentInParent<AudioManager>().PlaySFX("heartBreaking");
+        }
+        else
+        {
+            Debug.LogWarning("Heart: AudioManager is null. Cannot play audio.");
         }
     }
     
