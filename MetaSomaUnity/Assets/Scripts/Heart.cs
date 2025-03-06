@@ -137,13 +137,16 @@ public class Heart : MonoBehaviour
     [YarnCommand("CheckHealth")]
     public void CheckHealth()
     {
-        DialogueManager.instance.dialogueRunner.Stop();
-        Debug.Log("Heart: Player is already dead.");
-        
-        
-        if (!DialogueManager.instance.dialogueRunner.IsDialogueRunning)
+        if (health <= 0)
         {
-            DialogueManager.instance.dialogueRunner.StartDialogue("DeadDialogue");
+            DialogueManager.instance.dialogueRunner.Stop();
+            Debug.Log("Heart: Player is already dead.");
+        
+        
+            if (!DialogueManager.instance.dialogueRunner.IsDialogueRunning)
+            {
+                DialogueManager.instance.dialogueRunner.StartDialogue("DeadDialogue");
+            }
         }
     }
     
