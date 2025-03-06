@@ -112,7 +112,6 @@ public class Heart : MonoBehaviour
             health--;
             Debug.Log($"Heart: Took damage. Current health: {health}");
             GameManager.instance.inMemoryVariableStorage.SetValue("$CurrentHealth", health);
-            UpdateHealthUI();
         }
         else
         {
@@ -148,6 +147,8 @@ public class Heart : MonoBehaviour
         {
             Debug.LogWarning("Heart: AudioManager is null. Cannot play audio.");
         }
+        
+        UpdateHealthUI();
     }
     
     [YarnCommand("Heal")]
