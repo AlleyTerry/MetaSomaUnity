@@ -134,7 +134,7 @@ public class Heart : MonoBehaviour
         }
     }
 
-    [YarnCommand("DamageVisualEffects")]
+    [YarnCommand("DamageVisualEffect")]
     public void ScreenShakeUnderDamage()
     {
         // screenshake
