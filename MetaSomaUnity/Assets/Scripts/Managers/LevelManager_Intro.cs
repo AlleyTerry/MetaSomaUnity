@@ -11,14 +11,11 @@ public class LevelManager_Intro : LevelManagerBase
     // DEBUG
     public bool isDialogueRunning = false;
     
-    
     public override void Initialize()
     {
         base.Initialize();
         
         GameManager.instance.HUD.SetActive(true);
-        GameManager.instance.CGDisplay.SetActive(true);
-        
         GameManager.instance.CGDisplay.SetActive(true);
         
         DisableImerisAnimation();

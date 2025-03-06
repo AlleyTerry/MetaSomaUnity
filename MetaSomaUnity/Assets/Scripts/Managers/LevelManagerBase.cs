@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Cinemachine;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Yarn;
 using Yarn.Unity;
@@ -73,14 +74,19 @@ public class LevelManagerBase : MonoBehaviour
     public virtual void Initialize()
     {
         // SETUP IMERIS
-        Imeris = GameObject.FindObjectOfType<ImerisMovement>().gameObject;
+        if (SceneManager.GetActiveScene().name != "MainMenu" && 
+            SceneManager.GetActiveScene().name != "Level_Intro")
+        {
+            Imeris = FindObjectOfType<ImerisMovement>().gameObject;
+        }
+        
         ImerisAnimation = GameObject.Find("ImerisAnimation");
         
         // SETUP NPC
         NPCAnimation = GameObject.Find("NPCAnimation");
         
         // CG PLAYER SETUP
-        CGDisplayAnimator = transform.GetChild(1).GetComponentInChildren<Animator>();
+        CGDisplayAnimator = transform.Find("CGDisplay").GetComponentInChildren<Animator>();
         CGDisplayAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/OpenCrawl/Open_Crawl");
         CGDisplayAnimator.runtimeAnimatorController = CGDisplayAnimatorController;
         
