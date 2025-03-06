@@ -18,6 +18,8 @@ public class LevelManager_Chapel : LevelManagerBase
     // INTRO DIALOGUE NODE
     public string introDialogueNode = "ChapelStart";
     
+    [SerializeField] private Transform defaultSpawnPoint;
+    
     protected override void Start()
     {
         base.Start();
@@ -40,6 +42,12 @@ public class LevelManager_Chapel : LevelManagerBase
         
         //NPC EYES
         
+        // Spawn point
+        // Set up spawn points
+        defaultSpawnPoint = GameObject.Find("SpawnPoint").transform;
+        
+        // Set up Imeris respawn position
+        GameObject.FindObjectOfType<ImerisMovement>().gameObject.transform.position = defaultSpawnPoint.position;
         
         if (linnaeusAnimation != null)
         {
