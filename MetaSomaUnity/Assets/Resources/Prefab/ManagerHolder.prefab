@@ -474,7 +474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talkToGrub: 0
   isTestMode: 1
-  sceneHistory: []
+  previousScene: 
   HUD: {fileID: 8992055960139497962}
   CGDisplay: {fileID: 4413838746433709634}
   sceneFade: {fileID: 8415967924428648814}
@@ -680,10 +680,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 8650891657303845128}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 20}
+  m_SizeDelta: {x: 1940, y: 1100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4128179955811484683
 CanvasRenderer:
