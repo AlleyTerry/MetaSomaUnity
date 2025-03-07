@@ -152,6 +152,7 @@ public class DialogueManager : MonoBehaviour
                     characterNameText.color = new Color(255, 255, 255, 255);
                     dialogueTextBox.alignment = TextAlignmentOptions.TopLeft;
                     dialogueTextBox.fontStyle = FontStyles.Normal; // Reset the text style
+                    dialogueTextBox.fontWeight = FontWeight.SemiBold;
                     break;
 
                 case "Linnaeus":
@@ -159,6 +160,7 @@ public class DialogueManager : MonoBehaviour
                     characterNameText.color = new Color(255, 255, 255, 255);
                     dialogueTextBox.alignment = TextAlignmentOptions.TopRight;
                     dialogueTextBox.fontStyle = FontStyles.Normal; // Reset the text style
+                    dialogueTextBox.fontWeight = FontWeight.SemiBold;
                     break;
 
                 case "Narrator":
@@ -166,6 +168,7 @@ public class DialogueManager : MonoBehaviour
                     characterNameText.color = new Color(255, 255, 255, 0);
                     dialogueTextBox.alignment = TextAlignmentOptions.Top;
                     dialogueTextBox.fontStyle = FontStyles.Normal; // Reset the text style
+                    dialogueTextBox.fontWeight = FontWeight.SemiBold;
                     break;
                 
                 case "imeris":
@@ -173,12 +176,14 @@ public class DialogueManager : MonoBehaviour
                     characterNameText.color = new Color(255, 255, 255, 0);
                     dialogueTextBox.alignment = TextAlignmentOptions.Top;
                     dialogueTextBox.fontStyle = FontStyles.Italic; // Italicize the text
+                    dialogueTextBox.fontWeight = FontWeight.SemiBold;
                     break;
                 
                 default:
                     characterNameText.alignment = TextAlignmentOptions.Center;
                     characterNameText.color = new Color(255, 255, 255, 255);
                     dialogueTextBox.fontStyle = FontStyles.Normal; // Reset the text style
+                    dialogueTextBox.fontWeight = FontWeight.SemiBold;
                     break;
             }
 
