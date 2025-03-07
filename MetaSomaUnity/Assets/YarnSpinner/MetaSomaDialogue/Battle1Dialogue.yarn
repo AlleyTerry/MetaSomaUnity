@@ -312,12 +312,12 @@ position: 602,-981
 ---
 Imeris: ...
 Linnaeus: Good. You’ve come to your senses.
-Linnaeus: It will all be over soon.
 ///-1 heart
 <<TakeDamage Viewport_Heart>>
+Linnaeus: It will all be over soon.
 <<CheckHealth Viewport_Heart>>
  ===
- 
+
 title: Resist
 position: 895,-913
 ---
@@ -1050,11 +1050,6 @@ Narrator: (They’re walking slower. Then chrysalis sequence, then return to pla
 
 <<StopMusic ManagerHolder 0.25>>
 <<ExitBattle Imeris>> // TODO: FADE OUT MUSIC
-===
-
-title: PreDeadDialogue
----
-<<jump DeadDialogue>>
 ===
 
 title: DeadDialogue
