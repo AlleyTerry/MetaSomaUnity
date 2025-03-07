@@ -189,8 +189,8 @@ Linnaeus: The final days of your brothers and sisters spent tormented and starve
 Linnaeus: You say you struggle with your hunger now, but imagine them. Think. Look at what you’ve done.
 Linnaeus: Villain, beast, monster… Your sinfulness cannot be washed away with mere words!
 Narrator: Linnaeus takes a deep breath after his outburst. He resumes talking with an evener tone.
-Linnaeus: Take responsibility, wretch.
-Narrator: He has gathered himself, and is acting calm.
+Linnaeus: Now take responsibility.
+Narrator: Linnaeus has gathered himself, and is acting calm.
 <<CheckHealth Viewport_Heart>>
 
 <<set $hover_text_up = "He's wrong. I'll disprove his poisonous lies.">>
@@ -1054,8 +1054,6 @@ Narrator: (They’re walking slower. Then chrysalis sequence, then return to pla
 title: DeadDialogue
 ---
 Narrator: You have lost yourself. Your heart is broken.
-Narrator: You have lost yourself. Your heart is broken.
-Narrator: But you still have the ability to Change.
 Narrator: But you still have the ability to Change.
 Narrator: Rebirth yourself and try again.
 
