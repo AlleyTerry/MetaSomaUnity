@@ -315,8 +315,9 @@ Linnaeus: Good. You’ve come to your senses.
 Linnaeus: It will all be over soon.
 ///-1 heart
 <<TakeDamage Viewport_Heart>>
-<<jump DeadDialogue>>
+<<CheckHealth Viewport_Heart>>
  ===
+ 
 title: Resist
 position: 895,-913
 ---
