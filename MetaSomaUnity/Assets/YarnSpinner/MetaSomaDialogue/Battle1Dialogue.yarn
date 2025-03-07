@@ -536,7 +536,7 @@ Narrator: Linnaeus is condescending to you.
 -> Beg (Reason) 
     <<jump Beg>>
 -> Equip Dagger (Submission)
-    <<jump Dagger>>
+    <<jump EquipDagger>>
 -> Threaten (Challenge)
     <<jump Threaten>>
 ===
