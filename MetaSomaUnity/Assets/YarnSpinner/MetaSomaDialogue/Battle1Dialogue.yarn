@@ -620,18 +620,19 @@ Linnaeus: Your life is meaningless, fiend! And if I wish it, it is forfeit!
 title: Beg
 position: -773,70
 ---
-//-1 heart
-<<TakeDamage Viewport_Heart>>
 Narrator: Your stomach growls loudly; it chips at your resolve. 
-Marrator: You know he heard it; you hope beyond hope that he <i>cared</i>. 
+Narrator: You know he heard it; you hope beyond hope that he <i>cared</i>. 
 Imeris: Please. I am starving.
 Imeris: Allow me to pass. I beg you, Father.
 Imeris: This is all I ask.
 Narrator: Linnaeus looks down on you.
 Linnaeus: I pray Our Lady of Gold have mercy on you, child.
+//-1 heart
+<<TakeDamage Viewport_Heart>>
 Linnaeus: But I, unfortunately, shall not!
-Narrator: Linnaeus is getting aggressive.
 <<CheckHealth Viewport_Heart>>
+
+Narrator: Linnaeus is getting aggressive.
 
 <<set $hover_text_up = "I must calm myself… I won’t let him rattle me.">>
 <<set $hover_text_left = "He cannot frighten me. The Goddess is by my side.">>
@@ -937,7 +938,6 @@ Narrator: You look upon him, the holder of the first key to your cage, and feel.
 -> Disgust
     <<jump FeelHunger>>
 
-
 ===
 
 title: FeelHunger
@@ -1049,6 +1049,11 @@ Narrator: (They’re walking slower. Then chrysalis sequence, then return to pla
 
 <<StopMusic ManagerHolder 0.25>>
 <<ExitBattle Imeris>> // TODO: FADE OUT MUSIC
+===
+
+title: PreDeadDialogue
+---
+<<jump DeadDialogue>>
 ===
 
 title: DeadDialogue
