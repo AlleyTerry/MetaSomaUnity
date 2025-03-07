@@ -134,7 +134,7 @@ public class LevelManager_Chapel : LevelManagerBase
         GameManager.instance.isInBattle = true;
     }
 
-    [YarnCommand("Level0DeadScene")]
+    [YarnCommand("LevelChapelDeadScene")]
     public override void DeadScene()
     {
         base.DeadScene();
@@ -144,9 +144,11 @@ public class LevelManager_Chapel : LevelManagerBase
             DialogueManager.instance.dialogueRunner.Stop();
         }
         
-        Debug.Log("Level 0 Dead Scene started.");
+        Debug.Log("Level Chapel Dead Scene started.");
         
         DisableLinnaeusAnimation();
+        DisableImerisAnimation();
+        
         DialogueManager.instance.StartDialogue("DeadDialogue");
     }
     
