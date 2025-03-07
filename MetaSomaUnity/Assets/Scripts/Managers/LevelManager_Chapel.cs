@@ -149,7 +149,7 @@ public class LevelManager_Chapel : LevelManagerBase
         DisableLinnaeusAnimation();
         DisableImerisAnimation();
         
-        DialogueManager.instance.StartDialogue("DeadDialogue");
+        DialogueManager.instance.StartDialogue("PreDeadDialogue");
     }
     
     [YarnCommand("DisableLinnaeusAnimation")]
