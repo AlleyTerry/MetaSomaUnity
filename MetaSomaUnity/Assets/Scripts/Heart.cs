@@ -139,7 +139,7 @@ public class Heart : MonoBehaviour
     {
         if (health <= 0)
         {
-            DialogueManager.instance.dialogueRunner.Stop();
+            //DialogueManager.instance.dialogueRunner.Stop();
             Debug.Log("Heart: Player is already dead.");
             
             /*if (!DialogueManager.instance.dialogueRunner.IsDialogueRunning)

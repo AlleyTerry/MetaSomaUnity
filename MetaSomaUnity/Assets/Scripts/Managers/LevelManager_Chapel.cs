@@ -143,13 +143,20 @@ public class LevelManager_Chapel : LevelManagerBase
         {
             DialogueManager.instance.dialogueRunner.Stop();
         }
+
+        StartCoroutine(DelayedStartDialogue("PreDeadDialogue"));
         
         Debug.Log("Level Chapel Dead Scene started.");
         
         DisableLinnaeusAnimation();
         DisableImerisAnimation();
+    }
+
+    IEnumerator DelayedStartDialogue(string dialogueNode)
+    {
+        yield return new WaitForEndOfFrame();
         
-        DialogueManager.instance.StartDialogue("PreDeadDialogue");
+        DialogueManager.instance.StartDialogue(dialogueNode);
     }
     
     [YarnCommand("DisableLinnaeusAnimation")]
