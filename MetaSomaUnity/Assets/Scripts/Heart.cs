@@ -83,7 +83,7 @@ public class Heart : MonoBehaviour
             case 0:
                 renderer.sprite = sprite4;
                 Debug.Log("Heart: Player is dead.");
-                GameManager.instance.SetGameState(GameState.IsDead);
+                //GameManager.instance.SetGameState(GameState.IsDead);
                 break;
             default:
                 Debug.LogWarning("Heart: Health value out of range.");
@@ -141,12 +141,14 @@ public class Heart : MonoBehaviour
         {
             DialogueManager.instance.dialogueRunner.Stop();
             Debug.Log("Heart: Player is already dead.");
-        
-        
-            if (!DialogueManager.instance.dialogueRunner.IsDialogueRunning)
+            
+            /*if (!DialogueManager.instance.dialogueRunner.IsDialogueRunning)
             {
                 DialogueManager.instance.dialogueRunner.StartDialogue("DeadDialogue");
-            }
+            }*/
+            
+            GameManager.instance.SetGameState(GameState.IsDead);
+            Debug.Log("Heart: GameState set to IsDead.");
         }
     }
     

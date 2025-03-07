@@ -104,6 +104,7 @@ public class GameManager : MonoBehaviour
         set
         {
             currentGameState = value;
+            Debug.Log($"Game State switched to: {currentGameState}");
             HandleGameStateSwitch();
         }
     }
