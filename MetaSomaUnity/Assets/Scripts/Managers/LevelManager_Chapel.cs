@@ -141,7 +141,7 @@ public class LevelManager_Chapel : LevelManagerBase
 
         if (DialogueManager.instance.dialogueRunner.IsDialogueRunning)
         {
-            DialogueManager.instance.dialogueRunner.Stop();
+            DialogueManager.instance.dialogueRunner.Dialogue.Stop();
         }
 
         StartCoroutine(DelayedStartDialogue("PreDeadDialogue"));
