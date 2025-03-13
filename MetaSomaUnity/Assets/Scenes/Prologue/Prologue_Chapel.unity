@@ -176,7 +176,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 575958a628ae1994fa3fb43d98c62d4c, type: 2}
+  - {fileID: 2100000, guid: f7d12040ed04e0c499209557e441a771, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -411,79 +411,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 242246519}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &274103418
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 635778922}
-    m_Modifications:
-    - target: {fileID: 2853028325627611551, guid: 7f60880124e9944b79e4efb028e76e56,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 11.94
-      objectReference: {fileID: 0}
-    - target: {fileID: 2853028325627611551, guid: 7f60880124e9944b79e4efb028e76e56,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 2853028325627611551, guid: 7f60880124e9944b79e4efb028e76e56,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2853028325627611551, guid: 7f60880124e9944b79e4efb028e76e56,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2853028325627611551, guid: 7f60880124e9944b79e4efb028e76e56,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2853028325627611551, guid: 7f60880124e9944b79e4efb028e76e56,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2853028325627611551, guid: 7f60880124e9944b79e4efb028e76e56,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2853028325627611551, guid: 7f60880124e9944b79e4efb028e76e56,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2853028325627611551, guid: 7f60880124e9944b79e4efb028e76e56,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2853028325627611551, guid: 7f60880124e9944b79e4efb028e76e56,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6558844591038936480, guid: 7f60880124e9944b79e4efb028e76e56,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7929663529071578618, guid: 7f60880124e9944b79e4efb028e76e56,
-        type: 3}
-      propertyPath: m_Name
-      value: Linnaeus
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7f60880124e9944b79e4efb028e76e56, type: 3}
 --- !u!1 &310259347
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,7 +624,7 @@ Transform:
   m_GameObject: {fileID: 470771586}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.9, y: -1.9, z: 0}
+  m_LocalPosition: {x: 9.72, y: -1.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -934,12 +861,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 586002859}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &586459935 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2853028325627611551, guid: 7f60880124e9944b79e4efb028e76e56,
-    type: 3}
-  m_PrefabInstance: {fileID: 274103418}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &607168335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,7 +1000,6 @@ Transform:
   - {fileID: 1431317329}
   - {fileID: 45278878}
   - {fileID: 1417114970}
-  - {fileID: 586459935}
   - {fileID: 2094918480}
   - {fileID: 1602055016}
   - {fileID: 2006538016}
@@ -1596,7 +1516,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 80e44c2c47ca14f3f812ee54ec533c67, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5dcc30555fc319c4f8e89d4435c5ce7a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

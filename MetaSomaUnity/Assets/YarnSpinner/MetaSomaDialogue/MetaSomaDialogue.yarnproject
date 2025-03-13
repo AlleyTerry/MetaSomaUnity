@@ -6,7 +6,8 @@
     "ChapelStart.yarn",
     "*.yarn",
     "Interactables.yarn",
-    "OpeningCutSceneText.yarn"
+    "OpeningCutSceneText.yarn",
+    "PrologueGalleria.yarn"
   ],
   "excludeFiles": [
     "**/*~/*"
