@@ -13,6 +13,7 @@ TagManager:
   - Stairs
   - table
   - TableDialogue
+  - Background
   layers:
   - Default
   - TransparentFX

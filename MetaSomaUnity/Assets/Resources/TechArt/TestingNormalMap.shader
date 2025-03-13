@@ -4,7 +4,7 @@ Shader "Unlit/TestingNormalMap"
     {
         _MainTex ("Texture", 2D) = "white" {}
         _BumpMap ("Normal Map", 2D) = "bump" {}
-        _LightDir ("Light Direction", Vector) = (0, 0, -1, 0)
+        _LightDir ("Light Direction", Vector) = (0, 0, 1, 0)
     }
     SubShader
     {
