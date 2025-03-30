@@ -1,7 +1,18 @@
 ﻿title: PrologueGalleria
 tags:
 ---
-Galleria: wake up bitch
-Galleria: time to go to the sermon.
+Narrator: Hazy memories drift through the sea of metamorphosing sleep…
+Galleria: Imeris, are you still in bed? 
+Galleria: It’s nearly time for the morning sermon! Get up!
+<<ShowGalleria ManagerHolder>>
+Imeris: Mmm… I’m up, I’m up. You don’t need to shout.
+Galleria: You say that every day, but every day I’m still the one who has to wake you. 
+Galleria: Anyway, all the maids have been called to work early today, so I can’t come to today’s service. 
+Galleria: I’ll see you tonight, or at dinner. 
+Galleria: Stay out of trouble today, okay?
+Imeris: I’ll try. 
+Galleria: …
+<<HideGalleria ManagerHolder>>
+Imeris (INTERNAL): I should hurry and put on my vestments. Father Linnaeus is waiting. 
 <<StartLevel ManagerHolder>>
 ===

@@ -4,6 +4,22 @@
 <<set $tableReady to false>>
 ===
 
+//Prologue
+title: MellonellaShrineZoom
+---
+<<ShowShrineZoom ManagerHolder>>
+imeris: O’ Mellonella, our Goddess of Gold, please guide my steps today...
+<<HideShrineZoom ManagerHolder>>
+<<jump QueenPortraitZoom>>
+===
+
+title: QueenPortraitZoom
+---
+<<ShowPortraitZoom ManagerHolder>>
+imeris: …and please destroy this portrait of Queen Andromeda so I don’t have to look upon it any longer.
+<<HidePortraitZoom ManagerHolder>>
+<<ResumeControls ManagerHolder>>
+===
 
 //Bedroom
 title: ItemPlaceholder

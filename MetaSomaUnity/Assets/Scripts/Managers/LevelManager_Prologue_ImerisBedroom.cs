@@ -5,7 +5,10 @@ using Yarn.Unity;
 
 public class LevelManager_Prologue_ImerisBedroom : LevelManagerBase
 {
-    //public GameObject BlackSreen;
+    //Galleria
+    public GameObject GalleriaAnimation;
+    public GameObject ShrineZoom;
+    public GameObject PortraitZoom;
     public override void Initialize()
     {
         base.Initialize();
@@ -20,18 +23,43 @@ public class LevelManager_Prologue_ImerisBedroom : LevelManagerBase
         
         CGDisplayAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Prologue/PrologueImerisRoom");
         CGDisplayAnimator.runtimeAnimatorController = CGDisplayAnimatorController;
+        GalleriaAnimation = GameObject.Find("GalleriaAnimation");
+        GalleriaAnimation.SetActive(false);
+        
+        ShrineZoom = GameObject.Find("ShrineZoom");
+        ShrineZoom.SetActive(false);
+        PortraitZoom = GameObject.Find("PortraitZoom");
+        PortraitZoom.SetActive(false);
     }
     // Start is called before the first frame update
     void Start()
     {
         //play the Galleria dialogue
         FindObjectOfType<DialogueRunner>().StartDialogue("PrologueGalleria");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+    
+    [YarnCommand("ShowGalleria")]
+    public void ShowGalleria()
+    {
+        GalleriaAnimation.SetActive(true);
+        //play the Galleria animation
+        GalleriaAnimation.GetComponent<Animator>().Play("ShowGalleria");
+        Debug.Log("Galleria shown");
+        
+    }
+    
+    [YarnCommand("HideGalleria")]
+    public void HideGalleria()
+    {
+        GalleriaAnimation.SetActive(false);
+        Debug.Log("Galleria hidden");
     }
     
     [YarnCommand("StartLevel")]
@@ -45,4 +73,32 @@ public class LevelManager_Prologue_ImerisBedroom : LevelManagerBase
         GameManager.instance.HUD.SetActive(true); // show HUD
         GameManager.instance.CGDisplay.SetActive(false); // hide CG display
     }
+    
+    [YarnCommand("ShowShrineZoom")]
+    public void ShowShrineZoom()
+    {
+        ShrineZoom.SetActive(true);
+        Debug.Log("Shrine Zoom shown");
+    }
+    
+    [YarnCommand("HideShrineZoom")]
+    public void HideShrineZoom()
+    {
+        ShrineZoom.SetActive(false);
+    }
+    
+    [YarnCommand("ShowPortraitZoom")]
+    public void ShowPortraitZoom()
+    {
+        PortraitZoom.SetActive(true);
+        Debug.Log("Portrait Zoom shown");
+    }
+    
+    [YarnCommand("HidePortraitZoom")]
+    public void HidePortraitZoom()
+    {
+        PortraitZoom.SetActive(false);
+    }
+    
+    
 }
