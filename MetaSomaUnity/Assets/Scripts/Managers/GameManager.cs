@@ -141,8 +141,11 @@ public class GameManager : MonoBehaviour
             case "Prologue_ImerisRoom":
                 CurrentLevelIndex = 7;
                 break;
-            case "Prologue_ServantsHall":
+            case "Prologue_CommonRoom":
                 CurrentLevelIndex = 8;
+                break;
+            case "Prologue_Chapel":
+                CurrentLevelIndex = 9;
                 break;
             default:
                 CurrentLevelIndex = 0;
@@ -337,7 +340,10 @@ public class GameManager : MonoBehaviour
                 currentLevelManager = gameObject.AddComponent<LevelManager_Prologue_ImerisBedroom>();
                 break;
             case 8:
-                currentLevelManager = gameObject.AddComponent<LevelManager_Prologue_ServantsHall>();
+                currentLevelManager = gameObject.AddComponent<LevelManager_Prologue_CommonRoom>();
+                break;
+            case 9:
+                currentLevelManager = gameObject.AddComponent<LevelManager_Prologue_Chapel>();
                 break;
             default:
                 Debug.Log("Unknown Scene. No LevelManager assigned.");

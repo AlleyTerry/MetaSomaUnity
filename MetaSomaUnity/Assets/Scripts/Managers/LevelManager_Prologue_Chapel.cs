@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 
-public class LevelManager_Prologue_CommonRoom : LevelManagerBase
+public class LevelManager_Prologue_Chapel : LevelManagerBase
 {
-
     public override void Initialize()
     {
         base.Initialize();
@@ -41,6 +40,12 @@ public class LevelManager_Prologue_CommonRoom : LevelManagerBase
     {
         
     }
-    
-   
+
+    [YarnCommand("SermonStart")]
+    public void SermanStart()
+    {
+        GameManager.instance.CGDisplay.SetActive(true);
+    }
+
+
 }

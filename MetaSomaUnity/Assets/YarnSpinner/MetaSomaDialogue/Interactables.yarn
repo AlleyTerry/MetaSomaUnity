@@ -1,4 +1,6 @@
-﻿title: Setup_Interactables
+﻿
+//Prologue
+title: Setup_Interactables
 ---
 <<declare $tableReady to false>>
 <<set $tableReady to false>>
@@ -19,6 +21,27 @@ title: QueenPortraitZoom
 imeris: …and please destroy this portrait of Queen Andromeda so I don’t have to look upon it any longer.
 <<HidePortraitZoom ManagerHolder>>
 <<ResumeControls ManagerHolder>>
+===
+
+title: PeopleInCommonRoom
+---
+ImerisInternal: Even without the maids, there are so many people here. 
+ImerisInternal: I can feel them looking at me.
+<<ResumeControls ManagerHolder>>
+===
+title:LinnaeusPrologue
+---
+Linnaeus: Imeris, there you are! It’s nearly time!
+Imeris: My apologies, Father.
+Linnaeus: It's alright, my child. The life of a court performer isn’t an easy one– I’m sure you’re quite tired.
+Imeris: I will always have time to serve Our Lady of Gold... no matter the obstacle. 
+Linnaeus: So devout! That’s why you’re my favorite– but let’s keep that between us, hm?
+Linnaeus: In any case, I won’t be in need of your services today. The preparations for the morning sermon are already complete.
+Linnaeus: Just go open the door and let everyone in, will you?
+Imeris: Yes, Father. 
+
+<<SermonStart ManagerHolder>>
+
 ===
 
 //Bedroom
