@@ -10,6 +10,8 @@ public class LevelManager_Prologue_ServantsHall : LevelManagerBase
     //initialize the level
     {
         base.Initialize();
+        UIManager.instance.PlayAnimation("PrologueViewport");
+        UIManager.instance.DisableAnimator();
         
         GameManager.instance.HUD.SetActive(false);
         GameManager.instance.CGDisplay.SetActive(true);

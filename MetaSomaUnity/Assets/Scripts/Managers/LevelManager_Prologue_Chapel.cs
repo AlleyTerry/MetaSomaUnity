@@ -50,6 +50,7 @@ public class LevelManager_Prologue_Chapel : LevelManagerBase
     [YarnCommand("SermonStart")]
     public void SermanStart()
     {
+        //Imeris.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
         UIManager.instance.EnableAnimator();
         UIManager.instance.PlayAnimation("PrologueViewportTransition");
         

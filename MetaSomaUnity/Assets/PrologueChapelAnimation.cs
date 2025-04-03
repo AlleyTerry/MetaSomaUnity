@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class PrologueChapelAnimation : MonoBehaviour
 {
@@ -28,13 +29,47 @@ public class PrologueChapelAnimation : MonoBehaviour
     public void MoveCharacters()
     {
         Debug.Log("this has been fired");
+        
         Imeris.transform.position = ImerisSpot.transform.position;
         Linnaeus.transform.position = LinSpot.transform.position;
+        
         UIManager.instance.PlayAnimation("PrologueViewportTransitionReverse");
     }
 
     public void DisableUIManager()
     {
         UIManager.instance.DisableAnimator();
+        //play yarn dialogue
+        FindObjectOfType<DialogueRunner>().StartDialogue("LinnaeusSermon");
+        
+    }
+    
+    [YarnCommand("ImerisZoom")]
+    public void ImerisZoom()
+    {
+        Debug.Log("imeriszoom");
+        UIManager.instance.EnableAnimator();
+        UIManager.instance.PlayAnimation("PrologueViewportHalf");
+    }
+
+    [YarnCommand("ImerisThoughts")]
+    public void ImerisThoughts()
+    {
+        UIManager.instance.DisableAnimator();
+        FindObjectOfType<DialogueRunner>().StartDialogue("ImerisZoom");
+    }
+    
+    [YarnCommand("ImerisFindsTruth1")]
+    public void ImerisFindsTruth1()
+    {
+        UIManager.instance.EnableAnimator();
+        UIManager.instance.PlayAnimation("PrologueViewportHalfClose");
+    }
+    
+    [YarnCommand("ImerisFindsTruth2")]
+    public void ImerisFindsTruth2()
+    {
+        UIManager.instance.DisableAnimator();
+        FindObjectOfType<DialogueRunner>().StartDialogue("StartImerisTruth");
     }
 }
