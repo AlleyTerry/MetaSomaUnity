@@ -9,6 +9,8 @@ public class LevelManager_Prologue_CommonRoom : LevelManagerBase
     public override void Initialize()
     {
         base.Initialize();
+        UIManager.instance.PlayAnimation("PrologueViewport");
+        UIManager.instance.DisableAnimator();
         
         GameManager.instance.HUD.SetActive(false);
         GameManager.instance.CGDisplay.SetActive(true);
@@ -31,7 +33,7 @@ public class LevelManager_Prologue_CommonRoom : LevelManagerBase
         GameManager.instance.ResumeControls();
         
         // imeris figure
-        ImerisAnimation.SetActive(true);
+       // ImerisAnimation.SetActive(true);
         GameManager.instance.HUD.SetActive(true); // show HUD
         GameManager.instance.CGDisplay.SetActive(false); // hide CG display
     }

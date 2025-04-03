@@ -13,7 +13,8 @@ public class LevelManager_Prologue_ImerisBedroom : LevelManagerBase
     {
         base.Initialize();
         //change heart animation to prologue viewport
-        UIManager.instance.PlayAnimation("PrologueViewport");
+        UIManager.instance.EnableAnimator();
+        UIManager.instance.PlayAnimation("PureBlack");
         UIManager.instance.DisableAnimator();
         
         GameManager.instance.HUD.SetActive(false);
@@ -39,6 +40,8 @@ public class LevelManager_Prologue_ImerisBedroom : LevelManagerBase
     {
         //play the Galleria dialogue
         FindObjectOfType<DialogueRunner>().StartDialogue("PrologueGalleria");
+        GameManager.instance.HUD.SetActive(true); // show HUD
+        GameManager.instance.CGDisplay.SetActive(false); // hide CG display
         
     }
 
@@ -70,9 +73,11 @@ public class LevelManager_Prologue_ImerisBedroom : LevelManagerBase
     {
         // resume controls
         GameManager.instance.ResumeControls();
+        UIManager.instance.EnableAnimator();
+        UIManager.instance.PlayAnimation("PrologueViewport");
         
         // imeris figure
-        ImerisAnimation.SetActive(true);
+        ImerisAnimation.SetActive(false);
         GameManager.instance.HUD.SetActive(true); // show HUD
         GameManager.instance.CGDisplay.SetActive(false); // hide CG display
     }
