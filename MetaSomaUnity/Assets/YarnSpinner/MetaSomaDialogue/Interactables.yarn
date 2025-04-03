@@ -72,15 +72,31 @@ Imeris (INTERNAL): I know the truth.
 
 title: StartImerisTruth
 ---
-Imeris (INTERNAL): Achieve prosperity, (mosaic1)
-Imeris (INTERNAL): so you may sate your hunger. (mosaic2)
-Imeris (INTERNAL): Drink of the noble red, (mosaic3)
-Imeris (INTERNAL): which flows in the veins of royalty. (mosaic4)
-Imeris (INTERNAL): And you shall ascend (mosaic5)
-Imeris (INTERNAL): on wings of gold. (mosaic6)
+<<ShowMosiac1 MosiacImages>>
+Imeris (INTERNAL): Achieve prosperity, 
+<<ShowMosiac2 MosiacImages>>
+Imeris (INTERNAL): so you may sate your hunger. 
+<<ShowMosiac3 MosiacImages>>
+Imeris (INTERNAL): Drink of the noble red, 
+<<ShowMosiac4 MosiacImages>>
+Imeris (INTERNAL): which flows in the veins of royalty. 
+<<ShowMosiac5 MosiacImages>>
+Imeris (INTERNAL): And you shall ascend 
+<<ShowMosiac6 MosiacImages>>
+Imeris (INTERNAL): on wings of gold.
+<<CloseMosiacs MosiacImages>>
+Imeris (INTERNAL): I walk now, unblinded, down the true path the Goddess set out for us.
+Imeris (INTERNAL):  I have stockpiled food, carefully, painstakingly, for weeks. And I have almost eaten enough. 
+Imeris (INTERNAL): Now all that remains is…
 
 
-<<ImerisFindsTruth1 Viewport_Heart>>
+
+<<FinalAnimation MosiacImages>>
+===
+title:EndPrologue
+---
+Narrator: It’s time to wake up.
+<<ToIntroScene ManagerHolder>>
 ===
 
 //Bedroom

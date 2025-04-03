@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
-
+using UnityEngine.SceneManagement;
 public class LevelManager_Prologue_Chapel : LevelManagerBase
 {
 
@@ -35,7 +35,7 @@ public class LevelManager_Prologue_Chapel : LevelManagerBase
         GameManager.instance.ResumeControls();
         
         // imeris figure
-        ImerisAnimation.SetActive(true);
+        //ImerisAnimation.SetActive(true);
    
         GameManager.instance.HUD.SetActive(true); // show HUD
         GameManager.instance.CGDisplay.SetActive(false); // hide CG display
@@ -54,6 +54,14 @@ public class LevelManager_Prologue_Chapel : LevelManagerBase
         UIManager.instance.EnableAnimator();
         UIManager.instance.PlayAnimation("PrologueViewportTransition");
         
+    }
+    
+    [YarnCommand("ToIntroScene")]
+    public void ToIntroScene()
+    {
+        Debug.Log("ToIntroScene called");
+        // Load the next scene
+        GameManager.instance.LoadNextLevel();
     }
 
 

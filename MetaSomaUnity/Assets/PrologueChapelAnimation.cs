@@ -72,4 +72,11 @@ public class PrologueChapelAnimation : MonoBehaviour
         UIManager.instance.DisableAnimator();
         FindObjectOfType<DialogueRunner>().StartDialogue("StartImerisTruth");
     }
+    
+    [YarnCommand("EndPrologue")]
+    public void EndPrologue()
+    {
+        //UIManager.instance.DisableAnimator();
+        FindObjectOfType<DialogueRunner>().StartDialogue("EndPrologue");
+    }
 }
