@@ -17,9 +17,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 22185ef6f6defb24daf025aad27c0a07
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level_Intro.unity
     guid: 156b8f74a0a17b14f95e4e154c0bea4e
+  - enabled: 1
+    path: Assets/Scenes/Prologue/Prologue_ImerisRoom.unity
+    guid: afce29f4c7a6a5a4c95e2b839bf48632
+  - enabled: 1
+    path: Assets/Scenes/Prologue/Prologue_CommonRoom.unity
+    guid: a44e6de2ab8ae614c97cfe23555bebe3
+  - enabled: 1
+    path: Assets/Scenes/Prologue/Prologue_Chapel.unity
+    guid: 67abba15feeb47e47938f5701d013014
   - enabled: 1
     path: Assets/Scenes/Level_ImerisBedroom.unity
     guid: 28b31dd92a36aa84989564a3cf23840d
@@ -38,13 +47,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_Cafeteria.unity
     guid: faf9806b18fa260418bfbe4395281192
-  - enabled: 1
-    path: Assets/Scenes/Prologue/Prologue_ImerisRoom.unity
-    guid: afce29f4c7a6a5a4c95e2b839bf48632
-  - enabled: 1
-    path: Assets/Scenes/Prologue/Prologue_CommonRoom.unity
-    guid: a44e6de2ab8ae614c97cfe23555bebe3
-  - enabled: 1
-    path: Assets/Scenes/Prologue/Prologue_Chapel.unity
-    guid: 67abba15feeb47e47938f5701d013014
   m_configObjects: {}

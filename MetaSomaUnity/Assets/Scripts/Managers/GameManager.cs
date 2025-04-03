@@ -120,32 +120,34 @@ public class GameManager : MonoBehaviour
         // TODO: NOTE -- THIS IS FOR DEBUGGING PURPOSES, MAY BE COMMENT OUT IN FINAL BUILD
         switch (SceneManager.GetActiveScene().name)
         {
-            case "Level_Intro":
+            /*case "Level_Intro":
+                CurrentLevelIndex = 1;
+                break;*/
+            
+            case "Prologue_ImerisRoom":
                 CurrentLevelIndex = 1;
                 break;
-            case "Level_ImerisBedroom":
+            case "Prologue_CommonRoom":
                 CurrentLevelIndex = 2;
                 break;
-            case "Level_ServantsHall":
+            case "Prologue_Chapel":
                 CurrentLevelIndex = 3;
                 break;
-            case "Level_CommonArea":
+            
+            case "Level_ImerisBedroom":
                 CurrentLevelIndex = 4;
                 break;
-            case "Level_Chapel":
+            case "Level_ServantsHall":
                 CurrentLevelIndex = 5;
                 break;
-            case "Level_Cafeteria":
-                currentLevelIndex = 6;
+            case "Level_CommonArea":
+                CurrentLevelIndex = 6;
                 break;
-            case "Prologue_ImerisRoom":
+            case "Level_Chapel":
                 CurrentLevelIndex = 7;
                 break;
-            case "Prologue_CommonRoom":
-                CurrentLevelIndex = 8;
-                break;
-            case "Prologue_Chapel":
-                CurrentLevelIndex = 9;
+            case "Level_Cafeteria":
+                currentLevelIndex = 8;
                 break;
             default:
                 CurrentLevelIndex = 0;
@@ -328,32 +330,36 @@ public class GameManager : MonoBehaviour
             case 0: // Main menu
                 currentLevelManager = gameObject.AddComponent<LevelManager_MainMenu>();
                 break;
-            case 1:
-                /*Debug.Log("No LevelManager assigned.");*/
+            /*case 1:
+                /*Debug.Log("No LevelManager assigned.");#1#
                 currentLevelManager = gameObject.AddComponent<LevelManager_Intro>();
-                break;
-            case 2:
+                break;*/
+            
+            // Actual levels
+            case 4:
                 currentLevelManager = gameObject.AddComponent<LevelManager_ImerisBedroom>();
                 break;
-            case 3:
+            case 5:
                 currentLevelManager = gameObject.AddComponent<LevelManager_ServantsHall>();
                 break;
-            case 4:
+            case 6:
                 currentLevelManager = gameObject.AddComponent<LevelManager_CommonArea>();
                 break;
-            case 5:
+            case 7:
                 currentLevelManager = gameObject.AddComponent<LevelManager_Chapel>();
                 break;
-            case 6:
+            case 8:
                 currentLevelManager = gameObject.AddComponent<LevelManager_Cafeteria>();
                 break;
-            case 7:
+            
+            // Prologue levels
+            case 1:
                 currentLevelManager = gameObject.AddComponent<LevelManager_Prologue_ImerisBedroom>();
                 break;
-            case 8:
+            case 2:
                 currentLevelManager = gameObject.AddComponent<LevelManager_Prologue_CommonRoom>();
                 break;
-            case 9:
+            case 3:
                 currentLevelManager = gameObject.AddComponent<LevelManager_Prologue_Chapel>();
                 break;
             default:
