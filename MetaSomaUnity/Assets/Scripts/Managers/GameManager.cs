@@ -217,6 +217,17 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
     
+    public void LoadMainMenu() // TODO: THIS IS VERY TEMPORARY, MAY HAVE A LOT OF BUGS
+    {
+        CurrentLevelIndex = 0;
+        SceneManager.LoadSceneAsync(0);
+    }
+
+    public void LoadFirstChapter()
+    {
+        
+    }
+    
     public void LoadNextLevel()
     {
         CurrentLevelIndex++;
