@@ -12,7 +12,7 @@ public class LevelManager_Prologue_ImerisBedroom : LevelManagerBase
     public override void Initialize()
     {
         base.Initialize();
-        
+        //change heart animation to prologue viewport
         GameManager.instance.HUD.SetActive(false);
         GameManager.instance.CGDisplay.SetActive(true);
         
