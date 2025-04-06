@@ -66,6 +66,9 @@ public class LevelManager_Chapel : LevelManagerBase
     {
         base.StartCutsScene(cutSceneDialogueNode);
 
+        // VCAM SWITCH FOLLOWING TARGET
+        CameraManager.instance.SwitchFollowTarget();
+        
         if (linnaeusAnimation == null) linnaeusAnimation = GameObject.Find("NPCAnimation");
         
         linnaeusAnimation.SetActive(true); 

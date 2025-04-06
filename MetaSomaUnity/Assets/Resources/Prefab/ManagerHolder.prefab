@@ -422,6 +422,7 @@ GameObject:
   - component: {fileID: 1887937098370837931}
   - component: {fileID: 5249238084494064836}
   - component: {fileID: 3982379794277282012}
+  - component: {fileID: 4837141941416994595}
   m_Layer: 0
   m_Name: ManagerHolder
   m_TagString: Untagged
@@ -475,6 +476,7 @@ MonoBehaviour:
   talkToGrub: 0
   isTestMode: 1
   previousScene: 
+  isFacingRight: 0
   HUD: {fileID: 8992055960139497962}
   CGDisplay: {fileID: 4413838746433709634}
   sceneFade: {fileID: 8415967924428648814}
@@ -643,6 +645,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 503b51f4c8add834a814b61b6d817402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4837141941416994595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7964521411033984940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b134d9b8d766274aa6091bb28ca3727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8714127014412746384

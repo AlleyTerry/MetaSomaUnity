@@ -7,46 +7,57 @@ using Yarn.Unity;
 public class CameraManager : MonoBehaviour
 {
     public static CameraManager instance;
-
+    
     private void Awake()
     {
-        if (instance == null) instance = this;
-        else Destroy(gameObject);
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+            Debug.LogWarning("Duplicate CameraManager found and destroyed.");
+        }
     }
-
-    private CinemachineBasicMultiChannelPerlin noise;
-    private float shakeTime = 0f;
+    
+    // VIRTUAL CAMERA
+    public CinemachineVirtualCamera virtualCamera;
+    
+    // CINEMACHINE TARGET GROUP
+    public Cinemachine.CinemachineTargetGroup targetGroup;
     
     // Start is called before the first frame update
     void Start()
     {
-        // Get the virtual camera noise component
-        CinemachineVirtualCamera vcam = GetComponent<CinemachineVirtualCamera>();
-        noise = vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        
     }
 
-    public void Shake(float intensity, float duration)
+    [YarnCommand ("SwitchFollowTarget")]
+    public void SwitchFollowTarget()
     {
-        noise.m_AmplitudeGain = intensity;
-        shakeTime = duration;
-    }
-    
-    // some premade shake functions
-    /*[YarnCommand("ShakeLow")]*/
-    public void ShakeLow() => Shake(2f, 0.2f);
-    public void ShakeStrong() => Shake(5f, 0.5f);
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (shakeTime > 0)
+        if (virtualCamera == null)
         {
-            shakeTime -= Time.deltaTime;
-
-            if (shakeTime <= 0)
-            {
-                noise.m_AmplitudeGain = 0f;
-            }
+            virtualCamera = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
         }
+        
+        /*if (targetGroup == null)
+        {
+            targetGroup = GameObject.FindObjectOfType<Cinemachine.CinemachineTargetGroup>();
+        }
+        
+        if (targetGroup == null)
+        {
+            Debug.LogError("Cinemachine Target Group not found!");
+            return;
+        }
+        else
+        {
+            virtualCamera.Follow = targetGroup.transform;
+            virtualCamera.m_Lens.OrthographicSize = 4.03f;
+            Camera.main.orthographicSize = 4.03f;
+        }*/
+        
+        
     }
 }
