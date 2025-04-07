@@ -27,10 +27,37 @@ public class CameraManager : MonoBehaviour
     // CINEMACHINE TARGET GROUP
     public Cinemachine.CinemachineTargetGroup targetGroup;
     
+    private GameObject tempCameraTarget;
+    
     // Start is called before the first frame update
     void Start()
     {
         
+    }
+
+    [YarnCommand ("PrepSwitchFollowTarget")]
+    public void PrepSwitchFollowTarget()
+    {
+        Debug.Log("SwitchFollowTarget called.");
+        
+        if (virtualCamera == null)
+        {
+            virtualCamera = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
+        }
+        
+        if (tempCameraTarget != null) Destroy(tempCameraTarget);
+        
+        Vector3 anchor = (FindObjectOfType<LinnaeusMovement>().transform.position + 
+                          FindObjectOfType<ImerisMovement>().transform.position) / 2;
+        anchor.y = FindObjectOfType<ImerisMovement>().transform.position.y;
+        
+        tempCameraTarget = new GameObject("TempCameraTarget");
+        tempCameraTarget.transform.SetPositionAndRotation(anchor, Quaternion.identity);
+        tempCameraTarget.transform.SetParent(null);
+        
+        // slowdown the camera movement
+        virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = 2.5f;
+        virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_YDamping = 2.5f;
     }
 
     [YarnCommand ("SwitchFollowTarget")]
@@ -41,23 +68,6 @@ public class CameraManager : MonoBehaviour
             virtualCamera = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
         }
         
-        /*if (targetGroup == null)
-        {
-            targetGroup = GameObject.FindObjectOfType<Cinemachine.CinemachineTargetGroup>();
-        }
-        
-        if (targetGroup == null)
-        {
-            Debug.LogError("Cinemachine Target Group not found!");
-            return;
-        }
-        else
-        {
-            virtualCamera.Follow = targetGroup.transform;
-            virtualCamera.m_Lens.OrthographicSize = 4.03f;
-            Camera.main.orthographicSize = 4.03f;
-        }*/
-        
-        
+        virtualCamera.Follow = tempCameraTarget.transform;
     }
 }

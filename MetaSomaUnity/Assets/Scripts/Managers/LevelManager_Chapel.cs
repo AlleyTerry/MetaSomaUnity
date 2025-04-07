@@ -65,9 +65,12 @@ public class LevelManager_Chapel : LevelManagerBase
     public override void StartCutsScene(string cutSceneDialogueNode)
     {
         base.StartCutsScene(cutSceneDialogueNode);
-
+        
+        Imeris.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        Imeris.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        
         // VCAM SWITCH FOLLOWING TARGET
-        CameraManager.instance.SwitchFollowTarget();
+        StartCoroutine(DelayedVCamSwitch());
         
         if (linnaeusAnimation == null) linnaeusAnimation = GameObject.Find("NPCAnimation");
         
@@ -76,6 +79,14 @@ public class LevelManager_Chapel : LevelManagerBase
         linnaeusAnimation.GetComponent<Animator>().Play("NPCEyesTransition");
     }
 
+    private IEnumerator DelayedVCamSwitch()
+    {
+        CameraManager.instance.PrepSwitchFollowTarget();
+        
+        yield return new WaitForSeconds(0.5f);
+        
+        CameraManager.instance.SwitchFollowTarget();
+    }
     
     [YarnCommand("IntoBattleScene")]
     public override void StartBattleScene()
