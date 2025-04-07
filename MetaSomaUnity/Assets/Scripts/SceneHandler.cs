@@ -94,13 +94,13 @@ public class SceneHandler : MonoBehaviour, ITriggerable
         switch (nextLevelName)
         {
             case "Level_CommonArea":
-                targetIndex = 4;
+                targetIndex = 6;
                 break;
             case "Level_Chapel":
-                targetIndex = 5;
+                targetIndex = 7;
                 break;
             case "Level_Cafeteria":
-                targetIndex = 6;
+                targetIndex = 8;
                 break;
         }
         
