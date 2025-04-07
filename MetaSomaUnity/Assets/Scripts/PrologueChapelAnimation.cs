@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Yarn.Unity;
 
 public class PrologueChapelAnimation : MonoBehaviour
@@ -9,21 +10,28 @@ public class PrologueChapelAnimation : MonoBehaviour
     public GameObject LinSpot;
     public GameObject Linnaeus;
     public GameObject Imeris;
-
+    public bool chapelStarted = false;
     
     // Start is called before the first frame update
     void Start()
     {
-        Imeris = GameObject.Find("Imeris");
-        ImerisSpot = GameObject.Find("ImerisSpot");
-        LinSpot = GameObject.Find("LinSpot");
-        Linnaeus = GameObject.Find("Linnaeus");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (SceneManager.GetActiveScene().name == "Prologue_Chapel" && chapelStarted == false)
+     
+        {
+            //find the Imeris and Linnaeus game objects 
+            
+            Imeris = GameObject.Find("Imeris");
+            ImerisSpot = GameObject.Find("ImerisSpot");
+            LinSpot = GameObject.Find("LinSpot");
+            Linnaeus = GameObject.Find("Linnaeus");
+            chapelStarted = true;
+        }
     }
 
     public void MoveCharacters()

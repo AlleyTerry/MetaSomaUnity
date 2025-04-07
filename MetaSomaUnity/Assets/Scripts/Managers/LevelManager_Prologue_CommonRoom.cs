@@ -36,6 +36,8 @@ public class LevelManager_Prologue_CommonRoom : LevelManagerBase
        // ImerisAnimation.SetActive(true);
         GameManager.instance.HUD.SetActive(true); // show HUD
         GameManager.instance.CGDisplay.SetActive(false); // hide CG display
+        
+        
     }
 
     // Update is called once per frame

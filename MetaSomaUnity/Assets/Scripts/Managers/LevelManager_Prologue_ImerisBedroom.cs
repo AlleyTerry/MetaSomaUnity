@@ -42,6 +42,8 @@ public class LevelManager_Prologue_ImerisBedroom : LevelManagerBase
         FindObjectOfType<DialogueRunner>().StartDialogue("PrologueGalleria");
         GameManager.instance.HUD.SetActive(true); // show HUD
         GameManager.instance.CGDisplay.SetActive(false); // hide CG display
+        //find the BlackScreen
+        
         
     }
 
@@ -80,6 +82,9 @@ public class LevelManager_Prologue_ImerisBedroom : LevelManagerBase
         ImerisAnimation.SetActive(false);
         GameManager.instance.HUD.SetActive(true); // show HUD
         GameManager.instance.CGDisplay.SetActive(false); // hide CG display
+        //turn off black screen
+        GameObject blackScreen = GameObject.Find("BlackScreen");
+        blackScreen.SetActive(false);
     }
     
     [YarnCommand("ShowShrineZoom")]
