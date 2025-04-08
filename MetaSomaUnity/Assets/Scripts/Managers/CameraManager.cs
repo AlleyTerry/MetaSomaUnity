@@ -38,7 +38,7 @@ public class CameraManager : MonoBehaviour
     [YarnCommand ("PrepSwitchFollowTarget")]
     public void PrepSwitchFollowTarget()
     {
-        Debug.Log("SwitchFollowTarget called.");
+        Debug.Log("PrepSwitchFollowTarget called.");
         
         if (virtualCamera == null)
         {
@@ -63,6 +63,8 @@ public class CameraManager : MonoBehaviour
     [YarnCommand ("SwitchFollowTarget")]
     public void SwitchFollowTarget()
     {
+        Debug.Log("SwitchFollowTarget called.");
+        
         if (virtualCamera == null)
         {
             virtualCamera = GameObject.FindObjectOfType<CinemachineVirtualCamera>();

@@ -34,45 +34,48 @@ public class ParallaxSystem : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        foreach (ParallaxLayer layer in layers)
+        if (!GameManager.instance.isInBattle)
         {
-            // Parallax effect
-            float parallax = (previousCameraPosition.x - camera.position.x) * layer.parallaxScale;
-            float targetX = layer.parallaxLayer.position.x + parallax;
-            Vector3 target = 
-                new Vector3(targetX, layer.parallaxLayer.position.y, layer.parallaxLayer.position.z);
-            
-            layer.parallaxLayer.position = 
-                Vector3.Lerp(layer.parallaxLayer.position, target, smoothingSpeed/* * Time.deltaTime*/);
-            
-            // Infinite scrolling
-            // ... going right
-            if (camera.position.x > layer.parallaxLayer.position.x + layer.layerWidth &&
-                layer.isLooping)
+            foreach (ParallaxLayer layer in layers)
             {
-                Vector3 newLayerPosition = 
-                    new Vector3(
-                        layer.parallaxLayer.position.x + 2 * layer.layerWidth, 
-                        layer.parallaxLayer.position.y, 
-                        layer.parallaxLayer.position.z);
-                
-                layer.parallaxLayer.position = newLayerPosition;
+                // Parallax effect
+                float parallax = (previousCameraPosition.x - camera.position.x) * layer.parallaxScale;
+                float targetX = layer.parallaxLayer.position.x + parallax;
+                Vector3 target =
+                    new Vector3(targetX, layer.parallaxLayer.position.y, layer.parallaxLayer.position.z);
+
+                layer.parallaxLayer.position =
+                    Vector3.Lerp(layer.parallaxLayer.position, target, smoothingSpeed /* * Time.deltaTime*/);
+
+                // Infinite scrolling
+                // ... going right
+                if (camera.position.x > layer.parallaxLayer.position.x + layer.layerWidth &&
+                    layer.isLooping)
+                {
+                    Vector3 newLayerPosition =
+                        new Vector3(
+                            layer.parallaxLayer.position.x + 2 * layer.layerWidth,
+                            layer.parallaxLayer.position.y,
+                            layer.parallaxLayer.position.z);
+
+                    layer.parallaxLayer.position = newLayerPosition;
+                }
+                // ... going left
+                else if (camera.position.x < layer.parallaxLayer.position.x - layer.layerWidth &&
+                         layer.isLooping)
+                {
+                    Vector3 newLayerPosition =
+                        new Vector3(
+                            layer.parallaxLayer.position.x - 2 * layer.layerWidth,
+                            layer.parallaxLayer.position.y,
+                            layer.parallaxLayer.position.z);
+
+                    layer.parallaxLayer.position = newLayerPosition;
+                }
             }
-            // ... going left
-            else if (camera.position.x < layer.parallaxLayer.position.x - layer.layerWidth && 
-                     layer.isLooping)
-            {
-                Vector3 newLayerPosition = 
-                    new Vector3(
-                        layer.parallaxLayer.position.x - 2 * layer.layerWidth, 
-                        layer.parallaxLayer.position.y, 
-                        layer.parallaxLayer.position.z);
-                
-                layer.parallaxLayer.position = newLayerPosition;
-            }
+
+            // Update camera position
+            previousCameraPosition = camera.position;
         }
-        
-        // Update camera position
-        previousCameraPosition = camera.position;
     }
 }
