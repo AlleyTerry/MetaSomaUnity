@@ -81,9 +81,9 @@ public class LevelManager_Chapel : LevelManagerBase
 
     private IEnumerator DelayedVCamSwitch()
     {
-        CameraManager.instance.PrepSwitchFollowTarget();
+        CameraManager.instance.PrepSwitchFollowTarget(0.65f);
         
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.45f);
         
         CameraManager.instance.SwitchFollowTarget();
     }
@@ -145,6 +145,10 @@ public class LevelManager_Chapel : LevelManagerBase
     {
         Destroy(GameObject.Find("OverworldLinnaeusDraft"));
         DialogueManager.instance.StartDialogue("Ending");
+        
+        // Resume camera following
+        CameraManager.instance.ResetCamera();
+        
         GameManager.instance.isInBattle = true;
     }
 

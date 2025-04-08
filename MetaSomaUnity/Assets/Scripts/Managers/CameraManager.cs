@@ -36,7 +36,7 @@ public class CameraManager : MonoBehaviour
     }
 
     [YarnCommand ("PrepSwitchFollowTarget")]
-    public void PrepSwitchFollowTarget()
+    public void PrepSwitchFollowTarget(float offsetX)
     {
         Debug.Log("PrepSwitchFollowTarget called.");
         
@@ -49,6 +49,7 @@ public class CameraManager : MonoBehaviour
         
         Vector3 anchor = (FindObjectOfType<LinnaeusMovement>().transform.position + 
                           FindObjectOfType<ImerisMovement>().transform.position) / 2;
+        anchor.x += offsetX;
         anchor.y = FindObjectOfType<ImerisMovement>().transform.position.y;
         
         tempCameraTarget = new GameObject("TempCameraTarget");
@@ -56,8 +57,8 @@ public class CameraManager : MonoBehaviour
         tempCameraTarget.transform.SetParent(null);
         
         // slowdown the camera movement
-        virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = 2.5f;
-        virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_YDamping = 2.5f;
+        virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = 2.70f;
+        virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_YDamping = 2.70f;
     }
 
     [YarnCommand ("SwitchFollowTarget")]
@@ -71,5 +72,23 @@ public class CameraManager : MonoBehaviour
         }
         
         virtualCamera.Follow = tempCameraTarget.transform;
+    }
+
+    public void ResetCamera()
+    {
+        Debug.Log("ResetCamera called.");
+
+        virtualCamera.Follow = FindObjectOfType<ImerisMovement>().transform;
+        
+        if (tempCameraTarget != null)
+        {
+            Destroy(tempCameraTarget);
+            tempCameraTarget = null;
+        }
+
+        virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping =
+            GameManager.instance.currentLevelManager.damping;
+        virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_YDamping =
+            GameManager.instance.currentLevelManager.damping;
     }
 }
