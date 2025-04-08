@@ -13,6 +13,6 @@ Galleria: Stay out of trouble today, okay?
 Imeris: I’ll try. 
 Galleria: …
 <<HideGalleria ManagerHolder>>
-Imeris (INTERNAL): I should hurry and put on my vestments. Father Linnaeus is waiting. 
+imeris: I should hurry and put on my vestments. Father Linnaeus is waiting. 
 <<StartLevel ManagerHolder>>
 ===

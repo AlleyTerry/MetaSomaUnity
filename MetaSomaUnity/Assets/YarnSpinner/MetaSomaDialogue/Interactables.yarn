@@ -25,8 +25,8 @@ imeris: …and please destroy this portrait of Queen Andromeda so I don’t have
 
 title: PeopleInCommonRoom
 ---
-ImerisInternal: Even without the maids, there are so many people here. 
-ImerisInternal: I can feel them looking at me.
+imeris: Even without the maids, there are so many people here. 
+imeris: I can feel them looking at me.
 <<ResumeControls ManagerHolder>>
 ===
 title:LinnaeusPrologue
@@ -64,8 +64,8 @@ Linnaeus: Now off you go; fulfill your ordained duties, my children!
 ===
 title: ImerisZoom
 ---
-Imeris (INTERNAL): The noble red is not so meaningless as you’ve made it, Father.
-Imeris (INTERNAL): I know the truth.
+imeris: The noble red is not so meaningless as you’ve made it, Father.
+imeris: I know the truth.
 
 <<ImerisFindsTruth1 Viewport_Heart>>
 ===
@@ -73,21 +73,21 @@ Imeris (INTERNAL): I know the truth.
 title: StartImerisTruth
 ---
 <<ShowMosiac1 MosiacImages>>
-Imeris (INTERNAL): Achieve prosperity, 
+imeris: Achieve prosperity, 
 <<ShowMosiac2 MosiacImages>>
-Imeris (INTERNAL): so you may sate your hunger. 
+imeris: so you may sate your hunger. 
 <<ShowMosiac3 MosiacImages>>
-Imeris (INTERNAL): Drink of the noble red, 
+imeris: Drink of the noble red, 
 <<ShowMosiac4 MosiacImages>>
-Imeris (INTERNAL): which flows in the veins of royalty. 
+imeris: which flows in the veins of royalty. 
 <<ShowMosiac5 MosiacImages>>
-Imeris (INTERNAL): And you shall ascend 
+imeris: And you shall ascend 
 <<ShowMosiac6 MosiacImages>>
-Imeris (INTERNAL): on wings of gold.
+imeris: on wings of gold.
 <<CloseMosiacs MosiacImages>>
-Imeris (INTERNAL): I walk now, unblinded, down the true path the Goddess set out for us.
-Imeris (INTERNAL):  I have stockpiled food, carefully, painstakingly, for weeks. And I have almost eaten enough. 
-Imeris (INTERNAL): Now all that remains is…
+imeris: I walk now, unblinded, down the true path the Goddess set out for us.
+imeris:  I have stockpiled food, carefully, painstakingly, for weeks. And I have almost eaten enough. 
+imeris: Now all that remains is…
 
 
 
