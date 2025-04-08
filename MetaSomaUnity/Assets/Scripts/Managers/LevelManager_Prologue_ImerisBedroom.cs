@@ -70,7 +70,7 @@ public class LevelManager_Prologue_ImerisBedroom : LevelManagerBase
         Debug.Log("Galleria hidden");
     }
     
-    [YarnCommand("StartLevel")]
+    [YarnCommand("StartPrologueLevel")]
     public void StartLevel()
     {
         // resume controls

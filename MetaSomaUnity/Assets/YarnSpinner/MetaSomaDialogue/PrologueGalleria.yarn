@@ -14,5 +14,5 @@ Imeris: I’ll try.
 Galleria: …
 <<HideGalleria ManagerHolder>>
 imeris: I should hurry and put on my vestments. Father Linnaeus is waiting. 
-<<StartLevel ManagerHolder>>
+<<StartPrologueLevel ManagerHolder>>
 ===
