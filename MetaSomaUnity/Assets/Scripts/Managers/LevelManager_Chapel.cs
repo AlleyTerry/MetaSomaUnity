@@ -81,7 +81,17 @@ public class LevelManager_Chapel : LevelManagerBase
 
     private IEnumerator DelayedVCamSwitch()
     {
-        CameraManager.instance.PrepSwitchFollowTarget(0.65f);
+        GameObject linnaeus = FindObjectOfType<LinnaeusMovement>().gameObject;
+
+        if (linnaeus == null)
+        {
+            Debug.LogError("Linnaeus not found in scene.");
+            yield break;
+        }
+        else
+        {
+            CameraManager.instance.PrepSwitchFollowTarget(linnaeus, 0.65f, 3.0f);
+        }
         
         yield return new WaitForSeconds(0.45f);
         

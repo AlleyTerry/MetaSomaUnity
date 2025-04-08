@@ -36,7 +36,7 @@ public class CameraManager : MonoBehaviour
     }
 
     [YarnCommand ("PrepSwitchFollowTarget")]
-    public void PrepSwitchFollowTarget(float offsetX)
+    public void PrepSwitchFollowTarget(GameObject target, float offsetX, float slowDamping)
     {
         Debug.Log("PrepSwitchFollowTarget called.");
         
@@ -47,7 +47,7 @@ public class CameraManager : MonoBehaviour
         
         if (tempCameraTarget != null) Destroy(tempCameraTarget);
         
-        Vector3 anchor = (FindObjectOfType<LinnaeusMovement>().transform.position + 
+        Vector3 anchor = (target.transform.position + 
                           FindObjectOfType<ImerisMovement>().transform.position) / 2;
         anchor.x += offsetX;
         anchor.y = FindObjectOfType<ImerisMovement>().transform.position.y;
@@ -57,8 +57,8 @@ public class CameraManager : MonoBehaviour
         tempCameraTarget.transform.SetParent(null);
         
         // slowdown the camera movement
-        virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = 2.70f;
-        virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_YDamping = 2.70f;
+        virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = slowDamping;
+        virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_YDamping = slowDamping;
     }
 
     [YarnCommand ("SwitchFollowTarget")]
@@ -74,6 +74,8 @@ public class CameraManager : MonoBehaviour
         virtualCamera.Follow = tempCameraTarget.transform;
     }
 
+    
+    [YarnCommand ("ResetCamera")]
     public void ResetCamera()
     {
         Debug.Log("ResetCamera called.");

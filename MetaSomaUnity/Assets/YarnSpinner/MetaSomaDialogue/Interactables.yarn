@@ -262,9 +262,10 @@ imeris: There’s vomit around her mouth. It seems she ate something that spoile
 title: EyeStartCafeteria
 ---
 imeris: There's someone there...!
-imeris: Can he see me...?
 <<StartCower ManagerHolder>>
-<<ResumeControls ManagerHolder>>
+imeris: Can he see me...?
+//<<ResumeControls ManagerHolder>>
+<<SwitchCameraToGrub EyeStartCafeteria>>
 ===
 title: HalfAliveGrub
 ---
@@ -295,6 +296,7 @@ Imeris: …
 <<EndCower ManagerHolder>>
 <<TalkedToHalfDeadGrub ManagerHolder>>
 <<ResumeControls ManagerHolder>>
+<<ResetCamera ManagerHolder>>
 ===
 
 title: DeadGrub
