@@ -32,7 +32,7 @@ public class LevelManagerBase : MonoBehaviour
     
     // CAMERA
     public CinemachineVirtualCamera virtualCamera;
-    [SerializeField] protected float damping = 1.0f;
+    public float damping = 1.0f;
 
     private void Awake()
     {
