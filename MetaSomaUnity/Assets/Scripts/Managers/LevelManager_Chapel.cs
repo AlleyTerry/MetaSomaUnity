@@ -67,7 +67,7 @@ public class LevelManager_Chapel : LevelManagerBase
         {
             midpoint.targetA = ImerisMovement.instance.transform;
             midpoint.targetB = GameObject.Find("Linnaeus").transform;
-            midpoint.xOffset = 0.65f;
+            midpoint.xOffset = 0.00f;
         }
         else
         {
@@ -77,13 +77,11 @@ public class LevelManager_Chapel : LevelManagerBase
 
     public override void StartCutsScene(string cutSceneDialogueNode)
     {
-        base.StartCutsScene(cutSceneDialogueNode);
-        
         Imeris.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         Imeris.gameObject.GetComponent<Rigidbody>().isKinematic = true;
         
         // VCAM SWITCH FOLLOWING TARGET
-        StartCoroutine(DelayedVCamSwitch());
+        StartCoroutine(DelayedVCamSwitch(cutSceneDialogueNode));
         
         if (linnaeusAnimation == null) linnaeusAnimation = GameObject.Find("NPCAnimation");
         
@@ -92,23 +90,14 @@ public class LevelManager_Chapel : LevelManagerBase
         linnaeusAnimation.GetComponent<Animator>().Play("NPCEyesTransition");
     }
 
-    private IEnumerator DelayedVCamSwitch()
+    private IEnumerator DelayedVCamSwitch(string cutSceneDialogueNode)
     {
-        GameObject linnaeus = FindObjectOfType<LinnaeusMovement>().gameObject;
-
-        if (linnaeus == null)
-        {
-            Debug.LogError("Linnaeus not found in scene.");
-            yield break;
-        }
-        else
-        {
-            CameraManager.instance.SwitchFollowTarget();
-        }
-        
         yield return new WaitForSeconds(0.45f);
         
         CameraManager.instance.SwitchFollowTarget();
+        
+        yield return new WaitForSeconds(1.65f);
+        base.StartCutsScene(cutSceneDialogueNode);
     }
     
     [YarnCommand("IntoBattleScene")]
