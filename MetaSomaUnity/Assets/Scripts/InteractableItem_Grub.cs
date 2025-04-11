@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
+using Yarn.Unity.Example;
 
 public class InteractableItem_Grub : InteractableItemBase
 {
     [SerializeField] private string continuingDialogueNode;
+    [SerializeField] private YarnCharacter imeris;
+    [SerializeField] private YarnCharacter innerImeris;
     
     protected override void OnTriggerEnter(Collider other)
     {
@@ -30,28 +33,21 @@ public class InteractableItem_Grub : InteractableItemBase
     public void SwitchCameraToGrub()
     {
         StartCoroutine(SwitchCamera());
+        
+        imeris = GameObject.Find("ImerisWorldspacePlaceholder").GetComponent<YarnCharacter>();
+        innerImeris = GameObject.Find("InnerImerisWorldspacePlaceholder").GetComponent<YarnCharacter>();
+        
+        imeris.messageBubbleOffset.x += 2f;
+        innerImeris.messageBubbleOffset.x += 2f;
     }
 
     private IEnumerator SwitchCamera()
     {
-        GameObject target = GameObject.Find("DeadGrub");
-
-        if (target == null)
-        {
-            Debug.LogError("DeadGrub not found in scene.");
-            yield break;
-        }
-        else
-        {
-            CameraManager.instance.PrepSwitchFollowTarget(target, 0.25f, 3.5f);
-        }
-        
-        yield return new WaitForSeconds(0.65f);
-        
         CameraManager.instance.SwitchFollowTarget();
         
         // Wait for the camera to stop before trigger the second dialogue
-        yield return new WaitForSeconds(0.75f);
+        yield return new WaitForSeconds(1.75f);
+        DialogueManager.instance.dialogueRunner.transform.GetComponent<YarnCharacterView>().UpdateBubblePosition();
         DialogueManager.instance.StartDialogue(continuingDialogueNode);
     }
 }

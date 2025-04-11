@@ -319,6 +319,9 @@ public class GameManager : MonoBehaviour
                 
                 // Dialogue Manager
                 DialogueManager.instance.Initialize();
+                
+                // Camera Manager
+                CameraManager.instance.Initialize();
             }
         }
     }
@@ -429,6 +432,17 @@ public class GameManager : MonoBehaviour
     [YarnCommand("ResumeControls")]
     public void ResumeControls()
     {
+        StartCoroutine(CheckCinemachineToResumeControls());
+    }
+
+    private IEnumerator CheckCinemachineToResumeControls()
+    {
+        while (CameraManager.instance.cinemachineBrain != null && 
+               CameraManager.instance.cinemachineBrain.IsBlending)
+        {
+            yield return null;
+        }
+        
         isInBattle = false;
         Time.timeScale = 1;
     }

@@ -35,6 +35,19 @@ public class LevelManager_Cafeteria : LevelManagerBase
         // Set up Imeris respawn position
         ImerisMovement imerisMovement = GameObject.FindObjectOfType<ImerisMovement>();
         imerisMovement.gameObject.transform.position = defaultSpawnPoint.position;
+        
+        // Prep for camera shifting
+        CameraMidpointController midpoint = GameObject.FindObjectOfType<CameraMidpointController>();
+        if (midpoint != null)
+        {
+            midpoint.targetA = ImerisMovement.instance.transform;
+            midpoint.targetB = GameObject.Find("DeadGrub").transform;
+            midpoint.xOffset = 0.25f;
+        }
+        else
+        {
+            Debug.LogWarning("CameraMidpointController not found in scene. \n Do we need this?");
+        }
     }
     
     
