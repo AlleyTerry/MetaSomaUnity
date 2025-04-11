@@ -157,6 +157,20 @@ imeris: I have no need to enter another’s bedroom.
 
 ===
 
+title: LedgerMinigameManager
+---
+imeris: startLedgerGame
+<<StartLedgerMinigame ManagerHolder>>
+
+===
+title: EndLedgerMinigameManager
+---
+imeris: minigame over
+<<EndLedgerMinigame ManagerHolder>>
+
+===
+
+
 title: MostMessedUpDoor
 ---
 imeris: Why was someone so desperate to enter that room…?

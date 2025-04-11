@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Yarn.Unity;
 
 public class LedgerMinigame : MonoBehaviour
 {
@@ -21,13 +22,10 @@ public class LedgerMinigame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        snapPoint1 = GameObject.Find("SnapPoint1");
-        snapPoint2 = GameObject.Find("SnapPoint2");
-        snapPoint3 = GameObject.Find("SnapPoint3");
+        
         //add snap points to the list
-        snapPoints.Add(snapPoint1);
-        snapPoints.Add(snapPoint2);
-        snapPoints.Add(snapPoint3);
+        
+        EventSystem.current.SetSelectedGameObject(ButtonsNamePlates[0]);
     }
 
     // Update is called once per frame
@@ -135,6 +133,14 @@ public class LedgerMinigame : MonoBehaviour
               
             }
         }
+
+        if (ButtonsNamePlates.Count == 0 && enterIndex ==0)
+        {
+            //play yarn dialogue from the dialogue system
+            FindObjectOfType<DialogueRunner>().StartDialogue("EndLedgerMinigameManager");
+            enterIndex++;
+
+        }
         
     }
     
@@ -142,6 +148,7 @@ public class LedgerMinigame : MonoBehaviour
     {
         if (snapPoint1Clicked)
         {
+            enterIndex = 0;
             Debug.Log("Snap Point 1 clicked");
             //when the button is clicked on get its name
             clickedObject = EventSystem.current.currentSelectedGameObject;
