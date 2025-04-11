@@ -60,6 +60,19 @@ public class LevelManager_Chapel : LevelManagerBase
         }
         
         imerisAnimator = ImerisAnimation.GetComponent<Animator>();
+        
+        // Prep for camera shifting
+        CameraMidpointController midpoint = GameObject.FindObjectOfType<CameraMidpointController>();
+        if (midpoint != null)
+        {
+            midpoint.targetA = ImerisMovement.instance.transform;
+            midpoint.targetB = GameObject.Find("Linnaeus").transform;
+            midpoint.xOffset = 0.65f;
+        }
+        else
+        {
+            Debug.LogWarning("CameraMidpointController not found in scene. \n Do we need this?");
+        }
     }
 
     public override void StartCutsScene(string cutSceneDialogueNode)

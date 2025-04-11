@@ -68,44 +68,10 @@ public class CameraManager : MonoBehaviour
         cinemachineBrain.m_DefaultBlend.m_Time = 1.5f;
     }
 
-    /*[YarnCommand ("PrepSwitchFollowTarget")]
-    public void PrepSwitchFollowTarget(GameObject target, float offsetX, float slowDamping)
-    {
-        Debug.Log("PrepSwitchFollowTarget called.");
-        
-        if (virtualCamera == null)
-        {
-            virtualCamera = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
-        }
-        
-        if (tempCameraTarget != null) Destroy(tempCameraTarget);
-        
-        Vector3 anchor = (target.transform.position + 
-                          FindObjectOfType<ImerisMovement>().transform.position) / 2;
-        anchor.x += offsetX;
-        anchor.y = FindObjectOfType<ImerisMovement>().transform.position.y;
-        
-        tempCameraTarget = new GameObject("TempCameraTarget");
-        tempCameraTarget.transform.SetPositionAndRotation(anchor, Quaternion.identity);
-        tempCameraTarget.transform.SetParent(null);
-        
-        // slowdown the camera movement
-        virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = slowDamping;
-        virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_YDamping = slowDamping;
-    }*/
-
     [YarnCommand ("SwitchFollowTarget")]
     public void SwitchFollowTarget()
     {
         Debug.Log("SwitchFollowTarget called.");
-        
-        /*
-        if (virtualCamera == null)
-        {
-            virtualCamera = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
-        }
-        
-        virtualCamera.Follow = tempCameraTarget.transform;*/
         
         if (virtualCamera != null) virtualCamera.Priority = 10;
         if (virtualCameraPanning != null) virtualCameraPanning.Priority = 15;
@@ -115,29 +81,13 @@ public class CameraManager : MonoBehaviour
     [YarnCommand ("ResetCamera")]
     public void ResetCamera()
     {
-        /*Debug.Log("ResetCamera called.");
-
-        virtualCamera.Follow = FindObjectOfType<ImerisMovement>().transform;
-        
-        if (tempCameraTarget != null)
-        {
-            Destroy(tempCameraTarget);
-            tempCameraTarget = null;
-        }
-
-        virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping =
-            GameManager.instance.currentLevelManager.damping;
-        virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_YDamping =
-            GameManager.instance.currentLevelManager.damping;*/
-
-        //StartCoroutine(DelayedResetCamera());
         if (virtualCamera != null) virtualCamera.Priority = 20;
-        if (virtualCameraPanning != null) virtualCameraPanning.Priority = 5;
+        //if (virtualCameraPanning != null) virtualCameraPanning.Priority = 5;
     }
     
     private IEnumerator DelayedResetCamera()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.15f);
         
         if (virtualCamera != null) virtualCamera.Priority = 20;
 
