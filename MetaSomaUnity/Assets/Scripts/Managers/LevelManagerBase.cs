@@ -44,7 +44,7 @@ public class LevelManagerBase : MonoBehaviour
     {
         Debug.Log("LevelManagerBase.Start finished.");
         
-        if (virtualCamera == null) virtualCamera = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
+        if (virtualCamera == null) virtualCamera = GameObject.Find("Virtual Camera").GetComponent<CinemachineVirtualCamera>();
 
         if (virtualCamera != null)
         {

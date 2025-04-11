@@ -90,7 +90,7 @@ public class LevelManager_Chapel : LevelManagerBase
         }
         else
         {
-            CameraManager.instance.PrepSwitchFollowTarget(linnaeus, 0.65f, 3.0f);
+            CameraManager.instance.SwitchFollowTarget();
         }
         
         yield return new WaitForSeconds(0.45f);

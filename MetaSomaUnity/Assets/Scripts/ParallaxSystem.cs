@@ -34,7 +34,8 @@ public class ParallaxSystem : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!GameManager.instance.isInBattle)
+        if (!GameManager.instance.isInBattle && 
+            !CameraManager.instance.cinemachineBrain.IsBlending)
         {
             foreach (ParallaxLayer layer in layers)
             {

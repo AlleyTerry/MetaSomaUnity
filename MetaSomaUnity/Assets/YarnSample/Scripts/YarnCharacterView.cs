@@ -73,8 +73,24 @@ namespace Yarn.Unity.Example
             // if null, Update() will use the playerCharacter instead
             speakerCharacter = !string.IsNullOrEmpty(characterName) ? FindCharacter(characterName) : null;
 
+            // TODO: TESTING
+            UpdateBubblePosition();
+            
             // IMPORTANT: we must mark this view as having finished its work, or else the DialogueRunner gets stuck forever
             onDialogueLineFinished();
+        }
+
+        public void UpdateBubblePosition()
+        {
+            if (dialogueBubbleRect != null && dialogueBubbleRect.gameObject.activeInHierarchy)
+            {
+                Vector2 pos = WorldToAnchoredPosition(
+                    dialogueBubbleRect, 
+                    speakerCharacter != null ? speakerCharacter.positionWithOffset : playerCharacter.positionWithOffset, 
+                    bubbleMargin
+                );
+                dialogueBubbleRect.anchoredPosition = pos;
+            }
         }
 
         /// <summary>simple search through allCharacters list for a matching name, returns null and LogWarning if no match found</summary>
@@ -155,7 +171,8 @@ namespace Yarn.Unity.Example
                 worldCamera = FindObjectOfType<Camera>();
             }
             
-            // this all in Update instead of RunLine because characters might walk around or move during the dialogue
+            // TODO: UNDER THIS, IS THE ORIGINAL CODE
+            /*// this all in Update instead of RunLine because characters might walk around or move during the dialogue
             if (dialogueBubbleRect.gameObject.activeInHierarchy)
             {
                 if (speakerCharacter != null) 
@@ -166,8 +183,9 @@ namespace Yarn.Unity.Example
                 {   // if no speaker defined, then display speech above playerCharacter as a default
                     dialogueBubbleRect.anchoredPosition = WorldToAnchoredPosition(dialogueBubbleRect, playerCharacter.positionWithOffset, bubbleMargin);
                 }
-            }
-
+            }*/
+            // TODO: UNTIL HERE
+            
             // put choice option UI above playerCharacter
            /* if (optionsBubbleRect.gameObject.activeInHierarchy)
             {
@@ -183,7 +201,8 @@ namespace Yarn.Unity.Example
                 lastCameraPos = Camera.main.transform.position; // 更新相机位置
             }
 
-            if (dialogueBubbleRect.gameObject.activeInHierarchy)
+            // TODO: UNDER THIS, IS THE ORIGINAL CODE
+            /*if (dialogueBubbleRect.gameObject.activeInHierarchy)
             {
                 Vector2 screenPos;
 
@@ -198,7 +217,7 @@ namespace Yarn.Unity.Example
 
                 // **关键补偿步骤**：减去相机移动误差，稳定 UI
                 dialogueBubbleRect.position = screenPos - new Vector2(cameraDelta.x, cameraDelta.y);
-            }
+            }*/
         }
         
         Vector2 WorldToScreenPosition(Vector3 worldPos)
