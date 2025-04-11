@@ -192,7 +192,7 @@ MonoBehaviour:
     layerWidth: 0
     isLooping: 0
   - parallaxLayer: {fileID: 796139121}
-    parallaxScale: 0.15
+    parallaxScale: 0.2
     layerWidth: 0
     isLooping: 0
   smoothingSpeed: 1
