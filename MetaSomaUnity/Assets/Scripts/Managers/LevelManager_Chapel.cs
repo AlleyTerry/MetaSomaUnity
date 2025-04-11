@@ -145,6 +145,9 @@ public class LevelManager_Chapel : LevelManagerBase
         // ANIMATION
         UIManager.instance.PlayAnimation("MediumViewportTransition_Reversed");
         
+        // TODO:TEST THIS PART
+        CameraManager.instance.ResetCamera();
+        
         DisableNPCAnimation();
         
         Debug.Log("Level 0 battle ended.");
