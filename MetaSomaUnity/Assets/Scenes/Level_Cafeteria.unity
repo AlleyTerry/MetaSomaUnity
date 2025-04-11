@@ -184,7 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layers:
   - parallaxLayer: {fileID: 1246980956}
-    parallaxScale: 0.9
+    parallaxScale: 1
     layerWidth: 0
     isLooping: 0
   - parallaxLayer: {fileID: 2043507376}
@@ -192,7 +192,7 @@ MonoBehaviour:
     layerWidth: 0
     isLooping: 0
   - parallaxLayer: {fileID: 796139121}
-    parallaxScale: 1
+    parallaxScale: 1.1
     layerWidth: 0
     isLooping: 0
   smoothingSpeed: 1
@@ -491,7 +491,7 @@ Transform:
   m_GameObject: {fileID: 648609636}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.035557, y: -0.25, z: -10}
+  m_LocalPosition: {x: -12.139999, y: -0.25, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -591,7 +591,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 10
+  m_Priority: 5
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 980739824}
@@ -1579,7 +1579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Grub
-  messageBubbleOffset: {x: 5.75, y: 2.5, z: 0}
+  messageBubbleOffset: {x: 5.5, y: 2.5, z: 0}
   offsetUsesRotation: 0
 --- !u!1 &1232149853
 GameObject:
@@ -3029,7 +3029,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1c4d46b66b908e04692732e0275573df, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 84eee2dc8d3790543a414228df1153ba, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3278,7 +3278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Imeris
-  messageBubbleOffset: {x: -5.5, y: 2.5, z: 0}
+  messageBubbleOffset: {x: -5.75, y: 2.5, z: 0}
   offsetUsesRotation: 0
 --- !u!224 &1533670407971174526
 RectTransform:
@@ -4368,7 +4368,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 5e267b13bc3a0d34eb26d64d1bea2f33,
+      objectReference: {fileID: 11400000, guid: 84eee2dc8d3790543a414228df1153ba,
         type: 2}
     - target: {fileID: 7778558434976753272, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
         type: 3}
@@ -4379,7 +4379,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -1255338326493411883, guid: 5e267b13bc3a0d34eb26d64d1bea2f33,
+      objectReference: {fileID: 6094562528857308864, guid: 84eee2dc8d3790543a414228df1153ba,
         type: 2}
     - target: {fileID: 7778558434976753272, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
         type: 3}
@@ -4677,7 +4677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: imeris
-  messageBubbleOffset: {x: -5.5, y: 2.5, z: 0}
+  messageBubbleOffset: {x: -5.75, y: 2.5, z: 0}
   offsetUsesRotation: 0
 --- !u!114 &8573944366560038656
 MonoBehaviour:
