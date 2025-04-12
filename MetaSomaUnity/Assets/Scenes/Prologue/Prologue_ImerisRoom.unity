@@ -562,6 +562,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5077686104644914960, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5839806390819310446, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}
       propertyPath: m_IsActive
@@ -841,6 +846,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: a87031400e4b0cb40a84fb598972466c, type: 2}
+    - target: {fileID: 8992055960139497962, guid: 9376fc3a1927eb14192c38774a829615,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 937206547670337374, guid: 9376fc3a1927eb14192c38774a829615, type: 3}
     m_RemovedGameObjects: []

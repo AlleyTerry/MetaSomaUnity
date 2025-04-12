@@ -22,7 +22,8 @@ public class LevelManager_Prologue_ImerisBedroom : LevelManagerBase
         
         
         // Disable NPC animation display
-        ImerisAnimation.SetActive(false);
+        ImerisAnimation.SetActive(true);
+        ImerisAnimation.GetComponent<Animator>().Play("PrologueImerisUI");
         NPCAnimation.SetActive(false);
         
         CGDisplayAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Prologue/PrologueImerisRoom");
@@ -79,7 +80,7 @@ public class LevelManager_Prologue_ImerisBedroom : LevelManagerBase
         UIManager.instance.PlayAnimation("PrologueViewport");
         
         // imeris figure
-        ImerisAnimation.SetActive(false);
+        ImerisAnimation.SetActive(true);
         GameManager.instance.HUD.SetActive(true); // show HUD
         GameManager.instance.CGDisplay.SetActive(false); // hide CG display
         //turn off black screen

@@ -17,7 +17,8 @@ public class LevelManager_Prologue_Chapel : LevelManagerBase
         
        
         // Disable NPC animation display
-        ImerisAnimation.SetActive(false);
+        ImerisAnimation.SetActive(true);
+        ImerisAnimation.GetComponent<Animator>().Play("PrologueImerisUI");
         NPCAnimation.SetActive(false);
         
         CGDisplayAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Prologue/PrologueImerisRoom");
