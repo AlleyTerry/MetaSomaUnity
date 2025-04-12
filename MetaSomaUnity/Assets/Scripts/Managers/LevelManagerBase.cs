@@ -43,18 +43,6 @@ public class LevelManagerBase : MonoBehaviour
     protected virtual void Start()
     {
         Debug.Log("LevelManagerBase.Start finished.");
-        
-        if (virtualCamera == null) virtualCamera = GameObject.Find("Virtual Camera").GetComponent<CinemachineVirtualCamera>();
-
-        if (virtualCamera != null)
-        {
-            virtualCamera.OnTargetObjectWarped(Imeris.transform, new Vector3(0, 2, 0));
-            
-            virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = 0.0f;
-            virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_YDamping = 0.0f;
-
-            StartCoroutine(RestoreDamping());
-        }
     }
 
     private IEnumerator RestoreDamping()
@@ -91,6 +79,22 @@ public class LevelManagerBase : MonoBehaviour
         CGDisplayAnimator.runtimeAnimatorController = CGDisplayAnimatorController;
         
         Debug.Log($"{GetType().Name} initialized.");
+
+        if (SceneManager.GetActiveScene().name != "MainMenu" && 
+                SceneManager.GetActiveScene().name != "Level_Intro")
+        {
+            if (virtualCamera == null) virtualCamera = GameObject.Find("Virtual Camera").GetComponent<CinemachineVirtualCamera>();
+            
+        }
+        if (virtualCamera != null)
+        {
+            virtualCamera.OnTargetObjectWarped(Imeris.transform, new Vector3(0, 2, 0));
+            
+            virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = 0.0f;
+            virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_YDamping = 0.0f;
+
+            StartCoroutine(RestoreDamping());
+        }
     }
     
     public virtual void RegisterCutSceneAndBattle(string cutSceneDialogueNode, string battleDialogueNode, float delayTime)
