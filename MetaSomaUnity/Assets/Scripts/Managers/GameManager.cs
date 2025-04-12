@@ -21,7 +21,6 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
-    public bool talkToGrub = false; // talk to half-dead grub
     // SINGLETON
     public bool isTestMode = true; // TODO: REMOVE THIS IN FINAL BUILD
     
@@ -113,6 +112,10 @@ public class GameManager : MonoBehaviour
     public bool isInBattle = false;
     
     public InMemoryVariableStorage inMemoryVariableStorage;
+    
+    // Common Area Variables
+    public bool talkToGrub = false; // talk to half-dead grub
+    public bool isFirstVisit = true; // first visit to the common area
     
     // Start is called before the first frame update
     void Start()

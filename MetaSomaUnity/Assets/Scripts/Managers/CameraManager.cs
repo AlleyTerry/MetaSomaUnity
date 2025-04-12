@@ -74,7 +74,9 @@ public class CameraManager : MonoBehaviour
         Debug.Log("SwitchFollowTarget called.");
         
         if (virtualCamera != null) virtualCamera.Priority = 10;
+        if (virtualCamera == null) Debug.LogWarning("VirtualCamera not found.");
         if (virtualCameraPanning != null) virtualCameraPanning.Priority = 15;
+        if (virtualCameraPanning == null) Debug.LogWarning("VirtualCameraPanning not found.");
     }
 
     

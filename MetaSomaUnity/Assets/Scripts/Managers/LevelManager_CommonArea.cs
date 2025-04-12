@@ -30,6 +30,12 @@ public class LevelManager_CommonArea : LevelManagerBase
         }
     }
 
+    /*protected override void Start()
+    {
+        base.Start();
+        Initialize();
+    }*/
+
     public override void Initialize()
     {
         base.Initialize();
@@ -81,6 +87,45 @@ public class LevelManager_CommonArea : LevelManagerBase
         }
 
         //StartCoroutine(DelayedSetSpawn(GameManager.instance.GetPreviousScene()));
+
+        if (GameManager.instance.isFirstVisit)
+        {
+            GameManager.instance.isInBattle = true;
+            StartCoroutine(FirstVisitEvent());
+        }
+        else
+        {
+            GameObject.Find("OverworldLinnaeusBack")?.SetActive(false);
+            GameObject.Find("Background_DoorOnly")?.SetActive(false);
+        }
+    }
+
+    private IEnumerator FirstVisitEvent()
+    {
+        // wait
+        yield return new WaitForSeconds(0.5f);
+        
+        CameraManager.instance.cinemachineBrain.m_DefaultBlend.m_Time = 2.0f;
+        CameraManager.instance.SwitchFollowTarget();
+        
+        yield return new WaitForSeconds(2.25f);
+        
+        // animation - Lin disappear
+        GameObject.Find("OverworldLinnaeusBack").SetActive(false);
+        yield return new WaitForSeconds(1f);
+        
+        // animation - door close
+        GameObject.Find("Background_DoorOnly").SetActive(false);
+        yield return new WaitForSeconds(1f);
+        
+        CameraManager.instance.ResetCamera();
+
+        yield return new WaitForSeconds(2.25f);
+        GameManager.instance.isInBattle = false;
+        CameraManager.instance.cinemachineBrain.m_DefaultBlend.m_Time = 1.5f;
+        
+        // flag
+        GameManager.instance.isFirstVisit = false;
     }
 
     private void DelayedSetSpawn(string previousScene)
