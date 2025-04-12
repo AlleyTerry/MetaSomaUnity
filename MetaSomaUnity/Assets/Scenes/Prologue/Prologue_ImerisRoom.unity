@@ -2340,6 +2340,7 @@ MonoBehaviour:
   isOverlapping: 0
   objName: MellonellaShrineZoom
   interactionType: 0
+  continuingDialogueNode: 
 --- !u!1 &1682847022
 GameObject:
   m_ObjectHideFlags: 0

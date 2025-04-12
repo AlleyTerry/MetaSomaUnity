@@ -2898,6 +2898,7 @@ MonoBehaviour:
   isOverlapping: 0
   objName: PeopleInCommonRoom
   interactionType: 0
+  continuingDialogueNode: 
 --- !u!4 &1843052621 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3754007724711090094, guid: 9bcbf667072d3444cae0a7e1295462a4,

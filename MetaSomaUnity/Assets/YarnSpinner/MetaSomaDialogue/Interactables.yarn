@@ -10,7 +10,7 @@ title: Setup_Interactables
 title: MellonellaShrineZoom
 ---
 <<ShowShrineZoom ManagerHolder>>
-imeris: O’ Mellonella, our Goddess of Gold, please guide my steps today...
+imeris: O’ Mellonella, our Goddess of Gold, please guide my steps today…
 <<HideShrineZoom ManagerHolder>>
 <<jump QueenPortraitZoom>>
 ===
@@ -25,18 +25,19 @@ imeris: …and please destroy this portrait of Queen Andromeda so I don’t have
 
 title: PeopleInCommonRoom
 ---
-imeris: Even without the maids, there are so many people here. 
+imeris: Even without the maids, there are so many people here… 
 imeris: I can feel them looking at me.
 <<ResumeControls ManagerHolder>>
 ===
 title:LinnaeusPrologue
 ---
-Linnaeus: Imeris, there you are! It’s nearly time!
+Linnaeus: Imeris, there you are! It’s nearly time.
 Imeris: My apologies, Father.
 Linnaeus: It's alright, my child. The life of a court performer isn’t an easy one– I’m sure you’re quite tired.
-Imeris: I will always have time to serve Our Lady of Gold... no matter the obstacle. 
-Linnaeus: So devout! That’s why you’re my favorite– but let’s keep that between us, hm?
-Linnaeus: In any case, I won’t be in need of your services today. The preparations for the morning sermon are already complete.
+Imeris: I will always endeavor to serve Our Lady of Gold… no matter the obstacle. 
+Linnaeus: So eager! That’s why you’re my favorite– but that's our secret, hm?
+Linnaeus: In any case, I won’t be in need of your help today. 
+Linnaeus: The preparations for the morning sermon are already complete.
 Linnaeus: Just go open the door and let everyone in, will you?
 Imeris: Yes, Father. 
 
@@ -45,18 +46,25 @@ Imeris: Yes, Father.
 ===
 title: LinnaeusSermon
 ---
-Linnaeus: We must never forget the lesson the Golden Goddess Mellonella taught us, back in the times of war between the sprites.
-Linnaeus: She gave up her life for the sake of peace, and bade us all to follow in her example; to make sacrifices so we may live in harmony. That is our divine duty as caterpillars. 
-Linnaeus: We must practice obedience and devotion, and do as the Goddess has instructed us:
-Linnaeus: Achieve prosperity, by becoming a valuable member of your kingdom through servitude.
-Linnaeus: In doing so, you will earn the right to drink of the noble red, as a reward for your piety.
-Linnaeus: And, at the end of your life, you shall ascend to the kingdom of the sky. 
-Linnaeus: This is how you can show your eternal gratitude, not only to our Goddess, but also to Queen Andromeda and all her predecessors, who have so mercifully granted us shelter in the Queendom of the Bees for all these generations.
-Linnaeus: Now, before our service comes to a close, I’d like to remind you all that the Feast of the Noble Red is nearly upon us once more! 
-Linnaeus: Those who have upheld the values of the Golden Scripture will be able to indulge in the fine red honey the court prepares for this very occasion.
+Linnaeus: Dear children, our service draws to a close once more.
+Linnaeus: Before you depart, remember once more what the Golden Goddess Mellonella taught us.
+Linnaeus: Back in the times of war between the sprites, Mellonella gave up her life for peace, and her sacrifice saved our people.
+Linnaeus: It allowed us to live long enough to make it here, to this Queendom. To our home. 
+Linnaeus: Because of her, and the benevolence of the many Queens who have ruled this hive, we have lived in safety for generations.
+Linnaeus: Our Goddess’s spilled blood bids us to follow in her example, now.
+Linnaeus: To make our own sacrifices, so we may continue to live in peace and harmony… so we do not waste the gift of life she gave us. 
+Linnaeus: That is our divine duty as caterpillars. 
+Linnaeus: We must practice obedience and devotion, and do as our Goddess has instructed us:
+Linnaeus: <color=\#867E12> Achieve prosperity,</color> by becoming a valuable member of your kingdom through servitude.
+Linnaeus: In doing so, you will earn the right to<color=\#867E12> drink of the noble red</color>.
+Linnaeus: And, at the end of your life,<color=\#867E12> you shall ascend</color> to the kingdom of the sky. 
+Linnaeus: Uphold the values of this<color=\#867E12> Golden Scripture</color>, and you shall be rewarded.
+Linnaeus: The Feast of the Noble Red is nearly upon us. 
+Linnaeus: Only those of you who have properly shown your devotion will be able to indulge in the fine red honey prepared for the occasion.
 Linnaeus: Those who have not… shall go without food for the night, as per tradition.
-Linnaeus: We must all remember to play our parts in order to earn the right to partake of the holy meal. Only the best shall be rewarded.
+Linnaeus: We must all remember to play our parts in order to earn the right to partake of the holy meal. 
 Linnaeus: Now off you go; fulfill your ordained duties, my children!
+
 
 
 <<ImerisZoom Viewport_Heart>>
@@ -64,8 +72,13 @@ Linnaeus: Now off you go; fulfill your ordained duties, my children!
 ===
 title: ImerisZoom
 ---
-imeris: The noble red is not so meaningless as you’ve made it, Father.
+imeris: Oh, Father…
+imeris: Our Goddess’s lesson is not so meaningless as you’ve made it.
+imeris: The Noble Red is no frivolous delicacy.
+imeris: Our destiny is not to toil evermore.
 imeris: I know the truth.
+imeris: I’ve found the censored words, written in a script illegible to all but the holy servants… you and I.
+imeris: The true<color=\#867E12> Golden Scripture</color>.
 
 <<ImerisFindsTruth1 Viewport_Heart>>
 ===
@@ -75,21 +88,22 @@ title: StartImerisTruth
 <<ShowMosiac1 MosiacImages>>
 imeris: Achieve prosperity, 
 <<ShowMosiac2 MosiacImages>>
-imeris: so you may sate your hunger. 
+imeris: <color=\#961209> so you may sate your hunger.</color> 
 <<ShowMosiac3 MosiacImages>>
 imeris: Drink of the noble red, 
 <<ShowMosiac4 MosiacImages>>
-imeris: which flows in the veins of royalty. 
+imeris: <color=\#961209> which flows in the veins of royalty.</color>
 <<ShowMosiac5 MosiacImages>>
 imeris: And you shall ascend 
 <<ShowMosiac6 MosiacImages>>
-imeris: on wings of gold.
+imeris: <color=\#961209> on wings of gold.</color>
 <<CloseMosiacs MosiacImages>>
+
 imeris: I walk now, unblinded, down the true path the Goddess set out for us.
-imeris:  I have stockpiled food, carefully, painstakingly, for weeks. And I have almost eaten enough. 
+imeris: The path of<color=\#867E12> Metamorphosis</color>.
+imeris: After weeks of effort, stockpiling scraps, my hunger is sated. 
+imeris: The first step is complete.
 imeris: Now all that remains is…
-
-
 
 <<FinalAnimation MosiacImages>>
 ===
@@ -108,7 +122,7 @@ imeris: ERROR!! IF YOU'RE READING THIS, YOU SET THE ITEM NAME WRONG !!
 title: ImerisBed
 tags:
 ---
-imeris: This is… my bed, I'm sure. The remnants of my chrysalis lay on top.
+imeris: This is… my bed, I'm sure. The remnants of my cocoon lay on top.
 ===
 
 title: GalleriaBed
