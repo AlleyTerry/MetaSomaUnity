@@ -33,9 +33,12 @@ title:LinnaeusPrologue
 ---
 Linnaeus: Imeris, there you are! It’s nearly time.
 Imeris: My apologies, Father.
-Linnaeus: It's alright, my child. The life of a court performer isn’t an easy one– I’m sure you’re quite tired.
-Imeris: I will always endeavor to serve Our Lady of Gold… no matter the obstacle. 
-Linnaeus: So eager! That’s why you’re my favorite– but that's our secret, hm?
+Linnaeus: It's alright, my child. The life of a court performer isn’t an easy one.
+Linnaeus: I’m sure you’re quite tired.
+Imeris: I will always endeavor to serve Our Lady of Gold…
+Imeris: …No matter the obstacle. 
+Linnaeus: So eager! 
+Linnaeus: That’s why you’re my favorite– but that's our secret, hm?
 Linnaeus: In any case, I won’t be in need of your help today. 
 Linnaeus: The preparations for the morning sermon are already complete.
 Linnaeus: Just go open the door and let everyone in, will you?
@@ -47,22 +50,25 @@ Imeris: Yes, Father.
 title: LinnaeusSermon
 ---
 Linnaeus: Dear children, our service draws to a close once more.
-Linnaeus: Before you depart, remember once more what the Golden Goddess Mellonella taught us.
-Linnaeus: Back in the times of war between the sprites, Mellonella gave up her life for peace, and her sacrifice saved our people.
-Linnaeus: It allowed us to live long enough to make it here, to this Queendom. To our home. 
-Linnaeus: Because of her, and the benevolence of the many Queens who have ruled this hive, we have lived in safety for generations.
-Linnaeus: Our Goddess’s spilled blood bids us to follow in her example, now.
-Linnaeus: To make our own sacrifices, so we may continue to live in peace and harmony… so we do not waste the gift of life she gave us. 
+Linnaeus: Let us remember what the Golden Goddess Mellonella taught us.
+Linnaeus: Back in the times of war between sprites, Mellonella gave up her life for peace.
+Linnaeus: Her sacrifice saved our people.
+Linnaeus: It allowed us to live long enough to make it here, to this Queendom. 
+Linnaeus: To our home, where we have lived in safety for generations. 
+Linnaeus: Our Goddess’s spilled blood bids us to follow in her example.
+Linnaeus: To make our own sacrifices, so we may continue to live in peace and harmony.  
 Linnaeus: That is our divine duty as caterpillars. 
-Linnaeus: We must practice obedience and devotion, and do as our Goddess has instructed us:
-Linnaeus: <color=\#867E12> Achieve prosperity,</color> by becoming a valuable member of your kingdom through servitude.
-Linnaeus: In doing so, you will earn the right to<color=\#867E12> drink of the noble red</color>.
-Linnaeus: And, at the end of your life,<color=\#867E12> you shall ascend</color> to the kingdom of the sky. 
-Linnaeus: Uphold the values of this<color=\#867E12> Golden Scripture</color>, and you shall be rewarded.
+Linnaeus: We must practice obedience to the merciful Queens who granted us shelter here.
+Linnaeus: And we must do as our Goddess has instructed us.
+Linnaeus: <color=\#B6AB1B> Achieve prosperity,</color> by becoming a valuable member of your kingdom through servitude.
+Linnaeus: In doing so, you will earn the right to<color=\#B6AB1B> drink of the noble red</color>.
+Linnaeus: And, at the end of your life,<color=\#B6AB1B> you shall ascend</color> to the kingdom of the sky. 
+Linnaeus: Uphold the values of this<color=\#B6AB1B> Golden Scripture</color>, and you shall be rewarded.
 Linnaeus: The Feast of the Noble Red is nearly upon us. 
-Linnaeus: Only those of you who have properly shown your devotion will be able to indulge in the fine red honey prepared for the occasion.
+Linnaeus: Only those who have shown proper conduct will be able to participate.
 Linnaeus: Those who have not… shall go without food for the night, as per tradition.
-Linnaeus: We must all remember to play our parts in order to earn the right to partake of the holy meal. 
+Linnaeus: The fine red honey the court prepares for us is only for those who deserve it.
+Linnaeus: We must <i>all</i> play our parts well for the right to partake of the holy meal. 
 Linnaeus: Now off you go; fulfill your ordained duties, my children!
 
 
@@ -78,7 +84,7 @@ imeris: The Noble Red is no frivolous delicacy.
 imeris: Our destiny is not to toil evermore.
 imeris: I know the truth.
 imeris: I’ve found the censored words, written in a script illegible to all but the holy servants… you and I.
-imeris: The true<color=\#867E12> Golden Scripture</color>.
+imeris: The true<color=\#B6AB1B> Golden Scripture</color>.
 
 <<ImerisFindsTruth1 Viewport_Heart>>
 ===
@@ -88,19 +94,19 @@ title: StartImerisTruth
 <<ShowMosiac1 MosiacImages>>
 imeris: Achieve prosperity, 
 <<ShowMosiac2 MosiacImages>>
-imeris: <color=\#961209> so you may sate your hunger.</color> 
+imeris: <color=\#A3111E> so you may sate your hunger.</color> 
 <<ShowMosiac3 MosiacImages>>
 imeris: Drink of the noble red, 
 <<ShowMosiac4 MosiacImages>>
-imeris: <color=\#961209> which flows in the veins of royalty.</color>
+imeris: <color=\#A3111E> which flows in the veins of royalty.</color>
 <<ShowMosiac5 MosiacImages>>
 imeris: And you shall ascend 
 <<ShowMosiac6 MosiacImages>>
-imeris: <color=\#961209> on wings of gold.</color>
+imeris: <color=\#A3111E> on wings of gold.</color>
 <<CloseMosiacs MosiacImages>>
 
 imeris: I walk now, unblinded, down the true path the Goddess set out for us.
-imeris: The path of<color=\#867E12> Metamorphosis</color>.
+imeris: The path of<color=\#B6AB1B> Metamorphosis</color>.
 imeris: After weeks of effort, stockpiling scraps, my hunger is sated. 
 imeris: The first step is complete.
 imeris: Now all that remains is…
