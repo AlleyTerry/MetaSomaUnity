@@ -4,6 +4,7 @@ using Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Yarn.Unity;
+using Yarn.Unity.Example;
 
 public class CameraManager : MonoBehaviour
 {
@@ -95,5 +96,19 @@ public class CameraManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.1f);
         if (virtualCameraPanning != null) virtualCameraPanning.Priority = 5;
+    }
+
+    [YarnCommand ("ResetDialogueBoxOffset")]
+    public void ResetDialogueBoxOffset()
+    {
+        YarnCharacter imeris = GameObject.Find("ImerisWorldspacePlaceholder").GetComponent<YarnCharacter>();
+        YarnCharacter innerImeris = GameObject.Find("InnerImerisWorldspacePlaceholder").GetComponent<YarnCharacter>();
+        
+        YarnCharacter grub = GameObject.Find("GrubWorldspacePlaceholder")?.GetComponent<YarnCharacter>();
+        
+        imeris.messageBubbleOffset.x -= 2f;
+        innerImeris.messageBubbleOffset.x -= 2f;
+        
+        if (grub != null) grub.messageBubbleOffset.x -= 2f;
     }
 }

@@ -331,6 +331,9 @@ Imeris: …
 <<TalkedToHalfDeadGrub ManagerHolder>>
 <<ResumeControls ManagerHolder>>
 <<ResetCamera ManagerHolder>>
+
+<<wait 1.5>>
+<<ResetDialogueBoxOffset ManagerHolder>>
 ===
 
 title: DeadGrub
