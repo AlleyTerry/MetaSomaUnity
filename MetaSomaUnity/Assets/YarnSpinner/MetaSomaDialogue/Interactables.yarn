@@ -330,12 +330,21 @@ Grub: Though there is little left to live for anymore…
 Imeris: …Thank you.
 Grub: Yes, yes. Now please… just leave me be. I’d like to rest.
 Imeris: …
-<<TalkedToHalfDeadGrub ManagerHolder>>
-<<ResumeControls ManagerHolder>>
-<<ResetCamera ManagerHolder>>
+<<ExitBattle Imeris>>
 
+<<TalkedToHalfDeadGrub ManagerHolder>>
+
+<<ResetCamera ManagerHolder>>
 <<wait 1.5>>
 <<ResetDialogueBoxOffset ManagerHolder>>
+
+<<jump AfterGrubTalking>>
+===
+
+title: AfterGrubTalking
+---
+imeris: …He's gone.
+<<ResumeControls ManagerHolder>>
 ===
 
 title: DeadGrub

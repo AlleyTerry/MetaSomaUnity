@@ -145,7 +145,7 @@ public class LevelManager_Chapel : LevelManagerBase
         // ANIMATION
         UIManager.instance.PlayAnimation("MediumViewportTransition_Reversed");
         
-        // TODO:TEST THIS PART
+        // resetting camera position
         CameraManager.instance.ResetCamera();
         
         DisableNPCAnimation();
