@@ -105,9 +105,11 @@ public class LevelManager_CommonArea : LevelManagerBase
         // wait
         yield return new WaitForSeconds(0.5f);
         
+        // camera switch/panning
         CameraManager.instance.cinemachineBrain.m_DefaultBlend.m_Time = 2.0f;
         CameraManager.instance.SwitchFollowTarget();
         
+        // wait
         yield return new WaitForSeconds(2.25f);
         
         // animation - Lin disappear
@@ -118,13 +120,17 @@ public class LevelManager_CommonArea : LevelManagerBase
         GameObject.Find("Background_DoorOnly").SetActive(false);
         yield return new WaitForSeconds(1f);
         
+        // camera resetting to imeris
         CameraManager.instance.ResetCamera();
 
+        // wait
         yield return new WaitForSeconds(2.25f);
+        
+        // resume control and camera settings
         GameManager.instance.isInBattle = false;
         CameraManager.instance.cinemachineBrain.m_DefaultBlend.m_Time = 1.5f;
         
-        // flag
+        // flag for preventing repeating this event
         GameManager.instance.isFirstVisit = false;
     }
 
