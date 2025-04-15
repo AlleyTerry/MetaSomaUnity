@@ -57,8 +57,6 @@ public class LevelManager_Cafeteria : LevelManagerBase
     {
         Imeris.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         base.StartCutsScene(cutSceneDialogueNode);
-        
-        
     }
     
     [YarnCommand ("SwitchCameraToGrub")]
@@ -101,6 +99,9 @@ public class LevelManager_Cafeteria : LevelManagerBase
         yield return new WaitForSeconds(0.65f);
         
         UIManager.instance.DisableAnimator();
+        
+        // Enable grub animation
+        Invoke(nameof(EnableGrubAnimation), 1.25f);
     }
     
     private IEnumerator DelayedInitializeHeart()
@@ -108,6 +109,13 @@ public class LevelManager_Cafeteria : LevelManagerBase
         yield return new WaitForSeconds(0.65f);
         
         GameManager.instance.InitializeHeart();
+    }
+
+    private void EnableGrubAnimation()
+    {
+        npcAnimator.runtimeAnimatorController = 
+            Resources.Load("Animations/BattleUI/LinneausAnimation") as RuntimeAnimatorController;
+        npcAnimator.Play("LinBattleIdle");
     }
 
     [YarnCommand ("StartCower")]
