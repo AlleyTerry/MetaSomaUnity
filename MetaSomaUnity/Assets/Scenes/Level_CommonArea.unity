@@ -781,13 +781,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 5e267b13bc3a0d34eb26d64d1bea2f33,
+      objectReference: {fileID: 11400000, guid: 84eee2dc8d3790543a414228df1153ba,
         type: 2}
     - target: {fileID: 2302286715208037269, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -1255338326493411883, guid: 5e267b13bc3a0d34eb26d64d1bea2f33,
+      objectReference: {fileID: 6094562528857308864, guid: 84eee2dc8d3790543a414228df1153ba,
         type: 2}
     - target: {fileID: 2302286715208037269, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}
@@ -1391,7 +1391,7 @@ Transform:
   m_GameObject: {fileID: 648609636}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.935555, y: -0.25, z: -10}
+  m_LocalPosition: {x: -14.45, y: -0.25, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -358,6 +358,7 @@ MonoBehaviour:
   isOverlapping: 0
   objName: Wardrobe
   interactionType: 0
+  continuingDialogueNode: 
 --- !u!1 &360175744
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,13 +511,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 5e267b13bc3a0d34eb26d64d1bea2f33,
+      objectReference: {fileID: 11400000, guid: 84eee2dc8d3790543a414228df1153ba,
         type: 2}
     - target: {fileID: 2302286715208037269, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -1255338326493411883, guid: 5e267b13bc3a0d34eb26d64d1bea2f33,
+      objectReference: {fileID: 6094562528857308864, guid: 84eee2dc8d3790543a414228df1153ba,
         type: 2}
     - target: {fileID: 2302286715208037269, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}
