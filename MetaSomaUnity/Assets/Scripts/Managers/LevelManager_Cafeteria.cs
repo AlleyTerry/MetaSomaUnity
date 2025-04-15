@@ -118,6 +118,15 @@ public class LevelManager_Cafeteria : LevelManagerBase
         npcAnimator.Play("LinBattleIdle");
     }
 
+    public override void ExitBattleDialogue()
+    {
+        base.ExitBattleDialogue();
+        
+        // viewport animation
+        UIManager.instance.PlayAnimation("MediumViewportTransition_Reversed");
+        
+    }
+
     [YarnCommand ("StartCower")]
     public void PlayImerisAnimation()
     {
