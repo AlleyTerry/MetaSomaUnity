@@ -120,7 +120,7 @@ public class LevelManager_Cafeteria : LevelManagerBase
 
     public override void ExitBattleDialogue()
     {
-        base.ExitBattleDialogue();
+        UIManager.instance.EnableAnimator();
         
         // viewport animation
         UIManager.instance.PlayAnimation("MediumViewportTransition_Reversed");

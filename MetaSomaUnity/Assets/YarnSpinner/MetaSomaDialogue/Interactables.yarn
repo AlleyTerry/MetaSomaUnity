@@ -334,8 +334,9 @@ Imeris: …
 
 <<TalkedToHalfDeadGrub ManagerHolder>>
 
+<<wait 0.5>>
 <<ResetCamera ManagerHolder>>
-<<wait 1.5>>
+<<wait 1.75>>
 <<ResetDialogueBoxOffset ManagerHolder>>
 
 <<jump AfterGrubTalking>>
@@ -344,6 +345,7 @@ Imeris: …
 title: AfterGrubTalking
 ---
 imeris: …He's gone.
+imeris: …
 <<ResumeControls ManagerHolder>>
 ===
 
