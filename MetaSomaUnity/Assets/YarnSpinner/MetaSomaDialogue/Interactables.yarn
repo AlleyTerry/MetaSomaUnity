@@ -297,16 +297,19 @@ title: EyeStartCafeteria
 ---
 imeris: There's someone there...!
 <<StartCower ManagerHolder>>
+<<SwitchCameraToGrub ManagerHolder>>
+<<wait 1.55>>
 imeris: Can he see me...?
-//<<ResumeControls ManagerHolder>>
-<<SwitchCameraToGrub EyeStartCafeteria>>
+imeris: Is he...
+Grub: Leave... leave me be…
+<<EndCower ManagerHolder>>
+Imeris: !
+<<IntoGrubBattleScene ManagerHolder>>
 ===
 title: HalfAliveGrub
 ---
 <<set $tableReady to true>>
-imeris: Is he...
-Grub: Leave... leave me be…
-Imeris: !
+// shrinking
 Imeris: You’re still alive?! Oh Goddess…
 Imeris: What happened here?
 Grub: Why are you asking that…? You should know… We’ve been abandoned.
@@ -327,7 +330,6 @@ Grub: Though there is little left to live for anymore…
 Imeris: …Thank you.
 Grub: Yes, yes. Now please… just leave me be. I’d like to rest.
 Imeris: …
-<<EndCower ManagerHolder>>
 <<TalkedToHalfDeadGrub ManagerHolder>>
 <<ResumeControls ManagerHolder>>
 <<ResetCamera ManagerHolder>>

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
+using Yarn.Unity.Example;
 
 public class LevelManager_Cafeteria : LevelManagerBase
 {
@@ -10,6 +11,8 @@ public class LevelManager_Cafeteria : LevelManagerBase
     
     [SerializeField] private Transform defaultSpawnPoint;
 
+    public GameObject grubAnimation;
+    
     public override void Initialize()
     {
         base.Initialize();
@@ -49,8 +52,64 @@ public class LevelManager_Cafeteria : LevelManagerBase
             Debug.LogWarning("CameraMidpointController not found in scene. \n Do we need this?");
         }
     }
+
+    public override void StartCutsScene(string cutSceneDialogueNode)
+    {
+        Imeris.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        base.StartCutsScene(cutSceneDialogueNode);
+        
+        
+    }
     
+    [YarnCommand ("SwitchCameraToGrub")]
+    public void SwitchCameraToGrub()
+    {
+        StartCoroutine(SwitchCamera());
+        
+        YarnCharacter imeris = 
+            GameObject.Find("ImerisWorldspacePlaceholder").GetComponent<YarnCharacter>();
+        YarnCharacter innerImeris = 
+            GameObject.Find("InnerImerisWorldspacePlaceholder").GetComponent<YarnCharacter>();
+        
+        imeris.messageBubbleOffset.x += 2f;
+        innerImeris.messageBubbleOffset.x += 2f;
+    }
+
+    private IEnumerator SwitchCamera()
+    {
+        CameraManager.instance.SwitchFollowTarget();
+        
+        // Wait for the camera to stop before trigger the second dialogue
+        yield return new WaitForSeconds(1.75f);
+        DialogueManager.instance.dialogueRunner.transform.GetComponent<YarnCharacterView>().UpdateBubblePosition();
+    }
     
+    [YarnCommand ("IntoGrubBattleScene")]
+    public override void StartBattleScene()
+    {
+        base.StartBattleScene();
+        
+        // Animation
+        UIManager.instance.PlayAnimation("MediumViewportTransition");
+        
+        StartCoroutine(DelayedDisableAnimator());
+        StartCoroutine(DelayedInitializeHeart());
+    }
+    
+    private IEnumerator DelayedDisableAnimator()
+    {
+        yield return new WaitForSeconds(0.65f);
+        
+        UIManager.instance.DisableAnimator();
+    }
+    
+    private IEnumerator DelayedInitializeHeart()
+    {
+        yield return new WaitForSeconds(0.65f);
+        
+        GameManager.instance.InitializeHeart();
+    }
+
     [YarnCommand ("StartCower")]
     public void PlayImerisAnimation()
     {

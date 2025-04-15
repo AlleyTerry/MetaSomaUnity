@@ -29,7 +29,7 @@ public class InteractableItem_Grub : InteractableItemBase
         GetComponentInChildren<Animator>().Play("EyeIndicator_BNW_backward");
     }
 
-    [YarnCommand ("SwitchCameraToGrub")]
+    /*[YarnCommand ("SwitchCameraToGrub")]
     public void SwitchCameraToGrub()
     {
         StartCoroutine(SwitchCamera());
@@ -49,5 +49,5 @@ public class InteractableItem_Grub : InteractableItemBase
         yield return new WaitForSeconds(1.75f);
         DialogueManager.instance.dialogueRunner.transform.GetComponent<YarnCharacterView>().UpdateBubblePosition();
         DialogueManager.instance.StartDialogue(continuingDialogueNode);
-    }
+    }*/
 }
