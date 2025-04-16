@@ -128,7 +128,7 @@ imeris: ERROR!! IF YOU'RE READING THIS, YOU SET THE ITEM NAME WRONG !!
 title: ImerisBed
 tags:
 ---
-imeris: This is… my bed, I'm sure. The remnants of my cocoon lay on top.
+imeris: This is… my bed. The remnants of my cocoon lay on top.
 ===
 
 title: GalleriaBed
@@ -171,6 +171,32 @@ imeris: (Rapidly press the left arrow when you see the indicator)
 ===
 
 //Servants Hall
+
+title: EnterHall
+---
+imeris: It’s so dark… What happened here?
+===
+
+title: ThirdDoor
+---
+imeris: There are deep scratches.
+===
+
+title: FifthDoor
+---
+imeris: All of the doors are damaged…
+===
+
+title: MostMessedUpDoor
+---
+imeris: …Why was someone so desperate to enter that room?
+===
+
+title: EleventhDoor
+---
+imeris: Barricaded… To keep someone in?
+===
+
 title: FirstDoor
 ---
 imeris: I have no need to enter another’s bedroom.
@@ -191,10 +217,6 @@ imeris: minigame over
 ===
 
 
-title: MostMessedUpDoor
----
-imeris: Why was someone so desperate to enter that room…?
-===
 title: BloodiedBody1
 ---
 imeris: Who would have...
@@ -351,6 +373,7 @@ imeris: …
 
 title: DeadGrub
 ---
-Grub: I AM DEAD AND THIS IS PLACEHOLDER TEXT PLZ REPLACE ME W/ REAL TEXT AFTER.
+imeris: I can't stand around and mourn.
+imeris: I have to go get the key from under the bust.
 <<ResumeControls ManagerHolder>>
 ===
