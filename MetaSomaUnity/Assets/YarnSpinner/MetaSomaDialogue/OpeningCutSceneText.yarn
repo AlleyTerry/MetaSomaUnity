@@ -19,10 +19,10 @@ IMERIS: And now I'm starving.
 IMERIS: I need to find food. I have to try again, I can't...
 
 <<PlayAnimation ManagerHolder "BedroomIntro_16">>
-IMERIS: I don't want to look at myself
+IMERIS: ...I don't want to look at myself.
 
  <<PlayAnimation ManagerHolder "BedroomIntro_18">>
-IMERIS: I need to cover this up...
+IMERIS: I need to cover this up.
 
 <<PlayAnimation ManagerHolder "BedroomIntro_19">>
 
