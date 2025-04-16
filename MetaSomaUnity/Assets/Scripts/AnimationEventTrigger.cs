@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationEventTrigger : MonoBehaviour
+public class AnimationEventTrigger : LevelManagerBase
 {
     // THIS IS USED FOR CUTSCENE ANIMATION EVENTS
     [SerializeField] public string animationStateName = "";
@@ -22,16 +22,10 @@ public class AnimationEventTrigger : MonoBehaviour
         
         DialogueManager.instance.dialogueRunner.StartDialogue(dialogueNodeName);
     }
-    
-    // Start is called before the first frame update
-    void Start()
+
+    public void EnterLevel()
     {
-        
+        DialogueManager.instance.dialogueRunner.StartDialogue("EnterLevel");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

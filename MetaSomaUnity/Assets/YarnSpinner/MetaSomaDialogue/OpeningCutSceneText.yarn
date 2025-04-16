@@ -1,25 +1,36 @@
 ﻿title: OpeningCutSceneText
 tags:
 ---
-IMERIS: Oh… Oh no...
+IMERIS: No...
 
 <<PlayAnimation ManagerHolder "BedroomIntro_11">>
-IMERIS: It didn’t work. I can’t… I can’t go… anywhere with these...
+IMERIS:It was supposed to...
 
 <<PlayAnimation ManagerHolder "BedroomIntro_12">>
-IMERIS: What have I done…? Why didn’t it work?
+IMERIS: This...this isn't right...
 
 <<PlayAnimation ManagerHolder "BedroomIntro_13">>
-IMERIS: I’m so hungry… and I can’t think straight…
+IMERIS: ... It didn't work.
 
 <<PlayAnimation ManagerHolder "BedroomIntro_14">>
-IMERIS: I didn’t eat enough, did I…? I need to fix this. I need to find more food.
+IMERIS: And now I'm starving.
 
 <<PlayAnimation ManagerHolder "BedroomIntro_15">>
-IMERIS: But first… I need something to cover this…
+IMERIS: I need to find food. I have to try again, I can't...
 
 <<PlayAnimation ManagerHolder "BedroomIntro_16">>
-IMERIS: ... 
+IMERIS: I don't want to look at myself
 
+ <<PlayAnimation ManagerHolder "BedroomIntro_18">>
+IMERIS: I need to cover this up...
+
+<<PlayAnimation ManagerHolder "BedroomIntro_19">>
+
+
+===
+
+title: EnterLevel
+tags:
+---
 <<EnterLevel ManagerHolder>>
 ===
