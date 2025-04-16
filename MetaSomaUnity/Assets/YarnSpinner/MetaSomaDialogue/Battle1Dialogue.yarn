@@ -13,7 +13,7 @@ position: -462,-1568
 
 Linnaeus: Do you have anything to say for yourself?
 Narrator: Tread carefully; your choices may hurt you. Protect your heart, and stay true to yourself.
-Narrator: Linnaeus is gathered, and acting calm. 
+Narrator: Linnaeus is gathered, and acting<color=\#98ED14> calm</color>. 
 
 <<set $hover_text_up = "I have an argument.">>
 <<set $hover_text_left = "I have regrets to offer.">>
@@ -39,7 +39,7 @@ Imeris: Blaming me will not save you. You merely continue to toil in the name of
 Narrator: The calm facade cracks.
 Linnaeus: I was no <i>servant</i>! I was a leader, an elite, appointed by Queen Andromeda herself!
 Linnaeus: And you took that from me!
-Narrator: Linnaeus is enraged. He has become aggressive.
+Narrator: Linnaeus is enraged. He has become<color=\#FF3D0B> aggressive</color>.
 
 <<set $hover_text_up = "He's right- he <i>was</i> an elite. But no longer.">>
 <<set $hover_text_left = "He's incensed. I won't give him more ammunition.">>
@@ -65,7 +65,7 @@ Narrator: You feel your resolve strengthen as you speak.
 Narrator: Linnaeus’s anger turns into a cold fury.
 Linnaeus: You were always so obedient… so weak.
 Linnaeus: What devilry has inspired such impudence in you, child? 
-Narrator: Linnaeus is condescending to you.
+Narrator: Linnaeus is<color=\#EDAE14> condescending</color> to you.
 
 <<set $hover_text_up = "I learned better.">>
 <<set $hover_text_left = "I needed more.">>
@@ -90,7 +90,7 @@ Linnaeus: No response, hm? No apology? Not even a denial?
 Linnaeus: That's more like you. You've always been... meek.
 Linnaeus: Impudence isn't something you're suited for.
 Linnaeus: I can’t even imagine what could have inspired it in you. 
-Narrator: Linnaeus is condescending to you.
+Narrator: Linnaeus is<color=\#EDAE14> condescending</color> to you.
 
 <<set $hover_text_up = "I learned better.">>
 <<set $hover_text_left = "I needed more.">>
@@ -115,7 +115,7 @@ Imeris: I did no such thing! You have no proof, you- you-
 Narrator: Linnaeus scoffs derisively as you struggle to speak through your frustration.
 Linnaeus: You can't even get a sentence out in your own defense!
 Linnaeus: Oh Goddess, what could have possibly inspired such impudence in someone like <i>you</i>?
-Narrator: Linnaeus is condescending to you.
+Narrator: Linnaeus is <color=\#EDAE14> condescending</color> to you.
 <<CheckHealth Viewport_Heart>>
 
 <<set $hover_text_up = "I learned better.">>
@@ -174,6 +174,7 @@ Narrator: His gaze turns distant as he looks back into the past, seeking.
 Narrator: A deep frown settles itself on his face when he realizes you're telling the truth.
 Narrator: Try as he might to school it, his frantic eyes give him away. 
 Narrator: The thought that he missed something like this unsettles him.
+<<jump ROUND1END>>
 ===
 
 title: Apologize
@@ -190,7 +191,7 @@ Linnaeus: You say you struggle with your hunger now, but imagine them. Think. Lo
 Linnaeus: Villain, beast, monster… Your sinfulness cannot be washed away with mere words!
 Narrator: Linnaeus takes a deep breath after his outburst. He resumes talking with an evener tone.
 Linnaeus: Now take responsibility.
-Narrator: Linnaeus has gathered himself, and is acting calm.
+Narrator: Linnaeus has gathered himself, and is acting<color=\#98ED14> calm</color>.
 <<CheckHealth Viewport_Heart>>
 
 <<set $hover_text_up = "He's wrong. I'll disprove his poisonous lies.">>
@@ -218,7 +219,7 @@ Imeris: You, of all people, do not get to say that to me. You are no better than
 Imeris: I am only becoming who the Goddess made me to be, and I will not allow you to deceive me again.
 Linnaeus: You could never begin to know Her will, wretch. 
 Linnaeus: Cease your heresy. Come quietly. Let your final act be obedient and good.
-Narrator: Linnaeus is acting calm.
+Narrator: Linnaeus is acting<color=\#98ED14> calm</color>.
 
 <<set $hover_text_up = "Obedience to evil is evil itself. I know it is wrong.">>
 <<set $hover_text_left = "...My lingering doubts weigh heavy on my mind.">>
@@ -249,7 +250,7 @@ Linnaeus: Poor misguided wretch. So deluded that you’ve fallen from grace and 
 Linnaeus: I wish I could undo what you did, but even the Goddess would struggle with such a feat.
 Linnaeus: And as it stands, I cannot allow your sin to go unpunished.
 Linnaeus: Come quietly. Let your final act be obedient and good.
-Narrator: Linnaeus is acting calm.
+Narrator: Linnaeus is acting<color=\#98ED14> calm</color>.
 <<CheckHealth Viewport_Heart>>
 
 <<set $hover_text_up = "Obedience to evil is evil itself. I know it is wrong.">>
@@ -280,7 +281,7 @@ Narrator: His hypocrisy seems to escape him, but it does not escape you.
 Narrator: He continues more calmly after his outburst, putting on a farcical show of aloofness.
 Linnaeus: I am still a holy man, and as such, it is my duty to punish the sins brought before me.
 Linnaeus: Come quietly. Let your final act be obedient and good.
-Narrator: Linnaeus is acting calm.
+Narrator: Linnaeus is acting<color=\#98ED14> calm</color>.
 
 <<set $hover_text_up = "Obedience to evil is evil itself. I know it is wrong.">>
 <<set $hover_text_left = "...My lingering doubts weigh heavy on my mind.">>
@@ -316,6 +317,7 @@ Linnaeus: Good. You’ve come to your senses.
 <<TakeDamage Viewport_Heart>>
 Linnaeus: It will all be over soon.
 <<CheckHealth Viewport_Heart>>
+<<jump DeadDialogue>>
  ===
 
 title: Resist
@@ -345,7 +347,7 @@ Linnaeus: Have you no shame? Have you no gratitude?
 Linnaeus: I have cared for you, <i>guided</i> you all your life, and now you spurn me?
 Linnaeus: Your selfishness has led this kingdom to ruin, and brought death and destruction to our door.
 Linnaeus: You should be <i>begging</i> me for absolution.
-Narrator: Linnaeus is acting calm.
+Narrator: Linnaeus is acting<color=\#98ED14> calm</color>.
 
 <<set $hover_text_up = "I need no absolution. The crime is not mine.">>
 <<set $hover_text_left = "...I don’t want to think about that.">>
@@ -373,7 +375,7 @@ Linnaeus: What freedom do you speak of? We are not <i>free</i>.
 Linnaeus: Most of us are <i>dead</i>.
 Linnaeus: All I see before me is a lost, deluded fool who thinks they are above consequence.
 Linnaeus: That is a grave error, which I will correct.
-Narrator: Linnaeus is acting calm.
+Narrator: Linnaeus is acting<color=\#98ED14> calm</color>.
 
 <<set $hover_text_up = "The error is his. Perhaps convincing him of it will calm him down.">>
 <<set $hover_text_left = "I should step back, in case he tries to make good on that threat.">>
@@ -397,7 +399,7 @@ Narrator: You feel a trickle of cold guilt settle in your stomach and look away,
 Linnaeus: Oh, nothing to say now? Have you realized your mistake at last? 
 Linnaeus: Poor, deluded fool. Thinking you are beyond consequence. 
 Linnaeus: I shall correct you myself.
-Narrator: Linnaeus is acting calm.
+Narrator: Linnaeus is acting<color=\#98ED14> calm</color>.
 <<CheckHealth Viewport_Heart>>
 
 <<set $hover_text_up = "The error is his. Perhaps convincing him of it will calm him down.">>
@@ -426,7 +428,7 @@ Linnaeus: No, I- No! You know nothing!
 Narrator: Linnaeus looks stricken. His expression morphs quickly between shame and denial, before at last settling on the latter.
 Linnaeus: Thinking yourself beyond consequence, you try to pin this all on me…  I won’t allow it.
 Linnaeus: I’ll correct you myself.
-Narrator: Linnaeus is acting calm.
+Narrator: Linnaeus is acting<color=\#98ED14> calm</color>.
 
 <<set $hover_text_up = "The error is his. Perhaps convincing him of it will calm him down.">>
 <<set $hover_text_left = "I should step back, in case he tries to make good on that threat.">>
@@ -526,7 +528,7 @@ Linnaeus: I grow tired of your foolishness.
 Linnaeus: I will be kind to you one last time, child.
 Linnaeus: You have one final chance to leave here with your life.
 Linnaeus: Though you do not deserve it, given what you’ve done. 
-Narrator: Linnaeus is condescending to you.
+Narrator: Linnaeus is<color=\#EDAE14> condescending</color> to you.
 
 <<set $hover_text_up = "I grow weary of fighting. Can’t I convince him?">>
 <<set $hover_text_left = "This pretense is coming to an end. I'll ready my dagger.">>
@@ -535,7 +537,7 @@ Narrator: Linnaeus is condescending to you.
 
 -> Beg (Reason) 
     <<jump Beg>>
--> Equip Dagger (Submission)
+-> Brace (Submission)
     <<jump EquipDagger>>
 -> Threaten (Challenge)
     <<jump Threaten>>
@@ -553,7 +555,7 @@ Narrator: The thought of taking Linnaeus’ life with your own hands makes you f
 Narrator: Linnaeus is taken aback. He scowls darkly and clenches his fist dangerously.
 Linnaeus: Do not condescend to me. Your arrogance will undo you. 
 Narrator: His tone is controlled, but just barely. 
-Narrator: Linnaeus is acting calm.
+Narrator: Linnaeus is acting<color=\#98ED14> calm</color>.
 
 <<set $hover_text_up = "It is not my hubris he should be concerned about.">>
 <<set $hover_text_left = "I shouldn’t escalate this further.">>
@@ -633,7 +635,7 @@ Linnaeus: I pray Our Lady of Gold have mercy on you, child.
 Linnaeus: But I, unfortunately, shall not!
 <<CheckHealth Viewport_Heart>>
 
-Narrator: Linnaeus is getting aggressive.
+Narrator: Linnaeus is getting<color=\#FF3D0B> aggressive</color>.
 
 <<set $hover_text_up = "I must calm myself… I won’t let him rattle me.">>
 <<set $hover_text_left = "He cannot frighten me. The Goddess is by my side.">>
@@ -710,6 +712,7 @@ Narrator: Linnaeus becomes unsettled.
 Linnaeus: Why do you stare at me in silence, child? 
 Linnaeus: Have all your clever words left you?
 Linnaeus: Answer me! 
+Narrator: Linnaeus is<color=\#EDAE14> condescending</color> to you.
 
 <<set $hover_text_up = "He’s acting like a child, so I’ll treat him like one.">>
 <<set $hover_text_left = "I’ll let him work himself up.">>

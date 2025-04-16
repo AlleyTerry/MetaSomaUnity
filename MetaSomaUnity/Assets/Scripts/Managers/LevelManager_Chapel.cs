@@ -177,7 +177,8 @@ public class LevelManager_Chapel : LevelManagerBase
             DialogueManager.instance.dialogueRunner.Dialogue.Stop();
         }
 
-        StartCoroutine(DelayedStartDialogue("PreDeadDialogue"));
+        //StartCoroutine(DelayedStartDialogue("PreDeadDialogue"));
+        StartCoroutine(DelayedStartDialogue("DeadDialogue"));
         
         Debug.Log("Level Chapel Dead Scene started.");
         
