@@ -67,7 +67,7 @@ public class LevelManager_Prologue_ImerisBedroom : LevelManagerBase
     [YarnCommand("HideGalleria")]
     public void HideGalleria()
     {
-        GalleriaAnimation.SetActive(false);
+        GalleriaAnimation.GetComponent<Animator>().Play("FadeGalleria");
         Debug.Log("Galleria hidden");
     }
     
@@ -86,6 +86,7 @@ public class LevelManager_Prologue_ImerisBedroom : LevelManagerBase
         //turn off black screen
         GameObject blackScreen = GameObject.Find("BlackScreen");
         blackScreen.SetActive(false);
+        GalleriaAnimation.SetActive(false);
     }
     
     [YarnCommand("ShowShrineZoom")]
