@@ -226,6 +226,11 @@ public class DialogueManager : MonoBehaviour
                     rtMax.y = 20;
                     lineviewBackground.GetComponent<RectTransform>().offsetMax = rtMax;
                     break;
+                case "IMERIS":
+                    lineviewBackground.GetComponent<Image>().sprite = narratorBackground;
+                    rtMax.y = 80;
+                    lineviewBackground.GetComponent<RectTransform>().offsetMax = rtMax;
+                    break;
                 default:
                     lineviewBackground.GetComponent<Image>().sprite = imerisBackground;
                     rtMax.y = 80;
