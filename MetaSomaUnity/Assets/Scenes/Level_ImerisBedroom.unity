@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: IMERIS
-  messageBubbleOffset: {x: 4, y: -2.5, z: 0}
+  messageBubbleOffset: {x: 4, y: -3.2, z: 0}
   offsetUsesRotation: 0
 --- !u!1001 &214321595
 PrefabInstance:
@@ -612,6 +612,11 @@ PrefabInstance:
     - target: {fileID: 6353625056946509436, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7585620475407551681, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: messageBubbleOffset.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8536744828141128833, guid: 31c98296315ab384aad35532a9b2249a,
