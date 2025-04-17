@@ -31,6 +31,8 @@ public class DialogueManager : MonoBehaviour
     private TextMeshProUGUI characterNameText;
     private TextMeshProUGUI dialogueTextBox;
 
+    private GameObject lineview;
+
     private string lastSpeakerName = null;
     
     // Start is called before the first frame update
@@ -140,6 +142,8 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
+        lineview = dialogueRunner.GetComponentInChildren<LineView>().gameObject;
+
         string speakerName = GetCurrentSpeakerName();
 
         if (speakerName != null && 
@@ -169,6 +173,7 @@ public class DialogueManager : MonoBehaviour
                     dialogueTextBox.alignment = TextAlignmentOptions.Top;
                     dialogueTextBox.fontStyle = FontStyles.Normal; // Reset the text style
                     dialogueTextBox.fontWeight = FontWeight.SemiBold;
+                    lineview.GetComponent<RectTransform>().sizeDelta = new Vector2(1500f, 0);
                     break;
                 
                 case "imeris":
