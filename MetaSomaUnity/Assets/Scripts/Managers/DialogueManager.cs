@@ -157,6 +157,7 @@ public class DialogueManager : MonoBehaviour
                     dialogueTextBox.alignment = TextAlignmentOptions.TopLeft;
                     dialogueTextBox.fontStyle = FontStyles.Normal; // Reset the text style
                     dialogueTextBox.fontWeight = FontWeight.SemiBold;
+                    lineview.GetComponent<RectTransform>().sizeDelta = new Vector2(450f, 0);
                     break;
 
                 case "Linnaeus":
@@ -165,6 +166,7 @@ public class DialogueManager : MonoBehaviour
                     dialogueTextBox.alignment = TextAlignmentOptions.TopRight;
                     dialogueTextBox.fontStyle = FontStyles.Normal; // Reset the text style
                     dialogueTextBox.fontWeight = FontWeight.SemiBold;
+                    lineview.GetComponent<RectTransform>().sizeDelta = new Vector2(450f, 0);
                     break;
 
                 case "Narrator":
@@ -173,7 +175,16 @@ public class DialogueManager : MonoBehaviour
                     dialogueTextBox.alignment = TextAlignmentOptions.Top;
                     dialogueTextBox.fontStyle = FontStyles.Normal; // Reset the text style
                     dialogueTextBox.fontWeight = FontWeight.SemiBold;
-                    lineview.GetComponent<RectTransform>().sizeDelta = new Vector2(1500f, 0);
+                    lineview.GetComponent<RectTransform>().sizeDelta = new Vector2(1000f, 0);
+                    break;
+                
+                case "IMERIS":
+                    characterNameText.alignment = TextAlignmentOptions.Center;
+                    characterNameText.color = new Color(255, 255, 255, 255);
+                    dialogueTextBox.alignment = TextAlignmentOptions.Top;
+                    dialogueTextBox.fontStyle = FontStyles.Normal; // Reset the text style
+                    dialogueTextBox.fontWeight = FontWeight.SemiBold;
+                    lineview.GetComponent<RectTransform>().sizeDelta = new Vector2(1000f, 0);
                     break;
                 
                 case "imeris":
@@ -182,6 +193,7 @@ public class DialogueManager : MonoBehaviour
                     dialogueTextBox.alignment = TextAlignmentOptions.Top;
                     dialogueTextBox.fontStyle = FontStyles.Italic; // Italicize the text
                     dialogueTextBox.fontWeight = FontWeight.SemiBold;
+                    lineview.GetComponent<RectTransform>().sizeDelta = new Vector2(450f, 0);
                     break;
                 
                 default:
@@ -189,6 +201,7 @@ public class DialogueManager : MonoBehaviour
                     characterNameText.color = new Color(255, 255, 255, 255);
                     dialogueTextBox.fontStyle = FontStyles.Normal; // Reset the text style
                     dialogueTextBox.fontWeight = FontWeight.SemiBold;
+                    lineview.GetComponent<RectTransform>().sizeDelta = new Vector2(450f, 0);
                     break;
             }
 
