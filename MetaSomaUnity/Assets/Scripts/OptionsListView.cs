@@ -42,6 +42,11 @@ namespace Yarn.Unity
         
         // Current selected option index
         private int currentSelectedIndex = 0;
+        
+        // option sprites
+        [SerializeField] private Sprite optionSpriteUp;
+        [SerializeField] private Sprite optionSpriteLeft;
+        [SerializeField] private Sprite optionSpriteRight;
 
         public void Start()
         {
@@ -244,6 +249,16 @@ namespace Yarn.Unity
                 {
                     optionView.Select();
                 }*/
+                
+                // set option sprite
+                var image = optionView.GetComponent<UnityEngine.UI.Image>();
+                
+                switch (i)
+                {
+                    case 0: image.sprite = optionSpriteUp; break;
+                    case 1: image.sprite = optionSpriteLeft; break;
+                    case 2: image.sprite = optionSpriteRight; break;
+                }
 
                 optionViewsCreated += 1;
             }
