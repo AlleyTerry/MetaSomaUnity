@@ -74,7 +74,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.18333334
-    functionName: DisableUIManagerPrologue
+    functionName: ImerisFindsTruth2
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
