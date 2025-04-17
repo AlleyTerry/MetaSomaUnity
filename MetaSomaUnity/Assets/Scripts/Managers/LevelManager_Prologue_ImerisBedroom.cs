@@ -9,6 +9,7 @@ public class LevelManager_Prologue_ImerisBedroom : LevelManagerBase
     public GameObject GalleriaAnimation;
     public GameObject ShrineZoom;
     public GameObject PortraitZoom;
+    public GameObject BlackScreenFade;
     public override void Initialize()
     {
         base.Initialize();
@@ -30,6 +31,11 @@ public class LevelManager_Prologue_ImerisBedroom : LevelManagerBase
         CGDisplayAnimator.runtimeAnimatorController = CGDisplayAnimatorController;
         GalleriaAnimation = GameObject.Find("GalleriaAnimation");
         GalleriaAnimation.SetActive(false);
+        
+        //find the black screen
+        BlackScreenFade = GameObject.Find("BlackScreenFade");
+        //play the black screen fade animation
+        BlackScreenFade.GetComponent<Animator>().Play("FadeBlackPrologue");
         
         ShrineZoom = GameObject.Find("ShrineZoom");
         ShrineZoom.SetActive(false);
