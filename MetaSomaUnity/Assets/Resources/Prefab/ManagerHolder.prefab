@@ -212,6 +212,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c4ca96a860fd74db3780c9c47aab20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Imeris: {fileID: 0}
+  ImerisAnimation: {fileID: 0}
+  NPCAnimation: {fileID: 0}
+  currentBattleDialogueDelay: 0.5
+  CGDisplayAnimator: {fileID: 0}
+  CGDisplayAnimatorController: {fileID: 0}
+  virtualCamera: {fileID: 0}
+  damping: 1
   animationStateName: 
   dialogueNodeName: 
 --- !u!1 &4413838746433709634
@@ -461,6 +469,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueRunner: {fileID: 0}
+  narratorBackground: {fileID: 21300000, guid: 2753c7a166f7a434cb3e211379f76831, type: 3}
+  imerisBackground: {fileID: 21300000, guid: 0efdca93ebf9005409c865b26180a5be, type: 3}
 --- !u!114 &74539599337885660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,7 +483,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd90305c11ab0748b18d498242dd2b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  talkToGrub: 0
   isTestMode: 1
   previousScene: 
   isFacingRight: 0
@@ -487,6 +496,8 @@ MonoBehaviour:
   currentGameState: 0
   isInBattle: 0
   inMemoryVariableStorage: {fileID: 0}
+  talkToGrub: 0
+  isFirstVisit: 1
 --- !u!114 &4676880667594926389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -659,6 +670,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b134d9b8d766274aa6091bb28ca3727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cinemachineBrain: {fileID: 0}
+  virtualCamera: {fileID: 0}
+  virtualCameraPanning: {fileID: 0}
+  targetGroup: {fileID: 0}
 --- !u!1 &8714127014412746384
 GameObject:
   m_ObjectHideFlags: 0

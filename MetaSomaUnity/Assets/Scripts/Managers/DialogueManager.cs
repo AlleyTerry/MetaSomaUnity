@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Yarn.Unity;
 
 public class DialogueManager : MonoBehaviour
@@ -34,6 +35,10 @@ public class DialogueManager : MonoBehaviour
     private GameObject lineview;
 
     private string lastSpeakerName = null;
+    
+    // different UI background image
+    public Sprite narratorBackground;
+    public Sprite imerisBackground;
     
     // Start is called before the first frame update
     void Start()
@@ -142,13 +147,18 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        lineview = dialogueRunner.GetComponentInChildren<LineView>().gameObject;
-
         string speakerName = GetCurrentSpeakerName();
 
         if (speakerName != null && 
             speakerName != lastSpeakerName)
         {
+            
+            lineview = dialogueRunner.GetComponentInChildren<LineView>().gameObject;
+            
+            GameObject lineviewBackground = lineview.transform.GetChild(0).gameObject;
+            Vector2 rtMin = lineviewBackground.GetComponent<RectTransform>().offsetMin;
+            Vector2 rtMax = lineviewBackground.GetComponent<RectTransform>().offsetMax;
+            
             switch (speakerName)
             {
                 case "Imeris":
@@ -202,6 +212,24 @@ public class DialogueManager : MonoBehaviour
                     dialogueTextBox.fontStyle = FontStyles.Normal; // Reset the text style
                     dialogueTextBox.fontWeight = FontWeight.SemiBold;
                     lineview.GetComponent<RectTransform>().sizeDelta = new Vector2(450f, 0);
+                    break;
+            }
+
+            switch (speakerName)
+            {
+                case "Narrator":
+                    lineviewBackground.GetComponent<Image>().sprite = narratorBackground;
+                    rtMax.y = 20;
+                    lineviewBackground.GetComponent<RectTransform>().offsetMax = rtMax;
+                    break;
+                case "imeris":
+                    rtMax.y = 20;
+                    lineviewBackground.GetComponent<RectTransform>().offsetMax = rtMax;
+                    break;
+                default:
+                    lineviewBackground.GetComponent<Image>().sprite = imerisBackground;
+                    rtMax.y = 80;
+                    lineviewBackground.GetComponent<RectTransform>().offsetMax = rtMax;
                     break;
             }
 
