@@ -44,7 +44,7 @@ public class PrologueChapelAnimation : MonoBehaviour
         UIManager.instance.PlayAnimation("PrologueViewportTransitionReverse");
     }
 
-    public void DisableUIManager()
+    public void DisableUIManagerPrologue()
     {
         UIManager.instance.DisableAnimator();
         //play yarn dialogue
