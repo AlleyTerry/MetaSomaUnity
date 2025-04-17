@@ -235,7 +235,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00018310547, y: 0}
+  m_AnchoredPosition: {x: 0.00012207031, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &96082190
@@ -660,7 +660,7 @@ PrefabInstance:
     - target: {fileID: 8536744828141128833, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}
       propertyPath: messageBubbleOffset.y
-      value: 2.5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1246260104906682250, guid: 31c98296315ab384aad35532a9b2249a, type: 3}
@@ -1428,7 +1428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Imeris
-  messageBubbleOffset: {x: -0.85, y: 2.5, z: 0}
+  messageBubbleOffset: {x: -0.85, y: 4, z: 0}
   offsetUsesRotation: 0
 --- !u!1 &1050486446
 GameObject:

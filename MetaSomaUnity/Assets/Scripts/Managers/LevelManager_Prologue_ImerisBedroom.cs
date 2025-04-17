@@ -74,19 +74,20 @@ public class LevelManager_Prologue_ImerisBedroom : LevelManagerBase
     [YarnCommand("StartPrologueLevel")]
     public void StartLevel()
     {
+        //turn off black screen
+        GameObject blackScreen = GameObject.Find("BlackScreen");
+        blackScreen.SetActive(false);
+        GalleriaAnimation.SetActive(false);
         // resume controls
         GameManager.instance.ResumeControls();
         UIManager.instance.EnableAnimator();
-        UIManager.instance.PlayAnimation("PrologueViewport");
+        UIManager.instance.PlayAnimation("PrologueViewportTransitionReverse");
         
         // imeris figure
         ImerisAnimation.SetActive(true);
         GameManager.instance.HUD.SetActive(true); // show HUD
         GameManager.instance.CGDisplay.SetActive(false); // hide CG display
-        //turn off black screen
-        GameObject blackScreen = GameObject.Find("BlackScreen");
-        blackScreen.SetActive(false);
-        GalleriaAnimation.SetActive(false);
+        
     }
     
     [YarnCommand("ShowShrineZoom")]
