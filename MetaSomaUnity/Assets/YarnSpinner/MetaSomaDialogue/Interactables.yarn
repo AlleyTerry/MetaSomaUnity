@@ -306,15 +306,29 @@ imeris: (Rapidly press the up arrow when you see the indicator)
 ===
 
 //Cafeteria
-title: RottenFood
+
+title: EnterCafeteria
 ---
-imeris: No matter how hungry I am, I can’t eat this. It’s rotten.
+imeris: There might be some food in here, at least.
+//cam pan to first dead body and back
+imeris: !
+imeris: Oh, Goddess...
 ===
 
-title: DeadBody2
+title: DeadGirl
 ---
-imeris: There’s vomit around her mouth. It seems she ate something that spoiled.
+imeris: There’s vomit around her mouth. She must have eaten something spoiled.
 ===
+
+title: DeadBoy
+---
+imeris: The plate in front of him is licked completely clean...
+===
+title: RottenFood
+---
+imeris: I'm starving, but... I can’t eat any of these scraps... They're rotten.
+===
+
 title: EyeStartCafeteria
 ---
 imeris: There's someone there...!
@@ -322,7 +336,6 @@ imeris: There's someone there...!
 <<SwitchCameraToGrub ManagerHolder>>
 <<wait 1.55>>
 imeris: Can he see me...?
-imeris: Is he...
 Grub: Leave... leave me be…
 <<EndCower ManagerHolder>>
 Imeris: !
