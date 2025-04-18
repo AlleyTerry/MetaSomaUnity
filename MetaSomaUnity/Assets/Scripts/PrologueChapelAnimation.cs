@@ -41,7 +41,7 @@ public class PrologueChapelAnimation : MonoBehaviour
         Imeris.transform.position = ImerisSpot.transform.position;
         Linnaeus.transform.position = LinSpot.transform.position;
         
-        UIManager.instance.PlayAnimation("PrologueViewportTransitionReverse");
+        UIManager.instance.PlayAnimation("PrologueViewportTransitionReversePrologue");
     }
 
     public void DisableUIManagerPrologue()
