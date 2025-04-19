@@ -1347,6 +1347,7 @@ MonoBehaviour:
   LinSpot: {fileID: 0}
   Linnaeus: {fileID: 0}
   Imeris: {fileID: 0}
+  chapelStarted: 0
 --- !u!1 &1878745895
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,8 @@ public class LevelManager_MainMenu : LevelManagerBase
     public List<Button> buttons = new List<Button>();
     private int currentButtonIndex = 0;
     
+    bool hasSelected = false;
+    
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -31,8 +33,8 @@ public class LevelManager_MainMenu : LevelManagerBase
         SelectButton(currentButtonIndex);
         
         // ADD LISTENERS
-        buttonStart.onClick.AddListener(GameManager.instance.LoadNextLevel);
-        buttonQuit.onClick.AddListener(QuitGame);
+        //buttonStart.onClick.AddListener(GameManager.instance.LoadNextLevel);
+        //buttonQuit.onClick.AddListener(QuitGame);
     }
 
     protected override void Update()
@@ -73,9 +75,21 @@ public class LevelManager_MainMenu : LevelManagerBase
     
     private void ConfirmSelection()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) && !hasSelected)
         {
-            buttons[currentButtonIndex].onClick.Invoke();
+            hasSelected = true;
+            
+            Button selectedButton = buttons[currentButtonIndex];
+            selectedButton.interactable = false;
+
+            if (selectedButton == buttonStart)
+            {
+                GameManager.instance.LoadNextLevel();
+            }
+            else if (selectedButton == buttonQuit)
+            {
+                QuitGame();
+            }
         }
     }
     
