@@ -13,6 +13,8 @@ public class LevelManager_Prologue_ImerisBedroom : LevelManagerBase
     public override void Initialize()
     {
         base.Initialize();
+        
+        
         //change heart animation to prologue viewport
         UIManager.instance.EnableAnimator();
         UIManager.instance.PlayAnimation("PureBlack");
@@ -41,6 +43,8 @@ public class LevelManager_Prologue_ImerisBedroom : LevelManagerBase
         ShrineZoom.SetActive(false);
         PortraitZoom = GameObject.Find("PortraitZoom");
         PortraitZoom.SetActive(false);
+        //play background music
+        gameObject.GetComponent<AudioManager>().PlayMusic("Memories");
     }
     // Start is called before the first frame update
     void Start()
@@ -49,7 +53,6 @@ public class LevelManager_Prologue_ImerisBedroom : LevelManagerBase
         FindObjectOfType<DialogueRunner>().StartDialogue("PrologueGalleria");
         GameManager.instance.HUD.SetActive(true); // show HUD
         GameManager.instance.CGDisplay.SetActive(false); // hide CG display
-        //find the BlackScreen
         
         
     }

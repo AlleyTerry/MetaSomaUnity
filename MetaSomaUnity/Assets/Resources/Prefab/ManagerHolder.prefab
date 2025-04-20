@@ -546,6 +546,9 @@ MonoBehaviour:
   level1: {fileID: 8300000, guid: 2a49d20c91dc4fc4a8dc1bf1336c3055, type: 3}
   linnaeusBattleStart: {fileID: 8300000, guid: be8c17af26f4aa145a09e84e7adab4f9, type: 3}
   linnaeusBattleEnd: {fileID: 8300000, guid: 61979667d6f5ef143b7af20ec5743503, type: 3}
+  Memories: {fileID: 8300000, guid: f8369237b3044fe4299651b71c4c334d, type: 3}
+  OpeningCutscene: {fileID: 8300000, guid: dfcfd3f8a97a87c4a9c5536a66f40bfd, type: 3}
+  LevelAmbience: {fileID: 8300000, guid: 1832893c4ba812449b283c73389de42f, type: 3}
   sfxClips:
   - {fileID: 8300000, guid: 5f38f826869a64f09bb2fa6246939694, type: 3}
   masManager: {fileID: 0}

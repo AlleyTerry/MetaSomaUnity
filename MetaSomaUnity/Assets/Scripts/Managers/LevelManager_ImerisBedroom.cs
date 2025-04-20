@@ -35,6 +35,8 @@ public class LevelManager_ImerisBedroom : LevelManagerBase
         {
             Debug.LogWarning("Animation State Name or Dialogue Node Name not set in AnimationEventTrigger.");
         }
+        // play background music
+        gameObject.GetComponent<AudioManager>().PlayMusic("OpeningCutscene");
     }
     
     private void DelayedFreezeControls()

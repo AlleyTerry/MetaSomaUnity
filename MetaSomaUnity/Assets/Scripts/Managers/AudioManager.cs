@@ -7,6 +7,8 @@ using Yarn.Unity;
 [RequireComponent(typeof(AudioSource))]
 public class AudioManager : MonoBehaviour
 {
+    // INSTANCE
+    public static AudioManager instance;
     // AUDIO SOURCE COMPONENT
     [SerializeField] private AudioSource audioSource;
     
@@ -17,6 +19,9 @@ public class AudioManager : MonoBehaviour
     
     public AudioClip linnaeusBattleStart;
     public AudioClip linnaeusBattleEnd;
+    public AudioClip Memories;
+    public AudioClip OpeningCutscene;
+    public AudioClip LevelAmbience;
     
     // AUDIO CLIPS
     public List<AudioClip> sfxClips = new List<AudioClip>();
@@ -72,9 +77,29 @@ public class AudioManager : MonoBehaviour
                 MAS_Manager.PlayBackgroundMusic(
                     audioSource.clip, 0.05f, 0.25f, 0.95f);
                 break;
+            case "Memories":
+                audioSource.clip = Memories;
+                MAS_Manager.PlayBackgroundMusic(
+                    audioSource.clip, 0.05f, 0.25f, 0.95f);
+                break;
+            case "OpeningCutscene":
+                audioSource.clip = OpeningCutscene;
+                MAS_Manager.PlayBackgroundMusic(
+                    audioSource.clip, 0.05f, 0.25f, 0.95f);
+                break;
+            case "LevelAmbience":
+                audioSource.clip = LevelAmbience;
+                MAS_Manager.PlayBackgroundMusic(
+                    audioSource.clip, 0.05f, 0.25f, 0.95f);
+                break;
         }
         
         //audioSource.Play();
+    }
+
+    public void Test()
+    {
+        Debug.Log("Test");
     }
 
     [YarnCommand("PlaySFX")]
