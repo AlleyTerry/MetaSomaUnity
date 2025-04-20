@@ -62,5 +62,7 @@ public class LevelManager_ImerisBedroom : LevelManagerBase
         ImerisAnimation.GetComponent<Animator>().Play("ImerisBattleIdle");
         GameManager.instance.HUD.SetActive(true); // show HUD
         GameManager.instance.CGDisplay.SetActive(false); // hide CG display
+        // play background music
+        gameObject.GetComponent<AudioManager>().PlayMusic("LevelAmbience");
     }
 }
