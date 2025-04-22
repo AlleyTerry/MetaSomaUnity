@@ -124,7 +124,7 @@ public class InteractableItemBase : MonoBehaviour, ITriggerable
             // Set visual cue to false
             /*visualCue.SetActive(false);*/
             
-            GetComponentInChildren<Animator>().Play("EyeIndicator_BNW_backward");
+            if (isIndicator) GetComponentInChildren<Animator>().Play("EyeIndicator_BNW_backward");
             
             if (DialogueManager.instance.dialogueRunner.IsDialogueRunning)
             {
