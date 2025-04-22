@@ -19,7 +19,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 290
     y: -533
-    width: 1077
+    width: 1076
     height: 2687
 --- !u!114 &114350483966674976
 MonoBehaviour:
@@ -132,7 +132,9 @@ MonoBehaviour:
   m_Label: Spawn system
   m_Data: {fileID: 8926484042661614595}
   m_InputFlowSlot:
-  - link: []
+  - link:
+    - context: {fileID: 8926484042661614610}
+      slotIndex: 0
   - link: []
   m_OutputFlowSlot:
   - link:
@@ -1423,8 +1425,10 @@ MonoBehaviour:
   m_InputFlowSlot:
   - link: []
   m_OutputFlowSlot:
-  - link: []
-  eventName: StartHeatbreak
+  - link:
+    - context: {fileID: 8926484042661614555}
+      slotIndex: 0
+  eventName: StartHeartbreak
 --- !u!114 &8926484042661614611
 MonoBehaviour:
   m_ObjectHideFlags: 0

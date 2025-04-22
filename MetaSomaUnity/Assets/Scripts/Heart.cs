@@ -107,6 +107,12 @@ public class Heart : MonoBehaviour
     {
         if (health > 0)
         { 
+            // particles
+            if (GameObject.FindObjectOfType<LevelManager_Chapel>())
+            {
+                GameManager.instance.currentLevelManager.GetComponent<LevelManager_Chapel>().PlayHeartbreakParticles();
+            }
+            
             // screenshake
             if (UIShakeHandler.instance != null)
             {

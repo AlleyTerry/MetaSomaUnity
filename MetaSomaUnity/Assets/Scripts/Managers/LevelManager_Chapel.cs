@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.VFX;
 using Yarn.Unity;
 using Yarn.Unity.Example;
 
@@ -19,6 +20,9 @@ public class LevelManager_Chapel : LevelManagerBase
     public string introDialogueNode = "ChapelStart";
     
     [SerializeField] private Transform defaultSpawnPoint;
+    
+    // PARTICLES
+    [SerializeField] private VisualEffect heartbreakParticles;
     
     protected override void Start()
     {
@@ -73,6 +77,10 @@ public class LevelManager_Chapel : LevelManagerBase
         {
             Debug.LogWarning("CameraMidpointController not found in scene. \n Do we need this?");
         }
+        
+        // PARTICLES 
+        // TODO: this is more like temporary, we need to find a better way to do this
+        heartbreakParticles = GameObject.Find("Heartbreak").GetComponent<VisualEffect>();
     }
 
     public override void StartCutsScene(string cutSceneDialogueNode)
@@ -197,5 +205,11 @@ public class LevelManager_Chapel : LevelManagerBase
     public void DisableLinnaeusAnimation()
     {
         DisableNPCAnimation();
+    }
+    
+    [YarnCommand("PlayHeartbreakParticles")]
+    public void PlayHeartbreakParticles()
+    {
+        heartbreakParticles.SendEvent("StartHeartbreak");
     }
 }
