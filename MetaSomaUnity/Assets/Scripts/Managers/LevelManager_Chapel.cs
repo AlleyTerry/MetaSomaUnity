@@ -29,16 +29,6 @@ public class LevelManager_Chapel : LevelManagerBase
         base.Start();
     }
 
-    protected override void Update()
-    {
-        base.Update();
-
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            PlayHeartbreakParticles();
-        }
-    }
-
     public override void Initialize()
     {
         base.Initialize();
