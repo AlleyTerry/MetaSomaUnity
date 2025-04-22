@@ -334,9 +334,10 @@ imeris: (Rapidly press the up arrow when you see the indicator)
 title: EnterCafeteria
 ---
 imeris: There might be some food in here, at least.
-//cam pan to first dead body and back
-imeris: !
-imeris: Oh, Goddess...
+===
+title: SeeBody
+---
+imeris: Is that...
 ===
 
 title: DeadGirl
@@ -350,7 +351,7 @@ imeris: The plate in front of him is licked completely clean...
 ===
 title: RottenFood
 ---
-imeris: I'm starving, but... I can’t eat any of these scraps... They're rotten.
+imeris: I'm starving, but... I can’t eat any of these scraps. They're rotten.
 ===
 
 title: EyeStartCafeteria
@@ -371,9 +372,24 @@ title: HalfAliveGrub
 // shrinking
 Imeris: You’re still alive?! Oh Goddess…
 Imeris: What happened here?
-Grub: Why are you asking that…? You should know… We’ve been abandoned.
+Grub: Why are you asking that? You should know… 
+Grub: We’ve been abandoned.
 Imeris: Abandoned?
-Grub: Her Majesty vanished, and there was no one to take her place. They all left… 
+Grub: Her Majesty vanished, and there was no one to take her place. No one to lead.
+Grub: So they all left… 
+
+<<set $hover_text_up = "">>
+<<set $hover_text_left = "">>
+<<set $hover_text_right = "">>
+<<SetHoverText OptionsBubble>>
+
+-> Question
+    <<jump Question>>
+-> Deny
+    <<jump Deny>>
+-> Condemn
+    <<jump Condemn>>
+
 Imeris: They…? The bees? They left us all behind?!
 Grub: Perhaps not all. A select few of us seem to have vanished alongside them… but we’re all disappearing now. 
 Grub: I myself will vanish too, soon.

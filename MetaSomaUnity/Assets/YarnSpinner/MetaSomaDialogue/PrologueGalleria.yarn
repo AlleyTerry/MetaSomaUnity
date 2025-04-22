@@ -1,18 +1,18 @@
 ﻿title: PrologueGalleria
 tags:
 ---
-Narrator: Hazy memories drift through the sea of metamorphosing sleep…
-Galleria: Imeris, are you <i>still</i> in bed? 
-Galleria: It’s nearly time for the morning sermon! Get up!
+Narrator: Hazy memories drift through the sea of metamorphosing sleep… ▼
+Galleria: Imeris, are you <i>still</i> in bed? ▽
+Galleria: It’s nearly time for the morning sermon! Get up! ▼
 <<ShowGalleria ManagerHolder>>
-Imeris: Mmm… Don’t shout, please… I can wake up on my own.
-Galleria: You say that, but…
-Galleria: Well, anyway, all the maids have been called to work early today, so I can’t come to today’s service.
-Galleria: I’ll see you tonight, or at dinner. 
-Galleria: Stay out of trouble, okay?
-Imeris: I’ll try. 
-Galleria: I'm sure.
+Imeris: Mmm… Don’t shout, please… I can wake up on my own. ▽
+Galleria: You say that, but… ▽
+Galleria: Well, anyway, all the maids have been called to work early today, so I can’t come to today’s service. ▽
+Galleria: I’ll see you tonight, or at dinner. ▽
+Galleria: Stay out of trouble, okay? ▽
+Imeris: I’ll try. ▽
+Galleria: I'm sure. ▽
 <<HideGalleria ManagerHolder>>
-imeris: I should hurry and put on my vestments. Father Linnaeus is waiting. 
+imeris: I should hurry and put on my vestments. Father Linnaeus is waiting. ▽
 <<StartPrologueLevel ManagerHolder>>
 ===
