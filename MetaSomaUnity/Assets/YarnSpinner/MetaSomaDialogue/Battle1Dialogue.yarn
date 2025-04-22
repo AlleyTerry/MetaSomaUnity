@@ -20,11 +20,11 @@ Narrator: Linnaeus is gathered, and acting<color=\#98ED14> calm</color>.
 <<set $hover_text_right = "Who is he to say that to me?">>
 <<SetHoverText OptionsBubble>>
 
--> Justify (Reason)
+-> Justify 
     <<jump Justify>>
--> Apologize (Submission)
+-> Apologize
     <<jump Apologize>>
--> Reject (Challenge)
+-> Reject
     <<jump Reject>>
 
 ===
@@ -46,11 +46,11 @@ Narrator: Linnaeus is enraged. He has become<color=\#FF3D0B> aggressive</color>.
 <<set $hover_text_right = "How dare he accuse me of this!">>
 <<SetHoverText OptionsBubble>>
 
--> Respond (Reason)
+-> Respond
     <<jump Respond>>
--> Say Nothing (Submission)
+-> Say Nothing
     <<jump SayNothing>>
--> Argue (Challenge)
+-> Argue
     <<jump Argue>>
 ===
 title: Respond
@@ -72,11 +72,11 @@ Narrator: Linnaeus is<color=\#EDAE14> condescending</color> to you.
 <<set $hover_text_right = "It was always there.">>
 <<SetHoverText OptionsBubble>>
 
--> Knowledge (Reason)
+-> Knowledge
     <<jump Knowledge>>
--> Hunger (Submission)
+-> Hunger
     <<jump Hunger>>
--> Anger (Challenge)
+-> Anger
     <<jump Anger>>
 ===
 
@@ -97,11 +97,11 @@ Narrator: Linnaeus is<color=\#EDAE14> condescending</color> to you.
 <<set $hover_text_right = "It was always there.">>
 <<SetHoverText OptionsBubble>>
 
--> Knowledge (Reason)
+-> Knowledge
     <<jump Knowledge>>
--> Hunger (Submission)
+-> Hunger
     <<jump Hunger>>
--> Anger (Challenge)
+-> Anger
     <<jump Anger>>
 ===
 title: Argue
@@ -123,11 +123,11 @@ Narrator: Linnaeus is <color=\#EDAE14> condescending</color> to you.
 <<set $hover_text_right = "It was always there.">>
 <<SetHoverText OptionsBubble>>
 
--> Knowledge (Reason)
+-> Knowledge
     <<jump Knowledge>>
--> Hunger (Submission)
+-> Hunger
     <<jump Hunger>>
--> Anger (Challenge)
+-> Anger
     <<jump Anger>>
 ===
 
@@ -199,11 +199,11 @@ Narrator: Linnaeus has gathered himself, and is acting<color=\#98ED14> calm</col
 <<set $hover_text_right = "He puts all the blame on me, but he is no innocent bystander.">>
 <<SetHoverText OptionsBubble>>
 
--> Refute (Reason)
+-> Refute 
     <<jump Refute>>
--> Apologize (Submission)
+-> Apologize
     <<jump Apologize2>>
--> Accuse (Challenge)
+-> Accuse
     <<jump Accuse>>
 ===
 title: Refute
@@ -226,11 +226,11 @@ Narrator: Linnaeus is acting<color=\#98ED14> calm</color>.
 <<set $hover_text_right = "I know in my heart that he is wrong. I can't give in.">>
 <<SetHoverText OptionsBubble>>
 
--> Disobey (Reason)
+-> Disobey
     <<jump Disobey>>
--> Surrender (Submission)
+-> Surrender
     <<jump Surrender>>
--> Resist (Challenge)
+-> Resist
     <<jump Resist>>
 ===
 title: Apologize2
@@ -258,11 +258,11 @@ Narrator: Linnaeus is acting<color=\#98ED14> calm</color>.
 <<set $hover_text_right = "I know in my heart that he is wrong. I can't give in.">>
 <<SetHoverText OptionsBubble>>
 
--> Disobey (Reason)
+-> Disobey
     <<jump Disobey>>
--> Surrender (Submission)
+-> Surrender
     <<jump Surrender>>
--> Resist (Challenge)
+-> Resist
     <<jump Resist>>
 ===
 
@@ -288,11 +288,11 @@ Narrator: Linnaeus is acting<color=\#98ED14> calm</color>.
 <<set $hover_text_right = "I know in my heart that he is wrong. I can't give in.">>
 <<SetHoverText OptionsBubble>>
 
--> Disobey (Reason)
+-> Disobey
     <<jump Disobey>>
--> Surrender (Submission)
+-> Surrender
     <<jump Surrender>>
--> Resist (Challenge)
+-> Resist
     <<jump Resist>>
 ===
 
@@ -354,11 +354,11 @@ Narrator: Linnaeus is acting<color=\#98ED14> calm</color>.
 <<set $hover_text_right = "Of the two of us, he is the truly selfish one.">>
 <<SetHoverText OptionsBubble>>
 
--> Defend yourself (Reason)
+-> Defend yourself
     <<jump DefendSelf>>
--> Ignore (Submission)
+-> Ignore
     <<jump Ignore>>
--> Prosecute (Challenge)
+-> Prosecute
     <<jump Prosecute>>
 ===
 
@@ -382,11 +382,11 @@ Narrator: Linnaeus is acting<color=\#98ED14> calm</color>.
 <<set $hover_text_right = "Acting so high and mighty… I’ll take him down a peg.">>
 <<SetHoverText OptionsBubble>>
 
--> Pacify (Reason)
+-> Pacify
     <<jump Pacify>>
--> Retreat (Submissive)
+-> Retreat
     <<jump Retreat>>
--> Taunt (Challenge)
+-> Taunt
     <<jump Taunt>>
 ===
 
@@ -407,11 +407,11 @@ Narrator: Linnaeus is acting<color=\#98ED14> calm</color>.
 <<set $hover_text_right = "Acting so high and mighty… I’ll take him down a peg.">>
 <<SetHoverText OptionsBubble>>
 
--> Pacify (Reason)
+-> Pacify
     <<jump Pacify>>
--> Retreat (Submissive)
+-> Retreat
     <<jump Retreat>>
--> Taunt (Challenge)
+-> Taunt
     <<jump Taunt>>
 ===
 
@@ -435,11 +435,11 @@ Narrator: Linnaeus is acting<color=\#98ED14> calm</color>.
 <<set $hover_text_right = "Acting so high and mighty… I’ll take him down a peg.">>
 <<SetHoverText OptionsBubble>>
 
--> Pacify (Reason)
+-> Pacify
     <<jump Pacify>>
--> Retreat (Submissive)
+-> Retreat
     <<jump Retreat>>
--> Taunt (Challenge)
+-> Taunt
     <<jump Taunt>>
 ===
 
@@ -535,11 +535,11 @@ Narrator: Linnaeus is<color=\#EDAE14> condescending</color> to you.
 <<set $hover_text_right = "Does he think he can intimidate me?">>
 <<SetHoverText OptionsBubble>>
 
--> Beg (Reason) 
+-> Beg
     <<jump Beg>>
--> Brace (Submission)
+-> Brace
     <<jump EquipDagger>>
--> Threaten (Challenge)
+-> Threaten
     <<jump Threaten>>
 ===
 
@@ -562,11 +562,11 @@ Narrator: Linnaeus is acting<color=\#98ED14> calm</color>.
 <<set $hover_text_right = "He’s not worth listening to.">>
 <<SetHoverText OptionsBubble>>
 
--> Reverse (Reason)
+-> Reverse
     <<jump Reverse>>
--> Acquiesce (Submission)
+-> Acquiesce
     <<jump Acquiesce>>
--> Disregard (Challenge)
+-> Disregard
     <<jump Disregard>>
 ===
 
@@ -642,11 +642,11 @@ Narrator: Linnaeus is getting<color=\#FF3D0B> aggressive</color>.
 <<set $hover_text_right = "I can’t stand this any longer!!!">>
 <<SetHoverText OptionsBubble>>
 
--> Breathe in (Reason)
+-> Breathe in
     <<jump BreatheIn>>
--> Have Faith (Submission)
+-> Have Faith
     <<jump HaveFaith>>
--> Lash out (Challenge)
+-> Lash out
     <<jump LashOut>>
 ===
 
@@ -719,11 +719,11 @@ Narrator: Linnaeus is<color=\#EDAE14> condescending</color> to you.
 <<set $hover_text_right = "I’ve had enough of his yelling. I’ll shut him up.">>
 <<SetHoverText OptionsBubble>>
 
--> Patronize (Reason)
+-> Patronize
     <<jump Patronize>>
--> Bide (Submission)
+-> Bide
     <<jump Bide>>
--> Goad (Challenge)
+-> Goad
     <<jump Goad>>
 ===
 
