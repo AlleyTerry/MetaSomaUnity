@@ -31,6 +31,17 @@ public class LedgerMinigame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if the player clicks off the game and it deselects the UI, when they click back it should select the first button
+        if (EventSystem.current.currentSelectedGameObject == null && clickedObject == null && ButtonsNamePlates.Count >0)
+        {
+            EventSystem.current.SetSelectedGameObject(ButtonsNamePlates[0]);
+        }
+
+        if (clickedObject != null)
+        {
+            //turn off the ability to select other buttons
+            EventSystem.current.SetSelectedGameObject(null);
+        }
         
         //when the player presses up or down arrow key then move the clickedobject next snap point cycling through the list
         if (Input.GetKeyDown(KeyCode.UpArrow) && isSnapped)
@@ -93,7 +104,7 @@ public class LedgerMinigame : MonoBehaviour
                     EventSystem.current.SetSelectedGameObject(ButtonsNamePlates[0]);
                 
                 }
-                else if (currentSnapPointIndex == 1 && clickedObject.name == "Galleria")
+                else if (currentSnapPointIndex == 1 && clickedObject.name == "Imeris")
                 {
                     Debug.Log("Correct");
                     //stop controlling the button
@@ -108,7 +119,7 @@ public class LedgerMinigame : MonoBehaviour
                     EventSystem.current.SetSelectedGameObject(ButtonsNamePlates[0]);
                 
                 }
-                else if (currentSnapPointIndex == 2 && clickedObject.name == "Imeris")
+                else if (currentSnapPointIndex == 2 && clickedObject.name == "Galleria")
                 {
                     Debug.Log("Correct");
                     //stop controlling the button
@@ -125,9 +136,25 @@ public class LedgerMinigame : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Incorrect");
-                    //reset the enter index
-                    enterIndex--;
+                    if (clickedObject.name == "Linn")
+                    {
+                        //play wrong dialogue from the dialogue system
+                        enterIndex--;
+                        FindObjectOfType<DialogueRunner>().StartDialogue("WrongLedgerLinn");
+                    }
+                    else if (clickedObject.name == "Imeris")
+                    {
+                        //play wrong dialogue from the dialogue system
+                        enterIndex--;
+                        FindObjectOfType<DialogueRunner>().StartDialogue("WrongLedgerImeris");
+                    }
+                    else if (clickedObject.name == "Galleria")
+                    {
+                        //play wrong dialogue from the dialogue system
+                        enterIndex--;
+                        FindObjectOfType<DialogueRunner>().StartDialogue("WrongLedgerGalleria");
+                    }
+                    
 
                 }
               

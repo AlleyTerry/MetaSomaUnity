@@ -205,13 +205,37 @@ imeris: I have no need to enter another’s bedroom.
 
 title: LedgerMinigameManager
 ---
-imeris: startLedgerGame
+imeris: Oh, the ledger is broken
 <<StartLedgerMinigame ManagerHolder>>
+
+===
+title: WrongLedgerImeris
+---
+imeris: No... I don't belong there...
+
+
+===
+title: WrongLedgerGalleria
+---
+imeris: She... deserves better... but no...
+
+
+===
+title: WrongLedgerLinn
+---
+imeris: That's not right...He led us...
+
+
+===
+title: RightLedger
+---
+imeris: Oh, the ledger is broken
+
 
 ===
 title: EndLedgerMinigameManager
 ---
-imeris: minigame over
+imeris: ... i fixed it...
 <<EndLedgerMinigame ManagerHolder>>
 
 ===
