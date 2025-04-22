@@ -2532,6 +2532,7 @@ MonoBehaviour:
   isSnapped: 0
   currentSnapPointIndex: 0
   snapPoint1Clicked: 1
+  gameEnded: 0
   enterIndex: 0
 --- !u!114 &895105550
 MonoBehaviour:
@@ -2549,6 +2550,8 @@ MonoBehaviour:
   isOverlapping: 0
   objName: LedgerMinigame
   interactionType: 0
+  isJustShowOnce: 0
+  isIndicator: 1
   continuingDialogueNode: 
 --- !u!1 &912956230
 GameObject:
@@ -3880,7 +3883,7 @@ Transform:
   m_GameObject: {fileID: 1552513515}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.21, y: -0.099999905, z: -10}
+  m_LocalPosition: {x: 7.8, y: 0.13, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4411,12 +4414,12 @@ PrefabInstance:
     - target: {fileID: 5910737808706525008, guid: 67b683a3d2236fa44b70f4ac0a150e45,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.21
+      value: 7.8
       objectReference: {fileID: 0}
     - target: {fileID: 5910737808706525008, guid: 67b683a3d2236fa44b70f4ac0a150e45,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1
+      value: -1.87
       objectReference: {fileID: 0}
     - target: {fileID: 5910737808706525008, guid: 67b683a3d2236fa44b70f4ac0a150e45,
         type: 3}
@@ -4607,7 +4610,7 @@ Transform:
   m_GameObject: {fileID: 1880653389}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.6355553, y: -0.099999905, z: -10}
+  m_LocalPosition: {x: 7.8, y: 0.13, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
