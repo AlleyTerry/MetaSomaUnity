@@ -131,11 +131,16 @@ public class InteractableItemBase : MonoBehaviour, ITriggerable
                 DialogueManager.instance.StopDialogue();
             }
 
-            if (isJustShowOnce)
-            {
-                // disable the trigger
-                GetComponent<BoxCollider>().enabled = false;
-            }
+            Invoke(nameof(DisableTrigger), 0.5f);
+        }
+    }
+
+    protected void DisableTrigger()
+    {
+        if (isJustShowOnce)
+        {
+            // disable the trigger
+            GetComponent<BoxCollider>().enabled = false;
         }
     }
 
