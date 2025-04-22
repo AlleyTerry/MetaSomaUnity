@@ -17,6 +17,7 @@ public class LedgerMinigame : MonoBehaviour
     public bool isSnapped = false;
     public int currentSnapPointIndex = 0;
     public bool snapPoint1Clicked = true;
+    public bool gameEnded = false;
 
     public int enterIndex;
     // Start is called before the first frame update
@@ -42,130 +43,133 @@ public class LedgerMinigame : MonoBehaviour
             //turn off the ability to select other buttons
             EventSystem.current.SetSelectedGameObject(null);
         }
-        
-        //when the player presses up or down arrow key then move the clickedobject next snap point cycling through the list
-        if (Input.GetKeyDown(KeyCode.UpArrow) && isSnapped)
+
+        if (gameEnded == false)
         {
-            if (currentSnapPointIndex == 0)
+            //when the player presses up or down arrow key then move the clickedobject next snap point cycling through the list
+            if (Input.GetKeyDown(KeyCode.UpArrow) && isSnapped)
             {
-                currentSnapPointIndex = 2;
-            }
-            else
-            {
-                currentSnapPointIndex--;
-            }
-
-            if (clickedObject != null)
-            {
-                clickedObject.transform.position = snapPoints[currentSnapPointIndex].transform.position;
-                clickedObject.transform.SetParent(snapPoints[currentSnapPointIndex].transform);
-            }
-           
-            
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow) && isSnapped)
-        {
-            if (currentSnapPointIndex == 2)
-            {
-                currentSnapPointIndex = 0;
-            }
-            else
-            {
-                currentSnapPointIndex++;
-            }
-
-            if (clickedObject != null)
-            {
-                clickedObject.transform.position = snapPoints[currentSnapPointIndex].transform.position;
-                clickedObject.transform.SetParent(snapPoints[currentSnapPointIndex].transform);
-            }
-            
-        }
-
-        if (Input.GetKeyDown(KeyCode.Return) )
-        {
-            enterIndex++;
-
-            if (enterIndex == 2)
-            {
-                //if index is 0 and the clicked object button name is "Linn" debug log correct
-                if (currentSnapPointIndex == 0 && clickedObject.name == "Linn")
+                if (currentSnapPointIndex == 0)
                 {
-                    Debug.Log("Correct");
-                    //no longer allow the button to be chosen
-                    clickedObject.GetComponent<Button>().interactable = false;
-                    //reset the enter index
-                    enterIndex = 0;
-                    snapPoint1Clicked = true;
-                    //remove the clicked object from the button list
-                    ButtonsNamePlates.Remove(clickedObject);
-                    clickedObject = null;
-                    //set eventsystem first selected to the first button in the button list
-                    EventSystem.current.SetSelectedGameObject(ButtonsNamePlates[0]);
-                
-                }
-                else if (currentSnapPointIndex == 1 && clickedObject.name == "Imeris")
-                {
-                    Debug.Log("Correct");
-                    //stop controlling the button
-                    clickedObject.GetComponent<Button>().interactable = false;
-                    //reset the enter index
-                    enterIndex = 0;
-                    snapPoint1Clicked = true;
-                    //remove the clicked object from the button list
-                    ButtonsNamePlates.Remove(clickedObject);
-                    clickedObject = null;
-                    //set eventsystem first selected to the first button in the button list
-                    EventSystem.current.SetSelectedGameObject(ButtonsNamePlates[0]);
-                
-                }
-                else if (currentSnapPointIndex == 2 && clickedObject.name == "Galleria")
-                {
-                    Debug.Log("Correct");
-                    //stop controlling the button
-                    clickedObject.GetComponent<Button>().interactable = false;
-                    //reset the enter index
-                    enterIndex = 0;
-                    snapPoint1Clicked = true;
-                    //remove the clicked object from the button list
-                    ButtonsNamePlates.Remove(clickedObject);
-                    clickedObject = null;
-                    //set eventsystem first selected to the first button in the button list
-                    EventSystem.current.SetSelectedGameObject(ButtonsNamePlates[0]);
-                    
+                    currentSnapPointIndex = 2;
                 }
                 else
                 {
-                    if (clickedObject.name == "Linn")
+                    currentSnapPointIndex--;
+                }
+
+                if (clickedObject != null)
+                {
+                    clickedObject.transform.position = snapPoints[currentSnapPointIndex].transform.position;
+                    clickedObject.transform.SetParent(snapPoints[currentSnapPointIndex].transform);
+                }
+           
+            
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow) && isSnapped)
+            {
+                if (currentSnapPointIndex == 2)
+                {
+                    currentSnapPointIndex = 0;
+                }
+                else
+                {
+                    currentSnapPointIndex++;
+                }
+
+                if (clickedObject != null)
+                {
+                    clickedObject.transform.position = snapPoints[currentSnapPointIndex].transform.position;
+                    clickedObject.transform.SetParent(snapPoints[currentSnapPointIndex].transform);
+                }
+            
+            }
+
+            if (Input.GetKeyDown(KeyCode.Return) )
+            {
+                enterIndex++;
+
+                if (enterIndex == 2)
+                {
+                    //if index is 0 and the clicked object button name is "Linn" debug log correct
+                    if (currentSnapPointIndex == 0 && clickedObject.name == "Linn")
                     {
-                        //play wrong dialogue from the dialogue system
-                        enterIndex--;
-                        FindObjectOfType<DialogueRunner>().StartDialogue("WrongLedgerLinn");
+                        Debug.Log("Correct");
+                        //no longer allow the button to be chosen
+                        clickedObject.GetComponent<Button>().interactable = false;
+                        //reset the enter index
+                        enterIndex = 0;
+                        snapPoint1Clicked = true;
+                        //remove the clicked object from the button list
+                        ButtonsNamePlates.Remove(clickedObject);
+                        clickedObject = null;
+                        //set eventsystem first selected to the first button in the button list
+                        EventSystem.current.SetSelectedGameObject(ButtonsNamePlates[0]);
+                
                     }
-                    else if (clickedObject.name == "Imeris")
+                    else if (currentSnapPointIndex == 1 && clickedObject.name == "Imeris")
                     {
-                        //play wrong dialogue from the dialogue system
-                        enterIndex--;
-                        FindObjectOfType<DialogueRunner>().StartDialogue("WrongLedgerImeris");
+                        Debug.Log("Correct");
+                        //stop controlling the button
+                        clickedObject.GetComponent<Button>().interactable = false;
+                        //reset the enter index
+                        enterIndex = 0;
+                        snapPoint1Clicked = true;
+                        //remove the clicked object from the button list
+                        ButtonsNamePlates.Remove(clickedObject);
+                        clickedObject = null;
+                        //set eventsystem first selected to the first button in the button list
+                        EventSystem.current.SetSelectedGameObject(ButtonsNamePlates[0]);
+                
                     }
-                    else if (clickedObject.name == "Galleria")
+                    else if (currentSnapPointIndex == 2 && clickedObject.name == "Galleria")
                     {
-                        //play wrong dialogue from the dialogue system
-                        enterIndex--;
-                        FindObjectOfType<DialogueRunner>().StartDialogue("WrongLedgerGalleria");
+                        Debug.Log("Correct");
+                        //stop controlling the button
+                        clickedObject.GetComponent<Button>().interactable = false;
+                        //reset the enter index
+                        enterIndex = 0;
+                        snapPoint1Clicked = true;
+                        //remove the clicked object from the button list
+                        ButtonsNamePlates.Remove(clickedObject);
+                        clickedObject = null;
+                        //set eventsystem first selected to the first button in the button list
+                        EventSystem.current.SetSelectedGameObject(ButtonsNamePlates[0]);
+                    
                     }
+                    else
+                    {
+                        if (clickedObject.name == "Linn")
+                        {
+                            //play wrong dialogue from the dialogue system
+                            enterIndex--;
+                            FindObjectOfType<DialogueRunner>().StartDialogue("WrongLedgerLinn");
+                        }
+                        else if (clickedObject.name == "Imeris")
+                        {
+                            //play wrong dialogue from the dialogue system
+                            enterIndex--;
+                            FindObjectOfType<DialogueRunner>().StartDialogue("WrongLedgerImeris");
+                        }
+                        else if (clickedObject.name == "Galleria")
+                        {
+                            //play wrong dialogue from the dialogue system
+                            enterIndex--;
+                            FindObjectOfType<DialogueRunner>().StartDialogue("WrongLedgerGalleria");
+                        }
                     
 
-                }
+                    }
               
+                }
             }
         }
 
-        if (ButtonsNamePlates.Count == 0 && enterIndex ==0)
+        if (ButtonsNamePlates.Count == 0 && gameEnded == false)
         {
             //play yarn dialogue from the dialogue system
             FindObjectOfType<DialogueRunner>().StartDialogue("EndLedgerMinigameManager");
-            enterIndex++;
+            gameEnded = true;
 
         }
         
