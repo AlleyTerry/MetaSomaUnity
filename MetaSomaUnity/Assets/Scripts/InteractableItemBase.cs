@@ -24,6 +24,12 @@ public class InteractableItemBase : MonoBehaviour, ITriggerable
     public string objName;
     public InteractionType interactionType;
     
+    // IS_JUST_SHOW_ONCE
+    [SerializeField] private bool isJustShowOnce = false;
+    
+    // INDICATOR
+    [SerializeField] private bool isIndicator = true;
+    
     /*[SerializeField] private DialogueRunner dialogueRunner;*/
  
     // Start is called before the first frame update
@@ -98,7 +104,7 @@ public class InteractableItemBase : MonoBehaviour, ITriggerable
         if (other.CompareTag("Player"))
         {
             isOverlapping = true;
-            visualCue.SetActive(true);
+            if (isIndicator) visualCue.SetActive(true);
         }
     }
     
@@ -118,12 +124,23 @@ public class InteractableItemBase : MonoBehaviour, ITriggerable
             // Set visual cue to false
             /*visualCue.SetActive(false);*/
             
-            GetComponentInChildren<Animator>().Play("EyeIndicator_BNW_backward");
+            if (isIndicator) GetComponentInChildren<Animator>().Play("EyeIndicator_BNW_backward");
             
             if (DialogueManager.instance.dialogueRunner.IsDialogueRunning)
             {
                 DialogueManager.instance.StopDialogue();
             }
+
+            Invoke(nameof(DisableTrigger), 0.5f);
+        }
+    }
+
+    protected void DisableTrigger()
+    {
+        if (isJustShowOnce)
+        {
+            // disable the trigger
+            GetComponent<BoxCollider>().enabled = false;
         }
     }
 
