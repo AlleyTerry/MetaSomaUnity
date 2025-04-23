@@ -215,4 +215,69 @@ public class LevelManager_Chapel : LevelManagerBase
     {
         heartbreakParticles.SendEvent("StartHeartbreak");
     }
+    
+    
+
+    
+    [YarnCommand("LinnAttack")]
+    public void LinnAttack()
+    {
+        CGDisplayAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/EndBattleAnimations/EndBattleCGS");
+        CGDisplayAnimator.runtimeAnimatorController = CGDisplayAnimatorController;
+        GameManager.instance.CGDisplay.SetActive(true);
+        CGDisplayAnimator.Play("LinnAttack");
+    }
+    
+    [YarnCommand("DontEatLinn")]
+    public void DontEatLinn()
+    {
+        //play dontEatLinn animation
+        CGDisplayAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/EndBattleAnimations/EndBattleCGS");
+        CGDisplayAnimator.runtimeAnimatorController = CGDisplayAnimatorController;
+        GameManager.instance.CGDisplay.SetActive(true);
+        CGDisplayAnimator.Play("DontEatLinn");
+        
+    }
+
+
+    [YarnCommand("SecondBreadFrame")]
+    public void SecondBreadFrame()
+    {
+        CGDisplayAnimator.Play("DontEatLinn2");
+    }
+    
+    [YarnCommand("ThirdBreadFrame")]
+    public void ThirdBreadFrame()
+    {
+        CGDisplayAnimator.Play("DontEatLinn3");
+    }
+    
+    [YarnCommand("FourthBreadFrame")]
+    public void FourthBreadFrame()
+    {
+        CGDisplayAnimator.Play("DontEatLinn4");
+    }
+    
+    //end battle cgs
+    [YarnCommand("EatLinn")]
+    public void EatLinn()
+    {
+        //play eatLinn animation
+        CGDisplayAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/EndBattleAnimations/EndBattleCGS");
+        CGDisplayAnimator.runtimeAnimatorController = CGDisplayAnimatorController;
+        GameManager.instance.CGDisplay.SetActive(true);
+        CGDisplayAnimator.Play("EatLinn");
+    }
+    
+    [YarnCommand("EatLinn2")]
+    public void EatLinn2()
+    {
+        CGDisplayAnimator.Play("EatLinn2");
+    }
+    
+    [YarnCommand("EatLinn3")]
+    public void EatLinn3()
+        {
+            CGDisplayAnimator.Play("EatLinn3");
+        }
 }

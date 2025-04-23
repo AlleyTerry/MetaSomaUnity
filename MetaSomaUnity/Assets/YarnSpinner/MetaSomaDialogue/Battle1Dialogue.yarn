@@ -924,7 +924,11 @@ title: YouFeel
 position: -418,1669
 ---
 
-Narrator: (Short animation of Imeris striking Linnaeus with the dagger, and then the screen fades to black)
+<<LinnAttack ManagerHolder>>
+===
+title: EndLinnAttack
+position: -418,1669
+---
 Narrator: When you look up, your hands are wet with red, and Linnaeus's lifeless body lies before you. 
 Narrator: You are frozen with horror, unable to do anything but stare.
 Narrator: This tool of the Court, wielding words like a cudgel to keep you all in check. 
@@ -987,8 +991,37 @@ Narrator: Something must be done.
 title: EatBread
 position: -418,1669
 ---
+<<DontEatLinn ManagerHolder>>
 
-Narrator: (Short series of images showing Imeris at the offering bowls, and then sitting on the carpet, despondent.)
+
+===
+title: Eatbread1
+position:
+---
+Narrator: You wrench your gaze away and turn to gather all the offerings. You eat them, one by one. 
+
+Narrator: Your mouth is no less dry, and your hunger is no less sharp, but there is nothing more for you here. 
+
+Narrator: Your stomach growls again and you feel a profound despair flood through your every vein. 
+
+Narrator: Just as it nearly overwhelms you, your mind is flooded with memories.
+<<SecondBreadFrame ManagerHolder>>
+===
+title: Eatbread2
+position:
+---
+Narrator: You wrench your gaze away and turn to gather all the offerings. You eat them, one by one. 
+
+Narrator: Your mouth is no less dry, and your hunger is no less sharp, but there is nothing more for you here. 
+
+Narrator: Your stomach growls again and you feel a profound despair flood through your every vein. 
+
+Narrator: Just as it nearly overwhelms you, your mind is flooded with memories.
+<<ThirdBreadFrame ManagerHolder>>
+===
+title: Eatbread3
+position:
+---
 Narrator: You wrench your gaze away and turn to gather all the offerings. You eat them, one by one. 
 
 Narrator: Your mouth is no less dry, and your hunger is no less sharp, but there is nothing more for you here. 
@@ -997,15 +1030,19 @@ Narrator: Your stomach growls again and you feel a profound despair flood throug
 
 Narrator: Just as it nearly overwhelms you, your mind is flooded with memories.
 
-Narrator: (A memory sequence plays, then fades back into Imeris sitting on the chapel carpet)
-
 Narrator: You ready yourself to leave, and decide to look at Linnaeus one final time.
+<<FourthBreadFrame ManagerHolder>>
+===
+title: Eatbread4
+position:
+---
 
 Narrator: You notice a key on a string tied around his neck- the key to the stairwell. 
 
 Narrator: You take the key and make your way to the altar.
 
 Narrator: You offer a prayer of thanks to Mellonella before leaving the chapel. 
+<<StopMusic ManagerHolder 0.25>>
 
 <<ExitBattle Imeris>>
 ===
@@ -1032,26 +1069,18 @@ Narrator: Are you sure?
 title: SateHunger
 position: -418,1669
 ---
-
+<<EatLinn ManagerHolder>>
 Narrator: Your heart and mind scream at you not to do it.
+<<EatLinn2 ManagerHolder>>
 Narrator: But you cannot bear the hunger any longer.
-
-Narrator: (A short series of images showing Imeris cupping their hands and filling them with blood before bringing them to their mouth,)
-Narrator: (then a shot of their face, red smeared on their mouth and chin, and single visible pupil blown wide.)
-Narrator: At the very first bite of still-warm flesh, you lose yourself.
-Narrator: Consumed whole by your own appetite, you feast. As your stomach fills, your heart empties. 
-Narrator: When you can control yourself once more, you look down at what you’ve left behind and gag. 
-Narrator: What you’ve already taken threatens to climb back up your throat and out onto the carpet. 
-Narrator: You cover your mouth and run. 
-Narrator: You leave what remains of Linnaeus, and a part of you is left behind with him.
-Narrator: The moment you slam the door shut behind you, fragmented memories flood your mind.
-Narrator: (Memory sequence)
-Narrator: (Return to overworld: UI shrinks down to medium viewport)
-Imeris: …
-Narrator: (Sequence where Imeris begins metamorphosing again and the player goes back to their bedroom.)
-Narrator: (They’re walking slower. Then chrysalis sequence, then return to player control, with bigger wings.)
+<<EatLinn3 ManagerHolder>>
 
 
+
+===
+title: EndEatLinn
+position:
+---
 <<StopMusic ManagerHolder 0.25>>
 <<ExitBattle Imeris>> // TODO: FADE OUT MUSIC
 ===
