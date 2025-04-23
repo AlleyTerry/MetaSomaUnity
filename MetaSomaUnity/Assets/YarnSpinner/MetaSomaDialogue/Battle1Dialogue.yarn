@@ -1070,9 +1070,9 @@ Narrator: Rebirth yourself and try again.
 -> Metamorphose
     <<RestartGameFromOpening ManagerHolder>>
 -> Quit
-    <<RestartGameFromOpening ManagerHolder>>
--> Quit
-    <<RestartGameFromOpening ManagerHolder>>
+    <<QuitGame ManagerHolder>>
+-> Fight Again
+    <<FightAgain ManagerHolder>>
     
 ===
 

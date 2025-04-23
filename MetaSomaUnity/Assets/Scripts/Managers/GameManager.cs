@@ -211,11 +211,25 @@ public class GameManager : MonoBehaviour
     public void RestartGameFromOpening()
     {
         // Quit the game
-        Invoke(nameof(QuitGame), 0.75f);
+        Invoke(nameof(LoadMainMenu), 0.5f);
         ImerisMovement.instance.currentState = new BeforeAnyEvolutionState(SubState.Healthy);
-        HUD.SetActive(false);
+        //HUD.SetActive(false);
+    }
+
+    [YarnCommand("FightAgain")]
+    public void FightAgain()
+    {
+        DialogueManager.instance.dialogueRunner.Stop();
+        
+        UIManager.instance.EnableAnimator();
+        UIManager.instance.PlayAnimation("MediumViewportTransition_Reversed");
+        
+        currentLevelManager.NPCAnimation.GetComponent<Animator>().Play("NPCEyesTransitionReverse");
+        
+        Invoke(nameof(LoadChapel), 1.1f);
     }
     
+    [YarnCommand("QuitGame")]
     public void QuitGame()
     {
         Debug.Log("Quitting game...");
@@ -228,9 +242,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadSceneAsync(0);
     }
 
-    public void LoadFirstChapter()
+    public void LoadChapel()
     {
-        
+        CurrentLevelIndex = 7;
+        //SceneManager.LoadSceneAsync(7);
     }
     
     public void LoadNextLevel()

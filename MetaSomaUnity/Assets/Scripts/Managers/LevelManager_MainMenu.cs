@@ -25,6 +25,15 @@ public class LevelManager_MainMenu : LevelManagerBase
         GameManager.instance.HUD.SetActive(true);
         GameManager.instance.CGDisplay.SetActive(false);
         
+        SetButton();
+        
+        // ADD LISTENERS
+        //buttonStart.onClick.AddListener(GameManager.instance.LoadNextLevel);
+        //buttonQuit.onClick.AddListener(QuitGame);
+    }
+
+    private void SetButton()
+    {
         // SETUP BUTTONS
         buttonCredit = GameObject.Find("ButtonCredit").GetComponent<Button>();
         buttonStart = GameObject.Find("ButtonStart").GetComponent<Button>();
@@ -38,10 +47,11 @@ public class LevelManager_MainMenu : LevelManagerBase
         // set start button to be the default selected button
         currentButtonIndex = 1;
         SelectButton(currentButtonIndex);
-        
-        // ADD LISTENERS
-        //buttonStart.onClick.AddListener(GameManager.instance.LoadNextLevel);
-        //buttonQuit.onClick.AddListener(QuitGame);
+    }
+
+    public override void Initialize()
+    {
+        SetButton();
     }
 
     protected override void Update()

@@ -33,6 +33,9 @@ public class LevelManager_Chapel : LevelManagerBase
     {
         base.Initialize();
         
+        GameManager.instance.ResumeControls();
+        NPCAnimation.GetComponent<Animator>().Play("NPCEyesTransitionReverse");
+        
         GameManager.instance.HUD.SetActive(true);
         GameManager.instance.CGDisplay.SetActive(false);
         
