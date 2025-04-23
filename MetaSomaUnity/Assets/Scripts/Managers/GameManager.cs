@@ -211,11 +211,18 @@ public class GameManager : MonoBehaviour
     public void RestartGameFromOpening()
     {
         // Quit the game
-        Invoke(nameof(QuitGame), 0.75f);
+        Invoke(nameof(LoadMainMenu), 0.5f);
         ImerisMovement.instance.currentState = new BeforeAnyEvolutionState(SubState.Healthy);
-        HUD.SetActive(false);
+        //HUD.SetActive(false);
+    }
+
+    [YarnCommand("FightAgain")]
+    public void FightAgain()
+    {
+        //GameManager.instance.
     }
     
+    [YarnCommand("QuitGame")]
     public void QuitGame()
     {
         Debug.Log("Quitting game...");
@@ -228,9 +235,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadSceneAsync(0);
     }
 
-    public void LoadFirstChapter()
+    public void LoadChapel()
     {
-        
+        CurrentLevelIndex = 7;
     }
     
     public void LoadNextLevel()
