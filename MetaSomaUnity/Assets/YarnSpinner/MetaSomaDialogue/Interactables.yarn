@@ -25,8 +25,8 @@ imeris: …and please destroy this portrait of Queen Andromeda so I don’t have
 
 title: PeopleInCommonRoom
 ---
-imeris: Even without the maids, there are so many people here… 
-imeris: I can feel them looking at me.
+imeris: Even without the maids, there are so many people here. 
+imeris: I can feel them looking at me...
 <<ResumeControls ManagerHolder>>
 ===
 title:LinnaeusPrologue
@@ -43,7 +43,8 @@ Linnaeus: In any case, I won’t be in need of your help today.
 Linnaeus: The preparations for the morning sermon are already complete.
 Linnaeus: Just go open the door and let everyone in, will you?
 Imeris: Yes, Father. 
-
+//move camera back
+Imeris: As you wish...
 <<SermonStart ManagerHolder>>
 
 ===
@@ -143,13 +144,13 @@ imeris: I need to leave.
 
 title: MellonellaShrine
 ---
-imeris: I’ve prayed here countless times, I know. Under Her Majesty’s… watchful gaze.
+imeris: I remember praying here. Under Her Majesty’s… watchful gaze.
 ===
 
 title: Wardrobe
 ---
 imeris: Why is this blocking the door?
-imeris: I'll need to move it to leave.
+imeris: I'll need to move it.
 imeris: (Rapidly press the LEFT arrow key when you see the indicator)
 <<StartWardrobeMiniGame WardrobeMiniGame>>
 ===
@@ -205,37 +206,52 @@ imeris: I have no need to enter another’s bedroom.
 
 title: LedgerMinigameManager
 ---
-imeris: Oh, the ledger is broken
+imeris: The servant directory. It lists important residents of the hall.
+imeris: People I know. Their names are familiar.
+imeris: The priest, the chief performer, the altar servant, the head maids and butlers...
+imeris: All organized in order of rank, even within their caste. 
+imeris: Oh, some of the plaques fell off.
+imeris: Galleria's... and mine. And Linnaeus'.
+imeris: ...I'll put them back.
 <<StartLedgerMinigame ManagerHolder>>
 
 ===
 title: WrongLedgerImeris
 ---
-imeris: No... I don't belong there...
+imeris: I don't belong there.
 
 
 ===
 title: WrongLedgerGalleria
 ---
-imeris: She... deserves better... but no...
+imeris: She deserved to be higher, but... that's not correct.
 
 
 ===
 title: WrongLedgerLinn
 ---
-imeris: That's not right...He led us...
+imeris: That's too low for Linnaeus. Our priest leads; he doesn't follow.
 
 
 ===
-title: RightLedger
+title: RightLedgerImeris
 ---
-imeris: Oh, the ledger is broken
-
-
+imeris: There I go.
 ===
+
+title: RightLedgerGalleria
+---
+imeris: Not where I'd put her, but that's where she goes.
+===
+
+title: RightLedgerLinn
+---
+imeris: Right at the top. 
+===
+
 title: EndLedgerMinigameManager
 ---
-imeris: ... i fixed it...
+imeris: There. Fixed.
 <<EndLedgerMinigame ManagerHolder>>
 
 ===
@@ -370,17 +386,23 @@ title: HalfAliveGrub
 ---
 <<set $tableReady to true>>
 // shrinking
+Narrator: A conversation has begun. 
+Narrator: At times, you will be given the chance to choose how you respond.
+Narrator: Select potential responses with the left, up, and right arrow keys.
+Narrtor: Press enter to confirm your final choice.
+Narrator: Try to make it a good one.
+
 Imeris: You’re still alive?! Oh Goddess…
 Imeris: What happened here?
 Grub: Why are you asking that? You should know… 
 Grub: We’ve been abandoned.
 Imeris: Abandoned?
 Grub: Her Majesty vanished, and there was no one to take her place. No one to lead.
-Grub: So they all left… 
+Grub: So they... the Bees... they all left. 
 
-<<set $hover_text_up = "">>
-<<set $hover_text_left = "">>
-<<set $hover_text_right = "">>
+<<set $hover_text_up = "But why?">>
+<<set $hover_text_left = "They wouldn't...">>
+<<set $hover_text_right = "Those heartless beasts!">>
 <<SetHoverText OptionsBubble>>
 
 -> Question
@@ -389,22 +411,152 @@ Grub: So they all left…
     <<jump Deny>>
 -> Condemn
     <<jump Condemn>>
+===
 
-Imeris: They…? The bees? They left us all behind?!
-Grub: Perhaps not all. A select few of us seem to have vanished alongside them… but we’re all disappearing now. 
+title: Question
+---
+Imeris: But why would they leave us behind?
+Imeris: They kept us all this time- why desert us now?
+Grub: The days that followed Queen Andromeda's disappearance were rife with panic.
+Grub: Fear gripped the hearts of the elites. Fear that they were next.
+Grub: In their haste to flee, they only took the few servants they took a liking to.
+Grub: Their favorites, if they could find them.
+Grub: Some hid to avoid being separated from their families.
+Grub: I'm sure they regret that choice now, if they're still alive to do so.
+Grub: Those that vanished with the bees might be better off. 
+Grub: But we're all disappearing, now... even me.
+Grub: I’m just so hungry…
+
+<<set $hover_text_up = "Is it so hopeless?">>
+<<set $hover_text_left = "He seems so tired...">>
+<<set $hover_text_right = "He can't just give up here!">>
+<<SetHoverText OptionsBubble>>
+
+-> Counsel
+    <<jump Counsel>>
+-> Comfort
+    <<jump Comfort>>
+-> Rouse
+    <<jump Rouse>>
+===
+
+title: Deny
+---
+Imeris: No, they wouldnt... They'd be condeming us all to death!
+Imeris: They KNOW we can't leave on our own... 
+Imeris: They're the ones that made it that way!
+Grub: They may not have even spared us a thought.
+Grub: They were so afraid when Queen Andromeda disappeared...
+Grub: Afraid whatever got her would target others.
+Grub: So they left, and in their haste, left us behind.
+Grub: Or most of us, anyway. 
+Grub: A select few of us seem to have vanished alongside them… but we’re all disappearing now. 
 Grub: I myself will vanish too, soon.
-Grub: I’m just so hungry… but there’s nothing I can do now.
-Grub: He’s taken it all… every last scrap… there’s nothing left for me. I don’t have the energy to try and take anything back.
-Imeris: Who is "he"? Father Linnaeus?
-Grub: Yes. He’s locked his door again, hasn’t he? Locked you out?
-Grub: You seem to have the will to go on… so I'll help you.
-Grub: The key to the chapel… I’ve hidden it underneath the bust of Her Majesty. 
-Grub: Linnaeus would never dream of moving her from her spot, the sycophantic fool.
-Grub: Go. Take it. Sneak in and steal back the food he has stolen, so you may live just a bit longer.
-Grub: Though there is little left to live for anymore…
+Grub: From the hunger.
+
+<<set $hover_text_up = "Is it so hopeless?">>
+<<set $hover_text_left = "He seems so tired...">>
+<<set $hover_text_right = "He can't just give up here!">>
+<<SetHoverText OptionsBubble>>
+
+-> Counsel
+    <<jump Counsel>>
+-> Comfort
+    <<jump Comfort>>
+-> Rouse
+    <<jump Rouse>>
+===
+
+title: Condemn
+---
+Imeris: How could they just abandon us like that?!
+Imeris: THEY trapped us here, and now they simply leave us to die?
+Imeris: Like it's NOTHING?!
+Grub: Please, don't shout...
+Grub: There is no answer that will satisfy you.
+Grub: They were just afraid. 
+Grub: Afraid they'de be next, after Queen Andromeda disappeared.
+Grub: So they left, quickly, as soon as it was clear she wouldn't reappear.
+Grub: And now we, too, are disappearing, one after another...
+Grub: And I fear I will be next. The hunger will take me soon.
+
+<<set $hover_text_up = "He shouldn't abandon hope yet.">>
+<<set $hover_text_left = "He seems so tired... I'll encourage him.">>
+<<set $hover_text_right = "He can't just give up here!">>
+<<SetHoverText OptionsBubble>>
+
+-> Counsel
+    <<jump Counsel>>
+-> Comfort
+    <<jump Comfort>>
+-> Rouse
+    <<jump Rouse>>
+===
+
+title: Counsel
+---
+Imeris: Don't give in so soon.
+Imeris: I'm searching for food, and I'll bring you some here.
+Imeris: We can escape this!
+Imeris: You just need to hold on a little longer, conserve your energy.
+Grub: No... I've reached the end of my rope.
+Grub: I can scarcely move anymore. 
+Grub: Even speaking is becoming... hard.
+Grub: I won't last to see you to return. 
+Grub: But... I thank you. For the kindness.
+Grub: Someone like you might still... find a way out...
+Grub: Let me do my part... to help...
+<<jump GrubEnd>>
+===
+
+title: Comfort
+---
+Imeris: I know it is hard.
+Imeris: I see the same horror you do in this very room.
+Imeris: But you can't give up hope.
+Imeris: I can help you; we can make our way out of this, together!
+Grub: Ha ha... How sweet.
+Grub: You are kind. But a bit foolish, too.
+Grub: There is no saving me. Even now, I can feel my body slowing.
+Grub: I thank you for trying, though.
+Grub: In exchange for your kindness, I'll give you this...
+Grub: More time to find your own way out of this hell.
+
+<<jump GrubEnd>>
+===
+
+Title: Rouse
+---
+Imeris: How can you say such things?
+Imeris: You're still alive now, aren't you?
+Imeris: Don't give them the satisfaction- don't let this kill you!
+Imeris: You have to <i>fight</i>!
+Grub: I'm sorry... I don't have it in me anymore.
+Grub: Prolonging my own suffering won't win me anything. I know when to surrender.
+Grub: But, thank you... for trying.
+Grub: The will to go on burns brightly within you.
+Grub: It's given me... hope. That maybe, one of us will make it out.
+Grub: So I'll give you the dying embers of my own will...
+<<jump GrubEnd>>
+===
+
+title: GrubEnd
+---
+Grub: Father Linnaeus has been hoarding food. 
+Grub: It's likely hidden in the Chapel now... 
+Grub: Behind a locked door we are all too weak to force open.
+Grub: But I found a key to that door... weeks ago. And I was able to sneak in.
+Grub: I kept the key... hidden... underneath the bust of Her Majesty...
+Grub: It is still there, just outside this room, I am sure…
+Grub: Linnaeus would never <i>dream</i> of moving her from her spot... 
+Grub: The sycophantic fool...
+Grub: Go. Take it. 
+Grub: Steal back the food he has stolen, so you may live just a bit longer...
+Grub: Though there is little left to live for, anymore…
 Imeris: …Thank you.
-Grub: Yes, yes. Now please… just leave me be. I’d like to rest.
+Grub: Yes, yes... Now please… just leave me be. I’d like to... rest...
 Imeris: …
+
 <<ExitBattle Imeris>>
 
 <<TalkedToHalfDeadGrub ManagerHolder>>

@@ -12,7 +12,8 @@ position: -462,-1568
 <<PlayMusic ManagerHolder "linnaeusBattleStart">>
 
 Linnaeus: Do you have anything to say for yourself?
-Narrator: Tread carefully; your choices may hurt you. Protect your heart, and stay true to yourself.
+Narrator: Tread carefully; in this battle of words, your choices may hurt you. 
+Narrator: Protect your heart, and stay true to yourself.
 Narrator: Linnaeus is gathered, and acting<color=\#98ED14> calm</color>. 
 
 <<set $hover_text_up = "I have an argument.">>
