@@ -1071,7 +1071,7 @@ Narrator: Rebirth yourself and try again.
 -> Quit
     <<QuitGame ManagerHolder>>
 -> Fight Again
-    <<QuitGame ManagerHolder>>
+    <<FightAgain ManagerHolder>>
     
 ===
 

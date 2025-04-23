@@ -219,7 +219,14 @@ public class GameManager : MonoBehaviour
     [YarnCommand("FightAgain")]
     public void FightAgain()
     {
-        //GameManager.instance.
+        DialogueManager.instance.dialogueRunner.Stop();
+        
+        UIManager.instance.EnableAnimator();
+        UIManager.instance.PlayAnimation("MediumViewportTransition_Reversed");
+        
+        currentLevelManager.NPCAnimation.GetComponent<Animator>().Play("NPCEyesTransitionReverse");
+        
+        Invoke(nameof(LoadChapel), 1.1f);
     }
     
     [YarnCommand("QuitGame")]
@@ -238,6 +245,7 @@ public class GameManager : MonoBehaviour
     public void LoadChapel()
     {
         CurrentLevelIndex = 7;
+        //SceneManager.LoadSceneAsync(7);
     }
     
     public void LoadNextLevel()
