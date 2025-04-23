@@ -469,26 +469,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 6e93b7172e7e41a4bbe58212c741c4f8,
+        type: 3}
     - target: {fileID: 2302286715156229834, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}
       propertyPath: m_Color.a
-      value: 0.87058824
+      value: 0.8745098
       objectReference: {fileID: 0}
     - target: {fileID: 2302286715156229834, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2302286715156229834, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2302286715156229834, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2302286715208037269, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}
@@ -2473,6 +2474,8 @@ MonoBehaviour:
   isOverlapping: 0
   objName: MellonellaShrineZoom
   interactionType: 0
+  isJustShowOnce: 0
+  isIndicator: 1
   continuingDialogueNode: 
 --- !u!1 &1682847022
 GameObject:
