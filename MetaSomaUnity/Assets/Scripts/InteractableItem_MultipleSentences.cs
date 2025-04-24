@@ -5,7 +5,14 @@ using UnityEngine;
 public class InteractableItemMultipleSentences : InteractableItemBase
 {
     [SerializeField] private string continuingDialogueNode;
-    
+
+    protected override void Start()
+    {
+        base.Start();
+        
+        isEnterToContinue = true;
+    }
+
     protected override void OnTriggerEnter(Collider other)
     {
         base.OnTriggerEnter(other);
