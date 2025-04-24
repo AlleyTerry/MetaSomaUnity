@@ -246,7 +246,6 @@ public class LevelManager_Chapel : LevelManagerBase
         
     }
 
-
     [YarnCommand("SecondBreadFrame")]
     public void SecondBreadFrame()
     {
@@ -305,5 +304,25 @@ public class LevelManager_Chapel : LevelManagerBase
     {
         // play background music
         gameObject.GetComponent<AudioManager>().PlaySFX("EatingSounds");
+    }
+
+    [YarnCommand("PlayGoodMemory")]
+    public void PlayGoodMemory()
+    {
+        CGDisplayAnimatorController = 
+            Resources.Load<RuntimeAnimatorController>("Animations/BattleMemoryCG/BattleMemoryCGS");
+        CGDisplayAnimator.runtimeAnimatorController = CGDisplayAnimatorController;
+        GameManager.instance.CGDisplay.SetActive(true);
+        CGDisplayAnimator.Play("GoodMemory");
+    }
+    
+    [YarnCommand("PlayBadMemory")]
+    public void PlayBadMemory()
+    {
+        CGDisplayAnimatorController = 
+            Resources.Load<RuntimeAnimatorController>("Animations/BattleMemoryCG/BattleMemoryCGS");
+        CGDisplayAnimator.runtimeAnimatorController = CGDisplayAnimatorController;
+        GameManager.instance.CGDisplay.SetActive(true);
+        CGDisplayAnimator.Play("BadMemory");
     }
 }
