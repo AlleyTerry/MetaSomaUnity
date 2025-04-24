@@ -129,4 +129,32 @@ public class AudioManager : MonoBehaviour
         MAS_Manager.PlayBackgroundMusic(null, fadeOutTime, 0, 1);
         isMusicPlaying = false;
     }
+    
+    private AudioSource beeHummingPlayer;
+
+    // adding second audio source for the bee humming
+    [YarnCommand("PlayBeeHumming")]
+    public void PlayBeeHumming()
+    {
+        beeHummingPlayer = gameObject.AddComponent<AudioSource>();
+        beeHummingPlayer.playOnAwake = false;
+        beeHummingPlayer.loop = true;
+        AudioClip beeHumming = AudioManager.instance.beeHumming;
+
+        beeHummingPlayer.clip = beeHumming;
+        MAS_Manager.PlayBackgroundMusic(
+            beeHummingPlayer.clip, 0f, 2.0f, 0.9f);
+    }
+
+    [YarnCommand("StopBeeHumming")]
+    public void StopBeeHumming()
+    {
+        if (beeHummingPlayer != null)
+        {
+            beeHummingPlayer.clip = null;
+            MAS_Manager.PlayBackgroundMusic(
+                beeHummingPlayer.clip, 0.25f, 0.15f, 0.0f);
+            Destroy(beeHummingPlayer);
+        }
+    }
 }

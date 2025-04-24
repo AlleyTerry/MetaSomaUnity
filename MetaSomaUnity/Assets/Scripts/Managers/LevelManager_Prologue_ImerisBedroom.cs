@@ -124,6 +124,4 @@ public class LevelManager_Prologue_ImerisBedroom : LevelManagerBase
     {
         PortraitZoom.SetActive(false);
     }
-    
-    
 }

@@ -629,7 +629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 5249238084494064836}
   openingCrawl: {fileID: 8300000, guid: 552620e2ae1655a43b1bb072abc0b2fa, type: 3}
-  beeHumming: {fileID: 0}
+  beeHumming: {fileID: 8300000, guid: f3cea1e9ae6736e489ba3ffd865782c0, type: 3}
   levelExploration: {fileID: 8300000, guid: 2a49d20c91dc4fc4a8dc1bf1336c3055, type: 3}
   linnaeusBattleStart: {fileID: 8300000, guid: be8c17af26f4aa145a09e84e7adab4f9, type: 3}
   linnaeusBattleEnd: {fileID: 8300000, guid: 61979667d6f5ef143b7af20ec5743503, type: 3}
