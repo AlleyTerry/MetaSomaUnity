@@ -975,7 +975,9 @@ Narrator: You look upon the offerings he defended with his life.
 Narrator: They are paltry. 
 Narrator: He threw himself away for mere scraps of bread, dry save for crusted spots of honey.
 Narrator: But still, it is food.
+<<BreadFrame ManagerHolder>>
 Narrator: You turn to gather all the offerings and eat them, one by one.
+<<PureBlack ManagerHolder>>
 Narrator: When you finish them, your mouth is no less dry, and your hunger is no less sharp.
 Narrator: Your need runs deep. They were not enough to satisfy you.
 Narrator: You look back at Linnaeus. 
@@ -1095,8 +1097,10 @@ Narrator: But you cannot bear the hunger any longer.
 title: EndEatLinn
 position:
 ---
-<<EatingSounds ManagerHolder>>
 Narrator: At the very first bite of still-warm flesh, you lose yourself.
+<<PureBlack ManagerHolder>>
+<<wait .8>>
+<<EatingSounds ManagerHolder>>
 //turn off imeris's cg
 
 Narrator: Consumed whole by your own appetite, you feast. As your stomach fills, your heart empties. 
@@ -1107,6 +1111,9 @@ Narrator: You leave what remains of Linnaeus, and a part of you is left behind w
 Narrator: The moment you slam the door shut behind you, fragmented memories flood your mind.
 
 //this is where the bad memories should play
+<<PlayBadBattleMemory ManagerHolder>>
+<<wait 6.5>>
+<<PureBlack ManagerHolder>>
 
 Narrator: The memories you see are painful. They frighten you.
 Narrator: You want to hide away. 

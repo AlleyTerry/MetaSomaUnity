@@ -306,7 +306,7 @@ public class LevelManager_Chapel : LevelManagerBase
         gameObject.GetComponent<AudioManager>().PlaySFX("EatingSounds");
     }
 
-    [YarnCommand("PlayGoodMemory")]
+    [YarnCommand("PlayGoodBattleMemory")]
     public void PlayGoodMemory()
     {
         Debug.Log("PlayGoodMemory called");
@@ -317,7 +317,7 @@ public class LevelManager_Chapel : LevelManagerBase
         CGDisplayAnimator.Play("GoodMemory");
     }
     
-    [YarnCommand("PlayBadMemory")]
+    [YarnCommand("PlayBadBattleMemory")]
     public void PlayBadMemory()
     {
         Debug.Log("PlayBadMemory called");
