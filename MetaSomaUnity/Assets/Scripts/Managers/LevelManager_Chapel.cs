@@ -224,9 +224,6 @@ public class LevelManager_Chapel : LevelManagerBase
         heartbreakParticles.SendEvent("StartHeartbreak");
     }
     
-    
-
-    
     [YarnCommand("LinnAttack")]
     public void LinnAttack()
     {
@@ -284,8 +281,20 @@ public class LevelManager_Chapel : LevelManagerBase
     }
     
     [YarnCommand("EatLinn3")]
-    public void EatLinn3()
-        {
-            CGDisplayAnimator.Play("EatLinn3");
-        }
+    public void EatLinn3() 
+    {
+        CGDisplayAnimator.Play("EatLinn3"); 
+    }
+
+    [YarnCommand("PlayGoodMemory")]
+    public void GoodMemory()
+    {
+        CGDisplayAnimator.Play("GoodMemory"); 
+    }
+    
+    [YarnCommand("PlayBadMemory")]
+    public void BadMemory()
+    {
+        CGDisplayAnimator.Play("BadMemory"); 
+    }
 }
