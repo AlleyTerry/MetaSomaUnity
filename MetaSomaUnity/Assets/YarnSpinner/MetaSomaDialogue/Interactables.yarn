@@ -10,7 +10,7 @@ title: Setup_Interactables
 title: MellonellaShrineZoom
 ---
 <<ShowShrineZoom ManagerHolder>>
-imeris: O Mellonella, our Goddess of Gold, please guide my steps today…
+imeris: O Mellonella, our Goddess of Gold, please guide my steps today… ▼
 <<HideShrineZoom ManagerHolder>>
 <<jump QueenPortraitZoom>>
 ===
@@ -18,15 +18,15 @@ imeris: O Mellonella, our Goddess of Gold, please guide my steps today…
 title: QueenPortraitZoom
 ---
 <<ShowPortraitZoom ManagerHolder>>
-imeris: …and please destroy this portrait of Queen Andromeda so I don’t have to look upon it any longer.
+imeris: …and please destroy this portrait of Queen Andromeda so I don’t have to look upon it any longer. ▼
 <<HidePortraitZoom ManagerHolder>>
 <<ResumeControls ManagerHolder>>
 ===
 
 title: PeopleInCommonRoom
 ---
-imeris: Even without the maids, there are so many people here. 
-imeris: I can feel them looking at me...
+imeris: Even without the maids, there are so many people here. ▼ 
+imeris: I can feel them looking at me... ▼
 <<ResumeControls ManagerHolder>>
 ===
 
@@ -37,53 +37,53 @@ imeris: I have to get to the chapel. I'll eat later.
 
 title:LinnaeusPrologue
 ---
-Linnaeus: Imeris, there you are! Come closer, my child.
+Linnaeus: Imeris, there you are! Come closer, my child. ▼
 <<ResumeControls ManagerHolder>>
 ===
 
 title:LinnaeusCloser
 ---
-Linnaeus: It’s nearly time for the sermon- I was beginning to worry about you!
-Imeris: My apologies, Father.
-Linnaeus: It's alright, my child. The life of a court performer isn’t an easy one.
-Linnaeus: To take on the duties of an altar servant in addition to that is admirable.
-Linnaeus: I’m sure you’re quite tired.
-Imeris: I will always endeavor to serve Our Lady of Gold…
-Imeris: …No matter the obstacle. 
-Linnaeus: So eager! 
-Linnaeus: That’s why you’re my favorite– but that's our secret, hm?
-Linnaeus: In any case, I won’t be in need of your help today. 
-Linnaeus: The preparations for the morning sermon are already complete.
-Linnaeus: Just go open the door and let everyone in, will you?
-Imeris: Yes, Father. 
+Linnaeus: It’s nearly time for the sermon- I was beginning to worry about you! ▼
+Imeris: My apologies, Father. ▼
+Linnaeus: It's alright, my child. The life of a court performer isn’t an easy one. ▼
+Linnaeus: To take on the duties of an altar servant in addition to that is admirable. ▼
+Linnaeus: I’m sure you’re quite tired. ▼
+Imeris: I will always endeavor to serve Our Lady of Gold… ▼
+Imeris: …No matter the obstacle. ▼
+Linnaeus: So eager! ▼
+Linnaeus: That’s why you’re my favorite– but that's our secret, hm? ▼
+Linnaeus: In any case, I won’t be in need of your help today. ▼
+Linnaeus: The preparations for the morning sermon are already complete. ▼
+Linnaeus: Just go open the door and let everyone in, will you? ▼
+Imeris: Yes, Father. ▼
 //move camera back
-Imeris: As you wish...
+Imeris: As you wish... ▼
 <<SermonStart ManagerHolder>>
 
 ===
 title: LinnaeusSermon
 ---
-Linnaeus: Dear children, our service draws to a close once more.
-Linnaeus: Let us remember what the Golden Goddess Mellonella taught us.
-Linnaeus: Back in the times of war between sprites, Mellonella gave up her life for peace.
-Linnaeus: Her sacrifice saved our people.
-Linnaeus: It allowed us to live long enough to make it here, to this Queendom. 
-Linnaeus: To our home, where we have lived in safety for generations. 
-Linnaeus: Our Goddess’s spilled blood bids us to follow in her example.
-Linnaeus: To make our own sacrifices, so we may continue to live in peace and harmony.  
-Linnaeus: That is our divine duty as caterpillars. 
-Linnaeus: We must practice obedience to the merciful Queens who granted us shelter here.
-Linnaeus: And we must do as our Goddess has instructed us.
-Linnaeus: <color=\#B6AB1B> Achieve prosperity,</color> by becoming a valuable member of your kingdom through servitude.
-Linnaeus: In doing so, you will earn the right to<color=\#B6AB1B> drink of the noble red</color>.
-Linnaeus: And, at the end of your life,<color=\#B6AB1B> you shall ascend</color> to the kingdom of the sky. 
-Linnaeus: Uphold the values of this<color=\#B6AB1B> Golden Scripture</color>, and you shall be rewarded.
-Linnaeus: The Feast of the Noble Red is nearly upon us. 
-Linnaeus: Only those who have shown proper conduct will be able to participate.
-Linnaeus: Those who have not… shall go without food for the night, as per tradition.
-Linnaeus: The fine red honey the court prepares for us is only for those who deserve it.
-Linnaeus: We must <i>all</i> play our parts well for the right to partake of the holy meal.
-Linnaeus: Now off you go; fulfill your ordained duties, my children!
+Linnaeus: Dear children, our service draws to a close once more. ▼
+Linnaeus: Let us remember what the Golden Goddess Mellonella taught us. ▼
+Linnaeus: Back in the times of war between sprites, Mellonella gave up her life for peace. ▼
+Linnaeus: Her sacrifice saved our people. ▼
+Linnaeus: It allowed us to live long enough to make it here, to this Queendom. ▼
+Linnaeus: To our home, where we have lived in safety for generations. ▼
+Linnaeus: Our Goddess’s spilled blood bids us to follow in her example. ▼
+Linnaeus: To make our own sacrifices, so we may continue to live in peace and harmony. ▼ 
+Linnaeus: That is our divine duty as caterpillars. ▼
+Linnaeus: We must practice obedience to the merciful Queens who granted us shelter here. ▼
+Linnaeus: And we must do as our Goddess has instructed us. ▼
+Linnaeus: <color=\#B6AB1B> Achieve prosperity,</color> by becoming a valuable member of your kingdom through servitude. ▼
+Linnaeus: In doing so, you will earn the right to<color=\#B6AB1B> drink of the noble red</color>. ▼
+Linnaeus: And, at the end of your life,<color=\#B6AB1B> you shall ascend</color> to the kingdom of the sky. ▼
+Linnaeus: Uphold the values of this<color=\#B6AB1B> Golden Scripture</color>, and you shall be rewarded. ▼
+Linnaeus: The Feast of the Noble Red is nearly upon us. ▼
+Linnaeus: Only those who have shown proper conduct will be able to participate. ▼
+Linnaeus: Those who have not… shall go without food for the night, as per tradition. ▼
+Linnaeus: The fine red honey the court prepares for us is only for those who deserve it. ▼
+Linnaeus: We must <i>all</i> play our parts well for the right to partake of the holy meal. ▼
+Linnaeus: Now off you go; fulfill your ordained duties, my children! ▼
 
 
 
@@ -92,13 +92,13 @@ Linnaeus: Now off you go; fulfill your ordained duties, my children!
 ===
 title: ImerisZoom
 ---
-imeris: Oh, Father…
-imeris: Our Goddess’s lesson is not as meaningless as you’ve made it.
-imeris: The Noble Red is no frivolous delicacy.
-imeris: Our destiny is not to toil evermore.
-imeris: I know the truth.
-imeris: I’ve found the censored words, written in a script illegible to all but the holy servants… you and I.
-imeris: The true<color=\#B6AB1B> Golden Scripture</color>.
+imeris: Oh, Father… ▼
+imeris: Our Goddess’s lesson is not as meaningless as you’ve made it. ▼
+imeris: The Noble Red is no frivolous delicacy. ▼
+imeris: Our destiny is not to toil evermore. ▼
+imeris: I know the truth. ▼
+imeris: I’ve found the censored words, written in a script illegible to all but the holy servants… you and I. ▼
+imeris: The true<color=\#B6AB1B> Golden Scripture</color>. ▼
 
 <<ImerisFindsTruth1 Viewport_Heart>>
 ===
@@ -106,30 +106,30 @@ imeris: The true<color=\#B6AB1B> Golden Scripture</color>.
 title: StartImerisTruth
 ---
 <<ShowMosiac1 MosiacImages>>
-imeris: Achieve prosperity, 
+imeris: Achieve prosperity, ▼
 <<ShowMosiac2 MosiacImages>>
-imeris: <color=\#A3111E> so you may sate your hunger.</color> 
+imeris: <color=\#A3111E> so you may sate your hunger.</color> ▼ 
 <<ShowMosiac3 MosiacImages>>
-imeris: Drink of the noble red, 
+imeris: Drink of the noble red, ▼ 
 <<ShowMosiac4 MosiacImages>>
-imeris: <color=\#A3111E> which flows in the veins of royalty.</color>
+imeris: <color=\#A3111E> which flows in the veins of royalty.</color> ▼
 <<ShowMosiac5 MosiacImages>>
-imeris: And you shall ascend 
+imeris: And you shall ascend ▼
 <<ShowMosiac6 MosiacImages>>
-imeris: <color=\#A3111E> on wings of gold.</color>
+imeris: <color=\#A3111E> on wings of gold.</color> ▼
 <<CloseMosiacs MosiacImages>>
 
-imeris: I walk now, unblinded, down the true path the Goddess set out for us.
-imeris: The path of<color=\#B6AB1B> Metamorphosis</color>.
-imeris: After weeks of effort, stockpiling scraps, my hunger is sated. 
-imeris: The first step is complete.
-imeris: Now all that remains is…
+imeris: I walk now, unblinded, down the true path the Goddess set out for us. ▼
+imeris: The path of<color=\#B6AB1B> Metamorphosis</color>. ▼
+imeris: After weeks of effort, stockpiling scraps, my hunger is sated. ▼
+imeris: The first step is complete. ▼
+imeris: Now all that remains is… ▼
 
 <<FinalAnimation MosiacImages>>
 ===
 title:EndPrologue
 ---
-Narrator: It’s time to wake up.
+Narrator: It’s time to wake up. ▼
 <<ToIntroScene ManagerHolder>>
 ===
 
@@ -162,25 +162,25 @@ imeris: I remember praying here. Under Her Majesty’s… watchful gaze.
 
 title: Wardrobe
 ---
-imeris: Why is this blocking the door?
-imeris: I'll need to move it.
-imeris: (Rapidly press the LEFT arrow key when you see the indicator)
+imeris: Why is this blocking the door? ▼
+imeris: I'll need to move it. ▼
+imeris: (Rapidly press the LEFT arrow key when you see the indicator) ▼
 <<StartWardrobeMiniGame WardrobeMiniGame>>
 ===
 
 title: WardrobeWin
 ---
-imeris: Huff... Huff...
-imeris: Alright. That's done with.
-imeris: I can leave now.
+imeris: Huff... Huff... ▼
+imeris: Alright. That's done with. ▼
+imeris: I can leave now. ▼
 <<ResumeControls ManagerHolder>>
 ===
 
 title: WardrobeLose
 ---
-imeris: Huff... huff...
-imeris: I'll try again...
-imeris: (Rapidly press the left arrow when you see the indicator)
+imeris: Huff... huff... ▼
+imeris: I'll try again... ▼
+imeris: (Rapidly press the left arrow when you see the indicator) ▼
 <<StartWardrobeMiniGame WardrobeMiniGame>>
 ===
 
@@ -219,13 +219,13 @@ imeris: I have no need to enter another’s bedroom.
 
 title: LedgerMinigameManager
 ---
-imeris: The servant directory. It lists important residents of the hall.
-imeris: People I know. Their names are familiar.
-imeris: The priest, the chief performer, the altar servant, the head maids and butlers...
-imeris: All organized in order of rank, even within their caste. 
-imeris: Oh, some of the plaques fell off.
-imeris: Galleria's... and mine. And Linnaeus'.
-imeris: ...I'll put them back.
+imeris: The servant directory. It lists important residents of the hall. ▼
+imeris: People I know. Their names are familiar. ▼
+imeris: The priest, the chief performer, the altar servant, the head maids and butlers... ▼
+imeris: All organized in order of rank, even within their caste. ▼
+imeris: Oh, some of the plaques fell off. ▼
+imeris: Galleria's... and mine. And Linnaeus'. ▼
+imeris: ...I'll put them back. ▼
 <<StartLedgerMinigame ManagerHolder>>
 
 ===
@@ -264,7 +264,7 @@ imeris: Right at the top.
 
 title: EndLedgerMinigameManager
 ---
-imeris: There. Fixed.
+imeris: There. Fixed. ▼
 <<EndLedgerMinigame ManagerHolder>>
 
 ===
@@ -310,7 +310,8 @@ imeris: The door is locked, and the Father isn’t answering my knocks… I’ll
 ===
 title: EnterCommonRoom
 ---
-imeris: Was that... Father Linnaeus?
+imeris: Was that... Father Linnaeus? ▼
+<<ResumeControls ManagerHolder>>
 ===
 title: DeadBody1
 ---
@@ -336,23 +337,23 @@ imeris: (press space to jump on the table)
 title: Bust2
 ---
 <<PickUpKey DoorToChapel>>
-imeris: The key should be under here.
-imeris: I need to move the bust.
-imeris: (Rapidly press the UP arrow key when you see the indicator)
+imeris: The key should be under here. ▼
+imeris: I need to move the bust. ▼
+imeris: (Rapidly press the UP arrow key when you see the indicator) ▼
 <<StartMiniGame BustMiniGame>>
 
 ===
 title: minigameSuccess
 ---
-imeris: I got the key.
+imeris: I got the key. ▼
 <<ResumeControls ManagerHolder>>
 
 ===
 title: minigameFail
 ---
-imeris: Huff... Huff...
-imeris: Let me try again...
-imeris: (Rapidly press the up arrow when you see the indicator)
+imeris: Huff... Huff... ▼
+imeris: Let me try again... ▼
+imeris: (Rapidly press the up arrow when you see the indicator) ▼
 <<StartMiniGame BustMiniGame>>
 
 ===
@@ -384,34 +385,34 @@ imeris: I'm starving, but... I can’t eat any of these scraps. They're rotten.
 
 title: EyeStartCafeteria
 ---
-imeris: There's someone there...!
+imeris: There's someone there...! ▼
 <<StartCower ManagerHolder>>
 <<SwitchCameraToGrub ManagerHolder>>
 <<wait 1.55>>
-imeris: Can he see me...?
-Grub: Leave... leave me be…
+imeris: Can he see me...? ▼
+Grub: Leave... leave me be… ▼
 <<EndCower ManagerHolder>>
-Imeris: !
+Imeris: ! ▼
 <<IntoGrubBattleScene ManagerHolder>>
 ===
 title: HalfAliveGrub
 ---
 <<set $tableReady to true>>
 // shrinking
-Narrator: A conversation has begun. 
-Narrator: At times, you will be given the chance to choose how you respond.
-Narrator: Select potential responses with the left, up, and right arrow keys.
-Narrator: Press enter to confirm your final choice.
-Narrator: Try to make it a good one.
+Narrator: A conversation has begun. ▼ 
+Narrator: At times, you will be given the chance to choose how you respond. ▼
+Narrator: Select potential responses with the left, up, and right arrow keys. ▼
+Narrator: Press enter to confirm your final choice. ▼
+Narrator: Try to make it a good one. ▼
 
-Imeris: You’re still alive?! Oh Goddess…
-Imeris: What happened here?
-Grub: Why are you asking that? You should know… 
-Grub: We’ve been abandoned.
-Imeris: Abandoned?
-Grub: Her Majesty vanished about a month ago, and there was no one to take her place.
-Grub: So they... the Bees... they all left. 
-imeris: A month...?
+Imeris: You’re still alive?! Oh Goddess… ▼
+Imeris: What happened here? ▼
+Grub: Why are you asking that? You should know… ▼
+Grub: We’ve been abandoned. ▼
+Imeris: Abandoned? ▼
+Grub: Her Majesty vanished about a month ago, and there was no one to take her place. ▼
+Grub: So they... the Bees... they all left. ▼
+imeris: A month...? ▼
 
 <<set $hover_text_up = "But why?">>
 <<set $hover_text_left = "They wouldn't...">>
@@ -428,17 +429,17 @@ imeris: A month...?
 
 title: Question
 ---
-Imeris: But why would they leave us behind?
-Imeris: They kept us all this time- why desert us now?
-Grub: The days that followed Queen Andromeda's disappearance were rife with panic.
-Grub: Fear gripped the hearts of the elites. Fear that they were next.
-Grub: In their haste to flee, they only took the few servants they took a liking to.
-Grub: Their favorites, if they could find them.
-Grub: Some hid to avoid being separated from their families.
-Grub: I'm sure they regret that choice now, if they're still alive to do so.
-Grub: Those that vanished with the bees might be better off. 
-Grub: But we're all disappearing, now... even me.
-Grub: I’m just so hungry…
+Imeris: But why would they leave us behind? ▼
+Imeris: They kept us all this time- why desert us now? ▼
+Grub: The days that followed Queen Andromeda's disappearance were rife with panic. ▼
+Grub: Fear gripped the hearts of the elites. Fear that they were next. ▼
+Grub: In their haste to flee, they only took the few servants they took a liking to. ▼
+Grub: Their favorites, if they could find them. ▼
+Grub: Some hid to avoid being separated from their families. ▼
+Grub: I'm sure they regret that choice now, if they're still alive to do so. ▼
+Grub: Those that vanished with the bees might be better off. ▼ 
+Grub: But we're all disappearing, now... even me. ▼
+Grub: I’m just so hungry… ▼
 
 <<set $hover_text_up = "Is it so hopeless?">>
 <<set $hover_text_left = "He seems so tired...">>
@@ -455,17 +456,17 @@ Grub: I’m just so hungry…
 
 title: Deny
 ---
-Imeris: No, they wouldnt... They'd be condeming us all to death!
-Imeris: They KNOW we can't leave on our own... 
-Imeris: They're the ones that made it that way!
-Grub: They may not have even spared us a thought.
-Grub: They were so afraid when Queen Andromeda disappeared...
-Grub: Afraid whatever got her would target others.
-Grub: So they left, and in their haste, left us behind.
-Grub: Or most of us, anyway. 
-Grub: A select few of us seem to have vanished alongside them… but we’re all disappearing now. 
-Grub: I myself will vanish too, soon.
-Grub: From the hunger.
+Imeris: No, they wouldnt... They'd be condeming us all to death! ▼
+Imeris: They KNOW we can't leave on our own... ▼
+Imeris: They're the ones that made it that way! ▼
+Grub: They may not have even spared us a thought. ▼
+Grub: They were so afraid when Queen Andromeda disappeared... ▼
+Grub: Afraid whatever got her would target others. ▼
+Grub: So they left, and in their haste, left us behind. ▼
+Grub: Or most of us, anyway. ▼
+Grub: A select few of us seem to have vanished alongside them… but we’re all disappearing now. ▼ 
+Grub: I myself will vanish too, soon. ▼
+Grub: From the hunger. ▼
 
 <<set $hover_text_up = "Is it so hopeless?">>
 <<set $hover_text_left = "He seems so tired...">>
@@ -482,16 +483,16 @@ Grub: From the hunger.
 
 title: Condemn
 ---
-Imeris: How could they just abandon us like that?!
-Imeris: THEY trapped us here, and now they simply leave us to die?
-Imeris: Like it's NOTHING?!
-Grub: Please, don't shout...
-Grub: There is no answer that will satisfy you.
-Grub: They were just afraid. 
-Grub: Afraid they'de be next, after Queen Andromeda disappeared.
-Grub: So they left, quickly, as soon as it was clear she wouldn't reappear.
-Grub: And now we, too, are disappearing, one after another...
-Grub: And I fear I will be next. The hunger will take me soon.
+Imeris: How could they just abandon us like that?! ▼
+Imeris: THEY trapped us here, and now they simply leave us to die? ▼
+Imeris: Like it's NOTHING?! ▼
+Grub: Please, don't shout... ▼
+Grub: There is no answer that will satisfy you. ▼
+Grub: They were just afraid. ▼
+Grub: Afraid they'de be next, after Queen Andromeda disappeared. ▼
+Grub: So they left, quickly, as soon as it was clear she wouldn't reappear. ▼
+Grub: And now we, too, are disappearing, one after another... ▼
+Grub: And I fear I will be next. The hunger will take me soon. ▼
 
 <<set $hover_text_up = "He shouldn't abandon hope yet.">>
 <<set $hover_text_left = "He seems so tired... I'll encourage him.">>
@@ -508,69 +509,69 @@ Grub: And I fear I will be next. The hunger will take me soon.
 
 title: Counsel
 ---
-Imeris: Don't give in so soon.
-Imeris: I'm searching for food, and I'll bring you some here.
-Imeris: We can escape this!
-Imeris: You just need to hold on a little longer, conserve your energy.
-Grub: No... I've reached the end of my rope.
-Grub: I can scarcely move anymore. 
-Grub: Even speaking is becoming... hard.
-Grub: I won't last long enough to see you return. 
-Grub: But... I thank you. For the kindness.
-Grub: Someone like you might still... find a way out...
-Grub: Let me do my part... to help...
+Imeris: Don't give in so soon. ▼
+Imeris: I'm searching for food, and I'll bring you some here. ▼
+Imeris: We can escape this! ▼
+Imeris: You just need to hold on a little longer, conserve your energy. ▼
+Grub: No... I've reached the end of my rope. ▼
+Grub: I can scarcely move anymore. ▼
+Grub: Even speaking is becoming... hard. ▼
+Grub: I won't last long enough to see you return. ▼ 
+Grub: But... I thank you. For the kindness. ▼
+Grub: Someone like you might still... find a way out... ▼
+Grub: Let me do my part... to help... ▼
 <<jump GrubEnd>>
 ===
 
 title: Comfort
 ---
-Imeris: I know it is hard.
-Imeris: I see the same horror you do in this very room.
-Imeris: But you can't give up hope.
-Imeris: I can help you; we can make our way out of this together!
-Grub: Ha ha... How sweet.
-Grub: You are kind. But a bit foolish too.
-Grub: There is no saving me. Even now, I can feel my body slowing.
-Grub: I'm not long for this world.
-Grub: I thank you for trying though.
-Grub: In exchange for your kindness, I'll give you this...
-Grub: More time to find your own way out of this hell.
+Imeris: I know it is hard. ▼
+Imeris: I see the same horror you do in this very room. ▼
+Imeris: But you can't give up hope. ▼
+Imeris: I can help you; we can make our way out of this together! ▼
+Grub: Ha ha... How sweet. ▼
+Grub: You are kind. But a bit foolish too. ▼
+Grub: There is no saving me. Even now, I can feel my body slowing. ▼
+Grub: I'm not long for this world. ▼
+Grub: I thank you for trying though. ▼
+Grub: In exchange for your kindness, I'll give you this... ▼
+Grub: More time to find your own way out of this hell. ▼
 
 <<jump GrubEnd>>
 ===
 
 title: Rouse
 ---
-Imeris: How can you say such things?
-Imeris: You're still alive now, aren't you?
-Imeris: Don't give them the satisfaction- don't let this kill you!
-Imeris: You have to <i>fight</i>!
-Grub: I'm sorry... I don't have it in me anymore.
-Grub: I can barely move my body. I'll be of no help to you, or myself. 
-Grub: Prolonging my own suffering won't win me anything. I know when to surrender.
-Grub: But, thank you... for trying.
-Grub: The will to go on burns brightly within you.
-Grub: It's given me... hope. That maybe, one of us will make it out.
-Grub: So I'll give you the dying embers of my own will...
+Imeris: How can you say such things? ▼
+Imeris: You're still alive now, aren't you? ▼
+Imeris: Don't give them the satisfaction- don't let this kill you! ▼
+Imeris: You have to <i>fight</i>! ▼
+Grub: I'm sorry... I don't have it in me anymore. ▼
+Grub: I can barely move my body. I'll be of no help to you, or myself. ▼ 
+Grub: Prolonging my own suffering won't win me anything. I know when to surrender. ▼
+Grub: But, thank you... for trying. ▼
+Grub: The will to go on burns brightly within you. ▼
+Grub: It's given me... hope. That maybe, one of us will make it out. ▼
+Grub: So I'll give you the dying embers of my own will... ▼
 <<jump GrubEnd>>
 ===
 
 title: GrubEnd
 ---
-Grub: Father Linnaeus has been hoarding food. 
-Grub: It's likely hidden in the chapel now... 
-Grub: Behind a locked door we are all too weak to force open.
-Grub: But I found a key to that door... weeks ago. And I was able to sneak in.
-Grub: I kept the key... hidden... underneath the bust of Her Majesty...
-Grub: It is still there, just outside this room, I am sure…
-Grub: Linnaeus would never <i>dream</i> of moving her from her spot... 
-Grub: The sycophantic fool...
-Grub: Go. Take it. 
-Grub: Steal back the food he has stolen, so you may live just a bit longer...
-Grub: Though there is little left to live for anymore…
-Imeris: …Thank you.
-Grub: Yes, yes... Now please… just leave me be. I’d like to... rest...
-Imeris: …
+Grub: Father Linnaeus has been hoarding food. ▼
+Grub: It's likely hidden in the chapel now... ▼ 
+Grub: Behind a locked door we are all too weak to force open. ▼
+Grub: But I found a key to that door... weeks ago. And I was able to sneak in. ▼
+Grub: I kept the key... hidden... underneath the bust of Her Majesty... ▼
+Grub: It is still there, just outside this room, I am sure… ▼
+Grub: Linnaeus would never <i>dream</i> of moving her from her spot... ▼ 
+Grub: The sycophantic fool... ▼
+Grub: Go. Take it. ▼
+Grub: Steal back the food he has stolen, so you may live just a bit longer... ▼
+Grub: Though there is little left to live for anymore… ▼
+Imeris: …Thank you. ▼
+Grub: Yes, yes... Now please… just leave me be. I’d like to... rest... ▼
+Imeris: … ▼
 
 <<DisableNPCAnimation ManagerHolder>>
 
@@ -589,15 +590,15 @@ Imeris: …
 
 title: AfterGrubTalking
 ---
-imeris: …He's gone.
-imeris: …
+imeris: …He's gone. ▼
+imeris: … ▼
 <<ResumeControls ManagerHolder>>
 ===
 
 title: DeadGrub
 ---
-imeris: I can't stand around and mourn.
-imeris: I have to go get the key from under the bust.
+imeris: I can't stand around and mourn. ▼
+imeris: I have to go get the key from under the bust. ▼
 <<ResumeControls ManagerHolder>>
 ===
 
