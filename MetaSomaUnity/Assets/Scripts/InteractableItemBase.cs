@@ -31,9 +31,13 @@ public class InteractableItemBase : MonoBehaviour, ITriggerable
     [SerializeField] private bool isIndicator = true;
     
     /*[SerializeField] private DialogueRunner dialogueRunner;*/
+    
+    // BANNING ENTER TO CONTINUE
+    public bool isEnterToContinue = false;
+    public GameObject lineView;
  
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         /*dialogueRunner = GameManager.instance.dialogueRunner;*/
         
@@ -45,6 +49,9 @@ public class InteractableItemBase : MonoBehaviour, ITriggerable
 
         // Keeping the visual cue behind everything for debugging purposes
         gameObject.GetComponent<SpriteRenderer>().sortingOrder = -10;
+
+        isEnterToContinue = false;
+        lineView = GameObject.FindObjectOfType<LineView>().gameObject;
     }
 
     // Update is called once per frame
@@ -105,6 +112,15 @@ public class InteractableItemBase : MonoBehaviour, ITriggerable
         {
             isOverlapping = true;
             if (isIndicator) visualCue.SetActive(true);
+
+            if (!isEnterToContinue)
+            {
+                lineView.GetComponent<DialogueAdvanceInput>().enabled = false;
+            }
+            else
+            {
+                lineView.GetComponent<DialogueAdvanceInput>().enabled = true;
+            }
         }
     }
     
@@ -113,6 +129,15 @@ public class InteractableItemBase : MonoBehaviour, ITriggerable
         if (other.CompareTag("Player"))
         {
             isOverlapping = true;
+            
+            if (!isEnterToContinue)
+            {
+                lineView.GetComponent<DialogueAdvanceInput>().enabled = false;
+            }
+            else
+            {
+                lineView.GetComponent<DialogueAdvanceInput>().enabled = true;
+            }
         }
     }
     
@@ -132,6 +157,9 @@ public class InteractableItemBase : MonoBehaviour, ITriggerable
             }
 
             Invoke(nameof(DisableTrigger), 0.5f);
+            
+            lineView.GetComponent<DialogueAdvanceInput>().enabled = true;
+            
         }
     }
 

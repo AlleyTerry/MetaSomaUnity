@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Yarn.Unity;
 
 public class LinnaeusMovement : MonoBehaviour
@@ -23,6 +24,10 @@ public class LinnaeusMovement : MonoBehaviour
         linAnimator = GetComponent<Animator>();
         linAnimator.enabled = false;
         linSpriteRenderer = GetComponent<SpriteRenderer>();
+        if (SceneManager.GetActiveScene().name == "Prologue_Chapel")
+        {
+            linAnimator.enabled = true;
+        }
     }
 
     //turns on linnaeus's animator and starts his blink animation after .6 seconds, repeating every 4 seconds

@@ -2552,6 +2552,8 @@ MonoBehaviour:
   interactionType: 0
   isJustShowOnce: 0
   isIndicator: 1
+  isEnterToContinue: 0
+  lineView: {fileID: 0}
   continuingDialogueNode: 
 --- !u!1 &912956230
 GameObject:
@@ -3893,7 +3895,7 @@ Transform:
   m_GameObject: {fileID: 1552513515}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.633589, y: 0.12999976, z: -10}
+  m_LocalPosition: {x: -8.39, y: 0.13, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4620,7 +4622,7 @@ Transform:
   m_GameObject: {fileID: 1880653389}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.633589, y: 0.12999976, z: -10}
+  m_LocalPosition: {x: -7.6355553, y: 0.12999976, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5559,7 +5561,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2146558515}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
