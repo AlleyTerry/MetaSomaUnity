@@ -409,7 +409,7 @@ Transform:
   m_GameObject: {fileID: 221634941}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.45, z: 0}
+  m_LocalPosition: {x: 0, y: -0.592, z: 0}
   m_LocalScale: {x: 0.96, y: 0.23, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1325,6 +1325,8 @@ MonoBehaviour:
   interactionType: 0
   isJustShowOnce: 0
   isIndicator: 1
+  isEnterToContinue: 0
+  lineView: {fileID: 0}
   continuingDialogueNode: 
 --- !u!1 &648609636
 GameObject:
@@ -2145,7 +2147,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051647535}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 2.11
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -3420,7 +3422,7 @@ Transform:
   m_GameObject: {fileID: 1833367907}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.935555, y: -0.25, z: -10}
+  m_LocalPosition: {x: -11.936532, y: -0.25, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
