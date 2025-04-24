@@ -632,6 +632,11 @@ PrefabInstance:
       propertyPath: messageBubbleOffset.x
       value: 4.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7585620475407551681, guid: 31c98296315ab384aad35532a9b2249a,
+        type: 3}
+      propertyPath: messageBubbleOffset.y
+      value: -2.3
+      objectReference: {fileID: 0}
     - target: {fileID: 8043952759771539022, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}
       propertyPath: m_IsActive
@@ -645,7 +650,7 @@ PrefabInstance:
     - target: {fileID: 8536744828141128833, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}
       propertyPath: messageBubbleOffset.y
-      value: 2.5
+      value: 3.2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1246260104906682250, guid: 31c98296315ab384aad35532a9b2249a, type: 3}
@@ -904,7 +909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: 
-  messageBubbleOffset: {x: 0, y: 0, z: 0}
+  messageBubbleOffset: {x: 0, y: 3.2, z: 0}
   offsetUsesRotation: 0
 --- !u!1 &648609636
 GameObject:
@@ -1426,7 +1431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Imeris
-  messageBubbleOffset: {x: -0.85, y: 4, z: 0}
+  messageBubbleOffset: {x: -0.85, y: 3.2, z: 0}
   offsetUsesRotation: 0
 --- !u!1 &1050486446
 GameObject:
@@ -2511,7 +2516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Galleria
-  messageBubbleOffset: {x: 9.12, y: -0.48, z: 0}
+  messageBubbleOffset: {x: 9.12, y: -1.5, z: 0}
   offsetUsesRotation: 0
 --- !u!1 &1804694479
 GameObject:

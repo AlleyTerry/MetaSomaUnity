@@ -1075,9 +1075,8 @@ Narrator: Your heart and mind scream at you not to do it.
 Narrator: But you cannot bear the hunger any longer.
 <<EatLinn3 ManagerHolder>>
 
-
-
 ===
+
 title: EndEatLinn
 position:
 ---
