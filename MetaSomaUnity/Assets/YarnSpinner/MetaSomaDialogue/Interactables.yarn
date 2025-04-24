@@ -571,6 +571,8 @@ Imeris: …Thank you.
 Grub: Yes, yes... Now please… just leave me be. I’d like to... rest...
 Imeris: …
 
+<<DisableNPCAnimation ManagerHolder>>
+
 <<ExitBattle Imeris>>
 
 <<TalkedToHalfDeadGrub ManagerHolder>>
