@@ -139,11 +139,26 @@ public class AudioManager : MonoBehaviour
         beeHummingPlayer = gameObject.AddComponent<AudioSource>();
         beeHummingPlayer.playOnAwake = false;
         beeHummingPlayer.loop = true;
-        AudioClip beeHumming = AudioManager.instance.beeHumming;
 
         beeHummingPlayer.clip = beeHumming;
-        MAS_Manager.PlayBackgroundMusic(
-            beeHummingPlayer.clip, 0f, 2.0f, 0.9f);
+        StartCoroutine(FadeInRoutine(beeHummingPlayer, beeHumming, 2.25f));
+    }
+    
+    private IEnumerator FadeInRoutine(AudioSource audioSource, AudioClip clip, float duration)
+    {
+        audioSource.clip = clip;
+        audioSource.volume = 0f;
+        audioSource.Play();
+
+        float t = 0f;
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(0f, 1f, t / duration);
+            yield return null;
+        }
+
+        audioSource.volume = 1f;
     }
 
     [YarnCommand("StopBeeHumming")]
@@ -151,10 +166,24 @@ public class AudioManager : MonoBehaviour
     {
         if (beeHummingPlayer != null)
         {
-            beeHummingPlayer.clip = null;
-            MAS_Manager.PlayBackgroundMusic(
-                beeHummingPlayer.clip, 0.25f, 0.15f, 0.0f);
-            Destroy(beeHummingPlayer);
+            Debug.Log("Stopping bee humming");
+            StartCoroutine(FadeOutRoutine(beeHummingPlayer, 1f));
         }
+    }
+    
+    private IEnumerator FadeOutRoutine(AudioSource audioSource, float duration)
+    {
+        float startVolume = audioSource.volume;
+        float t = 0f;
+
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(startVolume, 0f, t / duration);
+            yield return null;
+        }
+
+        audioSource.Stop();
+        Destroy(beeHummingPlayer);
     }
 }
