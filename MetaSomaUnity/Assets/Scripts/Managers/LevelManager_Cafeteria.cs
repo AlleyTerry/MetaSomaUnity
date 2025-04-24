@@ -115,7 +115,7 @@ public class LevelManager_Cafeteria : LevelManagerBase
     {
         npcAnimator.runtimeAnimatorController = 
             Resources.Load("Animations/BattleUI/LinneausAnimation") as RuntimeAnimatorController;
-        npcAnimator.Play("LinBattleIdle");
+        npcAnimator.Play("GrubBattle");
     }
 
     public override void ExitBattleDialogue()
