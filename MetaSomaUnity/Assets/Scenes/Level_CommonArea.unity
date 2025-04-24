@@ -3202,6 +3202,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnterCommonRoom
       objectReference: {fileID: 0}
+    - target: {fileID: 8482982094259539089, guid: 9bcbf667072d3444cae0a7e1295462a4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
