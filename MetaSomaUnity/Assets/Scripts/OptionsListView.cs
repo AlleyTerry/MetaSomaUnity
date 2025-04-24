@@ -205,7 +205,8 @@ namespace Yarn.Unity
                 switch (currentSelectedIndex)
                 {
                     case 0: // index 0, up, reason
-                        if (levelManager is LevelManager_Chapel)
+                        if (levelManager is LevelManager_Chapel ||
+                            levelManager is LevelManager_Cafeteria)
                         {
                             if (lastChosenOption == "challenge")
                             {
@@ -225,7 +226,8 @@ namespace Yarn.Unity
                         break;
                     
                     case 1: // index 1, left, submission
-                        if (levelManager is LevelManager_Chapel)
+                        if (levelManager is LevelManager_Chapel ||
+                            levelManager is LevelManager_Cafeteria)
                         {
                             if (lastChosenOption == "reason")
                             {
@@ -245,7 +247,8 @@ namespace Yarn.Unity
                         break;
                     
                     case 2: // index 2, right, challenge
-                        if (levelManager is LevelManager_Chapel)
+                        if (levelManager is LevelManager_Chapel ||
+                            levelManager is LevelManager_Cafeteria)
                         {
                             if (lastChosenOption == "reason")
                             {
