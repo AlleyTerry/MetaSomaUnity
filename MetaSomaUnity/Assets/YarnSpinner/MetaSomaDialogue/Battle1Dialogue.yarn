@@ -145,6 +145,7 @@ Imeris: How there is nothing for us in this world beyond subservience…
 Imeris: Lies you yourself helped the court feed us, by warping our Goddess’s words.
 Imeris: I’ve seen past them. I know what you are, false prophet.
 Imeris: And I know I am meant for more. We all are, if we choose to see it. 
+<<PlayNPCAnimation ManagerHolder LinBattle_ConToCalm>>
 Narrator: Linnaeus, refusing to acknowledge the truth in your words, merely scoffs.
 Narrator: He is unaffected by your argument.
 ///-1 heart
