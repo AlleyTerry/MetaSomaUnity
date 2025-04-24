@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Yarn.Unity;
 
 // MUST REQUIRE AN AUDIO SOURCE COMPONENT
@@ -15,7 +16,10 @@ public class AudioManager : MonoBehaviour
     // AUDIO CLIPS
     public AudioClip openingCrawl;
 
-    public AudioClip level1;
+    public AudioClip beeHumming;
+
+    [FormerlySerializedAs("level1")] 
+    public AudioClip levelExploration;
     
     public AudioClip linnaeusBattleStart;
     public AudioClip linnaeusBattleEnd;
@@ -63,7 +67,7 @@ public class AudioManager : MonoBehaviour
                     audioSource.clip, 0f, 0.25f, 0.8f);
                 break;
             case "level1":
-                audioSource.clip = level1;
+                audioSource.clip = levelExploration;
                 MAS_Manager.PlayBackgroundMusic(
                     audioSource.clip, 0.1f, 0.25f, 1f);
                 break;
