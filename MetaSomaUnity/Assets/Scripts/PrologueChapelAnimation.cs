@@ -11,10 +11,13 @@ public class PrologueChapelAnimation : MonoBehaviour
     public GameObject Linnaeus;
     public GameObject Imeris;
     public bool chapelStarted = false;
+    public GameObject AudioGameObject;
     
     // Start is called before the first frame update
     void Start()
     {
+        //find the audio game object on the parent object
+        AudioGameObject = GameObject.Find("ManagerHolder");
         
     }
 
@@ -55,6 +58,7 @@ public class PrologueChapelAnimation : MonoBehaviour
     [YarnCommand("ImerisZoom")]
     public void ImerisZoom()
     {
+        AudioGameObject.GetComponent<AudioManager>().PlayMusic("EndPrologue");
         Debug.Log("imeriszoom");
         UIManager.instance.EnableAnimator();
         UIManager.instance.PlayAnimation("PrologueViewportHalf");
