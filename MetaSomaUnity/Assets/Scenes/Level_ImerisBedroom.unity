@@ -660,6 +660,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1887937098370837931, guid: 9376fc3a1927eb14192c38774a829615,
+        type: 3}
+      propertyPath: sfxClips.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1887937098370837931, guid: 9376fc3a1927eb14192c38774a829615,
+        type: 3}
+      propertyPath: sfxClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: d67ab4fddacc4db46b65e9639846b62d, type: 3}
     - target: {fileID: 4155168650225817235, guid: 9376fc3a1927eb14192c38774a829615,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2485,7 +2495,7 @@ Transform:
   m_GameObject: {fileID: 1833367907}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.135554, y: -0.25, z: -10}
+  m_LocalPosition: {x: 8.13359, y: -0.25, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

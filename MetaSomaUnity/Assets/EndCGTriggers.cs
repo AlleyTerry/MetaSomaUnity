@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class EndCGTriggers : MonoBehaviour
 {
+    public GameObject AudioGameObject;
     // Start is called before the first frame update
     void Start()
     {
-        
+        //find the audio game object on the parent object
+        AudioGameObject = GameObject.Find("ManagerHolder");
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+    public void CrackSFX()
+    {
+        // Play the crack sound effect
+        AudioGameObject.GetComponent<AudioManager>().PlaySFX("heartBreaking");
     }
     
     public void Eatbread1()
