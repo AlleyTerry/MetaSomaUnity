@@ -107,11 +107,6 @@ public class AudioManager : MonoBehaviour
         //audioSource.Play();
     }
 
-    public void Test()
-    {
-        Debug.Log("Test");
-    }
-
     [YarnCommand("PlaySFX")]
     public void PlaySFX(string clipName)
     {
