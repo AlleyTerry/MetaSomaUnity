@@ -27,6 +27,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip OpeningCutscene;
     public AudioClip LevelAmbience;
     public AudioClip EndPrologue;
+    public AudioClip Chapel;
     
     // AUDIO CLIPS
     public List<AudioClip> sfxClips = new List<AudioClip>();
@@ -99,6 +100,11 @@ public class AudioManager : MonoBehaviour
                 break;
             case "EndPrologue":
                 audioSource.clip = EndPrologue;
+                MAS_Manager.PlayBackgroundMusic(
+                    audioSource.clip, 0.05f, 0.25f, 0.95f);
+                break;
+            case "Chapel":
+                audioSource.clip = Chapel;
                 MAS_Manager.PlayBackgroundMusic(
                     audioSource.clip, 0.05f, 0.25f, 0.95f);
                 break;

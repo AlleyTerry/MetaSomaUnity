@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f9f912a56a6dd0479e3c4ef60f84a02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioGameObject: {fileID: 0}
 --- !u!1 &4413838746433709634
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,6 +638,7 @@ MonoBehaviour:
   OpeningCutscene: {fileID: 8300000, guid: dfcfd3f8a97a87c4a9c5536a66f40bfd, type: 3}
   LevelAmbience: {fileID: 8300000, guid: 1832893c4ba812449b283c73389de42f, type: 3}
   EndPrologue: {fileID: 8300000, guid: e1d12c8b054b6464b8c80e6978b95f51, type: 3}
+  Chapel: {fileID: 8300000, guid: 89de4d94b5d58c642b6165765f21d274, type: 3}
   sfxClips:
   - {fileID: 8300000, guid: 5f38f826869a64f09bb2fa6246939694, type: 3}
   - {fileID: 8300000, guid: 42e954f5b5901304a9fe6bba357073a7, type: 3}

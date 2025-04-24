@@ -84,6 +84,8 @@ public class LevelManager_Chapel : LevelManagerBase
         // PARTICLES 
         // TODO: this is more like temporary, we need to find a better way to do this
         heartbreakParticles = GameObject.Find("Heartbreak").GetComponent<VisualEffect>();
+        // play background music
+        gameObject.GetComponent<AudioManager>().PlayMusic("Chapel");
     }
 
     public override void StartCutsScene(string cutSceneDialogueNode)
