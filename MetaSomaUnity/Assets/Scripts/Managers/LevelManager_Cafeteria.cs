@@ -87,6 +87,8 @@ public class LevelManager_Cafeteria : LevelManagerBase
     {
         base.StartBattleScene();
         
+        isBattleAnimationChanging = true;
+        
         // Animation
         UIManager.instance.PlayAnimation("MediumViewportTransition");
         
@@ -121,6 +123,8 @@ public class LevelManager_Cafeteria : LevelManagerBase
     public override void ExitBattleDialogue()
     {
         UIManager.instance.EnableAnimator();
+        
+        isBattleAnimationChanging = false;
         
         // viewport animation
         UIManager.instance.PlayAnimation("MediumViewportTransition_Reversed");

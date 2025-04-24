@@ -107,7 +107,7 @@ public class CameraManager : MonoBehaviour
         YarnCharacter grub = GameObject.Find("GrubWorldspacePlaceholder")?.GetComponent<YarnCharacter>();
         
         imeris.messageBubbleOffset.x -= 2f;
-        innerImeris.messageBubbleOffset.x -= 2f;
+        innerImeris.messageBubbleOffset.x -= 2.3f;
         
         if (grub != null) grub.messageBubbleOffset.x -= 2f;
     }

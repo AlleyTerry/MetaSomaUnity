@@ -35,6 +35,9 @@ public class LevelManagerBase : MonoBehaviour
     public CinemachineVirtualCamera virtualCamera;
     public float damping = 1.0f;
 
+    // BATTLE UI ANIMATION
+    public bool isBattleAnimationChanging = false;
+    
     private void Awake()
     {
         
