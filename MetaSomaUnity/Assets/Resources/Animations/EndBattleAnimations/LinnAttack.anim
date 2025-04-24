@@ -24,10 +24,6 @@ AnimationClip:
       value: {fileID: 21300000, guid: 26a245b6c4d8fe140b81bb126fc444d6, type: 3}
     - time: 0.8333333
       value: {fileID: 21300000, guid: bc11357cdbdc5de4c94f1c7aac2c49e7, type: 3}
-    - time: 1.6666666
-      value: {fileID: 21300000, guid: 10fe99d5bf0206c46a8d7c4e6073e106, type: 3}
-    - time: 2.0666666
-      value: {fileID: 21300000, guid: 10fe99d5bf0206c46a8d7c4e6073e106, type: 3}
     attribute: m_Sprite
     path: 
     classID: 114
@@ -52,8 +48,6 @@ AnimationClip:
     pptrCurveMapping:
     - {fileID: 21300000, guid: 26a245b6c4d8fe140b81bb126fc444d6, type: 3}
     - {fileID: 21300000, guid: bc11357cdbdc5de4c94f1c7aac2c49e7, type: 3}
-    - {fileID: 21300000, guid: 10fe99d5bf0206c46a8d7c4e6073e106, type: 3}
-    - {fileID: 21300000, guid: 10fe99d5bf0206c46a8d7c4e6073e106, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -79,6 +73,13 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
+  - time: 0.8333333
+    functionName: StabSFX
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 2.2666667
     functionName: EndLinnAttack
     data: 

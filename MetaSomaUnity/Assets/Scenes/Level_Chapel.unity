@@ -3351,6 +3351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f9f912a56a6dd0479e3c4ef60f84a02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioGameObject: {fileID: 0}
 --- !u!1 &1880653389
 GameObject:
   m_ObjectHideFlags: 0
@@ -4618,6 +4619,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1887937098370837931, guid: 9376fc3a1927eb14192c38774a829615,
+        type: 3}
+      propertyPath: sfxClips.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1887937098370837931, guid: 9376fc3a1927eb14192c38774a829615,
+        type: 3}
+      propertyPath: sfxClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: dbdb6c99428deb447b5399776e408187, type: 3}
     - target: {fileID: 4155168650225817235, guid: 9376fc3a1927eb14192c38774a829615,
         type: 3}
       propertyPath: m_LocalPosition.x
