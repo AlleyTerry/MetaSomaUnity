@@ -101,9 +101,7 @@ public class UIManager : MonoBehaviour
     [YarnCommand("PlayViewportAnimation")]
     public void PlayViewportAnimation(string animationName)
     {
-        if (CheckViewportAnimator())
-        {
-            viewportAnimator.Play(animationName);
-        }
+        EnableAnimator();
+        viewportAnimator.Play(animationName);
     }
 }
