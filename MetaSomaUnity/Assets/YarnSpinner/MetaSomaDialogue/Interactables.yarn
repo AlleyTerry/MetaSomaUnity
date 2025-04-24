@@ -29,11 +29,18 @@ imeris: Even without the maids, there are so many people here.
 imeris: I can feel them looking at me...
 <<ResumeControls ManagerHolder>>
 ===
+
+title: PrologueCafeteria
+---
+imeris: I have to get to the chapel. I'll eat later.
+===
+
 title:LinnaeusPrologue
 ---
 Linnaeus: Imeris, there you are! It’s nearly time.
 Imeris: My apologies, Father.
 Linnaeus: It's alright, my child. The life of a court performer isn’t an easy one.
+Linnaeus: To take on the duties of an altar servant in addition to that is admirable.
 Linnaeus: I’m sure you’re quite tired.
 Imeris: I will always endeavor to serve Our Lady of Gold…
 Imeris: …No matter the obstacle. 

@@ -2,6 +2,7 @@
 tags:
 ---
 Narrator: Hazy memories drift through the sea of metamorphosing sleep…
+Narrator: You see a dream of a day past.
 Galleria: Imeris, are you <i>still</i> in bed?
 <<PlayBeeHumming ManagerHolder>>
 Galleria: It’s nearly time for the morning sermon! Get up!
@@ -14,6 +15,7 @@ Galleria: Stay out of trouble, okay?
 Imeris: I’ll try.
 Galleria: I'm sure.
 <<HideGalleria ManagerHolder>>
+Narrator: Galleria leaves. The door clicks shut behind her.
 imeris: I should hurry and put on my vestments. Father Linnaeus is waiting.
 <<StartPrologueLevel ManagerHolder>>
 ===
