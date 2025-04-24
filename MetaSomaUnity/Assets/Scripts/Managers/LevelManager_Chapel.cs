@@ -309,6 +309,7 @@ public class LevelManager_Chapel : LevelManagerBase
     [YarnCommand("PlayGoodMemory")]
     public void PlayGoodMemory()
     {
+        Debug.Log("PlayGoodMemory called");
         CGDisplayAnimatorController = 
             Resources.Load<RuntimeAnimatorController>("Animations/BattleMemoryCG/BattleMemoryCGS");
         CGDisplayAnimator.runtimeAnimatorController = CGDisplayAnimatorController;
@@ -319,6 +320,7 @@ public class LevelManager_Chapel : LevelManagerBase
     [YarnCommand("PlayBadMemory")]
     public void PlayBadMemory()
     {
+        Debug.Log("PlayBadMemory called");
         CGDisplayAnimatorController = 
             Resources.Load<RuntimeAnimatorController>("Animations/BattleMemoryCG/BattleMemoryCGS");
         CGDisplayAnimator.runtimeAnimatorController = CGDisplayAnimatorController;
