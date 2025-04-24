@@ -38,6 +38,7 @@ Imeris: We were all damned long before I chose this path, Father.
 Imeris: Born as puppets, forced into endless servitude.
 Imeris: Blaming me will not save you. You merely continue to toil in the name of our cagers.
 Narrator: The calm facade cracks.
+<<PlayNPCAnimation ManagerHolder LinBattle_TransitionToAgg>>
 Linnaeus: I was no <i>servant</i>! I was a leader, an elite, appointed by Queen Andromeda herself!
 Linnaeus: And you took that from me!
 Narrator: Linnaeus is enraged. He has become<color=\#FF3D0B> aggressive</color>.
@@ -64,6 +65,7 @@ Imeris: I have no reason to bow to you anymore.
 <<Heal Viewport_Heart>>
 Narrator: You feel your resolve strengthen as you speak.
 Narrator: Linnaeus’s anger turns into a cold fury.
+<<PlayNPCAnimation ManagerHolder LinBattle_AggToCon>>
 Linnaeus: You were always so obedient… so weak.
 Linnaeus: What devilry has inspired such impudence in you, child? 
 Narrator: Linnaeus is<color=\#EDAE14> condescending</color> to you.
@@ -87,6 +89,7 @@ position: -1736,-1195
 //neutral
 Narrator: You close your mouth and simply stare at Linnaeus's reddened face.
 Narrator: His anger slowly simmers down into a cold fury at your silence.
+<<PlayNPCAnimation ManagerHolder LinBattle_AggToCon>>
 Linnaeus: No response, hm? No apology? Not even a denial?
 Linnaeus: That's more like you. You've always been... meek.
 Linnaeus: Impudence isn't something you're suited for.
@@ -115,6 +118,7 @@ Narrator: It overwhelms you, and your words get lost.
 Imeris: I did no such thing! You have no proof, you- you-
 Narrator: Linnaeus scoffs derisively as you struggle to speak through your frustration.
 Linnaeus: You can't even get a sentence out in your own defense!
+<<PlayNPCAnimation ManagerHolder LinBattle_AggToCon>>
 Linnaeus: Oh Goddess, what could have possibly inspired such impudence in someone like <i>you</i>?
 Narrator: Linnaeus is <color=\#EDAE14> condescending</color> to you.
 <<CheckHealth Viewport_Heart>>
@@ -528,6 +532,7 @@ position: -495,-132
 Linnaeus: I grow tired of your foolishness.
 Linnaeus: I will be kind to you one last time, child.
 Linnaeus: You have one final chance to leave here with your life.
+<<PlayNPCAnimation ManagerHolder LinBattle_TransitionToCon>>
 Linnaeus: Though you do not deserve it, given what you’ve done. 
 Narrator: Linnaeus is<color=\#EDAE14> condescending</color> to you.
 
@@ -631,6 +636,7 @@ Imeris: Allow me to pass. I beg you, Father.
 Imeris: This is all I ask.
 Narrator: Linnaeus looks down on you.
 Linnaeus: I pray Our Lady of Gold have mercy on you, child.
+<<PlayNPCAnimation ManagerHolder LinBattle_ConToAgg>>
 //-1 heart
 <<TakeDamage Viewport_Heart>>
 Linnaeus: But I, unfortunately, shall not!
@@ -662,7 +668,6 @@ Narrator: Your resolve strengthens once more.
 Imeris: Fine.
 Imeris: If I have to make my own way once more… If I have to go through you to do it, then so be it. 
 Linnaeus: I won’t let you take even one more step forward, beast!
-
 
 <<jump ROUND2END>>
 ===
@@ -711,6 +716,7 @@ Narrator: You reach behind you and grip the dagger strapped to your back.
 Narrator: You hold it at the ready, though you cannot bring yourself to draw it yet.
 Narrator: Linnaeus becomes unsettled. 
 Linnaeus: Why do you stare at me in silence, child? 
+<<PlayNPCAnimation ManagerHolder LinBattle_TransitionToCon>>
 Linnaeus: Have all your clever words left you?
 Linnaeus: Answer me! 
 Narrator: Linnaeus is<color=\#EDAE14> condescending</color> to you.
@@ -733,6 +739,7 @@ position: 373,343
 ---
 //neutral
 Imeris: Why bother speaking? I know nothing I say will reach those deaf ears of yours.
+<<PlayNPCAnimation ManagerHolder LinBattle_ConToAgg>>
 Narrator: Linnaeus snarls furiously.
 Linnaeus: If all that will find its way out of your mouth is insolence...
 Linnaeus: I’ll simply shut you up once and for all!
@@ -746,6 +753,7 @@ position: 654,328
 Narrator: You look closely at Linnaeus, trying to decide when to strike- if you should at all. 
 Narrator: The hand on the dagger trembles faintly.
 Narrator: Your continued silence unnerves Linnaeus. 
+<<PlayNPCAnimation ManagerHolder LinBattle_ConToAgg>>
 Linnaeus: Well? Say something! Cease your leering! 
 Narrator: Linnaeus is getting desperate, and it will make him sloppy. 
 Narrator: It’s a good sign, but you must ready yourself.
@@ -766,6 +774,7 @@ Imeris: Do you need me to fill your silences now too? Are you capable of doing n
 Narrator: You pull the dagger out from behind your back and point it at Linnaeus.
 Imeris: I should take your tongue, since all it does is sit uselessly in your mouth.
 Narrator: Linnaeus’s unease burns into bright, panicked anger. His voice comes out in a roar.
+<<PlayNPCAnimation ManagerHolder LinBattle_ConToAgg>>
 Linnaeus: You wouldn’t <i>DARE</i>, you disgusting animal!
 ///-1 heart
 <<TakeDamage Viewport_Heart>>
@@ -806,6 +815,7 @@ position: -416,699
 title: ROUND3START
 position: -421,899
 ---
+<<PlayNPCAnimation ManagerHolder LinBattle_TransitionToAgg>>
 Narrator: Linnaeus bangs his fist into the wall beside him.
 Linnaeus: My patience has run out!
 Linnaeus: Do you have any final words before I send you to meet our maker?! 
@@ -923,9 +933,9 @@ Narrator: He turns his gaze upon you and rushes forward, arms raised to strike y
 title: YouFeel
 position: -418,1669
 ---
-
 <<LinnAttack ManagerHolder>>
 ===
+
 title: EndLinnAttack
 position: -418,1669
 ---
@@ -959,8 +969,13 @@ Narrator: And <i>hunger</i>.
 Narrator: His crimson blood flows like spilled wine and soaks into the scarlet carpet.
 Narrator: Your tongue sits heavy in your dry mouth as you gaze upon it. 
 Narrator: Your throat burns. Your teeth ache. Your hands curl into your stomach.
-Narrator: You look upon the offerings he defended with his life: they are paltry. 
+Narrator: You look upon the offerings he defended with his life.
+Narrator: They are paltry. 
 Narrator: He threw himself away for mere scraps of bread, dry save for crusted spots of honey.
+Narrator: But still, it is food.
+Narrator: You turn to gather all the offerings and eat them, one by one.
+Narrator: When you finish them, your mouth is no less dry, and your hunger is no less sharp.
+Narrator: Your need runs deep. They were not enough to satisfy you.
 Narrator: You look back at Linnaeus. 
 Narrator: Your stomach growls.
 Narrator: You realize what you’ve just imagined, and it makes your blood run cold with shame and horror. 
@@ -974,14 +989,14 @@ position: -418,1669
 Narrator: Something must be done.
 
 <<set $hover_text_up = "...">>
-<<set $hover_text_left = "It's not much, but...">>
-<<set $hover_text_right = "He deserves this.">>
+<<set $hover_text_left = "The bread will have to be enough.">>
+<<set $hover_text_right = "I need more... and doesn't he deserve this?">>
 <<SetHoverText OptionsBubble>>
 
 -> ...
     Narrator: You must make a choice.
     <<jump FeelHunger2>>
--> Eat the bread.
+-> Leave.
     <<jump EatBread>>
 -> Sate your hunger.
     <<jump YouSure>>
@@ -991,57 +1006,55 @@ Narrator: Something must be done.
 title: EatBread
 position: -418,1669
 ---
-<<DontEatLinn ManagerHolder>>
-
-
-===
-title: Eatbread1
-position:
----
-Narrator: You wrench your gaze away and turn to gather all the offerings. You eat them, one by one. 
-
-Narrator: Your mouth is no less dry, and your hunger is no less sharp, but there is nothing more for you here. 
+Narrator: There is nothing more for you here. 
 
 Narrator: Your stomach growls again and you feel a profound despair flood through your every vein. 
 
 Narrator: Just as it nearly overwhelms you, your mind is flooded with memories.
+
+//This should show the animation for the good memories.
+
+Narrator: Your memories, though troubled, were warm.
+
+Narrator: A familiar face whose name you've forgotten lingers in your mind.
+
+Narrator: You find it in you to move forward again.
+
+<<DontEatLinn ManagerHolder>>
+
+===
+
+title: Eatbread1
+position:
+--- 
+Narrator: You ready yourself to leave, and decide to look at Linnaeus one final time.
+
 <<SecondBreadFrame ManagerHolder>>
+
 ===
 title: Eatbread2
 position:
 ---
-Narrator: You wrench your gaze away and turn to gather all the offerings. You eat them, one by one. 
+Narrator: You notice a key on a string tied around his neck- the key to the stairwell. 
 
-Narrator: Your mouth is no less dry, and your hunger is no less sharp, but there is nothing more for you here. 
-
-Narrator: Your stomach growls again and you feel a profound despair flood through your every vein. 
-
-Narrator: Just as it nearly overwhelms you, your mind is flooded with memories.
 <<ThirdBreadFrame ManagerHolder>>
+
 ===
 title: Eatbread3
 position:
 ---
-Narrator: You wrench your gaze away and turn to gather all the offerings. You eat them, one by one. 
+Narrator: You take the key and make your way to the altar.
 
-Narrator: Your mouth is no less dry, and your hunger is no less sharp, but there is nothing more for you here. 
-
-Narrator: Your stomach growls again and you feel a profound despair flood through your every vein. 
-
-Narrator: Just as it nearly overwhelms you, your mind is flooded with memories.
-
-Narrator: You ready yourself to leave, and decide to look at Linnaeus one final time.
 <<FourthBreadFrame ManagerHolder>>
+
 ===
 title: Eatbread4
 position:
 ---
-
-Narrator: You notice a key on a string tied around his neck- the key to the stairwell. 
-
-Narrator: You take the key and make your way to the altar.
-
 Narrator: You offer a prayer of thanks to Mellonella before leaving the chapel. 
+
+Narrator: And you lock the door behind you.
+
 <<StopMusic ManagerHolder 0.25>>
 
 <<ExitBattle Imeris>>
@@ -1080,6 +1093,26 @@ Narrator: But you cannot bear the hunger any longer.
 title: EndEatLinn
 position:
 ---
+Narrator: At the very first bite of still-warm flesh, you lose yourself.
+Narrator: Consumed whole by your own appetite, you feast. As your stomach fills, your heart empties. 
+Narrator: When you can control yourself once more, you look down at what you’ve left behind and gag. 
+Narrator: What you’ve already taken threatens to climb back up your throat and out onto the carpet. 
+Narrator: You cover your mouth and run. 
+Narrator: You leave what remains of Linnaeus, and a part of you is left behind with him.
+Narrator: The moment you slam the door shut behind you, fragmented memories flood your mind.
+
+//this is where the bad memories should play
+
+Narrator: The memories you see are painful. They frighten you.
+Narrator: You want to hide away. 
+Narrator: Despite your panic, you find you cannot move quickly. 
+Narrator: Your body is as heavy as it is tense.
+Narrator: Exhaustion creeps into your limbs and starts pulling on your eyelids.
+Narrator: Your body longs for the comfort of your bed, and you stumble in its direction.
+Narrator: But you do not make it.
+Narrator: You fall to the floor, fibrous threads wrapping around you in a suffocating embrace.
+Narrator: <color=\#d7c801> Metamorphosis</color> takes you once more. 
+
 <<StopMusic ManagerHolder 0.25>>
 <<ExitBattle Imeris>> // TODO: FADE OUT MUSIC
 ===
@@ -1106,7 +1139,7 @@ Narrator: Rebirth yourself and try again.
 
 title: Ending
 ---
-Narrator: Thank you for playing our prototype!
+Narrator: Thank you for playing!
 Narrator: Please look forward to future developments!
 -> Metamorphose
 <<RestartGameFromOpening ManagerHolder>>
