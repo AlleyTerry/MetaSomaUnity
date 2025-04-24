@@ -86,7 +86,7 @@ public class LevelManager_CommonArea : LevelManagerBase
             bustMiniGameHolder.SetActive(false);
         }
 
-        //StartCoroutine(DelayedSetSpawn(GameManager.instance.GetPreviousScene()));
+        StartCoroutine(DelayedSetSpawn(GameManager.instance.GetPreviousScene()));
 
         if (GameManager.instance.isFirstVisit)
         {
@@ -135,28 +135,32 @@ public class LevelManager_CommonArea : LevelManagerBase
         GameManager.instance.isFirstVisit = false;
     }
 
-    private void DelayedSetSpawn(string previousScene)
+    private IEnumerator DelayedSetSpawn(string previousScene)
     {
-        //yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
         
         // Set up Imeris respawn position
         Debug.Log("Previous Scene: " + GameManager.instance.GetPreviousScene());
         
         ImerisMovement imerisMovement = Imeris.GetComponent<ImerisMovement>();
         
-        /*if (previousScene == "Level_ServantsHall")
+        if (previousScene == "Level_ServantsHall")
         {
             Debug.Log("Imeris coming from Servants Hall.");
             
-            imerisMovement.SetSpawnPosition(imerisPositionOrigin, imerisMovement.isFacingRight);
+            imerisMovement.gameObject.transform.position = defaultSpawnPoint.position;
         }
         else if (previousScene == "Level_Cafeteria")
         {
-            imerisMovement.SetSpawnPosition(imerisPositionFromCafe,imerisMovement.isFacingRight);
+            imerisMovement.gameObject.transform.position = spawnPointFromCafe.position;
         }
         else if (previousScene == "Level_Chapel")
         {
-            // todo: nothing now??
-        }*/
+            imerisMovement.gameObject.transform.position = spawnPointFromChapel.position;
+        }
+        else
+        {
+            imerisMovement.gameObject.transform.position = defaultSpawnPoint.position;
+        }
     }
 }
