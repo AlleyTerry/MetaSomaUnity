@@ -555,7 +555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layers:
   - parallaxLayer: {fileID: 1246980956}
-    parallaxScale: 1
+    parallaxScale: 0
     layerWidth: 0
     isLooping: 0
   - parallaxLayer: {fileID: 2043507376}
@@ -3422,7 +3422,7 @@ Transform:
   m_GameObject: {fileID: 1833367907}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.936532, y: -0.25, z: -10}
+  m_LocalPosition: {x: -11.935555, y: -0.25, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

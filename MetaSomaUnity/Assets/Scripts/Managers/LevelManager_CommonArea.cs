@@ -43,6 +43,8 @@ public class LevelManager_CommonArea : LevelManagerBase
         GameManager.instance.HUD.SetActive(true);
         GameManager.instance.CGDisplay.SetActive(false);
        
+        GameManager.instance.FreezeControls();
+        
         // Disable NPC animation display
         NPCAnimation.SetActive(false);
         
@@ -128,7 +130,8 @@ public class LevelManager_CommonArea : LevelManagerBase
         yield return new WaitForSeconds(2.25f);
         
         // resume control and camera settings
-        GameManager.instance.isInBattle = false;
+        //GameManager.instance.isInBattle = false;
+        DialogueManager.instance.StartDialogue("EnterCommonRoom");
         CameraManager.instance.cinemachineBrain.m_DefaultBlend.m_Time = 1.5f;
         
         // flag for preventing repeating this event
