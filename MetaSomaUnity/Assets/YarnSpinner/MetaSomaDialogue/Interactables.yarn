@@ -38,6 +38,7 @@ imeris: I have to get to the chapel. I'll eat later.
 title:LinnaeusPrologue
 ---
 Linnaeus: Imeris, there you are! Come closer, my child.
+<<ResumeControls ManagerHolder>>
 ===
 
 title:LinnaeusCloser

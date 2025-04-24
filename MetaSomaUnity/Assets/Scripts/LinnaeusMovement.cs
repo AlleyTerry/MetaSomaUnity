@@ -43,5 +43,11 @@ public class LinnaeusMovement : MonoBehaviour
     {
         linAnimator.Play("Lin_Blink");
     }
+    
+    [YarnCommand("LinnAngry")]
+    public void LinnAngry()
+    {
+        linAnimator.Play("Lin_Angry");
+    }
    
 }
