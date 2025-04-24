@@ -2054,7 +2054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Grub
-  messageBubbleOffset: {x: -5.5, y: 2.5, z: 0}
+  messageBubbleOffset: {x: -5.5, y: 3.2, z: 0}
   offsetUsesRotation: 0
 --- !u!1 &1232149853
 GameObject:
@@ -3939,7 +3939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Imeris
-  messageBubbleOffset: {x: -16.75, y: 2.5, z: 0}
+  messageBubbleOffset: {x: -16.75, y: 3.2, z: 0}
   offsetUsesRotation: 0
 --- !u!224 &1533670407971174526
 RectTransform:
@@ -4681,7 +4681,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Narrator
-  messageBubbleOffset: {x: 6, y: 0, z: 0}
+  messageBubbleOffset: {x: -10.2, y: -2.8, z: 0}
   offsetUsesRotation: 0
 --- !u!225 &7798287736275247377
 CanvasGroup:
@@ -5395,7 +5395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: imeris
-  messageBubbleOffset: {x: -16.75, y: 2.5, z: 0}
+  messageBubbleOffset: {x: -17.25, y: 3.2, z: 0}
   offsetUsesRotation: 0
 --- !u!114 &8573944366560038656
 MonoBehaviour:

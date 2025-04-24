@@ -358,6 +358,8 @@ MonoBehaviour:
   isOverlapping: 0
   objName: Wardrobe
   interactionType: 0
+  isJustShowOnce: 0
+  isIndicator: 1
   continuingDialogueNode: 
 --- !u!1 &360175744
 GameObject:
@@ -627,7 +629,7 @@ PrefabInstance:
     - target: {fileID: 8536744828141128833, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}
       propertyPath: messageBubbleOffset.y
-      value: 2.5
+      value: 3.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

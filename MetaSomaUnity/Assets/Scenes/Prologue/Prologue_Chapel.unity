@@ -1884,7 +1884,7 @@ MonoBehaviour:
   objName: LinnaeusPrologue
   interactionType: 0
   isJustShowOnce: 0
-  isIndicator: 1
+  isIndicator: 0
   continuingDialogueNode: 
 --- !u!1 &1084845667
 GameObject:
@@ -4676,6 +4676,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ManagerHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 7964521411033984940, guid: 9376fc3a1927eb14192c38774a829615,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8810626528114417014, guid: 9376fc3a1927eb14192c38774a829615,
         type: 3}
       propertyPath: m_Sprite
@@ -5875,7 +5880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: imeris
-  messageBubbleOffset: {x: -0.85, y: 3.2, z: 0}
+  messageBubbleOffset: {x: -1.6, y: 3.2, z: 0}
   offsetUsesRotation: 0
 --- !u!114 &8573944367326251374
 MonoBehaviour:

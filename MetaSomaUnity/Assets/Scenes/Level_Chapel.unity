@@ -3896,7 +3896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Imeris
-  messageBubbleOffset: {x: 1.15, y: 1.5, z: 0}
+  messageBubbleOffset: {x: 0.8, y: 3.2, z: 0}
   offsetUsesRotation: 0
 --- !u!224 &1533670407122648592
 RectTransform:
@@ -5549,7 +5549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: imeris
-  messageBubbleOffset: {x: 1.15, y: 2.25, z: 0}
+  messageBubbleOffset: {x: 0.8, y: 3.2, z: 0}
   offsetUsesRotation: 0
 --- !u!114 &8573944367326251374
 MonoBehaviour:
@@ -5628,7 +5628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Linnaeus
-  messageBubbleOffset: {x: 10.65, y: 2.5, z: 0}
+  messageBubbleOffset: {x: 11, y: 3.2, z: 0}
   offsetUsesRotation: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

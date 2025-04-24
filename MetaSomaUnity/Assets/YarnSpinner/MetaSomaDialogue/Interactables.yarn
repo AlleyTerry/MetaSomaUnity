@@ -297,7 +297,7 @@ imeris: The door is locked, and the Father isn’t answering my knocks… I’ll
 ===
 title: EnterCommonRoom
 ---
-imeris: I'm so hungry... I need to find food...
+imeris: Was that... Father Linnaeus?
 ===
 title: DeadBody1
 ---
@@ -332,7 +332,6 @@ imeris: (Rapidly press the UP arrow key when you see the indicator)
 title: minigameSuccess
 ---
 imeris: I got the key.
-imeris: (Bust gets thrown to the ground)
 <<ResumeControls ManagerHolder>>
 
 ===
@@ -389,7 +388,7 @@ title: HalfAliveGrub
 Narrator: A conversation has begun. 
 Narrator: At times, you will be given the chance to choose how you respond.
 Narrator: Select potential responses with the left, up, and right arrow keys.
-Narrtor: Press enter to confirm your final choice.
+Narrator: Press enter to confirm your final choice.
 Narrator: Try to make it a good one.
 
 Imeris: You’re still alive?! Oh Goddess…

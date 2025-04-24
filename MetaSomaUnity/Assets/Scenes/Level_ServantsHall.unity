@@ -754,7 +754,7 @@ PrefabInstance:
     - target: {fileID: 8536744828141128833, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}
       propertyPath: messageBubbleOffset.y
-      value: 2.82
+      value: 3.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2872,6 +2872,16 @@ PrefabInstance:
         type: 3}
       propertyPath: objName
       value: FirstDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5875824764621572759, guid: 9bcbf667072d3444cae0a7e1295462a4,
+        type: 3}
+      propertyPath: isIndicator
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5875824764621572759, guid: 9bcbf667072d3444cae0a7e1295462a4,
+        type: 3}
+      propertyPath: isJustShowOnce
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7647355396653889190, guid: 9bcbf667072d3444cae0a7e1295462a4,
         type: 3}

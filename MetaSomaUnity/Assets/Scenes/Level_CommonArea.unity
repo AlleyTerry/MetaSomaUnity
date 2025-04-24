@@ -902,7 +902,7 @@ PrefabInstance:
     - target: {fileID: 8536744828141128833, guid: 31c98296315ab384aad35532a9b2249a,
         type: 3}
       propertyPath: messageBubbleOffset.y
-      value: 2.8
+      value: 3.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1323,6 +1323,8 @@ MonoBehaviour:
   isOverlapping: 0
   objName: Bust2
   interactionType: 0
+  isJustShowOnce: 0
+  isIndicator: 1
   continuingDialogueNode: 
 --- !u!1 &648609636
 GameObject:
@@ -3126,7 +3128,7 @@ PrefabInstance:
     - target: {fileID: 3754007724711090094, guid: 9bcbf667072d3444cae0a7e1295462a4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.55
+      value: -13.13
       objectReference: {fileID: 0}
     - target: {fileID: 3754007724711090094, guid: 9bcbf667072d3444cae0a7e1295462a4,
         type: 3}
@@ -3177,6 +3179,16 @@ PrefabInstance:
         type: 3}
       propertyPath: objName
       value: EnterCommonRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 5875824764621572759, guid: 9bcbf667072d3444cae0a7e1295462a4,
+        type: 3}
+      propertyPath: isIndicator
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5875824764621572759, guid: 9bcbf667072d3444cae0a7e1295462a4,
+        type: 3}
+      propertyPath: isJustShowOnce
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7647355396653889190, guid: 9bcbf667072d3444cae0a7e1295462a4,
         type: 3}
