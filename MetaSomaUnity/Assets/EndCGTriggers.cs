@@ -66,4 +66,10 @@ public class EndCGTriggers : MonoBehaviour
         // Play the last eatImeris dialogue
         DialogueManager.instance.dialogueRunner.StartDialogue("EndLinnAttack");
     }
+
+    public void FeelHunger()
+    {
+        // Play the EatBread line
+        DialogueManager.instance.dialogueRunner.StartDialogue("FeelHunger");
+    }
 }

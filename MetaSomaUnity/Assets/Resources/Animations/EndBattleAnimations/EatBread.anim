@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: LinnAttack
+  m_Name: EatBread
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,9 +21,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: 26a245b6c4d8fe140b81bb126fc444d6, type: 3}
-    - time: 0.8333333
-      value: {fileID: 21300000, guid: bc11357cdbdc5de4c94f1c7aac2c49e7, type: 3}
+      value: {fileID: 21300000, guid: 10fe99d5bf0206c46a8d7c4e6073e106, type: 3}
     attribute: m_Sprite
     path: 
     classID: 114
@@ -46,14 +44,13 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 26a245b6c4d8fe140b81bb126fc444d6, type: 3}
-    - {fileID: 21300000, guid: bc11357cdbdc5de4c94f1c7aac2c49e7, type: 3}
+    - {fileID: 21300000, guid: 10fe99d5bf0206c46a8d7c4e6073e106, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 2.2666667
+    m_StopTime: 0.05
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -73,15 +70,8 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.8333333
-    functionName: StabSFX
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 2.2666667
-    functionName: EndLinnAttack
+  - time: 0.05
+    functionName: FeelHunger
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
