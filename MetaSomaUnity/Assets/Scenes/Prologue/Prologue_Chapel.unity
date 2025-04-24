@@ -4725,6 +4725,7 @@ MonoBehaviour:
   Linnaeus: {fileID: 0}
   Imeris: {fileID: 0}
   chapelStarted: 0
+  AudioGameObject: {fileID: 0}
 --- !u!95 &3477675202576685966
 Animator:
   serializedVersion: 5
