@@ -1017,6 +1017,9 @@ Narrator: Your stomach growls again and you feel a profound despair flood throug
 Narrator: Just as it nearly overwhelms you, your mind is flooded with memories.
 
 //This should show the animation for the good memories.
+<<PlayGoodBattleMemory ManagerHolder>>
+<<wait  6.5>>
+<<PureBlack ManagerHolder>>
 
 Narrator: Your memories, though troubled, were warm.
 
