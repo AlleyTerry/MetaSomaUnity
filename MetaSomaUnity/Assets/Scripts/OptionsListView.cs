@@ -81,17 +81,17 @@ namespace Yarn.Unity
                 if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) 
                     && optionViews[0].gameObject.activeSelf)
                 {
-                    ChangeSelection(0); // Index 1 is mapped to 'up' option
+                    ChangeSelection(0); // Index 0 is mapped to 'up' option
                 }
                 else if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) 
                          && optionViews[1].gameObject.activeSelf)
                 {
-                    ChangeSelection(1); // Index 2 is mapped to 'left' option
+                    ChangeSelection(1); // Index 1 is mapped to 'left' option
                 }
                 else if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) 
                          && optionViews[2].gameObject.activeSelf)
                 {
-                    ChangeSelection(2); // Index 0 is mapped to 'right' option
+                    ChangeSelection(2); // Index 2 is mapped to 'right' option
                 }
                 else if (Input.GetKeyDown(KeyCode.Return) && currentSelectedIndex >= 0)
                 {
@@ -185,12 +185,90 @@ namespace Yarn.Unity
             }
         }
 
+        private string lastChosenOption = "reason"; // Store the last chosen option
+        
         private void ConfirmSelection()
         {
             Debug.Log("Confirming selection.");
             hoverText.gameObject.transform.parent.gameObject.SetActive(false); // Hide the hover text canvas
-            //var selectedOption = optionViews[currentSelectedIndex].Option;
-            //OptionViewWasSelected(selectedOption);
+            
+            // call level manager to switch animation state
+            var levelManager = GameManager.instance.currentLevelManager;
+
+            if (levelManager == null)
+            {
+                Debug.LogError("LevelManager is null! Cannot switch animation state.");
+                return;
+            }
+            else
+            {
+                switch (currentSelectedIndex)
+                {
+                    case 0: // index 0, up, reason
+                        if (levelManager is LevelManager_Chapel)
+                        {
+                            if (lastChosenOption == "challenge")
+                            {
+                                levelManager.PlayImerisAnimation("ImerisBattle_ChallengeToReason");
+                            }
+                            else if (lastChosenOption == "submission")
+                            {
+                                levelManager.PlayImerisAnimation("ImerisBattle_SubmissionToReason");
+                            }
+                        }
+                        else
+                        {
+                            Debug.LogError("Cannot find level manager when switching battle animation state.");
+                        }
+                        
+                        lastChosenOption = "reason"; // Store the last chosen option
+                        break;
+                    
+                    case 1: // index 1, left, submission
+                        if (levelManager is LevelManager_Chapel)
+                        {
+                            if (lastChosenOption == "reason")
+                            {
+                                levelManager.PlayImerisAnimation("ImerisBattle_TransitionToSubmission");
+                            }
+                            else if (lastChosenOption == "challenge")
+                            {
+                                levelManager.PlayImerisAnimation("ImerisBattle_ChallengeToSubmission");
+                            }
+                        }
+                        else
+                        {
+                            Debug.LogError("Cannot find level manager when switching battle animation state.");
+                        }
+                        
+                        lastChosenOption = "submission"; // Store the last chosen option
+                        break;
+                    
+                    case 2: // index 2, right, challenge
+                        if (levelManager is LevelManager_Chapel)
+                        {
+                            if (lastChosenOption == "reason")
+                            {
+                                levelManager.PlayImerisAnimation("ImerisBattle_TransitionToChallenge");
+                            }
+                            else if (lastChosenOption == "submission")
+                            {
+                                levelManager.PlayImerisAnimation("ImerisBattle_SubmissionToChallenge");
+                            }
+                        }
+                        else
+                        {
+                            Debug.LogError("Cannot find level manager when switching battle animation state.");
+                        }
+                        
+                        lastChosenOption = "challenge"; // Store the last chosen option
+                        break;
+                    
+                    default:
+                        Debug.LogError("Invalid option index selected.");
+                        break;
+                }
+            }
         }
 
         public override void RunLine(LocalizedLine dialogueLine, Action onDialogueLineFinished)

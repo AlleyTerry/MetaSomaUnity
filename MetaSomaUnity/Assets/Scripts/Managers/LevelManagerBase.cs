@@ -177,6 +177,8 @@ public class LevelManagerBase : MonoBehaviour
         }
     }
     
+    
+    // IMERIS ANIMATION
     [YarnCommand("EnableImerisAnimation")]
     public void EnableImerisAnimation()
     {
@@ -189,6 +191,21 @@ public class LevelManagerBase : MonoBehaviour
         ImerisAnimation.SetActive(false);
     }
     
+    [YarnCommand("PlayImerisAnimation")]
+    public void PlayImerisAnimation(string animationName)
+    {
+        Animator animator = ImerisAnimation.GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.Play(animationName);
+        }
+        else
+        {
+            Debug.LogWarning("ImerisAnimation Animator not found.");
+        }
+    }
+    
+    // NPC ANIMATION
     [YarnCommand("EnableNPCAnimation")]
     public void EnableNPCAnimation()
     {
@@ -200,8 +217,22 @@ public class LevelManagerBase : MonoBehaviour
     {
         NPCAnimation.SetActive(false);
     }
+
+    [YarnCommand("PlayNPCAnimation")]
+    public void PlayNPCAnimation(string animationName)
+    {
+        Animator animator = NPCAnimation.GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.Play(animationName);
+        }
+        else
+        {
+            Debug.LogWarning("NPCAnimation Animator not found.");
+        }
+    }
     
-    
+    // CG DISPLAY
     [YarnCommand("PlayAnimation")]
     public void AnimationState(string state)
     {
