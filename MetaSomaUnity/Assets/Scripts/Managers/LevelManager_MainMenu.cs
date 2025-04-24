@@ -26,7 +26,8 @@ public class LevelManager_MainMenu : LevelManagerBase
         GameManager.instance.CGDisplay.SetActive(false);
         
         SetButton();
-        
+        //play background music
+        gameObject.GetComponent<AudioManager>().PlayMusic("Memories");
         // ADD LISTENERS
         //buttonStart.onClick.AddListener(GameManager.instance.LoadNextLevel);
         //buttonQuit.onClick.AddListener(QuitGame);
