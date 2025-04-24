@@ -11,10 +11,10 @@ position: -462,-1568
 
 <<PlayMusic ManagerHolder "linnaeusBattleStart">>
 
-Linnaeus: Do you have anything to say for yourself?
-Narrator: Tread carefully; in this battle of words, your choices may hurt you. 
-Narrator: Protect your heart, and stay true to yourself.
-Narrator: Linnaeus is gathered, and acting<color=\#98ED14> calm</color>.
+Linnaeus: Do you have anything to say for yourself? ▼
+Narrator: Tread carefully; in this battle of words, your choices may hurt you. ▼ 
+Narrator: Protect your heart, and stay true to yourself. ▼
+Narrator: Linnaeus is gathered, and acting<color=\#98ED14> calm</color>. ▼
 
 <<set $hover_text_up = "I have an argument.">>
 <<set $hover_text_left = "I have regrets to offer.">>
@@ -34,14 +34,14 @@ title: Justify
 position: -1428,-1437
 ---
 ///neutral
-Imeris: We were all damned long before I chose this path, Father. 
-Imeris: Born as puppets, forced into endless servitude.
-Imeris: Blaming me will not save you. You merely continue to toil in the name of our cagers.
-Narrator: The calm facade cracks.
+Imeris: We were all damned long before I chose this path, Father. ▼ 
+Imeris: Born as puppets, forced into endless servitude. ▼
+Imeris: Blaming me will not save you. You merely continue to toil in the name of our cagers. ▼
+Narrator: The calm facade cracks. ▼
 <<PlayNPCAnimation ManagerHolder LinBattle_TransitionToAgg>>
-Linnaeus: I was no <i>servant</i>! I was a leader, an elite, appointed by Queen Andromeda herself!
-Linnaeus: And you took that from me!
-Narrator: Linnaeus is enraged. He has become<color=\#FF3D0B> aggressive</color>.
+Linnaeus: I was no <i>servant</i>! I was a leader, an elite, appointed by Queen Andromeda herself! ▼
+Linnaeus: And you took that from me! ▼
+Narrator: Linnaeus is enraged. He has become<color=\#FF3D0B> aggressive</color>. ▼
 
 <<set $hover_text_up = "He's right- he <i>was</i> an elite. But no longer.">>
 <<set $hover_text_left = "He's incensed. I won't give him more ammunition.">>
@@ -58,17 +58,17 @@ Narrator: Linnaeus is enraged. He has become<color=\#FF3D0B> aggressive</color>.
 title: Respond
 position: -1380,-1211
 ---
-Imeris: There is nothing left of the lives we once knew.
-Imeris: Whatever power you had over me is gone.
-Imeris: I have no reason to bow to you anymore.
+Imeris: There is nothing left of the lives we once knew. ▼
+Imeris: Whatever power you had over me is gone. ▼
+Imeris: I have no reason to bow to you anymore. ▼
 ///+1 heart
 <<Heal Viewport_Heart>>
-Narrator: You feel your resolve strengthen as you speak.
-Narrator: Linnaeus’s anger turns into a cold fury.
+Narrator: You feel your resolve strengthen as you speak. ▼
+Narrator: Linnaeus’s anger turns into a cold fury. ▼
 <<PlayNPCAnimation ManagerHolder LinBattle_AggToCon>>
-Linnaeus: You were always so obedient… so weak.
-Linnaeus: What devilry has inspired such impudence in you, child? 
-Narrator: Linnaeus is<color=\#EDAE14> condescending</color> to you.
+Linnaeus: You were always so obedient… so weak. ▼
+Linnaeus: What devilry has inspired such impudence in you, child? ▼
+Narrator: Linnaeus is<color=\#EDAE14> condescending</color> to you. ▼
 
 <<set $hover_text_up = "I learned better.">>
 <<set $hover_text_left = "I needed more.">>
@@ -87,14 +87,14 @@ title: SayNothing
 position: -1736,-1195
 ---
 //neutral
-Narrator: You close your mouth and simply stare at Linnaeus's reddened face.
-Narrator: His anger slowly simmers down into a cold fury at your silence.
+Narrator: You close your mouth and simply stare at Linnaeus's reddened face. ▼
+Narrator: His anger slowly simmers down into a cold fury at your silence. ▼
 <<PlayNPCAnimation ManagerHolder LinBattle_AggToCon>>
-Linnaeus: No response, hm? No apology? Not even a denial?
-Linnaeus: That's more like you. You've always been... meek.
-Linnaeus: Impudence isn't something you're suited for.
-Linnaeus: I can’t even imagine what could have inspired it in you. 
-Narrator: Linnaeus is<color=\#EDAE14> condescending</color> to you.
+Linnaeus: No response, hm? No apology? Not even a denial? ▼
+Linnaeus: That's more like you. You've always been... meek. ▼
+Linnaeus: Impudence isn't something you're suited for. ▼
+Linnaeus: I can’t even imagine what could have inspired it in you. ▼ 
+Narrator: Linnaeus is<color=\#EDAE14> condescending</color> to you. ▼
 
 <<set $hover_text_up = "I learned better.">>
 <<set $hover_text_left = "I needed more.">>
@@ -111,16 +111,16 @@ Narrator: Linnaeus is<color=\#EDAE14> condescending</color> to you.
 title: Argue
 position: -1750,-1200
 ---
-Narrator: Your anger rises to match Linnaeus's.
-Narrator: It overwhelms you, and your words get lost.
+Narrator: Your anger rises to match Linnaeus's. ▼
+Narrator: It overwhelms you, and your words get lost. ▼
 ///-1 heart
 <<TakeDamage Viewport_Heart>>
-Imeris: I did no such thing! You have no proof, you- you-
-Narrator: Linnaeus scoffs derisively as you struggle to speak through your frustration.
-Linnaeus: You can't even get a sentence out in your own defense!
+Imeris: I did no such thing! You have no proof, you- you- ▼
+Narrator: Linnaeus scoffs derisively as you struggle to speak through your frustration. ▼
+Linnaeus: You can't even get a sentence out in your own defense! ▼
 <<PlayNPCAnimation ManagerHolder LinBattle_AggToCon>>
-Linnaeus: Oh Goddess, what could have possibly inspired such impudence in someone like <i>you</i>?
-Narrator: Linnaeus is <color=\#EDAE14> condescending</color> to you.
+Linnaeus: Oh Goddess, what could have possibly inspired such impudence in someone like <i>you</i>? ▼
+Narrator: Linnaeus is <color=\#EDAE14> condescending</color> to you. ▼
 <<CheckHealth Viewport_Heart>>
 
 <<set $hover_text_up = "I learned better.">>
@@ -140,17 +140,17 @@ title: Knowledge
 position: -1712,-954
 ---
 Imeris: I know better now.
-Imeris: Lies about how “obedience” is all we should strive for… 
-Imeris: How there is nothing for us in this world beyond subservience…
-Imeris: Lies you yourself helped the court feed us, by warping our Goddess’s words.
-Imeris: I’ve seen past them. I know what you are, false prophet.
-Imeris: And I know I am meant for more. We all are, if we choose to see it. 
+Imeris: Lies about how “obedience” is all we should strive for… ▼
+Imeris: How there is nothing for us in this world beyond subservience… ▼
+Imeris: Lies you yourself helped the court feed us, by warping our Goddess’s words. ▼
+Imeris: I’ve seen past them. I know what you are, false prophet. ▼
+Imeris: And I know I am meant for more. We all are, if we choose to see it. ▼ 
 <<PlayNPCAnimation ManagerHolder LinBattle_ConToCalm>>
-Narrator: Linnaeus, refusing to acknowledge the truth in your words, merely scoffs.
-Narrator: He is unaffected by your argument.
+Narrator: Linnaeus, refusing to acknowledge the truth in your words, merely scoffs. ▼
+Narrator: He is unaffected by your argument. ▼
 ///-1 heart
 <<TakeDamage Viewport_Heart>>
-Narrator: You feel your conviction falter for a moment- long enough for it to frighten you.
+Narrator: You feel your conviction falter for a moment- long enough for it to frighten you. ▼
 <<CheckHealth Viewport_Heart>>
 <<jump ROUND1END>>
 
@@ -158,13 +158,13 @@ Narrator: You feel your conviction falter for a moment- long enough for it to fr
 title: Hunger
 position: -1369,-921
 ---
-Imeris: I could not ignore the hunger that stirs within me. 
-Imeris: It’s as simple as that.
+Imeris: I could not ignore the hunger that stirs within me. ▼ 
+Imeris: It’s as simple as that. ▼
 <<PlayNPCAnimation ManagerHolder LinBattle_ConToCalm>>
-Narrator: Linnaeus bristles, but his hand clutches his own stomach unconsciously.
+Narrator: Linnaeus bristles, but his hand clutches his own stomach unconsciously. ▼
 ///+1 heart
 <<Heal Viewport_Heart>>
-Narrator: It seems he understands you, if only a little.
+Narrator: It seems he understands you, if only a little. ▼
 <<jump ROUND1END>>
 
 ===
@@ -173,33 +173,33 @@ title: Anger
 position: -1369,-921
 ---
 //neutral
-Imeris: You misunderstood. This "impudence" is something I've carried for a long time.
-Imeris: No matter how docile I may have seemed, day in and day out, I was always, <i>always</i> angry.
-Imeris: It was only a matter of time until I let it out.
+Imeris: You misunderstood. This "impudence" is something I've carried for a long time. ▼
+Imeris: No matter how docile I may have seemed, day in and day out, I was always, <i>always</i> angry. ▼
+Imeris: It was only a matter of time until I let it out. ▼
 <<PlayNPCAnimation ManagerHolder LinBattle_ConToCalm>>
-Narrator: Linnaeus seems shocked by your response. 
-Narrator: His gaze turns distant as he looks back into the past, seeking.
-Narrator: A deep frown settles itself on his face when he realizes you're telling the truth.
-Narrator: Try as he might to school it, his frantic eyes give him away. 
-Narrator: The thought that he missed something like this unsettles him.
+Narrator: Linnaeus seems shocked by your response. ▼
+Narrator: His gaze turns distant as he looks back into the past, seeking. ▼
+Narrator: A deep frown settles itself on his face when he realizes you're telling the truth. ▼
+Narrator: Try as he might to school it, his frantic eyes give him away. ▼
+Narrator: The thought that he missed something like this unsettles him. ▼
 <<jump ROUND1END>>
 ===
 
 title: Apologize
 position: 672,-1503
 ---
-Imeris: I'm sorry. I had to do this. I could not live any other way.
+Imeris: I'm sorry. I had to do this. I could not live any other way. ▼
 ///-1 heart
 <<TakeDamage Viewport_Heart>>
-Linnaeus: What good does that pathetic apology do? 
-Linnaeus: Do you not see the devastation you've wrought?
-Linnaeus: Chaos, destruction, fear… innocent lives lost… 
-Linnaeus: The final days of your brothers and sisters spent tormented and starved.
-Linnaeus: You say you struggle with your hunger now, but imagine them. Think. Look at what you’ve done.
-Linnaeus: Villain, beast, monster… Your sinfulness cannot be washed away with mere words!
-Narrator: Linnaeus takes a deep breath after his outburst. He resumes talking with an evener tone.
-Linnaeus: Now take responsibility.
-Narrator: Linnaeus has gathered himself, and is acting<color=\#98ED14> calm</color>.
+Linnaeus: What good does that pathetic apology do? ▼
+Linnaeus: Do you not see the devastation you've wrought? ▼
+Linnaeus: Chaos, destruction, fear… innocent lives lost… ▼
+Linnaeus: The final days of your brothers and sisters spent tormented and starved. ▼
+Linnaeus: You say you struggle with your hunger now, but imagine them. Think. Look at what you’ve done. ▼
+Linnaeus: Villain, beast, monster… Your sinfulness cannot be washed away with mere words! ▼
+Narrator: Linnaeus takes a deep breath after his outburst. He resumes talking with an evener tone. ▼
+Linnaeus: Now take responsibility. ▼
+Narrator: Linnaeus has gathered himself, and is acting<color=\#98ED14> calm</color>. ▼
 <<CheckHealth Viewport_Heart>>
 
 <<set $hover_text_up = "He's wrong. I'll disprove his poisonous lies.">>
@@ -217,17 +217,17 @@ Narrator: Linnaeus has gathered himself, and is acting<color=\#98ED14> calm</col
 title: Refute
 position: 886,-1297
 ---
-Imeris: No- No! 
-Imeris: Even <i>if</i> the Queen's disappearance is owed to me, I am not to blame for the neglect of the Court.
-Imeris: If they have abandoned us here to die, it is THEY who carry the weight of innocence lost.
-Imeris: I am not a villain. I am not a monster. I am NOT sinful. 
-Imeris: You, of all people, do not get to say that to me. You are no better than they are.
+Imeris: No- No! ▼
+Imeris: Even <i>if</i> the Queen's disappearance is owed to me, I am not to blame for the neglect of the Court. ▼
+Imeris: If they have abandoned us here to die, it is THEY who carry the weight of innocence lost. ▼
+Imeris: I am not a villain. I am not a monster. I am NOT sinful. ▼
+Imeris: You, of all people, do not get to say that to me. You are no better than they are. ▼
 ///+1 heart
 <<Heal Viewport_Heart>>
-Imeris: I am only becoming who the Goddess made me to be, and I will not allow you to deceive me again.
-Linnaeus: You could never begin to know Her will, wretch. 
-Linnaeus: Cease your heresy. Come quietly. Let your final act be obedient and good.
-Narrator: Linnaeus is acting<color=\#98ED14> calm</color>.
+Imeris: I am only becoming who the Goddess made me to be, and I will not allow you to deceive me again. ▼
+Linnaeus: You could never begin to know Her will, wretch. ▼
+Linnaeus: Cease your heresy. Come quietly. Let your final act be obedient and good. ▼
+Narrator: Linnaeus is acting<color=\#98ED14> calm</color>. ▼
 
 <<set $hover_text_up = "Obedience to evil is evil itself. I know it is wrong.">>
 <<set $hover_text_left = "...My lingering doubts weigh heavy on my mind.">>
@@ -244,21 +244,21 @@ Narrator: Linnaeus is acting<color=\#98ED14> calm</color>.
 title: Apologize2
 position: 560,-1251
 ---
-Narrator: You think of your fellow servants, the people you grew up with and lived beside your entire life.
-Narrator: Your friends.
-Narrator: You imagine their stomachs empty, their eyes glazed over with the sheen of death. 
-Narrator: You remember the bodies in the kitchen. The bitten, molded-over bread clutched weakly in a thin hand. 
-Narrator: Unbidden, a sob escapes your throat.
+Narrator: You think of your fellow servants, the people you grew up with and lived beside your entire life. ▼
+Narrator: Your friends. ▼
+Narrator: You imagine their stomachs empty, their eyes glazed over with the sheen of death. ▼
+Narrator: You remember the bodies in the kitchen. The bitten, molded-over bread clutched weakly in a thin hand. ▼
+Narrator: Unbidden, a sob escapes your throat. ▼
 ///-1 heart
 <<TakeDamage Viewport_Heart>>
-Imeris: ...I'm sorry.
-Narrator: You cannot find any other words. 
-Narrator: Linnaeus looks at you with contempt, but also pity. He sighs deeply.
-Linnaeus: Poor misguided wretch. So deluded that you’ve fallen from grace and taken us all down with you.
-Linnaeus: I wish I could undo what you did, but even the Goddess would struggle with such a feat.
-Linnaeus: And as it stands, I cannot allow your sin to go unpunished.
-Linnaeus: Come quietly. Let your final act be obedient and good.
-Narrator: Linnaeus is acting<color=\#98ED14> calm</color>.
+Imeris: ...I'm sorry. ▼
+Narrator: You cannot find any other words. ▼
+Narrator: Linnaeus looks at you with contempt, but also pity. He sighs deeply. ▼
+Linnaeus: Poor misguided wretch. So deluded that you’ve fallen from grace and taken us all down with you. ▼
+Linnaeus: I wish I could undo what you did, but even the Goddess would struggle with such a feat. ▼
+Linnaeus: And as it stands, I cannot allow your sin to go unpunished. ▼
+Linnaeus: Come quietly. Let your final act be obedient and good. ▼
+Narrator: Linnaeus is acting<color=\#98ED14> calm</color>. ▼
 <<CheckHealth Viewport_Heart>>
 
 <<set $hover_text_up = "Obedience to evil is evil itself. I know it is wrong.">>
@@ -278,18 +278,18 @@ title: Accuse
 position: 886,-1297
 ---
 //neutral
-meris: You claim me to be evil, but you have no right to do so, Father.
-Imeris: I know you have been hoarding food. 
-Imeris: I imagine you’ve been faced with others like myself who have tried to stop you, and failed.
-Imeris: How many now have died at your hands, through violence or neglect?
-Imeris: I have no reason to listen to the condemnations of a condemned man.
-Narrator: Linnaeus bristles fiercely.
-Linnaeus: I will not be criticized by you, beast! Actions I have taken out of necessity are forgiven by the Goddess!
-Narrator: His hypocrisy seems to escape him, but it does not escape you. 
-Narrator: He continues more calmly after his outburst, putting on a farcical show of aloofness.
-Linnaeus: I am still a holy man, and as such, it is my duty to punish the sins brought before me.
-Linnaeus: Come quietly. Let your final act be obedient and good.
-Narrator: Linnaeus is acting<color=\#98ED14> calm</color>.
+meris: You claim me to be evil, but you have no right to do so, Father. ▼
+Imeris: I know you have been hoarding food. ▼
+Imeris: I imagine you’ve been faced with others like myself who have tried to stop you, and failed. ▼
+Imeris: How many now have died at your hands, through violence or neglect? ▼
+Imeris: I have no reason to listen to the condemnations of a condemned man. ▼
+Narrator: Linnaeus bristles fiercely. ▼
+Linnaeus: I will not be criticized by you, beast! Actions I have taken out of necessity are forgiven by the Goddess! ▼
+Narrator: His hypocrisy seems to escape him, but it does not escape you. ▼
+Narrator: He continues more calmly after his outburst, putting on a farcical show of aloofness. ▼
+Linnaeus: I am still a holy man, and as such, it is my duty to punish the sins brought before me. ▼
+Linnaeus: Come quietly. Let your final act be obedient and good. ▼
+Narrator: Linnaeus is acting<color=\#98ED14> calm</color>. ▼
 
 <<set $hover_text_up = "Obedience to evil is evil itself. I know it is wrong.">>
 <<set $hover_text_left = "...My lingering doubts weigh heavy on my mind.">>
@@ -308,10 +308,10 @@ title: Disobey
 position: 895,-913
 ---
 //neutral
-Imeris: Obedience is what kept us all in this hell in the first place.
-Imeris: There is no “good” in that. 
-Imeris: And I refuse to do any more harm in the name of subservience. 
-Imeris: To myself, or anyone else.
+Imeris: Obedience is what kept us all in this hell in the first place. ▼
+Imeris: There is no “good” in that. ▼
+Imeris: And I refuse to do any more harm in the name of subservience. ▼ 
+Imeris: To myself, or anyone else. ▼
 
 <<jump ROUND1END>>
 ===
@@ -319,11 +319,11 @@ Imeris: To myself, or anyone else.
 title: Surrender
 position: 602,-981
 ---
-Imeris: ...
-Linnaeus: Good. You’ve come to your senses.
+Imeris: ... ▼
+Linnaeus: Good. You’ve come to your senses. ▼
 ///-1 heart
 <<TakeDamage Viewport_Heart>>
-Linnaeus: It will all be over soon.
+Linnaeus: It will all be over soon. ▼
 <<CheckHealth Viewport_Heart>>
 <<jump DeadDialogue>>
  ===
@@ -331,13 +331,13 @@ Linnaeus: It will all be over soon.
 title: Resist
 position: 895,-913
 ---
-Imeris: …No. 
-Imeris: I still have faith. In the Goddess, and in myself.
-Imeris: Nothing will change if I let myself die here. 
-Imeris: All of this suffering would have been for nothing.
+Imeris: …No. ▼
+Imeris: I still have faith. In the Goddess, and in myself. ▼
+Imeris: Nothing will change if I let myself die here. ▼
+Imeris: All of this suffering would have been for nothing. ▼
 ///+1 heart
 <<Heal Viewport_Heart>>
-Imeris: I have to live on. And I will. 
+Imeris: I have to live on. And I will. ▼
 
 <<jump ROUND1END>>
 ===
@@ -349,13 +349,13 @@ position: -848,-1352
 ---
 ///+1 heart
 <<Heal Viewport_Heart>>
-Imeris: I don’t have to explain myself to you. I owe you nothing.
-Narrator: Linnaeus’s eyebrow twitches but he remains collected.
-Linnaeus: Have you no shame? Have you no gratitude?
-Linnaeus: I have cared for you, <i>guided</i> you all your life, and now you spurn me?
-Linnaeus: Your selfishness has led this kingdom to ruin, and brought death and destruction to our door.
-Linnaeus: You should be <i>begging</i> me for absolution.
-Narrator: Linnaeus is acting<color=\#98ED14> calm</color>.
+Imeris: I don’t have to explain myself to you. I owe you nothing. ▼
+Narrator: Linnaeus’s eyebrow twitches but he remains collected. ▼
+Linnaeus: Have you no shame? Have you no gratitude? ▼
+Linnaeus: I have cared for you, <i>guided</i> you all your life, and now you spurn me? ▼
+Linnaeus: Your selfishness has led this kingdom to ruin, and brought death and destruction to our door. ▼
+Linnaeus: You should be <i>begging</i> me for absolution. ▼
+Narrator: Linnaeus is acting<color=\#98ED14> calm</color>. ▼
 
 <<set $hover_text_up = "I need no absolution. The crime is not mine.">>
 <<set $hover_text_left = "...I don’t want to think about that.">>
@@ -374,16 +374,16 @@ title: DefendSelf
 position: -625,-1147
 ---
 ///Neutral
-Imeris: Any suffering we endured has been at the hands of the Court. 
-Imeris: All I have done is try to escape their grasp.
-Imeris: Would you rather we all live subjugated for eternity? 
-Imeris: Do you think that endless torment is better than freedom, however fleeting?
-Imeris: Is that what you have been “guiding” me to believe?
-Linnaeus: What freedom do you speak of? We are not <i>free</i>. 
-Linnaeus: Most of us are <i>dead</i>.
-Linnaeus: All I see before me is a lost, deluded fool who thinks they are above consequence.
-Linnaeus: That is a grave error, which I will correct.
-Narrator: Linnaeus is acting<color=\#98ED14> calm</color>.
+Imeris: Any suffering we endured has been at the hands of the Court. ▼ 
+Imeris: All I have done is try to escape their grasp. ▼
+Imeris: Would you rather we all live subjugated for eternity? ▼
+Imeris: Do you think that endless torment is better than freedom, however fleeting? ▼
+Imeris: Is that what you have been “guiding” me to believe? ▼
+Linnaeus: What freedom do you speak of? We are not <i>free</i>. ▼
+Linnaeus: Most of us are <i>dead</i>. ▼
+Linnaeus: All I see before me is a lost, deluded fool who thinks they are above consequence. ▼
+Linnaeus: That is a grave error, which I will correct. ▼
+Narrator: Linnaeus is acting<color=\#98ED14> calm</color>. ▼
 
 <<set $hover_text_up = "The error is his. Perhaps convincing him of it will calm him down.">>
 <<set $hover_text_left = "I should step back, in case he tries to make good on that threat.">>
@@ -403,11 +403,12 @@ position: -1031,-1129
 ---
 ///-1 heart
 <<TakeDamage Viewport_Heart>>
-Narrator: You feel a trickle of cold guilt settle in your stomach and look away, saying nothing. Linnaeus laughs cruelly.
-Linnaeus: Oh, nothing to say now? Have you realized your mistake at last? 
-Linnaeus: Poor, deluded fool. Thinking you are beyond consequence. 
-Linnaeus: I shall correct you myself.
-Narrator: Linnaeus is acting<color=\#98ED14> calm</color>.
+Narrator: You feel a trickle of cold guilt settle in your stomach and look away, saying nothing.  ▼
+Narrator: Linnaeus laughs cruelly. ▼
+Linnaeus: Oh, nothing to say now? Have you realized your mistake at last? ▼ 
+Linnaeus: Poor, deluded fool. Thinking you are beyond consequence. ▼
+Linnaeus: I shall correct you myself. ▼
+Narrator: Linnaeus is acting<color=\#98ED14> calm</color>. ▼
 <<CheckHealth Viewport_Heart>>
 
 <<set $hover_text_up = "The error is his. Perhaps convincing him of it will calm him down.">>
@@ -428,15 +429,15 @@ position: -625,-1147
 ---
 ///+1 heart
 <<Heal Viewport_Heart>>
-Imeris: You rally so strongly against me, and yet you have been hungry too. 
-Imeris: I know it has driven you to desperation. To violence.
-Narrator: You look pointedly at the bowls of food set out for the Goddess.
-Imeris: There don’t seem to be many offerings left, Father.
-Linnaeus: No, I- No! You know nothing!
-Narrator: Linnaeus looks stricken. His expression morphs quickly between shame and denial, before at last settling on the latter.
-Linnaeus: Thinking yourself beyond consequence, you try to pin this all on me…  I won’t allow it.
-Linnaeus: I’ll correct you myself.
-Narrator: Linnaeus is acting<color=\#98ED14> calm</color>.
+Imeris: You rally so strongly against me, and yet you have been hungry too. ▼ 
+Imeris: I know it has driven you to desperation. To violence. ▼
+Narrator: You look pointedly at the bowls of food set out for the Goddess. ▼
+Imeris: There don’t seem to be many offerings left, Father. ▼
+Linnaeus: No, I- No! You know nothing! ▼
+Narrator: Linnaeus looks stricken. His expression morphs quickly between shame and denial, before at last settling on the latter. ▼
+Linnaeus: Thinking yourself beyond consequence, you try to pin this all on me…  I won’t allow it. ▼
+Linnaeus: I’ll correct you myself. ▼
+Narrator: Linnaeus is acting<color=\#98ED14> calm</color>. ▼
 
 <<set $hover_text_up = "The error is his. Perhaps convincing him of it will calm him down.">>
 <<set $hover_text_left = "I should step back, in case he tries to make good on that threat.">>
@@ -455,12 +456,12 @@ title: Pacify
 position: -39,-1351
 ---
 ///Neutral
-Imeris: Why do you deny me, Father? 
-Imeris: I have only told the truth, and followed Our Lady's word. 
-Imeris: Surely there is peace for us all at the end of Her path.
-Narrator: Linnaeus laughs bitterly.
-Linnaeus: There is no way out of this, you fool. For any of us. 
-Linnaeus: But at least you have maintained some scrap of piety. You mustn't have failed so utterly, then. 
+Imeris: Why do you deny me, Father? ▼
+Imeris: I have only told the truth, and followed Our Lady's word. ▼ 
+Imeris: Surely there is peace for us all at the end of Her path. ▼
+Narrator: Linnaeus laughs bitterly. ▼
+Linnaeus: There is no way out of this, you fool. For any of us. ▼
+Linnaeus: But at least you have maintained some scrap of piety. You mustn't have failed so utterly, then. ▼ 
 
 <<jump ROUND1END>>
 ===
@@ -468,17 +469,17 @@ Linnaeus: But at least you have maintained some scrap of piety. You mustn't have
 title: Retreat
 position: -637,-909
 ---
-Narrator: You start to slowly move away from Linnaeus, trying to be subtle. 
-Linnaeus: I see you moving, sneaky thing.
-Narrator: His voice startles you. Linnaeus eyes your stricken face, and smiles cruelly.
-Linnaeus: Oh, are you frightened? Ha!
-Linnaeus: You should be. And not just of me.
-Linnaeus: Even if you were to make it out of this room alive, you'd never outrun your sin.
-Narrator: The smile slips off his face, and Linnaeus simply stares down at you, unreadable. 
-Narrator: His eyes are hauntingly cold.
+Narrator: You start to slowly move away from Linnaeus, trying to be subtle. ▼ 
+Linnaeus: I see you moving, sneaky thing. ▼
+Narrator: His voice startles you. Linnaeus eyes your stricken face, and smiles cruelly. ▼
+Linnaeus: Oh, are you frightened? Ha! ▼
+Linnaeus: You should be. And not just of me. ▼
+Linnaeus: Even if you were to make it out of this room alive, you'd never outrun your sin. ▼
+Narrator: The smile slips off his face, and Linnaeus simply stares down at you, unreadable. ▼ 
+Narrator: His eyes are hauntingly cold. ▼
 ///-1 heart
 <<TakeDamage Viewport_Heart>>
-Linnaeus: It will follow you forever, like the very wings upon your back. 
+Linnaeus: It will follow you forever, like the very wings upon your back. ▼ 
 <<CheckHealth Viewport_Heart>>
 
 <<jump ROUND1END>>
@@ -489,13 +490,13 @@ position: -1026,-919
 ---
 ///+1 heart
 <<Heal Viewport_Heart>>
-Narrator: You laugh derisively. 
-Imeris: What do you think you’re going to do, exactly? 
-Imeris: Your role has softened you, Father. You are frail and weak with the comforts of your life.
-Imeris: Stand aside, and leave me be.
-Narrator: Linnaeus sneers.
-Linnaeus: Curb your tongue, child.
-Linnaeus: Or I shall cut it out.
+Narrator: You laugh derisively. ▼
+Imeris: What do you think you’re going to do, exactly? ▼
+Imeris: Your role has softened you, Father. You are frail and weak with the comforts of your life. ▼
+Imeris: Stand aside, and leave me be. ▼
+Narrator: Linnaeus sneers. ▼
+Linnaeus: Curb your tongue, child. ▼
+Linnaeus: Or I shall cut it out. ▼
 
 <<jump ROUND1END>>
 ===
@@ -505,17 +506,17 @@ position: -485,-341
 ---
 
 <<if $CurrentHealth == 3.0>>
-    Narrator: Your heart remains strong. Stay true.
+    Narrator: Your heart remains strong. Stay true. ▼
     <<jump ROUND2START>>
 
 <<endif>>
 
 <<if $CurrentHealth  == 2.0>>
-    Narrator: Your heart is hurt. Stay strong.
+    Narrator: Your heart is hurt. Stay strong ▼
     <<jump ROUND2START>>
 <<endif>>
 <<if $CurrentHealth == 1.0>>
-    Narrator: Your heart is near breaking. Take care.
+    Narrator: Your heart is near breaking. Take care. ▼
 
     <<jump ROUND2START>>
 
@@ -532,12 +533,12 @@ position: -485,-341
 title: ROUND2START
 position: -495,-132
 ---
-Linnaeus: I grow tired of your foolishness.
-Linnaeus: I will be kind to you one last time, child.
-Linnaeus: You have one final chance to leave here with your life.
+Linnaeus: I grow tired of your foolishness. ▼
+Linnaeus: I will be kind to you one last time, child. ▼
+Linnaeus: You have one final chance to leave here with your life. ▼
 <<PlayNPCAnimation ManagerHolder LinBattle_TransitionToCon>>
-Linnaeus: Though you do not deserve it, given what you’ve done. 
-Narrator: Linnaeus is<color=\#EDAE14> condescending</color> to you.
+Linnaeus: Though you do not deserve it, given what you’ve done. ▼
+Narrator: Linnaeus is<color=\#EDAE14> condescending</color> to you. ▼
 
 <<set $hover_text_up = "I grow weary of fighting. Can’t I convince him?">>
 <<set $hover_text_left = "This pretense is coming to an end. I'll ready my dagger.">>
@@ -557,15 +558,15 @@ title: Threaten
 position: -1343,93
 ---
 //neutral
-Imeris: Are you sure you wish to provoke me this way, Father?
-Imeris: You believe I killed the Queen, and her power greatly surpassed yours, did it not?
-Imeris: I don’t think you know what you’re starting.
-Narrator: The thought of taking Linnaeus’ life with your own hands makes you feel sick, but you hide it well.
+Imeris: Are you sure you wish to provoke me this way, Father? ▼
+Imeris: You believe I killed the Queen, and her power greatly surpassed yours, did it not? ▼
+Imeris: I don’t think you know what you’re starting. ▼
+Narrator: The thought of taking Linnaeus’ life with your own hands makes you feel sick, but you hide it well. ▼
 <<PlayNPCAnimation ManagerHolder LinBattle_ConToCalm>>
-Narrator: Linnaeus is taken aback. He scowls darkly and clenches his fist dangerously.
-Linnaeus: Do not condescend to me. Your arrogance will undo you. 
-Narrator: His tone is controlled, but just barely. 
-Narrator: Linnaeus is acting<color=\#98ED14> calm</color>.
+Narrator: Linnaeus is taken aback. He scowls darkly and clenches his fist dangerously. ▼
+Linnaeus: Do not condescend to me. Your arrogance will undo you. ▼
+Narrator: His tone is controlled, but just barely. ▼
+Narrator: Linnaeus is acting<color=\#98ED14> calm</color>. ▼
 
 <<set $hover_text_up = "It is not my hubris he should be concerned about.">>
 <<set $hover_text_left = "I shouldn’t escalate this further.">>
@@ -584,13 +585,13 @@ title: Reverse
 position: -1297,275
 ---
 //Neutral
-Imeris: Your arrogance has already undone you, Father.
-Imeris: Look around you. You have no one left to preach to.
-Imeris: You’ve let them all die.
-Imeris: Now, you are just a man, no better than I.
-Narrator: Linnaeus sneers.
-Linnaeus: I will always be better than you. 
-Linnaeus: And I’ll show you why, insolent child!
+Imeris: Your arrogance has already undone you, Father. ▼
+Imeris: Look around you. You have no one left to preach to. ▼
+Imeris: You’ve let them all die. ▼
+Imeris: Now, you are just a man, no better than I. ▼
+Narrator: Linnaeus sneers. ▼
+Linnaeus: I will always be better than you. ▼
+Linnaeus: And I’ll show you why, insolent child! ▼
 
 <<jump ROUND2END>>
 ===
@@ -598,20 +599,20 @@ Linnaeus: And I’ll show you why, insolent child!
 title: Acquiesce
 position: -1297,275
 ---
-Imeris: You may be right. 
-Imeris: I am just a person beneath it all, the same as you.
-Imeris: The same as anyone else… 
-Narrator: Your thoughts drift to the others. Those who have perished. 
-Narrator: You remember the kind soul who helped you get here with his dying breaths, unaware of your role in his demise.
+Imeris: You may be right. ▼
+Imeris: I am just a person beneath it all, the same as you. ▼
+Imeris: The same as anyone else… ▼
+Narrator: Your thoughts drift to the others. Those who have perished. ▼
+Narrator: You remember the kind soul who helped you get here with his dying breaths, unaware of your role in his demise. ▼
 ///-1 heart
 <<TakeDamage Viewport_Heart>>
-Narrator: You feel your throat grow tight despite your attempt to stay calm.
-Imeris: I never wished for any of this to happen. I didn’t want anyone to suffer because of me.
-Imeris: But… But even so, now that I have started, I cannot stop. 
-Imeris:I must let myself out of the shell of this body.
-Linnaeus: You admit your wrongdoing, and yet you persist?!
-Narrator: You flinch. Linnaeus continues, without even noticing.
-Linnaeus: You… You are beyond help! The sickness of your mind cannot be cured! 
+Narrator: You feel your throat grow tight despite your attempt to stay calm. ▼
+Imeris: I never wished for any of this to happen. I didn’t want anyone to suffer because of me. ▼
+Imeris: But… But even so, now that I have started, I cannot stop. ▼
+Imeris:I must let myself out of the shell of this body. ▼
+Linnaeus: You admit your wrongdoing, and yet you persist?! ▼
+Narrator: You flinch. Linnaeus continues, without even noticing. ▼
+Linnaeus: You… You are beyond help! The sickness of your mind cannot be cured! ▼
 <<CheckHealth Viewport_Heart>>
 
 <<jump ROUND2END>>
@@ -620,12 +621,12 @@ Linnaeus: You… You are beyond help! The sickness of your mind cannot be cured!
 title: Disregard
 position: -1582,292
 ---
-Imeris: This is not arrogance. This is hard-won pride.
+Imeris: This is not arrogance. This is hard-won pride. ▼
 //+1 Heart
 <<Heal Viewport_Heart>>
-Imeris: I have fought to stand here as I am today, and I won’t let your petty insults drag me back down. 
-Imeris: Nor will I let you take from me the life I’ve always wanted, which I’ve finally made mine.
-Linnaeus: Your life is meaningless, fiend! And if I wish it, it is forfeit! 
+Imeris: I have fought to stand here as I am today, and I won’t let your petty insults drag me back down. ▼
+Imeris: Nor will I let you take from me the life I’ve always wanted, which I’ve finally made mine. ▼
+Linnaeus: Your life is meaningless, fiend! And if I wish it, it is forfeit! ▼
 
 <<jump ROUND2END>>
 ===
@@ -633,20 +634,20 @@ Linnaeus: Your life is meaningless, fiend! And if I wish it, it is forfeit!
 title: Beg
 position: -773,70
 ---
-Narrator: Your stomach growls loudly; it chips at your resolve. 
-Narrator: You know he heard it; you hope beyond hope that he <i>cared</i>. 
-Imeris: Please. I am starving.
-Imeris: Allow me to pass. I beg you, Father.
-Imeris: This is all I ask.
-Narrator: Linnaeus looks down on you.
-Linnaeus: I pray Our Lady of Gold have mercy on you, child.
+Narrator: Your stomach growls loudly; it chips at your resolve. ▼ 
+Narrator: You know he heard it; you hope beyond hope that he <i>cared</i>. ▼ 
+Imeris: Please. I am starving. ▼
+Imeris: Allow me to pass. I beg you, Father. ▼
+Imeris: This is all I ask. ▼
+Narrator: Linnaeus looks down on you. ▼
+Linnaeus: I pray Our Lady of Gold have mercy on you, child. ▼
 <<PlayNPCAnimation ManagerHolder LinBattle_ConToAgg>>
 //-1 heart
 <<TakeDamage Viewport_Heart>>
-Linnaeus: But I, unfortunately, shall not!
+Linnaeus: But I, unfortunately, shall not! ▼
 <<CheckHealth Viewport_Heart>>
 
-Narrator: Linnaeus is getting<color=\#FF3D0B> aggressive</color>.
+Narrator: Linnaeus is getting<color=\#FF3D0B> aggressive</color>. ▼
 
 <<set $hover_text_up = "I must calm myself… I won’t let him rattle me.">>
 <<set $hover_text_left = "He cannot frighten me. The Goddess is by my side.">>
@@ -664,14 +665,14 @@ Narrator: Linnaeus is getting<color=\#FF3D0B> aggressive</color>.
 title: BreatheIn
 position: -918,286
 ---
-Narrator: You try to take a deep, steadying breath to gather yourself. 
-Narrator: It stutters on the way in and your heart is still pounding, but it is slower than before.
+Narrator: You try to take a deep, steadying breath to gather yourself. ▼ 
+Narrator: It stutters on the way in and your heart is still pounding, but it is slower than before. ▼
 //+1 Heart
 <<Heal Viewport_Heart>>
-Narrator: Your resolve strengthens once more.
-Imeris: Fine.
-Imeris: If I have to make my own way once more… If I have to go through you to do it, then so be it. 
-Linnaeus: I won’t let you take even one more step forward, beast!
+Narrator: Your resolve strengthens once more. ▼
+Imeris: Fine. ▼
+Imeris: If I have to make my own way once more… If I have to go through you to do it, then so be it. ▼ 
+Linnaeus: I won’t let you take even one more step forward, beast! ▼
 
 <<jump ROUND2END>>
 ===
@@ -680,11 +681,11 @@ title: HaveFaith
 position: -653,298
 ---
 //neutral
-Narrator: You look to the mural of Mellonella, and the sight of it helps you take a steadying breath. 
-Narrator: Your heart calms and you are able to stand tall again.
-Imeris: That’s fine. I only ever needed her.
-Narrator: Linnaeus grinds his teeth.
-Linnaeus: Look upon her while you can, demon. Once I’m done with you, you’ll never feel her light again.
+Narrator: You look to the mural of Mellonella, and the sight of it helps you take a steadying breath. ▼ 
+Narrator: Your heart calms and you are able to stand tall again. ▼
+Imeris: That’s fine. I only ever needed her. ▼
+Narrator: Linnaeus grinds his teeth. ▼
+Linnaeus: Look upon her while you can, demon. Once I’m done with you, you’ll never feel her light again. ▼
 
 <<jump ROUND2END>>
 ===
@@ -692,18 +693,18 @@ Linnaeus: Look upon her while you can, demon. Once I’m done with you, you’ll
 title: LashOut
 position: -653,298
 ---
-Narrator: You growl with frustration.
-Narrator: You scream at Linnaeus, though you know it will not make you feel any better.
-Imeris: What do you want from me?!
-Imeris: If I am so unholy, if I have been so foolish, then tell me, how was I supposed to live with the pain?
-Imeris: What did you want me to do?!
-Narrator: Your throat is raw, and you stare at Linnaeus, panting.
-Narrator: He levels you with a heavy gaze, eyes dark with contempt.
-Linnaeus: Bear it.
+Narrator: You growl with frustration. ▼
+Narrator: You scream at Linnaeus, though you know it will not make you feel any better. ▼
+Imeris: What do you want from me?! ▼
+Imeris: If I am so unholy, if I have been so foolish, then tell me, how was I supposed to live with the pain? ▼
+Imeris: What did you want me to do?! ▼
+Narrator: Your throat is raw, and you stare at Linnaeus, panting. ▼
+Narrator: He levels you with a heavy gaze, eyes dark with contempt. ▼
+Linnaeus: Bear it. ▼
 ///-1 heart
 <<TakeDamage Viewport_Heart>>
-Narrator: His words settle over you like a shroud, and your eyes grow wet with tears. 
-Narrator: You look away and up, so they won’t fall.
+Narrator: His words settle over you like a shroud, and your eyes grow wet with tears. ▼
+Narrator: You look away and up, so they won’t fall. ▼
 <<CheckHealth Viewport_Heart>>
 
 <<jump ROUND2END>>
@@ -716,15 +717,15 @@ position: 491,137
 <<Heal Viewport_Heart>>
 
 <<set $hasDagger = true>>
-Narrator: You reach behind you and grip the dagger strapped to your back.
-Narrator: You hold it at the ready, though you cannot bring yourself to draw it yet.
-Narrator: Linnaeus becomes unsettled. 
-Linnaeus: Why do you stare at me in silence, child? 
+Narrator: You reach behind you and grip the dagger strapped to your back. ▼
+Narrator: You hold it at the ready, though you cannot bring yourself to draw it yet. ▼
+Narrator: Linnaeus becomes unsettled. ▼
+Linnaeus: Why do you stare at me in silence, child? ▼
 <<PlayNPCAnimation ManagerHolder LinBattle_TransitionToCon>>
-Linnaeus: Have all your clever words left you?
-Linnaeus: Answer me! 
-Narrator: Though he's put on airs, you can see the unease in Linnaeus' eyes.
-Narrator: Linnaeus is<color=\#EDAE14> condescending</color> to you.
+Linnaeus: Have all your clever words left you? ▼
+Linnaeus: Answer me! ▼
+Narrator: Though he's put on airs, you can see the unease in Linnaeus' eyes. ▼
+Narrator: Linnaeus is<color=\#EDAE14> condescending</color> to you. ▼
 
 <<set $hover_text_up = "He’s acting like a child, so I’ll treat him like one.">>
 <<set $hover_text_left = "I’ll let him work himself up.">>
@@ -743,11 +744,11 @@ title: Patronize
 position: 373,343
 ---
 //neutral
-Imeris: Why bother speaking? I know nothing I say will reach those deaf ears of yours.
+Imeris: Why bother speaking? I know nothing I say will reach those deaf ears of yours. ▼
 <<PlayNPCAnimation ManagerHolder LinBattle_ConToAgg>>
-Narrator: Linnaeus snarls furiously.
-Linnaeus: If all that will find its way out of your mouth is insolence...
-Linnaeus: I’ll simply shut you up once and for all!
+Narrator: Linnaeus snarls furiously. ▼
+Linnaeus: If all that will find its way out of your mouth is insolence... ▼
+Linnaeus: I’ll simply shut you up once and for all! ▼
 
 <<jump ROUND2END>>
 ===
@@ -755,16 +756,16 @@ Linnaeus: I’ll simply shut you up once and for all!
 title: Bide
 position: 654,328
 ---
-Narrator: You look closely at Linnaeus, trying to decide when to strike- if you should at all. 
-Narrator: The hand on the dagger trembles faintly.
-Narrator: Your continued silence unnerves Linnaeus. 
+Narrator: You look closely at Linnaeus, trying to decide when to strike- if you should at all. ▼ 
+Narrator: The hand on the dagger trembles faintly. ▼
+Narrator: Your continued silence unnerves Linnaeus. ▼
 <<PlayNPCAnimation ManagerHolder LinBattle_ConToAgg>>
-Linnaeus: Well? Say something! Cease your leering! 
-Narrator: Linnaeus is getting desperate, and it will make him sloppy. 
-Narrator: It’s a good sign, but you must ready yourself.
+Linnaeus: Well? Say something! Cease your leering! ▼
+Narrator: Linnaeus is getting desperate, and it will make him sloppy. ▼
+Narrator: It’s a good sign, but you must ready yourself. ▼
 //+1 heart
 <<Heal Viewport_Heart>>
-Narrator: You continue to wait and stare, but your grip becomes more sure.
+Narrator: You continue to wait and stare, but your grip becomes more sure. ▼
 
 <<jump ROUND2END>>
 
@@ -775,17 +776,17 @@ position: 373,343
 ---
 <<set $goaded = true>>
 
-Imeris: Do you need me to fill your silences now too? Are you capable of doing nothing on your own?
-Narrator: You pull the dagger out from behind your back and point it at Linnaeus.
-Imeris: I should take your tongue, since all it does is sit uselessly in your mouth.
-Narrator: Linnaeus’s unease burns into bright, panicked anger. His voice comes out in a roar.
+Imeris: Do you need me to fill your silences now too? Are you capable of doing nothing on your own? ▼
+Narrator: You pull the dagger out from behind your back and point it at Linnaeus. ▼
+Imeris: I should take your tongue, since all it does is sit uselessly in your mouth. ▼
+Narrator: Linnaeus’s unease burns into bright, panicked anger. His voice comes out in a roar. ▼
 <<PlayNPCAnimation ManagerHolder LinBattle_ConToAgg>>
-Linnaeus: You wouldn’t <i>DARE</i>, you disgusting animal!
+Linnaeus: You wouldn’t <i>DARE</i>, you disgusting animal! ▼
 ///-1 heart
 <<TakeDamage Viewport_Heart>>
-Narrator: Fear grips you, and you almost drop the dagger. 
-Narrator: You tighten your hold again, but your hand shakes.
-Narrator: Your resolve to use it is gone.
+Narrator: Fear grips you, and you almost drop the dagger. ▼ 
+Narrator: You tighten your hold again, but your hand shakes. ▼
+Narrator: Your resolve to use it is gone. ▼
 <<CheckHealth Viewport_Heart>>
 
 <<jump ROUND2END>>
@@ -797,17 +798,17 @@ position: -416,699
 ---
 
 <<if $CurrentHealth == 3.0>>
-    Narrator: Your heart remains strong. Stay true.
+    Narrator: Your heart remains strong. Stay true. ▼
     <<jump ROUND3START>>
 
 <<endif>>
 
 <<if $CurrentHealth  == 2.0>>
-    Narrator: Your heart is hurt. Stay strong.
+    Narrator: Your heart is hurt. Stay strong. ▼
     <<jump ROUND3START>>
 <<endif>>
 <<if $CurrentHealth == 1.0>>
-    Narrator: Your heart is near breaking. Take care.
+    Narrator: Your heart is near breaking. Take care. ▼
 
     <<jump ROUND3START>>
 
@@ -822,16 +823,16 @@ title: ROUND3START
 position: -421,899
 ---
 <<PlayNPCAnimation ManagerHolder LinBattle_TransitionToAgg>>
-Narrator: Linnaeus bangs his fist into the wall beside him.
-Linnaeus: My patience has run out!
-Linnaeus: Do you have any final words before I send you to meet our maker?! 
+Narrator: Linnaeus bangs his fist into the wall beside him. ▼
+Linnaeus: My patience has run out! ▼
+Linnaeus: Do you have any final words before I send you to meet our maker?! ▼
 <<jump ROUND3START2>>
 ===
 
 title: ROUND3START2
 position: -911,1109
 ---
-Narrator: Linnaeus is frenzied. Nothing you do will calm him now.
+Narrator: Linnaeus is frenzied. Nothing you do will calm him now. ▼
 
 <<set $hover_text_up = "Yes, but you won’t like them, Father.">>
 <<set $hover_text_left = "I have but a simple plea to our Goddess.">>
@@ -850,15 +851,15 @@ Narrator: Linnaeus is frenzied. Nothing you do will calm him now.
 title: Scorn
 position: -603,1220
 ---
-Imeris: Just these. 
-Imeris: You disgust me.
-Imeris: You sat fat and fed at the center of a web of lies, surrounded by those you led astray, and let us all suffer.
-Imeris: You deserve what has come to you.
-Imeris: Your damnation is your fault alone, Linnaeus.
-Narrator: Linnaeus is mute with rage.
-Narrator: He bares his teeth, eyes crazed, unable to draw out a single clever word in response.
-Narrator: You fall into silence, satisfied.
-Narrator: There is nothing more to say.
+Imeris: Just these. ▼
+Imeris: You disgust me. ▼
+Imeris: You sat fat and fed at the center of a web of lies, surrounded by those you led astray, and let us all suffer. ▼
+Imeris: You deserve what has come to you. ▼
+Imeris: Your damnation is your fault alone, Linnaeus. ▼
+Narrator: Linnaeus is mute with rage. ▼
+Narrator: He bares his teeth, eyes crazed, unable to draw out a single clever word in response. ▼
+Narrator: You fall into silence, satisfied. ▼
+Narrator: There is nothing more to say. ▼
 
 <<jump BATTLEEND>>
 
@@ -867,13 +868,13 @@ Narrator: There is nothing more to say.
 title: Pray
 position: 34,1075
 ---
-Narrator: You clasp your hands and look up at the mural of the Goddess beside you. 
-Narrator: When you lower your gaze, Linnaeus's furious eyes look back.
-Linnaeus: Now you pray? Do you think it will save you?
-Narrator: You close your eyes, lower your head, and begin to mumble your prayer. 
-Narrator: Linnaeus snarls. 
-Imeris: O Goddess…
-Imeris: Save my soul.
+Narrator: You clasp your hands and look up at the mural of the Goddess beside you. ▼ 
+Narrator: When you lower your gaze, Linnaeus's furious eyes look back. ▼
+Linnaeus: Now you pray? Do you think it will save you? ▼
+Narrator: You close your eyes, lower your head, and begin to mumble your prayer. ▼
+Narrator: Linnaeus snarls. ▼
+Imeris: O Goddess… ▼
+Imeris: Save my soul. ▼
 
 <<jump BATTLEEND>>
 
@@ -884,12 +885,12 @@ position: -911,1109
 ---
 <<if $hasDagger ==true && $goaded ==false>>
 
-Narrator: You tighten your hold on the dagger and look at Linnaeus in silence, readying your attack. 
-Linnaeus: What are you doing, child?
-Narrator: Before he realizes, you rush forward and slash at him desperately. 
-Narrator: You catch his arm as he moves to block his face, leaving a single cut before you retreat.
-Narrator: Linnaeus looks down at his dripping blood and shakes with fury.
-Linnaeus: You… You DARE to raise a hand against your Father?!
+Narrator: You tighten your hold on the dagger and look at Linnaeus in silence, readying your attack. ▼ 
+Linnaeus: What are you doing, child? ▼
+Narrator: Before he realizes, you rush forward and slash at him desperately. ▼
+Narrator: You catch his arm as he moves to block his face, leaving a single cut before you retreat. ▼
+Narrator: Linnaeus looks down at his dripping blood and shakes with fury. ▼
+Linnaeus: You… You DARE to raise a hand against your Father?! ▼
 
 <<jump BATTLEEND>>
 
@@ -897,13 +898,13 @@ Linnaeus: You… You DARE to raise a hand against your Father?!
 
 <<if $hasDagger == false && $goaded == false>>
 
-Narrator: With what?
+Narrator: With what? ▼
 <<jump ROUND3START2>>
 
 <<endif>>
 
 <<if $goaded == true>>
-Narrator: You can't muster the courage.
+Narrator: You can't muster the courage. ▼
 <<jump ROUND3START2>>
 <<endif>>
 
@@ -913,8 +914,8 @@ title: BATTLEEND
 position: -418,1669
 ---
 <<StopMusic ManagerHolder 0.05>>
-Linnaeus: Beast… fiend… <i>monster</i>… I have had ENOUGH!
-Linnaeus: Your wretched, unholy existence ends <i>here</i>.
+Linnaeus: Beast… fiend… <i>monster</i>… I have had ENOUGH! ▼
+Linnaeus: Your wretched, unholy existence ends <i>here</i>. ▼
 // Narrator: (Imeris and Linnaeus disappear from the UI) // TODO: MUSIC FADE OUT, FADE IN NEXT SONG
 <<DisableImerisAnimation ManagerHolder>>
 <<DisableNPCAnimation ManagerHolder>>
@@ -946,11 +947,11 @@ position: -418,1669
 title: EndLinnAttack
 position: -418,1669
 ---
-Narrator: When you look up, your hands are wet with red, and Linnaeus's lifeless body lies before you. 
-Narrator: You are frozen with horror, unable to do anything but stare.
-Narrator: This tool of the Court, wielding words like a cudgel to keep you all in check. 
-Narrator: Preaching false truths to distract from the wondrous reality you've managed to grasp.
-Narrator: You look upon him, the holder of the first key to your cage, and feel... 
+Narrator: When you look up, your hands are wet with red, and Linnaeus's lifeless body lies before you. ▼
+Narrator: You are frozen with horror, unable to do anything but stare. ▼
+Narrator: This tool of the Court, wielding words like a cudgel to keep you all in check. ▼
+Narrator: Preaching false truths to distract from the wondrous reality you've managed to grasp. ▼
+Narrator: You look upon him, the holder of the first key to your cage, and feel... ▼ 
 
 <<set $hover_text_up = "">>
 <<set $hover_text_left = "">>
@@ -970,32 +971,32 @@ title: FeelHunger
 position: -418,1669
 ---
 
-Narrator: And <i>hunger</i>.
+Narrator: And <i>hunger</i>. ▼
 
 
-Narrator: His crimson blood flows like spilled wine and soaks into the scarlet carpet.
-Narrator: Your tongue sits heavy in your dry mouth as you gaze upon it. 
-Narrator: Your throat burns. Your teeth ache. Your hands curl into your stomach.
-Narrator: You look upon the offerings he defended with his life.
-Narrator: They are paltry. 
-Narrator: He threw himself away for mere scraps of bread, dry save for crusted spots of honey.
-Narrator: But still, it is food.
+Narrator: His crimson blood flows like spilled wine and soaks into the scarlet carpet. ▼
+Narrator: Your tongue sits heavy in your dry mouth as you gaze upon it. ▼
+Narrator: Your throat burns. Your teeth ache. Your hands curl into your stomach. ▼
+Narrator: You look upon the offerings he defended with his life. ▼
+Narrator: They are paltry. ▼
+Narrator: He threw himself away for mere scraps of bread, dry save for crusted spots of honey. ▼
+Narrator: But still, it is food. ▼
 <<BreadFrame ManagerHolder>>
-Narrator: You turn to gather all the offerings and eat them, one by one.
+Narrator: You turn to gather all the offerings and eat them, one by one. ▼
 <<PureBlack ManagerHolder>>
-Narrator: When you finish them, your mouth is no less dry, and your hunger is no less sharp.
-Narrator: Your need runs deep. They were not enough to satisfy you.
-Narrator: You look back at Linnaeus. 
-Narrator: Your stomach growls.
-Narrator: You realize what you’ve just imagined, and it makes your blood run cold with shame and horror. 
-Narrator: But it does not dull your hunger. 
+Narrator: When you finish them, your mouth is no less dry, and your hunger is no less sharp. ▼
+Narrator: Your need runs deep. They were not enough to satisfy you. ▼
+Narrator: You look back at Linnaeus. ▼
+Narrator: Your stomach growls. ▼
+Narrator: You realize what you’ve just imagined, and it makes your blood run cold with shame and horror. ▼ 
+Narrator: But it does not dull your hunger. ▼
 <<jump FeelHunger2>>
 ===
 
 title: FeelHunger2
 position: -418,1669
 ---
-Narrator: Something must be done.
+Narrator: Something must be done. ▼
 
 <<set $hover_text_up = "...">>
 <<set $hover_text_left = "The bread will have to be enough.">>
@@ -1003,7 +1004,7 @@ Narrator: Something must be done.
 <<SetHoverText OptionsBubble>>
 
 -> ...
-    Narrator: You must make a choice.
+    Narrator: You must make a choice. ▼
     <<jump FeelHunger2>>
 -> Leave.
     <<jump EatBread>>
@@ -1015,30 +1016,30 @@ Narrator: Something must be done.
 title: EatBread
 position: -418,1669
 ---
-Narrator: There is nothing more for you here. 
+Narrator: There is nothing more for you here. ▼
 
-Narrator: Before you can take even one step, your stomach growls painfully.
+Narrator: Before you can take even one step, your stomach growls painfully. ▼
 
-Narrator: The reality of your situation hits you.
+Narrator: The reality of your situation hits you. ▼
 
-Narrator: You are no better off than you were before. 
+Narrator: You are no better off than you were before. ▼
 
-Narrator: And now, you are alone.
+Narrator: And now, you are alone. ▼
 
-Narrator: A profound despair inches like ice through your veins.
+Narrator: A profound despair inches like ice through your veins. ▼
 
-Narrator: Just as it nearly overwhelms you, your mind is flooded with memories.
+Narrator: Just as it nearly overwhelms you, your mind is flooded with memories. ▼
 
 //This should show the animation for the good memories.
 <<PlayGoodBattleMemory ManagerHolder>>
 <<wait  6.5>>
 <<PureBlack ManagerHolder>>
 
-Narrator: Your memories, though troubled, were warm.
+Narrator: Your memories, though troubled, were warm. ▼
 
-Narrator: A familiar face whose name you've forgotten lingers in your mind.
+Narrator: A familiar face whose name you've forgotten lingers in your mind. ▼
 
-Narrator: You find it in you to move forward again.
+Narrator: You find it in you to move forward again. ▼
 
 <<DontEatLinn ManagerHolder>>
 
@@ -1047,7 +1048,7 @@ Narrator: You find it in you to move forward again.
 title: Eatbread1
 position:
 --- 
-Narrator: You ready yourself to leave, and decide to look at Linnaeus one final time.
+Narrator: You ready yourself to leave, and decide to look at Linnaeus one final time. ▼
 
 <<SecondBreadFrame ManagerHolder>>
 
@@ -1055,7 +1056,7 @@ Narrator: You ready yourself to leave, and decide to look at Linnaeus one final 
 title: Eatbread2
 position:
 ---
-Narrator: You notice a key on a string tied around his neck- the key to the stairwell. 
+Narrator: You notice a key on a string tied around his neck- the key to the stairwell. ▼
 
 <<ThirdBreadFrame ManagerHolder>>
 
@@ -1063,7 +1064,7 @@ Narrator: You notice a key on a string tied around his neck- the key to the stai
 title: Eatbread3
 position:
 ---
-Narrator: You take the key and make your way to the altar.
+Narrator: You take the key and make your way to the altar. ▼
 
 <<FourthBreadFrame ManagerHolder>>
 
@@ -1071,9 +1072,9 @@ Narrator: You take the key and make your way to the altar.
 title: Eatbread4
 position:
 ---
-Narrator: You offer a prayer of thanks to Mellonella before leaving the chapel. 
+Narrator: You offer a prayer of thanks to Mellonella before leaving the chapel. ▼ 
 
-Narrator: And you lock the door behind you.
+Narrator: And you lock the door behind you. ▼
 
 <<StopMusic ManagerHolder 0.25>>
 
@@ -1091,7 +1092,7 @@ Narrator: Are you sure?
 <<SetHoverText OptionsBubble>>
 
 -> ...
-    Narrator: You must make a choice.
+    Narrator: You must make a choice. ▼
     <<jump YouSure>>
 -> No.
     <<jump FeelHunger2>>
@@ -1103,9 +1104,9 @@ title: SateHunger
 position: -418,1669
 ---
 <<EatLinn ManagerHolder>>
-Narrator: Your heart and mind scream at you not to do it.
+Narrator: Your heart and mind scream at you not to do it. ▼
 <<EatLinn2 ManagerHolder>>
-Narrator: But you cannot bear the hunger any longer.
+Narrator: But you cannot bear the hunger any longer. ▼
 <<EatLinn3 ManagerHolder>>
 
 ===
@@ -1113,33 +1114,33 @@ Narrator: But you cannot bear the hunger any longer.
 title: EndEatLinn
 position:
 ---
-Narrator: At the very first bite of still-warm flesh, you lose yourself.
+Narrator: At the very first bite of still-warm flesh, you lose yourself. ▼
 <<PureBlack ManagerHolder>>
 <<wait .8>>
 <<EatingSounds ManagerHolder>>
 //turn off imeris's cg
 
-Narrator: Consumed whole by your own appetite, you feast. As your stomach fills, your heart empties. 
-Narrator: When you can control yourself once more, you look down at what you’ve left behind and gag. 
-Narrator: What you’ve already taken threatens to climb back up your throat and out onto the carpet. 
-Narrator: You cover your mouth and run. 
-Narrator: You leave what remains of Linnaeus, and a part of you is left behind with him.
-Narrator: The moment you slam the door shut behind you, fragmented memories flood your mind.
+Narrator: Consumed whole by your own appetite, you feast. As your stomach fills, your heart empties. ▼ 
+Narrator: When you can control yourself once more, you look down at what you’ve left behind and gag. ▼
+Narrator: What you’ve already taken threatens to climb back up your throat and out onto the carpet. ▼
+Narrator: You cover your mouth and run. ▼
+Narrator: You leave what remains of Linnaeus, and a part of you is left behind with him. ▼
+Narrator: The moment you slam the door shut behind you, fragmented memories flood your mind. ▼
 
 //this is where the bad memories should play
 <<PlayBadBattleMemory ManagerHolder>>
 <<wait 6.5>>
 <<PureBlack ManagerHolder>>
 
-Narrator: The memories you see are painful. They frighten you.
-Narrator: You want to hide away. 
-Narrator: Despite your panic, you find you cannot move quickly. 
-Narrator: Your body is as heavy as it is tense.
-Narrator: Exhaustion creeps into your limbs and starts pulling on your eyelids.
-Narrator: Your body longs for the comfort of your bed, and you stumble in its direction.
-Narrator: But you do not make it.
-Narrator: You fall to the floor, fibrous threads wrapping around you in a suffocating embrace.
-Narrator: <color=\#d7c801> Metamorphosis</color> takes you once more. 
+Narrator: The memories you see are painful. They frighten you. ▼
+Narrator: You want to hide away. ▼
+Narrator: Despite your panic, you find you cannot move quickly. ▼
+Narrator: Your body is as heavy as it is tense. ▼
+Narrator: Exhaustion creeps into your limbs and starts pulling on your eyelids. ▼
+Narrator: Your body longs for the comfort of your bed, and you stumble in its direction. ▼
+Narrator: But you do not make it. ▼
+Narrator: You fall to the floor, fibrous threads wrapping around you in a suffocating embrace. ▼
+Narrator: <color=\#d7c801> Metamorphosis</color> takes you once more. ▼
 
 <<StopMusic ManagerHolder 0.25>>
 <<ExitBattle Imeris>> // TODO: FADE OUT MUSIC
@@ -1147,9 +1148,9 @@ Narrator: <color=\#d7c801> Metamorphosis</color> takes you once more.
 
 title: DeadDialogue
 ---
-Narrator: You have lost yourself. Your heart is broken.
-Narrator: But you still have the ability to Change.
-Narrator: Rebirth yourself and try again.
+Narrator: You have lost yourself. Your heart is broken. ▼
+Narrator: But you still have the ability to Change. ▼
+Narrator: Rebirth yourself and try again. ▼
 
 <<set $hover_text_up = "">>
 <<set $hover_text_left = "">>
@@ -1167,8 +1168,8 @@ Narrator: Rebirth yourself and try again.
 
 title: Ending
 ---
-Narrator: Thank you for playing!
-Narrator: Please look forward to future developments!
+Narrator: Thank you for playing! ▼
+Narrator: Please look forward to future developments! ▼
 -> Metamorphose
 <<RestartGameFromOpening ManagerHolder>>
 ===
