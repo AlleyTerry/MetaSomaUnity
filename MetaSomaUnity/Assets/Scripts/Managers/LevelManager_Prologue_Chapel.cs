@@ -42,6 +42,9 @@ public class LevelManager_Prologue_Chapel : LevelManagerBase
    
         GameManager.instance.HUD.SetActive(true); // show HUD
         GameManager.instance.CGDisplay.SetActive(false); // hide CG display
+        
+        //play linn happy animation
+        //LinnaeusAnimation.GetComponent<Animator>().Play("PrologueLinnaeusHappy");
     }
 
     // Update is called once per frame
