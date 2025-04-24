@@ -42,8 +42,6 @@ public class LevelManager_CommonArea : LevelManagerBase
         
         GameManager.instance.HUD.SetActive(true);
         GameManager.instance.CGDisplay.SetActive(false);
-       
-        GameManager.instance.FreezeControls();
         
         // Disable NPC animation display
         NPCAnimation.SetActive(false);
@@ -104,6 +102,9 @@ public class LevelManager_CommonArea : LevelManagerBase
 
     private IEnumerator FirstVisitEvent()
     {
+        // freeze controls
+        GameManager.instance.FreezeControls();
+        
         // wait
         yield return new WaitForSeconds(0.5f);
         
