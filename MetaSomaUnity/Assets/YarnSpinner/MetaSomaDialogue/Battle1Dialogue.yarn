@@ -14,7 +14,7 @@ position: -462,-1568
 Linnaeus: Do you have anything to say for yourself?
 Narrator: Tread carefully; in this battle of words, your choices may hurt you. 
 Narrator: Protect your heart, and stay true to yourself.
-Narrator: Linnaeus is gathered, and acting<color=\#98ED14> calm</color>. 
+Narrator: Linnaeus is gathered, and acting<color=\#98ED14> calm</color>.
 
 <<set $hover_text_up = "I have an argument.">>
 <<set $hover_text_left = "I have regrets to offer.">>
@@ -160,6 +160,7 @@ position: -1369,-921
 ---
 Imeris: I could not ignore the hunger that stirs within me. 
 Imeris: It’s as simple as that.
+<<PlayNPCAnimation ManagerHolder LinBattle_ConToCalm>>
 Narrator: Linnaeus bristles, but his hand clutches his own stomach unconsciously.
 ///+1 heart
 <<Heal Viewport_Heart>>
@@ -175,6 +176,7 @@ position: -1369,-921
 Imeris: You misunderstood. This "impudence" is something I've carried for a long time.
 Imeris: No matter how docile I may have seemed, day in and day out, I was always, <i>always</i> angry.
 Imeris: It was only a matter of time until I let it out.
+<<PlayNPCAnimation ManagerHolder LinBattle_ConToCalm>>
 Narrator: Linnaeus seems shocked by your response. 
 Narrator: His gaze turns distant as he looks back into the past, seeking.
 Narrator: A deep frown settles itself on his face when he realizes you're telling the truth.
@@ -559,6 +561,7 @@ Imeris: Are you sure you wish to provoke me this way, Father?
 Imeris: You believe I killed the Queen, and her power greatly surpassed yours, did it not?
 Imeris: I don’t think you know what you’re starting.
 Narrator: The thought of taking Linnaeus’ life with your own hands makes you feel sick, but you hide it well.
+<<PlayNPCAnimation ManagerHolder LinBattle_ConToCalm>>
 Narrator: Linnaeus is taken aback. He scowls darkly and clenches his fist dangerously.
 Linnaeus: Do not condescend to me. Your arrogance will undo you. 
 Narrator: His tone is controlled, but just barely. 
@@ -720,6 +723,7 @@ Linnaeus: Why do you stare at me in silence, child?
 <<PlayNPCAnimation ManagerHolder LinBattle_TransitionToCon>>
 Linnaeus: Have all your clever words left you?
 Linnaeus: Answer me! 
+Narrator: Though he's put on airs, you can see the unease in Linnaeus' eyes.
 Narrator: Linnaeus is<color=\#EDAE14> condescending</color> to you.
 
 <<set $hover_text_up = "He’s acting like a child, so I’ll treat him like one.">>

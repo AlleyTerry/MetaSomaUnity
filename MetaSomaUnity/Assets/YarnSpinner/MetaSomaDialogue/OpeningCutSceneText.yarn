@@ -1,28 +1,28 @@
 ﻿title: OpeningCutSceneText
 tags:
 ---
-IMERIS: No...
+IMERIS: No... ▼
 
 <<PlayAnimation ManagerHolder "BedroomIntro_11">>
-IMERIS:It was supposed to...
+IMERIS:It was supposed to... ▼
 
 <<PlayAnimation ManagerHolder "BedroomIntro_11_5">>
-IMERIS: This...this isn't right...
+IMERIS: This...this isn't right... ▼
 
 <<PlayAnimation ManagerHolder "BedroomIntro_13">>
-IMERIS: ... It didn't work.
+IMERIS: ... It didn't work. ▼
 
 <<PlayAnimation ManagerHolder "BedroomIntro_14">>
-IMERIS: And now I'm starving.
+IMERIS: And now I'm starving. ▼
 
 <<PlayAnimation ManagerHolder "BedroomIntro_15">>
-IMERIS: I need to find food. I have to try again, I can't...
+IMERIS: I need to find food. I have to try again, I can't... ▼
 
 <<PlayAnimation ManagerHolder "BedroomIntro_16">>
-IMERIS: ...I don't want to look at myself.
+IMERIS: ...I don't want to look at myself. ▼
 
  <<PlayAnimation ManagerHolder "BedroomIntro_18">>
-IMERIS: I need to cover this up.
+IMERIS: I need to cover this up. ▼
 
 <<PlayAnimation ManagerHolder "BedroomIntro_19">>
 
