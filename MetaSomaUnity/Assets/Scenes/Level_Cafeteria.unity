@@ -3923,9 +3923,9 @@ MonoBehaviour:
   lastLineCharacterNameText: {fileID: 0}
   lastLineCharacterNameContainer: {fileID: 0}
   optionViews: []
-  optionSpriteUp: {fileID: 0}
-  optionSpriteLeft: {fileID: 0}
-  optionSpriteRight: {fileID: 0}
+  optionSpriteUp: {fileID: 21300000, guid: 7d858e60fbab25347a85cc513c37546d, type: 3}
+  optionSpriteLeft: {fileID: 21300000, guid: 4aeefe103aa3c2a45adafd9a844f9838, type: 3}
+  optionSpriteRight: {fileID: 21300000, guid: c602c523c057af34e8053f07b6b1e517, type: 3}
   hoverText: {fileID: 3292915241299511731}
 --- !u!114 &1246260105266357155
 MonoBehaviour:
@@ -4119,8 +4119,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1c4d46b66b908e04692732e0275573df, type: 2}
-  m_sharedMaterial: {fileID: -2029246077423524178, guid: 1c4d46b66b908e04692732e0275573df,
+  m_fontAsset: {fileID: 11400000, guid: 84eee2dc8d3790543a414228df1153ba, type: 2}
+  m_sharedMaterial: {fileID: 6094562528857308864, guid: 84eee2dc8d3790543a414228df1153ba,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4181,7 +4181,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 60.451904, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4464,7 +4464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &5839806390977627975
 GameObject:
   m_ObjectHideFlags: 0
@@ -5459,7 +5459,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 3543777558854826662}
-  text: {fileID: 0}
+  text: {fileID: 293094145561755153}
   showCharacterName: 0
   palette: {fileID: 0}
 --- !u!114 &8848496756102385047
