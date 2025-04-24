@@ -108,6 +108,8 @@ public class LevelManager_Chapel : LevelManagerBase
         CameraManager.instance.SwitchFollowTarget();
         
         yield return new WaitForSeconds(1.65f);
+        YarnCharacter innerImeris = GameObject.Find("InnerImerisWorldspacePlaceholder").GetComponent<YarnCharacter>();
+        innerImeris.messageBubbleOffset.x += 2f;
         base.StartCutsScene(cutSceneDialogueNode);
     }
     
