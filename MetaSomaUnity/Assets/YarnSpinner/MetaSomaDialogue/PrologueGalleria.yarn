@@ -3,6 +3,7 @@ tags:
 ---
 Narrator: Hazy memories drift through the sea of metamorphosing sleep…
 Galleria: Imeris, are you <i>still</i> in bed?
+<<PlayBeeHumming ManagerHolder>>
 Galleria: It’s nearly time for the morning sermon! Get up!
 <<ShowGalleria ManagerHolder>>
 Imeris: Mmm… Don’t shout, please… I can wake up on my own.
