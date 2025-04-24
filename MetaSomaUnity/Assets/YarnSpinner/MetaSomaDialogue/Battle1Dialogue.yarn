@@ -779,7 +779,8 @@ Linnaeus: You wouldn’t <i>DARE</i>, you disgusting animal!
 ///-1 heart
 <<TakeDamage Viewport_Heart>>
 Narrator: Fear grips you, and you almost drop the dagger. 
-Narrator: You tighten your hold again, keeping its tip aloft, but your resolve to use it is all but gone.
+Narrator: You tighten your hold again, but your hand shakes.
+Narrator: Your resolve to use it is gone.
 <<CheckHealth Viewport_Heart>>
 
 <<jump ROUND2END>>
@@ -912,6 +913,7 @@ Linnaeus: Your wretched, unholy existence ends <i>here</i>.
 // Narrator: (Imeris and Linnaeus disappear from the UI) // TODO: MUSIC FADE OUT, FADE IN NEXT SONG
 <<DisableImerisAnimation ManagerHolder>>
 <<DisableNPCAnimation ManagerHolder>>
+<<PlayViewportAnimation ManagerHolder PureBlack>>
 
 <<PlayMusic ManagerHolder "linnaeusBattleEnd">>
 Narrator: Linnaeus wrenches an incense holder off the wall and grips the heavy metal fixture with both hands. 
@@ -1093,7 +1095,10 @@ Narrator: But you cannot bear the hunger any longer.
 title: EndEatLinn
 position:
 ---
+<<EatingSounds ManagerHolder>>
 Narrator: At the very first bite of still-warm flesh, you lose yourself.
+//turn off imeris's cg
+
 Narrator: Consumed whole by your own appetite, you feast. As your stomach fills, your heart empties. 
 Narrator: When you can control yourself once more, you look down at what you’ve left behind and gag. 
 Narrator: What you’ve already taken threatens to climb back up your throat and out onto the carpet. 
