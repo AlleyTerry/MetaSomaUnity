@@ -332,7 +332,7 @@ public class ImerisMovement : MonoBehaviour
     public void ExitBattle()
     {
         Debug.Log("Exiting battle...");
-        GameManager.instance.isInBattle = false;
+        GameManager.instance.ResumeControls();
         GameManager.instance.CGDisplay.SetActive(false);
         GameManager.instance.currentLevelManager.ExitBattleDialogue();
     }

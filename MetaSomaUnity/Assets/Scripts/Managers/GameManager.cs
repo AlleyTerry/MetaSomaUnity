@@ -440,6 +440,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    [YarnCommand("FreezeControls")]
     public void FreezeControls()
     {
         GameObject.FindObjectOfType<ImerisMovement>().rb.velocity = Vector3.zero;
