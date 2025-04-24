@@ -116,7 +116,8 @@ public class LevelManager_CommonArea : LevelManagerBase
         GameObject.Find("OverworldLinnaeusBack").SetActive(false);
         yield return new WaitForSeconds(1f);
         
-        // animation - door close
+        // animation - door close and play sound
+        gameObject.GetComponent<AudioManager>().PlaySFX("DoorLock");
         GameObject.Find("Background_DoorOnly").SetActive(false);
         yield return new WaitForSeconds(1f);
         
