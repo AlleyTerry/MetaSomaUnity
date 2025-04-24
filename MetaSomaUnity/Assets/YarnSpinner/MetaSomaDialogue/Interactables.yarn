@@ -10,7 +10,7 @@ title: Setup_Interactables
 title: MellonellaShrineZoom
 ---
 <<ShowShrineZoom ManagerHolder>>
-imeris: O’ Mellonella, our Goddess of Gold, please guide my steps today…
+imeris: O Mellonella, our Goddess of Gold, please guide my steps today…
 <<HideShrineZoom ManagerHolder>>
 <<jump QueenPortraitZoom>>
 ===
