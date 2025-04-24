@@ -1,7 +1,7 @@
 ﻿title: PrologueGalleria
 tags:
 ---
-Narrator: Hazy memories drift through the sea of metamorphosing sleep… (Press Enter to continue dialogue)
+Narrator: Hazy memories drift through the sea of metamorphosing sleep… <br>(Press Enter to continue dialogue)
 Narrator: You see a dream of a day past.
 Galleria: Imeris, are you <i>still</i> in bed?
 <<PlayBeeHumming ManagerHolder>>
