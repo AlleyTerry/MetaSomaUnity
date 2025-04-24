@@ -182,7 +182,7 @@ imeris: (Rapidly press the left arrow when you see the indicator)
 
 title: EnterHall
 ---
-imeris: It’s so dark… What happened here?
+imeris: It’s so dark… What happened here? How long was I asleep...?
 ===
 
 title: ThirdDoor
@@ -403,8 +403,9 @@ Imeris: What happened here?
 Grub: Why are you asking that? You should know… 
 Grub: We’ve been abandoned.
 Imeris: Abandoned?
-Grub: Her Majesty vanished, and there was no one to take her place. No one to lead.
+Grub: Her Majesty vanished about a month ago, and there was no one to take her place.
 Grub: So they... the Bees... they all left. 
+imeris: A month...?
 
 <<set $hover_text_up = "But why?">>
 <<set $hover_text_left = "They wouldn't...">>
@@ -508,7 +509,7 @@ Imeris: You just need to hold on a little longer, conserve your energy.
 Grub: No... I've reached the end of my rope.
 Grub: I can scarcely move anymore. 
 Grub: Even speaking is becoming... hard.
-Grub: I won't last to see you to return. 
+Grub: I won't last long enough to see you to return. 
 Grub: But... I thank you. For the kindness.
 Grub: Someone like you might still... find a way out...
 Grub: Let me do my part... to help...
@@ -524,6 +525,7 @@ Imeris: I can help you; we can make our way out of this, together!
 Grub: Ha ha... How sweet.
 Grub: You are kind. But a bit foolish, too.
 Grub: There is no saving me. Even now, I can feel my body slowing.
+Grub: I'm not long for this world.
 Grub: I thank you for trying, though.
 Grub: In exchange for your kindness, I'll give you this...
 Grub: More time to find your own way out of this hell.
@@ -538,6 +540,7 @@ Imeris: You're still alive now, aren't you?
 Imeris: Don't give them the satisfaction- don't let this kill you!
 Imeris: You have to <i>fight</i>!
 Grub: I'm sorry... I don't have it in me anymore.
+Grub: I can barely move my body. I'll be no help to you, or myself. 
 Grub: Prolonging my own suffering won't win me anything. I know when to surrender.
 Grub: But, thank you... for trying.
 Grub: The will to go on burns brightly within you.
