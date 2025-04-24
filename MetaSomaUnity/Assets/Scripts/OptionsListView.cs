@@ -195,7 +195,8 @@ namespace Yarn.Unity
             // call level manager to switch animation state
             var levelManager = GameManager.instance.currentLevelManager;
 
-            if (levelManager == null)
+            if (levelManager == null ||
+                !levelManager.isBattleAnimationChanging)
             {
                 Debug.LogError("LevelManager is null! Cannot switch animation state.");
                 return;

@@ -109,7 +109,7 @@ public class LevelManager_Chapel : LevelManagerBase
         
         yield return new WaitForSeconds(1.65f);
         YarnCharacter innerImeris = GameObject.Find("InnerImerisWorldspacePlaceholder").GetComponent<YarnCharacter>();
-        innerImeris.messageBubbleOffset.x += 2f;
+        innerImeris.messageBubbleOffset.x += 2.3f;
         base.StartCutsScene(cutSceneDialogueNode);
     }
     
@@ -127,6 +127,8 @@ public class LevelManager_Chapel : LevelManagerBase
         linnaeusAnimation.GetComponent<Animator>().runtimeAnimatorController = linnaeusAnimatorController;
         //play the linneaus idle
         linnaeusAnimation.GetComponent<Animator>().Play("LinBattleIdle");
+        
+        isBattleAnimationChanging = true;
         
         // LINNEAUS
         //linneausAnimation.SetActive(true); // For now we don't really have the cutscene, will be commented out later
@@ -152,6 +154,8 @@ public class LevelManager_Chapel : LevelManagerBase
     public override void ExitBattleDialogue()
     {
         base.ExitBattleDialogue();
+        
+        isBattleAnimationChanging = false;
         
         DialogueManager.instance.StopDialogue();
         
@@ -184,6 +188,8 @@ public class LevelManager_Chapel : LevelManagerBase
     public override void DeadScene()
     {
         base.DeadScene();
+        
+        isBattleAnimationChanging = false;
 
         if (DialogueManager.instance.dialogueRunner.IsDialogueRunning)
         {
