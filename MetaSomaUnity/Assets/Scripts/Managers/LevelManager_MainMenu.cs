@@ -17,6 +17,10 @@ public class LevelManager_MainMenu : LevelManagerBase
     
     bool hasSelected = false;
     
+    // CREDIT PAGE
+    public GameObject creditPage;
+    [SerializeField] private bool isCreditPageActive = false;
+    
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -53,26 +57,46 @@ public class LevelManager_MainMenu : LevelManagerBase
     public override void Initialize()
     {
         SetButton();
+        
+        // set up the credit page
+        creditPage = GameObject.Find("CreditPageCanvas");
+        if (creditPage != null)
+        {
+            creditPage.SetActive(false);
+            isCreditPageActive = false;
+        }
+        else
+        {
+            Debug.LogError("Credit page not found.");
+        }
     }
 
     protected override void Update()
     {
-        base.Update();
+        if (isCreditPageActive)
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                creditPage.SetActive(false);
+                isCreditPageActive = false;
+                
+                currentButtonIndex = 0;
+                SelectButton(currentButtonIndex);
+            }
+        }
+        else
+        {
+            base.Update();
         
-        // Menu navigation
-        SwitchSelection();
-        ConfirmSelection();
+            // Menu navigation
+            SwitchSelection();
+            ConfirmSelection();
+        }
     }
 
     private void SelectButton(int index)
     {
         EventSystem.current.SetSelectedGameObject(buttons[index].gameObject);
-        
-        /*// visual highlight
-        for (int i = 0; i < buttons.Count; i++)
-        {
-            buttons[i].GetComponent<Image>().color = i == index ? Color.red : Color.white;
-        }*/
         
         // todo: audio
     }
@@ -117,7 +141,10 @@ public class LevelManager_MainMenu : LevelManagerBase
     {
         if (Input.GetKeyDown(KeyCode.Return) && !hasSelected)
         {
-            hasSelected = true;
+            if (currentButtonIndex != 0)
+            {
+                hasSelected = true;
+            }
             
             Button selectedButton = buttons[currentButtonIndex];
             selectedButton.interactable = false;
@@ -133,7 +160,16 @@ public class LevelManager_MainMenu : LevelManagerBase
             else if (selectedButton == buttonCredit)
             {
                 Debug.Log("Credit button clicked.");
-                // todo: implement credit functionality
+                
+                if (creditPage != null)
+                {
+                    creditPage.SetActive(true);
+                    isCreditPageActive = true;
+                }
+                else
+                {
+                    Debug.LogError("Credit page not found.");
+                }
             }
             else
             {
