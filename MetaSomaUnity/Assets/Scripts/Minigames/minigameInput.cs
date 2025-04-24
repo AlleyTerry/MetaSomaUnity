@@ -81,7 +81,9 @@ public class minigameInput : MonoBehaviour
         if (timesPressed >= pressedNumber)
         {
             //play yarnspinner dialogue
-            bust.SetActive(false);
+            //bust.SetActive(false);
+            //lerp the bust to the floor
+            bust.transform.position = Vector3.Lerp(bust.transform.position, new Vector3(bust.transform.position.x, -2.5f, bust.transform.position.z), Time.deltaTime * 2f);
             if (!dialogueRunner.IsDialogueRunning) dialogueRunner.StartDialogue("minigameSuccess");
         }
         else

@@ -68,6 +68,8 @@ imeris: Except for...
 Imeris: It is. My wings... they're not ready. I must eat.
 Linnaeus: ...Wings? But... how?
 Linnaeus: Oh Goddess. The Queen.
+<<LinnAngry Linnaeus>>
+<<LinnCancelBlink Linnaeus>>
 <<StopMusic ManagerHolder 0.05>>
 Linnaeus: It was <i>you</i>. You <i>killed</i> her, didn’t you?!
 Imeris: Wh- what? How could you say that?

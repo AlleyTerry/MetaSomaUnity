@@ -35,13 +35,26 @@ public class LinnaeusMovement : MonoBehaviour
     public void LinnaeusAnimationActivate()
     {
         linAnimator.enabled = true;
-        InvokeRepeating("LinnaeusBlink", 0.6f,4f);
+        InvokeRepeating(nameof(LinnaeusBlink), 0.6f,4f);
     }
 
     //plays the blink animation
     void LinnaeusBlink()
     {
         linAnimator.Play("Lin_Blink");
+    }
+    
+    [YarnCommand("LinnAngry")]
+    public void LinnAngry()
+    {
+        linAnimator.Play("Lin_Angry");
+    }
+    
+    [YarnCommand("LinnCancelBlink")]
+    public void LinnaeusCancelBlink()
+    {
+        CancelInvoke(nameof(LinnaeusBlink));
+        linAnimator.Play("Lin_Angry");
     }
    
 }
