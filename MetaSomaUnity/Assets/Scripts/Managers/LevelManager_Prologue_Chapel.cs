@@ -9,7 +9,7 @@ public class LevelManager_Prologue_Chapel : LevelManagerBase
     public override void Initialize()
     {
         base.Initialize();
-        AudioManager.instance.StopBeeHumming();
+        gameObject.GetComponent<AudioManager>().StopBeeHumming();
         
         UIManager.instance.PlayAnimation("PrologueViewport");
         UIManager.instance.DisableAnimator();
