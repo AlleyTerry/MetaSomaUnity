@@ -326,6 +326,15 @@ public class LevelManager_Chapel : LevelManagerBase
         CGDisplayAnimator.Play("BadMemory");
     }
     
+    [YarnCommand("BreadFrame")]
+    public void BreadFrame()
+    {
+        //play eatLinn animation
+        CGDisplayAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/EndBattleAnimations/EndBattleCGS");
+        CGDisplayAnimator.runtimeAnimatorController = CGDisplayAnimatorController;
+        GameManager.instance.CGDisplay.SetActive(true);
+        CGDisplayAnimator.Play("EatBread");
+    }
     [YarnCommand("PureBlack")]
     public void PureBlack()
     {
