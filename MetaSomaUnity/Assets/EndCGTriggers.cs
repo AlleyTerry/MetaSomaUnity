@@ -22,6 +22,12 @@ public class EndCGTriggers : MonoBehaviour
         // Play the crack sound effect
         AudioGameObject.GetComponent<AudioManager>().PlaySFX("heartBreaking");
     }
+
+    public void StabSFX()
+    {
+        // Play the crack sound effect
+        AudioGameObject.GetComponent<AudioManager>().PlaySFX("KnifeStab");
+    }
     
     public void Eatbread1()
     {

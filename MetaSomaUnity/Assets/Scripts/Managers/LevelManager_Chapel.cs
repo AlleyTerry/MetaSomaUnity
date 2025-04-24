@@ -299,4 +299,11 @@ public class LevelManager_Chapel : LevelManagerBase
     {
         CGDisplayAnimator.Play("BadMemory"); 
     }
+    
+    [YarnCommand("EatingSounds")]
+    public void EatingSounds()
+    {
+        // play background music
+        gameObject.GetComponent<AudioManager>().PlaySFX("EatingSounds");
+    }
 }
