@@ -825,7 +825,7 @@ Transform:
   m_GameObject: {fileID: 648609636}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.136531, y: -0.25, z: -10}
+  m_LocalPosition: {x: 9.92, y: -0.25, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1268,7 +1268,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797163383}
   serializedVersion: 4
-  m_Mass: 1.96
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1320,7 +1320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4ac67b876fe1184dad09ecea726a181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upForce: 2
+  upForce: 35
   text: {fileID: 0}
   isPressed: 0
   timesPressed: 0

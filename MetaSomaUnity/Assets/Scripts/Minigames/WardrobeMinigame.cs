@@ -86,6 +86,7 @@ public class WardrobeMinigame : MonoBehaviour
             //play yarnspinner dialogue
             //bust.SetActive(false);
             WardrobeText.SetActive(false);
+            gameObject.GetComponent<Rigidbody>().AddForce(Vector3.left * 200, ForceMode.Impulse);
             if (!dialogueRunner.IsDialogueRunning) dialogueRunner.StartDialogue("WardrobeWin");
         }
         else
