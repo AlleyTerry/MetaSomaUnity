@@ -35,6 +35,8 @@ public class LevelManager_MainMenu : LevelManagerBase
         // ADD LISTENERS
         //buttonStart.onClick.AddListener(GameManager.instance.LoadNextLevel);
         //buttonQuit.onClick.AddListener(QuitGame);
+        
+        SetUpCreditPage();
     }
 
     private void SetButton()
@@ -54,10 +56,8 @@ public class LevelManager_MainMenu : LevelManagerBase
         SelectButton(currentButtonIndex);
     }
 
-    public override void Initialize()
+    private void SetUpCreditPage()
     {
-        SetButton();
-        
         // set up the credit page
         creditPage = GameObject.Find("CreditPageCanvas");
         if (creditPage != null)
@@ -69,6 +69,13 @@ public class LevelManager_MainMenu : LevelManagerBase
         {
             Debug.LogError("Credit page not found.");
         }
+    }
+
+    public override void Initialize()
+    {
+        SetButton();
+        
+        SetUpCreditPage();
     }
 
     protected override void Update()
