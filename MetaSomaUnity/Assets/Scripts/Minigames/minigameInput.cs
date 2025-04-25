@@ -75,7 +75,6 @@ public class minigameInput : MonoBehaviour
         // show indicator
         indicatorAnimator.gameObject.SetActive(true);
         indicatorAnimator.Play("HandIndicator");
-        
         //start the timer countdown to 0 from timeLeft
         //start the timer countdown to 0 from timeLeft
         timeLeft = 3f;
@@ -94,14 +93,9 @@ public class minigameInput : MonoBehaviour
             //the thing the bust is on should be false
             bustSpot.SetActive(false);
             bustSpot2.SetActive(true);
-            //bust.transform.position = Vector3.Lerp(bust.transform.position, new Vector3(bust.transform.position.x, -2.5f, bust.transform.position.z), Time.deltaTime * 2f);
-            //turn off the rigidbody
+            indicatorAnimator.gameObject.SetActive(false);
             bustText.SetActive(false);
-            //add rotation to the bust
-            //gameObject.GetComponent<Rigidbody>().rotation = Quaternion.Euler(0, 0, 90);
             gameObject.GetComponent<Rigidbody>().AddTorque(0, 0, 90);
-            /*gameObject.GetComponent<Rigidbody>().AddTorque(Vector3.left * forceAmount);
-            gameObject.GetComponent<Rigidbody>().AddForce(Vector3.left * forceAmount);*/
             if (!dialogueRunner.IsDialogueRunning) dialogueRunner.StartDialogue("minigameSuccess");
         }
         else

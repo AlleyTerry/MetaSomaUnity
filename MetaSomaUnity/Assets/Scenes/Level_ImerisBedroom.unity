@@ -360,6 +360,8 @@ MonoBehaviour:
   interactionType: 0
   isJustShowOnce: 0
   isIndicator: 1
+  isEnterToContinue: 0
+  lineView: {fileID: 0}
   continuingDialogueNode: 
 --- !u!1 &360175744
 GameObject:
@@ -823,7 +825,7 @@ Transform:
   m_GameObject: {fileID: 648609636}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.92, y: -0.25, z: -10}
+  m_LocalPosition: {x: 8.136531, y: -0.25, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1323,10 +1325,11 @@ MonoBehaviour:
   isPressed: 0
   timesPressed: 0
   timeLeft: 5
-  pressedNumber: 5
+  pressedNumber: 10
   timerText: {fileID: 0}
   bust: {fileID: 797163383}
   dialogueRunner: {fileID: 841703414}
+  WardrobeText: {fileID: 214321597}
   indicatorAnimator: {fileID: 976357131}
 --- !u!4 &841703413 stripped
 Transform:
@@ -2495,7 +2498,7 @@ Transform:
   m_GameObject: {fileID: 1833367907}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.13359, y: -0.25, z: -10}
+  m_LocalPosition: {x: 8.136531, y: -0.25, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -431,12 +431,12 @@ PrefabInstance:
     - target: {fileID: 74539599337885660, guid: 9376fc3a1927eb14192c38774a829615,
         type: 3}
       propertyPath: talkToGrub
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 74539599337885660, guid: 9376fc3a1927eb14192c38774a829615,
         type: 3}
       propertyPath: isFirstVisit
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4155168650225817235, guid: 9376fc3a1927eb14192c38774a829615,
         type: 3}
