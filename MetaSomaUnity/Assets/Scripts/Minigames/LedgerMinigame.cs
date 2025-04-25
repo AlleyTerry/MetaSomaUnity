@@ -143,18 +143,21 @@ public class LedgerMinigame : MonoBehaviour
                         {
                             //play wrong dialogue from the dialogue system
                             enterIndex--;
+                            DialogueManager.instance.StopDialogue();
                             FindObjectOfType<DialogueRunner>().StartDialogue("WrongLedgerLinn");
                         }
                         else if (clickedObject.name == "Imeris")
                         {
                             //play wrong dialogue from the dialogue system
                             enterIndex--;
+                            DialogueManager.instance.StopDialogue();
                             FindObjectOfType<DialogueRunner>().StartDialogue("WrongLedgerImeris");
                         }
                         else if (clickedObject.name == "Galleria")
                         {
                             //play wrong dialogue from the dialogue system
                             enterIndex--;
+                            DialogueManager.instance.StopDialogue();
                             FindObjectOfType<DialogueRunner>().StartDialogue("WrongLedgerGalleria");
                         }
                     
@@ -168,6 +171,7 @@ public class LedgerMinigame : MonoBehaviour
         if (ButtonsNamePlates.Count == 0 && gameEnded == false)
         {
             //play yarn dialogue from the dialogue system
+            DialogueManager.instance.StopDialogue();
             FindObjectOfType<DialogueRunner>().StartDialogue("EndLedgerMinigameManager");
             gameEnded = true;
 
