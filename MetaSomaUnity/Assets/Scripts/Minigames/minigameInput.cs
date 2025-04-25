@@ -16,6 +16,10 @@ public class minigameInput : MonoBehaviour
     public TextMeshProUGUI timerText;
     public GameObject bust;
     public DialogueRunner dialogueRunner;
+    public GameObject bustSpot;
+    public GameObject bustSpot2;
+    public GameObject bustText;
+    public float forceAmount = 100f;
     
     // this is for indicator
     public Animator indicatorAnimator;
@@ -30,16 +34,19 @@ public class minigameInput : MonoBehaviour
         indicatorAnimator.gameObject.SetActive(false);
     }
 
+    private bool isGameEnded = false;
+    
     // Update is called once per frame
     void Update()
     {
         //input makes the item go up
         // rapid input makes the item go up faster
-        if (timeLeft <= 0)
+        if (timeLeft <= 0 && !isGameEnded)
         {
             isPressed = false;
             //timerText.text = "0";
             EndGame();
+            isGameEnded = true;
         }
         
         GoUp();
@@ -64,10 +71,10 @@ public class minigameInput : MonoBehaviour
     [YarnCommand("StartMiniGame")]
     public void StartMiniGame()
     {
+        isGameEnded = false;
         // show indicator
         indicatorAnimator.gameObject.SetActive(true);
         indicatorAnimator.Play("HandIndicator");
-        
         //start the timer countdown to 0 from timeLeft
         //start the timer countdown to 0 from timeLeft
         timeLeft = 3f;
@@ -83,16 +90,27 @@ public class minigameInput : MonoBehaviour
             //play yarnspinner dialogue
             //bust.SetActive(false);
             //lerp the bust to the floor
-            bust.transform.position = Vector3.Lerp(bust.transform.position, new Vector3(bust.transform.position.x, -2.5f, bust.transform.position.z), Time.deltaTime * 2f);
+            //the thing the bust is on should be false
+            bustSpot.SetActive(false);
+            bustSpot2.SetActive(true);
+            indicatorAnimator.gameObject.SetActive(false);
+            bustText.SetActive(false);
+            gameObject.GetComponent<Rigidbody>().AddTorque(0, 0, 90);
             if (!dialogueRunner.IsDialogueRunning) dialogueRunner.StartDialogue("minigameSuccess");
         }
         else
         {
             // hide indicator
             indicatorAnimator.gameObject.SetActive(false);
-            
+            isGameEnded = false;
             //play yarnspinner dialogue
             if (!dialogueRunner.IsDialogueRunning) dialogueRunner.StartDialogue("minigameFail");
         }
+    }
+    
+    [YarnCommand("TurnOffBust")]
+    public void TurnOffBust()
+    {
+        gameObject.GetComponent<Rigidbody>().isKinematic = true;
     }
 }

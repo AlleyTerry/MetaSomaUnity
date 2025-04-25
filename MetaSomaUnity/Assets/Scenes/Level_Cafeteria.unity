@@ -428,6 +428,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 74539599337885660, guid: 9376fc3a1927eb14192c38774a829615,
+        type: 3}
+      propertyPath: talkToGrub
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 74539599337885660, guid: 9376fc3a1927eb14192c38774a829615,
+        type: 3}
+      propertyPath: isFirstVisit
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4155168650225817235, guid: 9376fc3a1927eb14192c38774a829615,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2725,7 +2735,7 @@ Transform:
   m_GameObject: {fileID: 1833367907}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.035557, y: -0.25, z: -10}
+  m_LocalPosition: {x: -11.036533, y: -0.25, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3308,6 +3318,8 @@ MonoBehaviour:
   interactionType: 0
   isJustShowOnce: 0
   isIndicator: 1
+  isEnterToContinue: 0
+  lineView: {fileID: 0}
   continuingDialogueNode: 
 --- !u!1001 &1939932496
 PrefabInstance:
@@ -3437,6 +3449,8 @@ MonoBehaviour:
   interactionType: 0
   isJustShowOnce: 0
   isIndicator: 1
+  isEnterToContinue: 0
+  lineView: {fileID: 0}
   continuingDialogueNode: HalfAliveGrub
   imeris: {fileID: 0}
   innerImeris: {fileID: 0}

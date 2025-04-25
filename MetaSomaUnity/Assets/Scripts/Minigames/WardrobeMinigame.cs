@@ -16,6 +16,7 @@ public class WardrobeMinigame : MonoBehaviour
     public TextMeshProUGUI timerText;
     public GameObject bust;
     public DialogueRunner dialogueRunner;
+    public GameObject WardrobeText;
     
     // this is for indicator
     public Animator indicatorAnimator;
@@ -29,17 +30,19 @@ public class WardrobeMinigame : MonoBehaviour
         indicatorAnimator = GetComponentInChildren<Animator>();
         indicatorAnimator.gameObject.SetActive(false);
     }
+    private bool isGameEnded = false;
 
     // Update is called once per frame
     void Update()
     {
         //input makes the item go up
         // rapid input makes the item go up faster
-        if (timeLeft <= 0)
+        if (timeLeft <= 0 && !isGameEnded)
         {
             isPressed = false;
             //timerText.text = "0";
             EndGame();
+            isGameEnded = true;
         }
         
         GoUp();
@@ -64,10 +67,10 @@ public class WardrobeMinigame : MonoBehaviour
     [YarnCommand("StartWardrobeMiniGame")]
     public void StartMiniGame()
     {
+        isGameEnded = false;
         // show indicator
         indicatorAnimator.gameObject.SetActive(true);
         indicatorAnimator.Play("HandIndicator");
-        
         //start the timer countdown to 0 from timeLeft
         //start the timer countdown to 0 from timeLeft
         timeLeft = 3f;
@@ -81,14 +84,15 @@ public class WardrobeMinigame : MonoBehaviour
         if (timesPressed >= pressedNumber)
         {
             //play yarnspinner dialogue
-            bust.SetActive(false);
+            //bust.SetActive(false);
+            WardrobeText.SetActive(false);
             if (!dialogueRunner.IsDialogueRunning) dialogueRunner.StartDialogue("WardrobeWin");
         }
         else
         {
             // hide indicator
             indicatorAnimator.gameObject.SetActive(false);
-            
+            isGameEnded = false;
             //play yarnspinner dialogue
             if (!dialogueRunner.IsDialogueRunning) dialogueRunner.StartDialogue("WardrobeLose");
         }

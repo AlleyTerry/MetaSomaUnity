@@ -14,7 +14,7 @@ public class LevelManager_CommonArea : LevelManagerBase
     [SerializeField] private Transform defaultSpawnPoint;
     [SerializeField] private Transform spawnPointFromCafe;
     [SerializeField] private Transform spawnPointFromChapel;
-
+    [SerializeField] private GameObject bustSpot2;
     private Transform GetSpawnPoint(string lastScene)
     {
         switch (lastScene)
@@ -53,6 +53,7 @@ public class LevelManager_CommonArea : LevelManagerBase
         //look for key bool
         GameObject bust1 = GameObject.Find("Bust");
         GameObject bust2 = GameObject.Find("Bust2");
+        GameObject bustSpot2 = GameObject.Find("BustSpot2");
         bustBackGroundHolder = GameObject.Find("BustBackground");
         
         // Set up spawn points
@@ -72,7 +73,7 @@ public class LevelManager_CommonArea : LevelManagerBase
             bust1.SetActive(false);
             bust2.SetActive(true);
             bustBackGroundHolder.SetActive(true);
-            
+            bustSpot2.SetActive(true);
             bustMiniGameHolder.SetActive(true);
         }
         else
@@ -80,6 +81,7 @@ public class LevelManager_CommonArea : LevelManagerBase
             // by default, set bust1 to active
             bust1.SetActive(true);
             bust2.SetActive(false);
+            bustSpot2.SetActive(false);
             bustBackGroundHolder.SetActive(false);
             
             // minigame is not active
