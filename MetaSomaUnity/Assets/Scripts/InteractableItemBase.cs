@@ -28,7 +28,7 @@ public class InteractableItemBase : MonoBehaviour, ITriggerable
     [SerializeField] private bool isJustShowOnce = false;
     
     // INDICATOR
-    [SerializeField] private bool isIndicator = true;
+    public bool isIndicator = true;
     
     /*[SerializeField] private DialogueRunner dialogueRunner;*/
     
