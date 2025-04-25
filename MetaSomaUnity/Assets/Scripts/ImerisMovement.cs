@@ -351,6 +351,19 @@ public class ImerisMovement : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay(Collision other)
+    {
+        if (other.gameObject.CompareTag("Stairs"))
+        {
+            UnconstraintYPosition();
+        }
+
+        if (IsInLayerMask(other.gameObject, steppableLayer))
+        {
+            isOnSteppable = true;
+        }
+    }
+
     private void OnCollisionExit(Collision other)
     {
         if (other.gameObject.CompareTag("Stairs"))

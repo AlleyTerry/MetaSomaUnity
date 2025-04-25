@@ -3895,7 +3895,7 @@ Transform:
   m_GameObject: {fileID: 1552513515}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.39, y: 0.13, z: -10}
+  m_LocalPosition: {x: -7.6355553, y: 0.12999976, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4477,6 +4477,11 @@ PrefabInstance:
         type: 3}
       propertyPath: moveSpeed
       value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6183794657413909319, guid: 67b683a3d2236fa44b70f4ac0a150e45,
+        type: 3}
+      propertyPath: steppableLayer.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4655624596425160128, guid: 67b683a3d2236fa44b70f4ac0a150e45, type: 3}
