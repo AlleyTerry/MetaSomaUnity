@@ -1161,8 +1161,10 @@ Narrator: Rebirth yourself and try again. ▼
     <<RestartGameFromOpening ManagerHolder>>
 -> Quit
     <<QuitGame ManagerHolder>>
--> Fight Again
-    <<FightAgain ManagerHolder>>
+-> Quit
+    <<QuitGame ManagerHolder>>
+//-> Fight Again
+//    <<FightAgain ManagerHolder>>
     
 ===
 
