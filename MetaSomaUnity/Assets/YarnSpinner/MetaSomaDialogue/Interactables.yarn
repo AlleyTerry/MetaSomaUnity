@@ -346,6 +346,7 @@ imeris: (Rapidly press the UP arrow key when you see the indicator) ▼
 title: minigameSuccess
 ---
 imeris: I got the key. ▼
+<<TurnOffBust BustMiniGame>>
 <<ResumeControls ManagerHolder>>
 
 ===

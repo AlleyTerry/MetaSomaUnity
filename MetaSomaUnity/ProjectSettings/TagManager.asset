@@ -24,7 +24,7 @@ TagManager:
   - GroundLayer
   - SteppableObject
   - Particles
-  - 
+  - NoCollisonWithPlayer
   - 
   - 
   - 
