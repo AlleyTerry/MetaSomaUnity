@@ -1660,8 +1660,8 @@ MonoBehaviour:
     Artist, Editor, UI Designer\r\n\r\n<b>Vivian Chen</b>\nLead Programmer,  Game
     Designer, Tech Artist\r\n\r\nMusic By <b>Isabella Bonzani</b>\n\r\nSpecial Thanks
     to\n<b>Naomi Clark, Day Lane, Llaura McGee</b>, and <b>Geneva Heyward</b>\n\r\nExecutive
-    Producers\r\n<b>Shadow, Silver, Cleo, T'Challah, Cakey</b> ,and <b>Piggie\r</b>\n\r\n<color=#B9B2AE>Press
-    <b>Enter</b> to return to Main Menu</color>"
+    Producers\r\n<b>Shadow, Silver, Cleo, T'Challah, Cakey</b> ,and <b>Piggie\r</b>\n\r\n<color=#B9B2AE>(Press
+    <b>Enter</b> to return to Main Menu)</color>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 84eee2dc8d3790543a414228df1153ba, type: 2}
   m_sharedMaterial: {fileID: 6094562528857308864, guid: 84eee2dc8d3790543a414228df1153ba,
@@ -2475,7 +2475,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 92dbd57d129128047840295079da692f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fad7c6e34aeb1466aa81b1d0bd4f8156, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
