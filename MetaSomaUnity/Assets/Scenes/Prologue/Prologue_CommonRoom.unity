@@ -227,7 +227,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 38.2, y: 50, z: 1}
+  m_Size: {x: 37.8, y: 50, z: 1}
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &89111040
 GameObject:
@@ -1311,7 +1311,7 @@ Transform:
   m_GameObject: {fileID: 648609636}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.935555, y: -0.25, z: -10}
+  m_LocalPosition: {x: -14.45, y: -0.25, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2887,7 +2887,7 @@ Transform:
   m_GameObject: {fileID: 1833367907}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.935555, y: -0.25, z: -10}
+  m_LocalPosition: {x: -11.735555, y: -0.25, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2995,6 +2995,8 @@ MonoBehaviour:
   interactionType: 0
   isJustShowOnce: 1
   isIndicator: 0
+  isEnterToContinue: 0
+  lineView: {fileID: 0}
   continuingDialogueNode: 
 --- !u!4 &1843052621 stripped
 Transform:
