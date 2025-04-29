@@ -80,6 +80,9 @@ public class WardrobeMinigame : MonoBehaviour
 
     public void EndGame()
     {
+        // hide indicator
+        indicatorAnimator.gameObject.SetActive(false);
+        
         //text shows whether or not they got the right number of inputs
         if (timesPressed >= pressedNumber)
         {
@@ -91,8 +94,6 @@ public class WardrobeMinigame : MonoBehaviour
         }
         else
         {
-            // hide indicator
-            indicatorAnimator.gameObject.SetActive(false);
             isGameEnded = false;
             //play yarnspinner dialogue
             if (!dialogueRunner.IsDialogueRunning) dialogueRunner.StartDialogue("WardrobeLose");
