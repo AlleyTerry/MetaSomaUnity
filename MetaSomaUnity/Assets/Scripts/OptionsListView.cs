@@ -274,6 +274,32 @@ namespace Yarn.Unity
                 }
             }
         }
+        
+        [YarnCommand("ResetImerisAnimation")]
+        public void ResetImerisAnimation()
+        {
+            switch (lastChosenOption)
+            {
+                case "reason":
+                    // do nothing
+                    break;
+                case "submission":
+                    // Reset
+                    GameManager.instance.currentLevelManager.
+                        PlayImerisAnimation("ImerisBattle_SubmissionToReason");
+                    break;
+                case "challenge":
+                    // Reset to challenge animation
+                    GameManager.instance.currentLevelManager.
+                        PlayImerisAnimation("ImerisBattle_ChallengeToReason");
+                    break;
+                default:
+                    Debug.LogError("Invalid last chosen option.");
+                    break;
+            }
+            
+            lastChosenOption = "reason"; // Reset the last chosen option
+        }
 
         public override void RunLine(LocalizedLine dialogueLine, Action onDialogueLineFinished)
         {

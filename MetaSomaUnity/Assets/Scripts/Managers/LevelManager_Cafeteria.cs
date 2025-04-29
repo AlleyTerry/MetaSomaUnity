@@ -123,6 +123,11 @@ public class LevelManager_Cafeteria : LevelManagerBase
     public override void ExitBattleDialogue()
     {
         UIManager.instance.EnableAnimator();
+
+        if (GameObject.FindObjectOfType<OptionsListView>())
+        {
+            GameObject.FindObjectOfType<OptionsListView>().ResetImerisAnimation();
+        }
         
         isBattleAnimationChanging = false;
         
