@@ -537,6 +537,7 @@ Grub: I'm not long for this world. ▼
 Grub: I thank you for trying though. ▼
 Grub: In exchange for your kindness, I'll give you this... ▼
 Grub: More time to find your own way out of this hell. ▼
+<<ResetImerisAnimation OptionsBubble>>
 
 <<jump GrubEnd>>
 ===
@@ -554,6 +555,7 @@ Grub: But, thank you... for trying. ▼
 Grub: The will to go on burns brightly within you. ▼
 Grub: It's given me... hope. That maybe, one of us will make it out. ▼
 Grub: So I'll give you the dying embers of my own will... ▼
+<<ResetImerisAnimation OptionsBubble>>
 <<jump GrubEnd>>
 ===
 
