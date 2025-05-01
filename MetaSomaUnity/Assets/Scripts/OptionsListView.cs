@@ -194,6 +194,7 @@ namespace Yarn.Unity
             
             // call level manager to switch animation state
             var levelManager = GameManager.instance.currentLevelManager;
+            if (levelManager == null) GameObject.FindObjectOfType<LevelManagerBase>();
 
             if (levelManager == null ||
                 !levelManager.isBattleAnimationChanging)

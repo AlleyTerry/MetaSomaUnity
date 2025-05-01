@@ -183,9 +183,18 @@ public class GameManager : MonoBehaviour
             GetInMemoryVariableStorage();
         }*/
 
-        if (Input.GetKeyUp(KeyCode.R))
+        // For resetting during the game
+        if (Input.GetKeyUp(KeyCode.Backspace))
         {
+            Debug.Log("Backspace pressed. Restarting game from opening...");
             RestartGameFromOpening();
+        }
+        
+        // For fighting again
+        if (Input.GetKeyUp(KeyCode.P))
+        {
+            Debug.Log("P pressed. Fighting again...");
+            FightAgain();
         }
     }
     
@@ -229,9 +238,11 @@ public class GameManager : MonoBehaviour
         UIManager.instance.EnableAnimator();
         UIManager.instance.PlayAnimation("MediumViewportTransition_Reversed");
         
-        currentLevelManager.NPCAnimation.GetComponent<Animator>().Play("NPCEyesTransitionReverse");
+        currentLevelManager.NPCAnimation.gameObject.SetActive(false);
         
-        Invoke(nameof(LoadChapel), 3.1f);
+        //currentLevelManager.NPCAnimation.GetComponent<Animator>().Play("NPCEyesTransitionReverse");
+        
+        Invoke(nameof(LoadChapel), 2f);
     }
     
     [YarnCommand("QuitGame")]
@@ -249,7 +260,20 @@ public class GameManager : MonoBehaviour
     public void LoadChapel()
     {
         CurrentLevelIndex = 7;
-        SceneManager.LoadSceneAsync(7);
+        HandleLevelChange();
+        
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        
+        if (sceneFade == null)
+        {
+            Debug.LogWarning("SceneFade not found. Loading scene without fade effect.");
+            SceneManager.LoadSceneAsync(currentLevelIndex);
+        }
+        else
+        {
+            Debug.Log("Loading scene with fade effect.");
+            sceneFade.LoadScene(currentLevelIndex);
+        }
     }
     
     public void LoadNextLevel()
