@@ -41,6 +41,9 @@ public class LevelManager_MainMenu : LevelManagerBase
 
     private void SetButton()
     {
+        // Clear the list first
+        buttons.Clear();
+        
         // SETUP BUTTONS
         buttonCredit = GameObject.Find("ButtonCredit").GetComponent<Button>();
         buttonStart = GameObject.Find("ButtonStart").GetComponent<Button>();
@@ -75,9 +78,9 @@ public class LevelManager_MainMenu : LevelManagerBase
     public override void Initialize()
     {
         Debug.Log("initialize main menu");
-        SetButton();
         
         SetUpCreditPage();
+        SetButton();
     }
 
     protected override void Update()

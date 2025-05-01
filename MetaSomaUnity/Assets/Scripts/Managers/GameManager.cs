@@ -182,6 +182,11 @@ public class GameManager : MonoBehaviour
         {
             GetInMemoryVariableStorage();
         }*/
+
+        if (Input.GetKeyUp(KeyCode.R))
+        {
+            RestartGameFromOpening();
+        }
     }
     
     private void HandleGameStateSwitch()
@@ -226,7 +231,7 @@ public class GameManager : MonoBehaviour
         
         currentLevelManager.NPCAnimation.GetComponent<Animator>().Play("NPCEyesTransitionReverse");
         
-        Invoke(nameof(LoadChapel), 1.1f);
+        Invoke(nameof(LoadChapel), 3.1f);
     }
     
     [YarnCommand("QuitGame")]
@@ -239,13 +244,12 @@ public class GameManager : MonoBehaviour
     public void LoadMainMenu() // TODO: THIS IS VERY TEMPORARY, MAY HAVE A LOT OF BUGS
     {
         CurrentLevelIndex = 0;
-        SceneManager.LoadSceneAsync(0);
     }
 
     public void LoadChapel()
     {
         CurrentLevelIndex = 7;
-        //SceneManager.LoadSceneAsync(7);
+        SceneManager.LoadSceneAsync(7);
     }
     
     public void LoadNextLevel()
