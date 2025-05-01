@@ -32,7 +32,10 @@ public class LevelManager_ServantsHall : LevelManagerBase
       
       // Play BGM
       /*gameObject.GetComponent<AudioManager>().PlayMusic("level1");*/
+      
+      GameObject.FindObjectOfType<ImerisMovement>().UpdateImerisFacing(true);
    }
+   
    [YarnCommand("StartLedgerMinigame")]
    public void StartLedgerMinigame()
    {
@@ -40,6 +43,7 @@ public class LevelManager_ServantsHall : LevelManagerBase
       LedgerMinigameCanvas.SetActive(true);
       GameManager.instance.FreezeControls();
    }
+   
    [YarnCommand("EndLedgerMinigame")]
    public void EndLedgerMinigame()
    {

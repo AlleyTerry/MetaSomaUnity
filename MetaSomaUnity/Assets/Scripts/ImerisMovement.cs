@@ -417,6 +417,15 @@ public class ImerisMovement : MonoBehaviour
                          RigidbodyConstraints.FreezeRotationZ;
     }
 
+    public void UpdateImerisFacing(bool isFacingRight)
+    {
+        if (instance != null)
+        {
+            instance.isFacingRight = isFacingRight;
+            instance.GetComponent<SpriteRenderer>().flipX = isFacingRight;
+            GameManager.instance.isFacingRight = isFacingRight;
+        }
+    }
     private void OnDestroy()
     {
         if (GameManager.instance != null)
