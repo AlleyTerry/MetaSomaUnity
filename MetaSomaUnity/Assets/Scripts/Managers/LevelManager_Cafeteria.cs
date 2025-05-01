@@ -39,6 +39,8 @@ public class LevelManager_Cafeteria : LevelManagerBase
         ImerisMovement imerisMovement = GameObject.FindObjectOfType<ImerisMovement>();
         imerisMovement.gameObject.transform.position = defaultSpawnPoint.position;
         
+        imerisMovement.UpdateImerisFacing(true);
+        
         // Prep for camera shifting
         CameraMidpointController midpoint = GameObject.FindObjectOfType<CameraMidpointController>();
         if (midpoint != null)

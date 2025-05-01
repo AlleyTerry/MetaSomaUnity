@@ -24,6 +24,7 @@ public class LevelManager_Prologue_CommonRoom : LevelManagerBase
         CGDisplayAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Prologue/PrologueImerisRoom");
         CGDisplayAnimator.runtimeAnimatorController = CGDisplayAnimatorController;
         
+        GameObject.FindObjectOfType<ImerisMovement>().UpdateImerisFacing(true);
     }
     // Start is called before the first frame update
     void Start()

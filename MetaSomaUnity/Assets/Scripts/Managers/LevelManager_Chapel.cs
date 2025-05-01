@@ -57,6 +57,8 @@ public class LevelManager_Chapel : LevelManagerBase
         ImerisMovement imerisMovement = GameObject.FindObjectOfType<ImerisMovement>();
         imerisMovement.gameObject.transform.position = defaultSpawnPoint.position;
         
+        imerisMovement.UpdateImerisFacing(true);
+        
         if (linnaeusAnimation != null)
         {
             DisableLinnaeusAnimation();

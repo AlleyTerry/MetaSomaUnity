@@ -93,6 +93,7 @@ public class LevelManager_CommonArea : LevelManagerBase
         if (GameManager.instance.isFirstVisit)
         {
             GameManager.instance.isInBattle = true;
+            GameObject.FindObjectOfType<ImerisMovement>().UpdateImerisFacing(true);
             StartCoroutine(FirstVisitEvent());
         }
         else

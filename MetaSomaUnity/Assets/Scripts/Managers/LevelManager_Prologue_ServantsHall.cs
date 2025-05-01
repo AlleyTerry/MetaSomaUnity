@@ -23,6 +23,8 @@ public class LevelManager_Prologue_ServantsHall : LevelManagerBase
         
         CGDisplayAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Prologue/PrologueServantsHall");
         CGDisplayAnimator.runtimeAnimatorController = CGDisplayAnimatorController;
+        
+        GameObject.FindObjectOfType<ImerisMovement>().UpdateImerisFacing(true);
     }
     // Start is called before the first frame update
     void Start()
