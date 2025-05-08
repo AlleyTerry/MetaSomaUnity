@@ -1152,9 +1152,9 @@ Narrator: You have lost yourself. Your heart is broken. ▼
 Narrator: But you still have the ability to Change. ▼
 Narrator: Rebirth yourself and try again. ▼
 
-<<set $hover_text_up = "">>
-<<set $hover_text_left = "">>
-<<set $hover_text_right = "">>
+<<set $hover_text_up = "Start your entire journey over anew.">>
+<<set $hover_text_left = "Give in to the tide of violence. Rest.">>
+<<set $hover_text_right = "Restart the battle and see new possibilities.">>
 <<SetHoverText OptionsBubble>>
 
 -> Metamorphose
@@ -1164,6 +1164,12 @@ Narrator: Rebirth yourself and try again. ▼
 //-> Quit
 //    <<QuitGame ManagerHolder>>
 -> Fight Again
+    <<Heal Viewport_Heart>>
+    <<wait 0.35>>
+    <<Heal Viewport_Heart>>
+    <<wait 0.25>>
+    <<Heal Viewport_Heart>>
+    <<wait 0.2>>
     <<FightAgain ManagerHolder>>
     
 ===
