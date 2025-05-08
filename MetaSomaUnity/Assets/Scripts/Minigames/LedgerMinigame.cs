@@ -47,7 +47,7 @@ public class LedgerMinigame : MonoBehaviour
         if (gameEnded == false)
         {
             //when the player presses up or down arrow key then move the clickedobject next snap point cycling through the list
-            if (Input.GetKeyDown(KeyCode.UpArrow) && isSnapped)
+            if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && isSnapped)
             {
                 if (currentSnapPointIndex == 0)
                 {
@@ -66,7 +66,7 @@ public class LedgerMinigame : MonoBehaviour
            
             
             }
-            else if (Input.GetKeyDown(KeyCode.DownArrow) && isSnapped)
+            else if ((Input.GetKeyDown(KeyCode.DownArrow)|| Input.GetKeyDown(KeyCode.S)) && isSnapped)
             {
                 if (currentSnapPointIndex == 2)
                 {
