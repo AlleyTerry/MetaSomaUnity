@@ -922,8 +922,8 @@ Linnaeus: Your wretched, unholy existence ends <i>here</i>. ▼
 <<PlayViewportAnimation ManagerHolder PureBlack>>
 
 <<PlayMusic ManagerHolder "linnaeusBattleEnd">>
-Narrator: Linnaeus wrenches an incense holder off the wall and grips the heavy metal fixture with both hands. 
-Narrator: He turns his gaze upon you and rushes forward, arms raised to strike you.
+Narrator: Linnaeus wrenches an incense holder off the wall and grips the heavy metal fixture with both hands. ▼
+Narrator: He turns his gaze upon you and rushes forward, arms raised to strike you. ▼
 
 <<set $hover_text_up = "There is no other option.">>
 <<set $hover_text_left = "There is no other option.">>
