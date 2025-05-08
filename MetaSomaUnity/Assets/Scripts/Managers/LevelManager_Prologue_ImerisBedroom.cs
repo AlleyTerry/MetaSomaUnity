@@ -45,6 +45,8 @@ public class LevelManager_Prologue_ImerisBedroom : LevelManagerBase
         PortraitZoom.SetActive(false);
         //play background music
         //gameObject.GetComponent<AudioManager>().PlayMusic("Memories");
+        
+        DialogueManager.instance.UpdateDialogueText();
     }
     // Start is called before the first frame update
     void Start()
