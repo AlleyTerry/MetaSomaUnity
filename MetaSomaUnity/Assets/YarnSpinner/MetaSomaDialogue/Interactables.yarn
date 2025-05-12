@@ -79,7 +79,7 @@ Linnaeus: To make our own sacrifices, so we may continue to live in peace and ha
 Linnaeus: That is our divine duty as caterpillars. ▼
 Linnaeus: We must practice obedience to the merciful Queens who granted us shelter here. ▼
 Linnaeus: And we must do as our Goddess has instructed us. ▼
-Linnaeus: <color=\#B6AB1B> Achieve prosperity,</color> by becoming a valuable member of your kingdom through servitude. ▼
+Linnaeus: <color=\#B6AB1B> Achieve prosperity</color>, by becoming a valuable member of your kingdom through servitude. ▼
 Linnaeus: In doing so, you will earn the right to<color=\#B6AB1B> drink of the noble red</color>. ▼
 Linnaeus: And, at the end of your life,<color=\#B6AB1B> you shall ascend</color> to the kingdom of the sky. ▼
 Linnaeus: Uphold the values of this<color=\#B6AB1B> Golden Scripture</color>, and you shall be rewarded. ▼
@@ -113,15 +113,15 @@ title: StartImerisTruth
 <<ShowMosiac1 MosiacImages>>
 imeris: Achieve prosperity, ▼
 <<ShowMosiac2 MosiacImages>>
-imeris: <color=\#A3111E> so you may sate your hunger.</color> ▼ 
+imeris: <color=\#c90012> so you may sate your hunger.</color> ▼ 
 <<ShowMosiac3 MosiacImages>>
 imeris: Drink of the noble red, ▼ 
 <<ShowMosiac4 MosiacImages>>
-imeris: <color=\#A3111E> which flows in the veins of royalty.</color> ▼
+imeris: <color=\#c90012> which flows in the veins of royalty.</color> ▼
 <<ShowMosiac5 MosiacImages>>
 imeris: And you shall ascend ▼
 <<ShowMosiac6 MosiacImages>>
-imeris: <color=\#A3111E> on wings of gold.</color> ▼
+imeris: <color=\#c90012> on wings of gold.</color> ▼
 <<CloseMosiacs MosiacImages>>
 
 imeris: I walk now, unblinded, down the true path the Goddess set out for us. ▼

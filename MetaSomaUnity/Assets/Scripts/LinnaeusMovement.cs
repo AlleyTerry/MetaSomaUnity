@@ -24,6 +24,7 @@ public class LinnaeusMovement : MonoBehaviour
         linAnimator = GetComponent<Animator>();
         linAnimator.enabled = false;
         linSpriteRenderer = GetComponent<SpriteRenderer>();
+        linSpriteRenderer.enabled = true;
         if (SceneManager.GetActiveScene().name == "Prologue_Chapel")
         {
             linAnimator.enabled = true;
@@ -56,5 +57,10 @@ public class LinnaeusMovement : MonoBehaviour
         CancelInvoke(nameof(LinnaeusBlink));
         linAnimator.Play("Lin_Angry");
     }
-   
+
+    [YarnCommand("KillLin")]
+    public void KillLin()
+    {
+        linSpriteRenderer.enabled = false;
+    }
 }

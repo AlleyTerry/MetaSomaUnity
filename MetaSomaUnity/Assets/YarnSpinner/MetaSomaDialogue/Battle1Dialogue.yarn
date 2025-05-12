@@ -11,6 +11,7 @@ position: -462,-1568
 
 <<PlayMusic ManagerHolder "linnaeusBattleStart">>
 <<EnableParticles ManagerHolder>>
+<<KillLin Linnaeus>>
 
 Linnaeus: Do you have anything to say for yourself? ▼
 Narrator: Tread carefully; in this battle of words, your choices may hurt you. ▼ 
