@@ -43,7 +43,7 @@ Linnaeus: Imeris, there you are! Come closer, my child. ▼
 
 title:LinnaeusCloser
 ---
-Linnaeus: It’s nearly time for the sermon- I was beginning to worry about you! ▼
+Linnaeus: It’s nearly time for the sermon— I was beginning to worry about you! ▼
 Imeris: My apologies, Father. ▼
 Linnaeus: It's alright, my child. The life of a court performer isn’t an easy one. ▼
 Linnaeus: To take on the duties of an altar servant in addition to that is admirable. ▼
@@ -142,7 +142,7 @@ imeris: ERROR!! IF YOU'RE READING THIS, YOU SET THE ITEM NAME WRONG !!
 title: ImerisBed
 tags:
 ---
-imeris: This is… my bed. The remnants of my cocoon lay on top.
+imeris: This is… my bed. The remnants of my cocoon are all that remain on it— I've taken the dagger I awoke holding already.
 ===
 
 title: GalleriaBed
@@ -386,10 +386,12 @@ imeris: I'm starving, but... I can’t eat any of these scraps. They're rotten.
 
 title: EyeStartCafeteria
 ---
+imeris: Wait... movement? ▼
 imeris: There's someone there...! ▼
 <<StartCower ManagerHolder>>
 <<SwitchCameraToGrub ManagerHolder>>
 <<wait 1.55>>
+Narrator: Instinctively, your hand moves to grip your dagger. ▼
 imeris: Can he see me...? ▼
 Grub: Leave... leave me be… ▼
 <<EndCower ManagerHolder>>
@@ -406,7 +408,7 @@ Narrator: Select potential responses with the left, up, and right arrow keys. �
 Narrator: Press enter to confirm your final choice. ▼
 Narrator: Try to make it a good one. ▼
 
-Imeris: You’re still alive?! Oh Goddess… ▼
+Imeris: So you <i>are</i> still alive... Oh Goddess… ▼
 Imeris: What happened here? ▼
 Grub: Why are you asking that? You should know… ▼
 Grub: We’ve been abandoned. ▼
@@ -431,7 +433,7 @@ imeris: A month...? ▼
 title: Question
 ---
 Imeris: But why would they leave us behind? ▼
-Imeris: They kept us all this time- why desert us now? ▼
+Imeris: They kept us all this time— why desert us now? ▼
 Grub: The days that followed Queen Andromeda's disappearance were rife with panic. ▼
 Grub: Fear gripped the hearts of the elites. Fear that they were next. ▼
 Grub: In their haste to flee, they only took the few servants they took a liking to. ▼
@@ -546,7 +548,7 @@ title: Rouse
 ---
 Imeris: How can you say such things? ▼
 Imeris: You're still alive now, aren't you? ▼
-Imeris: Don't give them the satisfaction- don't let this kill you! ▼
+Imeris: Don't give them the satisfaction— don't let this kill you! ▼
 Imeris: You have to <i>fight</i>! ▼
 Grub: I'm sorry... I don't have it in me anymore. ▼
 Grub: I can barely move my body. I'll be of no help to you, or myself. ▼ 

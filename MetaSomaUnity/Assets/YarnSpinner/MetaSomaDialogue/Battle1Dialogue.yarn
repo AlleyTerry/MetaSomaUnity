@@ -44,7 +44,7 @@ Linnaeus: I was no <i>servant</i>! I was a leader, an elite, appointed by Queen 
 Linnaeus: And you took that from me! ▼
 Narrator: Linnaeus is enraged. He has become<color=\#FF3D0B> aggressive</color>. ▼
 
-<<set $hover_text_up = "He's right- he <i>was</i> an elite. But no longer.">>
+<<set $hover_text_up = "He's right— he <i>was</i> an elite. But no longer.">>
 <<set $hover_text_left = "He's incensed. I won't give him more ammunition.">>
 <<set $hover_text_right = "How dare he accuse me of this!">>
 <<SetHoverText OptionsBubble>>
@@ -151,7 +151,7 @@ Narrator: Linnaeus, refusing to acknowledge the truth in your words, merely scof
 Narrator: He is unaffected by your argument. ▼
 ///-1 heart
 <<TakeDamage Viewport_Heart>>
-Narrator: You feel your conviction falter for a moment- long enough for it to frighten you. ▼
+Narrator: You feel your conviction falter for a moment— long enough for it to frighten you. ▼
 <<CheckHealth Viewport_Heart>>
 <<jump ROUND1END>>
 
@@ -757,7 +757,7 @@ Linnaeus: I’ll simply shut you up once and for all! ▼
 title: Bide
 position: 654,328
 ---
-Narrator: You look closely at Linnaeus, trying to decide when to strike- if you should at all. ▼ 
+Narrator: You look closely at Linnaeus, trying to decide when to strike— if you should at all. ▼ 
 Narrator: The hand on the dagger trembles faintly. ▼
 Narrator: Your continued silence unnerves Linnaeus. ▼
 <<PlayNPCAnimation ManagerHolder LinBattle_ConToAgg>>
@@ -1058,7 +1058,7 @@ Narrator: You ready yourself to leave, and decide to look at Linnaeus one final 
 title: Eatbread2
 position:
 ---
-Narrator: You notice a key on a string tied around his neck- the key to the stairwell. ▼
+Narrator: You notice a key on a string tied around his neck— the key to the stairwell. ▼
 
 <<ThirdBreadFrame ManagerHolder>>
 
