@@ -35,6 +35,11 @@ title: PrologueCafeteria
 imeris: I have to get to the chapel. I'll eat later.
 ===
 
+title: PrologueStairwell
+---
+imeris: The stairwell is this way, but I can't go upstairs yet.
+===
+
 title:LinnaeusPrologue
 ---
 Linnaeus: Imeris, there you are! Come closer, my child. ▼
@@ -302,6 +307,11 @@ imeris: Woven with the symbol that represents us servants.
 title: KingdomTapestry2
 ---
 imeris: These tapestries are made of a material finer than anything else in this hall.
+===
+
+title: CommonRoomStairwell
+---
+imeris: The stairwell to the next floor lies beyond here... but I should look around on this floor first.
 ===
 
 title: BoardedChapel
