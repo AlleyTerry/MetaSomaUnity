@@ -2,11 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Yarn.Unity;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
+
+    public GameObject particleDisplay;
+    public RawImage particleImage;
+    public float alphaParticlesOn = 255f;
+    public float alphaParticlesOff = 0.0f;
     
     private void Awake()
     {
@@ -56,6 +62,8 @@ public class UIManager : MonoBehaviour
         {
             Debug.LogError("ViewportAnimator not found! Check HUD structure.");
         }
+        
+        //particleImage = GameObject.Find("ParticlesDisplay").GetComponent<RawImage>();
     }
     
     public void PlayAnimation(string animationName)
@@ -103,5 +111,39 @@ public class UIManager : MonoBehaviour
     {
         EnableAnimator();
         viewportAnimator.Play(animationName);
+    }
+    
+    [YarnCommand("EnableParticles")]
+    public void EnableParticles()
+    {
+        if (particleImage != null)
+        {
+            particleImage.color = new Color(particleImage.color.r, particleImage.color.g, particleImage.color.b, alphaParticlesOn);
+        }
+        else
+        {
+            Debug.LogError("Particle image is null! Check assignment.");
+        }
+    }
+    
+    [YarnCommand("DisableParticles")]
+    public void DisableParticles()
+    {
+        particleDisplay = GameObject.Find("ParticlesDisplay");
+        particleImage = particleDisplay.GetComponent<RawImage>();
+        if (particleDisplay == null)
+        {
+            Debug.LogError("Particle display is null! Check assignment.");
+            return;
+        }
+        if (particleImage != null)
+        {
+            Debug.Log("Disabling particles");
+            particleImage.color = new Color(particleImage.color.r, particleImage.color.g, particleImage.color.b, alphaParticlesOff);
+        }
+        else
+        {
+            Debug.LogError("Particle image is null! Check assignment.");
+        }
     }
 }

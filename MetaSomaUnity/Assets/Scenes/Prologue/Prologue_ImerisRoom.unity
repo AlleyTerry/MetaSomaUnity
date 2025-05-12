@@ -724,6 +724,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2023300872491508483, guid: 9376fc3a1927eb14192c38774a829615,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4155168650225817235, guid: 9376fc3a1927eb14192c38774a829615,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -804,6 +809,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4676880667594926389, guid: 9376fc3a1927eb14192c38774a829615,
+        type: 3}
+      propertyPath: particleImage
+      value: 
+      objectReference: {fileID: 1678860583}
     - target: {fileID: 5510383295102970813, guid: 9376fc3a1927eb14192c38774a829615,
         type: 3}
       propertyPath: variableStorage
@@ -2475,7 +2485,21 @@ MonoBehaviour:
   interactionType: 0
   isJustShowOnce: 0
   isIndicator: 1
+  isEnterToContinue: 0
+  lineView: {fileID: 0}
   continuingDialogueNode: 
+--- !u!114 &1678860583 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2023300872491508483, guid: 9376fc3a1927eb14192c38774a829615,
+    type: 3}
+  m_PrefabInstance: {fileID: 552374204}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1682847022
 GameObject:
   m_ObjectHideFlags: 0

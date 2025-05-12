@@ -10,6 +10,7 @@ position: -462,-1568
 <<declare $hasDagger = false>>
 
 <<PlayMusic ManagerHolder "linnaeusBattleStart">>
+<<EnableParticles ManagerHolder>>
 
 Linnaeus: Do you have anything to say for yourself? ▼
 Narrator: Tread carefully; in this battle of words, your choices may hurt you. ▼ 
@@ -920,6 +921,7 @@ Linnaeus: Your wretched, unholy existence ends <i>here</i>. ▼
 <<DisableImerisAnimation ManagerHolder>>
 <<DisableNPCAnimation ManagerHolder>>
 <<PlayViewportAnimation ManagerHolder PureBlack>>
+<<EnableParticles ManagerHolder>>
 
 <<PlayMusic ManagerHolder "linnaeusBattleEnd">>
 Narrator: Linnaeus wrenches an incense holder off the wall and grips the heavy metal fixture with both hands. ▼
