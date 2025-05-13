@@ -23,10 +23,21 @@ public class LevelManager_Chapel : LevelManagerBase
     
     // PARTICLES
     [SerializeField] private VisualEffect heartbreakParticles;
+    [SerializeField] private VisualEffect heartHealParticles;
     
     protected override void Start()
     {
         base.Start();
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+
+        if (Input.GetKeyUp(KeyCode.U))
+        {
+            PlayHeartHealParticles(2);
+        }
     }
 
     public override void Initialize()
@@ -86,6 +97,8 @@ public class LevelManager_Chapel : LevelManagerBase
         // PARTICLES 
         // TODO: this is more like temporary, we need to find a better way to do this
         heartbreakParticles = GameObject.Find("Heartbreak").GetComponent<VisualEffect>();
+        heartHealParticles = GameObject.Find("HeartHeal").GetComponent<VisualEffect>();
+        
         // play background music
         gameObject.GetComponent<AudioManager>().PlayMusic("Chapel");
     }
@@ -226,6 +239,12 @@ public class LevelManager_Chapel : LevelManagerBase
     public void PlayHeartbreakParticles()
     {
         heartbreakParticles.SendEvent("StartHeartbreak");
+    }
+    
+    public void PlayHeartHealParticles(float heartSpriteIndex)
+    {
+        heartHealParticles.SetFloat("HeartIndex", heartSpriteIndex);
+        heartHealParticles.SendEvent("onHeal");
     }
     
     [YarnCommand("LinnAttack")]

@@ -163,6 +163,12 @@ public class Heart : MonoBehaviour
     {
         if (health < 3)
         {
+            if (GameObject.FindObjectOfType<LevelManager_Chapel>())
+            {
+                GameManager.instance.currentLevelManager.GetComponent<LevelManager_Chapel>()
+                    .PlayHeartHealParticles(health);
+            }
+
             health++;
             Debug.Log($"Heart: Healed. Current health: {health}");
             GameManager.instance.inMemoryVariableStorage.SetValue("$CurrentHealth", health);
