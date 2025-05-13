@@ -30,16 +30,6 @@ public class LevelManager_Chapel : LevelManagerBase
         base.Start();
     }
 
-    protected override void Update()
-    {
-        base.Update();
-
-        if (Input.GetKeyUp(KeyCode.U))
-        {
-            PlayHeartHealParticles(2);
-        }
-    }
-
     public override void Initialize()
     {
         base.Initialize();

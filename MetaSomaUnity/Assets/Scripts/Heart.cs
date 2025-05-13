@@ -166,7 +166,7 @@ public class Heart : MonoBehaviour
             if (GameObject.FindObjectOfType<LevelManager_Chapel>())
             {
                 GameManager.instance.currentLevelManager.GetComponent<LevelManager_Chapel>()
-                    .PlayHeartHealParticles(health);
+                    .PlayHeartHealParticles(3-health);
             }
 
             health++;

@@ -2710,7 +2710,7 @@ GameObject:
   - component: {fileID: 1615947477}
   - component: {fileID: 1615947479}
   - component: {fileID: 1615947478}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HeartHeal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2771,7 +2771,7 @@ VFXRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 999
 --- !u!2083052967 &1615947479
 VisualEffect:
   m_ObjectHideFlags: 0
