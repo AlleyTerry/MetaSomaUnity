@@ -64,7 +64,7 @@ Imeris: There is nothing left of the lives we once knew. ▼
 Imeris: Whatever power you had over me is gone. ▼
 Imeris: I have no reason to bow to you anymore. ▼
 ///+1 heart
-<<Heal Viewport_Heart>>
+<<Heal Viewport_Heart false>>
 Narrator: You feel your resolve strengthen as you speak. ▼
 Narrator: Linnaeus’s anger turns into a cold fury. ▼
 <<PlayNPCAnimation ManagerHolder LinBattle_AggToCon>>
@@ -165,7 +165,7 @@ Imeris: It’s as simple as that. ▼
 <<PlayNPCAnimation ManagerHolder LinBattle_ConToCalm>>
 Narrator: Linnaeus bristles, but his hand clutches his own stomach unconsciously. ▼
 ///+1 heart
-<<Heal Viewport_Heart>>
+<<Heal Viewport_Heart false>>
 Narrator: It seems he understands you, if only a little. ▼
 <<jump ROUND1END>>
 
@@ -225,7 +225,7 @@ Imeris: If they have abandoned us here to die, it is THEY who carry the weight o
 Imeris: I am not a villain. I am not a monster. I am NOT sinful. ▼
 Imeris: You, of all people, do not get to say that to me. You are no better than they are. ▼
 ///+1 heart
-<<Heal Viewport_Heart>>
+<<Heal Viewport_Heart false>>
 Imeris: I am only becoming who the Goddess made me to be, and I will not allow you to deceive me again. ▼
 Linnaeus: You could never begin to know Her will, wretch. ▼
 Linnaeus: Cease your heresy. Come quietly. Let your final act be obedient and good. ▼
@@ -338,7 +338,7 @@ Imeris: I still have faith. In the Goddess, and in myself. ▼
 Imeris: Nothing will change if I let myself die here. ▼
 Imeris: All of this suffering would have been for nothing. ▼
 ///+1 heart
-<<Heal Viewport_Heart>>
+<<Heal Viewport_Heart false>>
 Imeris: I have to live on. And I will. ▼
 
 <<jump ROUND1END>>
@@ -350,7 +350,7 @@ title: Reject
 position: -848,-1352
 ---
 ///+1 heart
-<<Heal Viewport_Heart>>
+<<Heal Viewport_Heart false>>
 Imeris: I don’t have to explain myself to you. I owe you nothing. ▼
 Narrator: Linnaeus’s eyebrow twitches but he remains collected. ▼
 Linnaeus: Have you no shame? Have you no gratitude? ▼
@@ -430,7 +430,7 @@ title: Prosecute
 position: -625,-1147
 ---
 ///+1 heart
-<<Heal Viewport_Heart>>
+<<Heal Viewport_Heart false>>
 Imeris: You rally so strongly against me, and yet you have been hungry too. ▼ 
 Imeris: I know it has driven you to desperation. To violence. ▼
 Narrator: You look pointedly at the bowls of food set out for the Goddess. ▼
@@ -491,7 +491,7 @@ title: Taunt
 position: -1026,-919
 ---
 ///+1 heart
-<<Heal Viewport_Heart>>
+<<Heal Viewport_Heart false>>
 Narrator: You laugh derisively. ▼
 Imeris: What do you think you’re going to do, exactly? ▼
 Imeris: Your role has softened you, Father. You are frail and weak with the comforts of your life. ▼
@@ -625,7 +625,7 @@ position: -1582,292
 ---
 Imeris: This is not arrogance. This is hard-won pride. ▼
 //+1 Heart
-<<Heal Viewport_Heart>>
+<<Heal Viewport_Heart false>>
 Imeris: I have fought to stand here as I am today, and I won’t let your petty insults drag me back down. ▼
 Imeris: Nor will I let you take from me the life I’ve always wanted, which I’ve finally made mine. ▼
 Linnaeus: Your life is meaningless, fiend! And if I wish it, it is forfeit! ▼
@@ -670,7 +670,7 @@ position: -918,286
 Narrator: You try to take a deep, steadying breath to gather yourself. ▼ 
 Narrator: It stutters on the way in and your heart is still pounding, but it is slower than before. ▼
 //+1 Heart
-<<Heal Viewport_Heart>>
+<<Heal Viewport_Heart false>>
 Narrator: Your resolve strengthens once more. ▼
 Imeris: Fine. ▼
 Imeris: If I have to make my own way once more… If I have to go through you to do it, then so be it. ▼ 
@@ -716,7 +716,7 @@ title: EquipDagger
 position: 491,137
 ---
 //+1 Heart
-<<Heal Viewport_Heart>>
+<<Heal Viewport_Heart false>>
 
 <<set $hasDagger = true>>
 Narrator: You reach behind you and grip the dagger strapped to your back. ▼
@@ -766,7 +766,7 @@ Linnaeus: Well? Say something! Cease your leering! ▼
 Narrator: Linnaeus is getting desperate, and it will make him sloppy. ▼
 Narrator: It’s a good sign, but you must ready yourself. ▼
 //+1 heart
-<<Heal Viewport_Heart>>
+<<Heal Viewport_Heart false>>
 Narrator: You continue to wait and stare, but your grip becomes more sure. ▼
 
 <<jump ROUND2END>>
@@ -1167,11 +1167,11 @@ Narrator: Rebirth yourself and try again. ▼
 //-> Quit
 //    <<QuitGame ManagerHolder>>
 -> Fight Again
-    <<Heal Viewport_Heart>>
+    <<Heal Viewport_Heart true>>
     <<wait 0.35>>
-    <<Heal Viewport_Heart>>
+    <<Heal Viewport_Heart true>>
     <<wait 0.25>>
-    <<Heal Viewport_Heart>>
+    <<Heal Viewport_Heart true>>
     <<wait 0.2>>
     <<FightAgain ManagerHolder>>
     

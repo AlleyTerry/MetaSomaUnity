@@ -159,14 +159,17 @@ public class Heart : MonoBehaviour
     }
     
     [YarnCommand("Heal")]
-    public void Heal()
+    public void Heal(bool noVFX)
     {
         if (health < 3)
         {
-            if (GameObject.FindObjectOfType<LevelManager_Chapel>())
+            if (noVFX != true)
             {
-                GameManager.instance.currentLevelManager.GetComponent<LevelManager_Chapel>()
-                    .PlayHeartHealParticles(3-health);
+                if (FindObjectOfType<LevelManager_Chapel>())
+                {
+                    GameManager.instance.currentLevelManager.GetComponent<LevelManager_Chapel>()
+                        .PlayHeartHealParticles(3-health);
+                }
             }
 
             health++;
