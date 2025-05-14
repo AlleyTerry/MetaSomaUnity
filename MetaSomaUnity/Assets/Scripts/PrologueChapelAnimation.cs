@@ -18,14 +18,13 @@ public class PrologueChapelAnimation : MonoBehaviour
     {
         //find the audio game object on the parent object
         AudioGameObject = GameObject.Find("ManagerHolder");
-        
+        chapelStarted = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "Prologue_Chapel" && chapelStarted == false)
-     
+        /*if (SceneManager.GetActiveScene().name == "Prologue_Chapel" && chapelStarted == false)
         {
             //find the Imeris and Linnaeus game objects 
             
@@ -34,12 +33,17 @@ public class PrologueChapelAnimation : MonoBehaviour
             LinSpot = GameObject.Find("LinSpot");
             Linnaeus = GameObject.Find("Linnaeus");
             chapelStarted = true;
-        }
+        }*/
     }
 
     public void MoveCharacters()
     {
         Debug.Log("this has been fired");
+        
+        Imeris = GameObject.Find("Imeris");
+        ImerisSpot = GameObject.Find("ImerisSpot");
+        LinSpot = GameObject.Find("LinSpot");
+        Linnaeus = GameObject.Find("Linnaeus");
         
         Imeris.transform.position = ImerisSpot.transform.position;
         Linnaeus.transform.position = LinSpot.transform.position;

@@ -258,6 +258,11 @@ public class GameManager : MonoBehaviour
     public void LoadMainMenu() // TODO: THIS IS VERY TEMPORARY, MAY HAVE A LOT OF BUGS
     {
         CurrentLevelIndex = 0;
+        
+        talkToGrub = false;
+        isFirstVisit = true;
+        isHoldingChapelKey = false;
+        ResetBuffer();
     }
 
     public void LoadChapel()
