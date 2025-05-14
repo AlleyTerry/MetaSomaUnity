@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class UIShakeHandler : MonoBehaviour
 {
-    private Vector3 originalPosition;
+    [SerializeField] private Vector3 originalPosition;
+    [SerializeField] private RectTransform originalRectTransform;
     public static UIShakeHandler instance;
 
     private void Awake()
@@ -17,6 +18,7 @@ public class UIShakeHandler : MonoBehaviour
     void Start()
     {
         originalPosition = transform.position;
+        originalRectTransform = GetComponent<RectTransform>();
     }
 
     public void Shake(float intensity, float duration)
@@ -37,6 +39,20 @@ public class UIShakeHandler : MonoBehaviour
         }
 
         transform.position = originalPosition;
+        GetComponent<RectTransform>().transform.localPosition = originalRectTransform.localPosition;
+        
+        StartCoroutine(ImageCorrection());
+    }
+
+    private IEnumerator ImageCorrection()
+    {
+        yield return new WaitForEndOfFrame();
+        
+        // Correct the image position
+        transform.position = originalPosition;
+        GetComponent<RectTransform>().transform.localPosition = originalRectTransform.localPosition;
+        
+        Debug.Log("Image position corrected.");
     }
     
     // pre-made shake functions
