@@ -117,6 +117,9 @@ public class GameManager : MonoBehaviour
     public bool talkToGrub = false; // talk to half-dead grub
     public bool isFirstVisit = true; // first visit to the common area
     
+    // MAC BUILD, TURN OFF SOME VFX
+    public bool isMacBuild = false;
+    
     // Start is called before the first frame update
     void Start()
     {

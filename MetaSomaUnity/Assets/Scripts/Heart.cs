@@ -15,6 +15,8 @@ public class Heart : MonoBehaviour
     
     private Image renderer;
     
+    [SerializeField] private List<Sprite> heartSprites;
+    
     private void Awake()
     {
         renderer = GetComponent<Image>();
@@ -163,13 +165,9 @@ public class Heart : MonoBehaviour
     {
         if (health < 3)
         {
-            if (noVFX != true)
+            if (!GameManager.instance.isMacBuild && noVFX != true)
             {
-                if (FindObjectOfType<LevelManager_Chapel>())
-                {
-                    GameManager.instance.currentLevelManager.GetComponent<LevelManager_Chapel>()
-                        .PlayHeartHealParticles(3-health);
-                }
+                PrepareHeartVFX();
             }
 
             health++;
@@ -180,6 +178,24 @@ public class Heart : MonoBehaviour
         else
         {
             Debug.Log("Heart: Health is already full.");
+        }
+    }
+
+    private void PrepareHeartVFX()
+    {
+        if (FindObjectOfType<LevelManager_Chapel>())
+        {
+            heartSprites = new List<Sprite>();
+            heartSprites.Add(Resources.Load<Sprite>("TechArt/HeartHeal/0_dmg"));
+            heartSprites.Add(Resources.Load<Sprite>("TechArt/HeartHeal/1_dmg"));
+            heartSprites.Add(Resources.Load<Sprite>("TechArt/HeartHeal/2_dmg"));
+            heartSprites.Add(Resources.Load<Sprite>("TechArt/HeartHeal/3_dmg"));
+            
+            int spriteIndex = 3 - (int)health;
+            Texture2D heartTexture = heartSprites[spriteIndex].texture;
+            
+            GameManager.instance.currentLevelManager.GetComponent<LevelManager_Chapel>()
+                .PlayHeartHealParticles(3-health, heartTexture);
         }
     }
 }

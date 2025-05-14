@@ -231,9 +231,10 @@ public class LevelManager_Chapel : LevelManagerBase
         heartbreakParticles.SendEvent("StartHeartbreak");
     }
     
-    public void PlayHeartHealParticles(float heartSpriteIndex)
+    public void PlayHeartHealParticles(float heartSpriteIndex, Texture2D heartSprite)
     {
         heartHealParticles.SetFloat("HeartIndex", heartSpriteIndex);
+        heartHealParticles.SetTexture("HeartSprite", heartSprite);
         heartHealParticles.SendEvent("onHeal");
     }
     
