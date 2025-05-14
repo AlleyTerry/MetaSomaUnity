@@ -126,7 +126,7 @@ public class Heart : MonoBehaviour
             // audio feedback
             if (GetComponentInParent<AudioManager>() != null)
             {
-                GetComponentInParent<AudioManager>().PlaySFX("WetCrack");
+                GetComponentInParent<AudioManager>().PlaySFX("heartBreaking");
             }
             else
             {
