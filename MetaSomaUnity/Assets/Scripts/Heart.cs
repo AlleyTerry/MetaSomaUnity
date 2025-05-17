@@ -44,6 +44,8 @@ public class Heart : MonoBehaviour
         SetupYarnVariables();
         variableStorage.SetValue("$CurrentHealth", health);
         
+        // reset HP
+        health = 3;
         UpdateHealthUI();
     }
 
