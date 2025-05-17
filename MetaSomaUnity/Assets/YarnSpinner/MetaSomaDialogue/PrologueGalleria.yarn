@@ -16,7 +16,7 @@ Galleria: Stay out of trouble, okay? ▼
 Imeris: I’ll try. ▼
 Galleria: I'm sure. ▼
 <<HideGalleria ManagerHolder>>
-//<<DisableParticles ManagerHolder>>
+<<DisableParticles ManagerHolder>>
 Narrator: Galleria leaves. The door clicks shut behind her. ▼
 imeris: I should hurry and put on my vestments. Father Linnaeus is waiting. ▼
 <<StartPrologueLevel ManagerHolder>>

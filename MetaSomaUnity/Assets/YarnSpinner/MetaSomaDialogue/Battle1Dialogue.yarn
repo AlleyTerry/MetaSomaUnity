@@ -224,8 +224,6 @@ Imeris: Even <i>if</i> the Queen's disappearance is owed to me, I am not to blam
 Imeris: If they have abandoned us here to die, it is THEY who carry the weight of innocence lost. ▼
 Imeris: I am not a villain. I am not a monster. I am NOT sinful. ▼
 Imeris: You, of all people, do not get to say that to me. You are no better than they are. ▼
-///+1 heart
-<<Heal Viewport_Heart false>>
 Imeris: I am only becoming who the Goddess made me to be, and I will not allow you to deceive me again. ▼
 Linnaeus: You could never begin to know Her will, wretch. ▼
 Linnaeus: Cease your heresy. Come quietly. Let your final act be obedient and good. ▼
@@ -284,6 +282,8 @@ Imeris: You claim me to be evil, but you have no right to do so, Father. ▼
 Imeris: I know you have been hoarding food. ▼
 Imeris: I imagine you’ve been faced with others like myself who have tried to stop you, and failed. ▼
 Imeris: How many now have died at your hands, through violence or neglect? ▼
+///+1 heart
+<<Heal Viewport_Heart false>>
 Imeris: I have no reason to listen to the condemnations of a condemned man. ▼
 Narrator: Linnaeus bristles fiercely. ▼
 Linnaeus: I will not be criticized by you, beast! Actions I have taken out of necessity are forgiven by the Goddess! ▼
@@ -922,7 +922,7 @@ Linnaeus: Your wretched, unholy existence ends <i>here</i>. ▼
 <<DisableImerisAnimation ManagerHolder>>
 <<DisableNPCAnimation ManagerHolder>>
 <<PlayViewportAnimation ManagerHolder PureBlack>>
-<<EnableParticles ManagerHolder>>
+<<DisableParticles ManagerHolder>>
 
 <<PlayMusic ManagerHolder "linnaeusBattleEnd">>
 Narrator: Linnaeus wrenches an incense holder off the wall and grips the heavy metal fixture with both hands. ▼
